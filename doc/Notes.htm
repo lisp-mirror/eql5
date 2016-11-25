@@ -1,0 +1,71 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<h2>Notes</h2>
+<p>Pass <code>-norc</code> on the command line to <b>not</b> load <code>~/.eclrc</code> on startup.<br>Since <code>:eql</code> and <code>:eql5</code> are in <code>*features*</code>, you can use e.g. <code>#+eql</code> / <code>#-eql5</code>.</p>
+<p>To run a Lisp file directly, do e.g. <code>eql5
+    examples/5-colliding-mice -qtpl</code>.</p>
+<p>See the EQL UI (command <code>eql -qgui</code>) for a complete list of all
+  supported classes and functions.</p>
+<p>In the above mentioned UI you find a "<b>Select</b>" button, allowing you
+  to select any Qt widget (even in other main widgets), if previously loaded
+  from the UI command line. After selecting a widget, the
+  parameter <code>qsel:*q*</code> will be set to it.</p>
+  <p>See command line option <code>-qtpl</code> for a top-level processing Qt
+  events (see also <b>readline</b> note in <code>../README.txt</code>).<br>It uses a simple GUI dialog for
+  debug input (needed because <code>read</code> runs in its own thread).<br>On
+  eventual print output, you won't see a fresh prompt, but the REPL will
+  remain ready for input.<br>You can set this option permanently by adding this in <code>~./eclrc</code>:
+  <br><code>#+eql (setf eql:*qtpl* t)</code>
+</p>
+<p>If you want to use temporary Qt objects, you can use the <code>qlet</code>
+  convenience macro (see the function list). It's a <code>let*</code> variant
+  for Qt objects, deleting them  when leaving its body.</p>
+<p>No universal GC (garbage collection) for Qt objects:
+<ul>
+<li>Qt widgets always live inside an object hierarchy, so deleting a widget
+  will delete all its child widgets/objects.
+<li>For local widgets/objects, you have the <code>qlet</code> macro, which are
+  deleted when leaving the <code>qlet</code> body.
+</ul>
+<ul>
+<li>So, always use <code>qlet</code> (instead of <code>qnew</code>) if you only
+  need a local Qt object inside a function (e.g. <code>QDialog</code>, <code>QRegExp</code>).
+<li><b>GC</b> is implemented (using the ECL finalizer) for Qt value types (like <code>QFont</code>) returned by the functions
+ <code>qget</code> and <code>qfun</code>.<br>These types are printed adding <b>GC</b>: <code>#&lt;QFont 0x9243840 GC&gt;</code>.
+</ul>
+</p>
+<p>Enumeration example: <code>|Qt.AlignCenter|</code>.<br>So, all enumerations
+  are defined as constants, using case preserving symbol names (allowing
+  convenient tab completion in Emacs).
+</p>
+<p>Errors in EQL functions don't break into the debugger; if you want them to
+  do so, set the variable <code>eql:*break-on-errors*</code>
+  to <code>T</code>.
+<br>(So the choice is left to you: depending on the situation, either option
+may be more convenient than the other.)
+</p>
+<p>
+The currently available <b>Qt5 Modules</b> (see <code>qrequire</code>) are:
+<br><code>:network :opengl :sql</code>
+</p> 
+<p>If you want to use CLOS together with <code>qt-object</code> instances
+  (which are of type <code>struct</code>), see
+  examples <code>X-extras/CLOS-encapsulation.lisp</code>
+  and <code>5-colliding-mice.lisp</code>.<br>So there's a simple way to
+  use either <code>defclass</code> or <code>defstruct</code> to
+  encapsulate a <code>qt-object</code>.</p>
+<hr>
+<p>If you're interested in <b>embedding</b> EQL in existing Qt/C++ projects,
+  see example in directory <code>Qt_EQL_dynamic/</code> (which can be used
+  together with Slime).
+</p>
+<p>See also <b>plugin</b> example in directory <code>Qt_EQL_plugin/</code>.
+</p>
+<hr>
+<p>The necessary parsing for generating the <code>src/gen/*</code> files is
+  done by parsing the Qt documentation. See <code>helper/README.txt</code> if you want do it yourself
+</body>
+</html>

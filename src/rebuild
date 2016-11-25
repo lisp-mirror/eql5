@@ -1,0 +1,29 @@
+rm -fr tmp
+rm *.a
+rm lisp/*.o
+
+ecl -shell make-eql-lib.lisp &&
+qmake eql_lib.pro &&
+make &&
+qmake eql_exe.pro &&
+make &&
+eql5 make-eql-lib-wrappers.lisp &&
+touch tmp/eql.o &&
+qmake eql_lib.pro &&
+make &&
+qmake module_help.pro &&
+make &&
+qmake module_network.pro &&
+make &&
+qmake module_opengl.pro &&
+make &&
+qmake module_sql.pro &&
+make &&
+qmake module_svg.pro &&
+make &&
+qmake module_webkit.pro &&
+make
+
+cd lisp
+ecl -compile ecl-readline.lisp
+

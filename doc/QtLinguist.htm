@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<h2>Qt Linguist</h2>
+For every new project:
+<ul>
+<li>In Lisp, wrap the strings you want to translate in the <code>tr</code> macro (as you would do in Qt), optionally passing a context and/or a plural indicator (see Qt Assistant). Both string and context can be Lisp forms evaluating to constant strings.
+<li>Adapt the <code>my_app/eql-lupdate</code> file, adding your Qt Designer <code>*.ui</code> files (if any), and listing the respective  <code>*.ts</code> files for all languages you want to support.
+<li>Adapt the <code>my_app/eql-lrelease</code> file, simply listing all <code>*.ts</code> files (see above).
+</ul>
+For every new release (in order to create the <code>*.qm</code> files):
+<ul>
+<li>In <code>my_app/</code>, run <code>eql make.lisp</code> (compiling all files). This will find all source strings to translate and save them in the file  <code>tr.h</code> (only a dummy needed for the Qt <code>lupdate</code> function). This is done using a compiler macro, see <code>my_app/tr.lisp</code>.</i> 
+<li>Run the <code>my_app/eql-lupdate</code> script; this will create/update the single <code>*.ts</code> files for every language.
+<li>Use Qt Linguist on the <code>*.ts</code> files (as usual).
+<li>Run the <code>my_app/eql-lrelease</code> script.
+</ul>
+<p>Note: you may need to copy the respective <code>qt_*.qm</code> files (see <code>translations/</code> in the Qt sources), in order to load the translated texts used by Qt itself.</p>
+<p>See <code>my_app/main.cpp</code> for an example how to load your translation files.</p>
+</html>

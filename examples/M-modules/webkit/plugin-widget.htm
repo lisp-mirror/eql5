@@ -1,0 +1,24 @@
+<html>
+  <body style="font-family: Arial; font-size: small;">
+    <h2 style="color: navy">Simple QWebPluginFactory Example</h2>
+    <object type="application/x-clock" width="150" height="150">
+      <param name="show-minutes" value="true" />
+      <param name="show-seconds" value="false" />
+    </object>
+    <p>
+      <label>
+        <input type="checkbox"
+               checked
+               onclick="Lisp.setParams('show-minutes', this.checked)">
+        show minutes
+      </label>
+      <br>
+      <label>
+        <input type="checkbox"
+               onclick="Lisp.setParams('show-seconds', this.checked)">
+        show seconds
+      </label>
+    </p>
+  </body>
+</html>
+

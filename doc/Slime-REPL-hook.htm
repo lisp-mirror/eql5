@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<h2>Slime REPL Hook</h2>
+<p>
+<p><b>Please note:</b></p>
+<p>
+You need to enable this mode manually by uncommenting this line in <code>eql-start-swank.lisp</code> in your Slime directory:
+<br>&nbsp;&nbsp;<code>(setf eql:*slime-mode* :repl-hook)</code>
+</p>
+<p>Requires <b>ECL threads</b>.</p>
+<p>
+This should work with any Slime version that plays together with ECL.
+<br>Tested with ECL 12.7.1 (Windows: ECL 12.12.1)
+</p>
+<ul>
+<h3>Prepare</h3>
+<ul>
+<li>Add to your <code>~/.emacs</code> file:
+<pre>
+(add-to-list 'load-path "~/slime/")         ; slime path
+(add-to-list 'load-path "~/slime/contrib/") ; slime/contrib path
+(require 'slime)
+(slime-require 'swank-listener-hooks)       ; EQL requires a listener hook
+(slime-setup '(slime-fancy))
+</pre>
+<li>Add to your <code>~/.swank.lisp</code> file (or copy file <code>eql/slime/.swank.lisp</code> in your home directory):
+<br>(Please note: this isn't really optional -- you <b>need</b> to set this option for a useful Slime + EQL.)
+<pre>
+(setf swank:*globally-redirect-io* t) ; show print output in Emacs
+</pre>
+<li>Copy file <code>eql/slime/eql-start-swank.lisp</code> in your <code>slime/</code> directory
+</ul>
+<br>
+<h3>Run</h3>
+<ul>
+<li>Run the swank server (the command line option <code>-slime</code> can be omitted if the file name contains "start-swank"), optionally passing a Lisp file:
+<pre>
+eql &lt;path-to-slime&gt;/eql-start-swank.lisp [file.lisp]
+</pre>
+<li>Run Emacs and do:
+<code>Meta-X slime-connect</code> (please note:
+use <code>slime-connect</code>) and hit <code>Return</code> 2 times
+(confirming the default values).
+<p>Please note: if <code>:dont-close</code> is set to <code>T</code>
+    in <code>eql-start-swank.lisp</code>, quitting/restarting Emacs will not
+    affect a running EQL program, that is: if you quit/restart Emacs, you can
+    connect to the same swank/EQL you left when quitting Emacs.</p>
+</ul>
+<br>
+<h3>Notes</h3>
+<h4>Eval Region</h4>
+<ul>
+<li><b>Load</b> your Lisp file <b>from the Slime REPL</b>: <code>(load "file.lisp")</code>
+<li><b>Run</b> your program <b>from the Slime REPL</b> (not using Eval Region).
+<li>Only at this point you may use Eval Region for re-defining functions etc.
+</ul>
+<p>The point here is: if you directly try to Eval Region an expression containing an
+  EQL function, your swank server <b>will crash</b>, because it will not be
+  evaluated in the GUI thread (Qt GUI methods need to be called from the GUI thread).
+</p>
+<p>So, only run EQL functions <b>directly</b> from the <b>Slime REPL</b>.
+<br>If you want to use <b>Eval Region</b> containing EQL functions, use the
+method described above.
+</p>
+<hr>
+<p>You may use the macro <code>qeval</code> if you want to ensure evaluation
+  in the GUI thread (this is meant to be used together with Eval Region only).
+<br>It behaves like a <code>progn</code>, so you can do something like this:
+<pre>
+(qeval
+  (defvar *label* (qnew "QLabel"))
+  (defvar *edit*  (qnew "QLineEdit")))
+</pre>
+Wrapping forms in <code>qeval</code> will have no effect if you
+run your code outside of Slime (so there's no need to
+remove <code>qeval</code> in your final program).</p>
+<hr>
+<p>But note: the advantage using <b>Eval Region</b>
+  (<i>without</i> <code>qeval</code>) is that Lisp error conditions (not
+  driven by Qt events) will not stop/pause your EQL program (that is, Qt event
+  processing will continue).</p>
+<p>Instead, if there is an error in code you either enter in the Slime REPL, or
+  run with Eval Region wrapped in <code>qeval</code>, the
+program will always pause (Qt event processing will be stopped until you take some
+  action).</p>
+<br>
+<h4>Abort / Restart</h4>
+<p>Be careful after entering the Slime debugger. If you see this:
+<br>
+<br><code>[ABORT] Return to SLIME's top level.</code>
+<br><code>[RESTART-QT-EVENTS] Last resort only - prefer "Return to SLIME's top level"</code>
+<br>
+<br>Always choose the first one, otherwise you'll be stuck.
+</p>
+<br>
+<h4>Help</h4>
+<p>For help see the <code>qapropos</code> and <code>qgui</code> functions.</p>
+</ul>
+<br>
+</html>

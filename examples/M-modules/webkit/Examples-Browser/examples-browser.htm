@@ -1,0 +1,30 @@
+<html>
+  <body style="font-family: Arial; font-size: small;">
+    <h1 style="color: navy">Examples Browser</h1>
+    <p>Lisp enabled <b>WebKit</b> with JavaScript / Lisp bridge</p>
+    <ul>
+      <li>Launch applications after downloading them (any number of files, any file type).
+      <li>The files are saved in a cache, and launched from there if already present.
+      <li>The first file in the list (see Html source file) will be loaded in Lisp.
+    </ul>
+    <p>This example is fully <b>network enabled</b>, you only need to adapt the location in function RUN.</p>
+    <ol style="font-size: large">
+      <li><a href="#1" onclick="Lisp.run(1, '2-clock.lisp');">clock</a>
+      <li><a href="#2" onclick="Lisp.run(2, '4-wiggly-widget.lisp');">wiggly-widget</a>
+      <li><a href="#3" onclick="Lisp.run(3, '5-colliding-mice.lisp');">colliding-mice</a>
+      <li><a href="#4" onclick="Lisp.run(4, 'X-extras/calculator.lisp');">calculator</a>
+      <li><a href="#5" onclick="Lisp.run(5, ['7-Sokoban/eql-sokoban.lisp',
+                                             '7-Sokoban/3rd-party/COPYING',
+                                             '7-Sokoban/3rd-party/levels.lisp',
+                                             '7-Sokoban/3rd-party/sokoban.lisp',
+                                             '7-Sokoban/pics/goal.png',
+                                             '7-Sokoban/pics/object.png',
+                                             '7-Sokoban/pics/object2.png',
+                                             '7-Sokoban/pics/player.png',
+                                             '7-Sokoban/pics/player2.png',
+                                             '7-Sokoban/pics/wall.png']);">sokoban</a>
+    </ol>
+    <input type="button" value="clear cache" onclick="Lisp.clearCache()">
+    <span id="message"></span>
+  </body>
+</html>

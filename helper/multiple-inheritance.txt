@@ -1,0 +1,5 @@
+//QGraphicsObject: QObject and QGraphicsItem
+QGraphicsWidget: QGraphicsObject and QGraphicsLayoutItem
+//QLayout: QObject and QLayoutItem
+QWidget: QObject and QPaintDevice
+QAccessibleWidget: QAccessibleObject and QAccessibleActionInterface
