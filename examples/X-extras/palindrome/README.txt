@@ -21,7 +21,7 @@ using the <canvas> element and JS.
 
 Use command line option :html to have it generated:
 
-  eql palindrome.lisp :html
+  eql5 palindrome.lisp :html
 
 (optionally pass the width, which defaults to 450)
 

@@ -27,6 +27,18 @@ REQUIREMENTS
 
 
 
+PREPARE
+=======
+
+You can have both old EQL and EQL5 installed in parallel (exe and lib names differ).
+
+If you have both Qt4 and Qt5 installed, you can use the following environment variable
+to switch between the both:
+
+    export QT_SELECT=5
+
+
+
 BUILD
 =====
 
@@ -46,7 +58,7 @@ BUILD
 
     ecl -shell make-eql-lib.lisp
 
-2) Do: (use qmake-qt4 if you have Qt5 installed)
+2) Do:
 
     qmake eql_lib.pro
     make
@@ -114,7 +126,7 @@ In order to run (sort of) a top-level processing Qt events, do (requires ECL thr
 
 
 
-QT MODULES (network, sql, opengl)
+QT MODULES (help, network, sql, svg, opengl, webkit)
 ==========
 
 To build an EQL module (corresponding to a Qt module), do the following in src/:

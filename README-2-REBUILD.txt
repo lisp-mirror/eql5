@@ -45,3 +45,8 @@ Lisp:
 It's also recommended to recompile any compiled EQL code (because of the tight
 ECL/C++ integration).
 
+
+TIP
+===
+
+If you're on Linux, see "src/rebuild".
