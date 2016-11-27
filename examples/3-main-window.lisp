@@ -13,15 +13,9 @@
 (defvar *action-open* (qfind-child *main* "action_open"))
 (defvar *action-save* (qfind-child *main* "action_save"))
 
-(defun os-pathname (name)
-  "Needed because ECL uses base strings (not Unicode) for pathnames internally."
-  #+(or darwin linux)
-  (qutf8 name)
-  #+win32
-  (qlocal8bit name))
-
 (defun read-file (file)
-  (with-open-file (s (os-pathname file) :direction :input)
+  ;; "x:path" for unicode file names (OS specific)
+  (with-open-file (s (x:path file) :direction :input)
     (let ((str (make-string (file-length s))))
       (read-sequence str s)
       str)))
@@ -49,7 +43,8 @@
 (defun file-save ()
   (let ((file (|getSaveFileName.QFileDialog|)))
     (unless (x:empty-string file)
-      (with-open-file (s (os-pathname file) :direction :output :if-exists :supersede)
+      ;; "x:path" for unicode file names (OS specific)
+      (with-open-file (s (x:path file) :direction :output :if-exists :supersede)
         (write-string (|toHtml| *editor*) s)))))
 
 (start)

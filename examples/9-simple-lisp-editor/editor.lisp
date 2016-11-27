@@ -30,14 +30,8 @@
 
 (in-package :editor)
 
-(defun os-pathname (name)
-  #+(or darwin linux)
-  (qutf8 name)
-  #+win32
-  (qlocal8bit name))
-
 (defun read-file (file &optional (set-name :set))
-  (with-open-file (s (os-pathname file) :direction :input)
+  (with-open-file (s (x:path file) :direction :input)
     (when (eql :set set-name)
       (setf *file-name* file))
     (x:let-it (make-string (file-length s))
@@ -123,7 +117,7 @@
 (defun save-file (name)
   (when (and (stringp name)
              (not (x:empty-string name)))
-    (with-open-file (s (os-pathname name) :direction :output
+    (with-open-file (s (x:path name) :direction :output
                        :if-exists :supersede)
       (write-string (string-right-trim '(#\Space #\Tab #\Newline) (qget *editor* "plainText")) s)
       (write-char #\Newline s)

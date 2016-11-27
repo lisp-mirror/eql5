@@ -54,12 +54,6 @@
                 (text (|toPlainText| element)))
            ,@body)))))
 
-(defun os-pathname (name)
-  #+(or darwin linux)
-  (qutf8 name)
-  #+win32
-  (qlocal8bit name))
-
 (defun ensure-url (name)
   (if (or (x:starts-with "http" name)
           (x:starts-with "file" name))
@@ -87,7 +81,7 @@
   (defun save-file ()
     (let ((file (|getSaveFileName.QFileDialog| nil nil nil filter)))
       (unless (x:empty-string file)
-        (with-open-file (s (os-pathname file) :direction :output :if-exists :supersede)
+        (with-open-file (s (x:path file) :direction :output :if-exists :supersede)
           (write-string (|toHtml| (frame)) s)
           file)))))
 

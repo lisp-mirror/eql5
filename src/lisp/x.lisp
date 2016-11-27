@@ -18,6 +18,7 @@
    #:if-it*
    #:join
    #:let-it
+   #:path
    #:split
    #:starts-with
    #:string-split
@@ -158,4 +159,11 @@
                        (file-write-date lisp)))
         (compile-file lisp))
       (compiled))))
+
+(defun path (name)
+  "Needed because ECL uses base strings (not Unicode) for pathnames internally."
+  #+(or darwin linux)
+  (funcall (intern "QUTF8" :eql) name)
+  #+win32
+  name) ; works in Windows 8 (for older versions, you'll probably need "qlocal8bit")
 

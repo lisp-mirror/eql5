@@ -742,6 +742,7 @@
                 "zerop"
                 ;; package :x
                 "bytes-to-string"
+                "cc"
                 "d"
                 "do-string"
                 "do-with"
@@ -755,6 +756,7 @@
                 "if-it*"
                 "join"
                 "let-it"
+                "path"
                 "split"
                 "starts-with"
                 "string-split"
