@@ -142,14 +142,18 @@ In Lisp, use the function QREQUIRE to load a module:
 
 
 
-TIP
-===
+TIPS
+====
 
 You might want to put this in your ~/.eclrc file:
 
     #+eql
     (setf eql:*qtpl*            t  ; same as -qtpl
           eql:*break-on-errors* t)
+
+It is HIGHLY RECOMMENDED to integrate the wrapper functions, see README-3-OPTIONAL.
+This will bring you very convenient symbol tab-completion of all Qt functions in
+Emacs/Slime.
 
 
 
