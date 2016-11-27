@@ -12,10 +12,13 @@
 TESTED WITH
 ===========
 
-* ECL 16
-* Qt 5.5
-* Linux
+  Linux:
+    ECL 16.1.2
+    Qt 5.5
 
+  Windows: (MSVC 2015, free version)
+    ECL git 2016-11 / 64 bit (see flag in Makefile)
+    Qt 5.7 / 64 bit
 
 
 REQUIREMENTS
