@@ -11,11 +11,11 @@ const char EQL::version[] = "16.11.1"; // Nov 2016
 
 extern "C" void ini_EQL(cl_object);
 
-static char* argv[] = {"EQL5"};
+static const char* _argv_[] = {"EQL5"};
 
 EQL::EQL() : QObject() {
     if(!cl_booted) {
-        cl_boot(1, argv); }
+        cl_boot(1, (char**)_argv_); }
     iniCLFunctions();
     LObjects::ini(this);
     read_VV(OBJNULL, ini_EQL); } // see "src/make-eql-lib.lisp"
@@ -146,7 +146,7 @@ void EQL::exec(QWidget* widget, const QString& lispFile, const QString& slimeHoo
     eval("(in-package :eql)");
     forms << QString("(set-home \"%1\")").arg(home())
           << QString("(defvar *qt-main* (qt-object %1 0 (qid \"%2\")))")
-                     .arg((ulong)widget)
+                     .arg((void_star_int)widget)
                      .arg(QString(LObjects::vanillaQtSuperClassName(widget->metaObject())))
           << QString("(export '*qt-main*)")
           << QString("(in-package :eql-user)")

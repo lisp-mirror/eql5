@@ -621,7 +621,7 @@ static cl_object new_qt_object(void* pointer, uint unique, int id, bool finalize
     STATIC_SYMBOL_PKG (s_new_qt_object, "NEW-QT-OBJECT", "EQL")
     cl_object l_qt_object = cl_funcall(5,
                                        s_new_qt_object,
-                                       ecl_make_unsigned_integer((ulong)pointer),
+                                       ecl_make_unsigned_integer((void_star_int)pointer),
                                        ecl_make_unsigned_integer(unique),
                                        MAKE_FIXNUM(id),
                                        finalize ? Ct : Cnil);
@@ -1122,7 +1122,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(sType.endsWith('*')) {
             if(sType.startsWith('Q') || sType.startsWith("const Q")) {
                 QtObject o = toQtObject(l_arg);
-                ulong l = (ulong)o.pointer;
+                void_star_int l = (void_star_int)o.pointer;
                 // cast from QObject to non QObject + multiple inheritance problem
                 // e.g. QGraphicsObject, which inherits both QObject and QGraphicsItem
                 int q = sType.indexOf('Q');
@@ -1286,7 +1286,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
                 else if("const char*" == sType) {
                     l_ret = STRING_COPY(*(char**)p); }
                 else {
-                    l_ret = ecl_make_unsigned_integer((ulong)*(void**)p); }}
+                    l_ret = ecl_make_unsigned_integer((void_star_int)*(void**)p); }}
             else if(T_QFileInfo == n)                        l_ret = from_qfileinfo(*(QFileInfo*)p);
             else if(T_QFileInfoList == n)                    l_ret = from_qfileinfolist(*(QFileInfoList*)p);
             else if(T_QGradientStop == n)                    l_ret = from_qgradientstop(*(QGradientStop*)p);
@@ -1892,7 +1892,7 @@ cl_object qinvoke_method2(cl_object l_obj, cl_object l_cast, cl_object l_name, c
                     int i = -1;
                     void* _this = 0;
                     if(this_arg) {
-                        ulong l = (ulong)obj.pointer;
+                        void_star_int l = (void_star_int)obj.pointer;
                         if(qobject_align) {
                             // cast from QObject to non QObject + multiple inheritance problem
                             l += sizeof(QObject); }
