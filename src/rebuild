@@ -1,6 +1,7 @@
 rm -fr tmp
 rm *.a
 rm lisp/*.o
+rm ../slime/thread-safe.fas*
 
 ecl -shell make-eql-lib.lisp &&
 qmake eql_lib.pro &&
