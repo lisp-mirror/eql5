@@ -3,7 +3,7 @@
 
 #include <QtHelp>
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
 #else
 #define LIB_EXPORT

@@ -218,7 +218,7 @@
     (|animateClick| (qfind-child *main* (first buttons)) milliseconds)
     (qsingle-shot (* 2 milliseconds) (lambda () (auto (rest buttons) milliseconds)))))
 
-;;; example / eql calculator -a
+;;; example / eql5 calculator -a
 
 (defun qarg (argument)
   (find argument (|arguments.QCoreApplication|) :test 'string=))

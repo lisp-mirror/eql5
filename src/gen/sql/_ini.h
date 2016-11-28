@@ -7,7 +7,7 @@
 Q_DECLARE_METATYPE(QSqlIndex)
 Q_DECLARE_METATYPE(QSqlRecord)
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
 #else
 #define LIB_EXPORT

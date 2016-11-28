@@ -219,12 +219,6 @@ typedef QListIterator<MetaArg>   MetaArgIterator;
 typedef QList<QByteArray>        StrList;
 typedef QList<int>               IntList;
 
-#ifdef Q_PROCESSOR_X86_64
-typedef qulonglong void_star_int;
-#else
-typedef qulong     void_star_int;
-#endif
-
 class QByteArray;
 class QObject;
 class QEvent;

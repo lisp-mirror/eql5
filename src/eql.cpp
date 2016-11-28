@@ -146,7 +146,7 @@ void EQL::exec(QWidget* widget, const QString& lispFile, const QString& slimeHoo
     eval("(in-package :eql)");
     forms << QString("(set-home \"%1\")").arg(home())
           << QString("(defvar *qt-main* (qt-object %1 0 (qid \"%2\")))")
-                     .arg((void_star_int)widget)
+                     .arg((quintptr)widget)
                      .arg(QString(LObjects::vanillaQtSuperClassName(widget->metaObject())))
           << QString("(export '*qt-main*)")
           << QString("(in-package :eql-user)")
