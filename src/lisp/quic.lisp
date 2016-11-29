@@ -38,7 +38,7 @@
           *line-nr* 0)
     (with-open-file (in ui.h :direction :input)
       (with-open-file (out ui.lisp :direction :output :if-exists :supersede)
-        (format out ";;; THIS FILE IS GENERATED (see 'eql -quic')~
+        (format out ";;; THIS FILE IS GENERATED (see 'eql5 -quic')~
                    ~%~
                    ~%(defpackage ~(~S~)~%  (:use :common-lisp :eql)"
                 ui-package)

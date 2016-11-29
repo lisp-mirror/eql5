@@ -1047,8 +1047,8 @@
                          ("setStandardButtons" (logior |QMessageBox.Yes| |QMessageBox.No|))
                          ("setDefaultButton(QMessageBox::StandardButton)" |QMessageBox.No|)
                          ("exec")))))
-          (! "startDetached" "QProcess" "eql" (list "-norc" (or (path-to-server "eql-local-server.fas")
-                                                                (path-to-server "local-server.lisp"))))
+          (! "startDetached" "QProcess" "eql5" (list "-norc" (or (path-to-server "eql-local-server.fas")
+                                                                 (path-to-server "local-server.lisp"))))
           ;; wait max. 15 seconds
           (dotimes (i 150)
             (qprocess-events)
