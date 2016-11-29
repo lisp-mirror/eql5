@@ -51,6 +51,7 @@ use <code>slime-connect</code>) and hit <code>Return</code> 2 times
 <br>
 <h3>Notes</h3>
 <p>All EQL functions are wrapped in <code>qrun*</code> (see <code>eql/slime/thread-safe.lisp</code>), so it's safe to call them either directly from the REPL or using 'eval region' (or from any other ECL thread).</p>
+<p>If the Slime REPL hangs, you can simply try to connect again (losing the old connection): no need to restart Lisp.</p>
 <p>This Slime mode is both convenient and simple to use, but conses a little more for every EQL function call.
 <br>If you absolutely want direct EQL function calls, please see the less convenient <a href="Slime-REPL-hook.htm">Slime REPL Hook</a> mode.</p>
 </br>

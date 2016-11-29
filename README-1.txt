@@ -20,13 +20,25 @@ TESTED WITH
     ECL git 2016-11 / 64 bit (see flag in Makefile)
     Qt 5.7 / 64 bit
 
+  (currently not tested on OSX)
+
+
 
 REQUIREMENTS
 ============
 
-* ECL threads + unicode
-* Qt5
-* /should/ run cross-platform
+  * ECL threads + unicode
+  * Qt >= 5.5
+  * /should/ run cross-platform
+
+  QtWebKit note:
+    If you want QtWebKit included in the official downloads from qt.io archives,
+    you need to choose Qt 5.5, and not later versions!
+    QtWebKit will continue to work with versions > 5.5, but it has to be compiled
+    manually (which is not fun).
+    Since QtWebKit has a better, more native integration with Qt than QtWebEngine,
+    there is currently no plan to switch to QtWebEngine in EQL5 (we would very much
+    miss QWebElement).
 
 
 
@@ -36,7 +48,7 @@ PREPARE
 You can have both old EQL and EQL5 installed in parallel (exe and lib names differ).
 
 If you have both Qt4 and Qt5 installed, you can use the following environment variable
-to switch between the both:
+to switch between the both (Unix):
 
     export QT_SELECT=5
 

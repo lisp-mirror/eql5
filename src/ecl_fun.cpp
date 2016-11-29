@@ -21,7 +21,10 @@ static StrList _cstring_buffer_;
 static const QMetaObject* staticQtMetaObject = QtMetaObject::get();
 
 META_TYPE (T_bool_ok_pointer,                  bool*)
+META_TYPE (T_GLint,                            GLint)
 META_TYPE (T_GLuint,                           GLuint)
+META_TYPE (T_GLenum,                           GLenum)
+META_TYPE (T_GLfloat,                          GLfloat)
 META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
@@ -1199,7 +1202,10 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QVector_QTextLength == n)              p = new QVector<QTextLength>(toQTextLengthVector(l_arg));
         else if(T_QVector_qreal == n)                    p = new QVector<qreal>(toqrealVector(l_arg));
         else if(T_WId == n)                              p = new ulong(toUInt<ulong>(l_arg));
+        else if(T_GLint == n)                            p = new GLint(toInt<GLint>(l_arg));
         else if(T_GLuint == n)                           p = new GLuint(toUInt<GLuint>(l_arg));
+        else if(T_GLenum == n)                           p = new GLenum(toUInt<GLenum>(l_arg));
+        else if(T_GLfloat == n)                          p = new GLfloat(toFloat<GLfloat>(l_arg));
         // module types
         else if((n >= LObjects::T_QHostAddress) &&
                 (n <= LObjects::T_QSslKey)) {
@@ -1347,7 +1353,10 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QVector_QTextLength == n)              l_ret = from_qtextlengthvector(*(QVector<QTextLength>*)p);
             else if(T_QVector_qreal == n)                    l_ret = from_qrealvector(*(QVector<qreal>*)p);
             else if(T_WId == n)                              l_ret = ecl_make_unsigned_integer(*(ulong*)p);
+            else if(T_GLint == n)                            l_ret = ecl_make_integer(*(GLint*)p);
             else if(T_GLuint == n)                           l_ret = ecl_make_unsigned_integer(*(GLuint*)p);
+            else if(T_GLenum == n)                           l_ret = ecl_make_unsigned_integer(*(GLenum*)p);
+            else if(T_GLfloat == n)                          l_ret = ecl_make_singlefloat(*(GLfloat*)p);
             // module types
             else if((n >= LObjects::T_QHostAddress) &&
                     (n <= LObjects::T_QSslKey)) {

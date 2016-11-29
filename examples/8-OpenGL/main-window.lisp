@@ -54,6 +54,10 @@
 (defun grab-frame-buffer ()
   (set-pixmap (|fromImage.QPixmap| (|grabFramebuffer| *gl-widget*))))
 
+(let (empty)
+  (defun clear-pixmap ()
+    (set-pixmap (or empty (setf empty (qnew "QPixmap"))))))
+
 (defun about ()
   (|about.QMessageBox|
     *me*
@@ -72,6 +76,7 @@
          (help-menu (|addMenu| menu-bar (tr "&Help"))))
     ;; file menu
     (add-action file-menu (tr "&Grab Frame Buffer") "Ctrl+G" 'grab-frame-buffer)
+    (add-action file-menu (tr "&Clear Pixmap")      "Ctrl+L" 'clear-pixmap)
     (|addSeparator| file-menu)
     (add-action file-menu (tr "E&xit")              "Ctrl+Q" (lambda () (|close| *me*)))
     ;; help menu
