@@ -21,6 +21,7 @@ static StrList _cstring_buffer_;
 static const QMetaObject* staticQtMetaObject = QtMetaObject::get();
 
 META_TYPE (T_bool_ok_pointer,                  bool*)
+META_TYPE (T_GLuint,                           GLuint)
 META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
@@ -344,7 +345,7 @@ static T toUInt(cl_object l_num) {
         i = fixnnint(l_num); }
     return i; }
 
-static int toUInt(cl_object l_num) {
+static uint toUInt(cl_object l_num) {
     return toUInt<uint>(l_num); }
 
 template<typename T>
@@ -1198,6 +1199,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QVector_QTextLength == n)              p = new QVector<QTextLength>(toQTextLengthVector(l_arg));
         else if(T_QVector_qreal == n)                    p = new QVector<qreal>(toqrealVector(l_arg));
         else if(T_WId == n)                              p = new ulong(toUInt<ulong>(l_arg));
+        else if(T_GLuint == n)                           p = new GLuint(toUInt<GLuint>(l_arg));
         // module types
         else if((n >= LObjects::T_QHostAddress) &&
                 (n <= LObjects::T_QSslKey)) {
@@ -1345,6 +1347,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QVector_QTextLength == n)              l_ret = from_qtextlengthvector(*(QVector<QTextLength>*)p);
             else if(T_QVector_qreal == n)                    l_ret = from_qrealvector(*(QVector<qreal>*)p);
             else if(T_WId == n)                              l_ret = ecl_make_unsigned_integer(*(ulong*)p);
+            else if(T_GLuint == n)                           l_ret = ecl_make_unsigned_integer(*(GLuint*)p);
             // module types
             else if((n >= LObjects::T_QHostAddress) &&
                     (n <= LObjects::T_QSslKey)) {

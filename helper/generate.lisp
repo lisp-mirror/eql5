@@ -110,6 +110,7 @@
     (let ((enum (find #\: type)))
       (when (or (and (qt-class-p type)
                      (not enum))
+                (starts-with "GL" type)
                 (not (or (string= "void" type)
                          enum
                          (upper-case-p (char type 0))
@@ -309,7 +310,8 @@
 (defun add-namespace (name class)
   (unless (empty-string name)
     (if (and class
-             (string/= "Handle" name))
+             (string/= "Handle" name)
+             (not (starts-with "GL" name)))
         (let ((1st (char name 0))
               (templ (position #\< name)))
           (when templ
@@ -1106,6 +1108,7 @@
                     "uchar"
                     "uint"
                     "ulong"
+                    "GLuint"
                     "QByteArray"
                     "QChar"
                     "QFileInfoList"

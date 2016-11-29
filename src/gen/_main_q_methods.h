@@ -3528,7 +3528,7 @@ class EQL_EXPORT Q122 : public Q216 { // QOpenGLWidget
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) { return new LOpenGLWidget(u, x1, x2); }
     Q_INVOKABLE QOpenGLContext* Mcontext(QOpenGLWidget* o) const { return o->context(); }
-    Q_INVOKABLE int MdefaultFramebufferObject(QOpenGLWidget* o) const { return o->defaultFramebufferObject(); }
+    Q_INVOKABLE GLuint MdefaultFramebufferObject(QOpenGLWidget* o) const { return o->defaultFramebufferObject(); }
     Q_INVOKABLE void MdoneCurrent(QOpenGLWidget* o) { o->doneCurrent(); }
     Q_INVOKABLE QSurfaceFormat Mformat(QOpenGLWidget* o) const { return o->format(); }
     Q_INVOKABLE QImage MgrabFramebuffer(QOpenGLWidget* o) { return o->grabFramebuffer(); }
@@ -4375,7 +4375,7 @@ public:
     Q_INVOKABLE void* C(uint u, QOpenGLWindow::UpdateBehavior x1 = QOpenGLWindow::NoPartialUpdate, QWindow* x2 = 0) { return new LOpenGLWindow(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, QOpenGLContext* x1, QOpenGLWindow::UpdateBehavior x2 = QOpenGLWindow::NoPartialUpdate, QWindow* x3 = 0) { return new LOpenGLWindow(u, x1, x2, x3); }
     Q_INVOKABLE QOpenGLContext* Mcontext(QOpenGLWindow* o) const { return o->context(); }
-    Q_INVOKABLE int MdefaultFramebufferObject(QOpenGLWindow* o) const { return o->defaultFramebufferObject(); }
+    Q_INVOKABLE GLuint MdefaultFramebufferObject(QOpenGLWindow* o) const { return o->defaultFramebufferObject(); }
     Q_INVOKABLE void MdoneCurrent(QOpenGLWindow* o) { o->doneCurrent(); }
     Q_INVOKABLE QImage MgrabFramebuffer(QOpenGLWindow* o) { return o->grabFramebuffer(); }
     Q_INVOKABLE bool MisValid(QOpenGLWindow* o) const { return o->isValid(); }

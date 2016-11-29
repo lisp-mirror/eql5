@@ -51,16 +51,8 @@
       (|setWindowTitle| (tr "Grabber"))
       (|resize| (list 400 300)))))
 
-(defun render-into-pixmap ()
-  (let ((size (get-size)))
-    (when (every 'plusp size)
-      (set-pixmap (|grab| *gl-widget* (append '(0 0) size))))))
-
 (defun grab-frame-buffer ()
   (set-pixmap (|fromImage.QPixmap| (|grabFramebuffer| *gl-widget*))))
-
-(defun clear-pixmap ()
-  (set-pixmap (qnew "QPixmap")))
 
 (defun about ()
   (|about.QMessageBox|
@@ -79,11 +71,9 @@
          (file-menu (|addMenu| menu-bar (tr "&File")))
          (help-menu (|addMenu| menu-bar (tr "&Help"))))
     ;; file menu
-    (add-action file-menu (tr "&Render into Pixmap...") "Ctrl+R" 'render-into-pixmap)
-    (add-action file-menu (tr "&Grab Frame Buffer")     "Ctrl+G" 'grab-frame-buffer)
-    (add-action file-menu (tr "&Clear Pixmap")          "Ctrl+L" 'clear-pixmap)
+    (add-action file-menu (tr "&Grab Frame Buffer") "Ctrl+G" 'grab-frame-buffer)
     (|addSeparator| file-menu)
-    (add-action file-menu (tr "E&xit")                  "Ctrl+Q" (lambda () (|close| *me*)))
+    (add-action file-menu (tr "E&xit")              "Ctrl+Q" (lambda () (|close| *me*)))
     ;; help menu
     (add-action help-menu (tr "&About")    nil 'about)
     (add-action help-menu (tr "About &Qt") nil (lambda () (|aboutQt| (qapp))))))
@@ -108,28 +98,6 @@
                  (|maximumViewportSize| *pixmap-label-area*))
       (setf (first size) (1- width)))
     (|resize| *pixmap-label* size)))
-
-(defun get-size ()
-  (let ((text (|getText.QInputDialog|
-                 *me*
-                 (tr "Grabber")
-                 (tr "Enter pixmap size:")
-                 |QLineEdit.Normal|
-                 (format nil "~{~D~^ x ~}" (|size| *gl-widget*))
-                 nil))) ; ok
-    (if (qok)
-        (progn
-          (qlet ((reg-exp "QRegExp(QString)" "([0-9]+) *x *([0-9]+)"))
-            (flet ((cap (n)
-                     (parse-integer (|cap| reg-exp n))))
-              (when (|exactMatch| reg-exp text)
-                (let ((width  (cap 1))
-                      (height (cap 2)))
-                  (when (and (< 0 width  2048)
-                             (< 0 height 2048))
-                    (return-from get-size (list width height)))))))
-          (|size| *gl-widget*))
-        '(0 0))))
 
 (defun start ()
   (ini)
