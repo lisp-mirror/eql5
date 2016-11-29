@@ -524,21 +524,6 @@
    "virtual void changeEvent ( QEvent * )"
    "virtual bool event ( QEvent * )"
    "virtual void paintEvent ( QPaintEvent * )")
-  (("QGLShader" . "QObject"))
-  (("QGLShaderProgram" . "QObject")
-   "virtual bool link ()")
-  (("QGLWidget" . "QWidget")
-   "virtual void glDraw ()"
-   "virtual void glInit ()"
-   "virtual void initializeGL ()"
-   "virtual void initializeOverlayGL ()"
-   "virtual void paintGL ()"
-   "virtual void paintOverlayGL ()"
-   "virtual void resizeGL ( int , int )"
-   "virtual void resizeOverlayGL ( int , int )"
-   "virtual bool event ( QEvent * )"
-   "virtual void paintEvent ( QPaintEvent * )"
-   "virtual void resizeEvent ( QResizeEvent * )")
   (("QGesture" . "QObject"))
   (("QGraphicsAnchor" . "QObject"))
   (("QGraphicsBlurEffect" . "QGraphicsEffect")
@@ -1064,10 +1049,26 @@
    "virtual void childEvent ( QChildEvent * )"
    "virtual void customEvent ( QEvent * )"
    "virtual void timerEvent ( QTimerEvent * )")
+  (("QOpenGLWidget" . "QWidget")
+   "virtual void initializeGL ()"
+   "virtual void paintGL ()"
+   "virtual void resizeGL ( int , int )"
+   "virtual void paintEvent ( QPaintEvent * )"
+   "virtual void resizeEvent ( QResizeEvent * )")
+  (("QOpenGLWindow" . "QPaintDeviceWindow")
+   "virtual void initializeGL ()"
+   "virtual void paintGL ()"
+   "virtual void paintOverGL ()"
+   "virtual void paintUnderGL ()"
+   "virtual void resizeGL ( int , int )"
+   "virtual void paintEvent ( QPaintEvent * )"
+   "virtual void resizeEvent ( QResizeEvent * )")
   (("QPageSetupDialog" . "QDialog")
    "virtual void done ( int )"
    "virtual int exec ()"
    "virtual void setVisible ( bool )")
+  (("QPaintDeviceWindow" . "QWindow")
+   "virtual void paintEvent ( QPaintEvent * )")
   (("QPanGesture" . "QGesture"))
   (("QParallelAnimationGroup" . "QAnimationGroup")
    "virtual int duration () const"
@@ -1179,6 +1180,7 @@
    "virtual void paintEvent ( QPaintEvent * )"
    "virtual void resizeEvent ( QResizeEvent * )"
    "virtual void showEvent ( QShowEvent * )")
+  (("QScreen" . "QObject"))
   (("QScrollArea" . "QAbstractScrollArea")
    "virtual bool focusNextPrevChild ( bool )"
    "virtual QSize sizeHint () const"
@@ -1771,6 +1773,28 @@
    "virtual void deleteWidget ( QWidget * )"
    "virtual bool event ( QEvent * )"
    "virtual bool eventFilter ( QObject * , QEvent * )")
+  (("QWindow" . "QObject")
+   "virtual QObject * focusObject () const"
+   "virtual void exposeEvent ( QExposeEvent * )"
+   "virtual void focusInEvent ( QFocusEvent * )"
+   "virtual void focusOutEvent ( QFocusEvent * )"
+   "virtual void hideEvent ( QHideEvent * )"
+   "virtual void keyPressEvent ( QKeyEvent * )"
+   "virtual void keyReleaseEvent ( QKeyEvent * )"
+   "virtual void mouseDoubleClickEvent ( QMouseEvent * )"
+   "virtual void mouseMoveEvent ( QMouseEvent * )"
+   "virtual void mousePressEvent ( QMouseEvent * )"
+   "virtual void mouseReleaseEvent ( QMouseEvent * )"
+   "virtual void moveEvent ( QMoveEvent * )"
+   "virtual void resizeEvent ( QResizeEvent * )"
+   "virtual void showEvent ( QShowEvent * )"
+   "virtual void tabletEvent ( QTabletEvent * )"
+   "virtual void touchEvent ( QTouchEvent * )"
+   "virtual void wheelEvent ( QWheelEvent * )"
+   "virtual QSurfaceFormat format () const"
+   "virtual QSize size () const"
+   "virtual SurfaceType surfaceType () const"
+   "virtual bool event ( QEvent * )")
   (("QWizard" . "QDialog")
    "virtual int nextId () const"
    "virtual bool validateCurrentPage ()"

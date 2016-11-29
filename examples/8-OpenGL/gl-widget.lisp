@@ -19,7 +19,7 @@
 
 (defconstant +360+ (* 360 16))
 
-(defvar *gl-widget* (qnew "QGLWidget"))
+(defvar *gl-widget* (qnew "QOpenGLWidget"))
 (defvar *timer*     (qnew "QTimer"))
 
 (defparameter *gear1*     0)
@@ -56,7 +56,7 @@
            (setf ,rot angle)
            (when ,changed
              (funcall ,changed angle))
-           (|updateGL| *gl-widget*))))))
+           (|update| *gl-widget*))))))
 
 (set-rotation :x)
 (set-rotation :y)
@@ -116,7 +116,7 @@
 
 (defun advance-gears ()
   (incf *gear1-rot* (* 2 16))
-  (|updateGL| *gl-widget*))
+  (|update| *gl-widget*))
 
 (defun make-gear (reflectance inner-radius outer-radius thickness tooth-size tooth-count)
   (let ((list (gl:gen-lists 1))

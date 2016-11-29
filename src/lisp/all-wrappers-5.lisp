@@ -1,85 +1,7 @@
 (defpackage :eql
   (:export
-   #:|startDetached.QProcess|
-   #:|startDragDistance.QApplication|
-   #:|startDragTime.QApplication|
-   #:|startFrame|
-   #:|startId|
-   #:|startTimer|
-   #:|startValue|
-   #:|started|
-   #:|startingUp.QCoreApplication|
-   #:|start|
-   #:|stateChanged|
-   #:|state|
-   #:|staticInstances.QPluginLoader|
-   #:|staticPlugins.QPluginLoader|
-   #:|statusBarMessage|
-   #:|statusBarVisibilityChangeRequested|
-   #:|statusBar|
-   #:|statusTip|
-   #:|status|
-   #:|stencilBufferSize|
-   #:|stencil|
-   #:|stepBy|
-   #:|stepDown|
-   #:|stepUp|
-   #:|stereo|
-   #:|stickyFocus|
-   #:|stopped|
-   #:|stops|
-   #:|stop|
-   #:|strengthChanged|
-   #:|strength|
-   #:|stretchFactor|
-   #:|stretchLastSection|
-   #:|stretchSectionCount|
-   #:|stretch|
-   #:|strikeOutPos|
-   #:|strikeOut|
-   #:|stringList|
-   #:|stringProperty|
-   #:|string|
-   #:|stripDelimiters|
-   #:|strokePath|
-   #:|style.QApplication|
-   #:|styleHints.QGuiApplication|
-   #:|styleHint|
-   #:|styleName|
-   #:|styleProperty|
-   #:|styleSheet|
-   #:|styleStrategy|
-   #:|styleString(QFont)|
-   #:|styleString(QFontInfo)|
-   #:|styleString|
-   #:|styles|
-   #:|style|
-   #:|subControlRect|
-   #:|subElementRect|
-   #:|subTitleFormat|
-   #:|subTitle|
-   #:|subWidgetRect|
-   #:|subWindowActivated|
-   #:|subWindowList|
-   #:|submitAll|
-   #:|submitPolicy|
-   #:|submit|
-   #:|subscribeToNotification|
-   #:|subscribedToNotifications|
-   #:|substitute.QFont|
-   #:|substitutes.QFont|
-   #:|substitutions.QFont|
-   #:|subtracted|
-   #:|suffix|
-   #:|superClass|
-   #:|supportedActions|
-   #:|supportedCiphers.QSslCertificate|
-   #:|supportedContentTypes|
-   #:|supportedDocumentFormats.QTextDocumentWriter|
-   #:|supportedDragActions|
-   #:|supportedDropActions|
    #:|supportedDuplexModes|
-   #:|supportedEllipticCurves.QSslCertificate|
+   #:|supportedEllipticCurves.QSslConfiguration|
    #:|supportedFormats.QMovie|
    #:|supportedPageSizes|
    #:|supportedResolutions|
@@ -92,9 +14,8 @@
    #:|supportsMessages.QSystemTrayIcon|
    #:|supportsMultipleCopies|
    #:|supportsSelection|
+   #:|surfaceType|
    #:|swallowContextMenuEvent|
-   #:|swapBuffers|
-   #:|swapInterval|
    #:|swapSections|
    #:|swap|
    #:|swipeAngle|
@@ -103,12 +24,12 @@
    #:|sync.QGuiApplication|
    #:|sync|
    #:|system.QLocale|
-   #:|systemCaCertificates.QSslCertificate|
+   #:|systemCaCertificates.QSslConfiguration|
    #:|systemEnvironment.QProcessEnvironment|
    #:|systemEnvironment.QProcess|
    #:|systemFont.QFontDatabase|
    #:|systemMenu|
-   #:|systemProxyForQuery.QNetworkInterface|
+   #:|systemProxyForQuery.QNetworkProxyFactory|
    #:|tabArray|
    #:|tabAt|
    #:|tabBarAutoHide|
@@ -203,9 +124,7 @@
    #:|textValueSelected|
    #:|textValue|
    #:|textWidth|
-   #:|textureCacheLimit.QGLContext|
    #:|textureImage|
-   #:|textureTarget|
    #:|texture|
    #:|text|
    #:|themeName.QIcon|
@@ -386,9 +305,9 @@
    #:|toSubpathPolygons(QMatrix)|
    #:|toSubpathPolygons(QTransform)|
    #:|toSubpathPolygons|
-   #:|toSurfaceFormat.QGLFormat|
    #:|toTableCellFormat|
    #:|toTableFormat|
+   #:|toText|
    #:|toTime(QString,QLocale::FormatType)|
    #:|toTime(QString,QString)|
    #:|toTimeSpec|
@@ -463,6 +382,7 @@
    #:|touchPoints|
    #:|tr.QObject|
    #:|transaction|
+   #:|transformBetween|
    #:|transformOriginPoint|
    #:|transformationAnchor|
    #:|transformationMode|
@@ -473,6 +393,7 @@
    #:|transformed(QTransform...)|
    #:|transformed|
    #:|transform|
+   #:|transientParent|
    #:|transitionType|
    #:|transitions|
    #:|translate(QPoint)|
@@ -520,10 +441,6 @@
    #:|ungrabMouse|
    #:|unifiedTitleAndToolBarOnMac|
    #:|uniformItemSizes|
-   #:|uniformLocation(QByteArray)|
-   #:|uniformLocation(QString)|
-   #:|uniformLocation(const char*)|
-   #:|uniformLocation|
    #:|uniformRowHeights|
    #:|uniqueId.QAccessible|
    #:|uniqueId|
@@ -549,20 +466,20 @@
    #:|update(QRect)|
    #:|update(QRegion)|
    #:|updateAccessibility.QAccessible|
+   #:|updateBehavior|
    #:|updateBlock|
    #:|updateBoundingRect|
    #:|updateCells|
    #:|updateCell|
-   #:|updateDynamicTexture|
+   #:|updateCookie|
    #:|updateEditorData|
    #:|updateEditorGeometries|
    #:|updateEditorGeometry|
-   #:|updateGL|
    #:|updateGeometries|
    #:|updateGeometry|
    #:|updateInterval|
+   #:|updateMetaData|
    #:|updateMicroFocus|
-   #:|updateOverlayGL|
    #:|updatePositionDependentActions|
    #:|updatePreviewWidget|
    #:|updatePreview|
@@ -573,12 +490,14 @@
    #:|updated|
    #:|updatesEnabled|
    #:|update|
+   #:|uploadProgress|
    #:|urlChanged|
    #:|urlSelected|
    #:|urlsSelected|
    #:|urls|
    #:|url|
    #:|useDesignMetrics|
+   #:|usedBits|
    #:|userData|
    #:|userDateChanged|
    #:|userInfo|
@@ -608,6 +527,8 @@
    #:|valuePropertyName|
    #:|value|
    #:|vector|
+   #:|verify.QSslCertificate|
+   #:|version|
    #:|verticalAlignment|
    #:|verticalDirection|
    #:|verticalHeaderFormat|
@@ -635,8 +556,13 @@
    #:|viewport|
    #:|views|
    #:|view|
+   #:|virtualGeometryChanged|
+   #:|virtualGeometry|
+   #:|virtualSiblings|
+   #:|virtualSize|
    #:|visibilityChanged|
    #:|visibilityState|
+   #:|visibility|
    #:|visibleChanged|
    #:|visibleRegion|
    #:|visitedPages|
@@ -654,6 +580,7 @@
    #:|waitForConnected|
    #:|waitForDisconnected|
    #:|waitForFinished|
+   #:|waitForNewConnection|
    #:|waitForReadyRead|
    #:|waitForStarted|
    #:|wakeUp|
@@ -681,7 +608,6 @@
    #:|width|
    #:|winId|
    #:|windowCloseRequested|
-   #:|windowCreated|
    #:|windowFilePath|
    #:|windowFlags|
    #:|windowFrameGeometry|
@@ -715,10 +641,12 @@
    #:|wrapAround|
    #:|wrapMode|
    #:|wrapping|
+   #:|writableLocation.QStandardPaths|
    #:|write(QByteArray)|
    #:|write(QTextDocumentFragment)|
    #:|write(const QTextDocument*)|
    #:|write(const char*)|
+   #:|writeDatagram|
    #:|write|
    #:|writingSystemName.QFontDatabase|
    #:|writingSystemSample.QFontDatabase|

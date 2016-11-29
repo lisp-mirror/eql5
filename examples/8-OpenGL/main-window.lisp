@@ -54,10 +54,10 @@
 (defun render-into-pixmap ()
   (let ((size (get-size)))
     (when (every 'plusp size)
-      (set-pixmap (|renderPixmap| *gl-widget* (first size) (second size))))))
+      (set-pixmap (|grab| *gl-widget* (append '(0 0) size))))))
 
 (defun grab-frame-buffer ()
-  (set-pixmap (|fromImage.QPixmap| (|grabFrameBuffer| *gl-widget*))))
+  (set-pixmap (|fromImage.QPixmap| (|grabFramebuffer| *gl-widget*))))
 
 (defun clear-pixmap ()
   (set-pixmap (qnew "QPixmap")))

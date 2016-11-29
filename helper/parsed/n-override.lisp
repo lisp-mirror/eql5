@@ -79,19 +79,6 @@
   (("QFontDatabase" . NIL))
   (("QFontInfo" . NIL))
   (("QFontMetrics" . NIL))
-  (("QGLColormap" . NIL))
-  (("QGLContext" . NIL)
-   "virtual bool create ( const QGLContext * = 0 )"
-   "virtual void doneCurrent ()"
-   "virtual void makeCurrent ()"
-   "virtual void swapBuffers () const"
-   "virtual bool chooseContext ( const QGLContext * = 0 )")
-  (("QGLFormat" . NIL))
-  (("QGLFramebufferObject" . "QPaintDevice")
-   "virtual int metric ( PaintDeviceMetric ) const")
-  (("QGLFramebufferObjectFormat" . NIL))
-  (("QGLPixelBuffer" . "QPaintDevice")
-   "virtual int metric ( PaintDeviceMetric ) const")
   (("QGestureEvent" . "QEvent"))
   (("QGradient" . NIL))
   (("QGraphicsAnchorLayout" . "QGraphicsLayout")
@@ -287,6 +274,9 @@
    "virtual QList<QNetworkProxy> queryProxy ( const QNetworkProxyQuery & = QNetworkProxyQuery() ) = 0")
   (("QNetworkProxyQuery" . NIL))
   (("QNetworkRequest" . NIL))
+  (("QOpenGLPaintDevice" . "QPaintDevice")
+   "virtual void ensureActiveTarget ()"
+   "virtual int metric ( QPaintDevice::PaintDeviceMetric ) const")
   (("QPagedPaintDevice" . "QPaintDevice")
    "virtual bool newPage () = 0"
    "virtual void setPageSize ( PageSize )"
@@ -314,6 +304,7 @@
   (("QReadWriteLock" . NIL))
   (("QRegExp" . NIL))
   (("QRegion" . NIL))
+  (("QRegularExpression" . NIL))
   (("QResizeEvent" . "QEvent"))
   (("QRunnable" . NIL)
    "virtual void run () = 0")
@@ -372,6 +363,7 @@
    "virtual QVariant data ( int = Qt::UserRole + 1 ) const"
    "virtual void setData ( const QVariant & , int = Qt::UserRole + 1 )"
    "virtual int type () const")
+  (("QStandardPaths" . NIL))
   (("QStatusTipEvent" . "QEvent"))
   (("QStyleOption" . NIL))
   (("QStyleOptionGraphicsItem" . "QStyleOption"))

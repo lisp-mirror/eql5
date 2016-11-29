@@ -1,13 +1,16 @@
 (defpackage :eql
   (:export
+   #:|abortHostLookup.QHostInfo|
    #:|abort|
    #:|about.QMessageBox|
    #:|aboutQt.QMessageBox|
    #:|aboutQt|
    #:|aboutToActivate|
    #:|aboutToClose|
+   #:|aboutToCompose|
    #:|aboutToHide|
    #:|aboutToQuit|
+   #:|aboutToResize|
    #:|aboutToShow|
    #:|absoluteDir|
    #:|absoluteFilePath|
@@ -16,6 +19,7 @@
    #:|accept(QGesture*)|
    #:|accept(Qt::GestureType)|
    #:|acceptDrops|
+   #:|acceptError|
    #:|acceptHoverEvents|
    #:|acceptMode|
    #:|acceptProposedAction|
@@ -29,8 +33,6 @@
    #:|accessibleInterface|
    #:|accessibleName|
    #:|accessibleText|
-   #:|accumBufferSize|
-   #:|accum|
    #:|acquire|
    #:|actionAt|
    #:|actionChanged|
@@ -126,6 +128,7 @@
    #:|addPaths|
    #:|addPath|
    #:|addPause|
+   #:|addPendingConnection|
    #:|addPermanentWidget|
    #:|addPixmap|
    #:|addPolygon|
@@ -147,12 +150,6 @@
    #:|addSecs|
    #:|addSection|
    #:|addSeparator|
-   #:|addShaderFromSourceCode(QGLShader::ShaderType,QByteArray)|
-   #:|addShaderFromSourceCode(QGLShader::ShaderType,QString)|
-   #:|addShaderFromSourceCode(QGLShader::ShaderType,const char*)|
-   #:|addShaderFromSourceCode|
-   #:|addShaderFromSourceFile|
-   #:|addShader|
    #:|addSimpleText|
    #:|addSpacerItem|
    #:|addSpacing|
@@ -179,21 +176,24 @@
    #:|addYears|
    #:|added|
    #:|addressEntries|
+   #:|addresses|
    #:|add|
    #:|adjoint|
    #:|adjustSize|
    #:|adjusted|
    #:|advance|
    #:|alert.QApplication|
+   #:|alert|
    #:|algorithm|
    #:|aliases|
    #:|alignedRect.QStyle|
    #:|alignment|
-   #:|allAddresses.QNetworkCacheMetaData|
+   #:|allAddresses.QNetworkInterface|
    #:|allColumnsShowFocus|
+   #:|allCookies|
    #:|allFormats|
    #:|allGray|
-   #:|allInterfaces.QNetworkCacheMetaData|
+   #:|allInterfaces.QNetworkInterface|
    #:|allKeys|
    #:|allOrigins.QWebSecurityOrigin|
    #:|allWidgets.QApplication|
@@ -203,7 +203,6 @@
    #:|allowedNextProtocols|
    #:|allowsErrorInteraction|
    #:|allowsInteraction|
-   #:|alphaBufferSize|
    #:|alphaF|
    #:|alpha|
    #:|alternateBase|
@@ -217,6 +216,7 @@
    #:|anchorNames|
    #:|anchor|
    #:|angleAtPercent|
+   #:|angleBetween|
    #:|angleChanged|
    #:|angleDelta|
    #:|angle|
@@ -251,7 +251,7 @@
    #:|applicationNameChanged|
    #:|applicationName|
    #:|applicationPid.QCoreApplication|
-   #:|applicationProxy.QNetworkCookie|
+   #:|applicationProxy.QNetworkProxy|
    #:|applicationState.QGuiApplication|
    #:|applicationStateChanged|
    #:|applicationVersion.QCoreApplication|
@@ -259,7 +259,6 @@
    #:|applyTo|
    #:|arcMoveTo|
    #:|arcTo|
-   #:|areSharing.QGLContext|
    #:|arguments.QCoreApplication|
    #:|arguments|
    #:|arrowType|
@@ -271,18 +270,13 @@
    #:|atBlockStart|
    #:|atEnd|
    #:|atStart|
-   #:|attachment|
-   #:|attributeLocation(QByteArray)|
-   #:|attributeLocation(QString)|
-   #:|attributeLocation(const char*)|
-   #:|attributeLocation|
    #:|attributeNS|
    #:|attributeNames|
    #:|attribute|
    #:|at|
+   #:|authenticationMethod|
    #:|authenticationRequired|
    #:|authority|
-   #:|autoBufferSwap|
    #:|autoClose|
    #:|autoDefault|
    #:|autoDelete|
@@ -303,12 +297,16 @@
    #:|availableGeometry(QPoint)|
    #:|availableGeometry(const QWidget*)|
    #:|availableGeometry(int)|
+   #:|availableGeometryChanged|
    #:|availableGeometry|
    #:|availableMibs.QTextCodec|
    #:|availablePrinterNames.QPrinterInfo|
    #:|availableRedoSteps|
    #:|availableSizes|
+   #:|availableSize|
    #:|availableUndoSteps|
+   #:|availableVirtualGeometry|
+   #:|availableVirtualSize|
    #:|available|
    #:|averageCharWidth|
    #:|axisChanged|
@@ -364,18 +362,6 @@
    #:|bind(QHostAddress...)|
    #:|bind(ushort)|
    #:|bind(ushort...)|
-   #:|bindAttributeLocation(QByteArray...)|
-   #:|bindAttributeLocation(QString...)|
-   #:|bindAttributeLocation(const char*...)|
-   #:|bindAttributeLocation|
-   #:|bindDefault.QGLFramebufferObject|
-   #:|bindTexture(QImage)|
-   #:|bindTexture(QImage...)|
-   #:|bindTexture(QPixmap)|
-   #:|bindTexture(QPixmap...)|
-   #:|bindTexture(QString)|
-   #:|bindTexture|
-   #:|bindToDynamicTexture|
    #:|bindValue(QString...)|
    #:|bindValue(int...)|
    #:|bindValueType(QString)|
@@ -388,7 +374,6 @@
    #:|bitmap|
    #:|blackF|
    #:|black|
-   #:|blitFramebuffer.QGLFramebufferObject|
    #:|blockBoundingGeometry|
    #:|blockBoundingRect|
    #:|blockCharFormat|
@@ -400,7 +385,6 @@
    #:|blockNumber|
    #:|blockSignals|
    #:|block|
-   #:|blueBufferSize|
    #:|blueF|
    #:|blue|
    #:|blurHintsChanged|
@@ -437,6 +421,7 @@
    #:|boundingRegion|
    #:|boundsOnElement|
    #:|brightText|
+   #:|broadcast|
    #:|brushOrigin|
    #:|brushProperty|
    #:|brush|
@@ -472,10 +457,12 @@
    #:|bytesWritten|
    #:|c.QLocale|
    #:|caCertificates|
+   #:|cacheDirectory|
    #:|cacheEnabled|
    #:|cacheKey|
    #:|cacheLimit.QPixmapCache|
    #:|cacheMode|
+   #:|cacheSize|
    #:|cache|
    #:|caching|
    #:|calendarPopup|
@@ -670,7 +657,6 @@
    #:|colorSelected|
    #:|colorSpec.QApplication|
    #:|colorTable|
-   #:|colormap|
    #:|color|
    #:|columnAlignment|
    #:|columnAt|
@@ -709,11 +695,6 @@
    #:|commitTransaction|
    #:|commit|
    #:|commonAncestorItem|
-   #:|compileSourceCode(QByteArray)|
-   #:|compileSourceCode(QString)|
-   #:|compileSourceCode(const char*)|
-   #:|compileSourceCode|
-   #:|compileSourceFile|
    #:|completeBaseName|
    #:|completeChanged|
    #:|completeSuffix|
@@ -735,6 +716,9 @@
    #:|connectToHost(QString...)|
    #:|connectToHostEncrypted|
    #:|connectToHost|
+   #:|connectToServer(QLocalSocket::OpenMode)|
+   #:|connectToServer(QString)|
+   #:|connectToServer|
    #:|connected|
    #:|connectionNames.QSqlDatabase|
    #:|connectionName|
@@ -749,6 +733,8 @@
    #:|contains|
    #:|contentItemAt|
    #:|contentOffset|
+   #:|contentOrientationChanged|
+   #:|contentOrientation|
    #:|contentsChanged|
    #:|contentsChange|
    #:|contentsCreated|
@@ -767,10 +753,10 @@
    #:|convertToFormat(QImage::Format,QVector<QRgb>)|
    #:|convertToFormat(QImage::Format,Qt::ImageConversionFlags)|
    #:|convertToFormat|
-   #:|convertToGLFormat.QGLWidget|
    #:|convertTo|
    #:|convert|
    #:|cookieJar|
+   #:|cookiesForUrl|
    #:|coordinateMode|
    #:|copy.QFile|
    #:|copyAvailable|
@@ -830,7 +816,6 @@
    #:|currentColumnChanged|
    #:|currentColumn|
    #:|currentCompletion|
-   #:|currentContext.QGLContext|
    #:|currentData|
    #:|currentDate.QDate|
    #:|currentDateTime.QDateTime|
@@ -940,7 +925,7 @@
    #:|defaultAlignment|
    #:|defaultAnimations|
    #:|defaultButton|
-   #:|defaultConfiguration.QSslCertificate|
+   #:|defaultConfiguration.QSslConfiguration|
    #:|defaultCursorMoveStyle|
    #:|defaultDepth.QPixmap|
    #:|defaultDropAction|
@@ -948,10 +933,9 @@
    #:|defaultFactory.QItemEditorFactory|
    #:|defaultFamily|
    #:|defaultFont|
-   #:|defaultFormat.QGLFormat|
    #:|defaultFormat.QSettings|
+   #:|defaultFramebufferObject|
    #:|defaultInterface.QWebHistoryInterface|
-   #:|defaultOverlayFormat.QGLFormat|
    #:|defaultPageSize|
    #:|defaultPrinterName.QPrinterInfo|
    #:|defaultSectionSize|
@@ -967,13 +951,12 @@
    #:|defaultWidget|
    #:|deleteAccessibleInterface.QAccessible|
    #:|deleteChar|
+   #:|deleteCookie|
    #:|deleteLater|
    #:|deletePreviousChar|
    #:|deleteResource|
-   #:|deleteTexture|
    #:|delta|
    #:|del|
-   #:|depthBufferSize|
    #:|depth|
    #:|descent|
    #:|description|
@@ -987,13 +970,12 @@
    #:|detach|
    #:|detailedText|
    #:|determinant|
-   #:|deviceIsPixmap|
    #:|devicePixelRatio|
    #:|deviceTransform|
    #:|device|
+   #:|digest|
    #:|digitCount|
    #:|dirName|
-   #:|directRendering|
    #:|directionChanged|
    #:|direction|
    #:|directories|
@@ -1005,11 +987,9 @@
    #:|directory|
    #:|dirtyRegionOffset|
    #:|dir|
-   #:|disableAttributeArray(const char*)|
-   #:|disableAttributeArray(int)|
-   #:|disableAttributeArray|
    #:|discardCommand|
    #:|disconnectFromHost|
+   #:|disconnectFromServer|
    #:|disconnected|
    #:|display(QString)|
    #:|display(double)|
@@ -1017,6 +997,7 @@
    #:|displayColumn|
    #:|displayFormat|
    #:|displayIntegerBase|
+   #:|displayName.QStandardPaths|
    #:|displayName|
    #:|displayText|
    #:|displayedSections|
@@ -1049,7 +1030,6 @@
    #:|dotProduct.QVector4D|
    #:|dotsPerMeterX|
    #:|dotsPerMeterY|
-   #:|doubleBuffer|
    #:|doubleClickInterval.QApplication|
    #:|doubleClicked|
    #:|doubleDecimals|
@@ -1059,6 +1039,7 @@
    #:|doubleValueChanged|
    #:|doubleValueSelected|
    #:|doubleValue|
+   #:|downloadProgress|
    #:|downloadRequested|
    #:|dragCursor|
    #:|dragDropMode|
@@ -1159,9 +1140,6 @@
    #:|drawText(QRectF,int...)|
    #:|drawText(QRectF...)|
    #:|drawText(int...)|
-   #:|drawTexture(QPointF...)|
-   #:|drawTexture(QRectF...)|
-   #:|drawTexture|
    #:|drawText|
    #:|drawTiledPixmap(QRect...)|
    #:|drawTiledPixmap(QRectF...)|
@@ -1196,10 +1174,32 @@
    #:|editorDestroyed|
    #:|editorEvent|
    #:|edit|
+   #:|effectiveDate|
    #:|effectiveOpacity|
    #:|effectiveSizeHint|
    #:|effectiveWinId|
-   #:|elapsed|))
+   #:|elapsed|
+   #:|elementCount|
+   #:|elementExists|
+   #:|elementId|
+   #:|element|
+   #:|elideMode|
+   #:|elidedText|
+   #:|ellipticCurves|
+   #:|emitDataChanged|
+   #:|emitSelectionChanged|
+   #:|emptyLabel|
+   #:|enablePersistentStorage.QWebSettings|
+   #:|enabledChanged|
+   #:|encloseContentsWith(QString)|
+   #:|encloseContentsWith(QWebElement)|
+   #:|encloseContentsWith|
+   #:|encloseWith(QString)|
+   #:|encloseWith(QWebElement)|
+   #:|encloseWith|
+   #:|enclosingBlockElement|
+   #:|encodeName.QFile|
+   #:|encrypted|))
 
 (in-package :eql)
 

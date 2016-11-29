@@ -3,6 +3,10 @@ rm *.a
 rm lisp/*.o
 rm ../slime/thread-safe.fas*
 
+cd lisp
+ecl -compile ecl-readline.lisp
+cd ..
+
 ecl -shell make-eql-lib.lisp &&
 qmake eql_lib.pro &&
 make &&
@@ -16,8 +20,6 @@ qmake module_help.pro &&
 make &&
 qmake module_network.pro &&
 make &&
-qmake module_opengl.pro &&
-make &&
 qmake module_sql.pro &&
 make &&
 qmake module_svg.pro &&
@@ -25,6 +27,4 @@ make &&
 qmake module_webkit.pro &&
 make
 
-cd lisp
-ecl -compile ecl-readline.lisp
-
+echo OK

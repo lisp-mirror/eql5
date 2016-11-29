@@ -13,7 +13,7 @@ QT_BEGIN_NAMESPACE
 
 class LGraphicsSvgItem : public QGraphicsSvgItem {
     Q_OBJECT
-    friend class Q76;
+    friend class Q73;
 public:
     LGraphicsSvgItem(uint u, QGraphicsItem* x1 = 0) : QGraphicsSvgItem(x1), unique(u) {}
     LGraphicsSvgItem(uint u, const QString& x1, QGraphicsItem* x2 = 0) : QGraphicsSvgItem(x1, x2), unique(u) {}
@@ -21,9 +21,9 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    QRectF boundingRect() const { quint64 id = LObjects::override_id(unique, 262); void* fun = LObjects::overrideFun(id); QRectF ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 262, 0, id).value<QRectF>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QGraphicsSvgItem::boundingRect(); } return ret; }
-    void paint(QPainter* x1, const QStyleOptionGraphicsItem* x2, QWidget* x3 = 0) { quint64 id = LObjects::override_id(unique, 233); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 233, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QGraphicsSvgItem::paint(x1, x2, x3); }}
-    int type() const { quint64 id = LObjects::override_id(unique, 235); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 235, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QGraphicsSvgItem::type(); } return ret; }
+    QRectF boundingRect() const { quint64 id = LObjects::override_id(unique, 253); void* fun = LObjects::overrideFun(id); QRectF ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 253, 0, id).value<QRectF>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QGraphicsSvgItem::boundingRect(); } return ret; }
+    void paint(QPainter* x1, const QStyleOptionGraphicsItem* x2, QWidget* x3 = 0) { quint64 id = LObjects::override_id(unique, 224); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 224, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QGraphicsSvgItem::paint(x1, x2, x3); }}
+    int type() const { quint64 id = LObjects::override_id(unique, 226); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 226, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QGraphicsSvgItem::type(); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QGraphicsSvgItem::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QGraphicsSvgItem::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QGraphicsSvgItem::customEvent(x1); }}
@@ -32,7 +32,7 @@ public:
 
 class LSvgRenderer : public QSvgRenderer {
     Q_OBJECT
-    friend class Q172;
+    friend class Q173;
 public:
     LSvgRenderer(uint u, QObject* x1 = 0) : QSvgRenderer(x1), unique(u) {}
     LSvgRenderer(uint u, const QString& x1, QObject* x2 = 0) : QSvgRenderer(x1, x2), unique(u) {}
@@ -49,7 +49,7 @@ public:
 
 class LSvgWidget : public QSvgWidget {
     Q_OBJECT
-    friend class Q173;
+    friend class Q174;
 public:
     LSvgWidget(uint u, QWidget* x1 = 0) : QSvgWidget(x1), unique(u) {}
     LSvgWidget(uint u, const QString& x1, QWidget* x2 = 0) : QSvgWidget(x1, x2), unique(u) {}

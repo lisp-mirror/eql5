@@ -11,6 +11,7 @@ Q_DECLARE_METATYPE(QList<QAction*>)
 Q_DECLARE_METATYPE(QList<QByteArray>)
 Q_DECLARE_METATYPE(QPainterPath)
 Q_DECLARE_METATYPE(QStyleOptionViewItem)
+Q_DECLARE_METATYPE(QSurfaceFormat)
 Q_DECLARE_METATYPE(QTableWidgetSelectionRange)
 Q_DECLARE_METATYPE(QTextBlock)
 Q_DECLARE_METATYPE(QTextCharFormat)
@@ -37,12 +38,6 @@ typedef cl_object (*To_lisp_arg)(int, void*);
 
 class EQL_EXPORT LObjects {
 public:
-    static int T_GLenum;
-    static int T_GLint;
-    static int T_GLfloat;
-    static int T_GLuint;
-    static int T_QGLFormat;
-    static int T_QGLFramebufferObjectFormat;
     static int T_QHostAddress;
     static int T_QHostInfo;
     static int T_QNetworkCacheMetaData;
@@ -115,29 +110,21 @@ public:
 
     static StaticMetaObject staticMetaObject_help;
     static StaticMetaObject staticMetaObject_network;
-    static StaticMetaObject staticMetaObject_opengl;
     static StaticMetaObject staticMetaObject_sql;
     static StaticMetaObject staticMetaObject_svg;
-    static StaticMetaObject staticMetaObject_test;
     static StaticMetaObject staticMetaObject_webkit;
     static DeleteNObject deleteNObject_help;
     static DeleteNObject deleteNObject_network;
-    static DeleteNObject deleteNObject_opengl;
     static DeleteNObject deleteNObject_sql;
     static DeleteNObject deleteNObject_svg;
-    static DeleteNObject deleteNObject_test;
     static DeleteNObject deleteNObject_webkit;
     static Override override_help;
     static Override override_network;
-    static Override override_opengl;
     static Override override_sql;
     static Override override_svg;
-    static Override override_test;
     static Override override_webkit;
     static ToMetaArg toMetaArg_network;
     static To_lisp_arg to_lisp_arg_network;
-    static ToMetaArg toMetaArg_opengl;
-    static To_lisp_arg to_lisp_arg_opengl;
     static ToMetaArg toMetaArg_sql;
     static To_lisp_arg to_lisp_arg_sql;
     static ToMetaArg toMetaArg_webkit;

@@ -1199,10 +1199,6 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QVector_qreal == n)                    p = new QVector<qreal>(toqrealVector(l_arg));
         else if(T_WId == n)                              p = new ulong(toUInt<ulong>(l_arg));
         // module types
-        else if((n >= LObjects::T_GLenum) &&
-                (n <= LObjects::T_QGLFramebufferObjectFormat)) {
-            if(LObjects::toMetaArg_opengl) {
-                p = LObjects::toMetaArg_opengl(n, l_arg); }}
         else if((n >= LObjects::T_QHostAddress) &&
                 (n <= LObjects::T_QSslKey)) {
             if(LObjects::toMetaArg_network) {
@@ -1350,10 +1346,6 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QVector_qreal == n)                    l_ret = from_qrealvector(*(QVector<qreal>*)p);
             else if(T_WId == n)                              l_ret = ecl_make_unsigned_integer(*(ulong*)p);
             // module types
-            else if((n >= LObjects::T_GLenum) &&
-                    (n <= LObjects::T_QGLFramebufferObjectFormat)) {
-                if(LObjects::to_lisp_arg_opengl) {
-                    l_ret = LObjects::to_lisp_arg_opengl(n, p); }}
             else if((n >= LObjects::T_QHostAddress) &&
                     (n <= LObjects::T_QSslKey)) {
                 if(LObjects::to_lisp_arg_network) {
@@ -2246,7 +2238,7 @@ cl_object qclear_event_filters() {
 
 cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    /// args: (module &optional quiet)
-   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:network :opengl :sql</code>
+   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:network :sql</code>
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
@@ -2286,13 +2278,6 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
                         LObjects::override_network = over;
                         LObjects::toMetaArg_network = metaArg;
                         LObjects::to_lisp_arg_network = lispArg;
-                        return l_name; }
-                    else if("opengl" == name) {
-                        LObjects::staticMetaObject_opengl = meta;
-                        LObjects::deleteNObject_opengl = del;
-                        LObjects::override_opengl = over;
-                        LObjects::toMetaArg_opengl = metaArg;
-                        LObjects::to_lisp_arg_opengl = lispArg;
                         return l_name; }
                     else if("sql" == name) {
                         LObjects::staticMetaObject_sql = meta;

@@ -1,244 +1,10 @@
 (in-package :eql)
 
-(defun |startDetached.QProcess| (&rest arguments)
-  (%qinvoke-method "QProcess" nil "startDetached" arguments))
-
-(defun |startDragDistance.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "startDragDistance" arguments))
-
-(defun |startDragTime.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "startDragTime" arguments))
-
-(defun |startFrame| (object &rest arguments)
-  (%qinvoke-method object nil "startFrame" arguments))
-
-(defun |startId| (object &rest arguments)
-  (%qinvoke-method object nil "startId" arguments))
-
-(defun |startTimer| (object &rest arguments)
-  (%qinvoke-method object nil "startTimer" arguments))
-
-(defun |startValue| (object &rest arguments)
-  (%qinvoke-method object nil "startValue" arguments))
-
-(defun |started| (object &rest arguments)
-  (%qinvoke-method object nil "started" arguments))
-
-(defun |startingUp.QCoreApplication| (&rest arguments)
-  (%qinvoke-method "QCoreApplication" nil "startingUp" arguments))
-
-(defun |start| (object &rest arguments)
-  (%qinvoke-method object nil "start" arguments))
-
-(defun |stateChanged| (object &rest arguments)
-  (%qinvoke-method object nil "stateChanged" arguments))
-
-(defun |state| (object &rest arguments)
-  (%qinvoke-method object nil "state" arguments))
-
-(defun |staticInstances.QPluginLoader| (&rest arguments)
-  (%qinvoke-method "QPluginLoader" nil "staticInstances" arguments))
-
-(defun |staticPlugins.QPluginLoader| (&rest arguments)
-  (%qinvoke-method "QPluginLoader" nil "staticPlugins" arguments))
-
-(defun |statusBarMessage| (object &rest arguments)
-  (%qinvoke-method object nil "statusBarMessage" arguments))
-
-(defun |statusBarVisibilityChangeRequested| (object &rest arguments)
-  (%qinvoke-method object nil "statusBarVisibilityChangeRequested" arguments))
-
-(defun |statusBar| (object &rest arguments)
-  (%qinvoke-method object nil "statusBar" arguments))
-
-(defun |statusTip| (object &rest arguments)
-  (%qinvoke-method object nil "statusTip" arguments))
-
-(defun |status| (object &rest arguments)
-  (%qinvoke-method object nil "status" arguments))
-
-(defun |stencilBufferSize| (object &rest arguments)
-  (%qinvoke-method object nil "stencilBufferSize" arguments))
-
-(defun |stencil| (object &rest arguments)
-  (%qinvoke-method object nil "stencil" arguments))
-
-(defun |stepBy| (object &rest arguments)
-  (%qinvoke-method object nil "stepBy" arguments))
-
-(defun |stepDown| (object &rest arguments)
-  (%qinvoke-method object nil "stepDown" arguments))
-
-(defun |stepUp| (object &rest arguments)
-  (%qinvoke-method object nil "stepUp" arguments))
-
-(defun |stereo| (object &rest arguments)
-  (%qinvoke-method object nil "stereo" arguments))
-
-(defun |stickyFocus| (object &rest arguments)
-  (%qinvoke-method object nil "stickyFocus" arguments))
-
-(defun |stopped| (object &rest arguments)
-  (%qinvoke-method object nil "stopped" arguments))
-
-(defun |stops| (object &rest arguments)
-  (%qinvoke-method object nil "stops" arguments))
-
-(defun |stop| (object &rest arguments)
-  (%qinvoke-method object nil "stop" arguments))
-
-(defun |strengthChanged| (object &rest arguments)
-  (%qinvoke-method object nil "strengthChanged" arguments))
-
-(defun |strength| (object &rest arguments)
-  (%qinvoke-method object nil "strength" arguments))
-
-(defun |stretchFactor| (object &rest arguments)
-  (%qinvoke-method object nil "stretchFactor" arguments))
-
-(defun |stretchLastSection| (object &rest arguments)
-  (%qinvoke-method object nil "stretchLastSection" arguments))
-
-(defun |stretchSectionCount| (object &rest arguments)
-  (%qinvoke-method object nil "stretchSectionCount" arguments))
-
-(defun |stretch| (object &rest arguments)
-  (%qinvoke-method object nil "stretch" arguments))
-
-(defun |strikeOutPos| (object &rest arguments)
-  (%qinvoke-method object nil "strikeOutPos" arguments))
-
-(defun |strikeOut| (object &rest arguments)
-  (%qinvoke-method object nil "strikeOut" arguments))
-
-(defun |stringList| (object &rest arguments)
-  (%qinvoke-method object nil "stringList" arguments))
-
-(defun |stringProperty| (object &rest arguments)
-  (%qinvoke-method object nil "stringProperty" arguments))
-
-(defun |string| (object &rest arguments)
-  (%qinvoke-method object nil "string" arguments))
-
-(defun |stripDelimiters| (object &rest arguments)
-  (%qinvoke-method object nil "stripDelimiters" arguments))
-
-(defun |strokePath| (object &rest arguments)
-  (%qinvoke-method object nil "strokePath" arguments))
-
-(defun |style.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "style" arguments))
-
-(defun |styleHints.QGuiApplication| (&rest arguments)
-  (%qinvoke-method "QGuiApplication" nil "styleHints" arguments))
-
-(defun |styleHint| (object &rest arguments)
-  (%qinvoke-method object nil "styleHint" arguments))
-
-(defun |styleName| (object &rest arguments)
-  (%qinvoke-method object nil "styleName" arguments))
-
-(defun |styleProperty| (object &rest arguments)
-  (%qinvoke-method object nil "styleProperty" arguments))
-
-(defun |styleSheet| (object &rest arguments)
-  (%qinvoke-method object nil "styleSheet" arguments))
-
-(defun |styleStrategy| (object &rest arguments)
-  (%qinvoke-method object nil "styleStrategy" arguments))
-
-(defun |styleString(QFont)| (object &rest arguments)
-  (%qinvoke-method object nil "styleString(QFont)" arguments))
-
-(defun |styleString(QFontInfo)| (object &rest arguments)
-  (%qinvoke-method object nil "styleString(QFontInfo)" arguments))
-
-(defun |styleString| (object &rest arguments)
-  (%qinvoke-method object nil "styleString" arguments))
-
-(defun |styles| (object &rest arguments)
-  (%qinvoke-method object nil "styles" arguments))
-
-(defun |style| (object &rest arguments)
-  (%qinvoke-method object nil "style" arguments))
-
-(defun |subControlRect| (object &rest arguments)
-  (%qinvoke-method object nil "subControlRect" arguments))
-
-(defun |subElementRect| (object &rest arguments)
-  (%qinvoke-method object nil "subElementRect" arguments))
-
-(defun |subTitleFormat| (object &rest arguments)
-  (%qinvoke-method object nil "subTitleFormat" arguments))
-
-(defun |subTitle| (object &rest arguments)
-  (%qinvoke-method object nil "subTitle" arguments))
-
-(defun |subWidgetRect| (object &rest arguments)
-  (%qinvoke-method object nil "subWidgetRect" arguments))
-
-(defun |subWindowActivated| (object &rest arguments)
-  (%qinvoke-method object nil "subWindowActivated" arguments))
-
-(defun |subWindowList| (object &rest arguments)
-  (%qinvoke-method object nil "subWindowList" arguments))
-
-(defun |submitAll| (object &rest arguments)
-  (%qinvoke-method object nil "submitAll" arguments))
-
-(defun |submitPolicy| (object &rest arguments)
-  (%qinvoke-method object nil "submitPolicy" arguments))
-
-(defun |submit| (object &rest arguments)
-  (%qinvoke-method object nil "submit" arguments))
-
-(defun |subscribeToNotification| (object &rest arguments)
-  (%qinvoke-method object nil "subscribeToNotification" arguments))
-
-(defun |subscribedToNotifications| (object &rest arguments)
-  (%qinvoke-method object nil "subscribedToNotifications" arguments))
-
-(defun |substitute.QFont| (&rest arguments)
-  (%qinvoke-method "QFont" nil "substitute" arguments))
-
-(defun |substitutes.QFont| (&rest arguments)
-  (%qinvoke-method "QFont" nil "substitutes" arguments))
-
-(defun |substitutions.QFont| (&rest arguments)
-  (%qinvoke-method "QFont" nil "substitutions" arguments))
-
-(defun |subtracted| (object &rest arguments)
-  (%qinvoke-method object nil "subtracted" arguments))
-
-(defun |suffix| (object &rest arguments)
-  (%qinvoke-method object nil "suffix" arguments))
-
-(defun |superClass| (object &rest arguments)
-  (%qinvoke-method object nil "superClass" arguments))
-
-(defun |supportedActions| (object &rest arguments)
-  (%qinvoke-method object nil "supportedActions" arguments))
-
-(defun |supportedCiphers.QSslCertificate| (&rest arguments)
-  (%qinvoke-method "QSslCertificate" nil "supportedCiphers" arguments))
-
-(defun |supportedContentTypes| (object &rest arguments)
-  (%qinvoke-method object nil "supportedContentTypes" arguments))
-
-(defun |supportedDocumentFormats.QTextDocumentWriter| (&rest arguments)
-  (%qinvoke-method "QTextDocumentWriter" nil "supportedDocumentFormats" arguments))
-
-(defun |supportedDragActions| (object &rest arguments)
-  (%qinvoke-method object nil "supportedDragActions" arguments))
-
-(defun |supportedDropActions| (object &rest arguments)
-  (%qinvoke-method object nil "supportedDropActions" arguments))
-
 (defun |supportedDuplexModes| (object &rest arguments)
   (%qinvoke-method object nil "supportedDuplexModes" arguments))
 
-(defun |supportedEllipticCurves.QSslCertificate| (&rest arguments)
-  (%qinvoke-method "QSslCertificate" nil "supportedEllipticCurves" arguments))
+(defun |supportedEllipticCurves.QSslConfiguration| (&rest arguments)
+  (%qinvoke-method "QSslConfiguration" nil "supportedEllipticCurves" arguments))
 
 (defun |supportedFormats.QMovie| (&rest arguments)
   (%qinvoke-method "QMovie" nil "supportedFormats" arguments))
@@ -276,14 +42,11 @@
 (defun |supportsSelection| (object &rest arguments)
   (%qinvoke-method object nil "supportsSelection" arguments))
 
+(defun |surfaceType| (object &rest arguments)
+  (%qinvoke-method object nil "surfaceType" arguments))
+
 (defun |swallowContextMenuEvent| (object &rest arguments)
   (%qinvoke-method object nil "swallowContextMenuEvent" arguments))
-
-(defun |swapBuffers| (object &rest arguments)
-  (%qinvoke-method object nil "swapBuffers" arguments))
-
-(defun |swapInterval| (object &rest arguments)
-  (%qinvoke-method object nil "swapInterval" arguments))
 
 (defun |swapSections| (object &rest arguments)
   (%qinvoke-method object nil "swapSections" arguments))
@@ -309,8 +72,8 @@
 (defun |system.QLocale| (&rest arguments)
   (%qinvoke-method "QLocale" nil "system" arguments))
 
-(defun |systemCaCertificates.QSslCertificate| (&rest arguments)
-  (%qinvoke-method "QSslCertificate" nil "systemCaCertificates" arguments))
+(defun |systemCaCertificates.QSslConfiguration| (&rest arguments)
+  (%qinvoke-method "QSslConfiguration" nil "systemCaCertificates" arguments))
 
 (defun |systemEnvironment.QProcessEnvironment| (&rest arguments)
   (%qinvoke-method "QProcessEnvironment" nil "systemEnvironment" arguments))
@@ -324,8 +87,8 @@
 (defun |systemMenu| (object &rest arguments)
   (%qinvoke-method object nil "systemMenu" arguments))
 
-(defun |systemProxyForQuery.QNetworkInterface| (&rest arguments)
-  (%qinvoke-method "QNetworkInterface" nil "systemProxyForQuery" arguments))
+(defun |systemProxyForQuery.QNetworkProxyFactory| (&rest arguments)
+  (%qinvoke-method "QNetworkProxyFactory" nil "systemProxyForQuery" arguments))
 
 (defun |tabArray| (object &rest arguments)
   (%qinvoke-method object nil "tabArray" arguments))
@@ -609,14 +372,8 @@
 (defun |textWidth| (object &rest arguments)
   (%qinvoke-method object nil "textWidth" arguments))
 
-(defun |textureCacheLimit.QGLContext| (&rest arguments)
-  (%qinvoke-method "QGLContext" nil "textureCacheLimit" arguments))
-
 (defun |textureImage| (object &rest arguments)
   (%qinvoke-method object nil "textureImage" arguments))
-
-(defun |textureTarget| (object &rest arguments)
-  (%qinvoke-method object nil "textureTarget" arguments))
 
 (defun |texture| (object &rest arguments)
   (%qinvoke-method object nil "texture" arguments))
@@ -1158,14 +915,14 @@
 (defun |toSubpathPolygons| (object &rest arguments)
   (%qinvoke-method object nil "toSubpathPolygons" arguments))
 
-(defun |toSurfaceFormat.QGLFormat| (&rest arguments)
-  (%qinvoke-method "QGLFormat" nil "toSurfaceFormat" arguments))
-
 (defun |toTableCellFormat| (object &rest arguments)
   (%qinvoke-method object nil "toTableCellFormat" arguments))
 
 (defun |toTableFormat| (object &rest arguments)
   (%qinvoke-method object nil "toTableFormat" arguments))
+
+(defun |toText| (object &rest arguments)
+  (%qinvoke-method object nil "toText" arguments))
 
 (defun |toTime(QString,QLocale::FormatType)| (object &rest arguments)
   (%qinvoke-method object nil "toTime(QString,QLocale::FormatType)" arguments))
@@ -1389,6 +1146,9 @@
 (defun |transaction| (object &rest arguments)
   (%qinvoke-method object nil "transaction" arguments))
 
+(defun |transformBetween| (object &rest arguments)
+  (%qinvoke-method object nil "transformBetween" arguments))
+
 (defun |transformOriginPoint| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "transformOriginPoint" arguments))
 
@@ -1418,6 +1178,9 @@
 
 (defun |transform| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "transform" arguments))
+
+(defun |transientParent| (object &rest arguments)
+  (%qinvoke-method object nil "transientParent" arguments))
 
 (defun |transitionType| (object &rest arguments)
   (%qinvoke-method object nil "transitionType" arguments))
@@ -1560,18 +1323,6 @@
 (defun |uniformItemSizes| (object &rest arguments)
   (%qinvoke-method object nil "uniformItemSizes" arguments))
 
-(defun |uniformLocation(QByteArray)| (object &rest arguments)
-  (%qinvoke-method object nil "uniformLocation(QByteArray)" arguments))
-
-(defun |uniformLocation(QString)| (object &rest arguments)
-  (%qinvoke-method object nil "uniformLocation(QString)" arguments))
-
-(defun |uniformLocation(const char*)| (object &rest arguments)
-  (%qinvoke-method object nil "uniformLocation(const char*)" arguments))
-
-(defun |uniformLocation| (object &rest arguments)
-  (%qinvoke-method object nil "uniformLocation" arguments))
-
 (defun |uniformRowHeights| (object &rest arguments)
   (%qinvoke-method object nil "uniformRowHeights" arguments))
 
@@ -1647,6 +1398,9 @@
 (defun |updateAccessibility.QAccessible| (&rest arguments)
   (%qinvoke-method "QAccessible" nil "updateAccessibility" arguments))
 
+(defun |updateBehavior| (object &rest arguments)
+  (%qinvoke-method object nil "updateBehavior" arguments))
+
 (defun |updateBlock| (object &rest arguments)
   (%qinvoke-method object nil "updateBlock" arguments))
 
@@ -1659,8 +1413,8 @@
 (defun |updateCell| (object &rest arguments)
   (%qinvoke-method object nil "updateCell" arguments))
 
-(defun |updateDynamicTexture| (object &rest arguments)
-  (%qinvoke-method object nil "updateDynamicTexture" arguments))
+(defun |updateCookie| (object &rest arguments)
+  (%qinvoke-method object nil "updateCookie" arguments))
 
 (defun |updateEditorData| (object &rest arguments)
   (%qinvoke-method object nil "updateEditorData" arguments))
@@ -1671,9 +1425,6 @@
 (defun |updateEditorGeometry| (object &rest arguments)
   (%qinvoke-method object nil "updateEditorGeometry" arguments))
 
-(defun |updateGL| (object &rest arguments)
-  (%qinvoke-method object nil "updateGL" arguments))
-
 (defun |updateGeometries| (object &rest arguments)
   (%qinvoke-method object nil "updateGeometries" arguments))
 
@@ -1683,11 +1434,11 @@
 (defun |updateInterval| (object &rest arguments)
   (%qinvoke-method object nil "updateInterval" arguments))
 
+(defun |updateMetaData| (object &rest arguments)
+  (%qinvoke-method object nil "updateMetaData" arguments))
+
 (defun |updateMicroFocus| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "updateMicroFocus" arguments))
-
-(defun |updateOverlayGL| (object &rest arguments)
-  (%qinvoke-method object nil "updateOverlayGL" arguments))
 
 (defun |updatePositionDependentActions| (object &rest arguments)
   (%qinvoke-method object nil "updatePositionDependentActions" arguments))
@@ -1719,6 +1470,9 @@
 (defun |update| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "update" arguments))
 
+(defun |uploadProgress| (object &rest arguments)
+  (%qinvoke-method object nil "uploadProgress" arguments))
+
 (defun |urlChanged| (object &rest arguments)
   (%qinvoke-method object nil "urlChanged" arguments))
 
@@ -1736,6 +1490,9 @@
 
 (defun |useDesignMetrics| (object &rest arguments)
   (%qinvoke-method object nil "useDesignMetrics" arguments))
+
+(defun |usedBits| (object &rest arguments)
+  (%qinvoke-method object nil "usedBits" arguments))
 
 (defun |userData| (object &rest arguments)
   (%qinvoke-method object nil "userData" arguments))
@@ -1824,6 +1581,12 @@
 (defun |vector| (object &rest arguments)
   (%qinvoke-method object nil "vector" arguments))
 
+(defun |verify.QSslCertificate| (&rest arguments)
+  (%qinvoke-method "QSslCertificate" nil "verify" arguments))
+
+(defun |version| (object &rest arguments)
+  (%qinvoke-method object nil "version" arguments))
+
 (defun |verticalAlignment| (object &rest arguments)
   (%qinvoke-method object nil "verticalAlignment" arguments))
 
@@ -1905,11 +1668,26 @@
 (defun |view| (object &rest arguments)
   (%qinvoke-method object nil "view" arguments))
 
+(defun |virtualGeometryChanged| (object &rest arguments)
+  (%qinvoke-method object nil "virtualGeometryChanged" arguments))
+
+(defun |virtualGeometry| (object &rest arguments)
+  (%qinvoke-method object nil "virtualGeometry" arguments))
+
+(defun |virtualSiblings| (object &rest arguments)
+  (%qinvoke-method object nil "virtualSiblings" arguments))
+
+(defun |virtualSize| (object &rest arguments)
+  (%qinvoke-method object nil "virtualSize" arguments))
+
 (defun |visibilityChanged| (object &rest arguments)
   (%qinvoke-method object nil "visibilityChanged" arguments))
 
 (defun |visibilityState| (object &rest arguments)
   (%qinvoke-method object nil "visibilityState" arguments))
+
+(defun |visibility| (object &rest arguments)
+  (%qinvoke-method object nil "visibility" arguments))
 
 (defun |visibleChanged| (object &rest arguments)
   (%qinvoke-method object nil "visibleChanged" arguments))
@@ -1961,6 +1739,9 @@
 
 (defun |waitForFinished| (object &rest arguments)
   (%qinvoke-method object nil "waitForFinished" arguments))
+
+(defun |waitForNewConnection| (object &rest arguments)
+  (%qinvoke-method object nil "waitForNewConnection" arguments))
 
 (defun |waitForReadyRead| (object &rest arguments)
   (%qinvoke-method object nil "waitForReadyRead" arguments))
@@ -2042,9 +1823,6 @@
 
 (defun |windowCloseRequested| (object &rest arguments)
   (%qinvoke-method object nil "windowCloseRequested" arguments))
-
-(defun |windowCreated| (object &rest arguments)
-  (%qinvoke-method object nil "windowCreated" arguments))
 
 (defun |windowFilePath| (object &rest arguments)
   (%qinvoke-method object nil "windowFilePath" arguments))
@@ -2145,6 +1923,9 @@
 (defun |wrapping| (object &rest arguments)
   (%qinvoke-method object nil "wrapping" arguments))
 
+(defun |writableLocation.QStandardPaths| (&rest arguments)
+  (%qinvoke-method "QStandardPaths" nil "writableLocation" arguments))
+
 (defun |write(QByteArray)| (object &rest arguments)
   (%qinvoke-method object nil "write(QByteArray)" arguments))
 
@@ -2156,6 +1937,9 @@
 
 (defun |write(const char*)| (object &rest arguments)
   (%qinvoke-method object nil "write(const char*)" arguments))
+
+(defun |writeDatagram| (object &rest arguments)
+  (%qinvoke-method object nil "writeDatagram" arguments))
 
 (defun |write| (object &rest arguments)
   (%qinvoke-method object nil "write" arguments))

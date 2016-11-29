@@ -110,7 +110,6 @@
     (let ((enum (find #\: type)))
       (when (or (and (qt-class-p type)
                      (not enum))
-                (starts-with "GL" type)
                 (not (or (string= "void" type)
                          enum
                          (upper-case-p (char type 0))
@@ -310,8 +309,7 @@
 (defun add-namespace (name class)
   (unless (empty-string name)
     (if (and class
-             (string/= "Handle" name)
-             (not (starts-with "GL" name)))
+             (string/= "Handle" name))
         (let ((1st (char name 0))
               (templ (position #\< name)))
           (when templ
@@ -423,7 +421,6 @@
 (defun module-include (module)
   (format nil "#include <Qt~A>"
           (case module
-            (:opengl "OpenGL")
             (:webkit "WebKitWidgets")
             (t (string-capitalize (string module))))))
 
@@ -782,12 +779,6 @@
                ~%#include \"../dyn_object.h\"~
                ~%#include \"../eql.h\"~
                ~%~
-               ~%int LObjects::T_GLenum = -1;~
-               ~%int LObjects::T_GLint = -1;~
-               ~%int LObjects::T_GLfloat = -1;~
-               ~%int LObjects::T_GLuint = -1;~
-               ~%int LObjects::T_QGLFormat = -1;~
-               ~%int LObjects::T_QGLFramebufferObjectFormat = -1;~
                ~%int LObjects::T_QHostAddress = -1;~
                ~%int LObjects::T_QHostInfo = -1;~
                ~%int LObjects::T_QNetworkCacheMetaData = -1;~
@@ -837,7 +828,7 @@
       (format s "~%DeleteNObject LObjects::deleteNObject_~(~A~) = 0;" module))
     (dolist (module *modules*)
       (format s "~%Override LObjects::override_~(~A~) = 0;" module))
-    (dolist (module (list :network :opengl :sql :webkit))
+    (dolist (module (list :network :sql :webkit))
       (format s "~%ToMetaArg LObjects::toMetaArg_~(~A~) = 0;~
                  ~%To_lisp_arg LObjects::to_lisp_arg_~(~A~) = 0;"
               module module))
@@ -1115,10 +1106,6 @@
                     "uchar"
                     "uint"
                     "ulong"
-                    "GLenum"
-                    "GLfloat"
-                    "GLint"
-                    "GLuint"
                     "QByteArray"
                     "QChar"
                     "QFileInfoList"
