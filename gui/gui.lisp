@@ -72,7 +72,7 @@
   (set-tree *q-properties* 3 nil nil (tr "Read Only"))
   (set-tree *n-methods* 3 nil (tr "Method") (tr "Static"))
   (set-tree *n-override*)
-  (set-tree *primitives* 2 nil (tr "Example"))
+  (set-tree *primitives* 2 (tr "Qt/C++ type") (tr "Lisp example / type"))
   ;; please see example 9: editor.lisp for better completer examples
   (let ((cpl (qnew "QCompleter")))
     (dolist (w (list *display* *edit* *package-name* *selected-widget* (! "popup" cpl)))
@@ -249,7 +249,11 @@
                       (cons "QRgb"                 "(qrgb r g b &optional a)")
                       (cons "QSize / QSizeF"       "(list width height)")
                       (cons "QString"              "\"a Unicode string\"")
-                      (cons "QStringList"          "(list \"one\" \"two\" \"three\")")))
+                      (cons "QStringList"          "(list \"one\" \"two\" \"three\")")
+                      (cons "GLint"                "<integer>")
+                      (cons "GLuint"               "<unsigned integer>")
+                      (cons "GLenum"               "<unsigned integer>")
+                      (cons "GLfloat"              "<single float>")))
     (let ((item (qnew "QTreeWidgetItem")))
       (x:do-with item
         ("setText" 0 (car type))
