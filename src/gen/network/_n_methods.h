@@ -33,7 +33,6 @@ public:
     Q_INVOKABLE void* C(uint u) { return new LHostAddress(u); }
     Q_INVOKABLE void* C(uint u, quint8* x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const quint8* x1) { return new LHostAddress(u, x1); }
-    Q_INVOKABLE void* C(uint u, const Q_IPV6ADDR& x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const sockaddr* x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const QString& x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const QHostAddress& x1) { return new LHostAddress(u, x1); }
@@ -46,11 +45,9 @@ public:
     Q_INVOKABLE QString MscopeId(QHostAddress* o) const { return o->scopeId(); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, quint8* x1) { o->setAddress(x1); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, const quint8* x1) { o->setAddress(x1); }
-    Q_INVOKABLE void MsetAddress(QHostAddress* o, const Q_IPV6ADDR& x1) { o->setAddress(x1); }
     Q_INVOKABLE bool MsetAddress(QHostAddress* o, const QString& x1) { return o->setAddress(x1); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, const sockaddr* x1) { o->setAddress(x1); }
     Q_INVOKABLE void MsetScopeId(QHostAddress* o, const QString& x1) { o->setScopeId(x1); }
-    Q_INVOKABLE Q_IPV6ADDR MtoIPv6Address(QHostAddress* o) const { return o->toIPv6Address(); }
     Q_INVOKABLE QString MtoString(QHostAddress* o) const { return o->toString(); }
 };
 

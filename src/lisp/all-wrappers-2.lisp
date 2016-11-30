@@ -1,5 +1,21 @@
 (defpackage :eql
   (:export
+   #:|duration|
+   #:|dx|
+   #:|dynamicPropertyNames|
+   #:|dynamicSortFilter|
+   #:|dy|
+   #:|easingCurve|
+   #:|echoMode|
+   #:|editItem|
+   #:|editStrategy|
+   #:|editTextChanged|
+   #:|editTriggers|
+   #:|editingFinished|
+   #:|editorDestroyed|
+   #:|editorEvent|
+   #:|edit|
+   #:|effectiveDate|
    #:|effectiveOpacity|
    #:|effectiveSizeHint|
    #:|effectiveWinId|
@@ -14,6 +30,9 @@
    #:|emitDataChanged|
    #:|emitSelectionChanged|
    #:|emptyLabel|
+   #:|enableAttributeArray(const char*)|
+   #:|enableAttributeArray(int)|
+   #:|enableAttributeArray|
    #:|enablePersistentStorage.QWebSettings|
    #:|enabledChanged|
    #:|encloseContentsWith(QString)|
@@ -354,7 +373,6 @@
    #:|fromRgb.QColor|
    #:|fromRgbF.QColor|
    #:|fromRgba.QColor|
-   #:|fromRotationMatrix.QQuaternion|
    #:|fromScale.QTransform|
    #:|fromString(QString,QString).QDateTime|
    #:|fromString(QString,QString).QDate|
@@ -390,12 +408,9 @@
    #:|gestureType|
    #:|gestures|
    #:|gesture|
-   #:|getAxes|
-   #:|getAxisAndAngle|
    #:|getChar|
    #:|getColor.QColorDialog|
    #:|getDouble.QInputDialog|
-   #:|getEulerAngles|
    #:|getExistingDirectory.QFileDialog|
    #:|getExistingDirectoryUrl.QFileDialog|
    #:|getFont(bool*,QFont).QFontDialog|
@@ -478,6 +493,7 @@
    #:|hasIndex|
    #:|hasMouseTracking|
    #:|hasNext|
+   #:|hasOpenGLShaderPrograms.QOpenGLShaderProgram|
    #:|hasOpenGLShaders.QOpenGLShader|
    #:|hasOutValues|
    #:|hasPendingConnections|
@@ -873,6 +889,7 @@
    #:|isLeapYear.QDate|
    #:|isLeftToRight.QGuiApplication|
    #:|isLibrary.QLibrary|
+   #:|isLinked|
    #:|isListFormat|
    #:|isListening|
    #:|isLoaded|
@@ -1182,21 +1199,4 @@
    #:|location|
    #:|lockForRead|
    #:|lockForWrite|
-   #:|logicalDotsPerInchChanged|
-   #:|logicalDotsPerInchX|
-   #:|logicalDotsPerInchY|
-   #:|logicalDotsPerInch|
-   #:|logicalDpiX|
-   #:|logicalDpiY|
-   #:|logicalIndexAt(QPoint)|
-   #:|logicalIndexAt(int)|
-   #:|logicalIndexAt|
-   #:|logicalIndex|
-   #:|log|
-   #:|longDayName.QDate|
-   #:|longMonthName.QDate|
-   #:|lookAt|
-   #:|lookupHost.QHostInfo|
-   #:|lookupId|
-   #:|loopCount|
-   #:|lostFocus|))
+   #:|logicalDotsPerInchChanged|))

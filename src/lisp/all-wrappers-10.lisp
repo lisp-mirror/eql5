@@ -1,5 +1,212 @@
 (in-package :eql)
 
+(defun |sizeIncrement| (object &rest arguments)
+  (%qinvoke-method object nil "sizeIncrement" arguments))
+
+(defun |sizePolicy| (object &rest arguments)
+  (%qinvoke-method object nil "sizePolicy" arguments))
+
+(defun |sizes| (object &rest arguments)
+  (%qinvoke-method object nil "sizes" arguments))
+
+(defun |size| (object &rest arguments)
+  (%qinvoke-method object nil "size" arguments))
+
+(defun |slerp.QQuaternion| (&rest arguments)
+  (%qinvoke-method "QQuaternion" nil "slerp" arguments))
+
+(defun |sliderMoved| (object &rest arguments)
+  (%qinvoke-method object nil "sliderMoved" arguments))
+
+(defun |sliderPositionFromValue.QStyle| (&rest arguments)
+  (%qinvoke-method "QStyle" nil "sliderPositionFromValue" arguments))
+
+(defun |sliderPosition| (object &rest arguments)
+  (%qinvoke-method object nil "sliderPosition" arguments))
+
+(defun |sliderPressed| (object &rest arguments)
+  (%qinvoke-method object nil "sliderPressed" arguments))
+
+(defun |sliderReleased| (object &rest arguments)
+  (%qinvoke-method object nil "sliderReleased" arguments))
+
+(defun |sliderValueFromPosition.QStyle| (&rest arguments)
+  (%qinvoke-method "QStyle" nil "sliderValueFromPosition" arguments))
+
+(defun |slopeAtPercent| (object &rest arguments)
+  (%qinvoke-method object nil "slopeAtPercent" arguments))
+
+(defun |smallDecimalPoint| (object &rest arguments)
+  (%qinvoke-method object nil "smallDecimalPoint" arguments))
+
+(defun |smoothScaled| (object &rest arguments)
+  (%qinvoke-method object nil "smoothScaled" arguments))
+
+(defun |smoothSizes| (object &rest arguments)
+  (%qinvoke-method object nil "smoothSizes" arguments))
+
+(defun |socketOptions| (object &rest arguments)
+  (%qinvoke-method object nil "socketOptions" arguments))
+
+(defun |socketOption| (object &rest arguments)
+  (%qinvoke-method object nil "socketOption" arguments))
+
+(defun |socketType| (object &rest arguments)
+  (%qinvoke-method object nil "socketType" arguments))
+
+(defun |sortByColumn| (object &rest arguments)
+  (%qinvoke-method object nil "sortByColumn" arguments))
+
+(defun |sortCaseSensitivity| (object &rest arguments)
+  (%qinvoke-method object nil "sortCaseSensitivity" arguments))
+
+(defun |sortChildren| (object &rest arguments)
+  (%qinvoke-method object nil "sortChildren" arguments))
+
+(defun |sortColumn| (object &rest arguments)
+  (%qinvoke-method object nil "sortColumn" arguments))
+
+(defun |sortIndicatorChanged| (object &rest arguments)
+  (%qinvoke-method object nil "sortIndicatorChanged" arguments))
+
+(defun |sortIndicatorOrder| (object &rest arguments)
+  (%qinvoke-method object nil "sortIndicatorOrder" arguments))
+
+(defun |sortIndicatorSection| (object &rest arguments)
+  (%qinvoke-method object nil "sortIndicatorSection" arguments))
+
+(defun |sortItems| (object &rest arguments)
+  (%qinvoke-method object nil "sortItems" arguments))
+
+(defun |sortOrder| (object &rest arguments)
+  (%qinvoke-method object nil "sortOrder" arguments))
+
+(defun |sortRole| (object &rest arguments)
+  (%qinvoke-method object nil "sortRole" arguments))
+
+(defun |sorting| (object &rest arguments)
+  (%qinvoke-method object nil "sorting" arguments))
+
+(defun |sort| (object &rest arguments)
+  (%qinvoke-method object nil "sort" arguments))
+
+(defun |sourceBoundingRect| (object &rest arguments)
+  (%qinvoke-method object nil "sourceBoundingRect" arguments))
+
+(defun |sourceChanged| (object &rest arguments)
+  (%qinvoke-method object nil "sourceChanged" arguments))
+
+(defun |sourceCode| (object &rest arguments)
+  (%qinvoke-method object nil "sourceCode" arguments))
+
+(defun |sourceIsPixmap| (object &rest arguments)
+  (%qinvoke-method object nil "sourceIsPixmap" arguments))
+
+(defun |sourceModelChanged| (object &rest arguments)
+  (%qinvoke-method object nil "sourceModelChanged" arguments))
+
+(defun |sourceModel| (object &rest arguments)
+  (%qinvoke-method object nil "sourceModel" arguments))
+
+(defun |sourceState| (object &rest arguments)
+  (%qinvoke-method object nil "sourceState" arguments))
+
+(defun |source| (object &rest arguments)
+  (%qinvoke-method object nil "source" arguments))
+
+(defun |spacerItem| (object &rest arguments)
+  (%qinvoke-method object nil "spacerItem" arguments))
+
+(defun |spacing| (object &rest arguments)
+  (%qinvoke-method object nil "spacing" arguments))
+
+(defun |spanAngle| (object &rest arguments)
+  (%qinvoke-method object nil "spanAngle" arguments))
+
+(defun |span| (object &rest arguments)
+  (%qinvoke-method object nil "span" arguments))
+
+(defun |specialValueText| (object &rest arguments)
+  (%qinvoke-method object nil "specialValueText" arguments))
+
+(defun |spec| (object &rest arguments)
+  (%qinvoke-method object nil "spec" arguments))
+
+(defun |speed| (object &rest arguments)
+  (%qinvoke-method object nil "speed" arguments))
+
+(defun |splitCell| (object &rest arguments)
+  (%qinvoke-method object nil "splitCell" arguments))
+
+(defun |splitDockWidget| (object &rest arguments)
+  (%qinvoke-method object nil "splitDockWidget" arguments))
+
+(defun |splitPath| (object &rest arguments)
+  (%qinvoke-method object nil "splitPath" arguments))
+
+(defun |splitterMoved| (object &rest arguments)
+  (%qinvoke-method object nil "splitterMoved" arguments))
+
+(defun |splitter| (object &rest arguments)
+  (%qinvoke-method object nil "splitter" arguments))
+
+(defun |spontaneous| (object &rest arguments)
+  (%qinvoke-method object nil "spontaneous" arguments))
+
+(defun |spread| (object &rest arguments)
+  (%qinvoke-method object nil "spread" arguments))
+
+(defun |sqlStatement| (object &rest arguments)
+  (%qinvoke-method object nil "sqlStatement" arguments))
+
+(defun |squareToQuad.QTransform| (&rest arguments)
+  (%qinvoke-method "QTransform" nil "squareToQuad" arguments))
+
+(defun |sslConfiguration| (object &rest arguments)
+  (%qinvoke-method object nil "sslConfiguration" arguments))
+
+(defun |sslErrors| (object &rest arguments)
+  (%qinvoke-method object nil "sslErrors" arguments))
+
+(defun |stackBefore| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "stackBefore" arguments))
+
+(defun |stackUnder| (object &rest arguments)
+  (%qinvoke-method object nil "stackUnder" arguments))
+
+(defun |stackingMode| (object &rest arguments)
+  (%qinvoke-method object nil "stackingMode" arguments))
+
+(defun |stacks| (object &rest arguments)
+  (%qinvoke-method object nil "stacks" arguments))
+
+(defun |stack| (object &rest arguments)
+  (%qinvoke-method object nil "stack" arguments))
+
+(defun |standaloneDayName| (object &rest arguments)
+  (%qinvoke-method object nil "standaloneDayName" arguments))
+
+(defun |standaloneMonthName| (object &rest arguments)
+  (%qinvoke-method object nil "standaloneMonthName" arguments))
+
+(defun |standardButtons| (object &rest arguments)
+  (%qinvoke-method object nil "standardButtons" arguments))
+
+(defun |standardButton| (object &rest arguments)
+  (%qinvoke-method object nil "standardButton" arguments))
+
+(defun |standardColor.QColorDialog| (&rest arguments)
+  (%qinvoke-method "QColorDialog" nil "standardColor" arguments))
+
+(defun |standardLocations.QStandardPaths| (&rest arguments)
+  (%qinvoke-method "QStandardPaths" nil "standardLocations" arguments))
+
+(defun |standardPalette| (object &rest arguments)
+  (%qinvoke-method object nil "standardPalette" arguments))
+
+(defun |standardPixmap| (object &rest arguments)
+  (%qinvoke-method object nil "standardPixmap" arguments))
+
 (defun |standardSizes.QFontDatabase| (&rest arguments)
   (%qinvoke-method "QFontDatabase" nil "standardSizes" arguments))
 
@@ -930,9 +1137,6 @@
 (defun |toHtml| (object &rest arguments)
   (%qinvoke-method object nil "toHtml" arguments))
 
-(defun |toIPv6Address| (object &rest arguments)
-  (%qinvoke-method object nil "toIPv6Address" arguments))
-
 (defun |toImageFormat.QImage| (&rest arguments)
   (%qinvoke-method "QImage" nil "toImageFormat" arguments))
 
@@ -1091,9 +1295,6 @@
 
 (defun |toRgb| (object &rest arguments)
   (%qinvoke-method object nil "toRgb" arguments))
-
-(defun |toRotationMatrix| (object &rest arguments)
-  (%qinvoke-method object nil "toRotationMatrix" arguments))
 
 (defun |toShort(QString)| (object &rest arguments)
   (%qinvoke-method object nil "toShort(QString)" arguments))
@@ -1452,9 +1653,6 @@
 (defun |transformationMode| (object &rest arguments)
   (%qinvoke-method object nil "transformationMode" arguments))
 
-(defun |transformations| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "transformations" arguments))
-
 (defun |transformed(QMatrix)| (object &rest arguments)
   (%qinvoke-method object nil "transformed(QMatrix)" arguments))
 
@@ -1616,6 +1814,18 @@
 
 (defun |uniformItemSizes| (object &rest arguments)
   (%qinvoke-method object nil "uniformItemSizes" arguments))
+
+(defun |uniformLocation(QByteArray)| (object &rest arguments)
+  (%qinvoke-method object nil "uniformLocation(QByteArray)" arguments))
+
+(defun |uniformLocation(QString)| (object &rest arguments)
+  (%qinvoke-method object nil "uniformLocation(QString)" arguments))
+
+(defun |uniformLocation(const char*)| (object &rest arguments)
+  (%qinvoke-method object nil "uniformLocation(const char*)" arguments))
+
+(defun |uniformLocation| (object &rest arguments)
+  (%qinvoke-method object nil "uniformLocation" arguments))
 
 (defun |uniformRowHeights| (object &rest arguments)
   (%qinvoke-method object nil "uniformRowHeights" arguments))

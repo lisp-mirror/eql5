@@ -15,16 +15,16 @@ void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[72] = new Q73;
-    LObjects::Q[174] = new Q175;
     LObjects::Q[175] = new Q176;
+    LObjects::Q[176] = new Q177;
     LObjects::N[150] = new N151; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 73: m = &QGraphicsSvgItem::staticMetaObject; break;
-        case 175: m = &QSvgRenderer::staticMetaObject; break;
-        case 176: m = &QSvgWidget::staticMetaObject; break; }
+        case 176: m = &QSvgRenderer::staticMetaObject; break;
+        case 177: m = &QSvgWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -37,8 +37,8 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 73: ids = &LGraphicsSvgItem::overrideIds; break;
-            case 175: ids = &LSvgRenderer::overrideIds; break;
-            case 176: ids = &LSvgWidget::overrideIds; break; }}
+            case 176: ids = &LSvgRenderer::overrideIds; break;
+            case 177: ids = &LSvgWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {

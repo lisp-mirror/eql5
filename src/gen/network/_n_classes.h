@@ -27,7 +27,6 @@ public:
     LHostAddress(uint u) : unique(u) {}
     LHostAddress(uint u, quint8* x1) : QHostAddress(x1), unique(u) {}
     LHostAddress(uint u, const quint8* x1) : QHostAddress(x1), unique(u) {}
-    LHostAddress(uint u, const Q_IPV6ADDR& x1) : QHostAddress(x1), unique(u) {}
     LHostAddress(uint u, const sockaddr* x1) : QHostAddress(x1), unique(u) {}
     LHostAddress(uint u, const QString& x1) : QHostAddress(x1), unique(u) {}
     LHostAddress(uint u, const QHostAddress& x1) : QHostAddress(x1), unique(u) {}

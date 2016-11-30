@@ -835,7 +835,6 @@ public:
     Q_INVOKABLE void MsetTransform(QGraphicsItem* o, const QTransform& x1, bool x2 = false) { o->setTransform(x1, x2); }
     Q_INVOKABLE void MsetTransformOriginPoint(QGraphicsItem* o, const QPointF& x1) { o->setTransformOriginPoint(x1); }
     Q_INVOKABLE void MsetTransformOriginPoint(QGraphicsItem* o, qreal x1, qreal x2) { o->setTransformOriginPoint(x1, x2); }
-    Q_INVOKABLE void MsetTransformations(QGraphicsItem* o, const QList<QGraphicsTransform*>& x1) { o->setTransformations(x1); }
     Q_INVOKABLE void MsetVisible(QGraphicsItem* o, bool x1) { o->setVisible(x1); }
     Q_INVOKABLE void MsetX(QGraphicsItem* o, qreal x1) { o->setX(x1); }
     Q_INVOKABLE void MsetY(QGraphicsItem* o, qreal x1) { o->setY(x1); }
@@ -850,7 +849,6 @@ public:
     Q_INVOKABLE QGraphicsWidget* MtopLevelWidget(QGraphicsItem* o) const { return o->topLevelWidget(); }
     Q_INVOKABLE QTransform Mtransform(QGraphicsItem* o) const { return o->transform(); }
     Q_INVOKABLE QPointF MtransformOriginPoint(QGraphicsItem* o) const { return o->transformOriginPoint(); }
-    Q_INVOKABLE QList<QGraphicsTransform*> Mtransformations(QGraphicsItem* o) const { return o->transformations(); }
     Q_INVOKABLE int Mtype(QGraphicsItem* o) const { return o->type(); }
     Q_INVOKABLE void MungrabKeyboard(QGraphicsItem* o) { o->ungrabKeyboard(); }
     Q_INVOKABLE void MungrabMouse(QGraphicsItem* o) { o->ungrabMouse(); }
@@ -1236,7 +1234,6 @@ public:
     Q_INVOKABLE QRect MmapRect(QMatrix4x4* o, const QRect& x1) const { return o->mapRect(x1); }
     Q_INVOKABLE QRectF MmapRect(QMatrix4x4* o, const QRectF& x1) const { return o->mapRect(x1); }
     Q_INVOKABLE QVector3D MmapVector(QMatrix4x4* o, const QVector3D& x1) const { return o->mapVector(x1); }
-    Q_INVOKABLE QMatrix3x3 MnormalMatrix(QMatrix4x4* o) const { return o->normalMatrix(); }
     Q_INVOKABLE void Moptimize(QMatrix4x4* o) { o->optimize(); }
     Q_INVOKABLE void Mortho(QMatrix4x4* o, float x1, float x2, float x3, float x4, float x5, float x6) { o->ortho(x1, x2, x3, x4, x5, x6); }
     Q_INVOKABLE void Mortho(QMatrix4x4* o, const QRect& x1) { o->ortho(x1); }
@@ -1851,7 +1848,6 @@ public:
     Q_INVOKABLE void* C(uint u, float x1, const QVector3D& x2) { return new LQuaternion(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, const QVector4D& x1) { return new LQuaternion(u, x1); }
     Q_INVOKABLE QQuaternion Mconjugated(QQuaternion* o) const { return o->conjugated(); }
-    Q_INVOKABLE void MgetAxes(QQuaternion* o, QVector3D* x1, QVector3D* x2, QVector3D* x3) const { o->getAxes(x1, x2, x3); }
     Q_INVOKABLE QQuaternion Minverted(QQuaternion* o) const { return o->inverted(); }
     Q_INVOKABLE bool MisIdentity(QQuaternion* o) const { return o->isIdentity(); }
     Q_INVOKABLE bool MisNull(QQuaternion* o) const { return o->isNull(); }
@@ -1868,7 +1864,6 @@ public:
     Q_INVOKABLE void MsetY(QQuaternion* o, float x1) { o->setY(x1); }
     Q_INVOKABLE void MsetZ(QQuaternion* o, float x1) { o->setZ(x1); }
     Q_INVOKABLE QVector3D MtoEulerAngles(QQuaternion* o) const { return o->toEulerAngles(); }
-    Q_INVOKABLE QMatrix3x3 MtoRotationMatrix(QQuaternion* o) const { return o->toRotationMatrix(); }
     Q_INVOKABLE QVector4D MtoVector4D(QQuaternion* o) const { return o->toVector4D(); }
     Q_INVOKABLE QVector3D Mvector(QQuaternion* o) const { return o->vector(); }
     Q_INVOKABLE float Mx(QQuaternion* o) const { return o->x(); }
@@ -1881,7 +1876,6 @@ public:
     Q_INVOKABLE QQuaternion SfromDirection(const QVector3D& x1, const QVector3D& x2) { return QQuaternion::fromDirection(x1, x2); }
     Q_INVOKABLE QQuaternion SfromEulerAngles(float x1, float x2, float x3) { return QQuaternion::fromEulerAngles(x1, x2, x3); }
     Q_INVOKABLE QQuaternion SfromEulerAngles(const QVector3D& x1) { return QQuaternion::fromEulerAngles(x1); }
-    Q_INVOKABLE QQuaternion SfromRotationMatrix(const QMatrix3x3& x1) { return QQuaternion::fromRotationMatrix(x1); }
     Q_INVOKABLE QQuaternion Snlerp(const QQuaternion& x1, const QQuaternion& x2, float x3) { return QQuaternion::nlerp(x1, x2, x3); }
     Q_INVOKABLE QQuaternion SrotationTo(const QVector3D& x1, const QVector3D& x2) { return QQuaternion::rotationTo(x1, x2); }
     Q_INVOKABLE QQuaternion Sslerp(const QQuaternion& x1, const QQuaternion& x2, float x3) { return QQuaternion::slerp(x1, x2, x3); }

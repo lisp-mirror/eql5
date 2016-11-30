@@ -1,5 +1,74 @@
 (defpackage :eql
   (:export
+   #:|sizeIncrement|
+   #:|sizePolicy|
+   #:|sizes|
+   #:|size|
+   #:|slerp.QQuaternion|
+   #:|sliderMoved|
+   #:|sliderPositionFromValue.QStyle|
+   #:|sliderPosition|
+   #:|sliderPressed|
+   #:|sliderReleased|
+   #:|sliderValueFromPosition.QStyle|
+   #:|slopeAtPercent|
+   #:|smallDecimalPoint|
+   #:|smoothScaled|
+   #:|smoothSizes|
+   #:|socketOptions|
+   #:|socketOption|
+   #:|socketType|
+   #:|sortByColumn|
+   #:|sortCaseSensitivity|
+   #:|sortChildren|
+   #:|sortColumn|
+   #:|sortIndicatorChanged|
+   #:|sortIndicatorOrder|
+   #:|sortIndicatorSection|
+   #:|sortItems|
+   #:|sortOrder|
+   #:|sortRole|
+   #:|sorting|
+   #:|sort|
+   #:|sourceBoundingRect|
+   #:|sourceChanged|
+   #:|sourceCode|
+   #:|sourceIsPixmap|
+   #:|sourceModelChanged|
+   #:|sourceModel|
+   #:|sourceState|
+   #:|source|
+   #:|spacerItem|
+   #:|spacing|
+   #:|spanAngle|
+   #:|span|
+   #:|specialValueText|
+   #:|spec|
+   #:|speed|
+   #:|splitCell|
+   #:|splitDockWidget|
+   #:|splitPath|
+   #:|splitterMoved|
+   #:|splitter|
+   #:|spontaneous|
+   #:|spread|
+   #:|sqlStatement|
+   #:|squareToQuad.QTransform|
+   #:|sslConfiguration|
+   #:|sslErrors|
+   #:|stackBefore|
+   #:|stackUnder|
+   #:|stackingMode|
+   #:|stacks|
+   #:|stack|
+   #:|standaloneDayName|
+   #:|standaloneMonthName|
+   #:|standardButtons|
+   #:|standardButton|
+   #:|standardColor.QColorDialog|
+   #:|standardLocations.QStandardPaths|
+   #:|standardPalette|
+   #:|standardPixmap|
    #:|standardSizes.QFontDatabase|
    #:|standardTimeOffset|
    #:|start(QProcess::OpenMode)|
@@ -310,7 +379,6 @@
    #:|toHsl|
    #:|toHsv|
    #:|toHtml|
-   #:|toIPv6Address|
    #:|toImageFormat.QImage|
    #:|toImageFormat|
    #:|toImage|
@@ -364,7 +432,6 @@
    #:|toRegularExpression|
    #:|toReversed|
    #:|toRgb|
-   #:|toRotationMatrix|
    #:|toShort(QString)|
    #:|toShort(QString...)|
    #:|toShort(QStringRef)|
@@ -484,7 +551,6 @@
    #:|transformOriginPoint|
    #:|transformationAnchor|
    #:|transformationMode|
-   #:|transformations|
    #:|transformed(QMatrix)|
    #:|transformed(QMatrix...)|
    #:|transformed(QTransform)|
@@ -539,6 +605,10 @@
    #:|ungrabMouse|
    #:|unifiedTitleAndToolBarOnMac|
    #:|uniformItemSizes|
+   #:|uniformLocation(QByteArray)|
+   #:|uniformLocation(QString)|
+   #:|uniformLocation(const char*)|
+   #:|uniformLocation|
    #:|uniformRowHeights|
    #:|uniqueId.QAccessible|
    #:|uniqueId|

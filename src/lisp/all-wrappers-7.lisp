@@ -1,5 +1,53 @@
 (in-package :eql)
 
+(defun |duration| (object &rest arguments)
+  (%qinvoke-method object nil "duration" arguments))
+
+(defun |dx| (object &rest arguments)
+  (%qinvoke-method object nil "dx" arguments))
+
+(defun |dynamicPropertyNames| (object &rest arguments)
+  (%qinvoke-method object nil "dynamicPropertyNames" arguments))
+
+(defun |dynamicSortFilter| (object &rest arguments)
+  (%qinvoke-method object nil "dynamicSortFilter" arguments))
+
+(defun |dy| (object &rest arguments)
+  (%qinvoke-method object nil "dy" arguments))
+
+(defun |easingCurve| (object &rest arguments)
+  (%qinvoke-method object nil "easingCurve" arguments))
+
+(defun |echoMode| (object &rest arguments)
+  (%qinvoke-method object nil "echoMode" arguments))
+
+(defun |editItem| (object &rest arguments)
+  (%qinvoke-method object nil "editItem" arguments))
+
+(defun |editStrategy| (object &rest arguments)
+  (%qinvoke-method object nil "editStrategy" arguments))
+
+(defun |editTextChanged| (object &rest arguments)
+  (%qinvoke-method object nil "editTextChanged" arguments))
+
+(defun |editTriggers| (object &rest arguments)
+  (%qinvoke-method object nil "editTriggers" arguments))
+
+(defun |editingFinished| (object &rest arguments)
+  (%qinvoke-method object nil "editingFinished" arguments))
+
+(defun |editorDestroyed| (object &rest arguments)
+  (%qinvoke-method object nil "editorDestroyed" arguments))
+
+(defun |editorEvent| (object &rest arguments)
+  (%qinvoke-method object nil "editorEvent" arguments))
+
+(defun |edit| (object &rest arguments)
+  (%qinvoke-method object nil "edit" arguments))
+
+(defun |effectiveDate| (object &rest arguments)
+  (%qinvoke-method object nil "effectiveDate" arguments))
+
 (defun |effectiveOpacity| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "effectiveOpacity" arguments))
 
@@ -41,6 +89,15 @@
 
 (defun |emptyLabel| (object &rest arguments)
   (%qinvoke-method object nil "emptyLabel" arguments))
+
+(defun |enableAttributeArray(const char*)| (object &rest arguments)
+  (%qinvoke-method object nil "enableAttributeArray(const char*)" arguments))
+
+(defun |enableAttributeArray(int)| (object &rest arguments)
+  (%qinvoke-method object nil "enableAttributeArray(int)" arguments))
+
+(defun |enableAttributeArray| (object &rest arguments)
+  (%qinvoke-method object nil "enableAttributeArray" arguments))
 
 (defun |enablePersistentStorage.QWebSettings| (&rest arguments)
   (%qinvoke-method "QWebSettings" nil "enablePersistentStorage" arguments))
@@ -1062,9 +1119,6 @@
 (defun |fromRgba.QColor| (&rest arguments)
   (%qinvoke-method "QColor" nil "fromRgba" arguments))
 
-(defun |fromRotationMatrix.QQuaternion| (&rest arguments)
-  (%qinvoke-method "QQuaternion" nil "fromRotationMatrix" arguments))
-
 (defun |fromScale.QTransform| (&rest arguments)
   (%qinvoke-method "QTransform" nil "fromScale" arguments))
 
@@ -1170,12 +1224,6 @@
 (defun |gesture| (object &rest arguments)
   (%qinvoke-method object nil "gesture" arguments))
 
-(defun |getAxes| (object &rest arguments)
-  (%qinvoke-method object nil "getAxes" arguments))
-
-(defun |getAxisAndAngle| (object &rest arguments)
-  (%qinvoke-method object nil "getAxisAndAngle" arguments))
-
 (defun |getChar| (object &rest arguments)
   (%qinvoke-method object nil "getChar" arguments))
 
@@ -1184,9 +1232,6 @@
 
 (defun |getDouble.QInputDialog| (&rest arguments)
   (%qinvoke-method "QInputDialog" nil "getDouble" arguments))
-
-(defun |getEulerAngles| (object &rest arguments)
-  (%qinvoke-method object nil "getEulerAngles" arguments))
 
 (defun |getExistingDirectory.QFileDialog| (&rest arguments)
   (%qinvoke-method "QFileDialog" nil "getExistingDirectory" arguments))
@@ -1433,6 +1478,9 @@
 
 (defun |hasNext| (object &rest arguments)
   (%qinvoke-method object nil "hasNext" arguments))
+
+(defun |hasOpenGLShaderPrograms.QOpenGLShaderProgram| (&rest arguments)
+  (%qinvoke-method "QOpenGLShaderProgram" nil "hasOpenGLShaderPrograms" arguments))
 
 (defun |hasOpenGLShaders.QOpenGLShader| (&rest arguments)
   (%qinvoke-method "QOpenGLShader" nil "hasOpenGLShaders" arguments))
@@ -2619,6 +2667,9 @@
 (defun |isLibrary.QLibrary| (&rest arguments)
   (%qinvoke-method "QLibrary" nil "isLibrary" arguments))
 
+(defun |isLinked| (object &rest arguments)
+  (%qinvoke-method object nil "isLinked" arguments))
+
 (defun |isListFormat| (object &rest arguments)
   (%qinvoke-method object nil "isListFormat" arguments))
 
@@ -3548,54 +3599,3 @@
 
 (defun |logicalDotsPerInchChanged| (object &rest arguments)
   (%qinvoke-method object nil "logicalDotsPerInchChanged" arguments))
-
-(defun |logicalDotsPerInchX| (object &rest arguments)
-  (%qinvoke-method object nil "logicalDotsPerInchX" arguments))
-
-(defun |logicalDotsPerInchY| (object &rest arguments)
-  (%qinvoke-method object nil "logicalDotsPerInchY" arguments))
-
-(defun |logicalDotsPerInch| (object &rest arguments)
-  (%qinvoke-method object nil "logicalDotsPerInch" arguments))
-
-(defun |logicalDpiX| (object &rest arguments)
-  (%qinvoke-method object nil "logicalDpiX" arguments))
-
-(defun |logicalDpiY| (object &rest arguments)
-  (%qinvoke-method object nil "logicalDpiY" arguments))
-
-(defun |logicalIndexAt(QPoint)| (object &rest arguments)
-  (%qinvoke-method object nil "logicalIndexAt(QPoint)" arguments))
-
-(defun |logicalIndexAt(int)| (object &rest arguments)
-  (%qinvoke-method object nil "logicalIndexAt(int)" arguments))
-
-(defun |logicalIndexAt| (object &rest arguments)
-  (%qinvoke-method object nil "logicalIndexAt" arguments))
-
-(defun |logicalIndex| (object &rest arguments)
-  (%qinvoke-method object nil "logicalIndex" arguments))
-
-(defun |log| (object &rest arguments)
-  (%qinvoke-method object nil "log" arguments))
-
-(defun |longDayName.QDate| (&rest arguments)
-  (%qinvoke-method "QDate" nil "longDayName" arguments))
-
-(defun |longMonthName.QDate| (&rest arguments)
-  (%qinvoke-method "QDate" nil "longMonthName" arguments))
-
-(defun |lookAt| (object &rest arguments)
-  (%qinvoke-method object nil "lookAt" arguments))
-
-(defun |lookupHost.QHostInfo| (&rest arguments)
-  (%qinvoke-method "QHostInfo" nil "lookupHost" arguments))
-
-(defun |lookupId| (object &rest arguments)
-  (%qinvoke-method object nil "lookupId" arguments))
-
-(defun |loopCount| (object &rest arguments)
-  (%qinvoke-method object nil "loopCount" arguments))
-
-(defun |lostFocus| (object &rest arguments)
-  (%qinvoke-method object nil "lostFocus" arguments))

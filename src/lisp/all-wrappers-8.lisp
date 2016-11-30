@@ -1,5 +1,56 @@
 (in-package :eql)
 
+(defun |logicalDotsPerInchX| (object &rest arguments)
+  (%qinvoke-method object nil "logicalDotsPerInchX" arguments))
+
+(defun |logicalDotsPerInchY| (object &rest arguments)
+  (%qinvoke-method object nil "logicalDotsPerInchY" arguments))
+
+(defun |logicalDotsPerInch| (object &rest arguments)
+  (%qinvoke-method object nil "logicalDotsPerInch" arguments))
+
+(defun |logicalDpiX| (object &rest arguments)
+  (%qinvoke-method object nil "logicalDpiX" arguments))
+
+(defun |logicalDpiY| (object &rest arguments)
+  (%qinvoke-method object nil "logicalDpiY" arguments))
+
+(defun |logicalIndexAt(QPoint)| (object &rest arguments)
+  (%qinvoke-method object nil "logicalIndexAt(QPoint)" arguments))
+
+(defun |logicalIndexAt(int)| (object &rest arguments)
+  (%qinvoke-method object nil "logicalIndexAt(int)" arguments))
+
+(defun |logicalIndexAt| (object &rest arguments)
+  (%qinvoke-method object nil "logicalIndexAt" arguments))
+
+(defun |logicalIndex| (object &rest arguments)
+  (%qinvoke-method object nil "logicalIndex" arguments))
+
+(defun |log| (object &rest arguments)
+  (%qinvoke-method object nil "log" arguments))
+
+(defun |longDayName.QDate| (&rest arguments)
+  (%qinvoke-method "QDate" nil "longDayName" arguments))
+
+(defun |longMonthName.QDate| (&rest arguments)
+  (%qinvoke-method "QDate" nil "longMonthName" arguments))
+
+(defun |lookAt| (object &rest arguments)
+  (%qinvoke-method object nil "lookAt" arguments))
+
+(defun |lookupHost.QHostInfo| (&rest arguments)
+  (%qinvoke-method "QHostInfo" nil "lookupHost" arguments))
+
+(defun |lookupId| (object &rest arguments)
+  (%qinvoke-method object nil "lookupId" arguments))
+
+(defun |loopCount| (object &rest arguments)
+  (%qinvoke-method object nil "loopCount" arguments))
+
+(defun |lostFocus| (object &rest arguments)
+  (%qinvoke-method object nil "lostFocus" arguments))
+
 (defun |lower| (object &rest arguments)
   (%qinvoke-method object nil "lower" arguments))
 
@@ -317,6 +368,9 @@
 
 (defun |maxCount| (object &rest arguments)
   (%qinvoke-method object nil "maxCount" arguments))
+
+(defun |maxGeometryOutputVertices| (object &rest arguments)
+  (%qinvoke-method object nil "maxGeometryOutputVertices" arguments))
 
 (defun |maxLength| (object &rest arguments)
   (%qinvoke-method object nil "maxLength" arguments))
@@ -825,9 +879,6 @@
 (defun |normalGeometry| (object &rest arguments)
   (%qinvoke-method object nil "normalGeometry" arguments))
 
-(defun |normalMatrix| (object &rest arguments)
-  (%qinvoke-method object nil "normalMatrix" arguments))
-
 (defun |normalizedSignature.QMetaObject| (&rest arguments)
   (%qinvoke-method "QMetaObject" nil "normalizedSignature" arguments))
 
@@ -1217,6 +1268,9 @@
 
 (defun |paste| (object &rest arguments)
   (%qinvoke-method object nil "paste" arguments))
+
+(defun |patchVertexCount| (object &rest arguments)
+  (%qinvoke-method object nil "patchVertexCount" arguments))
 
 (defun |pathFromIndex| (object &rest arguments)
   (%qinvoke-method object nil "pathFromIndex" arguments))
@@ -1638,6 +1692,9 @@
 (defun |processId| (object &rest arguments)
   (%qinvoke-method object nil "processId" arguments))
 
+(defun |programId| (object &rest arguments)
+  (%qinvoke-method object nil "programId" arguments))
+
 (defun |program| (object &rest arguments)
   (%qinvoke-method object nil "program" arguments))
 
@@ -1968,6 +2025,9 @@
 (defun |removeAllDatabases.QWebDatabase| (&rest arguments)
   (%qinvoke-method "QWebDatabase" nil "removeAllDatabases" arguments))
 
+(defun |removeAllShaders| (object &rest arguments)
+  (%qinvoke-method object nil "removeAllShaders" arguments))
+
 (defun |removeAnimation| (object &rest arguments)
   (%qinvoke-method object nil "removeAnimation" arguments))
 
@@ -2081,6 +2141,9 @@
 
 (defun |removeServer.QLocalServer| (&rest arguments)
   (%qinvoke-method "QLocalServer" nil "removeServer" arguments))
+
+(defun |removeShader| (object &rest arguments)
+  (%qinvoke-method object nil "removeShader" arguments))
 
 (defun |removeStack| (object &rest arguments)
   (%qinvoke-method object nil "removeStack" arguments))
@@ -3072,9 +3135,6 @@
 (defun |setAddress(QString)| (object &rest arguments)
   (%qinvoke-method object nil "setAddress(QString)" arguments))
 
-(defun |setAddress(Q_IPV6ADDR)| (object &rest arguments)
-  (%qinvoke-method object nil "setAddress(Q_IPV6ADDR)" arguments))
-
 (defun |setAddress(const quint8*)| (object &rest arguments)
   (%qinvoke-method object nil "setAddress(const quint8*)" arguments))
 
@@ -3171,8 +3231,56 @@
 (defun |setAttribute.QCoreApplication| (&rest arguments)
   (%qinvoke-method "QCoreApplication" nil "setAttribute" arguments))
 
+(defun |setAttributeBuffer(const char*...)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeBuffer(const char*...)" arguments))
+
+(defun |setAttributeBuffer(int...)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeBuffer(int...)" arguments))
+
+(defun |setAttributeBuffer| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeBuffer" arguments))
+
 (defun |setAttributeNS| (object &rest arguments)
   (%qinvoke-method object nil "setAttributeNS" arguments))
+
+(defun |setAttributeValue(const char*,GLfloat)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*,GLfloat)" arguments))
+
+(defun |setAttributeValue(const char*,QColor)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*,QColor)" arguments))
+
+(defun |setAttributeValue(const char*,QVector2D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*,QVector2D)" arguments))
+
+(defun |setAttributeValue(const char*,QVector3D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*,QVector3D)" arguments))
+
+(defun |setAttributeValue(const char*,QVector4D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*,QVector4D)" arguments))
+
+(defun |setAttributeValue(const char*...)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(const char*...)" arguments))
+
+(defun |setAttributeValue(int,GLfloat)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int,GLfloat)" arguments))
+
+(defun |setAttributeValue(int,QColor)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int,QColor)" arguments))
+
+(defun |setAttributeValue(int,QVector2D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int,QVector2D)" arguments))
+
+(defun |setAttributeValue(int,QVector3D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int,QVector3D)" arguments))
+
+(defun |setAttributeValue(int,QVector4D)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int,QVector4D)" arguments))
+
+(defun |setAttributeValue(int...)| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue(int...)" arguments))
+
+(defun |setAttributeValue| (object &rest arguments)
+  (%qinvoke-method object nil "setAttributeValue" arguments))
 
 (defun |setAttribute| (object &rest arguments)
   (%qinvoke-method object nil "setAttribute" arguments))
@@ -3491,111 +3599,3 @@
 
 (defun |setCleanIcon| (object &rest arguments)
   (%qinvoke-method object nil "setCleanIcon" arguments))
-
-(defun |setClean| (object &rest arguments)
-  (%qinvoke-method object nil "setClean" arguments))
-
-(defun |setClearButtonEnabled| (object &rest arguments)
-  (%qinvoke-method object nil "setClearButtonEnabled" arguments))
-
-(defun |setClipPath| (object &rest arguments)
-  (%qinvoke-method object nil "setClipPath" arguments))
-
-(defun |setClipRect(QRect)| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRect(QRect)" arguments))
-
-(defun |setClipRect(QRect...)| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRect(QRect...)" arguments))
-
-(defun |setClipRect(QRectF)| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRect(QRectF)" arguments))
-
-(defun |setClipRect(QRectF...)| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRect(QRectF...)" arguments))
-
-(defun |setClipRect| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRect" arguments))
-
-(defun |setClipRegion| (object &rest arguments)
-  (%qinvoke-method object nil "setClipRegion" arguments))
-
-(defun |setClipping| (object &rest arguments)
-  (%qinvoke-method object nil "setClipping" arguments))
-
-(defun |setCmykF| (object &rest arguments)
-  (%qinvoke-method object nil "setCmykF" arguments))
-
-(defun |setCmyk| (object &rest arguments)
-  (%qinvoke-method object nil "setCmyk" arguments))
-
-(defun |setCodecForLocale.QTextCodec| (&rest arguments)
-  (%qinvoke-method "QTextCodec" nil "setCodecForLocale" arguments))
-
-(defun |setCodec| (object &rest arguments)
-  (%qinvoke-method object nil "setCodec" arguments))
-
-(defun |setCollapsible| (object &rest arguments)
-  (%qinvoke-method object nil "setCollapsible" arguments))
-
-(defun |setCollateCopies| (object &rest arguments)
-  (%qinvoke-method object nil "setCollateCopies" arguments))
-
-(defun |setCollectionFile| (object &rest arguments)
-  (%qinvoke-method object nil "setCollectionFile" arguments))
-
-(defun |setColor(QColor)| (object &rest arguments)
-  (%qinvoke-method object nil "setColor(QColor)" arguments))
-
-(defun |setColor(Qt::GlobalColor)| (object &rest arguments)
-  (%qinvoke-method object nil "setColor(Qt::GlobalColor)" arguments))
-
-(defun |setColorAt| (object &rest arguments)
-  (%qinvoke-method object nil "setColorAt" arguments))
-
-(defun |setColorCount| (object &rest arguments)
-  (%qinvoke-method object nil "setColorCount" arguments))
-
-(defun |setColorData| (object &rest arguments)
-  (%qinvoke-method object nil "setColorData" arguments))
-
-(defun |setColorGroup| (object &rest arguments)
-  (%qinvoke-method object nil "setColorGroup" arguments))
-
-(defun |setColorMode| (object &rest arguments)
-  (%qinvoke-method object nil "setColorMode" arguments))
-
-(defun |setColorSpec.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setColorSpec" arguments))
-
-(defun |setColorTable| (object &rest arguments)
-  (%qinvoke-method object nil "setColorTable" arguments))
-
-(defun |setColor| (object &rest arguments)
-  (%qinvoke-method object nil "setColor" arguments))
-
-(defun |setColumnAlignment| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnAlignment" arguments))
-
-(defun |setColumnCount| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnCount" arguments))
-
-(defun |setColumnFixedWidth| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnFixedWidth" arguments))
-
-(defun |setColumnHidden| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnHidden" arguments))
-
-(defun |setColumnMaximumWidth| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnMaximumWidth" arguments))
-
-(defun |setColumnMinimumWidth| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnMinimumWidth" arguments))
-
-(defun |setColumnPreferredWidth| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnPreferredWidth" arguments))
-
-(defun |setColumnSpacing| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnSpacing" arguments))
-
-(defun |setColumnStretchFactor| (object &rest arguments)
-  (%qinvoke-method object nil "setColumnStretchFactor" arguments))

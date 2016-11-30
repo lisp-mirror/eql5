@@ -1,5 +1,41 @@
 (defpackage :eql
   (:export
+   #:|setClean|
+   #:|setClearButtonEnabled|
+   #:|setClipPath|
+   #:|setClipRect(QRect)|
+   #:|setClipRect(QRect...)|
+   #:|setClipRect(QRectF)|
+   #:|setClipRect(QRectF...)|
+   #:|setClipRect|
+   #:|setClipRegion|
+   #:|setClipping|
+   #:|setCmykF|
+   #:|setCmyk|
+   #:|setCodecForLocale.QTextCodec|
+   #:|setCodec|
+   #:|setCollapsible|
+   #:|setCollateCopies|
+   #:|setCollectionFile|
+   #:|setColor(QColor)|
+   #:|setColor(Qt::GlobalColor)|
+   #:|setColorAt|
+   #:|setColorCount|
+   #:|setColorData|
+   #:|setColorGroup|
+   #:|setColorMode|
+   #:|setColorSpec.QApplication|
+   #:|setColorTable|
+   #:|setColor|
+   #:|setColumnAlignment|
+   #:|setColumnCount|
+   #:|setColumnFixedWidth|
+   #:|setColumnHidden|
+   #:|setColumnMaximumWidth|
+   #:|setColumnMinimumWidth|
+   #:|setColumnPreferredWidth|
+   #:|setColumnSpacing|
+   #:|setColumnStretchFactor|
    #:|setColumnStretch|
    #:|setColumnWidthConstraints|
    #:|setColumnWidths|
@@ -94,7 +130,9 @@
    #:|setDefaultFactory.QItemEditorFactory|
    #:|setDefaultFont|
    #:|setDefaultFormat.QSettings|
+   #:|setDefaultInnerTessellationLevels|
    #:|setDefaultInterface.QWebHistoryInterface|
+   #:|setDefaultOuterTessellationLevels|
    #:|setDefaultProperty|
    #:|setDefaultSectionSize|
    #:|setDefaultState|
@@ -605,6 +643,7 @@
    #:|setParentLayoutItem|
    #:|setParent|
    #:|setPassword|
+   #:|setPatchVertexCount|
    #:|setPath.QSettings|
    #:|setPath|
    #:|setPatternOptions|
@@ -960,7 +999,6 @@
    #:|setTransformOriginPoint|
    #:|setTransformationAnchor|
    #:|setTransformationMode|
-   #:|setTransformations|
    #:|setTransform|
    #:|setTransientParent|
    #:|setTransitionType|
@@ -975,6 +1013,35 @@
    #:|setUnifiedTitleAndToolBarOnMac|
    #:|setUniformItemSizes|
    #:|setUniformRowHeights|
+   #:|setUniformValue(const char*,GLfloat)|
+   #:|setUniformValue(const char*,GLint)|
+   #:|setUniformValue(const char*,GLuint)|
+   #:|setUniformValue(const char*,QColor)|
+   #:|setUniformValue(const char*,QMatrix4x4)|
+   #:|setUniformValue(const char*,QPoint)|
+   #:|setUniformValue(const char*,QPointF)|
+   #:|setUniformValue(const char*,QSize)|
+   #:|setUniformValue(const char*,QSizeF)|
+   #:|setUniformValue(const char*,QTransform)|
+   #:|setUniformValue(const char*,QVector2D)|
+   #:|setUniformValue(const char*,QVector3D)|
+   #:|setUniformValue(const char*,QVector4D)|
+   #:|setUniformValue(const char*...)|
+   #:|setUniformValue(int,GLfloat)|
+   #:|setUniformValue(int,GLint)|
+   #:|setUniformValue(int,GLuint)|
+   #:|setUniformValue(int,QColor)|
+   #:|setUniformValue(int,QMatrix4x4)|
+   #:|setUniformValue(int,QPoint)|
+   #:|setUniformValue(int,QPointF)|
+   #:|setUniformValue(int,QSize)|
+   #:|setUniformValue(int,QSizeF)|
+   #:|setUniformValue(int,QTransform)|
+   #:|setUniformValue(int,QVector2D)|
+   #:|setUniformValue(int,QVector3D)|
+   #:|setUniformValue(int,QVector4D)|
+   #:|setUniformValue(int...)|
+   #:|setUniformValue|
    #:|setUpdateBehavior|
    #:|setUpdateInterval|
    #:|setUpdatesEnabled|
@@ -1074,8 +1141,10 @@
    #:|setupFinished|
    #:|setupStarted|
    #:|setupViewport|
+   #:|shaderDestroyed|
    #:|shaderId|
    #:|shaderType|
+   #:|shaders|
    #:|shadow|
    #:|shapeMode|
    #:|shape|
@@ -1130,73 +1199,4 @@
    #:|sizeHintForColumn|
    #:|sizeHintForIndex|
    #:|sizeHintForRow|
-   #:|sizeHint|
-   #:|sizeIncrement|
-   #:|sizePolicy|
-   #:|sizes|
-   #:|size|
-   #:|slerp.QQuaternion|
-   #:|sliderMoved|
-   #:|sliderPositionFromValue.QStyle|
-   #:|sliderPosition|
-   #:|sliderPressed|
-   #:|sliderReleased|
-   #:|sliderValueFromPosition.QStyle|
-   #:|slopeAtPercent|
-   #:|smallDecimalPoint|
-   #:|smoothScaled|
-   #:|smoothSizes|
-   #:|socketOptions|
-   #:|socketOption|
-   #:|socketType|
-   #:|sortByColumn|
-   #:|sortCaseSensitivity|
-   #:|sortChildren|
-   #:|sortColumn|
-   #:|sortIndicatorChanged|
-   #:|sortIndicatorOrder|
-   #:|sortIndicatorSection|
-   #:|sortItems|
-   #:|sortOrder|
-   #:|sortRole|
-   #:|sorting|
-   #:|sort|
-   #:|sourceBoundingRect|
-   #:|sourceChanged|
-   #:|sourceCode|
-   #:|sourceIsPixmap|
-   #:|sourceModelChanged|
-   #:|sourceModel|
-   #:|sourceState|
-   #:|source|
-   #:|spacerItem|
-   #:|spacing|
-   #:|spanAngle|
-   #:|span|
-   #:|specialValueText|
-   #:|spec|
-   #:|speed|
-   #:|splitCell|
-   #:|splitDockWidget|
-   #:|splitPath|
-   #:|splitterMoved|
-   #:|splitter|
-   #:|spontaneous|
-   #:|spread|
-   #:|sqlStatement|
-   #:|squareToQuad.QTransform|
-   #:|sslConfiguration|
-   #:|sslErrors|
-   #:|stackBefore|
-   #:|stackUnder|
-   #:|stackingMode|
-   #:|stacks|
-   #:|stack|
-   #:|standaloneDayName|
-   #:|standaloneMonthName|
-   #:|standardButtons|
-   #:|standardButton|
-   #:|standardColor.QColorDialog|
-   #:|standardLocations.QStandardPaths|
-   #:|standardPalette|
-   #:|standardPixmap|))
+   #:|sizeHint|))

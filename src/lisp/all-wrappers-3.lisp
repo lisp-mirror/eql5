@@ -1,5 +1,22 @@
 (defpackage :eql
   (:export
+   #:|logicalDotsPerInchX|
+   #:|logicalDotsPerInchY|
+   #:|logicalDotsPerInch|
+   #:|logicalDpiX|
+   #:|logicalDpiY|
+   #:|logicalIndexAt(QPoint)|
+   #:|logicalIndexAt(int)|
+   #:|logicalIndexAt|
+   #:|logicalIndex|
+   #:|log|
+   #:|longDayName.QDate|
+   #:|longMonthName.QDate|
+   #:|lookAt|
+   #:|lookupHost.QHostInfo|
+   #:|lookupId|
+   #:|loopCount|
+   #:|lostFocus|
    #:|lower|
    #:|m11|
    #:|m12|
@@ -106,6 +123,7 @@
    #:|matrixForElement|
    #:|matrix|
    #:|maxCount|
+   #:|maxGeometryOutputVertices|
    #:|maxLength|
    #:|maxPage|
    #:|maxPendingConnections|
@@ -275,7 +293,6 @@
    #:|nonBreakableLines|
    #:|normal.QVector3D|
    #:|normalGeometry|
-   #:|normalMatrix|
    #:|normalizedSignature.QMetaObject|
    #:|normalizedType.QMetaObject|
    #:|normalized|
@@ -406,6 +423,7 @@
    #:|parseCookies.QNetworkCookie|
    #:|password|
    #:|paste|
+   #:|patchVertexCount|
    #:|pathFromIndex|
    #:|path|
    #:|patternErrorOffset|
@@ -546,6 +564,7 @@
    #:|processEvents.QCoreApplication|
    #:|processEvents|
    #:|processId|
+   #:|programId|
    #:|program|
    #:|project|
    #:|propertiesAssigned|
@@ -656,6 +675,7 @@
    #:|removeAllApplicationFonts.QFontDatabase|
    #:|removeAllChildren|
    #:|removeAllDatabases.QWebDatabase|
+   #:|removeAllShaders|
    #:|removeAnimation|
    #:|removeApplicationFont.QFontDatabase|
    #:|removeAttributeNS|
@@ -694,6 +714,7 @@
    #:|removeSceneEventFilter|
    #:|removeSelectedText|
    #:|removeServer.QLocalServer|
+   #:|removeShader|
    #:|removeStack|
    #:|removeState|
    #:|removeSubWindow|
@@ -1024,7 +1045,6 @@
    #:|setActive|
    #:|setActualVisibleContentRect|
    #:|setAddress(QString)|
-   #:|setAddress(Q_IPV6ADDR)|
    #:|setAddress(const quint8*)|
    #:|setAddress(const sockaddr*)|
    #:|setAddress(quint8*)|
@@ -1057,7 +1077,23 @@
    #:|setArrayIndex|
    #:|setArrowType|
    #:|setAttribute.QCoreApplication|
+   #:|setAttributeBuffer(const char*...)|
+   #:|setAttributeBuffer(int...)|
+   #:|setAttributeBuffer|
    #:|setAttributeNS|
+   #:|setAttributeValue(const char*,GLfloat)|
+   #:|setAttributeValue(const char*,QColor)|
+   #:|setAttributeValue(const char*,QVector2D)|
+   #:|setAttributeValue(const char*,QVector3D)|
+   #:|setAttributeValue(const char*,QVector4D)|
+   #:|setAttributeValue(const char*...)|
+   #:|setAttributeValue(int,GLfloat)|
+   #:|setAttributeValue(int,QColor)|
+   #:|setAttributeValue(int,QVector2D)|
+   #:|setAttributeValue(int,QVector3D)|
+   #:|setAttributeValue(int,QVector4D)|
+   #:|setAttributeValue(int...)|
+   #:|setAttributeValue|
    #:|setAttribute|
    #:|setAuthority|
    #:|setAutoClose|
@@ -1163,40 +1199,4 @@
    #:|setChildrenCollapsible|
    #:|setChild|
    #:|setCiphers|
-   #:|setCleanIcon|
-   #:|setClean|
-   #:|setClearButtonEnabled|
-   #:|setClipPath|
-   #:|setClipRect(QRect)|
-   #:|setClipRect(QRect...)|
-   #:|setClipRect(QRectF)|
-   #:|setClipRect(QRectF...)|
-   #:|setClipRect|
-   #:|setClipRegion|
-   #:|setClipping|
-   #:|setCmykF|
-   #:|setCmyk|
-   #:|setCodecForLocale.QTextCodec|
-   #:|setCodec|
-   #:|setCollapsible|
-   #:|setCollateCopies|
-   #:|setCollectionFile|
-   #:|setColor(QColor)|
-   #:|setColor(Qt::GlobalColor)|
-   #:|setColorAt|
-   #:|setColorCount|
-   #:|setColorData|
-   #:|setColorGroup|
-   #:|setColorMode|
-   #:|setColorSpec.QApplication|
-   #:|setColorTable|
-   #:|setColor|
-   #:|setColumnAlignment|
-   #:|setColumnCount|
-   #:|setColumnFixedWidth|
-   #:|setColumnHidden|
-   #:|setColumnMaximumWidth|
-   #:|setColumnMinimumWidth|
-   #:|setColumnPreferredWidth|
-   #:|setColumnSpacing|
-   #:|setColumnStretchFactor|))
+   #:|setCleanIcon|))

@@ -13,7 +13,7 @@ QT_BEGIN_NAMESPACE
 
 class LSqlDriver : public QSqlDriver {
     Q_OBJECT
-    friend class Q161;
+    friend class Q162;
 public:
     LSqlDriver(uint u, QObject* x1 = 0) : QSqlDriver(x1), unique(u) {}
 
@@ -51,7 +51,7 @@ public:
 
 class LSqlQueryModel : public QSqlQueryModel {
     Q_OBJECT
-    friend class Q162;
+    friend class Q163;
 public:
     LSqlQueryModel(uint u, QObject* x1 = 0) : QSqlQueryModel(x1), unique(u) {}
 
@@ -95,7 +95,7 @@ public:
 
 class LSqlRelationalDelegate : public QSqlRelationalDelegate {
     Q_OBJECT
-    friend class Q163;
+    friend class Q164;
 public:
     LSqlRelationalDelegate(uint u, QObject* x1 = 0) : QSqlRelationalDelegate(x1), unique(u) {}
 
@@ -104,10 +104,10 @@ public:
 
     QWidget* createEditor(QWidget* x1, const QStyleOptionViewItem& x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 46); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = (QWidget*)callOverrideFun(fun, 46, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSqlRelationalDelegate::createEditor(x1, x2, x3); } return ret; }
     void setModelData(QWidget* x1, QAbstractItemModel* x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 52); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 52, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::setModelData(x1, x2, x3); }}
-    void drawCheck(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, Qt::CheckState x4) const { quint64 id = LObjects::override_id(unique, 273); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 273, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawCheck(x1, x2, x3, x4); }}
-    void drawDecoration(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, const QPixmap& x4) const { quint64 id = LObjects::override_id(unique, 274); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 274, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawDecoration(x1, x2, x3, x4); }}
-    void drawDisplay(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, const QString& x4) const { quint64 id = LObjects::override_id(unique, 275); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 275, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawDisplay(x1, x2, x3, x4); }}
-    void drawFocus(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3) const { quint64 id = LObjects::override_id(unique, 276); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 276, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawFocus(x1, x2, x3); }}
+    void drawCheck(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, Qt::CheckState x4) const { quint64 id = LObjects::override_id(unique, 272); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 272, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawCheck(x1, x2, x3, x4); }}
+    void drawDecoration(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, const QPixmap& x4) const { quint64 id = LObjects::override_id(unique, 273); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 273, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawDecoration(x1, x2, x3, x4); }}
+    void drawDisplay(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3, const QString& x4) const { quint64 id = LObjects::override_id(unique, 274); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; callOverrideFun(fun, 274, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawDisplay(x1, x2, x3, x4); }}
+    void drawFocus(QPainter* x1, const QStyleOptionViewItem& x2, const QRect& x3) const { quint64 id = LObjects::override_id(unique, 275); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 275, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::drawFocus(x1, x2, x3); }}
     void paint(QPainter* x1, const QStyleOptionViewItem& x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 50); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 50, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::paint(x1, x2, x3); }}
     void setEditorData(QWidget* x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 51); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 51, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSqlRelationalDelegate::setEditorData(x1, x2); }}
     QSize sizeHint(const QStyleOptionViewItem& x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 53); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 53, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSqlRelationalDelegate::sizeHint(x1, x2); } return ret; }
@@ -123,7 +123,7 @@ public:
 
 class LSqlRelationalTableModel : public QSqlRelationalTableModel {
     Q_OBJECT
-    friend class Q164;
+    friend class Q165;
 public:
     LSqlRelationalTableModel(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) : QSqlRelationalTableModel(x1, x2), unique(u) {}
 
@@ -180,7 +180,7 @@ public:
 
 class LSqlTableModel : public QSqlTableModel {
     Q_OBJECT
-    friend class Q165;
+    friend class Q166;
 public:
     LSqlTableModel(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) : QSqlTableModel(x1, x2), unique(u) {}
 

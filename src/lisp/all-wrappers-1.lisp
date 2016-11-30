@@ -152,6 +152,12 @@
    #:|addSecs|
    #:|addSection|
    #:|addSeparator|
+   #:|addShaderFromSourceCode(QOpenGLShader::ShaderType,QByteArray)|
+   #:|addShaderFromSourceCode(QOpenGLShader::ShaderType,QString)|
+   #:|addShaderFromSourceCode(QOpenGLShader::ShaderType,const char*)|
+   #:|addShaderFromSourceCode|
+   #:|addShaderFromSourceFile|
+   #:|addShader|
    #:|addSimpleText|
    #:|addSpacerItem|
    #:|addSpacing|
@@ -259,7 +265,6 @@
    #:|applicationStateChanged|
    #:|applicationVersion.QCoreApplication|
    #:|applicationVersionChanged|
-   #:|applyTo|
    #:|arcMoveTo|
    #:|arcTo|
    #:|areSharing.QOpenGLContext|
@@ -274,6 +279,10 @@
    #:|atBlockStart|
    #:|atEnd|
    #:|atStart|
+   #:|attributeLocation(QByteArray)|
+   #:|attributeLocation(QString)|
+   #:|attributeLocation(const char*)|
+   #:|attributeLocation|
    #:|attributeNS|
    #:|attributeNames|
    #:|attribute|
@@ -369,6 +378,10 @@
    #:|bind(QHostAddress...)|
    #:|bind(ushort)|
    #:|bind(ushort...)|
+   #:|bindAttributeLocation(QByteArray...)|
+   #:|bindAttributeLocation(QString...)|
+   #:|bindAttributeLocation(const char*...)|
+   #:|bindAttributeLocation|
    #:|bindValue(QString...)|
    #:|bindValue(int...)|
    #:|bindValueType(QString)|
@@ -739,7 +752,6 @@
    #:|connected|
    #:|connectionNames.QSqlDatabase|
    #:|connectionName|
-   #:|constData|
    #:|constructorCount|
    #:|contains(QPainterPath)|
    #:|contains(QPoint)|
@@ -779,7 +791,6 @@
    #:|copyAvailable|
    #:|copyCollectionFile|
    #:|copyCount|
-   #:|copyDataTo|
    #:|copy|
    #:|cornerWidget|
    #:|corner|
@@ -955,7 +966,9 @@
    #:|defaultFont|
    #:|defaultFormat.QSettings|
    #:|defaultFramebufferObject|
+   #:|defaultInnerTessellationLevels|
    #:|defaultInterface.QWebHistoryInterface|
+   #:|defaultOuterTessellationLevels|
    #:|defaultPageSize|
    #:|defaultPrinterName.QPrinterInfo|
    #:|defaultSectionSize|
@@ -1008,6 +1021,9 @@
    #:|directory|
    #:|dirtyRegionOffset|
    #:|dir|
+   #:|disableAttributeArray(const char*)|
+   #:|disableAttributeArray(int)|
+   #:|disableAttributeArray|
    #:|discardCommand|
    #:|disconnectFromHost|
    #:|disconnectFromServer|
@@ -1183,23 +1199,7 @@
    #:|dumpObjectInfo|
    #:|dumpObjectTree|
    #:|duplex|
-   #:|duplicatesEnabled|
-   #:|duration|
-   #:|dx|
-   #:|dynamicPropertyNames|
-   #:|dynamicSortFilter|
-   #:|dy|
-   #:|easingCurve|
-   #:|echoMode|
-   #:|editItem|
-   #:|editStrategy|
-   #:|editTextChanged|
-   #:|editTriggers|
-   #:|editingFinished|
-   #:|editorDestroyed|
-   #:|editorEvent|
-   #:|edit|
-   #:|effectiveDate|))
+   #:|duplicatesEnabled|))
 
 (in-package :eql)
 

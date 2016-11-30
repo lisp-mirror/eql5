@@ -23,12 +23,12 @@ void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[76] = new Q77;
-    LObjects::Q[211] = new Q212;
     LObjects::Q[212] = new Q213;
     LObjects::Q[213] = new Q214;
     LObjects::Q[214] = new Q215;
     LObjects::Q[215] = new Q216;
     LObjects::Q[216] = new Q217;
+    LObjects::Q[217] = new Q218;
     LObjects::N[191] = new N192;
     LObjects::N[192] = new N193;
     LObjects::N[193] = new N194;
@@ -42,12 +42,12 @@ const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 77: m = &QGraphicsWebView::staticMetaObject; break;
-        case 212: m = &QWebFrame::staticMetaObject; break;
-        case 213: m = &QWebHistoryInterface::staticMetaObject; break;
-        case 214: m = &QWebInspector::staticMetaObject; break;
-        case 215: m = &QWebPage::staticMetaObject; break;
-        case 216: m = &QWebPluginFactory::staticMetaObject; break;
-        case 217: m = &QWebView::staticMetaObject; break; }
+        case 213: m = &QWebFrame::staticMetaObject; break;
+        case 214: m = &QWebHistoryInterface::staticMetaObject; break;
+        case 215: m = &QWebInspector::staticMetaObject; break;
+        case 216: m = &QWebPage::staticMetaObject; break;
+        case 217: m = &QWebPluginFactory::staticMetaObject; break;
+        case 218: m = &QWebView::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -65,11 +65,11 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 77: ids = &LGraphicsWebView::overrideIds; break;
-            case 213: ids = &LWebHistoryInterface::overrideIds; break;
-            case 214: ids = &LWebInspector::overrideIds; break;
-            case 215: ids = &LWebPage::overrideIds; break;
-            case 216: ids = &LWebPluginFactory::overrideIds; break;
-            case 217: ids = &LWebView::overrideIds; break; }}
+            case 214: ids = &LWebHistoryInterface::overrideIds; break;
+            case 215: ids = &LWebInspector::overrideIds; break;
+            case 216: ids = &LWebPage::overrideIds; break;
+            case 217: ids = &LWebPluginFactory::overrideIds; break;
+            case 218: ids = &LWebView::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {

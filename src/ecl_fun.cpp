@@ -86,6 +86,7 @@ META_TYPE (T_QVector_QRectF,                   QVector<QRectF>)
 META_TYPE (T_QVector_QRgb,                     QVector<QRgb>)
 META_TYPE (T_QVector_QTextFormat,              QVector<QTextFormat>)
 META_TYPE (T_QVector_QTextLength,              QVector<QTextLength>)
+META_TYPE (T_QVector_float,                    QVector<float>)
 META_TYPE (T_QVector_qreal,                    QVector<qreal>)
 META_TYPE (T_WId,                              WId)
 
@@ -376,6 +377,9 @@ static T toFloat(cl_object l_num) {
 #endif
     }
     return f; }
+
+static float toFloat(cl_object l_num) {
+    return toFloat<float>(l_num); }
 
 static qreal toReal(cl_object l_num) {
     return toFloat<qreal>(l_num); }
@@ -806,6 +810,7 @@ TO_QT_VECTOR_VAL  (QRectF)
 TO_QT_VECTOR_VAL  (QTextFormat)
 TO_QT_VECTOR_VAL  (QTextLength)
 TO_QT_VECTOR_VAL2 (QRgb, UInt)
+TO_QT_VECTOR_VAL2 (float, Float)
 TO_QT_VECTOR_VAL2 (qreal, Real)
 
 QVariant toQVariant(cl_object l_obj, const char* s_type, int type) {
@@ -1014,6 +1019,7 @@ TO_CL_VECTOR_VAL  (QRectF, qrectf)
 TO_CL_VECTOR_VAL  (QTextFormat, qtextformat)
 TO_CL_VECTOR_VAL  (QTextLength, qtextlength)
 TO_CL_VECTOR_VAL2 (QRgb, qrgb, ecl_make_unsigned_integer)
+TO_CL_VECTOR_VAL2 (float, float, ecl_make_singlefloat)
 TO_CL_VECTOR_VAL2 (qreal, qreal, ecl_make_doublefloat)
 
 static cl_object from_qvariant_value(const QVariant& var) {
@@ -1200,6 +1206,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QVector_QRgb == n)                     p = new QVector<QRgb>(toQRgbVector(l_arg));
         else if(T_QVector_QTextFormat == n)              p = new QVector<QTextFormat>(toQTextFormatVector(l_arg));
         else if(T_QVector_QTextLength == n)              p = new QVector<QTextLength>(toQTextLengthVector(l_arg));
+        else if(T_QVector_float == n)                    p = new QVector<float>(tofloatVector(l_arg));
         else if(T_QVector_qreal == n)                    p = new QVector<qreal>(toqrealVector(l_arg));
         else if(T_WId == n)                              p = new ulong(toUInt<ulong>(l_arg));
         else if(T_GLint == n)                            p = new GLint(toInt<GLint>(l_arg));
@@ -1351,6 +1358,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QVector_QRgb == n)                     l_ret = from_qrgbvector(*(QVector<QRgb>*)p);
             else if(T_QVector_QTextFormat == n)              l_ret = from_qtextformatvector(*(QVector<QTextFormat>*)p);
             else if(T_QVector_QTextLength == n)              l_ret = from_qtextlengthvector(*(QVector<QTextLength>*)p);
+            else if(T_QVector_float == n)                    l_ret = from_floatvector(*(QVector<float>*)p);
             else if(T_QVector_qreal == n)                    l_ret = from_qrealvector(*(QVector<qreal>*)p);
             else if(T_WId == n)                              l_ret = ecl_make_unsigned_integer(*(ulong*)p);
             else if(T_GLint == n)                            l_ret = ecl_make_integer(*(GLint*)p);

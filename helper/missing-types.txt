@@ -26,6 +26,7 @@ QList<QNetworkAddressEntry>
 QList<QNetworkCookie>
 QList<QNetworkInterface>
 QList<QNetworkProxy>
+QList<QOpenGLShader*>
 QList<QPageSize>
 QList<QScreen*>
 QList<QSslCertificate>
@@ -39,7 +40,6 @@ QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
 QMarginsF
-QMatrix3x3
 QMultiMap<QString,QString>
 QNetworkConfiguration
 QOpenGLContextGroup
@@ -64,9 +64,9 @@ QVariantHash
 QVector<QSslEllipticCurve>
 QVector<QStaticPlugin>
 QVector<QVariant>
+QVector<float>
 QVector<int>
 QWindowList
-Q_IPV6ADDR
 quint16
 quint64
 quint8

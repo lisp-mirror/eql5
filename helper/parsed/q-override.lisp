@@ -575,10 +575,8 @@
    "virtual QSizeF sizeHint ( Qt::SizeHint , const QSizeF & = QSizeF() ) const"
    "virtual void ungrabMouseEvent ( QEvent * )"
    "virtual void wheelEvent ( QGraphicsSceneWheelEvent * )")
-  (("QGraphicsRotation" . "QGraphicsTransform")
-   "virtual void applyTo ( QMatrix4x4 * ) const")
-  (("QGraphicsScale" . "QGraphicsTransform")
-   "virtual void applyTo ( QMatrix4x4 * ) const")
+  (("QGraphicsRotation" . "QGraphicsTransform"))
+  (("QGraphicsScale" . "QGraphicsTransform"))
   (("QGraphicsScene" . "QObject")
    "virtual QVariant inputMethodQuery ( Qt::InputMethodQuery ) const"
    "virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * )"
@@ -632,8 +630,7 @@
    "virtual void mousePressEvent ( QGraphicsSceneMouseEvent * )"
    "virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * )"
    "virtual bool sceneEvent ( QEvent * )")
-  (("QGraphicsTransform" . "QObject")
-   "virtual void applyTo ( QMatrix4x4 * ) const = 0")
+  (("QGraphicsTransform" . "QObject"))
   (("QGraphicsView" . "QAbstractScrollArea")
    "virtual void drawBackground ( QPainter * , const QRectF & )"
    "virtual void drawForeground ( QPainter * , const QRectF & )"
@@ -1051,6 +1048,8 @@
    "virtual void timerEvent ( QTimerEvent * )")
   (("QOpenGLContext" . "QObject"))
   (("QOpenGLShader" . "QObject"))
+  (("QOpenGLShaderProgram" . "QObject")
+   "virtual bool link ()")
   (("QOpenGLWidget" . "QWidget")
    "virtual void initializeGL ()"
    "virtual void paintGL ()"
