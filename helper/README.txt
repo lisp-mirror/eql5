@@ -17,3 +17,7 @@ Take a look at missing-types.txt:
 These types are currently not available, as they must be integrated manually (by the author).
 
 Make a clean rebuild of the project (see README-REBUILD.txt).
+
+If you see an error message like this when compiling from "eql_lib.pro":
+    "staticMetaObject’ is not a member of ‘QTimeZone’"
+then add the class to "no-static-meta-object.lisp", and it should compile.

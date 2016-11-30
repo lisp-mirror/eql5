@@ -1,5 +1,30 @@
 (defpackage :eql
   (:export
+   #:|effectiveOpacity|
+   #:|effectiveSizeHint|
+   #:|effectiveWinId|
+   #:|elapsed|
+   #:|elementCount|
+   #:|elementExists|
+   #:|elementId|
+   #:|element|
+   #:|elideMode|
+   #:|elidedText|
+   #:|ellipticCurves|
+   #:|emitDataChanged|
+   #:|emitSelectionChanged|
+   #:|emptyLabel|
+   #:|enablePersistentStorage.QWebSettings|
+   #:|enabledChanged|
+   #:|encloseContentsWith(QString)|
+   #:|encloseContentsWith(QWebElement)|
+   #:|encloseContentsWith|
+   #:|encloseWith(QString)|
+   #:|encloseWith(QWebElement)|
+   #:|encloseWith|
+   #:|enclosingBlockElement|
+   #:|encodeName.QFile|
+   #:|encrypted|
    #:|encryptionMethod|
    #:|endArray|
    #:|endEditBlock|
@@ -93,6 +118,7 @@
    #:|extensions|
    #:|extension|
    #:|extraSelections|
+   #:|faces|
    #:|fallbacksEnabled|
    #:|families|
    #:|family|
@@ -353,6 +379,8 @@
    #:|frustum|
    #:|fullPage|
    #:|fullServerName|
+   #:|functions|
+   #:|generateMipMaps|
    #:|generatedIconPixmap|
    #:|geometriesChanged|
    #:|geometryChangeRequested|
@@ -380,6 +408,7 @@
    #:|getOpenFileNames.QFileDialog|
    #:|getOpenFileUrl.QFileDialog|
    #:|getOpenFileUrls.QFileDialog|
+   #:|getProcAddress|
    #:|getSaveFileName.QFileDialog|
    #:|getSaveFileUrl.QFileDialog|
    #:|getText.QInputDialog|
@@ -393,6 +422,7 @@
    #:|globalPos|
    #:|globalRestorePolicy|
    #:|globalSettings.QWebSettings|
+   #:|globalShareContext.QOpenGLContext|
    #:|globalStrut.QApplication|
    #:|globalX|
    #:|globalY|
@@ -433,6 +463,9 @@
    #:|hasColor|
    #:|hasComplexSelection|
    #:|hasCursor|
+   #:|hasDaylightTime|
+   #:|hasExtension|
+   #:|hasFeature.QOpenGLTexture|
    #:|hasFeature|
    #:|hasFocus|
    #:|hasFormat|
@@ -445,6 +478,7 @@
    #:|hasIndex|
    #:|hasMouseTracking|
    #:|hasNext|
+   #:|hasOpenGLShaders.QOpenGLShader|
    #:|hasOutValues|
    #:|hasPendingConnections|
    #:|hasPendingDatagrams|
@@ -458,6 +492,7 @@
    #:|hasText|
    #:|hasThemeIcon.QIcon|
    #:|hasTracking|
+   #:|hasTransitions|
    #:|hasUrls|
    #:|hasVisitedPage|
    #:|hasWidthForHeight|
@@ -544,6 +579,7 @@
    #:|hueF|
    #:|hue|
    #:|humanReadableName|
+   #:|ianaIdToWindowsId.QTimeZone|
    #:|icon(QFileIconProvider::IconType)|
    #:|icon(QFileInfo)|
    #:|iconChanged|
@@ -744,12 +780,14 @@
    #:|isAnimated|
    #:|isAreaAllowed|
    #:|isAtBoundary|
+   #:|isAutoMipMapGenerationEnabled|
    #:|isAutoRepeat|
    #:|isAutoValue|
    #:|isBackwardAvailable|
    #:|isBitmapScalable|
    #:|isBlacklisted|
    #:|isBlockFormat|
+   #:|isBound|
    #:|isBrushSet|
    #:|isBundle|
    #:|isCachingProxy|
@@ -765,12 +803,14 @@
    #:|isComboBoxEditable|
    #:|isCommitPage|
    #:|isCompactMode|
+   #:|isCompiled|
    #:|isComplete|
    #:|isContentEditable|
    #:|isContentSelected|
    #:|isCopyOf|
    #:|isCornerButtonEnabled|
    #:|isCosmetic|
+   #:|isCreated|
    #:|isCreatingContents|
    #:|isCreatingIndex|
    #:|isDateEditEnabled|
@@ -803,6 +843,7 @@
    #:|isFirstColumnSpanned|
    #:|isFirstItemColumnSpanned|
    #:|isFixedPitch|
+   #:|isFixedSamplePositions|
    #:|isFlat|
    #:|isFloatable|
    #:|isFloating|
@@ -853,6 +894,7 @@
    #:|isObscured|
    #:|isOpaque|
    #:|isOpenError|
+   #:|isOpenGLES|
    #:|isOpen|
    #:|isPanel|
    #:|isParentOf|
@@ -897,6 +939,7 @@
    #:|isSortIndicatorShown|
    #:|isSortLocaleAware|
    #:|isSortingEnabled|
+   #:|isStorageAllocated|
    #:|isSymLink|
    #:|isSystemTrayAvailable.QSystemTrayIcon|
    #:|isTabEnabled|
@@ -906,7 +949,9 @@
    #:|isTearOffMenuVisible|
    #:|isTextModeEnabled|
    #:|isTextVisible|
+   #:|isTextureView|
    #:|isTiledBackingStoreFrozen|
+   #:|isTimeZoneIdAvailable.QTimeZone|
    #:|isTopLevel|
    #:|isTransformed|
    #:|isTranslating|
@@ -1040,6 +1085,7 @@
    #:|lastVisited|
    #:|lastWindowClosed|
    #:|last|
+   #:|layers|
    #:|layoutAboutToBeChanged|
    #:|layoutChanged|
    #:|layoutDirection.QGuiApplication|
@@ -1066,6 +1112,7 @@
    #:|letterSpacingType|
    #:|letterSpacing|
    #:|levelOfDetailFromTransform.QStyleOptionGraphicsItem|
+   #:|levelofDetailBias|
    #:|libraryPaths.QCoreApplication|
    #:|licensedProducts.QLibraryInfo|
    #:|licensee.QLibraryInfo|
@@ -1145,58 +1192,11 @@
    #:|logicalIndexAt(int)|
    #:|logicalIndexAt|
    #:|logicalIndex|
+   #:|log|
    #:|longDayName.QDate|
    #:|longMonthName.QDate|
    #:|lookAt|
    #:|lookupHost.QHostInfo|
    #:|lookupId|
    #:|loopCount|
-   #:|lostFocus|
-   #:|lower|
-   #:|m11|
-   #:|m12|
-   #:|m13|
-   #:|m21|
-   #:|m22|
-   #:|m23|
-   #:|m31|
-   #:|m32|
-   #:|m33|
-   #:|machine|
-   #:|magentaF|
-   #:|magenta|
-   #:|mainFrame|
-   #:|makeAbsolute|
-   #:|makeAndModel|
-   #:|makeCurrent|
-   #:|makeDecoder|
-   #:|makeEncoder|
-   #:|manager|
-   #:|map(QLine)|
-   #:|map(QLineF)|
-   #:|map(QPainterPath)|
-   #:|map(QPoint)|
-   #:|map(QPointF)|
-   #:|map(QPolygon)|
-   #:|map(QPolygonF)|
-   #:|map(QRegion)|
-   #:|map(QVector3D)|
-   #:|map(QVector4D)|
-   #:|mapBetween|
-   #:|mapFromGlobal|
-   #:|mapFromItem(const QGraphicsItem*,QPainterPath)|
-   #:|mapFromItem(const QGraphicsItem*,QPointF)|
-   #:|mapFromItem(const QGraphicsItem*,QPolygonF)|
-   #:|mapFromItem(const QGraphicsItem*,QRectF)|
-   #:|mapFromItem|
-   #:|mapFromParent(QPainterPath)|
-   #:|mapFromParent(QPointF)|
-   #:|mapFromParent(QPolygonF)|
-   #:|mapFromParent(QRectF)|
-   #:|mapFromParent|
-   #:|mapFromScene(QPainterPath)|
-   #:|mapFromScene(QPointF)|
-   #:|mapFromScene(QPolygonF)|
-   #:|mapFromScene(QRectF)|
-   #:|mapFromScene|
-   #:|mapFromSource|))
+   #:|lostFocus|))

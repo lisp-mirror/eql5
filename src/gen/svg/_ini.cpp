@@ -15,21 +15,21 @@ void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[72] = new Q73;
-    LObjects::Q[172] = new Q173;
-    LObjects::Q[173] = new Q174;
-    LObjects::N[148] = new N149; }
+    LObjects::Q[174] = new Q175;
+    LObjects::Q[175] = new Q176;
+    LObjects::N[150] = new N151; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 73: m = &QGraphicsSvgItem::staticMetaObject; break;
-        case 173: m = &QSvgRenderer::staticMetaObject; break;
-        case 174: m = &QSvgWidget::staticMetaObject; break; }
+        case 175: m = &QSvgRenderer::staticMetaObject; break;
+        case 176: m = &QSvgWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 149: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
+        case 151: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -37,12 +37,12 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 73: ids = &LGraphicsSvgItem::overrideIds; break;
-            case 173: ids = &LSvgRenderer::overrideIds; break;
-            case 174: ids = &LSvgWidget::overrideIds; break; }}
+            case 175: ids = &LSvgRenderer::overrideIds; break;
+            case 176: ids = &LSvgWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 149: ids = &LSvgGenerator::overrideIds; break; }}
+            case 151: ids = &LSvgGenerator::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

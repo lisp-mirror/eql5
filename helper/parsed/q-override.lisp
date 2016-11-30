@@ -1049,6 +1049,8 @@
    "virtual void childEvent ( QChildEvent * )"
    "virtual void customEvent ( QEvent * )"
    "virtual void timerEvent ( QTimerEvent * )")
+  (("QOpenGLContext" . "QObject"))
+  (("QOpenGLShader" . "QObject"))
   (("QOpenGLWidget" . "QWidget")
    "virtual void initializeGL ()"
    "virtual void paintGL ()"

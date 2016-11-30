@@ -1,5 +1,80 @@
 (in-package :eql)
 
+(defun |effectiveOpacity| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "effectiveOpacity" arguments))
+
+(defun |effectiveSizeHint| (object &rest arguments)
+  (%qinvoke-method object nil "effectiveSizeHint" arguments))
+
+(defun |effectiveWinId| (object &rest arguments)
+  (%qinvoke-method object nil "effectiveWinId" arguments))
+
+(defun |elapsed| (object &rest arguments)
+  (%qinvoke-method object nil "elapsed" arguments))
+
+(defun |elementCount| (object &rest arguments)
+  (%qinvoke-method object nil "elementCount" arguments))
+
+(defun |elementExists| (object &rest arguments)
+  (%qinvoke-method object nil "elementExists" arguments))
+
+(defun |elementId| (object &rest arguments)
+  (%qinvoke-method object nil "elementId" arguments))
+
+(defun |element| (object &rest arguments)
+  (%qinvoke-method object nil "element" arguments))
+
+(defun |elideMode| (object &rest arguments)
+  (%qinvoke-method object nil "elideMode" arguments))
+
+(defun |elidedText| (object &rest arguments)
+  (%qinvoke-method object nil "elidedText" arguments))
+
+(defun |ellipticCurves| (object &rest arguments)
+  (%qinvoke-method object nil "ellipticCurves" arguments))
+
+(defun |emitDataChanged| (object &rest arguments)
+  (%qinvoke-method object nil "emitDataChanged" arguments))
+
+(defun |emitSelectionChanged| (object &rest arguments)
+  (%qinvoke-method object nil "emitSelectionChanged" arguments))
+
+(defun |emptyLabel| (object &rest arguments)
+  (%qinvoke-method object nil "emptyLabel" arguments))
+
+(defun |enablePersistentStorage.QWebSettings| (&rest arguments)
+  (%qinvoke-method "QWebSettings" nil "enablePersistentStorage" arguments))
+
+(defun |enabledChanged| (object &rest arguments)
+  (%qinvoke-method object nil "enabledChanged" arguments))
+
+(defun |encloseContentsWith(QString)| (object &rest arguments)
+  (%qinvoke-method object nil "encloseContentsWith(QString)" arguments))
+
+(defun |encloseContentsWith(QWebElement)| (object &rest arguments)
+  (%qinvoke-method object nil "encloseContentsWith(QWebElement)" arguments))
+
+(defun |encloseContentsWith| (object &rest arguments)
+  (%qinvoke-method object nil "encloseContentsWith" arguments))
+
+(defun |encloseWith(QString)| (object &rest arguments)
+  (%qinvoke-method object nil "encloseWith(QString)" arguments))
+
+(defun |encloseWith(QWebElement)| (object &rest arguments)
+  (%qinvoke-method object nil "encloseWith(QWebElement)" arguments))
+
+(defun |encloseWith| (object &rest arguments)
+  (%qinvoke-method object nil "encloseWith" arguments))
+
+(defun |enclosingBlockElement| (object &rest arguments)
+  (%qinvoke-method object nil "enclosingBlockElement" arguments))
+
+(defun |encodeName.QFile| (&rest arguments)
+  (%qinvoke-method "QFile" nil "encodeName" arguments))
+
+(defun |encrypted| (object &rest arguments)
+  (%qinvoke-method object nil "encrypted" arguments))
+
 (defun |encryptionMethod| (object &rest arguments)
   (%qinvoke-method object nil "encryptionMethod" arguments))
 
@@ -278,6 +353,9 @@
 
 (defun |extraSelections| (object &rest arguments)
   (%qinvoke-method object nil "extraSelections" arguments))
+
+(defun |faces| (object &rest arguments)
+  (%qinvoke-method object nil "faces" arguments))
 
 (defun |fallbacksEnabled| (object &rest arguments)
   (%qinvoke-method object nil "fallbacksEnabled" arguments))
@@ -1059,6 +1137,12 @@
 (defun |fullServerName| (object &rest arguments)
   (%qinvoke-method object nil "fullServerName" arguments))
 
+(defun |functions| (object &rest arguments)
+  (%qinvoke-method object nil "functions" arguments))
+
+(defun |generateMipMaps| (object &rest arguments)
+  (%qinvoke-method object nil "generateMipMaps" arguments))
+
 (defun |generatedIconPixmap| (object &rest arguments)
   (%qinvoke-method object nil "generatedIconPixmap" arguments))
 
@@ -1140,6 +1224,9 @@
 (defun |getOpenFileUrls.QFileDialog| (&rest arguments)
   (%qinvoke-method "QFileDialog" nil "getOpenFileUrls" arguments))
 
+(defun |getProcAddress| (object &rest arguments)
+  (%qinvoke-method object nil "getProcAddress" arguments))
+
 (defun |getSaveFileName.QFileDialog| (&rest arguments)
   (%qinvoke-method "QFileDialog" nil "getSaveFileName" arguments))
 
@@ -1178,6 +1265,9 @@
 
 (defun |globalSettings.QWebSettings| (&rest arguments)
   (%qinvoke-method "QWebSettings" nil "globalSettings" arguments))
+
+(defun |globalShareContext.QOpenGLContext| (&rest arguments)
+  (%qinvoke-method "QOpenGLContext" nil "globalShareContext" arguments))
 
 (defun |globalStrut.QApplication| (&rest arguments)
   (%qinvoke-method "QApplication" nil "globalStrut" arguments))
@@ -1299,6 +1389,15 @@
 (defun |hasCursor| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "hasCursor" arguments))
 
+(defun |hasDaylightTime| (object &rest arguments)
+  (%qinvoke-method object nil "hasDaylightTime" arguments))
+
+(defun |hasExtension| (object &rest arguments)
+  (%qinvoke-method object nil "hasExtension" arguments))
+
+(defun |hasFeature.QOpenGLTexture| (&rest arguments)
+  (%qinvoke-method "QOpenGLTexture" nil "hasFeature" arguments))
+
 (defun |hasFeature| (object &rest arguments)
   (%qinvoke-method object nil "hasFeature" arguments))
 
@@ -1334,6 +1433,9 @@
 
 (defun |hasNext| (object &rest arguments)
   (%qinvoke-method object nil "hasNext" arguments))
+
+(defun |hasOpenGLShaders.QOpenGLShader| (&rest arguments)
+  (%qinvoke-method "QOpenGLShader" nil "hasOpenGLShaders" arguments))
 
 (defun |hasOutValues| (object &rest arguments)
   (%qinvoke-method object nil "hasOutValues" arguments))
@@ -1373,6 +1475,9 @@
 
 (defun |hasTracking| (object &rest arguments)
   (%qinvoke-method object nil "hasTracking" arguments))
+
+(defun |hasTransitions| (object &rest arguments)
+  (%qinvoke-method object nil "hasTransitions" arguments))
 
 (defun |hasUrls| (object &rest arguments)
   (%qinvoke-method object nil "hasUrls" arguments))
@@ -1631,6 +1736,9 @@
 
 (defun |humanReadableName| (object &rest arguments)
   (%qinvoke-method object nil "humanReadableName" arguments))
+
+(defun |ianaIdToWindowsId.QTimeZone| (&rest arguments)
+  (%qinvoke-method "QTimeZone" nil "ianaIdToWindowsId" arguments))
 
 (defun |icon(QFileIconProvider::IconType)| (object &rest arguments)
   (%qinvoke-method object nil "icon(QFileIconProvider::IconType)" arguments))
@@ -2232,6 +2340,9 @@
 (defun |isAtBoundary| (object &rest arguments)
   (%qinvoke-method object nil "isAtBoundary" arguments))
 
+(defun |isAutoMipMapGenerationEnabled| (object &rest arguments)
+  (%qinvoke-method object nil "isAutoMipMapGenerationEnabled" arguments))
+
 (defun |isAutoRepeat| (object &rest arguments)
   (%qinvoke-method object nil "isAutoRepeat" arguments))
 
@@ -2249,6 +2360,9 @@
 
 (defun |isBlockFormat| (object &rest arguments)
   (%qinvoke-method object nil "isBlockFormat" arguments))
+
+(defun |isBound| (object &rest arguments)
+  (%qinvoke-method object nil "isBound" arguments))
 
 (defun |isBrushSet| (object &rest arguments)
   (%qinvoke-method object nil "isBrushSet" arguments))
@@ -2295,6 +2409,9 @@
 (defun |isCompactMode| (object &rest arguments)
   (%qinvoke-method object nil "isCompactMode" arguments))
 
+(defun |isCompiled| (object &rest arguments)
+  (%qinvoke-method object nil "isCompiled" arguments))
+
 (defun |isComplete| (object &rest arguments)
   (%qinvoke-method object nil "isComplete" arguments))
 
@@ -2312,6 +2429,9 @@
 
 (defun |isCosmetic| (object &rest arguments)
   (%qinvoke-method object nil "isCosmetic" arguments))
+
+(defun |isCreated| (object &rest arguments)
+  (%qinvoke-method object nil "isCreated" arguments))
 
 (defun |isCreatingContents| (object &rest arguments)
   (%qinvoke-method object nil "isCreatingContents" arguments))
@@ -2408,6 +2528,9 @@
 
 (defun |isFixedPitch| (object &rest arguments)
   (%qinvoke-method object nil "isFixedPitch" arguments))
+
+(defun |isFixedSamplePositions| (object &rest arguments)
+  (%qinvoke-method object nil "isFixedSamplePositions" arguments))
 
 (defun |isFlat| (object &rest arguments)
   (%qinvoke-method object nil "isFlat" arguments))
@@ -2559,6 +2682,9 @@
 (defun |isOpenError| (object &rest arguments)
   (%qinvoke-method object nil "isOpenError" arguments))
 
+(defun |isOpenGLES| (object &rest arguments)
+  (%qinvoke-method object nil "isOpenGLES" arguments))
+
 (defun |isOpen| (object &rest arguments)
   (%qinvoke-method object nil "isOpen" arguments))
 
@@ -2691,6 +2817,9 @@
 (defun |isSortingEnabled| (object &rest arguments)
   (%qinvoke-method object nil "isSortingEnabled" arguments))
 
+(defun |isStorageAllocated| (object &rest arguments)
+  (%qinvoke-method object nil "isStorageAllocated" arguments))
+
 (defun |isSymLink| (object &rest arguments)
   (%qinvoke-method object nil "isSymLink" arguments))
 
@@ -2718,8 +2847,14 @@
 (defun |isTextVisible| (object &rest arguments)
   (%qinvoke-method object nil "isTextVisible" arguments))
 
+(defun |isTextureView| (object &rest arguments)
+  (%qinvoke-method object nil "isTextureView" arguments))
+
 (defun |isTiledBackingStoreFrozen| (object &rest arguments)
   (%qinvoke-method object nil "isTiledBackingStoreFrozen" arguments))
+
+(defun |isTimeZoneIdAvailable.QTimeZone| (&rest arguments)
+  (%qinvoke-method "QTimeZone" nil "isTimeZoneIdAvailable" arguments))
 
 (defun |isTopLevel| (object &rest arguments)
   (%qinvoke-method object nil "isTopLevel" arguments))
@@ -3120,6 +3255,9 @@
 (defun |last| (object &rest arguments)
   (%qinvoke-method object nil "last" arguments))
 
+(defun |layers| (object &rest arguments)
+  (%qinvoke-method object nil "layers" arguments))
+
 (defun |layoutAboutToBeChanged| (object &rest arguments)
   (%qinvoke-method object nil "layoutAboutToBeChanged" arguments))
 
@@ -3197,6 +3335,9 @@
 
 (defun |levelOfDetailFromTransform.QStyleOptionGraphicsItem| (&rest arguments)
   (%qinvoke-method "QStyleOptionGraphicsItem" nil "levelOfDetailFromTransform" arguments))
+
+(defun |levelofDetailBias| (object &rest arguments)
+  (%qinvoke-method object nil "levelofDetailBias" arguments))
 
 (defun |libraryPaths.QCoreApplication| (&rest arguments)
   (%qinvoke-method "QCoreApplication" nil "libraryPaths" arguments))
@@ -3435,6 +3576,9 @@
 (defun |logicalIndex| (object &rest arguments)
   (%qinvoke-method object nil "logicalIndex" arguments))
 
+(defun |log| (object &rest arguments)
+  (%qinvoke-method object nil "log" arguments))
+
 (defun |longDayName.QDate| (&rest arguments)
   (%qinvoke-method "QDate" nil "longDayName" arguments))
 
@@ -3455,147 +3599,3 @@
 
 (defun |lostFocus| (object &rest arguments)
   (%qinvoke-method object nil "lostFocus" arguments))
-
-(defun |lower| (object &rest arguments)
-  (%qinvoke-method object nil "lower" arguments))
-
-(defun |m11| (object &rest arguments)
-  (%qinvoke-method object nil "m11" arguments))
-
-(defun |m12| (object &rest arguments)
-  (%qinvoke-method object nil "m12" arguments))
-
-(defun |m13| (object &rest arguments)
-  (%qinvoke-method object nil "m13" arguments))
-
-(defun |m21| (object &rest arguments)
-  (%qinvoke-method object nil "m21" arguments))
-
-(defun |m22| (object &rest arguments)
-  (%qinvoke-method object nil "m22" arguments))
-
-(defun |m23| (object &rest arguments)
-  (%qinvoke-method object nil "m23" arguments))
-
-(defun |m31| (object &rest arguments)
-  (%qinvoke-method object nil "m31" arguments))
-
-(defun |m32| (object &rest arguments)
-  (%qinvoke-method object nil "m32" arguments))
-
-(defun |m33| (object &rest arguments)
-  (%qinvoke-method object nil "m33" arguments))
-
-(defun |machine| (object &rest arguments)
-  (%qinvoke-method object nil "machine" arguments))
-
-(defun |magentaF| (object &rest arguments)
-  (%qinvoke-method object nil "magentaF" arguments))
-
-(defun |magenta| (object &rest arguments)
-  (%qinvoke-method object nil "magenta" arguments))
-
-(defun |mainFrame| (object &rest arguments)
-  (%qinvoke-method object nil "mainFrame" arguments))
-
-(defun |makeAbsolute| (object &rest arguments)
-  (%qinvoke-method object nil "makeAbsolute" arguments))
-
-(defun |makeAndModel| (object &rest arguments)
-  (%qinvoke-method object nil "makeAndModel" arguments))
-
-(defun |makeCurrent| (object &rest arguments)
-  (%qinvoke-method object nil "makeCurrent" arguments))
-
-(defun |makeDecoder| (object &rest arguments)
-  (%qinvoke-method object nil "makeDecoder" arguments))
-
-(defun |makeEncoder| (object &rest arguments)
-  (%qinvoke-method object nil "makeEncoder" arguments))
-
-(defun |manager| (object &rest arguments)
-  (%qinvoke-method object nil "manager" arguments))
-
-(defun |map(QLine)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QLine)" arguments))
-
-(defun |map(QLineF)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QLineF)" arguments))
-
-(defun |map(QPainterPath)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QPainterPath)" arguments))
-
-(defun |map(QPoint)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QPoint)" arguments))
-
-(defun |map(QPointF)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QPointF)" arguments))
-
-(defun |map(QPolygon)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QPolygon)" arguments))
-
-(defun |map(QPolygonF)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QPolygonF)" arguments))
-
-(defun |map(QRegion)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QRegion)" arguments))
-
-(defun |map(QVector3D)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QVector3D)" arguments))
-
-(defun |map(QVector4D)| (object &rest arguments)
-  (%qinvoke-method object nil "map(QVector4D)" arguments))
-
-(defun |mapBetween| (object &rest arguments)
-  (%qinvoke-method object nil "mapBetween" arguments))
-
-(defun |mapFromGlobal| (object &rest arguments)
-  (%qinvoke-method object nil "mapFromGlobal" arguments))
-
-(defun |mapFromItem(const QGraphicsItem*,QPainterPath)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromItem(const QGraphicsItem*,QPainterPath)" arguments))
-
-(defun |mapFromItem(const QGraphicsItem*,QPointF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromItem(const QGraphicsItem*,QPointF)" arguments))
-
-(defun |mapFromItem(const QGraphicsItem*,QPolygonF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromItem(const QGraphicsItem*,QPolygonF)" arguments))
-
-(defun |mapFromItem(const QGraphicsItem*,QRectF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromItem(const QGraphicsItem*,QRectF)" arguments))
-
-(defun |mapFromItem| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromItem" arguments))
-
-(defun |mapFromParent(QPainterPath)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromParent(QPainterPath)" arguments))
-
-(defun |mapFromParent(QPointF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromParent(QPointF)" arguments))
-
-(defun |mapFromParent(QPolygonF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromParent(QPolygonF)" arguments))
-
-(defun |mapFromParent(QRectF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromParent(QRectF)" arguments))
-
-(defun |mapFromParent| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromParent" arguments))
-
-(defun |mapFromScene(QPainterPath)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromScene(QPainterPath)" arguments))
-
-(defun |mapFromScene(QPointF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromScene(QPointF)" arguments))
-
-(defun |mapFromScene(QPolygonF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromScene(QPolygonF)" arguments))
-
-(defun |mapFromScene(QRectF)| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromScene(QRectF)" arguments))
-
-(defun |mapFromScene| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "mapFromScene" arguments))
-
-(defun |mapFromSource| (object &rest arguments)
-  (%qinvoke-method object nil "mapFromSource" arguments))

@@ -136,7 +136,7 @@ public:
 };
 
 class LSslCertificate : public QSslCertificate {
-    friend class N139;
+    friend class N140;
 public:
     LSslCertificate(uint u, const QByteArray& x1 = QByteArray(), QSsl::EncodingFormat x2 = QSsl::Pem) : QSslCertificate(x1, x2), unique(u) {}
     LSslCertificate(uint u, const QSslCertificate& x1) : QSslCertificate(x1), unique(u) {}
@@ -146,7 +146,7 @@ public:
 };
 
 class LSslCipher : public QSslCipher {
-    friend class N140;
+    friend class N141;
 public:
     LSslCipher(uint u) : unique(u) {}
     LSslCipher(uint u, const QString& x1) : QSslCipher(x1), unique(u) {}
@@ -158,7 +158,7 @@ public:
 };
 
 class LSslConfiguration : public QSslConfiguration {
-    friend class N141;
+    friend class N142;
 public:
     LSslConfiguration(uint u) : unique(u) {}
     LSslConfiguration(uint u, const QSslConfiguration& x1) : QSslConfiguration(x1), unique(u) {}
@@ -168,7 +168,7 @@ public:
 };
 
 class LSslError : public QSslError {
-    friend class N142;
+    friend class N143;
 public:
     LSslError(uint u) : unique(u) {}
     LSslError(uint u, SslError x1) : QSslError(x1), unique(u) {}
@@ -180,7 +180,7 @@ public:
 };
 
 class LSslKey : public QSslKey {
-    friend class N143;
+    friend class N144;
 public:
     LSslKey(uint u) : unique(u) {}
     LSslKey(uint u, const QByteArray& x1, QSsl::KeyAlgorithm x2, QSsl::EncodingFormat x3 = QSsl::Pem, QSsl::KeyType x4 = QSsl::PrivateKey, const QByteArray& x5 = QByteArray()) : QSslKey(x1, x2, x3, x4, x5), unique(u) {}

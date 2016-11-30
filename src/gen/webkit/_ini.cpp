@@ -23,41 +23,41 @@ void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[76] = new Q77;
-    LObjects::Q[209] = new Q210;
-    LObjects::Q[210] = new Q211;
     LObjects::Q[211] = new Q212;
     LObjects::Q[212] = new Q213;
     LObjects::Q[213] = new Q214;
     LObjects::Q[214] = new Q215;
-    LObjects::N[188] = new N189;
-    LObjects::N[189] = new N190;
-    LObjects::N[190] = new N191;
+    LObjects::Q[215] = new Q216;
+    LObjects::Q[216] = new Q217;
     LObjects::N[191] = new N192;
     LObjects::N[192] = new N193;
     LObjects::N[193] = new N194;
     LObjects::N[194] = new N195;
-    LObjects::N[195] = new N196; }
+    LObjects::N[195] = new N196;
+    LObjects::N[196] = new N197;
+    LObjects::N[197] = new N198;
+    LObjects::N[198] = new N199; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 77: m = &QGraphicsWebView::staticMetaObject; break;
-        case 210: m = &QWebFrame::staticMetaObject; break;
-        case 211: m = &QWebHistoryInterface::staticMetaObject; break;
-        case 212: m = &QWebInspector::staticMetaObject; break;
-        case 213: m = &QWebPage::staticMetaObject; break;
-        case 214: m = &QWebPluginFactory::staticMetaObject; break;
-        case 215: m = &QWebView::staticMetaObject; break; }
+        case 212: m = &QWebFrame::staticMetaObject; break;
+        case 213: m = &QWebHistoryInterface::staticMetaObject; break;
+        case 214: m = &QWebInspector::staticMetaObject; break;
+        case 215: m = &QWebPage::staticMetaObject; break;
+        case 216: m = &QWebPluginFactory::staticMetaObject; break;
+        case 217: m = &QWebView::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 189: if(gc) delete (QWebDatabase*)p; else delete (LWebDatabase*)p; break;
-        case 190: if(gc) delete (QWebElement*)p; else delete (LWebElement*)p; break;
-        case 191: if(gc) delete (QWebElementCollection*)p; else delete (LWebElementCollection*)p; break;
-        case 193: if(gc) delete (QWebHistoryItem*)p; else delete (LWebHistoryItem*)p; break;
-        case 194: if(gc) delete (QWebHitTestResult*)p; else delete (LWebHitTestResult*)p; break;
-        case 195: if(gc) delete (QWebSecurityOrigin*)p; else delete (LWebSecurityOrigin*)p; break; }}
+        case 192: if(gc) delete (QWebDatabase*)p; else delete (LWebDatabase*)p; break;
+        case 193: if(gc) delete (QWebElement*)p; else delete (LWebElement*)p; break;
+        case 194: if(gc) delete (QWebElementCollection*)p; else delete (LWebElementCollection*)p; break;
+        case 196: if(gc) delete (QWebHistoryItem*)p; else delete (LWebHistoryItem*)p; break;
+        case 197: if(gc) delete (QWebHitTestResult*)p; else delete (LWebHitTestResult*)p; break;
+        case 198: if(gc) delete (QWebSecurityOrigin*)p; else delete (LWebSecurityOrigin*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -65,20 +65,20 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 77: ids = &LGraphicsWebView::overrideIds; break;
-            case 211: ids = &LWebHistoryInterface::overrideIds; break;
-            case 212: ids = &LWebInspector::overrideIds; break;
-            case 213: ids = &LWebPage::overrideIds; break;
-            case 214: ids = &LWebPluginFactory::overrideIds; break;
-            case 215: ids = &LWebView::overrideIds; break; }}
+            case 213: ids = &LWebHistoryInterface::overrideIds; break;
+            case 214: ids = &LWebInspector::overrideIds; break;
+            case 215: ids = &LWebPage::overrideIds; break;
+            case 216: ids = &LWebPluginFactory::overrideIds; break;
+            case 217: ids = &LWebView::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 189: ids = &LWebDatabase::overrideIds; break;
-            case 190: ids = &LWebElement::overrideIds; break;
-            case 191: ids = &LWebElementCollection::overrideIds; break;
-            case 193: ids = &LWebHistoryItem::overrideIds; break;
-            case 194: ids = &LWebHitTestResult::overrideIds; break;
-            case 195: ids = &LWebSecurityOrigin::overrideIds; break; }}
+            case 192: ids = &LWebDatabase::overrideIds; break;
+            case 193: ids = &LWebElement::overrideIds; break;
+            case 194: ids = &LWebElementCollection::overrideIds; break;
+            case 196: ids = &LWebHistoryItem::overrideIds; break;
+            case 197: ids = &LWebHitTestResult::overrideIds; break;
+            case 198: ids = &LWebSecurityOrigin::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

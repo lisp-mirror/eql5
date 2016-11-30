@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class N131 : public QObject { // QSqlDatabase
+class N132 : public QObject { // QSqlDatabase
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSqlDatabase(u); }
@@ -59,7 +59,7 @@ public:
     Q_INVOKABLE void SremoveDatabase(const QString& x1) { QSqlDatabase::removeDatabase(x1); }
 };
 
-class N132 : public QObject { // QSqlError
+class N133 : public QObject { // QSqlError
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QString& x1 = QString(), const QString& x2 = QString(), QSqlError::ErrorType x3 = QSqlError::NoError, const QString& x4 = QString()) { return new LSqlError(u, x1, x2, x3, x4); }
@@ -72,7 +72,7 @@ public:
     Q_INVOKABLE int Mtype(QSqlError* o) const { return o->type(); }
 };
 
-class N133 : public QObject { // QSqlField
+class N134 : public QObject { // QSqlField
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QString& x1 = QString(), QVariant::Type x2 = QVariant::Invalid) { return new LSqlField(u, x1, x2); }
@@ -103,7 +103,7 @@ public:
     Q_INVOKABLE QVariant Mvalue(QSqlField* o) const { return o->value(); }
 };
 
-class N135 : public QObject { // QSqlQuery
+class N136 : public QObject { // QSqlQuery
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QSqlResult* x1) { return new LSqlQuery(u, x1); }
@@ -150,7 +150,7 @@ public:
     Q_INVOKABLE QVariant Mvalue(QSqlQuery* o, const QString& x1) const { return o->value(x1); }
 };
 
-class N136 : public QObject { // QSqlRecord
+class N137 : public QObject { // QSqlRecord
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSqlRecord(u); }
@@ -183,7 +183,7 @@ public:
     Q_INVOKABLE QVariant Mvalue(QSqlRecord* o, const QString& x1) const { return o->value(x1); }
 };
 
-class N137 : public QObject { // QSqlRelation
+class N138 : public QObject { // QSqlRelation
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSqlRelation(u); }
@@ -194,7 +194,7 @@ public:
     Q_INVOKABLE QString MtableName(QSqlRelation* o) const { return o->tableName(); }
 };
 
-class N138 : public QObject { // QSqlResult
+class N139 : public QObject { // QSqlResult
     Q_OBJECT
 public:
     Q_INVOKABLE QVariant Mhandle(QSqlResult* o) const { return o->handle(); }
@@ -221,7 +221,7 @@ public:
     Q_INVOKABLE void MresetBindCount(QSqlResult* o) { ((LSqlResult*)o)->resetBindCount(); }
 };
 
-class N134 : public N136 { // QSqlIndex
+class N135 : public N137 { // QSqlIndex
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QString& x1 = QString(), const QString& x2 = QString()) { return new LSqlIndex(u, x1, x2); }

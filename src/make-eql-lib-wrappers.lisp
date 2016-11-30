@@ -10,7 +10,9 @@
 
 (defparameter *all-wrappers* (loop :for i :from 1 :to 10 :collect (format nil "all-wrappers-~D" i)))
 
-(defparameter *lisp-files*   (append '("x" "package" "ini" "enums1" "enums2" "enums3" "enums4" "special-extensions")
+(defparameter *lisp-files*   (append '("x" "package" "ini"
+                                       "enums1" "enums2" "enums3" "enums4" "enums5"
+                                       "special-extensions")
                                      *all-wrappers*))
 
 (dolist (file *all-wrappers*) 

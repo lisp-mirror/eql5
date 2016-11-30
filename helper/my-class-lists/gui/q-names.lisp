@@ -105,6 +105,8 @@
         "QMouseEventTransition"
         "QMovie"
         "QObject"
+        "QOpenGLContext"
+        "QOpenGLShader"
         "QOpenGLWidget"
         "QOpenGLWindow"
         "QPageSetupDialog"

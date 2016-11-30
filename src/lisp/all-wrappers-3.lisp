@@ -1,5 +1,54 @@
 (defpackage :eql
   (:export
+   #:|lower|
+   #:|m11|
+   #:|m12|
+   #:|m13|
+   #:|m21|
+   #:|m22|
+   #:|m23|
+   #:|m31|
+   #:|m32|
+   #:|m33|
+   #:|machine|
+   #:|magentaF|
+   #:|magenta|
+   #:|magnificationFilter|
+   #:|mainFrame|
+   #:|makeAbsolute|
+   #:|makeAndModel|
+   #:|makeCurrent|
+   #:|makeDecoder|
+   #:|makeEncoder|
+   #:|manager|
+   #:|map(QLine)|
+   #:|map(QLineF)|
+   #:|map(QPainterPath)|
+   #:|map(QPoint)|
+   #:|map(QPointF)|
+   #:|map(QPolygon)|
+   #:|map(QPolygonF)|
+   #:|map(QRegion)|
+   #:|map(QVector3D)|
+   #:|map(QVector4D)|
+   #:|mapBetween|
+   #:|mapFromGlobal|
+   #:|mapFromItem(const QGraphicsItem*,QPainterPath)|
+   #:|mapFromItem(const QGraphicsItem*,QPointF)|
+   #:|mapFromItem(const QGraphicsItem*,QPolygonF)|
+   #:|mapFromItem(const QGraphicsItem*,QRectF)|
+   #:|mapFromItem|
+   #:|mapFromParent(QPainterPath)|
+   #:|mapFromParent(QPointF)|
+   #:|mapFromParent(QPolygonF)|
+   #:|mapFromParent(QRectF)|
+   #:|mapFromParent|
+   #:|mapFromScene(QPainterPath)|
+   #:|mapFromScene(QPointF)|
+   #:|mapFromScene(QPolygonF)|
+   #:|mapFromScene(QRectF)|
+   #:|mapFromScene|
+   #:|mapFromSource|
    #:|mapFrom|
    #:|mapRect(QRect)|
    #:|mapRect(QRectF)|
@@ -62,6 +111,7 @@
    #:|maxPendingConnections|
    #:|maxVisibleItems|
    #:|maxWidth|
+   #:|maximumAnisotropy|
    #:|maximumBlockCount|
    #:|maximumCacheSize|
    #:|maximumDateTime|
@@ -69,6 +119,8 @@
    #:|maximumHeightChanged|
    #:|maximumHeight|
    #:|maximumItemCount|
+   #:|maximumLevelOfDetail|
+   #:|maximumMipLevels|
    #:|maximumPagesInCache.QWebSettings|
    #:|maximumPhysicalPageSize|
    #:|maximumSectionSize|
@@ -115,6 +167,7 @@
    #:|minLeftBearing|
    #:|minPage|
    #:|minRightBearing|
+   #:|minificationFilter|
    #:|minimumContentsLength|
    #:|minimumDateTime|
    #:|minimumDate|
@@ -122,6 +175,7 @@
    #:|minimumHeightChanged|
    #:|minimumHeightForWidth|
    #:|minimumHeight|
+   #:|minimumLevelOfDetail|
    #:|minimumPhysicalPageSize|
    #:|minimumRenderSize|
    #:|minimumSectionSize|
@@ -132,6 +186,9 @@
    #:|minimumWidth|
    #:|minimum|
    #:|minute|
+   #:|mipBaseLevel|
+   #:|mipLevels|
+   #:|mipMaxLevel|
    #:|mirrored|
    #:|miterLimit|
    #:|mkdir|
@@ -261,6 +318,7 @@
    #:|opaqueArea|
    #:|opaqueResize|
    #:|openExternalLinks|
+   #:|openGLModuleType.QOpenGLContext|
    #:|openLinks|
    #:|openMode|
    #:|openPersistentEditor|
@@ -794,6 +852,7 @@
    #:|rubberBandSelectionMode|
    #:|runningChanged|
    #:|run|
+   #:|samples|
    #:|saturationF|
    #:|saturation|
    #:|saveFrameStateRequested|
@@ -1009,6 +1068,7 @@
    #:|setAutoFillBackground|
    #:|setAutoFormatting|
    #:|setAutoHide|
+   #:|setAutoMipMapGenerationEnabled|
    #:|setAutoRaise|
    #:|setAutoRepeatDelay|
    #:|setAutoRepeatInterval|
@@ -1042,6 +1102,10 @@
    #:|setBlurRadius|
    #:|setBold|
    #:|setBorderBrush|
+   #:|setBorderColor(float...)|
+   #:|setBorderColor(int...)|
+   #:|setBorderColor(uint...)|
+   #:|setBorderColor|
    #:|setBorderStyle|
    #:|setBorder|
    #:|setBottomMargin|
@@ -1135,68 +1199,4 @@
    #:|setColumnMinimumWidth|
    #:|setColumnPreferredWidth|
    #:|setColumnSpacing|
-   #:|setColumnStretchFactor|
-   #:|setColumnStretch|
-   #:|setColumnWidthConstraints|
-   #:|setColumnWidths|
-   #:|setColumnWidth|
-   #:|setColumn|
-   #:|setComboBoxEditable|
-   #:|setComboBoxItems|
-   #:|setCommitPage|
-   #:|setCommitString|
-   #:|setCompactMode|
-   #:|setCompleter|
-   #:|setCompletionColumn|
-   #:|setCompletionMode|
-   #:|setCompletionPrefix|
-   #:|setCompletionRole|
-   #:|setCompositionMode|
-   #:|setConfiguration|
-   #:|setConnectOptions|
-   #:|setContentEditable|
-   #:|setContentsMargins|
-   #:|setContent|
-   #:|setContextMenuPolicy|
-   #:|setContextMenu|
-   #:|setContext|
-   #:|setControlType|
-   #:|setCookieJar|
-   #:|setCookiesFromUrl|
-   #:|setCoordinateMode|
-   #:|setCopyCount|
-   #:|setCornerButtonEnabled|
-   #:|setCornerWidget|
-   #:|setCorner|
-   #:|setCorrectionMode|
-   #:|setCosmetic|
-   #:|setCreator|
-   #:|setCurrent.QDir|
-   #:|setCurrentBlockState|
-   #:|setCurrentBlockUserData|
-   #:|setCurrentCell|
-   #:|setCurrentCharFormat|
-   #:|setCurrentColorGroup|
-   #:|setCurrentColor|
-   #:|setCurrentFilter|
-   #:|setCurrentFont|
-   #:|setCurrentIndex|
-   #:|setCurrentItem|
-   #:|setCurrentModelIndex|
-   #:|setCurrentPage|
-   #:|setCurrentRow|
-   #:|setCurrentSectionIndex|
-   #:|setCurrentSection|
-   #:|setCurrentText|
-   #:|setCurrentTime|
-   #:|setCurrentWidget|
-   #:|setCursorFlashTime.QApplication|
-   #:|setCursorMoveStyle|
-   #:|setCursorName|
-   #:|setCursorPosition|
-   #:|setCursorWidth|
-   #:|setCursor|
-   #:|setCurveShape|
-   #:|setCurveThreshold|
-   #:|setCustomColor.QColorDialog|
-   #:|setCustomValue|))
+   #:|setColumnStretchFactor|))

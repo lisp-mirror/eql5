@@ -8,7 +8,9 @@
 #+msvc
 (setf c::*compile-in-constants* t)
 
-(defparameter *lisp-files* (list "x" "package" "ini" "enums1" "enums2" "enums3" "enums4" "special-extensions"))
+(defparameter *lisp-files* (list "x" "package" "ini"
+                                 "enums1" "enums2" "enums3" "enums4" "enums5"
+                                 "special-extensions"))
 
 (dolist (f *lisp-files*)
   (let ((file (format nil "lisp/~A" f)))

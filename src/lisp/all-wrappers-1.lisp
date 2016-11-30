@@ -1,11 +1,13 @@
 (defpackage :eql
   (:export
+   #:|abbreviation|
    #:|abortHostLookup.QHostInfo|
    #:|abort|
    #:|about.QMessageBox|
    #:|aboutQt.QMessageBox|
    #:|aboutQt|
    #:|aboutToActivate|
+   #:|aboutToBeDestroyed|
    #:|aboutToClose|
    #:|aboutToCompose|
    #:|aboutToHide|
@@ -198,6 +200,7 @@
    #:|allOrigins.QWebSecurityOrigin|
    #:|allWidgets.QApplication|
    #:|allWindows.QGuiApplication|
+   #:|allocateStorage|
    #:|allowedAreasChanged|
    #:|allowedAreas|
    #:|allowedNextProtocols|
@@ -259,6 +262,7 @@
    #:|applyTo|
    #:|arcMoveTo|
    #:|arcTo|
+   #:|areSharing.QOpenGLContext|
    #:|arguments.QCoreApplication|
    #:|arguments|
    #:|arrowType|
@@ -304,6 +308,9 @@
    #:|availableRedoSteps|
    #:|availableSizes|
    #:|availableSize|
+   #:|availableTimeZoneIds(QLocale::Country).QTimeZone|
+   #:|availableTimeZoneIds(int).QTimeZone|
+   #:|availableTimeZoneIds.QTimeZone|
    #:|availableUndoSteps|
    #:|availableVirtualGeometry|
    #:|availableVirtualSize|
@@ -394,6 +401,7 @@
    #:|bold|
    #:|boolProperty|
    #:|borderBrush|
+   #:|borderColor|
    #:|borderStyle|
    #:|border|
    #:|bottomChanged|
@@ -402,6 +410,7 @@
    #:|bottomRight|
    #:|bottomRow|
    #:|bottom|
+   #:|boundTextureId.QOpenGLTexture|
    #:|boundValue(QString)|
    #:|boundValue(int)|
    #:|boundValueCount|
@@ -689,12 +698,20 @@
    #:|combinedTransform|
    #:|comboBoxItems|
    #:|command|
+   #:|comment|
    #:|commitDataRequest|
    #:|commitData|
    #:|commitString|
    #:|commitTransaction|
    #:|commit|
    #:|commonAncestorItem|
+   #:|comparisonFunction|
+   #:|comparisonMode|
+   #:|compileSourceCode(QByteArray)|
+   #:|compileSourceCode(QString)|
+   #:|compileSourceCode(const char*)|
+   #:|compileSourceCode|
+   #:|compileSourceFile|
    #:|completeBaseName|
    #:|completeChanged|
    #:|completeSuffix|
@@ -789,6 +806,7 @@
    #:|createSeparatedList|
    #:|createStandardContextMenu|
    #:|createStroke|
+   #:|createTextureView|
    #:|createUndoAction|
    #:|createWindowContainer.QWidget|
    #:|createdWidgets|
@@ -816,6 +834,7 @@
    #:|currentColumnChanged|
    #:|currentColumn|
    #:|currentCompletion|
+   #:|currentContext.QOpenGLContext|
    #:|currentData|
    #:|currentDate.QDate|
    #:|currentDateTime.QDateTime|
@@ -911,6 +930,7 @@
    #:|dayName|
    #:|dayOfWeek|
    #:|dayOfYear|
+   #:|daylightTimeOffset|
    #:|daysInMonth|
    #:|daysInYear|
    #:|daysTo|
@@ -957,6 +977,7 @@
    #:|deleteResource|
    #:|delta|
    #:|del|
+   #:|depthStencilMode|
    #:|depth|
    #:|descent|
    #:|description|
@@ -997,6 +1018,10 @@
    #:|displayColumn|
    #:|displayFormat|
    #:|displayIntegerBase|
+   #:|displayName(QDateTime)|
+   #:|displayName(QDateTime...)|
+   #:|displayName(QTimeZone::TimeType)|
+   #:|displayName(QTimeZone::TimeType...)|
    #:|displayName.QStandardPaths|
    #:|displayName|
    #:|displayText|
@@ -1174,32 +1199,7 @@
    #:|editorDestroyed|
    #:|editorEvent|
    #:|edit|
-   #:|effectiveDate|
-   #:|effectiveOpacity|
-   #:|effectiveSizeHint|
-   #:|effectiveWinId|
-   #:|elapsed|
-   #:|elementCount|
-   #:|elementExists|
-   #:|elementId|
-   #:|element|
-   #:|elideMode|
-   #:|elidedText|
-   #:|ellipticCurves|
-   #:|emitDataChanged|
-   #:|emitSelectionChanged|
-   #:|emptyLabel|
-   #:|enablePersistentStorage.QWebSettings|
-   #:|enabledChanged|
-   #:|encloseContentsWith(QString)|
-   #:|encloseContentsWith(QWebElement)|
-   #:|encloseContentsWith|
-   #:|encloseWith(QString)|
-   #:|encloseWith(QWebElement)|
-   #:|encloseWith|
-   #:|enclosingBlockElement|
-   #:|encodeName.QFile|
-   #:|encrypted|))
+   #:|effectiveDate|))
 
 (in-package :eql)
 

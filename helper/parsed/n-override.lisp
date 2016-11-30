@@ -277,6 +277,7 @@
   (("QOpenGLPaintDevice" . "QPaintDevice")
    "virtual void ensureActiveTarget ()"
    "virtual int metric ( QPaintDevice::PaintDeviceMetric ) const")
+  (("QOpenGLTexture" . NIL))
   (("QPagedPaintDevice" . "QPaintDevice")
    "virtual bool newPage () = 0"
    "virtual void setPageSize ( PageSize )"
@@ -367,6 +368,10 @@
   (("QStatusTipEvent" . "QEvent"))
   (("QStyleOption" . NIL))
   (("QStyleOptionGraphicsItem" . "QStyleOption"))
+  (("QSurface" . NIL)
+   "virtual QSurfaceFormat format () const = 0"
+   "virtual QSize size () const = 0"
+   "virtual SurfaceType surfaceType () const = 0")
   (("QSvgGenerator" . "QPaintDevice")
    "virtual int metric ( QPaintDevice::PaintDeviceMetric ) const")
   (("QSystemSemaphore" . NIL))
@@ -405,6 +410,7 @@
   (("QTextTableCellFormat" . "QTextCharFormat"))
   (("QTextTableFormat" . "QTextFrameFormat"))
   (("QTime" . NIL))
+  (("QTimeZone" . NIL))
   (("QTimerEvent" . "QEvent"))
   (("QToolTip" . NIL))
   (("QTouchEvent" . "QInputEvent"))

@@ -1,0 +1,7 @@
+split -l 1250 merged-enums.lisp
+cat enum-header.lisp > enums1.lisp; cat xaa >> enums1.lisp;
+cat enum-header.lisp > enums2.lisp; cat xab >> enums2.lisp;
+cat enum-header.lisp > enums3.lisp; cat xac >> enums3.lisp;
+cat enum-header.lisp > enums4.lisp; cat xad >> enums4.lisp;
+cat enum-header.lisp > enums5.lisp; cat xae >> enums5.lisp;
+rm xaa xab xac xad xae

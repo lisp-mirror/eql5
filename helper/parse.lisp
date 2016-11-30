@@ -32,6 +32,7 @@
         "setupUi"
         "singleShot"
         "toAscii"
+        "versionFunctions"
         "NSDate"
         "NSMenu"
         "NSURL"
@@ -64,6 +65,7 @@
         " Margins "
         (format nil "Margins~Cmargins" #\Tab)
         "MSG"
+        "OffsetData"
         "PaperSources"
         "PlaceholderText"
         "PointerToMemberFunction"
@@ -74,6 +76,7 @@
         "T "
         (format nil "T~C" #\Tab)
         "Q_PID"
+        "QAbstractOpenGLFunctions"
         "QAccessible::State"
         "QPair"
         "QDataStream"

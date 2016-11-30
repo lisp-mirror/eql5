@@ -1,5 +1,71 @@
 (defpackage :eql
   (:export
+   #:|setColumnStretch|
+   #:|setColumnWidthConstraints|
+   #:|setColumnWidths|
+   #:|setColumnWidth|
+   #:|setColumn|
+   #:|setComboBoxEditable|
+   #:|setComboBoxItems|
+   #:|setCommitPage|
+   #:|setCommitString|
+   #:|setCompactMode|
+   #:|setComparisonFunction|
+   #:|setComparisonMode|
+   #:|setCompleter|
+   #:|setCompletionColumn|
+   #:|setCompletionMode|
+   #:|setCompletionPrefix|
+   #:|setCompletionRole|
+   #:|setCompositionMode|
+   #:|setConfiguration|
+   #:|setConnectOptions|
+   #:|setContentEditable|
+   #:|setContentsMargins|
+   #:|setContent|
+   #:|setContextMenuPolicy|
+   #:|setContextMenu|
+   #:|setContext|
+   #:|setControlType|
+   #:|setCookieJar|
+   #:|setCookiesFromUrl|
+   #:|setCoordinateMode|
+   #:|setCopyCount|
+   #:|setCornerButtonEnabled|
+   #:|setCornerWidget|
+   #:|setCorner|
+   #:|setCorrectionMode|
+   #:|setCosmetic|
+   #:|setCreator|
+   #:|setCurrent.QDir|
+   #:|setCurrentBlockState|
+   #:|setCurrentBlockUserData|
+   #:|setCurrentCell|
+   #:|setCurrentCharFormat|
+   #:|setCurrentColorGroup|
+   #:|setCurrentColor|
+   #:|setCurrentFilter|
+   #:|setCurrentFont|
+   #:|setCurrentIndex|
+   #:|setCurrentItem|
+   #:|setCurrentModelIndex|
+   #:|setCurrentPage|
+   #:|setCurrentRow|
+   #:|setCurrentSectionIndex|
+   #:|setCurrentSection|
+   #:|setCurrentText|
+   #:|setCurrentTime|
+   #:|setCurrentWidget|
+   #:|setCursorFlashTime.QApplication|
+   #:|setCursorMoveStyle|
+   #:|setCursorName|
+   #:|setCursorPosition|
+   #:|setCursorWidth|
+   #:|setCursor|
+   #:|setCurveShape|
+   #:|setCurveThreshold|
+   #:|setCustomColor.QColorDialog|
+   #:|setCustomValue|
    #:|setDashOffset|
    #:|setDashPattern(QVector<qreal>)|
    #:|setDashPattern(Qt::PenStyle)|
@@ -41,6 +107,7 @@
    #:|setDefaultValue|
    #:|setDefaultWidget|
    #:|setDefault|
+   #:|setDepthStencilMode|
    #:|setDescending|
    #:|setDescription|
    #:|setDesktopSettingsAware.QGuiApplication|
@@ -154,6 +221,7 @@
    #:|setFirstItemColumnSpanned|
    #:|setFixedHeight|
    #:|setFixedPitch|
+   #:|setFixedSamplePositions|
    #:|setFixedSize|
    #:|setFixedWidth|
    #:|setFlags|
@@ -342,6 +410,7 @@
    #:|setLastOffset|
    #:|setLastRotationAngle|
    #:|setLastScaleFactor|
+   #:|setLayers|
    #:|setLayoutDirection.QGuiApplication|
    #:|setLayoutDirection|
    #:|setLayoutMode|
@@ -353,6 +422,8 @@
    #:|setLeft|
    #:|setLength|
    #:|setLetterSpacing|
+   #:|setLevelOfDetailRange|
+   #:|setLevelofDetailBias|
    #:|setLibraryPaths.QCoreApplication|
    #:|setLineCount|
    #:|setLineEdit|
@@ -372,6 +443,7 @@
    #:|setLookupId|
    #:|setLoopCount|
    #:|setMSecsSinceEpoch|
+   #:|setMagnificationFilter|
    #:|setManagerProperty(QString,QString)|
    #:|setManagerProperty(QString,QStringList)|
    #:|setMargin|
@@ -383,12 +455,14 @@
    #:|setMaxLength|
    #:|setMaxPendingConnections|
    #:|setMaxVisibleItems|
+   #:|setMaximumAnisotropy|
    #:|setMaximumBlockCount|
    #:|setMaximumCacheSize|
    #:|setMaximumDateTime|
    #:|setMaximumDate|
    #:|setMaximumHeight|
    #:|setMaximumItemCount|
+   #:|setMaximumLevelOfDetail|
    #:|setMaximumPagesInCache.QWebSettings|
    #:|setMaximumSectionSize|
    #:|setMaximumSize|
@@ -403,19 +477,26 @@
    #:|setMidLineWidth|
    #:|setMimeData|
    #:|setMimeTypeFilters|
+   #:|setMinMagFilters|
    #:|setMinMax|
+   #:|setMinificationFilter|
    #:|setMinimal|
    #:|setMinimumContentsLength|
    #:|setMinimumDateTime|
    #:|setMinimumDate|
    #:|setMinimumDuration|
    #:|setMinimumHeight|
+   #:|setMinimumLevelOfDetail|
    #:|setMinimumRenderSize|
    #:|setMinimumSectionSize|
    #:|setMinimumSize|
    #:|setMinimumTime|
    #:|setMinimumWidth|
    #:|setMinimum|
+   #:|setMipBaseLevel|
+   #:|setMipLevelRange|
+   #:|setMipLevels|
+   #:|setMipMaxLevel|
    #:|setMiterLimit|
    #:|setModality|
    #:|setModal|
@@ -658,6 +739,7 @@
    #:|setRubberBandSelectionMode|
    #:|setRubberBand|
    #:|setRunning|
+   #:|setSamples|
    #:|setSaveToDisk|
    #:|setScalar|
    #:|setScaleFactor|
@@ -704,6 +786,7 @@
    #:|setSetuidAllowed.QCoreApplication|
    #:|setShapeMode|
    #:|setShape|
+   #:|setShareContext|
    #:|setSharedRenderer|
    #:|setShortcutAutoRepeat|
    #:|setShortcutContext|
@@ -795,6 +878,7 @@
    #:|setSuffix|
    #:|setSurfaceType|
    #:|setSwipeAngle|
+   #:|setSwizzleMask|
    #:|setSystemMenu|
    #:|setTabArray|
    #:|setTabBarAutoHide|
@@ -990,10 +1074,13 @@
    #:|setupFinished|
    #:|setupStarted|
    #:|setupViewport|
+   #:|shaderId|
+   #:|shaderType|
    #:|shadow|
    #:|shapeMode|
    #:|shape|
    #:|shareContext|
+   #:|shareGroup|
    #:|shear|
    #:|shortDayName.QDate|
    #:|shortMonthName.QDate|
@@ -1076,6 +1163,7 @@
    #:|sort|
    #:|sourceBoundingRect|
    #:|sourceChanged|
+   #:|sourceCode|
    #:|sourceIsPixmap|
    #:|sourceModelChanged|
    #:|sourceModel|
@@ -1111,92 +1199,4 @@
    #:|standardColor.QColorDialog|
    #:|standardLocations.QStandardPaths|
    #:|standardPalette|
-   #:|standardPixmap|
-   #:|standardSizes.QFontDatabase|
-   #:|start(QProcess::OpenMode)|
-   #:|start(QString)|
-   #:|start(QString,QProcess::OpenMode)|
-   #:|start(QString,QStringList)|
-   #:|startAngle|
-   #:|startCenterPoint|
-   #:|startDetached.QProcess|
-   #:|startDragDistance.QApplication|
-   #:|startDragTime.QApplication|
-   #:|startFrame|
-   #:|startId|
-   #:|startTimer|
-   #:|startValue|
-   #:|started|
-   #:|startingUp.QCoreApplication|
-   #:|start|
-   #:|stateChanged|
-   #:|state|
-   #:|staticInstances.QPluginLoader|
-   #:|staticPlugins.QPluginLoader|
-   #:|statusBarMessage|
-   #:|statusBarVisibilityChangeRequested|
-   #:|statusBar|
-   #:|statusTip|
-   #:|status|
-   #:|stepBy|
-   #:|stepDown|
-   #:|stepUp|
-   #:|stickyFocus|
-   #:|stopped|
-   #:|stops|
-   #:|stop|
-   #:|strengthChanged|
-   #:|strength|
-   #:|stretchFactor|
-   #:|stretchLastSection|
-   #:|stretchSectionCount|
-   #:|stretch|
-   #:|strikeOutPos|
-   #:|strikeOut|
-   #:|stringList|
-   #:|stringProperty|
-   #:|string|
-   #:|stripDelimiters|
-   #:|strokePath|
-   #:|style.QApplication|
-   #:|styleHints.QGuiApplication|
-   #:|styleHint|
-   #:|styleName|
-   #:|styleProperty|
-   #:|styleSheet|
-   #:|styleStrategy|
-   #:|styleString(QFont)|
-   #:|styleString(QFontInfo)|
-   #:|styleString|
-   #:|styles|
-   #:|style|
-   #:|subControlRect|
-   #:|subElementRect|
-   #:|subTitleFormat|
-   #:|subTitle|
-   #:|subWidgetRect|
-   #:|subWindowActivated|
-   #:|subWindowList|
-   #:|subjectAlternativeNames|
-   #:|subjectInfo(QByteArray)|
-   #:|subjectInfo(QSslCertificate::SubjectInfo)|
-   #:|subjectInfoAttributes|
-   #:|subjectInfo|
-   #:|submitAll|
-   #:|submitPolicy|
-   #:|submit|
-   #:|subscribeToNotification|
-   #:|subscribedToNotifications|
-   #:|substitute.QFont|
-   #:|substitutes.QFont|
-   #:|substitutions.QFont|
-   #:|subtracted|
-   #:|suffix|
-   #:|superClass|
-   #:|supportedActions|
-   #:|supportedBits|
-   #:|supportedCiphers.QSslConfiguration|
-   #:|supportedContentTypes|
-   #:|supportedDocumentFormats.QTextDocumentWriter|
-   #:|supportedDragActions|
-   #:|supportedDropActions|))
+   #:|standardPixmap|))

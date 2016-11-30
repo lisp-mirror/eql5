@@ -13,7 +13,7 @@ QT_BEGIN_NAMESPACE
 
 class LSqlDriver : public QSqlDriver {
     Q_OBJECT
-    friend class Q159;
+    friend class Q161;
 public:
     LSqlDriver(uint u, QObject* x1 = 0) : QSqlDriver(x1), unique(u) {}
 
@@ -51,7 +51,7 @@ public:
 
 class LSqlQueryModel : public QSqlQueryModel {
     Q_OBJECT
-    friend class Q160;
+    friend class Q162;
 public:
     LSqlQueryModel(uint u, QObject* x1 = 0) : QSqlQueryModel(x1), unique(u) {}
 
@@ -95,7 +95,7 @@ public:
 
 class LSqlRelationalDelegate : public QSqlRelationalDelegate {
     Q_OBJECT
-    friend class Q161;
+    friend class Q163;
 public:
     LSqlRelationalDelegate(uint u, QObject* x1 = 0) : QSqlRelationalDelegate(x1), unique(u) {}
 
@@ -123,7 +123,7 @@ public:
 
 class LSqlRelationalTableModel : public QSqlRelationalTableModel {
     Q_OBJECT
-    friend class Q162;
+    friend class Q164;
 public:
     LSqlRelationalTableModel(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) : QSqlRelationalTableModel(x1, x2), unique(u) {}
 
@@ -180,7 +180,7 @@ public:
 
 class LSqlTableModel : public QSqlTableModel {
     Q_OBJECT
-    friend class Q163;
+    friend class Q165;
 public:
     LSqlTableModel(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) : QSqlTableModel(x1, x2), unique(u) {}
 

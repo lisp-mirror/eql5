@@ -1,5 +1,94 @@
 (defpackage :eql
   (:export
+   #:|standardSizes.QFontDatabase|
+   #:|standardTimeOffset|
+   #:|start(QProcess::OpenMode)|
+   #:|start(QString)|
+   #:|start(QString,QProcess::OpenMode)|
+   #:|start(QString,QStringList)|
+   #:|startAngle|
+   #:|startCenterPoint|
+   #:|startDetached.QProcess|
+   #:|startDragDistance.QApplication|
+   #:|startDragTime.QApplication|
+   #:|startFrame|
+   #:|startId|
+   #:|startTimer|
+   #:|startValue|
+   #:|started|
+   #:|startingUp.QCoreApplication|
+   #:|start|
+   #:|stateChanged|
+   #:|state|
+   #:|staticInstances.QPluginLoader|
+   #:|staticPlugins.QPluginLoader|
+   #:|statusBarMessage|
+   #:|statusBarVisibilityChangeRequested|
+   #:|statusBar|
+   #:|statusTip|
+   #:|status|
+   #:|stepBy|
+   #:|stepDown|
+   #:|stepUp|
+   #:|stickyFocus|
+   #:|stopped|
+   #:|stops|
+   #:|stop|
+   #:|strengthChanged|
+   #:|strength|
+   #:|stretchFactor|
+   #:|stretchLastSection|
+   #:|stretchSectionCount|
+   #:|stretch|
+   #:|strikeOutPos|
+   #:|strikeOut|
+   #:|stringList|
+   #:|stringProperty|
+   #:|string|
+   #:|stripDelimiters|
+   #:|strokePath|
+   #:|style.QApplication|
+   #:|styleHints.QGuiApplication|
+   #:|styleHint|
+   #:|styleName|
+   #:|styleProperty|
+   #:|styleSheet|
+   #:|styleStrategy|
+   #:|styleString(QFont)|
+   #:|styleString(QFontInfo)|
+   #:|styleString|
+   #:|styles|
+   #:|style|
+   #:|subControlRect|
+   #:|subElementRect|
+   #:|subTitleFormat|
+   #:|subTitle|
+   #:|subWidgetRect|
+   #:|subWindowActivated|
+   #:|subWindowList|
+   #:|subjectAlternativeNames|
+   #:|subjectInfo(QByteArray)|
+   #:|subjectInfo(QSslCertificate::SubjectInfo)|
+   #:|subjectInfoAttributes|
+   #:|subjectInfo|
+   #:|submitAll|
+   #:|submitPolicy|
+   #:|submit|
+   #:|subscribeToNotification|
+   #:|subscribedToNotifications|
+   #:|substitute.QFont|
+   #:|substitutes.QFont|
+   #:|substitutions.QFont|
+   #:|subtracted|
+   #:|suffix|
+   #:|superClass|
+   #:|supportedActions|
+   #:|supportedBits|
+   #:|supportedCiphers.QSslConfiguration|
+   #:|supportedContentTypes|
+   #:|supportedDocumentFormats.QTextDocumentWriter|
+   #:|supportedDragActions|
+   #:|supportedDropActions|
    #:|supportedDuplexModes|
    #:|supportedEllipticCurves.QSslConfiguration|
    #:|supportedFormats.QMovie|
@@ -13,12 +102,18 @@
    #:|supportsFindBuffer|
    #:|supportsMessages.QSystemTrayIcon|
    #:|supportsMultipleCopies|
+   #:|supportsOpenGL|
    #:|supportsSelection|
+   #:|supportsThreadedOpenGL.QOpenGLContext|
+   #:|surfaceClass|
    #:|surfaceType|
+   #:|surface|
    #:|swallowContextMenuEvent|
+   #:|swapBuffers|
    #:|swapSections|
    #:|swap|
    #:|swipeAngle|
+   #:|swizzleMask|
    #:|symLinkTarget.QFile|
    #:|symLinkTarget|
    #:|sync.QGuiApplication|
@@ -30,6 +125,8 @@
    #:|systemFont.QFontDatabase|
    #:|systemMenu|
    #:|systemProxyForQuery.QNetworkProxyFactory|
+   #:|systemTimeZone.QTimeZone|
+   #:|systemTimeZoneId.QTimeZone|
    #:|tabArray|
    #:|tabAt|
    #:|tabBarAutoHide|
@@ -124,6 +221,7 @@
    #:|textValueSelected|
    #:|textValue|
    #:|textWidth|
+   #:|textureId|
    #:|textureImage|
    #:|texture|
    #:|text|
@@ -508,6 +606,7 @@
    #:|userType|
    #:|user|
    #:|usesScrollButtons|
+   #:|utc.QTimeZone|
    #:|validateCurrentPage|
    #:|validatePage|
    #:|validate|
@@ -628,6 +727,8 @@
    #:|windowTitleChanged|
    #:|windowTitle|
    #:|windowType|
+   #:|windowsIdToDefaultIanaId.QTimeZone|
+   #:|windowsIdToIanaIds.QTimeZone|
    #:|window|
    #:|wizardStyle|
    #:|wizard|

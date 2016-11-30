@@ -8,6 +8,19 @@
 
 (use-package :x)
 
+(defparameter *skip*
+  (list "QStyle::CC_"
+        "QStyle::CT_"
+        "QStyle::CE_"
+        "QStyle::PM_"
+        "QStyle::PE_"
+        "QStyle::RSIP_"
+        "QStyle::SP_"
+        "QStyle::SH_"
+        "QStyle::SC_"
+        "QStyle::SE_"
+        "QStyle::SO_"))
+
 (defparameter *enum-begin* (format nil "Constant~CValue" #\Tab))
 
 (defun parse (class out)
@@ -16,16 +29,19 @@
         (let (in-enum)
           (with-open-file (in path :direction :input :external-format :latin-1)
             (x:while-it (read-line in nil nil)
-              (if in-enum
-                  (progn
-                    (if (not (x:starts-with (format nil "~A::" class) x:it))
-                        (setf in-enum nil)
-                        (let ((name-val (x:split x:it #\Tab)))
-                          (format out "~%(\"|~A|\" . ~A)"
-                                  (x:string-substitute "." "::" (first name-val))
-                                  (x:string-substitute "#x" "0x" (second name-val))))))
-                  (when (x:starts-with *enum-begin* x:it)
-                    (setf in-enum t))))))
+              (unless (dolist (skip *skip*)
+                        (when (search skip x:it)
+                          (return t)))
+                (if in-enum
+                    (progn
+                      (if (not (x:starts-with (format nil "~A::" class) x:it))
+                          (setf in-enum nil)
+                          (let ((name-val (x:split x:it #\Tab)))
+                            (format out "~%(\"|~A|\" . ~A)"
+                                    (x:string-substitute "." "::" (first name-val))
+                                    (x:string-substitute "#x" "0x" (second name-val))))))
+                    (when (x:starts-with *enum-begin* x:it)
+                      (setf in-enum t)))))))
         (progn
           (incf *not-found*)
           (x:d :not-found path)))))
