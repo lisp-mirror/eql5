@@ -1097,7 +1097,6 @@ class LMatrix4x4 : public QMatrix4x4 {
     friend class N88;
 public:
     LMatrix4x4(uint u) : unique(u) {}
-    LMatrix4x4(uint u, const float* x1) : QMatrix4x4(x1), unique(u) {}
     LMatrix4x4(uint u, float x1, float x2, float x3, float x4, float x5, float x6, float x7, float x8, float x9, float x10, float x11, float x12, float x13, float x14, float x15, float x16) : QMatrix4x4(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16), unique(u) {}
     LMatrix4x4(uint u, const QTransform& x1) : QMatrix4x4(x1), unique(u) {}
     LMatrix4x4(uint u, const QMatrix& x1) : QMatrix4x4(x1), unique(u) {}

@@ -1218,15 +1218,10 @@ class EQL_EXPORT N88 : public QObject { // QMatrix4x4
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LMatrix4x4(u); }
-    Q_INVOKABLE void* C(uint u, const float* x1) { return new LMatrix4x4(u, x1); }
     Q_INVOKABLE void* C(uint u, float x1, float x2, float x3, float x4, float x5, float x6, float x7, float x8, float x9, float x10, float x11, float x12, float x13, float x14, float x15, float x16) { return new LMatrix4x4(u, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16); }
     Q_INVOKABLE void* C(uint u, const QTransform& x1) { return new LMatrix4x4(u, x1); }
     Q_INVOKABLE void* C(uint u, const QMatrix& x1) { return new LMatrix4x4(u, x1); }
     Q_INVOKABLE QVector4D Mcolumn(QMatrix4x4* o, int x1) const { return o->column(x1); }
-    Q_INVOKABLE const float* MconstData(QMatrix4x4* o) const { return o->constData(); }
-    Q_INVOKABLE void McopyDataTo(QMatrix4x4* o, float* x1) const { o->copyDataTo(x1); }
-    Q_INVOKABLE float* Mdata(QMatrix4x4* o) { return o->data(); }
-    Q_INVOKABLE const float* Mdata(QMatrix4x4* o) const { return o->data(); }
     Q_INVOKABLE double Mdeterminant(QMatrix4x4* o) const { return o->determinant(); }
     Q_INVOKABLE void Mfill(QMatrix4x4* o, float x1) { o->fill(x1); }
     Q_INVOKABLE void Mfrustum(QMatrix4x4* o, float x1, float x2, float x3, float x4, float x5, float x6) { o->frustum(x1, x2, x3, x4, x5, x6); }
@@ -1322,7 +1317,6 @@ public:
     Q_INVOKABLE void Mbind(QOpenGLTexture* o) { o->bind(); }
     Q_INVOKABLE void Mbind(QOpenGLTexture* o, uint x1, QOpenGLTexture::TextureUnitReset x2 = QOpenGLTexture::DontResetTextureUnit) { o->bind(x1, x2); }
     Q_INVOKABLE QColor MborderColor(QOpenGLTexture* o) const { return o->borderColor(); }
-    Q_INVOKABLE void MborderColor(QOpenGLTexture* o, float* x1) const { o->borderColor(x1); }
     Q_INVOKABLE int McomparisonFunction(QOpenGLTexture* o) const { return o->comparisonFunction(); }
     Q_INVOKABLE int McomparisonMode(QOpenGLTexture* o) const { return o->comparisonMode(); }
     Q_INVOKABLE bool Mcreate(QOpenGLTexture* o) { return o->create(); }
@@ -1858,9 +1852,6 @@ public:
     Q_INVOKABLE void* C(uint u, const QVector4D& x1) { return new LQuaternion(u, x1); }
     Q_INVOKABLE QQuaternion Mconjugated(QQuaternion* o) const { return o->conjugated(); }
     Q_INVOKABLE void MgetAxes(QQuaternion* o, QVector3D* x1, QVector3D* x2, QVector3D* x3) const { o->getAxes(x1, x2, x3); }
-    Q_INVOKABLE void MgetAxisAndAngle(QQuaternion* o, float* x1, float* x2, float* x3, float* x4) const { o->getAxisAndAngle(x1, x2, x3, x4); }
-    Q_INVOKABLE void MgetAxisAndAngle(QQuaternion* o, QVector3D* x1, float* x2) const { o->getAxisAndAngle(x1, x2); }
-    Q_INVOKABLE void MgetEulerAngles(QQuaternion* o, float* x1, float* x2, float* x3) const { o->getEulerAngles(x1, x2, x3); }
     Q_INVOKABLE QQuaternion Minverted(QQuaternion* o) const { return o->inverted(); }
     Q_INVOKABLE bool MisIdentity(QQuaternion* o) const { return o->isIdentity(); }
     Q_INVOKABLE bool MisNull(QQuaternion* o) const { return o->isNull(); }

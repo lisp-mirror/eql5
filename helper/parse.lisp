@@ -18,6 +18,7 @@
         "[4][4]"
         "const char * const[]"
         "defaultAction"
+        "float *"
         "int *"
         "iterator"
         "macEvent"
