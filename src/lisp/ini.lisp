@@ -151,6 +151,9 @@
 (defun %break (&rest args)
   (apply 'break args))
 
+(defun %windows-version ()
+  (qfun "QSysInfo" "windowsVersion"))
+
 (let (home)
   (defun set-home (path)
     (setf home path))

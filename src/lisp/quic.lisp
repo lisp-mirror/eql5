@@ -317,7 +317,7 @@
             ((x:starts-with "QObject::connect" qt-line)
              ;; qconnect
              (let ((line (mapcar (lambda (x) (string-trim " " x)) (x:split qt-line #\,))))
-               ;; commenting out the connections because of possible custom slots (not defined in Lisp)
+               ;; commenting out the connections because of possible custom functions (slots), not defined in Lisp
                (format nil "~%~A    ;; (qconnect ~A \"~A\" ~A \"~A\")"
                        (if tr "" "  ")
                        (var-name (subseq (first line) 17))

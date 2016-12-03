@@ -165,5 +165,7 @@
   #+(or darwin linux)
   (funcall (intern "QUTF8" :eql) name)
   #+win32
-  name) ; works in Windows 8 (for older versions, you'll probably need "qlocal8bit")
+  (if (< (funcall (intern "%WINDOWS-VERSION" :eql)) #xa0)
+      (funcall (intern "QLOCAL8BIT" :eql) name)           ; Windows 7 and lower
+      name))                                              ; Windows 8 and higher
 

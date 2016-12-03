@@ -46,6 +46,8 @@ public:
     static int T_QList_QCameraInfo;
     static int T_QCameraViewfinderSettings;
     static int T_QList_QCameraViewfinderSettings;
+    static int T_QHelpSearchQuery;
+    static int T_QList_QHelpSearchQuery;
     static int T_QHostAddress;
     static int T_QHostInfo;
     static int T_QImageEncoderSettings;
@@ -139,6 +141,8 @@ public:
     static Override override_sql;
     static Override override_svg;
     static Override override_webkit;
+    static ToMetaArg toMetaArg_help;
+    static To_lisp_arg to_lisp_arg_help;
     static ToMetaArg toMetaArg_multimedia;
     static To_lisp_arg to_lisp_arg_multimedia;
     static ToMetaArg toMetaArg_network;

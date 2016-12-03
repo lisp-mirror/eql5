@@ -2281,12 +2281,7 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
         DeleteNObject del = (DeleteNObject)lib.resolve("deleteNObject");
         Override over = (Override)lib.resolve("overrideFunctions");
         if(meta && del && over) {
-            if("help" == name) {
-                LObjects::staticMetaObject_help = meta;
-                LObjects::deleteNObject_help = del;
-                LObjects::override_help = over;
-                return l_name; }
-            else if("svg" == name) {
+            if("svg" == name) {
                 LObjects::staticMetaObject_svg = meta;
                 LObjects::deleteNObject_svg = del;
                 LObjects::override_svg = over;
@@ -2295,7 +2290,14 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
                 ToMetaArg metaArg = (ToMetaArg)lib.resolve("toMetaArg");
                 To_lisp_arg lispArg = (To_lisp_arg)lib.resolve("to_lisp_arg");
                 if(metaArg && lispArg) {
-                    if("multimedia" == name) {
+                    if("help" == name) {
+                        LObjects::staticMetaObject_help = meta;
+                        LObjects::deleteNObject_help = del;
+                        LObjects::override_help = over;
+                        LObjects::toMetaArg_help = metaArg;
+                        LObjects::to_lisp_arg_help = lispArg;
+                        return l_name; }
+                    else if("multimedia" == name) {
                         LObjects::staticMetaObject_multimedia = meta;
                         LObjects::deleteNObject_multimedia = del;
                         LObjects::override_multimedia = over;

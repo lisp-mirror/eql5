@@ -796,6 +796,8 @@
                ~%int LObjects::T_QList_QCameraInfo = -1;~
                ~%int LObjects::T_QCameraViewfinderSettings = -1;~
                ~%int LObjects::T_QList_QCameraViewfinderSettings = -1;~
+               ~%int LObjects::T_QHelpSearchQuery = -1;~
+               ~%int LObjects::T_QList_QHelpSearchQuery = -1;~
                ~%int LObjects::T_QHostAddress = -1;~
                ~%int LObjects::T_QHostInfo = -1;~
                ~%int LObjects::T_QImageEncoderSettings = -1;~
@@ -850,7 +852,7 @@
       (format s "~%DeleteNObject LObjects::deleteNObject_~(~A~) = 0;" module))
     (dolist (module *modules*)
       (format s "~%Override LObjects::override_~(~A~) = 0;" module))
-    (dolist (module (list :multimedia :network :sql :webkit))
+    (dolist (module (list :help :multimedia :network :sql :webkit))
       (format s "~%ToMetaArg LObjects::toMetaArg_~(~A~) = 0;~
                  ~%To_lisp_arg LObjects::to_lisp_arg_~(~A~) = 0;"
               module module))

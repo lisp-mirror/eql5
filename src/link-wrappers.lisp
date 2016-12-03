@@ -1,6 +1,3 @@
-#-eql5
-(error "Please use the EQL5 executable to run this file")
-
 (require :cmp)
 
 (setf *break-on-signals* 'error)
@@ -20,6 +17,3 @@
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
-
-(eql:qq)
-
