@@ -6,7 +6,6 @@
 Requires <b>ECL threads</b>.
 <p>
 This should work with any Slime version that plays together with ECL.
-<br>Tested with ECL 12.7.1 (Windows: ECL 12.12.1)
 </p>
 <br>
 <h3>Prepare</h3>
@@ -17,19 +16,19 @@ This should work with any Slime version that plays together with ECL.
 (require 'slime)
 (slime-setup '(slime-fancy))
 </pre>
-<li>Add to your <code>~/.swank.lisp</code> file (or copy file <code>eql/slime/.swank.lisp</code> in your home directory):
+<li>Add to your <code>~/.swank.lisp</code> file (or copy file <code>eql5/slime/.swank.lisp</code> in your home directory):
 <br>(Please note: this isn't really optional -- you <b>need</b> to set this option for a useful Slime + EQL.)
 <pre>
 (setf swank:*globally-redirect-io* t) ; show print output in Emacs
 </pre>
-<li>Copy file <code>eql/slime/eql-start-swank.lisp</code> in your <code>slime/</code> directory
+<li>Copy file <code>eql5/slime/eql-start-swank.lisp</code> in your <code>slime/</code> directory
 </ul>
 <br>
 <h3>Run</h3>
 <ul>
 <li>Run the swank server (the command line option <code>-slime</code> can be omitted if the file name contains "start-swank"), optionally passing a Lisp file:
 <pre>
-eql &lt;path-to-slime&gt;/eql-start-swank.lisp [file.lisp]
+eql5 &lt;path-to-slime&gt;/eql-start-swank.lisp [file.lisp]
 </pre>
 <li>Run Emacs and do:
 <code>Meta-X slime-connect</code> (please note:
@@ -46,11 +45,12 @@ use <code>slime-connect</code>) and hit <code>Return</code> 2 times
 <p>Another case where you need to use <code>qload</code> is when you use Qt classes which use threads internally (see e.g. <code>examples/X-extras/move-blocks.lisp</code>).</p>
 <br>
 <h3>Help</h3>
-<p>For help see the <code>qapropos</code> and <code>qgui</code> functions.</p>
+<p>For help see the <code>qapropos</code>, <code>qproperties</code> and <code>qgui</code> functions.</p>
 <p>To kill the swank process (Slime), use function <code>qquit</code> / <code>qq</code> (since quitting Emacs will not kill it).</p>
 <br>
 <h3>Notes</h3>
-<p>All EQL functions are wrapped in <code>qrun*</code> (see <code>eql/slime/thread-safe.lisp</code>), so it's safe to call them either directly from the REPL or using 'eval region' (or from any other ECL thread).</p>
+<p>Please note that you need to manually <b>delete</b> the file <code>eql5/slime/thread-safe.fas*</code> after every upgrade of either ECL or EQL (it will then be compiled automatically next time you use Slime).</p> 
+<p>All EQL functions are wrapped in <code>qrun*</code> (see <code>eql5/slime/thread-safe.lisp</code>), so it's safe to call them either directly from the REPL or using 'eval region' (or from any other ECL thread).</p>
 <p>If the Slime REPL hangs, you can simply try to connect again (losing the old connection): no need to restart Lisp.</p>
 <p>This Slime mode is both convenient and simple to use, but conses a little more for every EQL function call.
 <br>If you absolutely want direct EQL function calls, please see the less convenient <a href="Slime-REPL-hook.htm">Slime REPL Hook</a> mode.</p>

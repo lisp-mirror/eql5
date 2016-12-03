@@ -33,8 +33,9 @@ void ini2() {
     META_TYPE_(LObjects::T_QSslConfiguration,     QSslConfiguration)
     META_TYPE_(LObjects::T_QSslKey,               QSslKey) }
 
-void* toMetaArg(int n, cl_object l_arg) {
+void* toMetaArg(int n, cl_object l_arg, bool* found) {
     void* p = 0;
+    bool _found = true;
     if(LObjects::T_QHostAddress == n)               { p = new QHostAddress(*toQHostAddressPointer(l_arg)); }
     else if(LObjects::T_QHostInfo == n)             { p = new QHostInfo(*toQHostInfoPointer(l_arg)); }
     else if(LObjects::T_QNetworkCacheMetaData == n) { p = new QNetworkCacheMetaData(*toQNetworkCacheMetaDataPointer(l_arg)); }
@@ -45,10 +46,14 @@ void* toMetaArg(int n, cl_object l_arg) {
     else if(LObjects::T_QSslCipher == n)            { p = new QSslCipher(*toQSslCipherPointer(l_arg)); }
     else if(LObjects::T_QSslConfiguration == n)     { p = new QSslConfiguration(*toQSslConfigurationPointer(l_arg)); }
     else if(LObjects::T_QSslKey == n)               { p = new QSslKey(*toQSslKeyPointer(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return p; }
 
-cl_object to_lisp_arg(int n, void* p) {
+cl_object to_lisp_arg(int n, void* p, bool* found) {
     cl_object l_ret = Cnil;
+    bool _found = true;
     if(LObjects::T_QHostAddress == n)               { l_ret = from_qhostaddress(*(QHostAddress*)p); }
     else if(LObjects::T_QHostInfo == n)             { l_ret = from_qhostinfo(*(QHostInfo*)p); }
     else if(LObjects::T_QNetworkCacheMetaData == n) { l_ret = from_qnetworkcachemetadata(*(QNetworkCacheMetaData*)p); }
@@ -59,6 +64,9 @@ cl_object to_lisp_arg(int n, void* p) {
     else if(LObjects::T_QSslCipher == n)            { l_ret = from_qsslcipher(*(QSslCipher*)p); }
     else if(LObjects::T_QSslConfiguration == n)     { l_ret = from_qsslconfiguration(*(QSslConfiguration*)p); }
     else if(LObjects::T_QSslKey == n)               { l_ret = from_qsslkey(*(QSslKey*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return l_ret; }
 
 QT_END_NAMESPACE

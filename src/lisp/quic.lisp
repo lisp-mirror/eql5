@@ -27,7 +27,7 @@
        ,@set-nil)))
 
 (defun load-ui-related-qt-modules ()
-  (dolist (module (list :help :svg :webkit))
+  (dolist (module (list :help :multimedia :svg :webkit))
     (eql:qrequire module :quiet)))
 
 (defun run (&optional (ui.h "ui.h") (ui.lisp "ui.lisp") (ui-package :ui) properties)
@@ -317,7 +317,8 @@
             ((x:starts-with "QObject::connect" qt-line)
              ;; qconnect
              (let ((line (mapcar (lambda (x) (string-trim " " x)) (x:split qt-line #\,))))
-               (format nil "~%~A    (qconnect ~A \"~A\" ~A \"~A\")"
+               ;; commenting out the connections because of possible custom slots (not defined in Lisp)
+               (format nil "~%~A    ;; (qconnect ~A \"~A\" ~A \"~A\")"
                        (if tr "" "  ")
                        (var-name (subseq (first line) 17))
                        (subseq (second line) 7 (- (length (second line)) 1))

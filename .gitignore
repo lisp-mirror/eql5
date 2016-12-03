@@ -34,6 +34,6 @@ src/tmp
 eql_profile*
 eql_local_server
 cache
-tmp
+tmp*
 palindrome.htm
 positions.js

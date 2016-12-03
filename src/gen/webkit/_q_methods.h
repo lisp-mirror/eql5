@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q213 : public Q121 { // QWebFrame
+class Q231 : public Q136 { // QWebFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void MaddToJavaScriptWindowObject(QWebFrame* o, const QString& x1, QObject* x2, QWebFrame::ValueOwnership x3 = QWebFrame::QtOwnership) { o->addToJavaScriptWindowObject(x1, x2, x3); }
@@ -62,7 +62,7 @@ public:
     Q_INVOKABLE bool Mevent(QWebFrame* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q214 : public Q121 { // QWebHistoryInterface
+class Q232 : public Q136 { // QWebHistoryInterface
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebHistoryInterface(u, x1); }
@@ -72,7 +72,7 @@ public:
     Q_INVOKABLE void SsetDefaultInterface(QWebHistoryInterface* x1) { QWebHistoryInterface::setDefaultInterface(x1); }
 };
 
-class Q216 : public Q121 { // QWebPage
+class Q234 : public Q136 { // QWebPage
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPage(u, x1); }
@@ -126,7 +126,7 @@ public:
     Q_INVOKABLE bool Mevent(QWebPage* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q217 : public Q121 { // QWebPluginFactory
+class Q235 : public Q136 { // QWebPluginFactory
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPluginFactory(u, x1); }
@@ -135,7 +135,7 @@ public:
     Q_INVOKABLE void MrefreshPlugins(QWebPluginFactory* o) { o->refreshPlugins(); }
 };
 
-class Q77 : public Q78 { // QGraphicsWebView
+class Q87 : public Q88 { // QGraphicsWebView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QGraphicsItem* x1 = 0) { return new LGraphicsWebView(u, x1); }
@@ -173,7 +173,7 @@ public:
     Q_INVOKABLE void MupdateGeometry(QGraphicsWebView* o) { o->updateGeometry(); }
 };
 
-class Q215 : public Q219 { // QWebInspector
+class Q233 : public Q237 { // QWebInspector
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebInspector(u, x1); }
@@ -183,7 +183,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QWebInspector* o) const { return o->sizeHint(); }
 };
 
-class Q218 : public Q219 { // QWebView
+class Q236 : public Q237 { // QWebView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebView(u, x1); }

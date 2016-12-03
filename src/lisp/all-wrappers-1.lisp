@@ -70,6 +70,8 @@
    #:|activeWindow.QApplication|
    #:|activeWindow|
    #:|active|
+   #:|actualLocationChanged|
+   #:|actualLocation|
    #:|actualSize(QSize...)|
    #:|actualSize(QWindow*...)|
    #:|actualSize|
@@ -122,6 +124,9 @@
    #:|addLocalScheme.QWebSecurityOrigin|
    #:|addMSecs|
    #:|addMapping|
+   #:|addMedia(QList<QMediaContent>)|
+   #:|addMedia(QMediaContent)|
+   #:|addMedia|
    #:|addMenu(QMenu*)|
    #:|addMenu(QString)|
    #:|addMenu|
@@ -134,6 +139,7 @@
    #:|addPermanentWidget|
    #:|addPixmap|
    #:|addPolygon|
+   #:|addPropertyWatch|
    #:|addRect|
    #:|addRegion|
    #:|addResource|
@@ -235,6 +241,10 @@
    #:|animationCount|
    #:|animations|
    #:|answerRect|
+   #:|antennaConnectedChanged|
+   #:|apertureChanged|
+   #:|apertureRangeChanged|
+   #:|aperture|
    #:|appendColumns|
    #:|appendColumn|
    #:|appendHtml|
@@ -272,6 +282,7 @@
    #:|arguments|
    #:|arrowType|
    #:|ascent|
+   #:|aspectRatioMode|
    #:|assignProperty|
    #:|associatedGraphicsWidgets|
    #:|associatedWidgets|
@@ -287,6 +298,15 @@
    #:|attributeNames|
    #:|attribute|
    #:|at|
+   #:|audioAvailableChanged|
+   #:|audioCodecDescription|
+   #:|audioInputChanged|
+   #:|audioInputDescription|
+   #:|audioInputs|
+   #:|audioInput|
+   #:|audioRoleChanged|
+   #:|audioRole|
+   #:|audioSettings|
    #:|authenticationMethod|
    #:|authenticationRequired|
    #:|authority|
@@ -306,12 +326,20 @@
    #:|autoSaveFilter|
    #:|autoScrollMargin|
    #:|autoSipEnabled|
+   #:|availabilityChanged(QMultimedia::AvailabilityStatus)|
+   #:|availabilityChanged(bool)|
+   #:|availabilityChanged|
+   #:|availability|
+   #:|availableAudioInputsChanged|
+   #:|availableCameras.QCameraInfo|
    #:|availableCodecs.QTextCodec|
+   #:|availableDevices.QAudioDeviceInfo|
    #:|availableGeometry(QPoint)|
    #:|availableGeometry(const QWidget*)|
    #:|availableGeometry(int)|
    #:|availableGeometryChanged|
    #:|availableGeometry|
+   #:|availableMetaData|
    #:|availableMibs.QTextCodec|
    #:|availablePrinterNames.QPrinterInfo|
    #:|availableRedoSteps|
@@ -341,6 +369,8 @@
    #:|backwardHistoryCount|
    #:|backward|
    #:|back|
+   #:|bandChanged|
+   #:|band|
    #:|baseName|
    #:|baseSize|
    #:|baseUrlChanged|
@@ -391,6 +421,7 @@
    #:|bindingSyntax|
    #:|bind|
    #:|bitPlaneCount|
+   #:|bitRate|
    #:|bitmap|
    #:|blackF|
    #:|black|
@@ -443,13 +474,22 @@
    #:|boundingRegion|
    #:|boundsOnElement|
    #:|brightText|
+   #:|brightnessChanged|
+   #:|brightness|
    #:|broadcast|
    #:|brushOrigin|
    #:|brushProperty|
    #:|brush|
    #:|bspTreeDepth|
    #:|buddy|
+   #:|bufferFormatChanged|
+   #:|bufferFormat|
+   #:|bufferSize|
+   #:|bufferStatusChanged|
+   #:|bufferStatus|
    #:|buffer|
+   #:|buildAbi.QSysInfo|
+   #:|buildCpuArchitecture.QSysInfo|
    #:|bundleName|
    #:|buttonClicked(QAbstractButton*)|
    #:|buttonClicked(int)|
@@ -472,7 +512,12 @@
    #:|buttons|
    #:|button|
    #:|byteCount|
+   #:|byteOrder|
    #:|bytesAvailable|
+   #:|bytesForDuration|
+   #:|bytesForFrames|
+   #:|bytesFree|
+   #:|bytesPerFrame|
    #:|bytesPerLine|
    #:|bytesReceived|
    #:|bytesToWrite|
@@ -504,10 +549,12 @@
    #:|canUndoChanged|
    #:|canUndo|
    #:|cancelButtonText|
+   #:|cancelCapture|
    #:|cancelDelayedEvent|
    #:|cancelIndexing|
    #:|cancelQuery|
    #:|cancelSearching|
+   #:|cancelSearch|
    #:|canceledGestures|
    #:|canceled|
    #:|cancel|
@@ -517,11 +564,17 @@
    #:|capabilities|
    #:|capitalization|
    #:|captureCount|
+   #:|captureDestinationChanged|
+   #:|captureDestination|
+   #:|captureModeChanged|
+   #:|captureMode|
    #:|capturedTexts|
+   #:|capture|
    #:|cap|
    #:|cascadeSubWindows|
    #:|cascadingSectionResizes|
    #:|caseSensitivity|
+   #:|category|
    #:|cdUp|
    #:|cd|
    #:|cellActivated|
@@ -558,6 +611,7 @@
    #:|changePersistentIndex|
    #:|changeSize|
    #:|changed|
+   #:|channelCount|
    #:|charFormatIndex|
    #:|charFormat|
    #:|characterAt|
@@ -673,6 +727,7 @@
    #:|colorChanged|
    #:|colorCount|
    #:|colorData|
+   #:|colorFilter|
    #:|colorMode|
    #:|colorNames.QColor|
    #:|colorProperty|
@@ -753,6 +808,8 @@
    #:|connectionNames.QSqlDatabase|
    #:|connectionName|
    #:|constructorCount|
+   #:|containerDescription|
+   #:|containerFormat|
    #:|contains(QPainterPath)|
    #:|contains(QPoint)|
    #:|contains(QPointF)|
@@ -775,6 +832,8 @@
    #:|contextMenuPolicy|
    #:|contextMenu|
    #:|context|
+   #:|contrastChanged|
+   #:|contrast|
    #:|controlPointRect|
    #:|controlTypes|
    #:|controlType|
@@ -846,6 +905,7 @@
    #:|currentColumn|
    #:|currentCompletion|
    #:|currentContext.QOpenGLContext|
+   #:|currentCpuArchitecture.QSysInfo|
    #:|currentData|
    #:|currentDate.QDate|
    #:|currentDateTime.QDateTime|
@@ -871,7 +931,10 @@
    #:|currentLoopTime|
    #:|currentLoop|
    #:|currentMSecsSinceEpoch.QDateTime|
+   #:|currentMediaChanged|
+   #:|currentMedia|
    #:|currentMessage|
+   #:|currentNetworkConfiguration|
    #:|currentPageChanged|
    #:|currentPage|
    #:|currentPath.QDir|
@@ -912,6 +975,7 @@
    #:|customContextMenuRequested|
    #:|customCount.QColorDialog|
    #:|customFilters|
+   #:|customFocusPoint|
    #:|customValue|
    #:|cut|
    #:|cyanF|
@@ -955,7 +1019,9 @@
    #:|decodeName.QFile|
    #:|defaultAlignment|
    #:|defaultAnimations|
+   #:|defaultAudioInput|
    #:|defaultButton|
+   #:|defaultCamera.QCameraInfo|
    #:|defaultConfiguration.QSslConfiguration|
    #:|defaultCursorMoveStyle|
    #:|defaultDepth.QPixmap|
@@ -967,8 +1033,10 @@
    #:|defaultFormat.QSettings|
    #:|defaultFramebufferObject|
    #:|defaultInnerTessellationLevels|
+   #:|defaultInputDevice.QAudioDeviceInfo|
    #:|defaultInterface.QWebHistoryInterface|
    #:|defaultOuterTessellationLevels|
+   #:|defaultOutputDevice.QAudioDeviceInfo|
    #:|defaultPageSize|
    #:|defaultPrinterName.QPrinterInfo|
    #:|defaultSectionSize|
@@ -990,6 +1058,7 @@
    #:|deleteResource|
    #:|delta|
    #:|del|
+   #:|denoisingLevel|
    #:|depthStencilMode|
    #:|depth|
    #:|descent|
@@ -1004,11 +1073,14 @@
    #:|detach|
    #:|detailedText|
    #:|determinant|
+   #:|deviceName|
    #:|devicePixelRatio|
    #:|deviceTransform|
    #:|device|
    #:|digest|
    #:|digitCount|
+   #:|digitalZoomChanged|
+   #:|digitalZoom|
    #:|dirName|
    #:|directionChanged|
    #:|direction|
@@ -1127,79 +1199,7 @@
    #:|drawLines(const QLine*...)|
    #:|drawLines(const QLineF*...)|
    #:|drawLines(const QPointF*...)|
-   #:|drawLines|
-   #:|drawLine|
-   #:|drawPath|
-   #:|drawPicture(QPoint...)|
-   #:|drawPicture(QPointF...)|
-   #:|drawPicture|
-   #:|drawPie(QRect...)|
-   #:|drawPie(QRectF...)|
-   #:|drawPie|
-   #:|drawPixmap(QPoint...)|
-   #:|drawPixmap(QPointF...)|
-   #:|drawPixmap(QRect...)|
-   #:|drawPixmap(QRectF...)|
-   #:|drawPixmap(int...)|
-   #:|drawPixmapFragments|
-   #:|drawPixmap|
-   #:|drawPoint(QPoint)|
-   #:|drawPoint(QPointF)|
-   #:|drawPoints(QPolygon)|
-   #:|drawPoints(QPolygonF)|
-   #:|drawPoints|
-   #:|drawPoint|
-   #:|drawPolygon(QPolygon)|
-   #:|drawPolygon(QPolygon...)|
-   #:|drawPolygon(QPolygonF)|
-   #:|drawPolygon(QPolygonF...)|
-   #:|drawPolygon(const QPointF*...)|
-   #:|drawPolygon|
-   #:|drawPolyline(QPolygon)|
-   #:|drawPolyline(QPolygonF)|
-   #:|drawPolyline|
-   #:|drawPrimitive|
-   #:|drawRect(QRect)|
-   #:|drawRect(QRectF)|
-   #:|drawRects(QVector<QRect>)|
-   #:|drawRects(QVector<QRectF>)|
-   #:|drawRects(const QRect*...)|
-   #:|drawRects(const QRectF*...)|
-   #:|drawRects|
-   #:|drawRect|
-   #:|drawRoundedRect(QRect...)|
-   #:|drawRoundedRect(QRectF...)|
-   #:|drawRoundedRect|
-   #:|drawSource|
-   #:|drawStaticText(QPoint...)|
-   #:|drawStaticText(QPointF...)|
-   #:|drawStaticText|
-   #:|drawText(QPoint...)|
-   #:|drawText(QPointF...)|
-   #:|drawText(QRect...)|
-   #:|drawText(QRectF,QString...)|
-   #:|drawText(QRectF,int...)|
-   #:|drawText(QRectF...)|
-   #:|drawText(int...)|
-   #:|drawText|
-   #:|drawTiledPixmap(QRect...)|
-   #:|drawTiledPixmap(QRectF...)|
-   #:|drawTiledPixmap|
-   #:|drawTree|
-   #:|draw|
-   #:|driverName|
-   #:|driverText|
-   #:|drivers.QSqlDatabase|
-   #:|driver|
-   #:|drives.QDir|
-   #:|dropAction|
-   #:|dropEvent|
-   #:|dropIndicatorPosition|
-   #:|dropMimeData|
-   #:|dumpObjectInfo|
-   #:|dumpObjectTree|
-   #:|duplex|
-   #:|duplicatesEnabled|))
+   #:|drawLines|))
 
 (in-package :eql)
 

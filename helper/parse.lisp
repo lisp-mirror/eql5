@@ -115,6 +115,7 @@
         "QSet<"
         "QSymbianEvent"
         "QTextObjectInterface"
+        "QVariantMap"
         "QVector2D *"
         "QVector3D *"
         "QVector4D *"
@@ -223,6 +224,8 @@
               (unless (dolist (skip *skip*)
                         (when (search skip x:it)
                           (return t)))
+                (when (search "QByteArray const" x:it)
+                  (setf x:it (x:string-substitute "const QByteArray" "QByteArray const" x:it)))
                 (when (find #\( x:it)
                   (x:when-it* (search " = QRect( QPoint( 0, 0 ), QSize( -1, -1 ) )" x:it) ; special case
                     (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QRect_QWIDGET_GRAB)")))

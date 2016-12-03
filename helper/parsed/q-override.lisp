@@ -235,6 +235,12 @@
    "virtual bool eventTest ( QEvent * ) = 0"
    "virtual void onTransition ( QEvent * ) = 0"
    "virtual bool event ( QEvent * )")
+  (("QAbstractVideoSurface" . "QObject")
+   "virtual bool isFormatSupported ( const QVideoSurfaceFormat & ) const"
+   "virtual QVideoSurfaceFormat nearestFormat ( const QVideoSurfaceFormat & ) const"
+   "virtual bool present ( const QVideoFrame & ) = 0"
+   "virtual bool start ( const QVideoSurfaceFormat & )"
+   "virtual void stop ()")
   (("QAction" . "QObject")
    "virtual bool event ( QEvent * )")
   (("QActionGroup" . "QObject"))
@@ -243,6 +249,8 @@
   (("QApplication" . "QGuiApplication")
    "virtual bool notify ( QObject * , QEvent * )"
    "virtual bool event ( QEvent * )")
+  (("QAudioOutput" . "QObject"))
+  (("QAudioRecorder" . "QMediaRecorder"))
   (("QBoxLayout" . "QLayout")
    "virtual void addItem ( QLayoutItem * )"
    "virtual int count () const"
@@ -277,6 +285,15 @@
    "virtual void keyPressEvent ( QKeyEvent * )"
    "virtual void mousePressEvent ( QMouseEvent * )"
    "virtual void resizeEvent ( QResizeEvent * )")
+  (("QCamera" . "QMediaObject")
+   "virtual QMultimedia::AvailabilityStatus availability () const")
+  (("QCameraExposure" . "QObject"))
+  (("QCameraFocus" . "QObject"))
+  (("QCameraImageCapture" . "QObject")
+   "virtual QMediaObject * mediaObject () const"
+   "virtual bool setMediaObject ( QMediaObject * )")
+  (("QCameraImageProcessing" . "QObject"))
+  (("QCameraViewfinder" . "QVideoWidget"))
   (("QCheckBox" . "QAbstractButton")
    "virtual QSize minimumSizeHint () const"
    "virtual QSize sizeHint () const"
@@ -631,6 +648,9 @@
    "virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * )"
    "virtual bool sceneEvent ( QEvent * )")
   (("QGraphicsTransform" . "QObject"))
+  (("QGraphicsVideoItem" . "QGraphicsObject")
+   "virtual QRectF boundingRect () const"
+   "virtual void paint ( QPainter * , const QStyleOptionGraphicsItem * , QWidget * = 0 )")
   (("QGraphicsView" . "QAbstractScrollArea")
    "virtual void drawBackground ( QPainter * , const QRectF & )"
    "virtual void drawForeground ( QPainter * , const QRectF & )"
@@ -969,6 +989,21 @@
    "virtual void resizeEvent ( QResizeEvent * )"
    "virtual void showEvent ( QShowEvent * )"
    "virtual void timerEvent ( QTimerEvent * )")
+  (("QMediaObject" . "QObject")
+   "virtual QMultimedia::AvailabilityStatus availability () const"
+   "virtual bool bind ( QObject * )"
+   "virtual bool isAvailable () const"
+   "virtual QMediaService * service () const"
+   "virtual void unbind ( QObject * )")
+  (("QMediaPlayer" . "QMediaObject")
+   "virtual QMultimedia::AvailabilityStatus availability () const")
+  (("QMediaPlaylist" . "QObject")
+   "virtual QMediaObject * mediaObject () const")
+  (("QMediaRecorder" . "QObject")
+   "virtual QMediaObject * mediaObject () const")
+  (("QMediaService" . "QObject")
+   "virtual void releaseControl ( QMediaControl * ) = 0"
+   "virtual QMediaControl * requestControl ( const char * ) = 0")
   (("QMenu" . "QWidget")
    "virtual QSize sizeHint () const"
    "virtual void actionEvent ( QActionEvent * )"
@@ -1172,6 +1207,8 @@
    "virtual bool hitButton ( const QPoint & ) const"
    "virtual void mouseMoveEvent ( QMouseEvent * )"
    "virtual void paintEvent ( QPaintEvent * )")
+  (("QRadioTuner" . "QMediaObject")
+   "virtual QMultimedia::AvailabilityStatus availability () const")
   (("QRegExpValidator" . "QValidator")
    "virtual QValidator::State validate ( QString & , int & ) const")
   (("QRubberBand" . "QWidget")
@@ -1678,6 +1715,28 @@
    "virtual bool event ( QEvent * )"
    "virtual void updateCurrentTime ( int )"
    "virtual void updateState ( QAbstractAnimation::State , QAbstractAnimation::State )")
+  (("QVideoWidget" . "QWidget")
+   "virtual QSize sizeHint () const"
+   "virtual bool event ( QEvent * )"
+   "virtual void hideEvent ( QHideEvent * )"
+   "virtual void moveEvent ( QMoveEvent * )"
+   "virtual void paintEvent ( QPaintEvent * )"
+   "virtual void resizeEvent ( QResizeEvent * )"
+   "virtual void showEvent ( QShowEvent * )")
+  (("QVideoWidgetControl" . NIL)
+   "virtual Qt::AspectRatioMode aspectRatioMode () const = 0"
+   "virtual int brightness () const = 0"
+   "virtual int contrast () const = 0"
+   "virtual int hue () const = 0"
+   "virtual bool isFullScreen () const = 0"
+   "virtual int saturation () const = 0"
+   "virtual void setAspectRatioMode ( Qt::AspectRatioMode ) = 0"
+   "virtual void setBrightness ( int ) = 0"
+   "virtual void setContrast ( int ) = 0"
+   "virtual void setFullScreen ( bool ) = 0"
+   "virtual void setHue ( int ) = 0"
+   "virtual void setSaturation ( int ) = 0"
+   "virtual QWidget * videoWidget () = 0")
   (("QWebFrame" . "QObject")
    "virtual bool event ( QEvent * )")
   (("QWebHistoryInterface" . "QObject")

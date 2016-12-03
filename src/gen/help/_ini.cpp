@@ -19,52 +19,52 @@ NumList LHelpSearchQuery::overrideIds = NumList();
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
-    LObjects::Q[83] = new Q84;
-    LObjects::Q[84] = new Q85;
-    LObjects::Q[85] = new Q86;
-    LObjects::Q[86] = new Q87;
-    LObjects::Q[87] = new Q88;
-    LObjects::Q[88] = new Q89;
-    LObjects::Q[89] = new Q90;
-    LObjects::Q[90] = new Q91;
-    LObjects::N[64] = new N65;
-    LObjects::N[66] = new N67; }
+    LObjects::Q[93] = new Q94;
+    LObjects::Q[94] = new Q95;
+    LObjects::Q[95] = new Q96;
+    LObjects::Q[96] = new Q97;
+    LObjects::Q[97] = new Q98;
+    LObjects::Q[98] = new Q99;
+    LObjects::Q[99] = new Q100;
+    LObjects::Q[100] = new Q101;
+    LObjects::N[69] = new N70;
+    LObjects::N[71] = new N72; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
-        case 84: m = &QHelpContentModel::staticMetaObject; break;
-        case 85: m = &QHelpContentWidget::staticMetaObject; break;
-        case 86: m = &QHelpEngineCore::staticMetaObject; break;
-        case 87: m = &QHelpIndexModel::staticMetaObject; break;
-        case 88: m = &QHelpIndexWidget::staticMetaObject; break;
-        case 89: m = &QHelpSearchEngine::staticMetaObject; break;
-        case 90: m = &QHelpSearchQueryWidget::staticMetaObject; break;
-        case 91: m = &QHelpSearchResultWidget::staticMetaObject; break; }
+        case 94: m = &QHelpContentModel::staticMetaObject; break;
+        case 95: m = &QHelpContentWidget::staticMetaObject; break;
+        case 96: m = &QHelpEngineCore::staticMetaObject; break;
+        case 97: m = &QHelpIndexModel::staticMetaObject; break;
+        case 98: m = &QHelpIndexWidget::staticMetaObject; break;
+        case 99: m = &QHelpSearchEngine::staticMetaObject; break;
+        case 100: m = &QHelpSearchQueryWidget::staticMetaObject; break;
+        case 101: m = &QHelpSearchResultWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 65: if(gc) delete (QHelpContentItem*)p; else delete (LHelpContentItem*)p; break;
-        case 67: if(gc) delete (QHelpSearchQuery*)p; else delete (LHelpSearchQuery*)p; break; }}
+        case 70: if(gc) delete (QHelpContentItem*)p; else delete (LHelpContentItem*)p; break;
+        case 72: if(gc) delete (QHelpSearchQuery*)p; else delete (LHelpSearchQuery*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
         switch(n) {
-            case 84: ids = &LHelpContentModel::overrideIds; break;
-            case 85: ids = &LHelpContentWidget::overrideIds; break;
-            case 86: ids = &LHelpEngineCore::overrideIds; break;
-            case 88: ids = &LHelpIndexWidget::overrideIds; break;
-            case 89: ids = &LHelpSearchEngine::overrideIds; break;
-            case 90: ids = &LHelpSearchQueryWidget::overrideIds; break;
-            case 91: ids = &LHelpSearchResultWidget::overrideIds; break; }}
+            case 94: ids = &LHelpContentModel::overrideIds; break;
+            case 95: ids = &LHelpContentWidget::overrideIds; break;
+            case 96: ids = &LHelpEngineCore::overrideIds; break;
+            case 98: ids = &LHelpIndexWidget::overrideIds; break;
+            case 99: ids = &LHelpSearchEngine::overrideIds; break;
+            case 100: ids = &LHelpSearchQueryWidget::overrideIds; break;
+            case 101: ids = &LHelpSearchResultWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 65: ids = &LHelpContentItem::overrideIds; break;
-            case 67: ids = &LHelpSearchQuery::overrideIds; break; }}
+            case 70: ids = &LHelpContentItem::overrideIds; break;
+            case 72: ids = &LHelpSearchQuery::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

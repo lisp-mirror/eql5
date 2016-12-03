@@ -20,18 +20,26 @@ void ini2() {
     META_TYPE_(LObjects::T_QWebElementCollection, QWebElementCollection)
     META_TYPE_(LObjects::T_QWebHitTestResult,     QWebHitTestResult) }
 
-void* toMetaArg(int n, cl_object l_arg) {
+void* toMetaArg(int n, cl_object l_arg, bool* found) {
     void* p = 0;
+    bool _found = true;
     if(LObjects::T_QWebElement == n)                { p = new QWebElement(*toQWebElementPointer(l_arg)); }
     else if(LObjects::T_QWebElementCollection == n) { p = new QWebElementCollection(*toQWebElementCollectionPointer(l_arg)); }
     else if(LObjects::T_QWebHitTestResult == n)     { p = new QWebHitTestResult(*toQWebHitTestResultPointer(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return p; }
 
-cl_object to_lisp_arg(int n, void* p) {
+cl_object to_lisp_arg(int n, void* p, bool* found) {
     cl_object l_ret = Cnil;
+    bool _found = true;
     if(LObjects::T_QWebElement == n)                { l_ret = from_qwebelement(*(QWebElement*)p); }
     else if(LObjects::T_QWebElementCollection == n) { l_ret = from_qwebelementcollection(*(QWebElementCollection*)p); }
     else if(LObjects::T_QWebHitTestResult == n)     { l_ret = from_qwebhittestresult(*(QWebHitTestResult*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return l_ret; }
 
 QT_END_NAMESPACE

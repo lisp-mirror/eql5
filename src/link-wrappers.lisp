@@ -8,7 +8,7 @@
 #+msvc
 (setf c::*compile-in-constants* t)
 
-(defparameter *all-wrappers* (loop :for i :from 1 :to 10 :collect (format nil "all-wrappers-~D" i)))
+(defparameter *all-wrappers* (loop :for i :from 1 :to 12 :collect (format nil "all-wrappers-~D" i)))
 
 (defparameter *lisp-files*   (append '("x" "package" "ini"
                                        "enums1" "enums2" "enums3" "enums4" "enums5"

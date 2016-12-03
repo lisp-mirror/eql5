@@ -1,7 +1,8 @@
 ;;; Define wrapper functions for all Qt methods/signals/slots using case
 ;;; preserving symbol names, and resolving type ambiguous argument lists
+;;; current count: 6007
 
-(dolist (module '(:help :network :sql :svg :webkit))
+(dolist (module '(:help :multimedia :network :sql :svg :webkit))
   (eql:qrequire module))
 
 (defconstant +max-symbols-per-file+ 1200) ; required for Windows (string size limit)

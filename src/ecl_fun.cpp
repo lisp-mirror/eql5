@@ -87,6 +87,7 @@ META_TYPE (T_QVector_QRgb,                     QVector<QRgb>)
 META_TYPE (T_QVector_QTextFormat,              QVector<QTextFormat>)
 META_TYPE (T_QVector_QTextLength,              QVector<QTextLength>)
 META_TYPE (T_QVector_float,                    QVector<float>)
+META_TYPE (T_QVector_int,                      QVector<int>)
 META_TYPE (T_QVector_qreal,                    QVector<qreal>)
 META_TYPE (T_WId,                              WId)
 
@@ -811,6 +812,7 @@ TO_QT_VECTOR_VAL  (QTextFormat)
 TO_QT_VECTOR_VAL  (QTextLength)
 TO_QT_VECTOR_VAL2 (QRgb, UInt)
 TO_QT_VECTOR_VAL2 (float, Float)
+TO_QT_VECTOR_VAL2 (int, Int)
 TO_QT_VECTOR_VAL2 (qreal, Real)
 
 QVariant toQVariant(cl_object l_obj, const char* s_type, int type) {
@@ -1020,6 +1022,7 @@ TO_CL_VECTOR_VAL  (QTextFormat, qtextformat)
 TO_CL_VECTOR_VAL  (QTextLength, qtextlength)
 TO_CL_VECTOR_VAL2 (QRgb, qrgb, ecl_make_unsigned_integer)
 TO_CL_VECTOR_VAL2 (float, float, ecl_make_singlefloat)
+TO_CL_VECTOR_VAL2 (int, int, ecl_make_integer)
 TO_CL_VECTOR_VAL2 (qreal, qreal, ecl_make_doublefloat)
 
 static cl_object from_qvariant_value(const QVariant& var) {
@@ -1207,6 +1210,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QVector_QTextFormat == n)              p = new QVector<QTextFormat>(toQTextFormatVector(l_arg));
         else if(T_QVector_QTextLength == n)              p = new QVector<QTextLength>(toQTextLengthVector(l_arg));
         else if(T_QVector_float == n)                    p = new QVector<float>(tofloatVector(l_arg));
+        else if(T_QVector_int == n)                      p = new QVector<int>(tointVector(l_arg));
         else if(T_QVector_qreal == n)                    p = new QVector<qreal>(toqrealVector(l_arg));
         else if(T_WId == n)                              p = new ulong(toUInt<ulong>(l_arg));
         else if(T_GLint == n)                            p = new GLint(toInt<GLint>(l_arg));
@@ -1214,21 +1218,20 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_GLenum == n)                           p = new GLenum(toUInt<GLenum>(l_arg));
         else if(T_GLfloat == n)                          p = new GLfloat(toFloat<GLfloat>(l_arg));
         // module types
-        else if((n >= LObjects::T_QHostAddress) &&
-                (n <= LObjects::T_QSslKey)) {
-            if(LObjects::toMetaArg_network) {
-                p = LObjects::toMetaArg_network(n, l_arg); }}
-        else if((n >= LObjects::T_QSqlDatabase) &&
-                (n <= LObjects::T_QSqlRelation)) {
-            if(LObjects::toMetaArg_sql) {
-                p = LObjects::toMetaArg_sql(n, l_arg); }}
-        else if((n >= LObjects::T_QWebElement) &&
-                (n <= LObjects::T_QWebHitTestResult)) {
-            if(LObjects::toMetaArg_webkit) {
-                p = LObjects::toMetaArg_webkit(n, l_arg); }}
-        else if(!sType.endsWith('>') && sType.contains(':')) { // enum
-            int* i = new int(toInt(l_arg));
-            p = i; }}
+        else {
+            bool found = false;
+            if(LObjects::toMetaArg_multimedia) {
+                p = LObjects::toMetaArg_multimedia(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_network) {
+                p = LObjects::toMetaArg_network(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_sql) {
+                p = LObjects::toMetaArg_sql(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_webkit) {
+                p = LObjects::toMetaArg_webkit(n, l_arg, &found); }
+            if(!found) {
+                if(!sType.endsWith('>') && sType.contains(':')) { // enum
+                    int* i = new int(toInt(l_arg));
+                    p = i; }}}}
     return MetaArg(sType, p); }
 
 cl_object to_lisp_arg(const MetaArg& arg) {
@@ -1359,6 +1362,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QVector_QTextFormat == n)              l_ret = from_qtextformatvector(*(QVector<QTextFormat>*)p);
             else if(T_QVector_QTextLength == n)              l_ret = from_qtextlengthvector(*(QVector<QTextLength>*)p);
             else if(T_QVector_float == n)                    l_ret = from_floatvector(*(QVector<float>*)p);
+            else if(T_QVector_int == n)                      l_ret = from_intvector(*(QVector<int>*)p);
             else if(T_QVector_qreal == n)                    l_ret = from_qrealvector(*(QVector<qreal>*)p);
             else if(T_WId == n)                              l_ret = ecl_make_unsigned_integer(*(ulong*)p);
             else if(T_GLint == n)                            l_ret = ecl_make_integer(*(GLint*)p);
@@ -1366,21 +1370,20 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_GLenum == n)                           l_ret = ecl_make_unsigned_integer(*(GLenum*)p);
             else if(T_GLfloat == n)                          l_ret = ecl_make_singlefloat(*(GLfloat*)p);
             // module types
-            else if((n >= LObjects::T_QHostAddress) &&
-                    (n <= LObjects::T_QSslKey)) {
-                if(LObjects::to_lisp_arg_network) {
-                    l_ret = LObjects::to_lisp_arg_network(n, p); }}
-            else if((n >= LObjects::T_QSqlDatabase) &&
-                    (n <= LObjects::T_QSqlRelation)) {
-                if(LObjects::to_lisp_arg_sql) {
-                    l_ret = LObjects::to_lisp_arg_sql(n, p); }}
-            else if((n >= LObjects::T_QWebElement) &&
-                    (n <= LObjects::T_QWebHitTestResult)) {
-                if(LObjects::toMetaArg_webkit) {
-                    l_ret = LObjects::to_lisp_arg_webkit(n, p); }}
-            else if(!sType.endsWith('>') && sType.contains(':')) { // enum
-                int* i = (int*)p;
-                l_ret = ecl_make_integer(*i); }}}
+            else {
+                bool found = false;
+                if(LObjects::to_lisp_arg_multimedia) {
+                    l_ret = LObjects::to_lisp_arg_multimedia(n, p, &found); }
+                if(!found && LObjects::to_lisp_arg_network) {
+                    l_ret = LObjects::to_lisp_arg_network(n, p, &found); }
+                if(!found && LObjects::to_lisp_arg_sql) {
+                    l_ret = LObjects::to_lisp_arg_sql(n, p, &found); }
+                if(!found && LObjects::toMetaArg_webkit) {
+                    l_ret = LObjects::to_lisp_arg_webkit(n, p, &found); }
+                if(!found) {
+                    if(sType.endsWith('>') && sType.contains(':')) { // enum
+                    int* i = (int*)p;
+                    l_ret = ecl_make_integer(*i); }}}}}
     return l_ret; }
 
 static void clearMetaArg(const MetaArg& arg, bool is_ret = false) {
@@ -2258,7 +2261,7 @@ cl_object qclear_event_filters() {
 
 cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    /// args: (module &optional quiet)
-   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:network :sql</code>
+   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :sql :svg :webkit</code>
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
@@ -2292,7 +2295,14 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
                 ToMetaArg metaArg = (ToMetaArg)lib.resolve("toMetaArg");
                 To_lisp_arg lispArg = (To_lisp_arg)lib.resolve("to_lisp_arg");
                 if(metaArg && lispArg) {
-                    if("network" == name) {
+                    if("multimedia" == name) {
+                        LObjects::staticMetaObject_multimedia = meta;
+                        LObjects::deleteNObject_multimedia = del;
+                        LObjects::override_multimedia = over;
+                        LObjects::toMetaArg_multimedia = metaArg;
+                        LObjects::to_lisp_arg_multimedia = lispArg;
+                        return l_name; }
+                    else if("network" == name) {
                         LObjects::staticMetaObject_network = meta;
                         LObjects::deleteNObject_network = del;
                         LObjects::override_network = over;

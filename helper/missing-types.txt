@@ -4,10 +4,12 @@ QAccessibleTableInterface
 QAccessibleTextInterface
 QAccessibleValueInterface
 QBackingStore
+QCameraFocusZoneList
 QExposeEvent
 QFunctionPointer
 QGlyphRun
 QHttpMultiPart
+QImageEncoderSettings
 QImageReader
 QInputMethod
 QItemSelection
@@ -17,11 +19,16 @@ QJsonObject
 QJsonValue
 QLatin1String
 QList<ExtraSelection>
+QList<FrameRateRange>
 QList<Plugin>
+QList<QAudioDeviceInfo>
+QList<QCameraInfo>
+QList<QCameraViewfinderSettings>
 QList<QGlyphRun>
 QList<QHelpSearchQuery>
 QList<QHostAddress>
 QList<QLocale>
+QList<QMediaContent>
 QList<QNetworkAddressEntry>
 QList<QNetworkCookie>
 QList<QNetworkInterface>
@@ -40,6 +47,8 @@ QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
 QMarginsF
+QMediaContent
+QMediaControl
 QMultiMap<QString,QString>
 QNetworkConfiguration
 QOpenGLContextGroup
@@ -49,6 +58,7 @@ QPageSize
 QPixelFormat
 QPlatformNativeInterface
 QPlatformScreen
+QRadioData
 QRegularExpressionMatch
 QRegularExpressionMatchIterator
 QStaticText
@@ -64,9 +74,8 @@ QVariantHash
 QVector<QSslEllipticCurve>
 QVector<QStaticPlugin>
 QVector<QVariant>
-QVector<float>
-QVector<int>
 QWindowList
+qint32
 quint16
 quint64
 quint8

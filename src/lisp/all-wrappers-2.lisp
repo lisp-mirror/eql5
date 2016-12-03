@@ -1,5 +1,80 @@
 (defpackage :eql
   (:export
+   #:|drawLine|
+   #:|drawPath|
+   #:|drawPicture(QPoint...)|
+   #:|drawPicture(QPointF...)|
+   #:|drawPicture|
+   #:|drawPie(QRect...)|
+   #:|drawPie(QRectF...)|
+   #:|drawPie|
+   #:|drawPixmap(QPoint...)|
+   #:|drawPixmap(QPointF...)|
+   #:|drawPixmap(QRect...)|
+   #:|drawPixmap(QRectF...)|
+   #:|drawPixmap(int...)|
+   #:|drawPixmapFragments|
+   #:|drawPixmap|
+   #:|drawPoint(QPoint)|
+   #:|drawPoint(QPointF)|
+   #:|drawPoints(QPolygon)|
+   #:|drawPoints(QPolygonF)|
+   #:|drawPoints|
+   #:|drawPoint|
+   #:|drawPolygon(QPolygon)|
+   #:|drawPolygon(QPolygon...)|
+   #:|drawPolygon(QPolygonF)|
+   #:|drawPolygon(QPolygonF...)|
+   #:|drawPolygon(const QPointF*...)|
+   #:|drawPolygon|
+   #:|drawPolyline(QPolygon)|
+   #:|drawPolyline(QPolygonF)|
+   #:|drawPolyline|
+   #:|drawPrimitive|
+   #:|drawRect(QRect)|
+   #:|drawRect(QRectF)|
+   #:|drawRects(QVector<QRect>)|
+   #:|drawRects(QVector<QRectF>)|
+   #:|drawRects(const QRect*...)|
+   #:|drawRects(const QRectF*...)|
+   #:|drawRects|
+   #:|drawRect|
+   #:|drawRoundedRect(QRect...)|
+   #:|drawRoundedRect(QRectF...)|
+   #:|drawRoundedRect|
+   #:|drawSource|
+   #:|drawStaticText(QPoint...)|
+   #:|drawStaticText(QPointF...)|
+   #:|drawStaticText|
+   #:|drawText(QPoint...)|
+   #:|drawText(QPointF...)|
+   #:|drawText(QRect...)|
+   #:|drawText(QRectF,QString...)|
+   #:|drawText(QRectF,int...)|
+   #:|drawText(QRectF...)|
+   #:|drawText(int...)|
+   #:|drawText|
+   #:|drawTiledPixmap(QRect...)|
+   #:|drawTiledPixmap(QRectF...)|
+   #:|drawTiledPixmap|
+   #:|drawTree|
+   #:|draw|
+   #:|driverName|
+   #:|driverText|
+   #:|drivers.QSqlDatabase|
+   #:|driver|
+   #:|drives.QDir|
+   #:|dropAction|
+   #:|dropEvent|
+   #:|dropIndicatorPosition|
+   #:|dropMimeData|
+   #:|dumpObjectInfo|
+   #:|dumpObjectTree|
+   #:|duplex|
+   #:|duplicatesEnabled|
+   #:|durationChanged|
+   #:|durationForBytes|
+   #:|durationForFrames|
    #:|duration|
    #:|dx|
    #:|dynamicPropertyNames|
@@ -19,6 +94,7 @@
    #:|effectiveOpacity|
    #:|effectiveSizeHint|
    #:|effectiveWinId|
+   #:|elapsedUSecs|
    #:|elapsed|
    #:|elementCount|
    #:|elementExists|
@@ -43,6 +119,9 @@
    #:|encloseWith|
    #:|enclosingBlockElement|
    #:|encodeName.QFile|
+   #:|encodingMode|
+   #:|encodingOption|
+   #:|encodingSettings|
    #:|encrypted|
    #:|encryptionMethod|
    #:|endArray|
@@ -59,6 +138,7 @@
    #:|endRemoveColumns|
    #:|endRemoveRows|
    #:|endResetModel|
+   #:|endTime|
    #:|endValue|
    #:|end|
    #:|ensureActiveTarget|
@@ -134,6 +214,10 @@
    #:|expirationDate|
    #:|expiryDate|
    #:|exponential|
+   #:|exposureCompensationChanged|
+   #:|exposureCompensation|
+   #:|exposureMode|
+   #:|exposure|
    #:|extensions|
    #:|extension|
    #:|extraSelections|
@@ -151,6 +235,7 @@
    #:|fieldGrowthPolicy|
    #:|fieldIndex|
    #:|fieldName|
+   #:|fieldType|
    #:|field|
    #:|fileChanged|
    #:|fileData|
@@ -251,6 +336,8 @@
    #:|fixedPitch|
    #:|fixup|
    #:|flags|
+   #:|flashMode|
+   #:|flashReady|
    #:|flow|
    #:|flush.QCoreApplication|
    #:|flush|
@@ -260,11 +347,13 @@
    #:|focusChild|
    #:|focusItemChanged|
    #:|focusItem|
+   #:|focusMode|
    #:|focusNextChild|
    #:|focusNextPrevChild|
    #:|focusObject.QGuiApplication|
    #:|focusObjectChanged|
    #:|focusObject|
+   #:|focusPointMode|
    #:|focusPolicy|
    #:|focusPreviousChild|
    #:|focusProxy|
@@ -272,6 +361,9 @@
    #:|focusWidget|
    #:|focusWindow.QGuiApplication|
    #:|focusWindowChanged|
+   #:|focusZonesChanged|
+   #:|focusZones|
+   #:|focus|
    #:|font(const QWidget*).QApplication|
    #:|font(const char*).QApplication|
    #:|font.QApplication|
@@ -328,9 +420,11 @@
    #:|frameForTime|
    #:|frameFormat|
    #:|frameGeometry|
+   #:|frameHeight|
    #:|frameMargins|
    #:|frameName|
    #:|framePosition|
+   #:|frameRate|
    #:|frameRect|
    #:|frameShadow|
    #:|frameShape|
@@ -338,8 +432,13 @@
    #:|frameStyle|
    #:|frameSwapped|
    #:|frameWidth|
+   #:|framesForBytes|
+   #:|framesForDuration|
    #:|framesPerSecond|
    #:|frame|
+   #:|frequencyChanged|
+   #:|frequencyStep|
+   #:|frequency|
    #:|fromAce.QUrl|
    #:|fromAxes.QQuaternion|
    #:|fromAxisAndAngle.QQuaternion|
@@ -396,6 +495,7 @@
    #:|fromWinId.QWindow|
    #:|frustum|
    #:|fullPage|
+   #:|fullScreenChanged|
    #:|fullServerName|
    #:|functions|
    #:|generateMipMaps|
@@ -505,6 +605,7 @@
    #:|hasScaledContents|
    #:|hasSelectedText|
    #:|hasSelection|
+   #:|hasSupport.QMediaPlayer|
    #:|hasText|
    #:|hasThemeIcon.QIcon|
    #:|hasTracking|
@@ -592,6 +693,7 @@
    #:|hsvSaturationF|
    #:|hsvSaturation|
    #:|html|
+   #:|hueChanged|
    #:|hueF|
    #:|hue|
    #:|humanReadableName|
@@ -614,7 +716,15 @@
    #:|ignore(Qt::GestureType)|
    #:|ignoreSslErrors|
    #:|ignore|
+   #:|imageAvailable|
+   #:|imageCaptured|
+   #:|imageCodecDescription|
    #:|imageData|
+   #:|imageExposed|
+   #:|imageFormatFromPixelFormat.QVideoFrame|
+   #:|imageMetadataAvailable|
+   #:|imageProcessing|
+   #:|imageSaved|
    #:|imageUrl|
    #:|image|
    #:|inFontUcs4|
@@ -703,6 +813,9 @@
    #:|insertList(QTextListFormat)|
    #:|insertList(QTextListFormat::Style)|
    #:|insertList|
+   #:|insertMedia(int,QList<QMediaContent>)|
+   #:|insertMedia(int,QMediaContent)|
+   #:|insertMedia|
    #:|insertMenu|
    #:|insertPause|
    #:|insertPermanentWidget|
@@ -794,12 +907,16 @@
    #:|isAncestorOf|
    #:|isAnchor|
    #:|isAnimated|
+   #:|isAntennaConnected|
    #:|isAreaAllowed|
    #:|isAtBoundary|
+   #:|isAudioAvailable|
    #:|isAutoMipMapGenerationEnabled|
    #:|isAutoRepeat|
    #:|isAutoValue|
+   #:|isAvailable|
    #:|isBackwardAvailable|
+   #:|isBandSupported|
    #:|isBitmapScalable|
    #:|isBlacklisted|
    #:|isBlockFormat|
@@ -807,6 +924,8 @@
    #:|isBrushSet|
    #:|isBundle|
    #:|isCachingProxy|
+   #:|isCaptureDestinationSupported|
+   #:|isCaptureModeSupported|
    #:|isCharFormat|
    #:|isCheckable|
    #:|isChecked|
@@ -814,6 +933,7 @@
    #:|isClearButtonEnabled|
    #:|isClipped|
    #:|isCollapsible|
+   #:|isColorFilterSupported|
    #:|isColumnHidden|
    #:|isColumnSelected|
    #:|isComboBoxEditable|
@@ -853,6 +973,7 @@
    #:|isExecutable|
    #:|isExpanded|
    #:|isExposed|
+   #:|isExposureModeSupported|
    #:|isFile|
    #:|isFinalPage|
    #:|isFinished|
@@ -860,9 +981,14 @@
    #:|isFirstItemColumnSpanned|
    #:|isFixedPitch|
    #:|isFixedSamplePositions|
+   #:|isFlashModeSupported|
+   #:|isFlashReady|
    #:|isFlat|
    #:|isFloatable|
    #:|isFloating|
+   #:|isFocusModeSupported|
+   #:|isFocusPointModeSupported|
+   #:|isFormatSupported|
    #:|isForwardAvailable|
    #:|isForwardOnly|
    #:|isFrameFormat|
@@ -895,12 +1021,17 @@
    #:|isLoaded|
    #:|isLocalFile|
    #:|isLoopback|
+   #:|isMapped|
    #:|isMaximized|
+   #:|isMetaDataAvailable|
+   #:|isMetaDataWritable|
+   #:|isMeteringModeSupported|
    #:|isMinimal|
    #:|isMinimized|
    #:|isModal|
    #:|isModified|
    #:|isMovable|
+   #:|isMuted|
    #:|isNativeMenuBar|
    #:|isNativePath|
    #:|isNavigationBarVisible|
@@ -922,6 +1053,7 @@
    #:|isQuitLockEnabled.QCoreApplication|
    #:|isReadOnly|
    #:|isReadable|
+   #:|isReadyForCapture|
    #:|isRedoAvailable|
    #:|isRelativePath.QDir|
    #:|isRelative|
@@ -935,8 +1067,10 @@
    #:|isSavingSession|
    #:|isScalable|
    #:|isScaling|
+   #:|isSearching|
    #:|isSectionHidden|
    #:|isSecure|
+   #:|isSeekable|
    #:|isSelectable|
    #:|isSelected|
    #:|isSelectionRectVisible|
@@ -956,6 +1090,7 @@
    #:|isSortIndicatorShown|
    #:|isSortLocaleAware|
    #:|isSortingEnabled|
+   #:|isStereo|
    #:|isStorageAllocated|
    #:|isSymLink|
    #:|isSystemTrayAvailable.QSystemTrayIcon|
@@ -982,10 +1117,12 @@
    #:|isValidColor.QColor|
    #:|isValidCursorPosition|
    #:|isValid|
+   #:|isVideoAvailable|
    #:|isVirtualDesktop|
    #:|isVisible.QToolTip|
    #:|isVisibleTo|
    #:|isVisible|
+   #:|isWhiteBalanceModeSupported|
    #:|isWidgetType|
    #:|isWidget|
    #:|isWindowModified|
@@ -993,6 +1130,8 @@
    #:|isWindow|
    #:|isWrapping|
    #:|isWritable|
+   #:|isoSensitivityChanged|
+   #:|isoSensitivity|
    #:|issuerInfo(QByteArray)|
    #:|issuerInfo(QSslCertificate::SubjectInfo)|
    #:|issuerInfoAttributes|
@@ -1055,148 +1194,9 @@
    #:|jumpToFrame|
    #:|jumpToNextFrame|
    #:|keepPositionOnInsert|
+   #:|kernelType.QSysInfo|
+   #:|kernelVersion.QSysInfo|
    #:|kerning|
    #:|keyBindings.QKeySequence|
    #:|keyBindingsForAction|
-   #:|keyExchangeMethod|
-   #:|keyValueAt|
-   #:|keyValues|
-   #:|keyboardGrabber.QWidget|
-   #:|keyboardInputInterval.QApplication|
-   #:|keyboardModifiers.QGuiApplication|
-   #:|keyboardModifiers|
-   #:|keyboardPageStep|
-   #:|keyboardSearch|
-   #:|keyboardSingleStep|
-   #:|keyboardTracking|
-   #:|keys|
-   #:|key|
-   #:|killTimer|
-   #:|kill|
-   #:|labelAlignment|
-   #:|labelForField(QLayout*)|
-   #:|labelForField(QWidget*)|
-   #:|labelForField|
-   #:|labelText|
-   #:|languageToString.QLocale|
-   #:|language|
-   #:|lastBlock|
-   #:|lastCenterPoint|
-   #:|lastChild|
-   #:|lastCursorPosition|
-   #:|lastError|
-   #:|lastIndexIn|
-   #:|lastInsertId|
-   #:|lastModified|
-   #:|lastOffset|
-   #:|lastPosition|
-   #:|lastPos|
-   #:|lastQuery|
-   #:|lastRead|
-   #:|lastResortFamily|
-   #:|lastResortFont|
-   #:|lastRotationAngle|
-   #:|lastScaleFactor|
-   #:|lastScenePos|
-   #:|lastScreenPos|
-   #:|lastVisited|
-   #:|lastWindowClosed|
-   #:|last|
-   #:|layers|
-   #:|layoutAboutToBeChanged|
-   #:|layoutChanged|
-   #:|layoutDirection.QGuiApplication|
-   #:|layoutDirectionChanged|
-   #:|layoutDirection|
-   #:|layoutMode|
-   #:|layoutSpacing|
-   #:|layout|
-   #:|lazyChildCount|
-   #:|leadingIncluded|
-   #:|leading|
-   #:|leaveMulticastGroup|
-   #:|leaveWhatsThisMode.QWhatsThis|
-   #:|leftBearing|
-   #:|leftColumn|
-   #:|leftCursorPosition|
-   #:|leftMargin|
-   #:|leftPadding|
-   #:|left|
-   #:|lengthProperty|
-   #:|lengthSquared|
-   #:|lengthVectorProperty|
-   #:|length|
-   #:|letterSpacingType|
-   #:|letterSpacing|
-   #:|levelOfDetailFromTransform.QStyleOptionGraphicsItem|
-   #:|levelofDetailBias|
-   #:|libraryPaths.QCoreApplication|
-   #:|licensedProducts.QLibraryInfo|
-   #:|licensee.QLibraryInfo|
-   #:|lighter|
-   #:|lightnessF|
-   #:|lightness|
-   #:|light|
-   #:|lineAt|
-   #:|lineCount|
-   #:|lineEdit|
-   #:|lineForTextPosition|
-   #:|lineHeightType|
-   #:|lineHeight|
-   #:|lineNumber|
-   #:|lineSpacing|
-   #:|lineTo|
-   #:|lineWidth|
-   #:|lineWrapColumnOrWidth|
-   #:|lineWrapMode|
-   #:|line|
-   #:|link.QFile|
-   #:|linkActivated|
-   #:|linkAt|
-   #:|linkClicked|
-   #:|linkDelegationPolicy|
-   #:|linkElement|
-   #:|linkHovered|
-   #:|linkTargetFrame|
-   #:|linkText|
-   #:|linkTitleString|
-   #:|linkUrl|
-   #:|linkVisited|
-   #:|linksActivated|
-   #:|link|
-   #:|listFromString.QKeySequence|
-   #:|listToString.QKeySequence|
-   #:|listWidget|
-   #:|listen|
-   #:|load(QByteArray)|
-   #:|load(QLocale...)|
-   #:|load(QNetworkRequest)|
-   #:|load(QString)|
-   #:|load(QString...)|
-   #:|load(QUrl)|
-   #:|load(QXmlStreamReader*)|
-   #:|loadFinished|
-   #:|loadFromData|
-   #:|loadHints|
-   #:|loadProgress|
-   #:|loadResource|
-   #:|loadStarted|
-   #:|load|
-   #:|localAddress|
-   #:|localCertificateChain|
-   #:|localCertificate|
-   #:|localDomainName.QHostInfo|
-   #:|localHostName.QHostInfo|
-   #:|localName|
-   #:|localPort|
-   #:|localPos|
-   #:|localSchemes.QWebSecurityOrigin|
-   #:|localStoragePath|
-   #:|locale|
-   #:|locate.QStandardPaths|
-   #:|locateAll.QStandardPaths|
-   #:|location.QLibraryInfo|
-   #:|location|
-   #:|lockForRead|
-   #:|lockForWrite|
-   #:|logicalDotsPerInchChanged|))
+   #:|keyExchangeMethod|))

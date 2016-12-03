@@ -6,43 +6,43 @@
 
 QT_BEGIN_NAMESPACE
 
-NumList LGraphicsSvgItem::overrideIds = NumList() << 253 << 224 << 226;
+NumList LGraphicsSvgItem::overrideIds = NumList() << 260 << 231 << 233;
 NumList LSvgRenderer::overrideIds = NumList();
 NumList LSvgWidget::overrideIds = NumList() << 25 << 20;
-NumList LSvgGenerator::overrideIds = NumList() << 443;
+NumList LSvgGenerator::overrideIds = NumList() << 463;
 
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
-    LObjects::Q[72] = new Q73;
-    LObjects::Q[175] = new Q176;
-    LObjects::Q[176] = new Q177;
-    LObjects::N[150] = new N151; }
+    LObjects::Q[81] = new Q82;
+    LObjects::Q[191] = new Q192;
+    LObjects::Q[192] = new Q193;
+    LObjects::N[155] = new N156; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
-        case 73: m = &QGraphicsSvgItem::staticMetaObject; break;
-        case 176: m = &QSvgRenderer::staticMetaObject; break;
-        case 177: m = &QSvgWidget::staticMetaObject; break; }
+        case 82: m = &QGraphicsSvgItem::staticMetaObject; break;
+        case 192: m = &QSvgRenderer::staticMetaObject; break;
+        case 193: m = &QSvgWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 151: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
+        case 156: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
         switch(n) {
-            case 73: ids = &LGraphicsSvgItem::overrideIds; break;
-            case 176: ids = &LSvgRenderer::overrideIds; break;
-            case 177: ids = &LSvgWidget::overrideIds; break; }}
+            case 82: ids = &LGraphicsSvgItem::overrideIds; break;
+            case 192: ids = &LSvgRenderer::overrideIds; break;
+            case 193: ids = &LSvgWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 151: ids = &LSvgGenerator::overrideIds; break; }}
+            case 156: ids = &LSvgGenerator::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

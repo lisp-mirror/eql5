@@ -18,6 +18,8 @@ qmake eql_lib.pro &&
 make &&
 qmake module_help.pro &&
 make &&
+qmake module_multimedia.pro &&
+make &&
 qmake module_network.pro &&
 make &&
 qmake module_sql.pro &&

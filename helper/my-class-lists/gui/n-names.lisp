@@ -127,6 +127,7 @@
         "QStyleOptionGraphicsItem"
         "//QSurface"
         "QSystemSemaphore"
+        "//QSysInfo"
         "QTabletEvent"
         "QTableWidgetItem"
         "QTableWidgetSelectionRange"

@@ -27,8 +27,9 @@ void ini2() {
     META_TYPE_(LObjects::T_QSqlRecord,   QSqlRecord)
     META_TYPE_(LObjects::T_QSqlRelation, QSqlRelation) }
 
-void* toMetaArg(int n, cl_object l_arg) {
+void* toMetaArg(int n, cl_object l_arg, bool* found) {
     void* p = 0;
+    bool _found = true;
     if(LObjects::T_QSqlDatabase == n)      { p = new QSqlDatabase(*toQSqlDatabasePointer(l_arg)); }
     else if(LObjects::T_QSqlError == n)    { p = new QSqlError(*toQSqlErrorPointer(l_arg)); }
     else if(LObjects::T_QSqlField == n)    { p = new QSqlField(*toQSqlFieldPointer(l_arg)); }
@@ -36,10 +37,14 @@ void* toMetaArg(int n, cl_object l_arg) {
     else if(LObjects::T_QSqlQuery == n)    { p = new QSqlQuery(*toQSqlQueryPointer(l_arg)); }
     else if(LObjects::T_QSqlRecord == n)   { p = new QSqlRecord(*toQSqlRecordPointer(l_arg)); }
     else if(LObjects::T_QSqlRelation == n) { p = new QSqlRelation(*toQSqlRelationPointer(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return p; }
 
-cl_object to_lisp_arg(int n, void* p) {
+cl_object to_lisp_arg(int n, void* p, bool* found) {
     cl_object l_ret = Cnil;
+    bool _found = true;
     if(LObjects::T_QSqlDatabase == n)      { l_ret = from_qsqldatabase(*(QSqlDatabase*)p); }
     else if(LObjects::T_QSqlError == n)    { l_ret = from_qsqlerror(*(QSqlError*)p); }
     else if(LObjects::T_QSqlField == n)    { l_ret = from_qsqlfield(*(QSqlField*)p); }
@@ -47,6 +52,9 @@ cl_object to_lisp_arg(int n, void* p) {
     else if(LObjects::T_QSqlQuery == n)    { l_ret = from_qsqlquery(*(QSqlQuery*)p); }
     else if(LObjects::T_QSqlRecord == n)   { l_ret = from_qsqlrecord(*(QSqlRecord*)p); }
     else if(LObjects::T_QSqlRelation == n) { l_ret = from_qsqlrelation(*(QSqlRelation*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
     return l_ret; }
 
 QT_END_NAMESPACE

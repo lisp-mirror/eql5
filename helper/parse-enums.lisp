@@ -22,6 +22,7 @@
         "QStyle::SO_"))
 
 (defparameter *enum-begin* (format nil "Constant~CValue" #\Tab))
+(defparameter *namespaces* (list "QAudio" "QGL"))
 
 (defun parse (class out)
   (let ((path (doc-file class)))
@@ -30,7 +31,7 @@
           (with-open-file (in path :direction :input :external-format :latin-1)
             (x:while-it (read-line in nil nil)
               (unless (dolist (skip *skip*)
-                        (when (search skip x:it)
+                        (when (x:starts-with skip x:it)
                           (return t)))
                 (if in-enum
                     (progn
@@ -55,7 +56,7 @@
 (defun start ()
   (with-open-file (s "../src/lisp/enum-lists/parsed-enums.lisp" :direction :output :if-exists :supersede)
     (write-char #\( s)
-    (dolist (names (list *q-names* *n-names*))
+    (dolist (names (list *q-names* *n-names* *namespaces*))
       (parse-classes (mapcar (lambda (name)
                                (string-trim "= " (if-it (position #\( name)
                                                      (subseq name 0 it)

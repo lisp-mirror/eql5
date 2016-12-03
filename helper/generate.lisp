@@ -255,27 +255,33 @@
   (string= "void" (first arg)))
 
 (defun arg-to-c (arg &optional enum-class return)
-  (if (find* (first arg) '("WId"))
-      (first arg)
-      (let* ((type (add-namespace (first arg) enum-class))
-             (enum-as-int (and return
-                               (find #\: type)
-                               (not (find #\< type)))))
-        (unless (and enum-as-int
-                     (find* type +special-typedefs-and-classes+))
-          (concatenate 'string
-                       (if (and (const-p arg)
-                                (or (not return)
-                                    (not (string= "int" (first arg)))))
-                           "const "
-                           "")
-                       (if enum-as-int "int" type)
-                       (cond ((and (not return)
-                                   (reference-p arg))
-                              "&")
-                             ((pointer-p arg)
-                              "*")
-                             (t "")))))))
+  (let ((argc (if (find* (first arg) '("WId"))
+                  (first arg)
+                  (let* ((type (add-namespace (first arg) enum-class))
+                         (enum-as-int (and return
+                                           (find #\: type)
+                                           (not (find #\< type)))))
+                    (unless (and enum-as-int
+                                 (find* type +special-typedefs-and-classes+))
+                      (concatenate 'string
+                                   (if (and (const-p arg)
+                                            (or (not return)
+                                                (not (string= "int" (first arg)))))
+                                       "const "
+                                       "")
+                                   (if enum-as-int "int" type)
+                                   (cond ((and (not return)
+                                               (reference-p arg))
+                                          "&")
+                                         ((pointer-p arg)
+                                          "*")
+                                         (t ""))))))))
+    (when (and return
+               (search "QList" argc)
+               (search "::" argc))
+      )
+      ;; TODO
+    argc))
 
 (defun arg-to-c-null-value (arg)
   (let ((type (arg-type arg)))
@@ -424,6 +430,7 @@
   (format nil "#include <Qt~A>"
           (case module
             (:webkit "WebKitWidgets")
+            (:multimedia "MultimediaWidgets")
             (t (string-capitalize (string module))))))
 
 (defmacro change-file-stream (module file &optional type)
@@ -781,16 +788,23 @@
                ~%#include \"../dyn_object.h\"~
                ~%#include \"../eql.h\"~
                ~%~
+               ~%int LObjects::T_QAudioDeviceInfo = -1;~
+               ~%int LObjects::T_QList_QAudioDeviceInfo = -1;~
+               ~%int LObjects::T_QAudioEncoderSettings = -1;~
+               ~%int LObjects::T_QAudioFormat = -1;~
+               ~%int LObjects::T_QCameraInfo = -1;~
+               ~%int LObjects::T_QList_QCameraInfo = -1;~
+               ~%int LObjects::T_QCameraViewfinderSettings = -1;~
+               ~%int LObjects::T_QList_QCameraViewfinderSettings = -1;~
                ~%int LObjects::T_QHostAddress = -1;~
                ~%int LObjects::T_QHostInfo = -1;~
+               ~%int LObjects::T_QImageEncoderSettings = -1;~
+               ~%int LObjects::T_QMediaContent = -1;~
+               ~%int LObjects::T_QList_QMediaContent = -1;~
                ~%int LObjects::T_QNetworkCacheMetaData = -1;~
                ~%int LObjects::T_QNetworkInterface = -1;~
                ~%int LObjects::T_QNetworkProxy = -1;~
                ~%int LObjects::T_QNetworkRequest = -1;~
-               ~%int LObjects::T_QSslCertificate = -1;~
-               ~%int LObjects::T_QSslCipher = -1;~
-               ~%int LObjects::T_QSslConfiguration = -1;~
-               ~%int LObjects::T_QSslKey = -1;~
                ~%int LObjects::T_QSqlDatabase = -1;~
                ~%int LObjects::T_QSqlError = -1;~
                ~%int LObjects::T_QSqlField = -1;~
@@ -798,6 +812,12 @@
                ~%int LObjects::T_QSqlQuery = -1;~
                ~%int LObjects::T_QSqlRecord = -1;~
                ~%int LObjects::T_QSqlRelation = -1;~
+               ~%int LObjects::T_QSslCertificate = -1;~
+               ~%int LObjects::T_QSslCipher = -1;~
+               ~%int LObjects::T_QSslConfiguration = -1;~
+               ~%int LObjects::T_QSslKey = -1;~
+               ~%int LObjects::T_QVideoEncoderSettings = -1;~
+               ~%int LObjects::T_QVideoSurfaceFormat = -1;~
                ~%int LObjects::T_QWebElement = -1;~
                ~%int LObjects::T_QWebElementCollection = -1;~
                ~%int LObjects::T_QWebHitTestResult = -1;~
@@ -830,7 +850,7 @@
       (format s "~%DeleteNObject LObjects::deleteNObject_~(~A~) = 0;" module))
     (dolist (module *modules*)
       (format s "~%Override LObjects::override_~(~A~) = 0;" module))
-    (dolist (module (list :network :sql :webkit))
+    (dolist (module (list :multimedia :network :sql :webkit))
       (format s "~%ToMetaArg LObjects::toMetaArg_~(~A~) = 0;~
                  ~%To_lisp_arg LObjects::to_lisp_arg_~(~A~) = 0;"
               module module))
@@ -1168,6 +1188,8 @@
                     "QVector<QRgb>"
                     "QVector<QTextFormat>"
                     "QVector<QTextLength>"
+                    "QVector<float>"
+                    "QVector<int>"
                     "QVector<qreal>"
                     "QWidgetList")))
     (with-open-file (s "missing-types.txt" :direction :output :if-exists :supersede)

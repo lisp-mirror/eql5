@@ -12,7 +12,7 @@
 QT_BEGIN_NAMESPACE
 
 class LHelpContentItem : public QHelpContentItem {
-    friend class N65;
+    friend class N70;
 public:
 
     static NumList overrideIds;
@@ -20,7 +20,7 @@ public:
 };
 
 class LHelpSearchQuery : public QHelpSearchQuery {
-    friend class N67;
+    friend class N72;
 public:
     LHelpSearchQuery(uint u) : unique(u) {}
     LHelpSearchQuery(uint u, FieldName x1, const QStringList& x2) : QHelpSearchQuery(x1, x2), unique(u) {}

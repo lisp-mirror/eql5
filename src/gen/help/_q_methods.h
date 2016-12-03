@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q84 : public Q4 { // QHelpContentModel
+class Q94 : public Q4 { // QHelpContentModel
     Q_OBJECT
 public:
     Q_INVOKABLE QHelpContentItem* McontentItemAt(QHelpContentModel* o, const QModelIndex& x1) const { return o->contentItemAt(x1); }
@@ -24,7 +24,7 @@ public:
     Q_INVOKABLE int MrowCount(QHelpContentModel* o, const QModelIndex& x1 = QModelIndex()) const { return o->rowCount(x1); }
 };
 
-class Q86 : public Q121 { // QHelpEngineCore
+class Q96 : public Q136 { // QHelpEngineCore
     Q_OBJECT
 public:
     Q_INVOKABLE bool MaddCustomFilter(QHelpEngineCore* o, const QString& x1, const QStringList& x2) { return o->addCustomFilter(x1, x2); }
@@ -56,7 +56,7 @@ public:
     Q_INVOKABLE QString SnamespaceName(const QString& x1) { return QHelpEngineCore::namespaceName(x1); }
 };
 
-class Q89 : public Q121 { // QHelpSearchEngine
+class Q99 : public Q136 { // QHelpSearchEngine
     Q_OBJECT
 public:
     Q_INVOKABLE int MhitCount(QHelpSearchEngine* o) const { return o->hitCount(); }
@@ -65,7 +65,7 @@ public:
     Q_INVOKABLE QHelpSearchResultWidget* MresultWidget(QHelpSearchEngine* o) { return o->resultWidget(); }
 };
 
-class Q87 : public Q173 { // QHelpIndexModel
+class Q97 : public Q189 { // QHelpIndexModel
     Q_OBJECT
 public:
     Q_INVOKABLE void McreateIndex(QHelpIndexModel* o, const QString& x1) { o->createIndex(x1); }
@@ -73,7 +73,7 @@ public:
     Q_INVOKABLE bool MisCreatingIndex(QHelpIndexModel* o) const { return o->isCreatingIndex(); }
 };
 
-class Q90 : public Q219 { // QHelpSearchQueryWidget
+class Q100 : public Q237 { // QHelpSearchQueryWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LHelpSearchQueryWidget(u, x1); }
@@ -84,19 +84,19 @@ public:
     Q_INVOKABLE void MsetQuery(QHelpSearchQueryWidget* o, const QList<QHelpSearchQuery>& x1) { o->setQuery(x1); }
 };
 
-class Q91 : public Q219 { // QHelpSearchResultWidget
+class Q101 : public Q237 { // QHelpSearchResultWidget
     Q_OBJECT
 public:
     Q_INVOKABLE QUrl MlinkAt(QHelpSearchResultWidget* o, const QPoint& x1) { return o->linkAt(x1); }
 };
 
-class Q85 : public Q204 { // QHelpContentWidget
+class Q95 : public Q220 { // QHelpContentWidget
     Q_OBJECT
 public:
     Q_INVOKABLE QModelIndex MindexOf(QHelpContentWidget* o, const QUrl& x1) { return o->indexOf(x1); }
 };
 
-class Q88 : public Q104 { // QHelpIndexWidget
+class Q98 : public Q114 { // QHelpIndexWidget
     Q_OBJECT
 public:
 };

@@ -1,5 +1,315 @@
 (defpackage :eql
   (:export
+   #:|setStyle|
+   #:|setSubTitleFormat|
+   #:|setSubTitle|
+   #:|setSubmitPolicy|
+   #:|setSuffix|
+   #:|setSurfaceType|
+   #:|setSwipeAngle|
+   #:|setSwizzleMask|
+   #:|setSystemMenu|
+   #:|setTabArray|
+   #:|setTabBarAutoHide|
+   #:|setTabBar|
+   #:|setTabButton|
+   #:|setTabChangesFocus|
+   #:|setTabData|
+   #:|setTabEnabled|
+   #:|setTabIcon|
+   #:|setTabKeyNavigation|
+   #:|setTabOrder.QGraphicsWidget|
+   #:|setTabOrder.QWidget|
+   #:|setTabPositions|
+   #:|setTabPosition|
+   #:|setTabShape|
+   #:|setTabStopWidth|
+   #:|setTabStop|
+   #:|setTabTextColor|
+   #:|setTabText|
+   #:|setTabToolTip|
+   #:|setTabWhatsThis|
+   #:|setTable|
+   #:|setTabsClosable|
+   #:|setTabsMovable|
+   #:|setTargetObject|
+   #:|setTargetStates|
+   #:|setTargetState|
+   #:|setTearOffEnabled|
+   #:|setTestModeEnabled.QStandardPaths|
+   #:|setTextAlignment|
+   #:|setTextBackgroundColor|
+   #:|setTextColor|
+   #:|setTextCursor|
+   #:|setTextDirection|
+   #:|setTextEchoMode|
+   #:|setTextElideMode|
+   #:|setTextFormat|
+   #:|setTextIndent|
+   #:|setTextInteractionFlags|
+   #:|setTextMargins|
+   #:|setTextModeEnabled|
+   #:|setTextOption|
+   #:|setTextOutline|
+   #:|setTextSizeMultiplier|
+   #:|setTextValue|
+   #:|setTextVisible|
+   #:|setTextWidth|
+   #:|setTextureImage|
+   #:|setTexture|
+   #:|setText|
+   #:|setThemeName.QIcon|
+   #:|setThemeSearchPaths.QIcon|
+   #:|setThirdPartyCookiePolicy|
+   #:|setTickInterval|
+   #:|setTickPosition|
+   #:|setTiledBackingStoreFrozen|
+   #:|setTimeRange|
+   #:|setTimeSpec|
+   #:|setTimeZone|
+   #:|setTime_t|
+   #:|setTimeout.QTapAndHoldGesture|
+   #:|setTimerType|
+   #:|setTime|
+   #:|setTitleBarWidget|
+   #:|setTitleFormat|
+   #:|setTitle|
+   #:|setToIdentity|
+   #:|setToolButtonStyle|
+   #:|setToolTipDuration|
+   #:|setToolTipsVisible|
+   #:|setToolTip|
+   #:|setTopMargin|
+   #:|setTopPadding|
+   #:|setTop|
+   #:|setTotalChangeFlags|
+   #:|setTotalRotationAngle|
+   #:|setTotalScaleFactor|
+   #:|setTracking|
+   #:|setTransformOriginPoint|
+   #:|setTransformationAnchor|
+   #:|setTransformationMode|
+   #:|setTransform|
+   #:|setTransientParent|
+   #:|setTransitionType|
+   #:|setTreePosition|
+   #:|setTristate|
+   #:|setType|
+   #:|setUnderlineColor|
+   #:|setUnderlineStyle|
+   #:|setUnderline|
+   #:|setUndoLimit|
+   #:|setUndoRedoEnabled|
+   #:|setUnifiedTitleAndToolBarOnMac|
+   #:|setUniformItemSizes|
+   #:|setUniformRowHeights|
+   #:|setUniformValue(const char*,GLfloat)|
+   #:|setUniformValue(const char*,GLint)|
+   #:|setUniformValue(const char*,GLuint)|
+   #:|setUniformValue(const char*,QColor)|
+   #:|setUniformValue(const char*,QMatrix4x4)|
+   #:|setUniformValue(const char*,QPoint)|
+   #:|setUniformValue(const char*,QPointF)|
+   #:|setUniformValue(const char*,QSize)|
+   #:|setUniformValue(const char*,QSizeF)|
+   #:|setUniformValue(const char*,QTransform)|
+   #:|setUniformValue(const char*,QVector2D)|
+   #:|setUniformValue(const char*,QVector3D)|
+   #:|setUniformValue(const char*,QVector4D)|
+   #:|setUniformValue(const char*...)|
+   #:|setUniformValue(int,GLfloat)|
+   #:|setUniformValue(int,GLint)|
+   #:|setUniformValue(int,GLuint)|
+   #:|setUniformValue(int,QColor)|
+   #:|setUniformValue(int,QMatrix4x4)|
+   #:|setUniformValue(int,QPoint)|
+   #:|setUniformValue(int,QPointF)|
+   #:|setUniformValue(int,QSize)|
+   #:|setUniformValue(int,QSizeF)|
+   #:|setUniformValue(int,QTransform)|
+   #:|setUniformValue(int,QVector2D)|
+   #:|setUniformValue(int,QVector3D)|
+   #:|setUniformValue(int,QVector4D)|
+   #:|setUniformValue(int...)|
+   #:|setUniformValue|
+   #:|setUpdateBehavior|
+   #:|setUpdateInterval|
+   #:|setUpdatesEnabled|
+   #:|setUrls|
+   #:|setUrl|
+   #:|setUseDesignMetrics|
+   #:|setUseSystemConfiguration.QNetworkProxyFactory|
+   #:|setUserData|
+   #:|setUserInfo|
+   #:|setUserName|
+   #:|setUserState|
+   #:|setUserStyleSheetUrl|
+   #:|setUser|
+   #:|setUsesScrollButtons|
+   #:|setValidator|
+   #:|setValue(QString...)|
+   #:|setValue(int...)|
+   #:|setValue|
+   #:|setVector|
+   #:|setVerticalAlignment|
+   #:|setVerticalHeaderFormat|
+   #:|setVerticalHeaderItem|
+   #:|setVerticalHeaderLabels|
+   #:|setVerticalHeader|
+   #:|setVerticalMovementX|
+   #:|setVerticalPolicy|
+   #:|setVerticalScrollBarPolicy|
+   #:|setVerticalScrollBar|
+   #:|setVerticalScrollMode|
+   #:|setVerticalSpacing|
+   #:|setVerticalStretch|
+   #:|setVideoOutput(QAbstractVideoSurface*)|
+   #:|setVideoOutput(QGraphicsVideoItem*)|
+   #:|setVideoOutput(QVideoWidget*)|
+   #:|setVideoOutput|
+   #:|setVideoSettings|
+   #:|setViewBox(QRect)|
+   #:|setViewBox(QRectF)|
+   #:|setViewBox|
+   #:|setViewMode|
+   #:|setViewTransformEnabled|
+   #:|setViewfinder(QAbstractVideoSurface*)|
+   #:|setViewfinder(QGraphicsVideoItem*)|
+   #:|setViewfinder(QVideoWidget*)|
+   #:|setViewfinderSettings|
+   #:|setViewfinder|
+   #:|setViewportMargins|
+   #:|setViewportSize|
+   #:|setViewportUpdateMode|
+   #:|setViewport|
+   #:|setView|
+   #:|setVisibilityState|
+   #:|setVisibility|
+   #:|setVisible|
+   #:|setVisualNavigation|
+   #:|setVolume|
+   #:|setWebGraphic.QWebSettings|
+   #:|setWeekdayTextFormat|
+   #:|setWeight|
+   #:|setWhatsThis|
+   #:|setWheelScrollLines.QApplication|
+   #:|setWhiteBalanceMode|
+   #:|setWidgetResizable|
+   #:|setWidget|
+   #:|setWidth(QTextLength)|
+   #:|setWidth(double)|
+   #:|setWidthForHeight|
+   #:|setWidthF|
+   #:|setWidth|
+   #:|setWindowFilePath|
+   #:|setWindowFlags|
+   #:|setWindowFrameMargins|
+   #:|setWindowIcon.QApplication|
+   #:|setWindowIcon.QGuiApplication|
+   #:|setWindowIconText|
+   #:|setWindowIcon|
+   #:|setWindowModality|
+   #:|setWindowModified|
+   #:|setWindowOpacity|
+   #:|setWindowRole|
+   #:|setWindowState|
+   #:|setWindowTitle|
+   #:|setWindow|
+   #:|setWizardStyle|
+   #:|setWordSpacing|
+   #:|setWordWrapMode|
+   #:|setWordWrap|
+   #:|setWorkingDirectory|
+   #:|setWorldMatrixEnabled|
+   #:|setWorldTransform|
+   #:|setWrapAround|
+   #:|setWrapMode|
+   #:|setWrapping|
+   #:|setWritingSystem|
+   #:|setW|
+   #:|setXOffset|
+   #:|setXScale|
+   #:|setX|
+   #:|setYCbCrColorSpace|
+   #:|setYOffset|
+   #:|setYScale|
+   #:|setY|
+   #:|setZScale|
+   #:|setZValue|
+   #:|setZoomFactor|
+   #:|setZoomMode|
+   #:|setZ|
+   #:|settings|
+   #:|setupData|
+   #:|setupFinished|
+   #:|setupStarted|
+   #:|setupViewport|
+   #:|shaderDestroyed|
+   #:|shaderId|
+   #:|shaderType|
+   #:|shaders|
+   #:|shadow|
+   #:|shapeMode|
+   #:|shape|
+   #:|shareContext|
+   #:|shareGroup|
+   #:|sharpeningLevel|
+   #:|shear|
+   #:|shortDayName.QDate|
+   #:|shortMonthName.QDate|
+   #:|shortcutContext|
+   #:|shortcutId|
+   #:|shortcuts|
+   #:|shortcut|
+   #:|shouldInterruptJavaScript|
+   #:|showColumn|
+   #:|showDropIndicator|
+   #:|showExtension|
+   #:|showFullScreen|
+   #:|showGrid|
+   #:|showLink|
+   #:|showMaximized|
+   #:|showMenu|
+   #:|showMessage|
+   #:|showMinimized|
+   #:|showNextMonth|
+   #:|showNextYear|
+   #:|showNormal|
+   #:|showPopup|
+   #:|showPreviousMonth|
+   #:|showPreviousYear|
+   #:|showRow|
+   #:|showSection|
+   #:|showSelectedDate|
+   #:|showShaded|
+   #:|showStatusText|
+   #:|showSystemMenu|
+   #:|showText.QToolTip|
+   #:|showText.QWhatsThis|
+   #:|showToday|
+   #:|show|
+   #:|shuffle|
+   #:|shutterSpeedChanged|
+   #:|shutterSpeedRangeChanged|
+   #:|shutterSpeed|
+   #:|sibling|
+   #:|sideWidget|
+   #:|sidebarUrls|
+   #:|signalChanged|
+   #:|signalStrengthChanged|
+   #:|signalStrength|
+   #:|signalsBlocked|
+   #:|signal|
+   #:|simplified|
+   #:|singleStep|
+   #:|sizeAdjustPolicy|
+   #:|sizeConstraint|
+   #:|sizeFromContents|
+   #:|sizeHintChanged|
+   #:|sizeHintForColumn|
+   #:|sizeHintForIndex|
+   #:|sizeHintForRow|
+   #:|sizeHint|
    #:|sizeIncrement|
    #:|sizePolicy|
    #:|sizes|
@@ -51,6 +361,7 @@
    #:|splitterMoved|
    #:|splitter|
    #:|spontaneous|
+   #:|spotMeteringPoint|
    #:|spread|
    #:|sqlStatement|
    #:|squareToQuad.QTransform|
@@ -83,6 +394,7 @@
    #:|startFrame|
    #:|startId|
    #:|startTimer|
+   #:|startTime|
    #:|startValue|
    #:|started|
    #:|startingUp.QCoreApplication|
@@ -91,14 +403,18 @@
    #:|state|
    #:|staticInstances.QPluginLoader|
    #:|staticPlugins.QPluginLoader|
+   #:|stationFound|
    #:|statusBarMessage|
    #:|statusBarVisibilityChangeRequested|
    #:|statusBar|
+   #:|statusChanged|
    #:|statusTip|
    #:|status|
    #:|stepBy|
    #:|stepDown|
    #:|stepUp|
+   #:|stereoMode|
+   #:|stereoStatusChanged|
    #:|stickyFocus|
    #:|stopped|
    #:|stops|
@@ -152,8 +468,17 @@
    #:|suffix|
    #:|superClass|
    #:|supportedActions|
+   #:|supportedApertures|
+   #:|supportedAudioCodecs|
+   #:|supportedAudioRoles|
+   #:|supportedAudioSampleRates|
    #:|supportedBits|
+   #:|supportedBufferFormats|
+   #:|supportedByteOrders|
+   #:|supportedChannelCounts|
    #:|supportedCiphers.QSslConfiguration|
+   #:|supportedCodecs|
+   #:|supportedContainers|
    #:|supportedContentTypes|
    #:|supportedDocumentFormats.QTextDocumentWriter|
    #:|supportedDragActions|
@@ -161,10 +486,24 @@
    #:|supportedDuplexModes|
    #:|supportedEllipticCurves.QSslConfiguration|
    #:|supportedFormats.QMovie|
+   #:|supportedFormatsChanged|
+   #:|supportedFrameRates|
+   #:|supportedImageCodecs|
+   #:|supportedIsoSensitivities|
+   #:|supportedLocks|
    #:|supportedPageSizes|
    #:|supportedResolutions|
+   #:|supportedSampleRates|
+   #:|supportedSampleSizes|
+   #:|supportedSampleTypes|
    #:|supportedSchemesImplementation|
    #:|supportedSchemes|
+   #:|supportedShutterSpeeds|
+   #:|supportedVideoCodecs|
+   #:|supportedViewfinderFrameRateRanges|
+   #:|supportedViewfinderPixelFormats|
+   #:|supportedViewfinderResolutions|
+   #:|supportedViewfinderSettings|
    #:|supportsContentType|
    #:|supportsCustomPageSizes|
    #:|supportsExtension|
@@ -175,8 +514,11 @@
    #:|supportsSelection|
    #:|supportsThreadedOpenGL.QOpenGLContext|
    #:|surfaceClass|
+   #:|surfaceFormatChanged|
+   #:|surfaceFormat|
    #:|surfaceType|
    #:|surface|
+   #:|suspend|
    #:|swallowContextMenuEvent|
    #:|swapBuffers|
    #:|swapSections|
@@ -587,6 +929,7 @@
    #:|typeToName.QVariant|
    #:|type|
    #:|uiLanguages|
+   #:|unbind|
    #:|underMouse|
    #:|underlineColor|
    #:|underlinePos|
@@ -617,6 +960,7 @@
    #:|united|
    #:|unload|
    #:|unlock|
+   #:|unmap|
    #:|unpolish(QApplication*)|
    #:|unpolish(QWidget*)|
    #:|unpolish|
@@ -712,10 +1056,15 @@
    #:|verticalScrollbarValueChanged|
    #:|verticalSpacing|
    #:|verticalStretch|
+   #:|videoAvailableChanged|
+   #:|videoCodecDescription|
+   #:|videoSettings|
+   #:|videoWidget|
    #:|viewBoxF|
    #:|viewBox|
    #:|viewMode|
    #:|viewTransformEnabled|
+   #:|viewfinderSettings|
    #:|viewportChangeRequested|
    #:|viewportEntered|
    #:|viewportMargins|
@@ -745,6 +1094,8 @@
    #:|visualRect.QStyle|
    #:|visualRect|
    #:|visualRow|
+   #:|volumeChanged|
+   #:|volume|
    #:|waitForBytesWritten|
    #:|waitForConnected|
    #:|waitForDisconnected|
@@ -763,6 +1114,7 @@
    #:|weight|
    #:|whatsThis|
    #:|wheelScrollLines.QApplication|
+   #:|whiteBalanceMode|
    #:|widgetAt.QApplication|
    #:|widgetEvent|
    #:|widgetForAction|
@@ -799,6 +1151,7 @@
    #:|windowType|
    #:|windowsIdToDefaultIanaId.QTimeZone|
    #:|windowsIdToIanaIds.QTimeZone|
+   #:|windowsVersion.QSysInfo|
    #:|window|
    #:|wizardStyle|
    #:|wizard|
@@ -832,6 +1185,7 @@
    #:|xToCursor|
    #:|xored|
    #:|x|
+   #:|yCbCrColorSpace|
    #:|yChanged|
    #:|yOffset|
    #:|yScaleChanged|
@@ -845,10 +1199,4 @@
    #:|zChanged|
    #:|zScaleChanged|
    #:|zScale|
-   #:|zValue|
-   #:|zeroDigit|
-   #:|zoomFactor|
-   #:|zoomIn|
-   #:|zoomMode|
-   #:|zoomOut|
-   #:|z|))
+   #:|zValue|))

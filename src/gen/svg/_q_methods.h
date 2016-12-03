@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q73 : public Q67 { // QGraphicsSvgItem
+class Q82 : public Q76 { // QGraphicsSvgItem
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QGraphicsItem* x1 = 0) { return new LGraphicsSvgItem(u, x1); }
@@ -27,7 +27,7 @@ public:
     Q_INVOKABLE int Mtype(QGraphicsSvgItem* o) const { return o->type(); }
 };
 
-class Q176 : public Q121 { // QSvgRenderer
+class Q192 : public Q136 { // QSvgRenderer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSvgRenderer(u, x1); }
@@ -47,7 +47,7 @@ public:
     Q_INVOKABLE QRectF MviewBoxF(QSvgRenderer* o) const { return o->viewBoxF(); }
 };
 
-class Q177 : public Q219 { // QSvgWidget
+class Q193 : public Q237 { // QSvgWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LSvgWidget(u, x1); }

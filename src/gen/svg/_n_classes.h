@@ -12,14 +12,14 @@
 QT_BEGIN_NAMESPACE
 
 class LSvgGenerator : public QSvgGenerator {
-    friend class N151;
+    friend class N156;
 public:
     LSvgGenerator(uint u) : unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    int metric(QPaintDevice::PaintDeviceMetric x1) const { quint64 id = LObjects::override_id(unique, 443); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 443, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSvgGenerator::metric(x1); } return ret; }
+    int metric(QPaintDevice::PaintDeviceMetric x1) const { quint64 id = LObjects::override_id(unique, 463); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 463, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSvgGenerator::metric(x1); } return ret; }
 };
 
 QT_END_NAMESPACE
