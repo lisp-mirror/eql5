@@ -12,7 +12,7 @@
 QT_BEGIN_NAMESPACE
 
 class LSvgGenerator : public QSvgGenerator {
-    friend class N156;
+    friend class N157;
 public:
     LSvgGenerator(uint u) : unique(u) {}
 

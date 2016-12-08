@@ -1,8 +1,8 @@
 <html><body><p>
 <b>DEFINE-QT-WRAPPERS (qt-library &rest what)</b>
-<p>Defines Lisp methods for all Qt methods/signals/slots of given library.<br>(See example <code>Qt_EQL_dynamic/trafficlight/</code>).</p>
+<p>Defines Lisp methods for all Qt methods/signals/slots of given library.<br>(See example <code>Qt_EQL/trafficlight/</code>).</p>
 <pre>
-  (define-qt-wrappers *c++*)        ; generate wrappers (see "Qt_EQL_dynamic/")
+  (define-qt-wrappers *c++*)        ; generate wrappers (see "Qt_EQL/")
   (define-qt-wrappers *c++* :slots) ; Qt slots only (any of :methods :slots :signals)
   
   (my-qt-function *c++* x y) ; instead of: (! "myQtFunction" (:qt *c++*) x y)
@@ -45,7 +45,7 @@
   (qapropos nil "QWidget")
   (qapropos)             
   (qapropos '|toString|)   ; wrapper function symbol
-  (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL_dynamic (custom Qt classes, Qt3Support classes)
+  (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL (custom Qt classes)
 </pre>
 </p><br>
 <p>
@@ -54,7 +54,7 @@
 </p><br>
 <p>
 <b>QAUTO-RELOAD-C++ (variable library-name)</b>
-<p><b>Linux only.</b><br><br>Extends <code>qload-c++</code> (see <code>Qt_EQL_dynamic/</code>).<br><br>Defines a global variable (see return value of <code>qload-c++</code>), which will be updated on every change of the C++ plugin (e.g. after recompiling, the plugin will automatically be reloaded, and the <code>variable</code> will be set to its new value).<br><br>If you want to be notified on every change of the plugin, set <code>*&lt;variable&gt;-reloaded*</code>. It will then be called after reloading, passing both the variable name and the plugin name.<br>See <code>qload-c++</code> for an example how to call plugin functions.</p>
+<p><b>Linux only.</b><br><br>Extends <code>qload-c++</code> (see <code>Qt_EQL/</code>).<br><br>Defines a global variable (see return value of <code>qload-c++</code>), which will be updated on every change of the C++ plugin (e.g. after recompiling, the plugin will automatically be reloaded, and the <code>variable</code> will be set to its new value).<br><br>If you want to be notified on every change of the plugin, set <code>*&lt;variable&gt;-reloaded*</code>. It will then be called after reloading, passing both the variable name and the plugin name.<br>See <code>qload-c++</code> for an example how to call plugin functions.</p>
 <pre>
   (qauto-reload-c++ *c++* "eql_cpp")
   
@@ -114,7 +114,7 @@
 </p><br>
 <p>
 <b>QEQL (object1 object2)</b>
-<p>Returns <code>T</code> for same instances of a Qt class.<br>To test for same Qt classes only, do:</p>
+<p>Returns <code>T</code> for same instances of a Qt class. Comparing <code>QVariant</code> values will work, too.<br>To test for same Qt classes only, do:</p>
 <pre>
   (= (qt-object-id object1) (qt-object-id object2))
 </pre>
@@ -223,7 +223,7 @@
 <b>QFUN+</b>
 <p>Use this variant to call user defined functions (declared <code>Q_INVOKABLE</code>), slots, signals from external C++ classes.<br><br>In order to call ordinary functions, slots, signals from external C++ classes, just use the ordinary <code>qfun</code>.</p>
 <pre>
-  (qfun+ *qt-main* "foo") ; see Qt_EQL, Qt_EQL_dynamic
+  (qfun+ *qt-main* "foo") ; see Qt_EQL
   
   ;; alternatively:
   
@@ -280,7 +280,7 @@
 </p><br>
 <p>
 <b>QLOAD-C++ (library-name &optional unload)</b>
-<p>Loads a custom Qt/C++ plugin (see <code>Qt_EQL_dynamic/</code>).<br>The <code>library-name</code> has to be passed as path to the plugin, without file ending.<br><br>This offers a simple way to extend your application with your own Qt/C++ functions.<br>The plugin will be reloaded (if supported by the OS) every time you call this function (Linux: see also <code>qauto-reload-c++</code>).<br>If the <code>unload</code> argument is not <code>NIL</code>, the plugin will be unloaded (if supported by the OS).</p>
+<p>Loads a custom Qt/C++ plugin (see <code>Qt_EQL/</code>).<br>The <code>library-name</code> has to be passed as path to the plugin, without file ending.<br><br>This offers a simple way to extend your application with your own Qt/C++ functions.<br>The plugin will be reloaded (if supported by the OS) every time you call this function (Linux: see also <code>qauto-reload-c++</code>).<br>If the <code>unload</code> argument is not <code>NIL</code>, the plugin will be unloaded (if supported by the OS).</p>
 <pre>
   (defparameter *c++* (qload-c++ "eql_cpp")) ; load (Linux: see also QAUTO-RELOAD-C++)
   

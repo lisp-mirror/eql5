@@ -13,11 +13,14 @@
 <p>
 If you want to translate your UI files to the corresponding EQL code, do the following
 at the command line:
-<br><code>&nbsp;&nbsp;eql -quic file.ui</code>
-<br>which will generate a file named <code>ui-file.lisp</code>. See also function <code>quic</code>.
+<p><code>&nbsp;&nbsp;eql5 -quic file.ui</code></p>
+which will generate a file named <code>ui-file.lisp</code>. See also function <code>quic</code>.
+<br>If you want to use widgets from modules, make sure the modules are available when you use <code>-quic</code> (they will then be loaded automatically).
 </p>
 <p>
 For a quick test of the generated file, try this:
-<br><code>&nbsp;&nbsp;eql ui-file.lisp</code>
+<p><code>&nbsp;&nbsp;eql5 ui-file.lisp</code>
+<br><code>&nbsp;&nbsp;EQL-USER&gt; (ui:ini t)</code></p>
+(This will only work if you don't use widgets from modules; otherwise you need to load the modules first, using <code>qrequire</code>.)
 </p>
 </html>

@@ -49,7 +49,6 @@ void ini() {
     LObjects::N[10] = new N11;
     LObjects::N[73] = new N74;
     LObjects::N[74] = new N75;
-    LObjects::N[97] = new N98;
     LObjects::N[98] = new N99;
     LObjects::N[99] = new N100;
     LObjects::N[100] = new N101;
@@ -57,11 +56,12 @@ void ini() {
     LObjects::N[102] = new N103;
     LObjects::N[103] = new N104;
     LObjects::N[104] = new N105;
-    LObjects::N[144] = new N145;
+    LObjects::N[105] = new N106;
     LObjects::N[145] = new N146;
     LObjects::N[146] = new N147;
     LObjects::N[147] = new N148;
-    LObjects::N[148] = new N149; }
+    LObjects::N[148] = new N149;
+    LObjects::N[149] = new N150; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -84,19 +84,19 @@ void deleteNObject(int n, void* p, int gc) {
         case 11: if(gc) delete (QAuthenticator*)p; else delete (LAuthenticator*)p; break;
         case 74: if(gc) delete (QHostAddress*)p; else delete (LHostAddress*)p; break;
         case 75: if(gc) delete (QHostInfo*)p; else delete (LHostInfo*)p; break;
-        case 98: if(gc) delete (QNetworkAddressEntry*)p; else delete (LNetworkAddressEntry*)p; break;
-        case 99: if(gc) delete (QNetworkCacheMetaData*)p; else delete (LNetworkCacheMetaData*)p; break;
-        case 100: if(gc) delete (QNetworkCookie*)p; else delete (LNetworkCookie*)p; break;
-        case 101: if(gc) delete (QNetworkInterface*)p; else delete (LNetworkInterface*)p; break;
-        case 102: if(gc) delete (QNetworkProxy*)p; else delete (LNetworkProxy*)p; break;
-        case 103: if(gc) delete (QNetworkProxyFactory*)p; else delete (LNetworkProxyFactory*)p; break;
-        case 104: if(gc) delete (QNetworkProxyQuery*)p; else delete (LNetworkProxyQuery*)p; break;
-        case 105: if(gc) delete (QNetworkRequest*)p; else delete (LNetworkRequest*)p; break;
-        case 145: if(gc) delete (QSslCertificate*)p; else delete (LSslCertificate*)p; break;
-        case 146: if(gc) delete (QSslCipher*)p; else delete (LSslCipher*)p; break;
-        case 147: if(gc) delete (QSslConfiguration*)p; else delete (LSslConfiguration*)p; break;
-        case 148: if(gc) delete (QSslError*)p; else delete (LSslError*)p; break;
-        case 149: if(gc) delete (QSslKey*)p; else delete (LSslKey*)p; break; }}
+        case 99: if(gc) delete (QNetworkAddressEntry*)p; else delete (LNetworkAddressEntry*)p; break;
+        case 100: if(gc) delete (QNetworkCacheMetaData*)p; else delete (LNetworkCacheMetaData*)p; break;
+        case 101: if(gc) delete (QNetworkCookie*)p; else delete (LNetworkCookie*)p; break;
+        case 102: if(gc) delete (QNetworkInterface*)p; else delete (LNetworkInterface*)p; break;
+        case 103: if(gc) delete (QNetworkProxy*)p; else delete (LNetworkProxy*)p; break;
+        case 104: if(gc) delete (QNetworkProxyFactory*)p; else delete (LNetworkProxyFactory*)p; break;
+        case 105: if(gc) delete (QNetworkProxyQuery*)p; else delete (LNetworkProxyQuery*)p; break;
+        case 106: if(gc) delete (QNetworkRequest*)p; else delete (LNetworkRequest*)p; break;
+        case 146: if(gc) delete (QSslCertificate*)p; else delete (LSslCertificate*)p; break;
+        case 147: if(gc) delete (QSslCipher*)p; else delete (LSslCipher*)p; break;
+        case 148: if(gc) delete (QSslConfiguration*)p; else delete (LSslConfiguration*)p; break;
+        case 149: if(gc) delete (QSslError*)p; else delete (LSslError*)p; break;
+        case 150: if(gc) delete (QSslKey*)p; else delete (LSslKey*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -118,19 +118,19 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 11: ids = &LAuthenticator::overrideIds; break;
             case 74: ids = &LHostAddress::overrideIds; break;
             case 75: ids = &LHostInfo::overrideIds; break;
-            case 98: ids = &LNetworkAddressEntry::overrideIds; break;
-            case 99: ids = &LNetworkCacheMetaData::overrideIds; break;
-            case 100: ids = &LNetworkCookie::overrideIds; break;
-            case 101: ids = &LNetworkInterface::overrideIds; break;
-            case 102: ids = &LNetworkProxy::overrideIds; break;
-            case 103: ids = &LNetworkProxyFactory::overrideIds; break;
-            case 104: ids = &LNetworkProxyQuery::overrideIds; break;
-            case 105: ids = &LNetworkRequest::overrideIds; break;
-            case 145: ids = &LSslCertificate::overrideIds; break;
-            case 146: ids = &LSslCipher::overrideIds; break;
-            case 147: ids = &LSslConfiguration::overrideIds; break;
-            case 148: ids = &LSslError::overrideIds; break;
-            case 149: ids = &LSslKey::overrideIds; break; }}
+            case 99: ids = &LNetworkAddressEntry::overrideIds; break;
+            case 100: ids = &LNetworkCacheMetaData::overrideIds; break;
+            case 101: ids = &LNetworkCookie::overrideIds; break;
+            case 102: ids = &LNetworkInterface::overrideIds; break;
+            case 103: ids = &LNetworkProxy::overrideIds; break;
+            case 104: ids = &LNetworkProxyFactory::overrideIds; break;
+            case 105: ids = &LNetworkProxyQuery::overrideIds; break;
+            case 106: ids = &LNetworkRequest::overrideIds; break;
+            case 146: ids = &LSslCertificate::overrideIds; break;
+            case 147: ids = &LSslCipher::overrideIds; break;
+            case 148: ids = &LSslConfiguration::overrideIds; break;
+            case 149: ids = &LSslError::overrideIds; break;
+            case 150: ids = &LSslKey::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

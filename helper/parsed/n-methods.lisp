@@ -1477,6 +1477,19 @@
    "static QPixelFormat toPixelFormat ( QImage::Format )"
    "static QMatrix trueMatrix ( const QMatrix & , int , int )"
    "static QTransform trueMatrix ( const QTransform & , int , int )")
+  (("QImageEncoderSettings" . NIL)
+   "new QImageEncoderSettings ()"
+   "new QImageEncoderSettings ( const QImageEncoderSettings & )"
+   "QString codec () const"
+   "QVariant encodingOption ( const QString & ) const"
+   "bool isNull () const"
+   "QMultimedia::EncodingQuality quality () const"
+   "QSize resolution () const"
+   "void setCodec ( const QString & )"
+   "void setEncodingOption ( const QString & , const QVariant & )"
+   "void setQuality ( QMultimedia::EncodingQuality )"
+   "void setResolution ( const QSize & )"
+   "void setResolution ( int , int )")
   (("QInputEvent" . "QEvent")
    "Qt::KeyboardModifiers modifiers () const"
    "ulong timestamp () const")

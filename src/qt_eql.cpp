@@ -1,5 +1,5 @@
 // copyright (c) Polos Ruetz
-// see Qt_EQL, Qt_EQL_dynamic, QtWebKit: JavaScript / Lisp bridge
+// see Qt_EQL, QtWebKit: JavaScript / Lisp bridge
 
 #include <QtGui>
 #include <ecl/ecl.h>

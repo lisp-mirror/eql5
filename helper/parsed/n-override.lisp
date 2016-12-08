@@ -232,6 +232,7 @@
   (("QIcon" . NIL))
   (("QIconDragEvent" . "QEvent"))
   (("QImage" . "QPaintDevice"))
+  (("QImageEncoderSettings" . NIL))
   (("QInputEvent" . "QEvent"))
   (("QInputMethodEvent" . "QEvent"))
   (("QItemEditorFactory" . NIL)

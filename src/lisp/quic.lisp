@@ -53,14 +53,15 @@
           (let ((max-len 0))
             (format out "~%  (:export~%   ;; all DEFVARs except layouts, spacers~{~%   #:~A~}~
                          ~%   #:ini~
-                         ~%   #:retranslate-ui))~
+                         ~%   #:retranslate-ui~
+                         ~%   #:show))~
                          ~%~
                          ~%(in-package ~(~S~))~
                          ~%~
                          ~%(defvar ~A)~A (main widget)~
                          ~{~%(defvar ~{~A)~A~}~}~
                          ~%~
-                         ~%(defun ini ()~
+                         ~%(defun ini (&optional show)~
                          ~%  (qlet (~{~A~^ ~})~
                          ~%    (let (~{~A~^ ~})~
                          ~%      (setf ~A (qnew ~S))"
@@ -90,7 +91,11 @@
           (dolist (line (nreverse code))
             (write-string line out))
           (format out "~%      (retranslate-ui)~
-                       ~%      (qfun ~A ~S))))~
+                       ~%      (when show~
+                       ~%        (show)))))~
+                       ~%~
+                       ~%(defun show ()~
+                       ~%  (qfun ~A ~S))~
                        ~%~
                        ~%(defun retranslate-ui ()~
                        ~%  (let (~{~A~^ ~})"
@@ -99,7 +104,7 @@
                   (mapcar 'var-name (reverse *lets-tr*)))
           (dolist (line (nreverse tr))
             (write-string line out))
-          (format out "))~%~%(ini)~%"))))))
+          (format out "))~%"))))))
 
 (defun trim (string)
   (string-trim " .;*" string))

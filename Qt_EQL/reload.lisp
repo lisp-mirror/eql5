@@ -3,7 +3,7 @@
 ;;;
 ;;; Simple demo:
 ;;;
-;;;    0) do: eql reload.lisp -qtpl
+;;;    0) do: eql5 reload.lisp -qtpl
 ;;;
 ;;;    1) make some changes in "cpp/lib.h", "cpp/lib.cpp"
 ;;;    2) do: (recompile-c++)
@@ -20,7 +20,7 @@
 (defvar *lib* (qload-c++ (in-home "Qt_EQL/eql_cpp")))
 
 (defun recompile-c++ ()
-  (qload-c++ (in-home "Qt_EQL_dynamic/eql_cpp")
+  (qload-c++ (in-home "Qt_EQL/eql_cpp")
              :unload)
   (ext:run-program #+msvc "make.bat" #-msvc "make"
                    #+msvc nil        #-msvc '("-C" "cpp/")

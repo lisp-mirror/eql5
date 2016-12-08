@@ -420,20 +420,23 @@
 
 (defun qeql (obj1 obj2)
   "args: (object1 object2)
-   Returns <code>T</code> for same instances of a Qt class.<br>To test for same Qt classes only, do:
+   Returns <code>T</code> for same instances of a Qt class. Comparing <code>QVariant</code> values will work, too.<br>To test for same Qt classes only, do:
        (= (qt-object-id object1) (qt-object-id object2))"
   (let ((obj1* (ensure-qt-object obj1))
         (obj2* (ensure-qt-object obj2)))
     (when (and (qt-object-p obj1*)
                (qt-object-p obj2*))
-      (let ((u1 (qt-object-unique obj1*))
-            (u2 (qt-object-unique obj2*)))
-        (or (and (not (zerop u1))
-                 (= u1 u2))
-            (and (= (qt-object-id obj1*)
-                    (qt-object-id obj2*))
-                 (= (qt-object-pointer obj1*)
-                    (qt-object-pointer obj2*))))))))
+      (let ((v-id (qid "QVariant")))
+        (if (= v-id (qt-object-id obj1*) (qt-object-id obj2*))
+            (eql::%qvariant-equal obj1* obj2*)
+            (let ((u1 (qt-object-unique obj1*))
+                  (u2 (qt-object-unique obj2*)))
+              (or (and (not (zerop u1))
+                       (= u1 u2))
+                  (and (= (qt-object-id obj1*)
+                          (qt-object-id obj2*))
+                       (= (qt-object-pointer obj1*)
+                          (qt-object-pointer obj2*))))))))))
 
 (defun qnull-object (obj)
   "args: (object)
@@ -517,7 +520,7 @@
   "args: (object function-name &rest arguments)
    alias: qfun+
    Use this variant to call user defined functions (declared <code>Q_INVOKABLE</code>), slots, signals from external C++ classes.<br><br>In order to call ordinary functions, slots, signals from external C++ classes, just use the ordinary <code>qfun</code>.
-       (qfun+ *qt-main* \"foo\") ; see Qt_EQL, Qt_EQL_dynamic
+       (qfun+ *qt-main* \"foo\") ; see Qt_EQL
        
        ;; alternatively:
        
@@ -596,8 +599,8 @@
 
 (defun define-qt-wrappers (qt-library &rest what)
   "args: (qt-library &rest what)
-   Defines Lisp methods for all Qt methods/signals/slots of given library.<br>(See example <code>Qt_EQL_dynamic/trafficlight/</code>).
-       (define-qt-wrappers *c++*)        ; generate wrappers (see \"Qt_EQL_dynamic/\")
+   Defines Lisp methods for all Qt methods/signals/slots of given library.<br>(See example <code>Qt_EQL/trafficlight/</code>).
+       (define-qt-wrappers *c++*)        ; generate wrappers (see \"Qt_EQL/\")
        (define-qt-wrappers *c++* :slots) ; Qt slots only (any of :methods :slots :signals)
        
        (my-qt-function *c++* x y) ; instead of: (! \"myQtFunction\" (:qt *c++*) x y)"
@@ -632,7 +635,7 @@
 #+linux
 (defmacro qauto-reload-c++ (variable library-name)
   "args: (variable library-name)
-   <b>Linux only.</b><br><br>Extends <code>qload-c++</code> (see <code>Qt_EQL_dynamic/</code>).<br><br>Defines a global variable (see return value of <code>qload-c++</code>), which will be updated on every change of the C++ plugin (e.g. after recompiling, the plugin will automatically be reloaded, and the <code>variable</code> will be set to its new value).<br><br>If you want to be notified on every change of the plugin, set <code>*&lt;variable&gt;-reloaded*</code>. It will then be called after reloading, passing both the variable name and the plugin name.<br>See <code>qload-c++</code> for an example how to call plugin functions.
+   <b>Linux only.</b><br><br>Extends <code>qload-c++</code> (see <code>Qt_EQL/</code>).<br><br>Defines a global variable (see return value of <code>qload-c++</code>), which will be updated on every change of the C++ plugin (e.g. after recompiling, the plugin will automatically be reloaded, and the <code>variable</code> will be set to its new value).<br><br>If you want to be notified on every change of the plugin, set <code>*&lt;variable&gt;-reloaded*</code>. It will then be called after reloading, passing both the variable name and the plugin name.<br>See <code>qload-c++</code> for an example how to call plugin functions.
        (qauto-reload-c++ *c++* \"eql_cpp\")
        
        (setf *c++-reloaded* (lambda (var lib) (qapropos nil (symbol-value var)))) ; optional: set a notifier"
@@ -816,6 +819,22 @@
                   (cons 'qutf8                '(string))
                   (cons 'tr                   '(source &optional context plural-number))))
   (setf (get (car el) :function-lambda-list) (cdr el)))
+
+;;; undocumented convenience hacks
+
+(defun qt-object-to-string (object)
+  "String representation of a QT-OBJECT."
+  (when (qt-object-p object)
+    (format nil "(QT-OBJECT ~D ~D ~D)"
+            (qt-object-pointer object)
+            (qt-object-unique object)
+            (qt-object-id object))))
+
+(defun qt-object-from-string (string)
+  "Restores a QT-OBJECT from its string representation."
+  (let ((exp (read-from-string string)))
+    (when (eql 'qt-object (first exp))
+      (apply (first exp) (rest exp)))))
 
 ;;; The following are modified/simplified functions taken from "src/lsp/top.lsp" (see ECL sources)
 

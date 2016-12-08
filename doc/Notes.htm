@@ -4,7 +4,7 @@
 </head>
 <body>
 <h2>Notes</h2>
-<p>Pass <code>-norc</code> on the command line to <b>not</b> load <code>~/.eclrc</code> on startup.<br>Since <code>:eql</code> and <code>:eql5</code> are in <code>*features*</code>, you can use e.g. <code>#+eql</code> / <code>#-eql5</code>.</p>
+<p>Pass <code>-norc</code> on the command line to <b>not</b> load <code>~/.eclrc</code> on startup.<br>Since <code>:eql</code> and <code>:eql5</code> are in <code>*features*</code>, you can use e.g. <code>#+eql</code> / <code>#-eql5</code> as usual.</p>
 <p>To run a Lisp file directly, do e.g. <code>eql5
     examples/5-colliding-mice -qtpl</code>.</p>
 <p>See the EQL UI (command <code>eql -qgui</code>) for a complete list of all
@@ -32,7 +32,7 @@
 </ul>
 <ul>
 <li>So, always use <code>qlet</code> (instead of <code>qnew</code>) if you only
-  need a local Qt object inside a function (e.g. <code>QDialog</code>, <code>QRegExp</code>).
+  need a local Qt object inside a function (e.g. <code>QPainter</code>, <code>QVariant</code>, <code>QRegExp</code>).
 <li><b>GC</b> is implemented (using the ECL finalizer) for Qt value types (like <code>QFont</code>) returned by the functions
  <code>qget</code> and <code>qfun</code>.<br>These types are printed adding <b>GC</b>: <code>#&lt;QFont 0x9243840 GC&gt;</code>.
 </ul>
@@ -49,7 +49,7 @@ may be more convenient than the other.)
 </p>
 <p>
 The currently available <b>Qt5 Modules</b> (see <code>qrequire</code>) are:
-<br><code>:help :network :sql :svg :webkit</code> (module <code>:opengl</code> is obsolete, see <code>QOpenGLWidget</code>)
+<br><code>:help :multimedia :network :sql :svg :webkit</code> (module <code>:opengl</code> is obsolete, see <code>QOpenGLWidget</code> etc.)
 </p> 
 <p>If you want to use CLOS together with <code>qt-object</code> instances
   (which are of type <code>struct</code>), see
@@ -59,7 +59,7 @@ The currently available <b>Qt5 Modules</b> (see <code>qrequire</code>) are:
   encapsulate a <code>qt-object</code>.</p>
 <hr>
 <p>If you're interested in <b>embedding</b> EQL in existing Qt/C++ projects,
-  see example in directory <code>Qt_EQL_dynamic/</code> (which can be used
+  see example in directory <code>Qt_EQL/</code> (which can be used
   together with Slime).
 </p>
 <p>See also <b>plugin</b> example in directory <code>Qt_EQL_plugin/</code>.

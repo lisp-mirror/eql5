@@ -25,6 +25,7 @@ META_TYPE (T_GLint,                            GLint)
 META_TYPE (T_GLuint,                           GLuint)
 META_TYPE (T_GLenum,                           GLenum)
 META_TYPE (T_GLfloat,                          GLfloat)
+META_TYPE (T_qint64,                           qint64)
 META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
@@ -141,6 +142,7 @@ void iniCLFunctions() {
     DEFUN ("%qui-class",             qui_class2,            2)
     DEFUN ("qui-names",              qui_names,             1)
     DEFUN ("qutf8",                  qutf8,                 1)
+    DEFUN ("%qvariant-equal",        qvariant_equal2,       2)
     DEFUN ("qversion",               qversion,              0) }
 
 // QtObject methods
@@ -858,12 +860,13 @@ QVariant toQVariant(cl_object l_obj, const char* s_type, int type) {
         case QVariant::Transform:   var = toQTransform(l_obj); break;
         case QVariant::Url:         var = toQUrl(l_obj); break;
         case QVariant::UInt:        var = toUInt(l_obj); break;
-        case QVariant::ULongLong:   var = toUInt<qulonglong>(l_obj); break; }
-    // Qt_EQL: a type safe object pointer (checked at run-time)
-    if(QMetaType::VoidStar == type) {
-        QtObject obj = toQtObject(l_obj);
-        if(obj.pointer) {
-            qVariantSetValue(var, eql_pointer(obj.pointer, obj.id)); }}
+        case QVariant::ULongLong:   var = toUInt<qulonglong>(l_obj); break;
+        default:
+            // Qt_EQL: a type safe object pointer (checked at run-time)
+            if(QMetaType::VoidStar == type) {
+                QtObject obj = toQtObject(l_obj);
+                if(obj.pointer) {
+                    var.setValue(eql_pointer(obj.pointer, obj.id)); }}}
     return var; }
 
 static QVariantList toQVariantList(cl_object l_list) {
@@ -1027,8 +1030,8 @@ TO_CL_VECTOR_VAL2 (qreal, qreal, ecl_make_doublefloat)
 
 static cl_object from_qvariant_value(const QVariant& var) {
     cl_object l_obj = Cnil;
-    int t = var.type();
-    switch(t) {
+    int type = var.type();
+    switch(type) {
         case QVariant::Bool:        l_obj = var.toBool() ? Ct : Cnil; break;
         case QVariant::Brush:       l_obj = from_qbrush(var.value<QBrush>()); break;
         case QVariant::ByteArray:   l_obj = from_qbytearray(var.toByteArray()); break;
@@ -1217,6 +1220,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_GLuint == n)                           p = new GLuint(toUInt<GLuint>(l_arg));
         else if(T_GLenum == n)                           p = new GLenum(toUInt<GLenum>(l_arg));
         else if(T_GLfloat == n)                          p = new GLfloat(toFloat<GLfloat>(l_arg));
+        else if(T_qint64 == n)                           p = new qint64(toInt<qint64>(l_arg));
         // module types
         else {
             bool found = false;
@@ -1229,7 +1233,8 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
             if(!found && LObjects::toMetaArg_webkit) {
                 p = LObjects::toMetaArg_webkit(n, l_arg, &found); }
             if(!found) {
-                if(!sType.endsWith('>') && sType.contains(':')) { // enum
+                // enum
+                if(!sType.endsWith('>') && sType.contains(':')) {
                     int* i = new int(toInt(l_arg));
                     p = i; }}}}
     return MetaArg(sType, p); }
@@ -1369,6 +1374,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_GLuint == n)                           l_ret = ecl_make_unsigned_integer(*(GLuint*)p);
             else if(T_GLenum == n)                           l_ret = ecl_make_unsigned_integer(*(GLenum*)p);
             else if(T_GLfloat == n)                          l_ret = ecl_make_singlefloat(*(GLfloat*)p);
+            else if(T_qint64 == n)                           l_ret = ecl_make_integer(*(qint64*)p);
             // module types
             else {
                 bool found = false;
@@ -1380,8 +1386,9 @@ cl_object to_lisp_arg(const MetaArg& arg) {
                     l_ret = LObjects::to_lisp_arg_sql(n, p, &found); }
                 if(!found && LObjects::toMetaArg_webkit) {
                     l_ret = LObjects::to_lisp_arg_webkit(n, p, &found); }
+                // enum
                 if(!found) {
-                    if(sType.endsWith('>') && sType.contains(':')) { // enum
+                    if(!sType.endsWith('>') && sType.contains(':')) {
                     int* i = (int*)p;
                     l_ret = ecl_make_integer(*i); }}}}}
     return l_ret; }
@@ -1524,7 +1531,7 @@ cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type) {
     ///     (qapropos nil "QWidget")
     ///     (qapropos)             
     ///     (qapropos '|toString|)   ; wrapper function symbol
-    ///     (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL_dynamic (custom Qt classes, Qt3Support classes)
+    ///     (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL (custom Qt classes)
     ecl_process_env()->nvalues = 1;    
     QByteArray search;
     if(ECL_STRINGP(l_search)) {
@@ -2331,7 +2338,7 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
 
 cl_object qload_cpp(cl_object l_lib_name, cl_object l_unload) { /// qload-c++
     /// args: (library-name &optional unload)
-    /// Loads a custom Qt/C++ plugin (see <code>Qt_EQL_dynamic/</code>).<br>The <code>library-name</code> has to be passed as path to the plugin, without file ending.<br><br>This offers a simple way to extend your application with your own Qt/C++ functions.<br>The plugin will be reloaded (if supported by the OS) every time you call this function (Linux: see also <code>qauto-reload-c++</code>).<br>If the <code>unload</code> argument is not <code>NIL</code>, the plugin will be unloaded (if supported by the OS).
+    /// Loads a custom Qt/C++ plugin (see <code>Qt_EQL/</code>).<br>The <code>library-name</code> has to be passed as path to the plugin, without file ending.<br><br>This offers a simple way to extend your application with your own Qt/C++ functions.<br>The plugin will be reloaded (if supported by the OS) every time you call this function (Linux: see also <code>qauto-reload-c++</code>).<br>If the <code>unload</code> argument is not <code>NIL</code>, the plugin will be unloaded (if supported by the OS).
     ///     (defparameter *c++* (qload-c++ "eql_cpp")) ; load (Linux: see also QAUTO-RELOAD-C++)
     ///     
     ///     (qapropos nil *c++*)                       ; documentation
@@ -2748,6 +2755,19 @@ cl_object qid(cl_object l_class) {
             cl_object l_ret = MAKE_FIXNUM(id);
             return l_ret; }}
     // no error message (testing for a supported Qt class)
+    return Cnil; }
+
+cl_object qvariant_equal2(cl_object l_var1, cl_object l_var2) {
+    // for internal use only (use QEQL instead, which will call this function for QVariants)
+    ecl_process_env()->nvalues = 1;
+    QtObject var1 = toQtObject(l_var1);
+    QtObject var2 = toQtObject(l_var2);
+    int id_var = -LObjects::n_names.value("QVariant", 0);
+    if((var1.id == id_var) && (var2.id == id_var)) {
+        QVariant* vp1 = (QVariant*)var1.pointer;
+        QVariant* vp2 = (QVariant*)var2.pointer;
+        cl_object l_ret = (*vp1 == *vp2) ? Ct : Cnil; // QVariant::operator==
+        return l_ret; }
     return Cnil; }
 
 cl_object qversion() {

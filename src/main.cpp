@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     QApplication qapp(argc, argv);
     QStringList args(QCoreApplication::arguments());
     if(args.contains("-h") || (args.contains("--help"))) {
-        std::cout << "Usage: eql [file] [-qtpl] [-qgui] [-quic file.ui [:ui-package] [:maximized]] [-slime] [-norc]" << std::endl;
+        std::cout << "Usage: eql5 [file] [-qtpl] [-qgui] [-quic file.ui [:ui-package] [:maximized]] [-slime] [-norc]" << std::endl;
         exit(0); }
 
     QTextCodec* utf8 = QTextCodec::codecForName("UTF-8");

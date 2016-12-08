@@ -9,7 +9,7 @@ QObject* ini()
     static QObject* cpp = 0;
     if(!cpp) {
         cpp = new CPP;
-        cpp->setObjectName("Qt_EQL_dynamic");
+        cpp->setObjectName("Qt_EQL");
     }
     return cpp;
 }

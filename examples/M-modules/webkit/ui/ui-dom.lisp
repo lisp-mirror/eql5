@@ -1,4 +1,4 @@
-;;; THIS FILE IS GENERATED (see 'eql -quic')
+;;; THIS FILE IS GENERATED (see 'eql5 -quic')
 
 (defpackage :ui
   (:use :common-lisp :eql)
@@ -13,7 +13,8 @@
    #:*tree-widget*
    #:*web-view*
    #:ini
-   #:retranslate-ui))
+   #:retranslate-ui
+   #:show))
 
 (in-package :ui)
 
@@ -28,7 +29,7 @@
 (defvar *vertical-layout-2*)    ; QVBoxLayout
 (defvar *web-view*)             ; QWebView
 
-(defun ini ()
+(defun ini (&optional show)
   (qlet ()
     (let (--qtreewidgetitem)
       (setf *main* (qnew "QMainWindow"))
@@ -68,11 +69,13 @@
       (qfun *dock-widget* "setWidget" *dock-widget-contents*)
       (qfun *main* "addDockWidget" 1 *dock-widget*)
       (retranslate-ui)
-      (qfun *main* "show"))))
+      (when show
+        (show)))))
+
+(defun show ()
+  (qfun *main* "show"))
 
 (defun retranslate-ui ()
   (let ()
     (qfun *main* "setWindowTitle" (tr "Web Element DOM Traversal"))
     (qfun *dock-widget* "setWindowTitle" (tr "Document Structure"))))
-
-(ini)

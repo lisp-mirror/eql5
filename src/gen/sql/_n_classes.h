@@ -12,7 +12,7 @@
 QT_BEGIN_NAMESPACE
 
 class LSqlDatabase : public QSqlDatabase {
-    friend class N137;
+    friend class N138;
 public:
     LSqlDatabase(uint u) : unique(u) {}
     LSqlDatabase(uint u, const QSqlDatabase& x1) : QSqlDatabase(x1), unique(u) {}
@@ -22,7 +22,7 @@ public:
 };
 
 class LSqlError : public QSqlError {
-    friend class N138;
+    friend class N139;
 public:
     LSqlError(uint u, const QString& x1 = QString(), const QString& x2 = QString(), ErrorType x3 = NoError, const QString& x4 = QString()) : QSqlError(x1, x2, x3, x4), unique(u) {}
     LSqlError(uint u, const QSqlError& x1) : QSqlError(x1), unique(u) {}
@@ -32,7 +32,7 @@ public:
 };
 
 class LSqlField : public QSqlField {
-    friend class N139;
+    friend class N140;
 public:
     LSqlField(uint u, const QString& x1 = QString(), QVariant::Type x2 = QVariant::Invalid) : QSqlField(x1, x2), unique(u) {}
     LSqlField(uint u, const QSqlField& x1) : QSqlField(x1), unique(u) {}
@@ -42,7 +42,7 @@ public:
 };
 
 class LSqlIndex : public QSqlIndex {
-    friend class N140;
+    friend class N141;
 public:
     LSqlIndex(uint u, const QString& x1 = QString(), const QString& x2 = QString()) : QSqlIndex(x1, x2), unique(u) {}
     LSqlIndex(uint u, const QSqlIndex& x1) : QSqlIndex(x1), unique(u) {}
@@ -52,7 +52,7 @@ public:
 };
 
 class LSqlQuery : public QSqlQuery {
-    friend class N141;
+    friend class N142;
 public:
     LSqlQuery(uint u, QSqlResult* x1) : QSqlQuery(x1), unique(u) {}
     LSqlQuery(uint u, const QString& x1 = QString(), QSqlDatabase x2 = QSqlDatabase()) : QSqlQuery(x1, x2), unique(u) {}
@@ -64,7 +64,7 @@ public:
 };
 
 class LSqlRecord : public QSqlRecord {
-    friend class N142;
+    friend class N143;
 public:
     LSqlRecord(uint u) : unique(u) {}
     LSqlRecord(uint u, const QSqlRecord& x1) : QSqlRecord(x1), unique(u) {}
@@ -74,7 +74,7 @@ public:
 };
 
 class LSqlRelation : public QSqlRelation {
-    friend class N143;
+    friend class N144;
 public:
     LSqlRelation(uint u) : unique(u) {}
     LSqlRelation(uint u, const QString& x1, const QString& x2, const QString& x3) : QSqlRelation(x1, x2, x3), unique(u) {}
@@ -84,7 +84,7 @@ public:
 };
 
 class LSqlResult : public QSqlResult {
-    friend class N144;
+    friend class N145;
 public:
 
     static NumList overrideIds;

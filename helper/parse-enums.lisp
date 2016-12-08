@@ -22,7 +22,7 @@
         "QStyle::SO_"))
 
 (defparameter *enum-begin* (format nil "Constant~CValue" #\Tab))
-(defparameter *namespaces* (list "QAudio" "QGL"))
+(defparameter *namespaces* (list "QAudio" "QGL" "QMultimedia"))
 
 (defun parse (class out)
   (let ((path (doc-file class)))

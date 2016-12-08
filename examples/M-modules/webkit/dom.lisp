@@ -7,9 +7,10 @@
 
 (in-package :eql-user)
 
-(load "ui/ui-dom") ; generated: "eql -quic dom.ui"
+(load "ui/ui-dom") ; generated: "eql5 -quic dom.ui"
 
 (defun ini (&optional url)
+  (ui:ini t)
   (qconnect ui:*web-view* "loadFinished(bool)" 'load-finished)
   (when url
     (set-url url)))

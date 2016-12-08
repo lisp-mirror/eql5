@@ -53,6 +53,7 @@
   "QHostInfo" 
   "QIcon" 
   "QImage" 
+  "QImageEncoderSettings" 
   "QItemEditorFactory" 
   "QItemSelection" 
   "QItemSelectionRange" 

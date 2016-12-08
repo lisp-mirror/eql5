@@ -9,7 +9,6 @@ QExposeEvent
 QFunctionPointer
 QGlyphRun
 QHttpMultiPart
-QImageEncoderSettings
 QImageReader
 QInputMethod
 QItemSelection
@@ -76,6 +75,7 @@ QVector<QStaticPlugin>
 QVector<QVariant>
 QWindowList
 qint32
+qint64
 quint16
 quint64
 quint8

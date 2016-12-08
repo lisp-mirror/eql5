@@ -1123,7 +1123,6 @@
                     "float"
                     "int"
                     "long"
-                    "qint64"
                     "qlonglong"
                     "qreal"
                     "qulonglong"

@@ -128,7 +128,7 @@
                  "sizePolicy" #.(qnew "QSizePolicy(QSizePolicy::Policy,QSizePolicy::Policy)"
                                       |QSizePolicy.Expanding| |QSizePolicy.Expanding|))))
     (let* ((layout* (|layout| *main*))
-           (layout (if (qnull layout*) ; for multiple call of RUN
+           (layout (if (qnull layout*) ; for multiple calls of RUN
                        (qnew "QGridLayout(QWidget*)" *main*)
                        (qt-object-? layout*)))
            (digits (make-array 10))
@@ -185,6 +185,8 @@
         (qconnect (svref digits n) "clicked()" 'digit-clicked))
       (dolist (w (list plus minus multiply divide))
         (qconnect w "clicked()" 'operation-clicked))
+      ;; the following lines are crying for a macro like:
+      ;; (connect-clicked (list clear back sign point reci words equal))
       (mapc (lambda (w fun)
               (qconnect w "clicked()" fun))
             (list clear back sign point reci words equal)

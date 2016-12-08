@@ -117,7 +117,24 @@ public:
     Q_INVOKABLE void Mswap(QCameraViewfinderSettings* o, QCameraViewfinderSettings& x1) { o->swap(x1); }
 };
 
-class N198 : public QObject { // QVideoEncoderSettings
+class N80 : public QObject { // QImageEncoderSettings
+    Q_OBJECT
+public:
+    Q_INVOKABLE void* C(uint u) { return new LImageEncoderSettings(u); }
+    Q_INVOKABLE void* C(uint u, const QImageEncoderSettings& x1) { return new LImageEncoderSettings(u, x1); }
+    Q_INVOKABLE QString Mcodec(QImageEncoderSettings* o) const { return o->codec(); }
+    Q_INVOKABLE QVariant MencodingOption(QImageEncoderSettings* o, const QString& x1) const { return o->encodingOption(x1); }
+    Q_INVOKABLE bool MisNull(QImageEncoderSettings* o) const { return o->isNull(); }
+    Q_INVOKABLE int Mquality(QImageEncoderSettings* o) const { return o->quality(); }
+    Q_INVOKABLE QSize Mresolution(QImageEncoderSettings* o) const { return o->resolution(); }
+    Q_INVOKABLE void MsetCodec(QImageEncoderSettings* o, const QString& x1) { o->setCodec(x1); }
+    Q_INVOKABLE void MsetEncodingOption(QImageEncoderSettings* o, const QString& x1, const QVariant& x2) { o->setEncodingOption(x1, x2); }
+    Q_INVOKABLE void MsetQuality(QImageEncoderSettings* o, QMultimedia::EncodingQuality x1) { o->setQuality(x1); }
+    Q_INVOKABLE void MsetResolution(QImageEncoderSettings* o, const QSize& x1) { o->setResolution(x1); }
+    Q_INVOKABLE void MsetResolution(QImageEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
+};
+
+class N199 : public QObject { // QVideoEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoEncoderSettings(u); }
@@ -140,7 +157,7 @@ public:
     Q_INVOKABLE void MsetResolution(QVideoEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N199 : public QObject { // QVideoFrame
+class N200 : public QObject { // QVideoFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoFrame(u); }
@@ -176,7 +193,7 @@ public:
     Q_INVOKABLE int SpixelFormatFromImageFormat(QImage::Format x1) { return QVideoFrame::pixelFormatFromImageFormat(x1); }
 };
 
-class N200 : public QObject { // QVideoSurfaceFormat
+class N201 : public QObject { // QVideoSurfaceFormat
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoSurfaceFormat(u); }
