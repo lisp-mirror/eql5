@@ -1936,7 +1936,7 @@ cl_object qinvoke_method2(cl_object l_obj, cl_object l_cast, cl_object l_name, c
                                 curr.truncate(curr.length() - 1); }
                             QByteArray typeName(qtObjectName(cl_car(l_do_args), curr));
                             bool match = (inherits(typeName, curr) ||
-                                         typeName.contains(curr) ||
+                                         ((curr == "int") ? (typeName == "int") : typeName.contains(curr)) ||
                                          (curr.contains("::") && (typeName == "int")) ||
                                          (curr.contains("QList") && typeName.contains("QList")) ||
                                          (curr.contains("QVector") && typeName.contains("QVector")));
@@ -1959,7 +1959,7 @@ ok1:
                                 if(curr.endsWith('*')) {
                                     curr.truncate(curr.length() - 1); }
                                 if(inherits(typeName, curr) ||
-                                   typeName.contains(curr) ||
+                                   ((curr == "int") ? (typeName == "int") : typeName.contains(curr)) ||
                                    (curr.contains("::") && (typeName == "int")) ||
                                    (curr.contains("QList") && typeName.contains("QList")) ||
                                    (curr.contains("QVector") && typeName.contains("QVector"))) {

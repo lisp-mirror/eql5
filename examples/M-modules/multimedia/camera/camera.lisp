@@ -103,8 +103,8 @@
   (|showMessage| ui:*status-bar* (format nil (tr "Recorded ~D sec") (truncate (/ (|duration| *media-recorder*) 1000)))))
 
 (defun process-captured-image (request-id image)
-  (qlet ((scaled-image (|scaled(QSize...)| image (|size| ui:*viewfinder*)
-                                           |Qt.KeepAspectRatio| |Qt.SmoothTransformation|)))
+  (qlet ((scaled-image (|scaled| image (|size| ui:*viewfinder*)
+                                 |Qt.KeepAspectRatio| |Qt.SmoothTransformation|)))
     (|setPixmap| ui:*last-image-preview-label* (|fromImage.QPixmap| scaled-image)))
   ;; display captured image for 4 seconds
   (display-captured-image)
@@ -274,6 +274,7 @@
   (qconnect ui:*mute-button* "toggled(bool)" 'set-muted)
   (qconnect ui:*exposure-compensation* "valueChanged(int)" 'set-exposure-compensation)
   (qconnect ui:*action-settings* "triggered()" 'configure-capture-settings)
+  (qconnect ui:*action-start-camera* "triggered()" 'start-camera)
   (qconnect ui:*action-stop-camera* "triggered()" 'stop-camera)
   (qconnect ui:*action-exit* "triggered()" ui:*main* "close()")
   ;; action!

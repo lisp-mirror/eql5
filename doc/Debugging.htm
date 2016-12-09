@@ -126,6 +126,9 @@ You might want to put this in your <code>~/.eclrc</code> file:
 
 </pre>
 <br>
+<p>You may find
+<pre>  (qproperties object &amp;optional (depth 1))</pre> very convenient for debugging, as it prints the current state of the interesting object.</p>
+<br>
 <p>In order to automatically switch the REPL to a given package after loading a file, add this line:</p>
 <pre>  (qlater (lambda () (in-package :my-package)))</pre>
 <br>
