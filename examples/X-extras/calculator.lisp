@@ -121,6 +121,11 @@
 
 ;;; UI
 
+(defmacro connect-clicked (&rest args)
+  `(progn
+     ,@(loop :for arg :in args :collect
+          `(qconnect ,arg "clicked()" ',(intern (string-upcase (format nil "~A-clicked" arg)))))))
+
 (defun run ()
   (flet ((b ()
            (qnew "QToolButton"
@@ -185,12 +190,7 @@
         (qconnect (svref digits n) "clicked()" 'digit-clicked))
       (dolist (w (list plus minus multiply divide))
         (qconnect w "clicked()" 'operation-clicked))
-      ;; the following lines are crying for a macro like:
-      ;; (connect-clicked (list clear back sign point reci words equal))
-      (mapc (lambda (w fun)
-              (qconnect w "clicked()" fun))
-            (list clear back sign point reci words equal)
-            (list 'clear-clicked 'back-clicked 'sign-clicked 'point-clicked 'reci-clicked 'words-clicked 'equal-clicked))
+      (connect-clicked clear back sign point reci words equal) ; see macro above
       (clear-display)
       (|setFocus| *real*)
       (x:do-with *main* |show| |raise|))))

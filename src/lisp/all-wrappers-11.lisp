@@ -1,5 +1,17 @@
 (in-package :eql)
 
+(defun |setStyleName| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleName" arguments))
+
+(defun |setStyleProperty| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleProperty" arguments))
+
+(defun |setStyleSheet| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleSheet" arguments))
+
+(defun |setStyleStrategy| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleStrategy" arguments))
+
 (defun |setStyle| (object &rest arguments)
   (%qinvoke-method object nil "setStyle" arguments))
 
@@ -2163,6 +2175,9 @@
 (defun |toHtml| (object &rest arguments)
   (%qinvoke-method object nil "toHtml" arguments))
 
+(defun |toIPv4Address| (object &rest arguments)
+  (%qinvoke-method object nil "toIPv4Address" arguments))
+
 (defun |toImageFormat.QImage| (&rest arguments)
   (%qinvoke-method "QImage" nil "toImageFormat" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |yellow| (object &rest arguments)
   (%qinvoke-method object nil "yellow" arguments))
-
-(defun |y| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "y" arguments))
-
-(defun |zChanged| (object &rest arguments)
-  (%qinvoke-method object nil "zChanged" arguments))
-
-(defun |zScaleChanged| (object &rest arguments)
-  (%qinvoke-method object nil "zScaleChanged" arguments))
-
-(defun |zScale| (object &rest arguments)
-  (%qinvoke-method object nil "zScale" arguments))
-
-(defun |zValue| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "zValue" arguments))

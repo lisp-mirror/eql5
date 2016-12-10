@@ -38,7 +38,6 @@
         "NSMenu"
         "NSURL"
         "qintptr"
-        "quint32"
         "qwsSet"
         "uchar *"
         "void *"

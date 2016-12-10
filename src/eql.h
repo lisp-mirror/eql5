@@ -8,6 +8,7 @@
 #include <QStringList>
 #include <QCoreApplication>
 #include <ecl/ecl.h>
+#include "dyn_object.h"
 #include "eql_global.h"
 
 QT_BEGIN_NAMESPACE
@@ -45,6 +46,7 @@ public:
 
 public Q_SLOTS:
     void exitEventLoop() { eventLoop->exit(); }
+    void removeConnections(QObject* object) { DynObject::removeConnections(object); }
 };
 
 QT_END_NAMESPACE

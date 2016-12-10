@@ -74,12 +74,5 @@ QVector<QSslEllipticCurve>
 QVector<QStaticPlugin>
 QVector<QVariant>
 QWindowList
-qint32
-qint64
-quint16
-quint64
-quint8
 quintptr
-short
 sockaddr
-ushort

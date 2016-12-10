@@ -1311,6 +1311,9 @@
 (defun |nativeLanguageName| (object &rest arguments)
   (%qinvoke-method object nil "nativeLanguageName" arguments))
 
+(defun |nativeModifiers| (object &rest arguments)
+  (%qinvoke-method object nil "nativeModifiers" arguments))
+
 (defun |nativeOrientation| (object &rest arguments)
   (%qinvoke-method object nil "nativeOrientation" arguments))
 
@@ -1323,11 +1326,17 @@
 (defun |nativeResolution| (object &rest arguments)
   (%qinvoke-method object nil "nativeResolution" arguments))
 
+(defun |nativeScanCode| (object &rest arguments)
+  (%qinvoke-method object nil "nativeScanCode" arguments))
+
 (defun |nativeSizeChanged| (object &rest arguments)
   (%qinvoke-method object nil "nativeSizeChanged" arguments))
 
 (defun |nativeSize| (object &rest arguments)
   (%qinvoke-method object nil "nativeSize" arguments))
+
+(defun |nativeVirtualKey| (object &rest arguments)
+  (%qinvoke-method object nil "nativeVirtualKey" arguments))
 
 (defun |naturalTextRect| (object &rest arguments)
   (%qinvoke-method object nil "naturalTextRect" arguments))
@@ -3590,12 +3599,3 @@
 
 (defun |selectMimeTypeFilter| (object &rest arguments)
   (%qinvoke-method object nil "selectMimeTypeFilter" arguments))
-
-(defun |selectNameFilter| (object &rest arguments)
-  (%qinvoke-method object nil "selectNameFilter" arguments))
-
-(defun |selectRow| (object &rest arguments)
-  (%qinvoke-method object nil "selectRow" arguments))
-
-(defun |selectUrl| (object &rest arguments)
-  (%qinvoke-method object nil "selectUrl" arguments))

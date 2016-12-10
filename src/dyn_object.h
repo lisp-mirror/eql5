@@ -16,20 +16,26 @@ class DynObject: public QObject {
 public:
     DynObject(QObject* par = 0);
 
-    static int event_filter_handle;
-    static QObject* currentSender;
+    bool event_filters;
 
-    bool filters;
-    QList<void*> functions;
-    QList<StrList> types;
-    QList<QObject*> senders;
-    QVector<int> ev_ids;
-    QVector<int> ev_types;
-    QVector<void*> ev_funs;
-    QVector<QObject*> ev_objects;
+    static QObject* currentSender;
+    static int slot_id;
+    static int event_filter_handle;
+
+    QVector<QObject*> signal_senders;
+    QVector<int> signal_ids;
+    QVector<int> slot_ids;
+    QVector<void*> slot_functions;
+    QVector<StrList> slot_types;
+
+    QVector<int> event_ids;
+    QVector<int> event_types;
+    QVector<void*> event_funs;
+    QVector<QObject*> event_objects;
 
     static bool connect(QObject*, const char*, DynObject*, void*);
     static bool disconnect(QObject*, const char*, DynObject*, void*);
+    static void removeConnections(QObject*);
 
     int qt_metacall(QMetaObject::Call, int, void**);
     int addEventFilter(QObject*, int, void*);

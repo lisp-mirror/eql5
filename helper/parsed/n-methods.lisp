@@ -1332,6 +1332,7 @@
    "new QHideEvent ()")
   (("QHostAddress" . NIL)
    "new QHostAddress ()"
+   "new QHostAddress ( quint32 )"
    "new QHostAddress ( quint8 * )"
    "new QHostAddress ( const quint8 * )"
    "new QHostAddress ( const sockaddr * )"
@@ -1344,11 +1345,14 @@
    "bool isNull () const"
    "QAbstractSocket::NetworkLayerProtocol protocol () const"
    "QString scopeId () const"
+   "void setAddress ( quint32 )"
    "void setAddress ( quint8 * )"
    "void setAddress ( const quint8 * )"
    "bool setAddress ( const QString & )"
    "void setAddress ( const sockaddr * )"
    "void setScopeId ( const QString & )"
+   "quint32 toIPv4Address () const"
+   "quint32 toIPv4Address ( bool * ) const"
    "QString toString () const")
   (("QHostInfo" . NIL)
    "new QHostInfo ( int = -1 )"
@@ -1532,11 +1536,15 @@
    "int width () const")
   (("QKeyEvent" . "QInputEvent")
    "new QKeyEvent ( Type , int , Qt::KeyboardModifiers , const QString & = QString() , bool = false , ushort = 1 )"
+   "new QKeyEvent ( Type , int , Qt::KeyboardModifiers , quint32 , quint32 , quint32 , const QString & = QString() , bool = false , ushort = 1 )"
    "int count () const"
    "bool isAutoRepeat () const"
    "int key () const"
    "bool matches ( QKeySequence::StandardKey ) const"
    "Qt::KeyboardModifiers modifiers () const"
+   "quint32 nativeModifiers () const"
+   "quint32 nativeScanCode () const"
+   "quint32 nativeVirtualKey () const"
    "QString text () const")
   (("QKeySequence" . NIL)
    "new QKeySequence ()"

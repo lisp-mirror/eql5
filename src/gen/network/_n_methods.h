@@ -31,6 +31,7 @@ class N74 : public QObject { // QHostAddress
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LHostAddress(u); }
+    Q_INVOKABLE void* C(uint u, quint32 x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, quint8* x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const quint8* x1) { return new LHostAddress(u, x1); }
     Q_INVOKABLE void* C(uint u, const sockaddr* x1) { return new LHostAddress(u, x1); }
@@ -43,11 +44,14 @@ public:
     Q_INVOKABLE bool MisNull(QHostAddress* o) const { return o->isNull(); }
     Q_INVOKABLE int Mprotocol(QHostAddress* o) const { return o->protocol(); }
     Q_INVOKABLE QString MscopeId(QHostAddress* o) const { return o->scopeId(); }
+    Q_INVOKABLE void MsetAddress(QHostAddress* o, quint32 x1) { o->setAddress(x1); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, quint8* x1) { o->setAddress(x1); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, const quint8* x1) { o->setAddress(x1); }
     Q_INVOKABLE bool MsetAddress(QHostAddress* o, const QString& x1) { return o->setAddress(x1); }
     Q_INVOKABLE void MsetAddress(QHostAddress* o, const sockaddr* x1) { o->setAddress(x1); }
     Q_INVOKABLE void MsetScopeId(QHostAddress* o, const QString& x1) { o->setScopeId(x1); }
+    Q_INVOKABLE quint32 MtoIPv4Address(QHostAddress* o) const { return o->toIPv4Address(); }
+    Q_INVOKABLE quint32 MtoIPv4Address(QHostAddress* o, bool* x1) const { return o->toIPv4Address(x1); }
     Q_INVOKABLE QString MtoString(QHostAddress* o) const { return o->toString(); }
 };
 

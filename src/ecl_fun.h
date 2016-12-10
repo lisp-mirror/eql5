@@ -13,6 +13,9 @@
 
 QT_BEGIN_NAMESPACE
 
+#define QSLOT(x)   "1"#x
+#define QSIGNAL(x) "2"#x
+
 #define META_TYPE(constant, type) \
     static const int constant = qRegisterMetaType< type >(#type);
 
@@ -309,7 +312,7 @@ cl_object to_lisp_arg(const MetaArg&);
 
 EQL_EXPORT QVariant callOverrideFun(void*, int, const void**, quint64);
 EQL_EXPORT cl_object qt_object_from_name(const QByteArray&, void*, uint = 0, bool = false);
-EQL_EXPORT QtObject toQtObject(cl_object, cl_object = Cnil, bool* = 0);
+EQL_EXPORT QtObject toQtObject(cl_object, cl_object = Cnil, bool* = 0, bool = false);
 
 QT_END_NAMESPACE
 

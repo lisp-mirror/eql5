@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>VideoSettingsUi</class>
+ <class>dialog</class>
  <widget class="QDialog" name="dialog">
   <property name="geometry">
    <rect>
@@ -28,7 +28,7 @@
         <x>0</x>
         <y>0</y>
         <width>543</width>
-        <height>250</height>
+        <height>251</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="grid_layout_3">
@@ -67,6 +67,12 @@
           </item>
           <item row="4" column="1">
            <widget class="QSlider" name="audio_quality_slider">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximum">
              <number>4</number>
             </property>
@@ -123,6 +129,12 @@
           </item>
           <item row="6" column="1">
            <widget class="QSlider" name="video_quality_slider">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximum">
              <number>4</number>
             </property>

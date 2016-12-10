@@ -3671,11 +3671,15 @@ class EQL_EXPORT N85 : public N81 { // QKeyEvent
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QKeyEvent::Type x1, int x2, Qt::KeyboardModifiers x3, const QString& x4 = QString(), bool x5 = false, ushort x6 = 1) { return new LKeyEvent(u, x1, x2, x3, x4, x5, x6); }
+    Q_INVOKABLE void* C(uint u, QKeyEvent::Type x1, int x2, Qt::KeyboardModifiers x3, quint32 x4, quint32 x5, quint32 x6, const QString& x7 = QString(), bool x8 = false, ushort x9 = 1) { return new LKeyEvent(u, x1, x2, x3, x4, x5, x6, x7, x8, x9); }
     Q_INVOKABLE int Mcount(QKeyEvent* o) const { return o->count(); }
     Q_INVOKABLE bool MisAutoRepeat(QKeyEvent* o) const { return o->isAutoRepeat(); }
     Q_INVOKABLE int Mkey(QKeyEvent* o) const { return o->key(); }
     Q_INVOKABLE bool Mmatches(QKeyEvent* o, QKeySequence::StandardKey x1) const { return o->matches(x1); }
     Q_INVOKABLE int Mmodifiers(QKeyEvent* o) const { return o->modifiers(); }
+    Q_INVOKABLE quint32 MnativeModifiers(QKeyEvent* o) const { return o->nativeModifiers(); }
+    Q_INVOKABLE quint32 MnativeScanCode(QKeyEvent* o) const { return o->nativeScanCode(); }
+    Q_INVOKABLE quint32 MnativeVirtualKey(QKeyEvent* o) const { return o->nativeVirtualKey(); }
     Q_INVOKABLE QString Mtext(QKeyEvent* o) const { return o->text(); }
 };
 

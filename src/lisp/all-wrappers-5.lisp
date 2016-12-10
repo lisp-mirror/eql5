@@ -1,5 +1,9 @@
 (defpackage :eql
   (:export
+   #:|setStyleName|
+   #:|setStyleProperty|
+   #:|setStyleSheet|
+   #:|setStyleStrategy|
    #:|setStyle|
    #:|setSubTitleFormat|
    #:|setSubTitle|
@@ -721,6 +725,7 @@
    #:|toHsl|
    #:|toHsv|
    #:|toHtml|
+   #:|toIPv4Address|
    #:|toImageFormat.QImage|
    #:|toImageFormat|
    #:|toImage|
@@ -1194,9 +1199,4 @@
    #:|yearShown|
    #:|year|
    #:|yellowF|
-   #:|yellow|
-   #:|y|
-   #:|zChanged|
-   #:|zScaleChanged|
-   #:|zScale|
-   #:|zValue|))
+   #:|yellow|))

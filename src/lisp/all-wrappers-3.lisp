@@ -437,12 +437,15 @@
    #:|nativeCountryName|
    #:|nativeErrorCode|
    #:|nativeLanguageName|
+   #:|nativeModifiers|
    #:|nativeOrientation|
    #:|nativeParentWidget|
    #:|nativeResolutionChanged|
    #:|nativeResolution|
+   #:|nativeScanCode|
    #:|nativeSizeChanged|
    #:|nativeSize|
+   #:|nativeVirtualKey|
    #:|naturalTextRect|
    #:|naturalTextWidth|
    #:|nearestFormat|
@@ -1196,7 +1199,4 @@
    #:|selectAll|
    #:|selectColumn|
    #:|selectFile|
-   #:|selectMimeTypeFilter|
-   #:|selectNameFilter|
-   #:|selectRow|
-   #:|selectUrl|))
+   #:|selectMimeTypeFilter|))

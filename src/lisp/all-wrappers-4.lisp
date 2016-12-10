@@ -1,5 +1,8 @@
 (defpackage :eql
   (:export
+   #:|selectNameFilter|
+   #:|selectRow|
+   #:|selectUrl|
    #:|selectedColor|
    #:|selectedColumns|
    #:|selectedDate|
@@ -72,6 +75,7 @@
    #:|setAddress(const quint8*)|
    #:|setAddress(const sockaddr*)|
    #:|setAddress(quint8*)|
+   #:|setAddress(uint)|
    #:|setAddresses|
    #:|setAddress|
    #:|setAlignment(QLayout*...)|
@@ -1195,8 +1199,4 @@
    #:|setStyle(QString).QApplication|
    #:|setStyle(QStyle*).QApplication|
    #:|setStyle.QApplication|
-   #:|setStyleHint|
-   #:|setStyleName|
-   #:|setStyleProperty|
-   #:|setStyleSheet|
-   #:|setStyleStrategy|))
+   #:|setStyleHint|))

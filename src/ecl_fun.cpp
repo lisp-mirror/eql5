@@ -24,8 +24,15 @@ META_TYPE (T_bool_ok_pointer,                  bool*)
 META_TYPE (T_GLint,                            GLint)
 META_TYPE (T_GLuint,                           GLuint)
 META_TYPE (T_GLenum,                           GLenum)
+META_TYPE (T_short,                            short)
+META_TYPE (T_ushort,                           ushort)
 META_TYPE (T_GLfloat,                          GLfloat)
+META_TYPE (T_qint32,                           qint32)
 META_TYPE (T_qint64,                           qint64)
+META_TYPE (T_quint8,                           quint8)
+META_TYPE (T_quint16,                          quint16)
+META_TYPE (T_quint32,                          quint32)
+META_TYPE (T_quint64,                          quint64)
 META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
@@ -607,7 +614,7 @@ static QByteArray qtObjectName(cl_object l_obj, const QByteArray& type = QByteAr
         name = QtObject::idToClassName(toInt(cl_funcall(2, s_qt_object_id, l_obj))); }
     return name; }
 
-QtObject toQtObject(cl_object l_obj, cl_object l_cast, bool* qobject_align) {
+QtObject toQtObject(cl_object l_obj, cl_object l_cast, bool* qobject_align, bool quiet) {
     STATIC_SYMBOL_PKG (s_ensure_qt_object,  "ENSURE-QT-OBJECT",  "EQL")
     STATIC_SYMBOL_PKG (s_qt_object_pointer, "QT-OBJECT-POINTER", "EQL")
     STATIC_SYMBOL_PKG (s_qt_object_unique,  "QT-OBJECT-UNIQUE",  "EQL")
@@ -616,7 +623,10 @@ QtObject toQtObject(cl_object l_obj, cl_object l_cast, bool* qobject_align) {
     if(ECL_STRINGP(l_obj)) { // string name, for static methods
         o.id = classId(l_obj); }
     else {
-        l_obj = cl_funcall(2, s_ensure_qt_object, l_obj);
+        if(quiet) {
+            l_obj = cl_funcall(3, s_ensure_qt_object, l_obj, Ct); }
+        else {
+            l_obj = cl_funcall(2, s_ensure_qt_object, l_obj); }
         if(l_obj != Cnil) {
             o.pointer = (void*)fixnnint(cl_funcall(2, s_qt_object_pointer, l_obj));
             o.unique = fixnnint(cl_funcall(2, s_qt_object_unique, l_obj));
@@ -1220,7 +1230,14 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_GLuint == n)                           p = new GLuint(toUInt<GLuint>(l_arg));
         else if(T_GLenum == n)                           p = new GLenum(toUInt<GLenum>(l_arg));
         else if(T_GLfloat == n)                          p = new GLfloat(toFloat<GLfloat>(l_arg));
+        else if(T_short == n)                            p = new short(toInt<short>(l_arg));
+        else if(T_ushort == n)                           p = new ushort(toUInt<ushort>(l_arg));
+        else if(T_qint32 == n)                           p = new qint32(toInt<qint32>(l_arg));
         else if(T_qint64 == n)                           p = new qint64(toInt<qint64>(l_arg));
+        else if(T_quint8 == n)                           p = new quint8(toUInt<quint8>(l_arg));
+        else if(T_quint16 == n)                          p = new quint16(toUInt<quint16>(l_arg));
+        else if(T_quint32 == n)                          p = new quint32(toUInt<quint32>(l_arg));
+        else if(T_quint64 == n)                          p = new quint64(toUInt<quint64>(l_arg));
         // module types
         else {
             bool found = false;
@@ -1374,7 +1391,14 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_GLuint == n)                           l_ret = ecl_make_unsigned_integer(*(GLuint*)p);
             else if(T_GLenum == n)                           l_ret = ecl_make_unsigned_integer(*(GLenum*)p);
             else if(T_GLfloat == n)                          l_ret = ecl_make_singlefloat(*(GLfloat*)p);
+            else if(T_short == n)                            l_ret = ecl_make_integer(*(short*)p);
+            else if(T_ushort == n)                           l_ret = ecl_make_unsigned_integer(*(ushort*)p);
+            else if(T_qint32 == n)                           l_ret = ecl_make_integer(*(qint32*)p);
             else if(T_qint64 == n)                           l_ret = ecl_make_integer(*(qint64*)p);
+            else if(T_quint8 == n)                           l_ret = ecl_make_unsigned_integer(*(quint8*)p);
+            else if(T_quint16 == n)                          l_ret = ecl_make_unsigned_integer(*(quint16*)p);
+            else if(T_quint32 == n)                          l_ret = ecl_make_unsigned_integer(*(quint32*)p);
+            else if(T_quint64 == n)                          l_ret = ecl_make_unsigned_integer(*(quint64*)p);
             // module types
             else {
                 bool found = false;
@@ -2064,7 +2088,11 @@ cl_object qconnect2(cl_object l_caller, cl_object l_signal, cl_object l_receiver
             else if(Cnil == l_slot) {
                 void* fun = ensurePersistentFunction(l_receiver);
                 if(fun) {
-                    if(DynObject::connect((QObject*)o1.pointer, SIG + signal, LObjects::dynObject, fun)) {
+                    QObject* object = (QObject*)o1.pointer;
+                    if(DynObject::connect(object, SIG + signal, LObjects::dynObject, fun)) {
+                        // when object gets deleted, remove all Lisp connections
+                        QObject::connect(object, QSIGNAL(destroyed(QObject*)),
+                                         LObjects::eql, QSLOT(removeConnections(QObject*)));
                         return Ct; }}}}}
     error_msg("QCONNECT", LIST4(l_caller, l_signal, l_receiver, l_slot));
     return Cnil; }
@@ -2079,7 +2107,7 @@ cl_object qdisconnect2(cl_object l_caller, cl_object l_signal, cl_object l_recei
     ecl_process_env()->nvalues = 1;
     QtObject o1 = toQtObject(l_caller);
     if(o1.isQObject() && o1.pointer) {
-        QtObject o2 = toQtObject(l_receiver);
+        QtObject o2 = toQtObject(l_receiver, Cnil, 0, true); // quiet
         QByteArray signal(toCString(l_signal));
         QByteArray slot(toCString(l_slot));
         if(!signal.isEmpty()) {
@@ -2088,20 +2116,19 @@ cl_object qdisconnect2(cl_object l_caller, cl_object l_signal, cl_object l_recei
         if(!slot.isEmpty()) {
             slot = QMetaObject::normalizedSignature(slot);
             slot.prepend(SLO); }
-        bool lisp = (l_receiver != Cnil) && !o2.pointer;
-        void* lisp_fun = lisp ? ensurePersistentFunction(l_receiver) : 0;
         bool disconnected = false;
-        if(!lisp) {
+        bool null_receiver = (l_receiver == Cnil);
+        if(null_receiver || o2.isQObject()) {
             if(QObject::disconnect((QObject*)o1.pointer,
                                    signal.isEmpty() ? 0: signal.constData(),
                                    o2.isQObject() ? (QObject*)o2.pointer : 0,
                                    slot.isEmpty() ? 0 : slot.constData())) {
                 disconnected = true; }}
-        if(lisp_fun) {
+        if(null_receiver || !o2.isQObject()) {
             if(DynObject::disconnect((QObject*)o1.pointer,
                                      signal.isEmpty() ? 0 : signal.constData(),
                                      LObjects::dynObject,
-                                     lisp_fun)) {
+                                     l_receiver)) {
                 disconnected = true; }}
         return disconnected ? Ct : Cnil; }
     error_msg("QDISCONNECT", LIST4(l_caller, l_signal, l_receiver, l_slot));

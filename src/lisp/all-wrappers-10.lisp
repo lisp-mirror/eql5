@@ -1,5 +1,14 @@
 (in-package :eql)
 
+(defun |selectNameFilter| (object &rest arguments)
+  (%qinvoke-method object nil "selectNameFilter" arguments))
+
+(defun |selectRow| (object &rest arguments)
+  (%qinvoke-method object nil "selectRow" arguments))
+
+(defun |selectUrl| (object &rest arguments)
+  (%qinvoke-method object nil "selectUrl" arguments))
+
 (defun |selectedColor| (object &rest arguments)
   (%qinvoke-method object nil "selectedColor" arguments))
 
@@ -215,6 +224,9 @@
 
 (defun |setAddress(quint8*)| (object &rest arguments)
   (%qinvoke-method object nil "setAddress(quint8*)" arguments))
+
+(defun |setAddress(uint)| (object &rest arguments)
+  (%qinvoke-method object nil "setAddress(uint)" arguments))
 
 (defun |setAddresses| (object &rest arguments)
   (%qinvoke-method object nil "setAddresses" arguments))
@@ -3587,15 +3599,3 @@
 
 (defun |setStyleHint| (object &rest arguments)
   (%qinvoke-method object nil "setStyleHint" arguments))
-
-(defun |setStyleName| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleName" arguments))
-
-(defun |setStyleProperty| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleProperty" arguments))
-
-(defun |setStyleSheet| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleSheet" arguments))
-
-(defun |setStyleStrategy| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleStrategy" arguments))
