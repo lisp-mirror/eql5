@@ -1296,7 +1296,6 @@ public:
     Q_INVOKABLE int Mcolumn(QModelIndex* o) const { return o->column(); }
     Q_INVOKABLE QVariant Mdata(QModelIndex* o, int x1 = Qt::DisplayRole) const { return o->data(x1); }
     Q_INVOKABLE int Mflags(QModelIndex* o) const { return o->flags(); }
-    Q_INVOKABLE quintptr MinternalId(QModelIndex* o) const { return o->internalId(); }
     Q_INVOKABLE bool MisValid(QModelIndex* o) const { return o->isValid(); }
     Q_INVOKABLE const QAbstractItemModel* Mmodel(QModelIndex* o) const { return o->model(); }
     Q_INVOKABLE QModelIndex Mparent(QModelIndex* o) const { return o->parent(); }
@@ -1409,6 +1408,8 @@ class EQL_EXPORT N112 : public QObject { // QPainter
 public:
     Q_INVOKABLE void* C(uint u, QImage* x1) { return new LPainter(u, x1); }
     Q_INVOKABLE bool Mbegin(QPainter* o, QImage* x1) { return o->begin(x1); }
+    Q_INVOKABLE void* C(uint u, QPdfWriter* x1) { return new LPainter(u, x1); }
+    Q_INVOKABLE bool Mbegin(QPainter* o, QPdfWriter* x1) { return o->begin(x1); }
     Q_INVOKABLE void* C(uint u, QPicture* x1) { return new LPainter(u, x1); }
     Q_INVOKABLE bool Mbegin(QPainter* o, QPicture* x1) { return o->begin(x1); }
     Q_INVOKABLE void* C(uint u, QPixmap* x1) { return new LPainter(u, x1); }

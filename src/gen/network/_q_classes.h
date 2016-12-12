@@ -61,7 +61,6 @@ public:
 
     bool hasPendingConnections() const { quint64 id = LObjects::override_id(unique, 285); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 285, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QLocalServer::hasPendingConnections(); } return ret; }
     QLocalSocket* nextPendingConnection() { quint64 id = LObjects::override_id(unique, 286); void* fun = LObjects::overrideFun(id); QLocalSocket* ret = 0; if(fun && (LObjects::calling != id)) { ret = (QLocalSocket*)callOverrideFun(fun, 286, 0, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QLocalServer::nextPendingConnection(); } return ret; }
-    void incomingConnection(quintptr x1) { quint64 id = LObjects::override_id(unique, 287); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 287, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QLocalServer::incomingConnection(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QLocalServer::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QLocalServer::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QLocalServer::customEvent(x1); }}
@@ -123,12 +122,12 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    QList<QNetworkCookie> cookiesForUrl(const QUrl& x1) const { quint64 id = LObjects::override_id(unique, 292); void* fun = LObjects::overrideFun(id); QList<QNetworkCookie> ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 292, args, id).value<QList<QNetworkCookie> >(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::cookiesForUrl(x1); } return ret; }
-    bool deleteCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 293); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 293, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::deleteCookie(x1); } return ret; }
-    bool insertCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 294); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 294, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::insertCookie(x1); } return ret; }
-    bool setCookiesFromUrl(const QList<QNetworkCookie>& x1, const QUrl& x2) { quint64 id = LObjects::override_id(unique, 295); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 295, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::setCookiesFromUrl(x1, x2); } return ret; }
-    bool updateCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 296); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 296, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::updateCookie(x1); } return ret; }
-    bool validateCookie(const QNetworkCookie& x1, const QUrl& x2) const { quint64 id = LObjects::override_id(unique, 297); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 297, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::validateCookie(x1, x2); } return ret; }
+    QList<QNetworkCookie> cookiesForUrl(const QUrl& x1) const { quint64 id = LObjects::override_id(unique, 291); void* fun = LObjects::overrideFun(id); QList<QNetworkCookie> ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 291, args, id).value<QList<QNetworkCookie> >(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::cookiesForUrl(x1); } return ret; }
+    bool deleteCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 292); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 292, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::deleteCookie(x1); } return ret; }
+    bool insertCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 293); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 293, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::insertCookie(x1); } return ret; }
+    bool setCookiesFromUrl(const QList<QNetworkCookie>& x1, const QUrl& x2) { quint64 id = LObjects::override_id(unique, 294); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 294, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::setCookiesFromUrl(x1, x2); } return ret; }
+    bool updateCookie(const QNetworkCookie& x1) { quint64 id = LObjects::override_id(unique, 295); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 295, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::updateCookie(x1); } return ret; }
+    bool validateCookie(const QNetworkCookie& x1, const QUrl& x2) const { quint64 id = LObjects::override_id(unique, 296); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 296, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::validateCookie(x1, x2); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkCookieJar::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkCookieJar::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkCookieJar::customEvent(x1); }}
@@ -144,11 +143,11 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    qlonglong expire() { quint64 id = LObjects::override_id(unique, 298); void* fun = LObjects::overrideFun(id); qlonglong ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 298, 0, id).toLongLong(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::expire(); } return ret; }
-    qlonglong cacheSize() const { quint64 id = LObjects::override_id(unique, 299); void* fun = LObjects::overrideFun(id); qlonglong ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 299, 0, id).toLongLong(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::cacheSize(); } return ret; }
-    QNetworkCacheMetaData metaData(const QUrl& x1) { quint64 id = LObjects::override_id(unique, 300); void* fun = LObjects::overrideFun(id); QNetworkCacheMetaData ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 300, args, id).value<QNetworkCacheMetaData>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::metaData(x1); } return ret; }
-    bool remove(const QUrl& x1) { quint64 id = LObjects::override_id(unique, 301); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 301, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::remove(x1); } return ret; }
-    void updateMetaData(const QNetworkCacheMetaData& x1) { quint64 id = LObjects::override_id(unique, 302); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 302, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkDiskCache::updateMetaData(x1); }}
+    qlonglong expire() { quint64 id = LObjects::override_id(unique, 297); void* fun = LObjects::overrideFun(id); qlonglong ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 297, 0, id).toLongLong(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::expire(); } return ret; }
+    qlonglong cacheSize() const { quint64 id = LObjects::override_id(unique, 298); void* fun = LObjects::overrideFun(id); qlonglong ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 298, 0, id).toLongLong(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::cacheSize(); } return ret; }
+    QNetworkCacheMetaData metaData(const QUrl& x1) { quint64 id = LObjects::override_id(unique, 299); void* fun = LObjects::overrideFun(id); QNetworkCacheMetaData ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 299, args, id).value<QNetworkCacheMetaData>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::metaData(x1); } return ret; }
+    bool remove(const QUrl& x1) { quint64 id = LObjects::override_id(unique, 300); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 300, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::remove(x1); } return ret; }
+    void updateMetaData(const QNetworkCacheMetaData& x1) { quint64 id = LObjects::override_id(unique, 301); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 301, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkDiskCache::updateMetaData(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QNetworkDiskCache::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkDiskCache::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QNetworkDiskCache::customEvent(x1); }}
@@ -157,7 +156,7 @@ public:
 
 class LTcpServer : public QTcpServer {
     Q_OBJECT
-    friend class Q203;
+    friend class Q204;
 public:
     LTcpServer(uint u, QObject* x1 = 0) : QTcpServer(x1), unique(u) {}
 
@@ -174,7 +173,7 @@ public:
 
 class LTcpSocket : public QTcpSocket {
     Q_OBJECT
-    friend class Q204;
+    friend class Q205;
 public:
     LTcpSocket(uint u, QObject* x1 = 0) : QTcpSocket(x1), unique(u) {}
 
@@ -213,7 +212,7 @@ public:
 
 class LUdpSocket : public QUdpSocket {
     Q_OBJECT
-    friend class Q222;
+    friend class Q223;
 public:
     LUdpSocket(uint u, QObject* x1 = 0) : QUdpSocket(x1), unique(u) {}
 

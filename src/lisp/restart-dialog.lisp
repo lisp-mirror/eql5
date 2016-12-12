@@ -119,6 +119,8 @@
                      ":r1")
                     ((find (string-downcase cmd) '(":qq" ":exit") :test 'string=)
                      "(eql:qquit)")
+                    ((find (string-downcase cmd) '(":qa" ":abort") :test 'string=)
+                     "(eql:qquit -1)")
                     (t
                      (ensure-safe-restart cmd))))
     (princ cmd)

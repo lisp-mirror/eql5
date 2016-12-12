@@ -17,10 +17,10 @@ DynObject::DynObject(QObject* par) : QObject(par), event_filters(false) {
 
 int DynObject::qt_metacall(QMetaObject::Call c, int id, void** args) {
     if(QMetaObject::InvokeMetaMethod == c) {
-        int slot_id = slot_ids.indexOf(id);
-        if(slot_id != -1) {
-            currentSender = signal_senders.at(slot_id);
-            callConnectFun(slot_functions.at(slot_id), slot_types.at(slot_id), args); }}
+        int index = slot_ids.indexOf(id);
+        if(index != -1) {
+            currentSender = signal_senders.at(index);
+            callConnectFun(slot_functions.at(index), slot_types.at(index), args); }}
     return -1; }
 
 bool DynObject::connect(QObject* from, const char* signal, DynObject* dyn, void* function) {

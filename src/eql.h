@@ -22,7 +22,6 @@ class EQL_EXPORT EQL : public QObject {
     Q_OBJECT
 public:
     EQL();
-    ~EQL();
 
     static bool cl_booted;
     static bool return_value_p;

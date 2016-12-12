@@ -1181,6 +1181,7 @@ class LPainter : public QPainter {
     friend class N112;
 public:
     LPainter(uint u, QImage* x1) : QPainter(x1), unique(u) {}
+    LPainter(uint u, QPdfWriter* x1) : QPainter(x1), unique(u) {}
     LPainter(uint u, QPicture* x1) : QPainter(x1), unique(u) {}
     LPainter(uint u, QPixmap* x1) : QPainter(x1), unique(u) {}
     LPainter(uint u, QPrinter* x1) : QPainter(x1), unique(u) {}
@@ -1293,9 +1294,9 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    bool newPage() { quint64 id = LObjects::override_id(unique, 465); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 465, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QPrinter::newPage(); } return ret; }
-    void setPageSize(PageSize x1) { quint64 id = LObjects::override_id(unique, 466); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 466, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QPrinter::setPageSize(x1); }}
-    void setPageSizeMM(const QSizeF& x1) { quint64 id = LObjects::override_id(unique, 467); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 467, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QPrinter::setPageSizeMM(x1); }}
+    bool newPage() { quint64 id = LObjects::override_id(unique, 313); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 313, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QPrinter::newPage(); } return ret; }
+    void setPageSize(PageSize x1) { quint64 id = LObjects::override_id(unique, 465); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 465, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QPrinter::setPageSize(x1); }}
+    void setPageSizeMM(const QSizeF& x1) { quint64 id = LObjects::override_id(unique, 466); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 466, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QPrinter::setPageSizeMM(x1); }}
 };
 
 class LPrinterInfo : public QPrinterInfo {
@@ -1414,7 +1415,7 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    void run() { quint64 id = LObjects::override_id(unique, 468); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 468, 0, id); }}
+    void run() { quint64 id = LObjects::override_id(unique, 467); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 467, 0, id); }}
 };
 
 class LSemaphore : public QSemaphore {
@@ -1492,7 +1493,7 @@ public:
 
     QStandardItem* clone() const { quint64 id = LObjects::override_id(unique, 458); void* fun = LObjects::overrideFun(id); QStandardItem* ret = 0; if(fun && (LObjects::calling != id)) { ret = (QStandardItem*)callOverrideFun(fun, 458, 0, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStandardItem::clone(); } return ret; }
     QVariant data(int x1 = Qt::UserRole+1) const { quint64 id = LObjects::override_id(unique, 459); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 459, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStandardItem::data(x1); } return ret; }
-    void setData(const QVariant& x1, int x2 = Qt::UserRole+1) { quint64 id = LObjects::override_id(unique, 488); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 488, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStandardItem::setData(x1, x2); }}
+    void setData(const QVariant& x1, int x2 = Qt::UserRole+1) { quint64 id = LObjects::override_id(unique, 487); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 487, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStandardItem::setData(x1, x2); }}
     int type() const { quint64 id = LObjects::override_id(unique, 233); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 233, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStandardItem::type(); } return ret; }
 };
 
@@ -1624,11 +1625,11 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    QList<QByteArray> aliases() const { quint64 id = LObjects::override_id(unique, 489); void* fun = LObjects::overrideFun(id); QList<QByteArray> ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 489, 0, id).value<QList<QByteArray> >(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextCodec::aliases(); } return ret; }
-    int mibEnum() const { quint64 id = LObjects::override_id(unique, 490); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 490, 0, id).toInt(); } return ret; }
-    QByteArray name() const { quint64 id = LObjects::override_id(unique, 491); void* fun = LObjects::overrideFun(id); QByteArray ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 491, 0, id).value<QByteArray>(); } return ret; }
-    QByteArray convertFromUnicode(const QChar* x1, int x2, ConverterState* x3) const { quint64 id = LObjects::override_id(unique, 492); void* fun = LObjects::overrideFun(id); QByteArray ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 492, args, id).value<QByteArray>(); } return ret; }
-    QString convertToUnicode(const char* x1, int x2, ConverterState* x3) const { quint64 id = LObjects::override_id(unique, 493); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 493, args, id).value<QString>(); } return ret; }
+    QList<QByteArray> aliases() const { quint64 id = LObjects::override_id(unique, 488); void* fun = LObjects::overrideFun(id); QList<QByteArray> ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 488, 0, id).value<QList<QByteArray> >(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextCodec::aliases(); } return ret; }
+    int mibEnum() const { quint64 id = LObjects::override_id(unique, 489); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 489, 0, id).toInt(); } return ret; }
+    QByteArray name() const { quint64 id = LObjects::override_id(unique, 490); void* fun = LObjects::overrideFun(id); QByteArray ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 490, 0, id).value<QByteArray>(); } return ret; }
+    QByteArray convertFromUnicode(const QChar* x1, int x2, ConverterState* x3) const { quint64 id = LObjects::override_id(unique, 491); void* fun = LObjects::overrideFun(id); QByteArray ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 491, args, id).value<QByteArray>(); } return ret; }
+    QString convertToUnicode(const char* x1, int x2, ConverterState* x3) const { quint64 id = LObjects::override_id(unique, 492); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 492, args, id).value<QString>(); } return ret; }
 };
 
 class LTextCursor : public QTextCursor {
@@ -1881,8 +1882,8 @@ public:
     uint unique;
 
     QTreeWidgetItem* clone() const { quint64 id = LObjects::override_id(unique, 458); void* fun = LObjects::overrideFun(id); QTreeWidgetItem* ret = 0; if(fun && (LObjects::calling != id)) { ret = (QTreeWidgetItem*)callOverrideFun(fun, 458, 0, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidgetItem::clone(); } return ret; }
-    QVariant data(int x1, int x2) const { quint64 id = LObjects::override_id(unique, 494); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 494, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidgetItem::data(x1, x2); } return ret; }
-    void setData(int x1, int x2, const QVariant& x3) { quint64 id = LObjects::override_id(unique, 495); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 495, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTreeWidgetItem::setData(x1, x2, x3); }}
+    QVariant data(int x1, int x2) const { quint64 id = LObjects::override_id(unique, 493); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 493, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidgetItem::data(x1, x2); } return ret; }
+    void setData(int x1, int x2, const QVariant& x3) { quint64 id = LObjects::override_id(unique, 494); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 494, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTreeWidgetItem::setData(x1, x2, x3); }}
 };
 
 class LUndoCommand : public QUndoCommand {
@@ -1894,10 +1895,10 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    int id() const { quint64 id = LObjects::override_id(unique, 496); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 496, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QUndoCommand::id(); } return ret; }
-    bool mergeWith(const QUndoCommand* x1) { quint64 id = LObjects::override_id(unique, 497); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 497, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QUndoCommand::mergeWith(x1); } return ret; }
-    void redo() { quint64 id = LObjects::override_id(unique, 498); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 498, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QUndoCommand::redo(); }}
-    void undo() { quint64 id = LObjects::override_id(unique, 499); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 499, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QUndoCommand::undo(); }}
+    int id() const { quint64 id = LObjects::override_id(unique, 495); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 495, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QUndoCommand::id(); } return ret; }
+    bool mergeWith(const QUndoCommand* x1) { quint64 id = LObjects::override_id(unique, 496); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 496, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QUndoCommand::mergeWith(x1); } return ret; }
+    void redo() { quint64 id = LObjects::override_id(unique, 497); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 497, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QUndoCommand::redo(); }}
+    void undo() { quint64 id = LObjects::override_id(unique, 498); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 498, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QUndoCommand::undo(); }}
 };
 
 class LUrl : public QUrl {

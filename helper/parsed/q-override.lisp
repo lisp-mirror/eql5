@@ -937,8 +937,7 @@
    "virtual bool event ( QEvent * )")
   (("QLocalServer" . "QObject")
    "virtual bool hasPendingConnections () const"
-   "virtual QLocalSocket * nextPendingConnection ()"
-   "virtual void incomingConnection ( quintptr )")
+   "virtual QLocalSocket * nextPendingConnection ()")
   (("QLocalSocket" . "QIODevice")
    "virtual qint64 bytesAvailable () const"
    "virtual qint64 bytesToWrite () const"
@@ -1116,6 +1115,8 @@
    "virtual int duration () const"
    "virtual bool event ( QEvent * )"
    "virtual void updateCurrentTime ( int )")
+  (("QPdfWriter" . "QObject")
+   "virtual bool newPage ()")
   (("QPinchGesture" . "QGesture"))
   (("QPlainTextDocumentLayout" . "QAbstractTextDocumentLayout")
    "virtual QRectF blockBoundingRect ( const QTextBlock & ) const"

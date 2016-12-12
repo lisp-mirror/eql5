@@ -20,10 +20,6 @@ EQL::EQL() : QObject() {
     LObjects::ini(this);
     read_VV(OBJNULL, ini_EQL); } // see "src/make-eql-lib.lisp"
 
-EQL::~EQL() {
-    LObjects::cleanUp();
-    cl_shutdown(); }
-
 void EQL::ini(char** argv) {
     cl_booted = true;
     cl_boot(1, argv); }

@@ -93,7 +93,6 @@
    "protected void beginResetModel ()"
    "protected void changePersistentIndex ( const QModelIndex & , const QModelIndex & )"
    "protected void changePersistentIndexList ( const QModelIndexList & , const QModelIndexList & )"
-   "protected QModelIndex createIndex ( int , int , quintptr ) const"
    "protected void endInsertColumns ()"
    "protected void endInsertRows ()"
    "protected void endMoveColumns ()"
@@ -3144,6 +3143,21 @@
    "new QPauseAnimation ( int , QObject * = 0 )"
    "void setDuration ( int )"
    "virtual int duration () const")
+  (("QPdfWriter" . "QObject")
+   "new QPdfWriter ( const QString & )"
+   "QString creator () const"
+   "QPageLayout pageLayout () const"
+   "int resolution () const"
+   "void setCreator ( const QString & )"
+   "bool setPageLayout ( const QPageLayout & )"
+   "bool setPageMargins ( const QMarginsF & )"
+   "bool setPageMargins ( const QMarginsF & , QPageLayout::Unit )"
+   "bool setPageOrientation ( QPageLayout::Orientation )"
+   "bool setPageSize ( const QPageSize & )"
+   "void setResolution ( int )"
+   "void setTitle ( const QString & )"
+   "QString title () const"
+   "virtual bool newPage ()")
   (("QPinchGesture" . "QGesture")
    "QPointF centerPoint () const"
    "ChangeFlags changeFlags () const"

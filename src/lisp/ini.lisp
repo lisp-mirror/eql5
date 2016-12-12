@@ -1,6 +1,6 @@
 ;;; copyright (c) Polos Ruetz
 
-(ffi:clines "#include <stdlib.h>") ; for exit()
+(ffi:clines "#include <stdlib.h>")
 
 (in-package :eql)
 
@@ -696,12 +696,15 @@
 (defun qquit (&optional (exit-status 0) (kill-all-threads t))
   "args: (&optional (exit-status 0) (kill-all-threads t))
    alias: qq
-   Terminates EQL. Use this function to quit gracefully, <b>not</b> <code>ext:quit</code>."
+   Terminates EQL. Use this function to quit gracefully, <b>not</b> <code>ext:quit</code>.<br><br>Negative values for <code>exit-status</code> will call <code>abort()</code> instead of normal program exit (e.g. to prevent infinite error message loops in some nasty cases)."
   (declare (ignore kill-all-threads)) ; only here to be equivalent to EXT:QUIT 
   (assert (typep exit-status 'fixnum))
   (qfun (qapp) "aboutToQuit")
   (qfun (qapp) "quit")
-  (ffi:c-inline (exit-status) (:int) :void "cl_shutdown(); exit(#0);" :one-liner nil :side-effects t))
+  (ffi:c-inline nil nil :void "cl_shutdown();" :one-liner t :side-effects t)
+  (if (minusp exit-status)
+      (ffi:c-inline nil nil :void "abort();" :one-liner t :side-effects t)
+      (ffi:c-inline (exit-status) (:int) :void "exit(#0);" :one-liner t :side-effects t)))
 
 ;; simplify using CLOS; see example "X-extras/CLOS-encapsulation.lisp"
 
@@ -886,9 +889,12 @@
        (return (tpl-make-command :EOF "")))
       (#\:
        (let ((exp (read-preserving-whitespace)))
-         (return (if (find exp '(:qq :exit))
-                     "(eql:qquit)"
-                     (tpl-make-command exp (read-line))))))
+         (return (cond ((find exp '(:qq :exit))
+                        "(eql:qquit)")
+                       ((find exp '(:qa :abort))
+                        "(eql:qquit -1)")
+                       (t
+                        tpl-make-command exp (read-line))))))
       (#\?
        (read-char)
        (case (peek-char nil *standard-input* nil :EOF)

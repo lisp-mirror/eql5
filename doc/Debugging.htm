@@ -1,21 +1,22 @@
-<html>
-<head>
-<link rel="stylesheet" href="style.css" type="text/css">
-<style>
-pre    { color: black; background-color: #F4F4F4; }
-code   { color: black; }
-.input { color: blue; }
-</style>
-</head>
-<div style="width: 600px">
-<h2>Debugging</h2>
-This is a simple <b>tutorial</b> using the top-level processing Qt events:
-<pre>
-  $ <span class="input">eql5 -qtpl</span>
-</pre>
-<br>
-<h3>Example 1: Error on REPL (trivial)</h3>
-<pre>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Debugging</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+      pre { color: black; background-color: #F4F4F4; }
+      code { color: black; }
+      .input { color: blue; }
+    </style>
+  </head>
+  <div style="width: 600px; margin: 20px;">
+    <h2>Debugging</h2>
+    This is a simple <b>tutorial</b> using the top-level processing Qt events:
+    <pre>  $ <span class="input">eql5 -qtpl</span></pre>
+    <br>
+    <h3>Example 1: Error on REPL (trivial)</h3>
+    <pre>
 
   EQL-USER[1]&gt; <span class="input">(/ 0)</span>
 
@@ -27,47 +28,35 @@ This is a simple <b>tutorial</b> using the top-level processing Qt events:
   2. (RESTART-QT-EVENTS) Restart Qt event processing.
 
   ** BREAK [LEVEL 2]&gt;
-
-</pre>
-&nbsp;&nbsp;&nbsp;<img src="debug-dialog.png"/>
-<p>Note that all debug input is handled in a debug dialog, <b>not</b> in the
-console window.</p>
-<p>So, either type the restart number in the dialog
-<pre><span class="input">  :r1</span></pre>
-or just click Cancel / hit Escape, which will always choose <code>:r1</code>.
-<br>Type <code>:h</code> for all available debug options.
-<p>Both restarts will have the same effect here, see note at bottom.</p>
-<br>&nbsp;
-<h3>Example 2: Error during Qt event processing</h3>
-Start calculator example:
-<pre>
-  $ <span class="input">eql5 -qtpl examples/X-extras/calculator</span>
-</pre>
-<br>
-Let's run this function:
-<pre>
-  EQL-USER[1]&gt; <span class="input">(clc:auto "42 ? blah")</span>
-</pre>
-<br>
-This will output 2 errors, without breaking into the debugger:
-<pre>
+    </pre>
+    &nbsp;&nbsp;&nbsp;<img src="debug-dialog.png" alt="debug  dialog">
+    <p>Note that all debug input is handled in a debug dialog, <b>not</b> in the console window.</p>
+    <p>So, either type the restart number in the dialog</p>
+    <pre><span class="input">  :r1</span></pre>or just click Cancel / hit Escape, which will always choose <code>:r1</code>.
+    <p>Type <code>:h</code> for all available debug options.</p>
+    <p>Both restarts will have the same effect here, see note at bottom.</p>
+    <br>&nbsp;
+    <h3>Example 2: Error during Qt event processing</h3>
+    Start calculator example:
+    <pre>  $ <span class="input">eql5 -qtpl examples/X-extras/calculator</span></pre>
+    <br>
+    Let's run this function:
+    <pre>  EQL-USER[1]&gt; <span class="input">(clc:auto "42 ? blah")</span></pre>
+    <br>
+    This will output 2 errors, without breaking into the debugger:
+    <pre>
 
   [EQL:err] QFIND-CHILD #&lt;QDialog "" 0x39737d0 [1]&gt; "?"
 
   [EQL:err] QINVOKE-METHOD NIL NIL "animateClick" (400)
-
-</pre>
-<p><b>Note</b>: After eventual print output (like the above), you
-  won't see a fresh top-level prompt.<br>Don't get confused by this, as
-  you can continue to enter commands.</p>
-<br>
-Now make EQL errors break into the debugger:
-<pre>
-  EQL-USER[2]&gt; <span class="input">(setf eql:*break-on-errors* t)</span>
-</pre>
-<br>
-Run our function again:
-<pre>
+    </pre>
+    <p><b>Note</b>: After eventual print output (like the above), you won't see a fresh top-level prompt.<br>Don't get confused by this, as you can continue to enter commands.</p>
+    <br>
+    Now make EQL errors break into the debugger:
+    <pre>  EQL-USER[2]&gt; <span class="input">(setf eql:*break-on-errors* t)</span></pre>
+    <br>
+    Run our function again:
+    <pre>
 
   EQL-USER[3]&gt; <span class="input">(clc:auto "42 ? blah")</span>
 
@@ -81,62 +70,53 @@ Run our function again:
   2. (RESTART-QT-EVENTS) Restart Qt event processing.
 
   ** BREAK [LEVEL 1]&gt;
-
-</pre>
-&nbsp;&nbsp;&nbsp;<img src="debug-dialog.png"/>
-<p>Now there are 2 possible restarts:</p>
-<pre><span class="input">  :r1</span></pre>
-<code>(CONTINUE)</code> will continue execution, which will break on
-the next error, then finish our function.
-<pre><span class="input">  :r2</span></pre>
-<code>(RESTART-QT-EVENTS)</code> will abort execution, returning to
-the REPL immediately.
-<br><br>
-<hr>
-<br><br>
-<h3>Notes</h3>
-There is one situation where interactive debugging won't work, and
-this is in code inside an (overridden)
-<pre>  "paintEvent(QPaintEvent*)"</pre> function, as this may cause
-recursive paint events and segfaults.
-<br>&nbsp;
-<br>&nbsp;<br>
-To exit instantly from EQL during debugging (on nasty errors), just type
-<pre><span class="input">  :qq</span> / <span class="input">:exit</span></pre>
-in the debug dialog (or REPL).
-<br>&nbsp;
-<br>&nbsp;<br>
-On simple <code>read</code> errors on the REPL (e.g. non-existing packages, non-external symbols), the debugger will not be entered (as this would cause an unrecoverable <code>break</code>, since <code>read</code> runs in its own thread here); instead, the erroneous input string will be returned as-is.
-<br>&nbsp;
-<br>&nbsp;<br>
-The conflicting case
-<pre>  (RESTART-TOPLEVEL)
+    </pre>
+    &nbsp;&nbsp;&nbsp;<img src="debug-dialog.png" alt="debug dialog">
+    <p>Now there are 2 possible restarts:</p>
+    <pre><span class="input">  :r1</span></pre>
+    <code>(CONTINUE)</code> will continue execution, which will break on the next error, then finish our function.
+    <pre><span class="input">  :r2</span></pre>
+    <code>(RESTART-QT-EVENTS)</code> will abort execution, returning to the REPL immediately.
+    <br><br>
+    <hr>
+    <br><br>
+    <h3>Notes</h3>
+    There is one situation where interactive debugging won't work, and this is in code inside an (overridden)
+    <pre>  "paintEvent(QPaintEvent*)"</pre> function, as this may cause recursive paint events and segfaults.
+    <br>&nbsp;
+    <br>&nbsp;<br>
+    To exit instantly from EQL during debugging (on nasty errors), just type
+    <pre><span class="input">  :qq</span> / <span class="input">:exit</span></pre> in the debug dialog (or REPL).
+    <p>Optionally you can also directly abort (see respective C function) by typing:</p>
+    <pre><span class="input">  :qa</span> / <span class="input">:abort</span></pre>
+    <br><p>On simple <code>read</code> errors on the REPL (e.g. non-existing packages, non-external symbols), the debugger will not be entered (as this would cause an unrecoverable <code>break</code>, since <code>read</code> runs in its own thread here); instead, the erroneous input string will be returned as-is.</p>
+    <br><p>The conflicting case</p>
+    <pre>
+  (RESTART-TOPLEVEL)
   (RESTART-QT-EVENTS)</pre>
 is resolved automatically (<code>RESTART-QT-EVENTS</code> would block the REPL in this case).
-<br>&nbsp;
-<br>&nbsp;
-<br>
-<h3>Tips</h3>
-You might want to put this in your <code>~/.eclrc</code> file:
-<pre>
+    <br>&nbsp;
+    <br>&nbsp;
+    <br>
+    <h3>Tips</h3>
+    You might want to put this in your <code>~/.eclrc</code> file:
+    <pre>
 
   #+eql
   (setf eql:*qtpl*            t  ; same as -qtpl
         eql:*break-on-errors* t)
-
-</pre>
-<br>
-<p>You may find
-<pre>  (qproperties object &amp;optional (depth 1))</pre> very convenient for debugging, as it prints the current state of the interesting object.</p>
-<br>
-<p>In order to automatically switch the REPL to a given package after loading a file, add this line:</p>
-<pre>  (qlater (lambda () (in-package :my-package)))</pre>
-<br>
-<p>If you use ECL readline (see <code>ecl-readline.lisp</code> in sources):<br>After entering <code>:qq</code> (quitting the top-level), the console/shell should always be reset (but you won't probably see the command while typing it; an <code>alias</code> might help):</p>
-<pre>
-  $ <span class="input">reset</span>
-</pre>
-<br>&nbsp;
-<br>&nbsp;
-</div>
+    </pre>
+    <br>
+    <p>You may find</p>
+    <pre>  (qproperties object &amp;optional (depth 1))</pre>
+    <p>very convenient for debugging, as it prints the current state of the interesting object.</p>
+    <br>
+    <p>In order to automatically switch the REPL to a given package after loading a file, add this line:</p>
+    <pre>  (qlater (lambda () (in-package :my-package)))</pre>
+    <br>
+    <p>If you use ECL readline (see <code>ecl-readline.lisp</code> in sources):<br>After entering <code>:qq</code> (quitting the top-level), the console/shell should always be reset (but you won't probably see the command while typing it; an <code>alias</code> might help):</p>
+    <pre>  $ <span class="input">reset</span></pre>
+    <br>&nbsp;
+    <br>&nbsp;
+  </div>
 </html>

@@ -91,7 +91,6 @@ public:
     static QHash<quint64, void*> override_lisp_functions;
 
     static void ini(EQL*);
-    static void cleanUp();
     static uint unique() { return ++i_unique; } // safe: e.g. on 32 bit, 100 new QT-OBJECTs/sec would take more than one year to overflow
     static void deleteNObject(int, void*, int = 0);
     static const QMetaObject* staticMetaObject(const QByteArray&, int n = 0);

@@ -4,8 +4,6 @@
 (load "share")
 (load "load-modules")
 
-(use-package :x)
-
 (defparameter *skip*
   (list "(preliminary)"
         "(deprecated)"
@@ -38,7 +36,10 @@
         "NSMenu"
         "NSURL"
         "qintptr"
+        "quintptr"
+        "quint8 *"
         "qwsSet"
+        "sockaddr"
         "uchar *"
         "void *"
         "winPage"
@@ -206,13 +207,13 @@
            (qpainter (and pub (string= "QPainter" class)))
            (qvariant (and pub (string= "QVariant" class))))
       (cond (qpainter
-             (dolist (device (list "QImage" "QPicture" "QPixmap" "QPrinter" "QWidget")) 
+             (dolist (device (list "QImage" "QPdfWriter" "QPicture" "QPixmap" "QPrinter" "QWidget")) 
                (format s "~%   \"new QPainter ( ~A * )\"~
                           ~%   \"bool begin ( ~A * )\""
                        device device)))
             (qvariant
              (format s "~%   \"new QVariant ( const QCursor & )\"")))        
-      (let ((static (starts-with "static" type))
+      (let ((static (x:starts-with "static" type))
             (protected (search "protected" type))
             (p (search* (format nil "~%~A~%~%" type) text)))
         (when p
@@ -230,9 +231,9 @@
                     (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QRect_QWIDGET_GRAB)")))
                   (let* ((fun (tokenize x:it))
                          (new (and (not static)
-                                   (or (starts-with (format nil "Q_INVOKABLE ~A (" class) fun)
-                                       (starts-with (format nil "~A (" class) fun))))
-                         (virtual (starts-with "virtual" fun)))
+                                   (or (x:starts-with (format nil "Q_INVOKABLE ~A (" class) fun)
+                                       (x:starts-with (format nil "~A (" class) fun))))
+                         (virtual (x:starts-with "virtual" fun)))
                     (unless (or (and qpainter (search "QPaintDevice" fun :test 'string=))
                                 (and new no-new)
                                 (and new protected)
@@ -247,11 +248,11 @@
                                                         (protected "protected ")
                                                         (static "static ")
                                                         (t ""))
-                                (subseq fun (if (starts-with "Q_INVOKABLE" fun) 12 0)))))))))))))))
+                                (subseq fun (if (x:starts-with "Q_INVOKABLE" fun) 12 0)))))))))))))))
 
 (defun parse-classes (classes s so non)
   (dolist (class classes)
-    (let* ((no-new (starts-with "//" class))
+    (let* ((no-new (x:starts-with "//" class))
            (class* (string-left-trim "/" class))
            (file class*))
       (x:when-it (search "::" class*)
@@ -284,9 +285,9 @@
                   (format so "(defparameter *~C-override* '(~%" pre)
                   (format s "(defparameter *~C-methods* '(~%" pre)
                   (parse-classes (mapcar (lambda (name)
-                                           (string-trim "= " (if-it (position #\( name)
-                                                                 (subseq name 0 it)
-                                                                 name)))
+                                           (string-trim "= " (x:if-it (position #\( name)
+                                                                      (subseq name 0 x:it)
+                                                                      name)))
                                          names)
                                  s so non)))))
           (list *q-names* *n-names*)

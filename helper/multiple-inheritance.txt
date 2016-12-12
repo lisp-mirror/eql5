@@ -5,6 +5,7 @@ QGraphicsWidget: QGraphicsObject and QGraphicsLayoutItem
 QMediaPlaylist: QObject and QMediaBindableInterface
 QMediaRecorder: QObject and QMediaBindableInterface
 QPaintDeviceWindow: QWindow and QPaintDevice
+QPdfWriter: QObject and QPagedPaintDevice
 QWidget: QObject and QPaintDevice
 QWindow: QObject and QSurface
 QAccessibleWidget: QAccessibleObject and QAccessibleActionInterface

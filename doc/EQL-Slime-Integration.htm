@@ -1,23 +1,29 @@
-<html>
-<head>
-<style>
-body { font-family: sans-serif; font-size: 14px; }
-pre  { background-color: #F4F4F4; }
-</style>
-</head>
-<body>
-<div style="width: 700px; margin: 20px;">
-<h2>EQL (ECL + Qt) in Slime -- how does it work?</h2>
-<ul>
-  <li><p>Start swank using the EQL executable, running the swank server in an ECL thread, and using the main thread for the Qt main event loop.</p>
-  <li><p>Wrap every internal EQL function in a macro, which will call the function either directly (if called from GUI/main thread), or, if called from another ECL thread, will wrap the function call in a closure.</p>
-  <li><p>This closure will be passed to a queued, blocking Qt function running in the GUI thread, which will in turn call the closure.</p>
-</ul>
-<p>The crucial part is passing a Lisp closure from an ECL thread to Qt and calling it from C++ in the GUI/main thread.</p>
-<p>This is trivial in ECL/Qt, since both ECL and Qt use/wrap native C threads, and Qt offers a nice utility with <code>Q_INVOKABLE</code>.</p>
-<p>First let's wrap the actual Lisp function, e.g. <code>(foo x y)</code> in a closure, so we only need to pass <b>one ECL closure pointer</b> to C++.
-<p>No need to pass Lisp arguments to C++, they are in the closure; no return value needed from C++, Lisp return values will be assigned in the closure:</p>
-<pre>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>EQL Slime integration</title>
+    <meta charset="utf-8">
+    <style>
+      body { font-family: sans-serif; font-size: 14px; }
+      pre { background-color: #F4F4F4; }
+      a:link, a:visited { text-decoration: none; color: blue; }
+      a:hover { text-decoration: underline; }
+      body { font-family: sans-serif; font-size: 10pt; }
+    </style>
+  </head>
+  <body>
+    <div style="width: 600px; margin: 20px;">
+      <h2>EQL in Slime -- how does it work?</h2>
+      <ul>
+        <li><p>Start swank using the EQL executable, running the swank server in an ECL thread, and using the main thread for the Qt main event loop.</p>
+        <li><p>Wrap every internal EQL function in a macro, which will call the function either directly (if called from GUI/main thread), or, if called from another ECL thread, will wrap the function call in a closure.</p>
+        <li><p>This closure will be passed to a queued, blocking Qt function running in the GUI thread, which will in turn call the closure.</p>
+      </ul>
+      <p>The crucial part is passing a Lisp closure from an ECL thread to Qt and calling it from C++ in the GUI/main thread.</p>
+      <p>This is trivial in ECL/Qt, since both ECL and Qt use/wrap native C threads, and Qt offers a nice utility with <code>Q_INVOKABLE</code>.</p>
+      <p>First let's wrap the actual Lisp function, e.g. <code>(foo x y)</code> in a closure, so we only need to pass <b>one ECL closure pointer</b> to C++.
+      <p>No need to pass Lisp arguments to C++, they are in the closure; no return value needed from C++, Lisp return values will be assigned in the closure:</p>
+      <pre>
 
   ;; in some ECL thread
   (let (values)
@@ -29,10 +35,9 @@ pre  { background-color: #F4F4F4; }
 
     ;; back in some ECL thread
     (values-list values))
-
-</pre>
-<p>Here the implementation of the ECL function <code>run-in-gui-thread</code> (embedded in Qt):</p>
-<pre>
+      </pre>
+      <p>Here the implementation of the ECL function <code>run-in-gui-thread</code> (embedded in Qt):</p>
+      <pre>
 
   cl_object run_in_gui_thread(cl_object closure) // define ECL function
   {
@@ -44,21 +49,19 @@ pre  { background-color: #F4F4F4; }
 
       return Cnil;
   }
-
-</pre>
-<p>Now the Lisp closure will run in the GUI/main thread, and the implementation of the Qt function <code>runInGuiThread</code> is as simple as:</p>
-<pre>
+      </pre>
+      <p>Now the Lisp closure will run in the GUI/main thread, and the implementation of the Qt function <code>runInGuiThread</code> is as simple as:</p>
+      <pre>
 
   Q_INVOKABLE void runInGuiThread(void* closure) // note Q_INVOKABLE
   {
       cl_funcall(1, (cl_object)closure); // ECL function call
   }
-
-</pre>
-<p>After introducing a macro <code>qrun*</code>, and wrapping all EQL functions in it (see <nobr><code>"slime/thread-safe.lisp"</code></nobr>), we are done!</p>
-<p>(Please note that the above code is a stripped down version, see sources for the actual implementation.)</p>
-<br>
-</div>
-</body>
+      </pre>
+      <p>After introducing a macro <code>qrun*</code>, and wrapping all EQL functions in it (see <code>"slime/thread-safe.lisp"</code>), we are done!</p>
+      <p>(Please note that the above code is a stripped down version, see sources for the actual implementation.)</p>
+      <br>
+    </div>
+  </body>
 </html>
 

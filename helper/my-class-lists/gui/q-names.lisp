@@ -115,6 +115,7 @@
         "QPanGesture"
         "QParallelAnimationGroup"
         "QPauseAnimation"
+        "QPdfWriter"
         "QPinchGesture"
         "QPlainTextDocumentLayout"
         "QPlainTextEdit"

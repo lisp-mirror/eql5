@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q230 : public QObject { // QVideoWidgetControl
+class Q231 : public QObject { // QVideoWidgetControl
     Q_OBJECT
 public:
     Q_INVOKABLE int MaspectRatioMode(QVideoWidgetControl* o) const { return o->aspectRatioMode(); }
@@ -297,7 +297,7 @@ class Q125 : public Q136 { // QMediaService
 public:
 };
 
-class Q160 : public Q121 { // QRadioTuner
+class Q161 : public Q121 { // QRadioTuner
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LRadioTuner(u, x1); }
@@ -362,7 +362,7 @@ public:
     Q_INVOKABLE int Mavailability(QCamera* o) const { return o->availability(); }
 };
 
-class Q229 : public Q237 { // QVideoWidget
+class Q230 : public Q238 { // QVideoWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LVideoWidget(u, x1); }
@@ -376,7 +376,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QVideoWidget* o) const { return o->sizeHint(); }
 };
 
-class Q34 : public Q229 { // QCameraViewfinder
+class Q34 : public Q230 { // QCameraViewfinder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LCameraViewfinder(u, x1); }

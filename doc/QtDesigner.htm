@@ -1,26 +1,27 @@
-<html>
-<head>
-<link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<h2>Qt Designer</h2>
-<ul>
-<li>In Qt Designer, set a unique <code>objectName</code> to every object you want to use from Lisp.
-<li>In Lisp, load the <code>*.ui</code> file using <code>qload-ui</code> (which will return the main widget of the UI).
-<li>To get the single widgets from the UI, use <code>qfind-child</code>.
-</ul>
-<p>For an example, see <code>examples/3-main-window.lisp</code>.</p>
-<hr>
-<p>
-If you want to translate your UI files to the corresponding EQL code, do the following
-at the command line:
-<p><code>&nbsp;&nbsp;eql5 -quic file.ui</code></p>
-which will generate a file named <code>ui-file.lisp</code>. See also function <code>quic</code>.
-<br>If you want to use widgets from modules, make sure the modules are available when you use <code>-quic</code> (they will then be loaded automatically).
-</p>
-<p>
-For a quick test of the generated file, try this:
-<p><code>&nbsp;&nbsp;eql5 ui-file.lisp</code>
-<br><code>&nbsp;&nbsp;EQL-USER&gt; (ui:ini t)</code></p>
-(This will only work if you don't use widgets from modules; otherwise you need to load the modules first, using <code>qrequire</code>.)
-</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Qt Designer</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+  <div style="width: 600px; margin: 20px;">
+  <h2>Qt Designer</h2>
+  <ul>
+    <li>In Qt Designer, set a unique <code>objectName</code> to every object you want to use from Lisp.
+    <li>In Lisp, load the <code>*.ui</code> file using <code>qload-ui</code> (which will return the main widget of the UI).
+    <li>To get the single widgets from the UI, use <code>qfind-child</code>.
+  </ul>
+  <p>For an example, see <code>examples/3-main-window.lisp</code>.</p>
+  <hr>
+  <p>If you want to translate your UI files to the corresponding EQL code, do the following at the command line:</p>
+  <p><code>&nbsp;&nbsp;eql5 -quic file.ui</code></p> which will generate a file named <code>ui-file.lisp</code>. See also function <code>quic</code>.
+  <p>If you want to use widgets from modules, make sure the modules are available when you use <code>-quic</code> (they will then be loaded automatically).</p>
+  <p>For a quick test of the generated file, try this:</p>
+  <p><code>&nbsp;&nbsp;eql5 ui-file.lisp</code>
+  <br><code>&nbsp;&nbsp;EQL-USER&gt; (ui:ini t)</code></p>
+  <p>(This will only work if you don't use widgets from modules; otherwise you need to load the modules first, using <code>qrequire</code>.)</p>
+  </div>
+  </body>
 </html>

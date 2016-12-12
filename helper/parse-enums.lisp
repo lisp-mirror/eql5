@@ -6,8 +6,6 @@
 (load "../src/lisp/x")
 (load "share")
 
-(use-package :x)
-
 (defparameter *skip*
   (list "QStyle::CC_"
         "QStyle::CT_"
@@ -58,9 +56,9 @@
     (write-char #\( s)
     (dolist (names (list *q-names* *n-names* *namespaces*))
       (parse-classes (mapcar (lambda (name)
-                               (string-trim "= " (if-it (position #\( name)
-                                                     (subseq name 0 it)
-                                                     name)))
+                               (string-trim "= " (x:if-it (position #\( name)
+                                                          (subseq name 0 it)
+                                                          name)))
                              names)
                      s))
     (terpri s)

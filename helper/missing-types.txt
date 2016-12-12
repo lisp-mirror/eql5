@@ -74,5 +74,3 @@ QVector<QSslEllipticCurve>
 QVector<QStaticPlugin>
 QVector<QVariant>
 QWindowList
-quintptr
-sockaddr

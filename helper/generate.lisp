@@ -923,15 +923,6 @@
         (format s "~%        qNames = q_names.keys();~
                    ~%        nNames = n_names.keys(); }}~
                    ~%~
-                   ~%void LObjects::cleanUp() {~
-                   ~%    delete EQL::eventLoop;~
-                   ~%    delete[] override_arg_types;~
-                   ~%    for(int i = ~D; i + 1; --i) { delete N[i]; }~
-                   ~%    for(int i = ~D; i + 1; --i) { delete Q[i]; }~
-                   ~%    delete[] N;~
-                   ~%    delete[] Q;~
-                   ~%    delete dynObject; }~
-                   ~%~
                    ~%quint64 LObjects::override_id(uint unique, int id) {~
                    ~%    return (~D * (quint64)unique + id); }~
                    ~%~
