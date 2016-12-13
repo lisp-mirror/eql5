@@ -1,7 +1,7 @@
 QT          += multimedia multimediawidgets printsupport uitools
 TEMPLATE    = lib
 CONFIG      += dll no_keywords release
-LIBS        += -L.. -leql5
+LIBS        += -L.. -lecl -leql5
 TARGET      = eql5_multimedia
 DESTDIR     = ../
 OBJECTS_DIR = ./tmp/multimedia/

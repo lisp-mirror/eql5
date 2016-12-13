@@ -1,5 +1,8 @@
 ;;; port of example "camera" (QtMultimediaWidgets)
 
+#-qt-wrapper-functions ; see README-OPTIONAL.txt
+(load (in-home "src/lisp/all-wrappers"))
+
 (qrequire :multimedia)
 
 (defpackage :camera

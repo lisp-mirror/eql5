@@ -7,7 +7,7 @@
 
 (in-package :eql-user)
 
-(load "ui/ui-dom") ; generated: "eql5 -quic dom.ui"
+(require :ui (in-home "examples/M-modules/webkit/ui/ui-dom")) ; generated: "eql5 -quic dom.ui"
 
 (defun ini (&optional url)
   (ui:ini t)

@@ -1,7 +1,7 @@
 QT          += help printsupport uitools
 TEMPLATE    = lib
 CONFIG      += dll no_keywords release
-LIBS        += -L.. -leql5
+LIBS        += -L.. -lecl -leql5
 TARGET      = eql5_help
 DESTDIR     = ../
 OBJECTS_DIR = ./tmp/help/

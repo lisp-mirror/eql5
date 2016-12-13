@@ -21,9 +21,13 @@
     <li>Add to your <code>~/.swank.lisp</code> file (or copy file <code>eql5/slime/.swank.lisp</code> in your home directory):
     <br>(Please note: this isn't really optional -- you <b>need</b> to set this option for a useful Slime + EQL.)
     <pre>(setf swank:*globally-redirect-io* t) ; show print output in Emacs</pre>
-    <li>Copy file <code>eql5/slime/eql-start-swank.lisp</code> in your <code>slime/</code> directory
-  </ul>
+    <li><p>Copy file <code>eql5/slime/eql-start-swank.lisp</code> in your <code>slime/</code> directory</p>
+    <li><i>Optionally:</i><br>In order to indent <code>qlet</code> correctly, edit your <code>slime/contrib/slime-cl-indent.el</code> file and add a line:
+  <pre>
+(let* (as let)) ; already there
+(qlet (as let)) ; new</pre>
   <br>
+  </ul>
   <h3>Run</h3>
   <ul>
     <li>Run the swank server (the command line option <code>-slime</code> can be omitted if the file name contains "start-swank"), optionally passing a Lisp file:

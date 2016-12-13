@@ -156,7 +156,7 @@
   (change-values))
 
 (defun save ()
-  (let ((name (|getSaveFileName.QFileDialog| nil "" *file* "Images (*.png *.jpg)")))
+  (let ((name (|getSaveFileName.QFileDialog| *main* "" *file* "Images (*.png *.jpg)")))
     (unless (x:empty-string name)
       (if (pathname-type name)
           (let ((*saving* t))

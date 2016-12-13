@@ -29,7 +29,7 @@ This macro simplifies the definition of UI variables:
 Returns the <code>qt-object</code> of the given class/struct (see method <code>the-qt-object</code> in example <code>X-extras/CLOS-encapsulation.lisp</code>).<br>This function is used internally whenever a <code>qt-object</code> argument is expected.
 <br>
 <br><br>
-<b>QADD-EVENT-FILTER (object event function)</b>
+<b>QADD-EVENT-FILTER (object event function)</b>
 <br><br>
 Convenience function. Adds a Lisp function to be called on a given event type.<br>If the object argument is <code>NIL</code>, the event will be captured for the whole application.<br>If the Lisp function returns <code>NIL</code>, the event will be processed by Qt afterwards.<br><br>Returns a handle which can be used to remove the filter, see <code>qremove-event-filter</code>.<br><br>See also <code>qoverride</code> for <code>QObject::eventFilter(QObject*,QEvent*)</code> and <br><code>QObject::installEventFilter(QObject*)</code>,<br><code>QObject::removeEventFilter(QObject*)</code>.<br><br>The event class corresponds to the respective event type (no cast needed).
 <br>
@@ -37,19 +37,19 @@ Convenience function. Adds a Lisp function to be called on a given event type.<b
   (qadd-event-filter nil |QEvent.MouseButtonPress| (lambda (object mouse-event) (print object) nil))
 </pre>
 <br><br>
-<b>QAPP ()</b>
+<b>QAPP ()</b>
 <br><br>
 Convenience function returning <code>qApp</code>.
 <br>
 <br><br>
-<b>QAPROPOS (&optional search-string class-name)</b>
+<b>QAPROPOS (&optional search-string class-name)</b>
 <br><br>
 Finds all occurrencies of the given search string in the given object's meta information.<br>Constructors are listed under "Methods".<br>To list the user defined functions of external C++ classes (see Qt_EQL), pass the object instead of the class name.
 <br>
 <pre>
   (qapropos "html" "QTextEdit")
   (qapropos nil "QWidget")
-  (qapropos)             
+  (qapropos)
   (qapropos '|toString|)   ; wrapper function symbol
   (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL (custom Qt classes)
 </pre>
@@ -69,17 +69,17 @@ Similar to <code>qapropos</code>, returning the results as nested list.
   (setf *c++-reloaded* (lambda (var lib) (qapropos nil (symbol-value var)))) ; optional: set a notifier
 </pre>
 <br><br>
-<b>QCALL-DEFAULT ()</b>
+<b>QCALL-DEFAULT ()</b>
 <br><br>
 To use anywhere inside an overridden function (see <code>qoverride</code>).<br>Calls the base implementation of the virtual Qt method <b>after</b> leaving the function body.<br><br>Optionally call the base implementation directly (if you want to do post-processing of the return value).
 <br>
 <br><br>
-<b>QCLEAR-EVENT-FILTERS ()</b>
+<b>QCLEAR-EVENT-FILTERS ()</b>
 <br><br>
 Clears all added event filters.
 <br>
 <br><br>
-<b>QCONNECT (caller signal receiver/function &optional slot)</b>
+<b>QCONNECT (caller signal receiver/function &optional slot)</b>
 <br><br>
 Connects either a Qt signal to a Qt slot, or a Qt signal to a Lisp function.
 <br>
@@ -88,7 +88,7 @@ Connects either a Qt signal to a Qt slot, or a Qt signal to a Lisp function.
   (qconnect edit "textChanged(QString)" (lambda (txt) (print txt)))
 </pre>
 <br><br>
-<b>QCOPY (object)</b>
+<b>QCOPY (object)</b>
 <br><br>
 Copies <code>object</code> using copy-on-write, if such a constructor is available (non QObject derived classes only).<br>This function is short for e.g: <code>(qnew "QPixmap(QPixmap)" pixmap)</code><br><br>Note that the returned value will not be garbage collected (analogous to <code>qnew</code>).
 <br>
@@ -96,9 +96,9 @@ Copies <code>object</code> using copy-on-write, if such a constructor is availab
   (qcopy pixmap) ; QPen, QBrush, QFont, QPalette, QPixmap, QImage...
 </pre>
 <br><br>
-<b>QDELETE (object &optional later)</b>
+<b>QDELETE (object &optional later)</b>
 <br>
-<b>QDEL</b>
+<b>QDEL</b>
 <br><br>
 Deletes any Qt object, and sets the <code>pointer</code> value to <code>0</code>. Deleting a widget deletes all its child widgets, too.<br>If <code>later</code> is not <code>NIL</code>, the function <code>QObject::deleteLater()</code> will be called instead (but note: the <code>object</code> pointer will be set to <code>0</code> immediately.)<br>Returns <code>T</code> if the object has effectively been deleted.<br><br>See also <code>qlet</code> for local Qt objects.
 <br>
@@ -107,7 +107,7 @@ Deletes any Qt object, and sets the <code>pointer</code> value to <code>0</code>
   (qdel socket :later)
 </pre>
 <br><br>
-<b>QDISCONNECT (caller &optional signal receiver/function slot)</b>
+<b>QDISCONNECT (caller &optional signal receiver/function slot)</b>
 <br><br>
 Disconnects signals to either Qt slots or Lisp functions. Anything but the caller can be either <code>NIL</code> or omitted.<br>Returns <code>T</code> if something has effectively been disconnected.
 <br>
@@ -118,7 +118,7 @@ Disconnects signals to either Qt slots or Lisp functions. Anything but the calle
   (qdisconnect edit)
 </pre>
 <br><br>
-<b>QENUMS (class-name &optional enum-name)</b>
+<b>QENUMS (class-name &optional enum-name)</b>
 <br><br>
 Returns the meta enum list of the given <code>class-name</code> and <code>enum-name</code> (see <code>Q_ENUMS</code> in Qt sources).<br>Omitting <code>enum-name</code> will return all meta enum lists  of the class/scope.
 <br>
@@ -135,7 +135,7 @@ Returns <code>T</code> for same instances of a Qt class. Comparing <code>QVarian
   (= (qt-object-id object1) (qt-object-id object2))
 </pre>
 <br><br>
-<b>QESCAPE (string)</b>
+<b>QESCAPE (string)</b>
 <br><br>
 Calls <code>QString::toHtmlEscaped()</code>.
 <br>
@@ -145,12 +145,12 @@ Calls <code>QString::toHtmlEscaped()</code>.
 Slime mode <code>:repl-hook</code> only (not needed in default Slime mode): evaluate forms in GUI thread. Defaults to a simple <code>progn</code> outside of Slime.
 <br>
 <br><br>
-<b>QEXEC (&optional milliseconds)</b>
+<b>QEXEC (&optional milliseconds)</b>
 <br><br>
 Convenience function to call <code>QApplication::exec()</code>.<br>Optionally pass the time in milliseconds after which <code>QEventLoop::exit()</code> will be called.<br>See also <code>qsleep</code>.
 <br>
 <br><br>
-<b>QEXIT ()</b>
+<b>QEXIT ()</b>
 <br><br>
 Calls <code>QEventLoop::exit()</code>, in order to exit event processing after a call to <code>qexec</code> with a timeout.<br>Returns <code>T</code> if the event loop has effectively been exited.
 <br>
@@ -168,7 +168,7 @@ Finds all symbols bound to Qt objects, returning both the Qt class names and the
 Like <code>qfind-bound</code>, but returning the results as list of conses.
 <br>
 <br><br>
-<b>QFIND-CHILD (object object-name)</b>
+<b>QFIND-CHILD (object object-name)</b>
 <br><br>
 Calls <code>QObject::findChild&lt;QObject*&gt;()</code>.<br>Can be used to get the child objects of any Qt object (typically from a UI, see <code>qload-ui</code>), identified by <code>QObject::objectName()</code>.
 <br>
@@ -176,7 +176,7 @@ Calls <code>QObject::findChild&lt;QObject*&gt;()</code>.<br>Can be used to get t
   (qfind-child *main* "editor")
 </pre>
 <br><br>
-<b>QFIND-CHILDREN (object &optional object-name class-name)</b>
+<b>QFIND-CHILDREN (object &optional object-name class-name)</b>
 <br><br>
 Calls <code>QObject::findChildren&lt;QObject*&gt;()</code>, returning a list of all child objects matching <code>object-name</code> and <code>class-name</code>.<br>Omitting the <code>&optional</code> arguments will find all children, recursively.
 <br>
@@ -184,7 +184,7 @@ Calls <code>QObject::findChildren&lt;QObject*&gt;()</code>, returning a list of 
   (qfind-children *qt-main* nil "LightWidget") ; see Qt_EQL example
 </pre>
 <br><br>
-<b>QFROM-UTF8 (byte-array)</b>
+<b>QFROM-UTF8 (byte-array)</b>
 <br><br>
 Returns the byte array (vector of octets) converted using <code>QString::fromUtf8()</code>.
 <br>
@@ -194,7 +194,7 @@ Returns the byte array (vector of octets) converted using <code>QString::fromUtf
 Launches the EQL convenience GUI.<br>If you don't have an interactive environment, you can pass <code>T</code> to run a pseudo Qt event loop. A better option is to start the tool like so:<br><code>eql -qgui</code>, in order to run the Qt event loop natively.
 <br>
 <br><br>
-<b>QID (name)</b>
+<b>QID (name)</b>
 <br><br>
 Returns the internally used ID of the object name. Non QObject classes have negative ids.
 <br>
@@ -202,9 +202,9 @@ Returns the internally used ID of the object name. Non QObject classes have nega
   (qid "QWidget")
 </pre>
 <br><br>
-<b>QINVOKE-METHOD (object function-name &rest arguments)</b>
+<b>QINVOKE-METHOD (object function-name &rest arguments)</b>
 <br>
-<b>QFUN</b>
+<b>QFUN</b>
 <br><br>
 Calls any of Qt methods, slots, signals. Static methods can be called by passing the string name of an object.<br><br>The most convenient way of calling Qt methods is to use the wrapper functions (see alternative 2 below), which allows for tab completion, showing all possible candidates in case of ambiguous type lists (overloaded methods). Additionally, static functions are shown as one symbol (easily catching the eye).<br><br>(Optionally you can pass the argument types (as for <code>qconnect</code> and <code>qoverride</code>), which may result in better performance, but only in some edge cases.)
 <br>
@@ -312,7 +312,7 @@ Similar to <code>let*</code> (and to local C++ variables).<br><br>Creates tempor
 Convenience function for Slime (or when loading EQL files from an ECL thread).<br>Loading files that create many Qt objects can be slow on the Slime REPL (many thread switches).<br>This function reduces all thread switches (GUI related) to a single one.
 <br>
 <br><br>
-<b>QLOAD-C++ (library-name &optional unload)</b>
+<b>QLOAD-C++ (library-name &optional unload)</b>
 <br><br>
 Loads a custom Qt/C++ plugin (see <code>Qt_EQL/</code>).<br>The <code>library-name</code> has to be passed as path to the plugin, without file ending.<br><br>This offers a simple way to extend your application with your own Qt/C++ functions.<br>The plugin will be reloaded (if supported by the OS) every time you call this function (Linux: see also <code>qauto-reload-c++</code>).<br>If the <code>unload</code> argument is not <code>NIL</code>, the plugin will be unloaded (if supported by the OS).
 <br>
@@ -324,7 +324,7 @@ Loads a custom Qt/C++ plugin (see <code>Qt_EQL/</code>).<br>The <code>library-na
   (! "mySpeedyQtFunction" (:qt *c++*))       ; call library function (note :qt)
 </pre>
 <br><br>
-<b>QLOAD-UI (file-name)</b>
+<b>QLOAD-UI (file-name)</b>
 <br><br>
 Calls a custom <code>QUiLoader::load()</code> function, loading a UI file created by Qt Designer. Returns the top level widget of the UI.<br>Use <code>qfind-child</code> to retrieve the child widgets.
 <br>
@@ -332,7 +332,7 @@ Calls a custom <code>QUiLoader::load()</code> function, loading a UI file create
   (qload-ui "my-fancy-gui.ui")
 </pre>
 <br><br>
-<b>QLOCAL8BIT (string)</b>
+<b>QLOCAL8BIT (string)</b>
 <br><br>
 Converts a Unicode pathname to a simple ECL base string, using <code>QString::toLocal8Bit()</code> (see <code>QLocale</code> settings).<br>Depending on the OS (namely Windows), this is necessary if you get a filename from Qt and want to use it in ECL.<br><br>See also <b>QUTF8</b>.
 <br>
@@ -344,9 +344,9 @@ Converts a Unicode pathname to a simple ECL base string, using <code>QString::to
 Convenience function: a simple message box, converting <code>x</code> to a string if necessary.<br>Returns its argument (just like <code>print</code>).
 <br>
 <br><br>
-<b>QNEW-INSTANCE (class-name &rest arguments/properties)</b>
+<b>QNEW-INSTANCE (class-name &rest arguments/properties)</b>
 <br>
-<b>QNEW</b>
+<b>QNEW</b>
 <br><br>
 Creates a new Qt object, optionally passing the given arguments to the constructor.<br>Additionally you can pass any number of property/value pairs.<br>Please note how you can abbreviate long type lists.
 <br>
@@ -371,12 +371,12 @@ Convenience function for the REPL.<br>Same as <code>qnew</code>, but showing the
 Checks for a <code>0</code> Qt object pointer.
 <br>
 <br><br>
-<b>QOBJECT-NAMES (&optional type)</b>
+<b>QOBJECT-NAMES (&optional type)</b>
 <br><br>
 Returns all supported object names. Passing either <code>:q</code> or <code>:n</code> returns only the QObject inherited, or not QObject inherited names, respectively.
 <br>
 <br><br>
-<b>QOK ()</b>
+<b>QOK ()</b>
 <br><br>
 Needed to get the boolean <b>ok</b> value in cases like this:
 <br>
@@ -386,7 +386,7 @@ Needed to get the boolean <b>ok</b> value in cases like this:
   (|getFont.QFontDialog| nil) ; NIL needed for &lt;bool*&gt;
 </pre>
 <br><br>
-<b>QOVERRIDE (object name function)</b>
+<b>QOVERRIDE (object name function)</b>
 <br><br>
 Sets a Lisp function to be called on a virtual Qt method.<br>To remove a function, pass <code>NIL</code> instead of the function argument.<br><br>If you call <code>qcall-default</code> anywhere inside your overridden function, the base implementation will be called <b>afterwards</b>.<br>Instead of <code>qcall-default</code> you can directly call the base implementation, which is useful if you want to do post-processing of the returned value.
 <br>
@@ -394,7 +394,7 @@ Sets a Lisp function to be called on a virtual Qt method.<br>To remove a functio
   (qoverride edit "keyPressEvent(QKeyEvent*)" (lambda (ev) (print (|key| ev)) (qcall-default)))
 </pre>
 <br><br>
-<b>QPROCESS-EVENTS ()</b>
+<b>QPROCESS-EVENTS ()</b>
 <br><br>
 Convenience function to call <code>QApplication::processEvents()</code>.
 <br>
@@ -409,9 +409,9 @@ Prints all current properties of <code>object</code>, searching both all Qt prop
   (qproperties *tool-button* 2)                 ; depth 2: both QToolButton and QAbstractButton
 </pre>
 <br><br>
-<b>QPROPERTY (object name)</b>
+<b>QPROPERTY (object name)</b>
 <br>
-<b>QGET</b>
+<b>QGET</b>
 <br><br>
 Gets a Qt property. Enumerator values are returned as <code>int</code> values.<br>Returns <code>T</code> as second return value for successful calls.
 <br>
@@ -426,12 +426,12 @@ Gets a Qt property. Enumerator values are returned as <code>int</code> values.<b
 Terminates EQL. Use this function to quit gracefully, <b>not</b> <code>ext:quit</code>.<br><br>Negative values for <code>exit-status</code> will call <code>abort()</code> instead of normal program exit (e.g. to prevent infinite error message loops in some nasty cases).
 <br>
 <br><br>
-<b>QREMOVE-EVENT-FILTER (handle)</b>
+<b>QREMOVE-EVENT-FILTER (handle)</b>
 <br><br>
 Removes the event filter corresponding to <code>handle</code>, which is the return value of <code>qadd-event-filter</code>.<br>Returns <code>handle</code> if the event filter has effectively been removed.<br>See also <code>qclear-event-filters</code>.
 <br>
 <br><br>
-<b>QREQUIRE (module &optional quiet)</b>
+<b>QREQUIRE (module &optional quiet)</b>
 <br><br>
 Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :sql :svg :webkit</code>
 <br>
@@ -444,9 +444,9 @@ Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if
 Constructs a <code>(unsigned-byte 32)</code> value that represents a 32 bit pixel color specified by the red, green, blue and alpha values.
 <br>
 <br><br>
-<b>QRUN-IN-GUI-THREAD (function &optional (blocking t))</b>
+<b>QRUN-IN-GUI-THREAD (function &optional (blocking t))</b>
 <br>
-<b>QRUN</b>
+<b>QRUN</b>
 <br><br>
 Runs <code>function</code> in GUI thread while (by default) blocking the calling thread (if called from main thread, <code>function</code> will simply be called directly).<br>This is needed to run GUI code from ECL threads other than the main thread.<br>Returns <code>T</code> on success.<br><br>There are 2 reasons to always wrap any EQL function like this, if called from another ECL thread:<ul><li>Qt GUI methods always need to run in the GUI thread<li>EQL functions are not designed to be reentrant (not needed for GUI code)</ul>See also macro <code>qrun*</code>.
 <br>
@@ -477,7 +477,7 @@ Allows to select (by clicking) any (child) widget.<br>The variable <code>qsel:*q
   (qsel (lambda (widget) (qmsg widget)))
 </pre>
 <br><br>
-<b>QSENDER ()</b>
+<b>QSENDER ()</b>
 <br><br>
 Corresponding to <code>QObject::sender()</code>. To use inside a Lisp function connected to a Qt signal.
 <br>
@@ -495,9 +495,9 @@ Convenience function for simple color settings (avoiding <code>QPalette</code> b
 Sets the Qt object pointer to <code>0</code>. This function is called automatically after <code>qdel</code>.
 <br>
 <br><br>
-<b>QSET-PROPERTY (object name value)</b>
+<b>QSET-PROPERTY (object name value)</b>
 <br>
-<b>QSET</b>
+<b>QSET</b>
 <br><br>
 Sets a Qt property. Enumerators have to be passed as <code>int</code> values.<br>Returns <code>T</code> as second return value for successful calls.
 <br>
@@ -510,7 +510,7 @@ Sets a Qt property. Enumerators have to be passed as <code>int</code> values.<br
 Needed in functions which expect a <code>const char*</code> Qt signal (not needed in <code>qconnect</code>).
 <br>
 <br><br>
-<b>QSINGLE-SHOT (milliseconds function)</b>
+<b>QSINGLE-SHOT (milliseconds function)</b>
 <br><br>
 A single shot timer similar to <code>QTimer::singleShot()</code>.
 <br>
@@ -531,7 +531,7 @@ Similar to <code>sleep</code>, but continuing to process Qt events.
 Needed in functions which expect a <code>const char*</code> Qt slot (not needed in <code>qconnect</code>).
 <br>
 <br><br>
-<b>QSTATIC-META-OBJECT (class-name)</b>
+<b>QSTATIC-META-OBJECT (class-name)</b>
 <br><br>
 Returns the <code>::staticMetaObject</code> of the given class name.
 <br>
@@ -539,7 +539,7 @@ Returns the <code>::staticMetaObject</code> of the given class name.
   (qstatic-meta-object "QEasingCurve")
 </pre>
 <br><br>
-<b>QSUPER-CLASS-NAME (name)</b>
+<b>QSUPER-CLASS-NAME (name)</b>
 <br><br>
 Returns the super class of an object name, or <code>NIL</code> if the class doesn't inherit another Qt class.<br>Returns <code>T</code> as second return value for successful calls.
 <br>
@@ -547,7 +547,7 @@ Returns the super class of an object name, or <code>NIL</code> if the class does
   (qsuper-class-name "QGraphicsLineItem")
 </pre>
 <br><br>
-<b>QT-OBJECT-? (object)</b>
+<b>QT-OBJECT-? (object)</b>
 <br><br>
 Returns the specific <code>qt-object</code> of a generic <code>qt-object</code>.<br>Works for QObject and QEvent inherited classes only.
 <br>
@@ -557,12 +557,12 @@ Returns the specific <code>qt-object</code> of a generic <code>qt-object</code>.
   (qt-object-? event)
 </pre>
 <br><br>
-<b>QT-OBJECT-NAME (object)</b>
+<b>QT-OBJECT-NAME (object)</b>
 <br><br>
 Returns the Qt class name.
 <br>
 <br><br>
-<b>QUI-CLASS (file-name &optional object-name)</b>
+<b>QUI-CLASS (file-name &optional object-name)</b>
 <br><br>
 Finds the class name for the given user-defined object name in the given UI file.<br>Omitting the object name will return the top level class name of the UI.
 <br>
@@ -570,7 +570,7 @@ Finds the class name for the given user-defined object name in the given UI file
   (qui-class "examples/data/main-window.ui" "editor") ; returns "QTextEdit"
 </pre>
 <br><br>
-<b>QUI-NAMES (file-name)</b>
+<b>QUI-NAMES (file-name)</b>
 <br><br>
 Finds all user-defined object names in the given UI file.
 <br>
@@ -583,12 +583,12 @@ Finds all user-defined object names in the given UI file.
 Takes C++ code from a file generated by the <code>uic</code> user interface compiler, and generates the corresponding EQL code.<br>See also command line option <code>-quic</code>.
 <br>
 <br><br>
-<b>QUTF8 (string)</b>
+<b>QUTF8 (string)</b>
 <br><br>
 Converts a Unicode pathname to a simple ECL base string, using <code>QString::toUtf8()</code>.<br>Depending on the OS (namely OSX, Linux), this is necessary if you get a filename from Qt and want to use it in ECL.<br><br>See also <b>QLOCAL8BIT</b>.
 <br>
 <br><br>
-<b>QVERSION ()</b>
+<b>QVERSION ()</b>
 <br><br>
 Returns the EQL version number as "&lt;year&gt;.&lt;month&gt;.&lt;counter&gt;", analogous to the ECL version number.<br>The second return value is the Qt version as returned by <code>qVersion()</code>.
 <br>
