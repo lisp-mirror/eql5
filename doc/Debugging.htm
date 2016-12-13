@@ -106,6 +106,13 @@ is resolved automatically (<code>RESTART-QT-EVENTS</code> would block the REPL i
   (setf eql:*qtpl*            t  ; same as -qtpl
         eql:*break-on-errors* t)
     </pre>
+    <br><br>
+    For running ECL / EQL through <code>gdb</code> (debugger), put this in your <code>~/.gdbinit</code> file:
+    <pre>
+
+  handle SIGPWR nostop noprint
+  handle SIGXCPU nostop noprint
+    </pre>
     <br>
     <p>You may find</p>
     <pre>  (qproperties object &amp;optional (depth 1))</pre>
