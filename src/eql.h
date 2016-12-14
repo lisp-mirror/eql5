@@ -3,11 +3,13 @@
 #ifndef EQL_H
 #define EQL_H
 
+#undef SLOT
+
+#include <ecl/ecl.h>
 #include <QObject>
 #include <QByteArray>
 #include <QStringList>
 #include <QCoreApplication>
-#include <ecl/ecl.h>
 #include "dyn_object.h"
 #include "eql_global.h"
 

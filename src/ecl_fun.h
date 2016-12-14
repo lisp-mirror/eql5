@@ -3,8 +3,10 @@
 #ifndef ECL_FUN_H
 #define ECL_FUN_H
 
-#include "eql_global.h"
+#undef SLOT
+
 #include <ecl/ecl.h>
+#include "eql_global.h"
 #include <QList>
 #include <QUiLoader>
 #include <QByteArray>

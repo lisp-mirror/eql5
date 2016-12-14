@@ -1,8 +1,10 @@
+#undef SLOT
+
+#include <ecl/ecl.h>
 #include <QApplication>
 #include <QTextCodec>
 #include <QSettings>
 #include <QTranslator>
-#include <ecl/ecl.h>
 #include "eql.h"
 
 extern "C" void ini_app(cl_object);

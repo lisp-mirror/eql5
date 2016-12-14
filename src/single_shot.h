@@ -3,8 +3,10 @@
 #ifndef SINGLE_SHOT_H
 #define SINGLE_SHOT_H
 
-#include <QObject>
+#undef SLOT
+
 #include <ecl/ecl.h>
+#include <QObject>
 
 QT_BEGIN_NAMESPACE
 

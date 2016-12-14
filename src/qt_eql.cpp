@@ -1,8 +1,10 @@
 // copyright (c) Polos Ruetz
 // see Qt_EQL, QtWebKit: JavaScript / Lisp bridge
 
-#include <QtGui>
+#undef SLOT
+
 #include <ecl/ecl.h>
+#include <QtGui>
 #include "qt_eql.h"
 #include "ecl_fun.h"
 #include "eql.h"

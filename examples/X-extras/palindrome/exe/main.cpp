@@ -1,3 +1,5 @@
+#undef SLOT
+
 #include <ecl/ecl.h>
 #include "eql.h"
 #include "main.h"

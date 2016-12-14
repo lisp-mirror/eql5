@@ -1,11 +1,13 @@
 #ifndef LOBJECTS_H
 #define LOBJECTS_H
 
+#undef SLOT
+
+#include <ecl/ecl.h>
 #include "../eql_global.h"
 #include "../ecl_fun.h"
 #include <QtWidgets>
 #include <QtPrintSupport>
-#include <ecl/ecl.h>
 
 Q_DECLARE_METATYPE(QList<QAction*>)
 Q_DECLARE_METATYPE(QList<QByteArray>)

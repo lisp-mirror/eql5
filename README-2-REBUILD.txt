@@ -1,21 +1,23 @@
 REBUILD STEPS (on every upgrade of: ECL, Qt, EQL)
 =============
 
-Change to eql/src/ and do:
-
-1) remove directory tmp/
-   remove slime/thread-safe.fas*
-   remove src/lisp/ecl-readline.fas* (only on upgrading ECL; to recompile manually)
+1) remove directory src/tmp/
+   remove file slime/thread-safe.fas*
+   remove file src/lisp/ecl-readline.fas*
 
 2) ecl -shell make-eql-lib.lisp
 
-3) qmake, make in this order: (MSVC: nmake; use qmake-qt4 if you have Qt5 installed)
+3) qmake, make in this order: (MSVC: nmake)
 
     eql_lib.pro
     eql_exe.pro
 
     module_network.pro
     module_...
+
+  for readline (Unix):
+
+    ecl -compile src/lisp/ecl-readline.lisp
 
 Optionally (integrate wrapper functions):
 
