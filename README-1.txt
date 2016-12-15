@@ -167,8 +167,8 @@ You might want to put this in your ~/.eclrc file:
           eql:*break-on-errors* t)
 
 It is HIGHLY RECOMMENDED to integrate the wrapper functions, see README-3-OPTIONAL.
-This will bring you very convenient symbol tab-completion of all Qt functions in
-Emacs/Slime.
+This will make all Qt functions real Lisp functions, which also means symbol tab-
+completion, both in Emacs/Slime and with ecl-readline.
 
 
 

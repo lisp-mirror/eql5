@@ -47,9 +47,9 @@ void ini() {
     LObjects::Q[122] = new Q123;
     LObjects::Q[123] = new Q124;
     LObjects::Q[124] = new Q125;
-    LObjects::Q[160] = new Q161;
-    LObjects::Q[229] = new Q230;
+    LObjects::Q[161] = new Q162;
     LObjects::Q[230] = new Q231;
+    LObjects::Q[231] = new Q232;
     LObjects::N[7] = new N8;
     LObjects::N[8] = new N9;
     LObjects::N[9] = new N10;
@@ -78,9 +78,9 @@ const QMetaObject* staticMetaObject(int n) {
         case 123: m = &QMediaPlaylist::staticMetaObject; break;
         case 124: m = &QMediaRecorder::staticMetaObject; break;
         case 125: m = &QMediaService::staticMetaObject; break;
-        case 161: m = &QRadioTuner::staticMetaObject; break;
-        case 230: m = &QVideoWidget::staticMetaObject; break;
-        case 231: m = &QVideoWidgetControl::staticMetaObject; break; }
+        case 162: m = &QRadioTuner::staticMetaObject; break;
+        case 231: m = &QVideoWidget::staticMetaObject; break;
+        case 232: m = &QVideoWidgetControl::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -110,9 +110,9 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 122: ids = &LMediaPlayer::overrideIds; break;
             case 123: ids = &LMediaPlaylist::overrideIds; break;
             case 124: ids = &LMediaRecorder::overrideIds; break;
-            case 161: ids = &LRadioTuner::overrideIds; break;
-            case 230: ids = &LVideoWidget::overrideIds; break;
-            case 231: ids = &LVideoWidgetControl::overrideIds; break; }}
+            case 162: ids = &LRadioTuner::overrideIds; break;
+            case 231: ids = &LVideoWidget::overrideIds; break;
+            case 232: ids = &LVideoWidgetControl::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {

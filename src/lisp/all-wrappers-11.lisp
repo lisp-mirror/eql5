@@ -1,8 +1,5 @@
 (in-package :eql)
 
-(defun |setStyleName| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleName" arguments))
-
 (defun |setStyleProperty| (object &rest arguments)
   (%qinvoke-method object nil "setStyleProperty" arguments))
 
@@ -1142,6 +1139,9 @@
 
 (defun |standardColor.QColorDialog| (&rest arguments)
   (%qinvoke-method "QColorDialog" nil "standardColor" arguments))
+
+(defun |standardIcon| (object &rest arguments)
+  (%qinvoke-method object nil "standardIcon" arguments))
 
 (defun |standardLocations.QStandardPaths| (&rest arguments)
   (%qinvoke-method "QStandardPaths" nil "standardLocations" arguments))

@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |keyExchangeMethod| (object &rest arguments)
+  (%qinvoke-method object nil "keyExchangeMethod" arguments))
+
 (defun |keyValueAt| (object &rest arguments)
   (%qinvoke-method object nil "keyValueAt" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |selectFile| (object &rest arguments)
   (%qinvoke-method object nil "selectFile" arguments))
-
-(defun |selectMimeTypeFilter| (object &rest arguments)
-  (%qinvoke-method object nil "selectMimeTypeFilter" arguments))

@@ -32,7 +32,7 @@ public:
 
 class LSvgRenderer : public QSvgRenderer {
     Q_OBJECT
-    friend class Q193;
+    friend class Q194;
 public:
     LSvgRenderer(uint u, QObject* x1 = 0) : QSvgRenderer(x1), unique(u) {}
     LSvgRenderer(uint u, const QString& x1, QObject* x2 = 0) : QSvgRenderer(x1, x2), unique(u) {}
@@ -49,7 +49,7 @@ public:
 
 class LSvgWidget : public QSvgWidget {
     Q_OBJECT
-    friend class Q194;
+    friend class Q195;
 public:
     LSvgWidget(uint u, QWidget* x1 = 0) : QSvgWidget(x1), unique(u) {}
     LSvgWidget(uint u, const QString& x1, QWidget* x2 = 0) : QSvgWidget(x1, x2), unique(u) {}

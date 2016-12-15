@@ -1119,6 +1119,9 @@
 (defun |baseSize| (object &rest arguments)
   (%qinvoke-method object nil "baseSize" arguments))
 
+(defun |baseStyle| (object &rest arguments)
+  (%qinvoke-method object nil "baseStyle" arguments))
+
 (defun |baseUrlChanged| (object &rest arguments)
   (%qinvoke-method object nil "baseUrlChanged" arguments))
 
@@ -1151,6 +1154,9 @@
 
 (defun |begin(QImage*)| (object &rest arguments)
   (%qinvoke-method object nil "begin(QImage*)" arguments))
+
+(defun |begin(QPdfWriter*)| (object &rest arguments)
+  (%qinvoke-method object nil "begin(QPdfWriter*)" arguments))
 
 (defun |begin(QPicture*)| (object &rest arguments)
   (%qinvoke-method object nil "begin(QPicture*)" arguments))
@@ -3593,9 +3599,3 @@
 
 (defun |drawLines(const QLineF*...)| (object &rest arguments)
   (%qinvoke-method object nil "drawLines(const QLineF*...)" arguments))
-
-(defun |drawLines(const QPointF*...)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(const QPointF*...)" arguments))
-
-(defun |drawLines| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines" arguments))

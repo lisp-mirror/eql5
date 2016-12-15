@@ -7,15 +7,9 @@
 (load "share")
 
 (defparameter *skip*
-  (list "QStyle::CC_"
-        "QStyle::CT_"
-        "QStyle::CE_"
-        "QStyle::PM_"
+  (list "QStyle::PM_"
         "QStyle::PE_"
-        "QStyle::RSIP_"
-        "QStyle::SP_"
         "QStyle::SH_"
-        "QStyle::SC_"
         "QStyle::SE_"
         "QStyle::SO_"))
 

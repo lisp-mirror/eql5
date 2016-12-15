@@ -373,6 +373,7 @@
    #:|band|
    #:|baseName|
    #:|baseSize|
+   #:|baseStyle|
    #:|baseUrlChanged|
    #:|baseUrl|
    #:|base|
@@ -384,6 +385,7 @@
    #:|beforeUpdate|
    #:|before|
    #:|begin(QImage*)|
+   #:|begin(QPdfWriter*)|
    #:|begin(QPicture*)|
    #:|begin(QPixmap*)|
    #:|begin(QPrinter*)|
@@ -1197,9 +1199,7 @@
    #:|drawLines(QVector<QPoint>)|
    #:|drawLines(QVector<QPointF>)|
    #:|drawLines(const QLine*...)|
-   #:|drawLines(const QLineF*...)|
-   #:|drawLines(const QPointF*...)|
-   #:|drawLines|))
+   #:|drawLines(const QLineF*...)|))
 
 (in-package :eql)
 

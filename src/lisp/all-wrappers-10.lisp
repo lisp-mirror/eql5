@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |selectMimeTypeFilter| (object &rest arguments)
+  (%qinvoke-method object nil "selectMimeTypeFilter" arguments))
+
 (defun |selectNameFilter| (object &rest arguments)
   (%qinvoke-method object nil "selectNameFilter" arguments))
 
@@ -215,15 +218,6 @@
 
 (defun |setAddress(QString)| (object &rest arguments)
   (%qinvoke-method object nil "setAddress(QString)" arguments))
-
-(defun |setAddress(const quint8*)| (object &rest arguments)
-  (%qinvoke-method object nil "setAddress(const quint8*)" arguments))
-
-(defun |setAddress(const sockaddr*)| (object &rest arguments)
-  (%qinvoke-method object nil "setAddress(const sockaddr*)" arguments))
-
-(defun |setAddress(quint8*)| (object &rest arguments)
-  (%qinvoke-method object nil "setAddress(quint8*)" arguments))
 
 (defun |setAddress(uint)| (object &rest arguments)
   (%qinvoke-method object nil "setAddress(uint)" arguments))
@@ -485,6 +479,9 @@
 
 (defun |setBaseSize| (object &rest arguments)
   (%qinvoke-method object nil "setBaseSize" arguments))
+
+(defun |setBaseStyle| (object &rest arguments)
+  (%qinvoke-method object nil "setBaseStyle" arguments))
 
 (defun |setBaseUrl| (object &rest arguments)
   (%qinvoke-method object nil "setBaseUrl" arguments))
@@ -3599,3 +3596,6 @@
 
 (defun |setStyleHint| (object &rest arguments)
   (%qinvoke-method object nil "setStyleHint" arguments))
+
+(defun |setStyleName| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleName" arguments))

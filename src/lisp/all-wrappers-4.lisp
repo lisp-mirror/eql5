@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|selectMimeTypeFilter|
    #:|selectNameFilter|
    #:|selectRow|
    #:|selectUrl|
@@ -72,9 +73,6 @@
    #:|setActive|
    #:|setActualVisibleContentRect|
    #:|setAddress(QString)|
-   #:|setAddress(const quint8*)|
-   #:|setAddress(const sockaddr*)|
-   #:|setAddress(quint8*)|
    #:|setAddress(uint)|
    #:|setAddresses|
    #:|setAddress|
@@ -162,6 +160,7 @@
    #:|setBand|
    #:|setBar|
    #:|setBaseSize|
+   #:|setBaseStyle|
    #:|setBaseUrl|
    #:|setBatchSize|
    #:|setBinMode|
@@ -1199,4 +1198,5 @@
    #:|setStyle(QString).QApplication|
    #:|setStyle(QStyle*).QApplication|
    #:|setStyle.QApplication|
-   #:|setStyleHint|))
+   #:|setStyleHint|
+   #:|setStyleName|))

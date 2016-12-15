@@ -31,3 +31,7 @@ SOURCES += gen/_lobjects.cpp \
            ecl_fun.cpp \
            extras.cpp \
            eql.cpp
+
+gcc {
+    QMAKE_CXXFLAGS_WARN_ON += -Wno-clobbered
+}

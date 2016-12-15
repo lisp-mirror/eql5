@@ -1,5 +1,7 @@
 (defpackage :eql
   (:export
+   #:|drawLines(const QPointF*...)|
+   #:|drawLines|
    #:|drawLine|
    #:|drawPath|
    #:|drawPicture(QPoint...)|
@@ -870,7 +872,6 @@
    #:|interfaceFromIndex.QNetworkInterface|
    #:|interfaceFromName.QNetworkInterface|
    #:|internalDelayedPopup|
-   #:|internalId|
    #:|interpretText|
    #:|intersected(QRect)|
    #:|intersected(QRegion)|
@@ -1198,5 +1199,4 @@
    #:|kernelVersion.QSysInfo|
    #:|kerning|
    #:|keyBindings.QKeySequence|
-   #:|keyBindingsForAction|
-   #:|keyExchangeMethod|))
+   #:|keyBindingsForAction|))

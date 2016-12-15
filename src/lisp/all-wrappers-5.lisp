@@ -1,6 +1,5 @@
 (defpackage :eql
   (:export
-   #:|setStyleName|
    #:|setStyleProperty|
    #:|setStyleSheet|
    #:|setStyleStrategy|
@@ -381,6 +380,7 @@
    #:|standardButtons|
    #:|standardButton|
    #:|standardColor.QColorDialog|
+   #:|standardIcon|
    #:|standardLocations.QStandardPaths|
    #:|standardPalette|
    #:|standardPixmap|

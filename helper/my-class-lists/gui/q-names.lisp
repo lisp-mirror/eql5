@@ -127,6 +127,7 @@
         "QProgressBar"
         "QProgressDialog"
         "QPropertyAnimation"
+        "QProxyStyle"
         "QPushButton"
         "QRadioButton"
         "QRegExpValidator"

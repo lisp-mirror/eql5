@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|keyExchangeMethod|
    #:|keyValueAt|
    #:|keyValues|
    #:|keyboardGrabber.QWidget|
@@ -1198,5 +1199,4 @@
    #:|select(QModelIndex...)|
    #:|selectAll|
    #:|selectColumn|
-   #:|selectFile|
-   #:|selectMimeTypeFilter|))
+   #:|selectFile|))

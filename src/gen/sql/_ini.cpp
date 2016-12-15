@@ -23,11 +23,11 @@ NumList LSqlResult::overrideIds = NumList() << 332 << 468 << 469 << 459 << 107 <
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
-    LObjects::Q[178] = new Q179;
     LObjects::Q[179] = new Q180;
     LObjects::Q[180] = new Q181;
     LObjects::Q[181] = new Q182;
     LObjects::Q[182] = new Q183;
+    LObjects::Q[183] = new Q184;
     LObjects::N[137] = new N138;
     LObjects::N[138] = new N139;
     LObjects::N[139] = new N140;
@@ -40,11 +40,11 @@ void ini() {
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
-        case 179: m = &QSqlDriver::staticMetaObject; break;
-        case 180: m = &QSqlQueryModel::staticMetaObject; break;
-        case 181: m = &QSqlRelationalDelegate::staticMetaObject; break;
-        case 182: m = &QSqlRelationalTableModel::staticMetaObject; break;
-        case 183: m = &QSqlTableModel::staticMetaObject; break; }
+        case 180: m = &QSqlDriver::staticMetaObject; break;
+        case 181: m = &QSqlQueryModel::staticMetaObject; break;
+        case 182: m = &QSqlRelationalDelegate::staticMetaObject; break;
+        case 183: m = &QSqlRelationalTableModel::staticMetaObject; break;
+        case 184: m = &QSqlTableModel::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -63,11 +63,11 @@ NumList* overrideFunctions(const QByteArray& name) {
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
         switch(n) {
-            case 179: ids = &LSqlDriver::overrideIds; break;
-            case 180: ids = &LSqlQueryModel::overrideIds; break;
-            case 181: ids = &LSqlRelationalDelegate::overrideIds; break;
-            case 182: ids = &LSqlRelationalTableModel::overrideIds; break;
-            case 183: ids = &LSqlTableModel::overrideIds; break; }}
+            case 180: ids = &LSqlDriver::overrideIds; break;
+            case 181: ids = &LSqlQueryModel::overrideIds; break;
+            case 182: ids = &LSqlRelationalDelegate::overrideIds; break;
+            case 183: ids = &LSqlRelationalTableModel::overrideIds; break;
+            case 184: ids = &LSqlTableModel::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {

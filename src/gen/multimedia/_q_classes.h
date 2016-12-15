@@ -222,7 +222,7 @@ public:
 
 class LRadioTuner : public QRadioTuner {
     Q_OBJECT
-    friend class Q161;
+    friend class Q162;
 public:
     LRadioTuner(uint u, QObject* x1 = 0) : QRadioTuner(x1), unique(u) {}
 
@@ -242,7 +242,7 @@ public:
 
 class LVideoWidget : public QVideoWidget {
     Q_OBJECT
-    friend class Q230;
+    friend class Q231;
 public:
     LVideoWidget(uint u, QWidget* x1 = 0) : QVideoWidget(x1), unique(u) {}
 
@@ -291,7 +291,7 @@ public:
 
 class LVideoWidgetControl : public QVideoWidgetControl {
     Q_OBJECT
-    friend class Q231;
+    friend class Q232;
 public:
 
     static NumList overrideIds;

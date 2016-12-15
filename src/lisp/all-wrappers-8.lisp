@@ -1,5 +1,11 @@
 (in-package :eql)
 
+(defun |drawLines(const QPointF*...)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(const QPointF*...)" arguments))
+
+(defun |drawLines| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines" arguments))
+
 (defun |drawLine| (object &rest arguments)
   (%qinvoke-method object nil "drawLine" arguments))
 
@@ -2610,9 +2616,6 @@
 (defun |internalDelayedPopup| (object &rest arguments)
   (%qinvoke-method object nil "internalDelayedPopup" arguments))
 
-(defun |internalId| (object &rest arguments)
-  (%qinvoke-method object nil "internalId" arguments))
-
 (defun |interpretText| (object &rest arguments)
   (%qinvoke-method object nil "interpretText" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |keyBindingsForAction| (object &rest arguments)
   (%qinvoke-method object nil "keyBindingsForAction" arguments))
-
-(defun |keyExchangeMethod| (object &rest arguments)
-  (%qinvoke-method object nil "keyExchangeMethod" arguments))

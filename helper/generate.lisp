@@ -1204,8 +1204,7 @@
           (unless (or (find* arg skip)
                       (find* arg all-classes)
                       (search "Abstract" arg)
-                      (search "Base" arg)
-                      (search "QStyleOption" arg))
+                      (search "Base" arg))
             (incf *missing-types*)
             (write-line arg s)))))))
 

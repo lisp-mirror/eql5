@@ -156,7 +156,7 @@ public:
 
 class LTcpServer : public QTcpServer {
     Q_OBJECT
-    friend class Q204;
+    friend class Q205;
 public:
     LTcpServer(uint u, QObject* x1 = 0) : QTcpServer(x1), unique(u) {}
 
@@ -173,7 +173,7 @@ public:
 
 class LTcpSocket : public QTcpSocket {
     Q_OBJECT
-    friend class Q205;
+    friend class Q206;
 public:
     LTcpSocket(uint u, QObject* x1 = 0) : QTcpSocket(x1), unique(u) {}
 
@@ -212,7 +212,7 @@ public:
 
 class LUdpSocket : public QUdpSocket {
     Q_OBJECT
-    friend class Q223;
+    friend class Q224;
 public:
     LUdpSocket(uint u, QObject* x1 = 0) : QUdpSocket(x1), unique(u) {}
 
