@@ -1807,6 +1807,20 @@
    "QMatrix4x4 transposed () const"
    "void viewport ( float , float , float , float , float = 0.0f , float = 1.0f )"
    "void viewport ( const QRectF & )")
+  (("QMediaContent" . NIL)
+   "new QMediaContent ()"
+   "new QMediaContent ( const QUrl & )"
+   "new QMediaContent ( const QNetworkRequest & )"
+   "new QMediaContent ( const QMediaResource & )"
+   "new QMediaContent ( const QMediaResourceList & )"
+   "new QMediaContent ( const QMediaContent & )"
+   "new QMediaContent ( QMediaPlaylist * , const QUrl & = QUrl() , bool = false )"
+   "QNetworkRequest canonicalRequest () const"
+   "QMediaResource canonicalResource () const"
+   "QUrl canonicalUrl () const"
+   "bool isNull () const"
+   "QMediaPlaylist * playlist () const"
+   "QMediaResourceList resources () const")
   (("QMetaObject" . NIL)
    "int classInfoCount () const"
    "int classInfoOffset () const"

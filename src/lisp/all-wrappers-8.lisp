@@ -1,5 +1,14 @@
 (in-package :eql)
 
+(defun |drawLines(QVector<QPointF>)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(QVector<QPointF>)" arguments))
+
+(defun |drawLines(const QLine*...)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(const QLine*...)" arguments))
+
+(defun |drawLines(const QLineF*...)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(const QLineF*...)" arguments))
+
 (defun |drawLines(const QPointF*...)| (object &rest arguments)
   (%qinvoke-method object nil "drawLines(const QPointF*...)" arguments))
 
@@ -3590,12 +3599,3 @@
 
 (defun |kernelVersion.QSysInfo| (&rest arguments)
   (%qinvoke-method "QSysInfo" nil "kernelVersion" arguments))
-
-(defun |kerning| (object &rest arguments)
-  (%qinvoke-method object nil "kerning" arguments))
-
-(defun |keyBindings.QKeySequence| (&rest arguments)
-  (%qinvoke-method "QKeySequence" nil "keyBindings" arguments))
-
-(defun |keyBindingsForAction| (object &rest arguments)
-  (%qinvoke-method object nil "keyBindingsForAction" arguments))

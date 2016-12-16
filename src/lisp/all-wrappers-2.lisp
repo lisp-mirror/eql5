@@ -1,5 +1,8 @@
 (defpackage :eql
   (:export
+   #:|drawLines(QVector<QPointF>)|
+   #:|drawLines(const QLine*...)|
+   #:|drawLines(const QLineF*...)|
    #:|drawLines(const QPointF*...)|
    #:|drawLines|
    #:|drawLine|
@@ -1196,7 +1199,4 @@
    #:|jumpToNextFrame|
    #:|keepPositionOnInsert|
    #:|kernelType.QSysInfo|
-   #:|kernelVersion.QSysInfo|
-   #:|kerning|
-   #:|keyBindings.QKeySequence|
-   #:|keyBindingsForAction|))
+   #:|kernelVersion.QSysInfo|))

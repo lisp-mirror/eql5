@@ -46,8 +46,9 @@ QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
 QMarginsF
-QMediaContent
 QMediaControl
+QMediaResource
+QMediaResourceList
 QMultiMap<QString,QString>
 QNetworkConfiguration
 QOpenGLContextGroup

@@ -15,8 +15,7 @@
 (defvar *me*                (qnew "QMainWindow"))
 (defvar *pixmap-label*      (qnew "QLabel"))
 (defvar *pixmap-label-area* (qnew "QScrollArea"
-                                  "sizePolicy" (qnew "QSizePolicy(QSizePolicy::Policy,QSizePolicy::Policy)"
-                                                     |QSizePolicy.Ignored| |QSizePolicy.Ignored|)
+                                  "sizePolicy" (qnew "QSizePolicy(...)" |QSizePolicy.Ignored| |QSizePolicy.Ignored|)
                                   "minimumSize" '(50 50)))
 
 (defun ini ()
@@ -25,9 +24,8 @@
                               "widgetResizable" t
                               "horizontalScrollBarPolicy" |Qt.ScrollBarAlwaysOff|
                               "verticalScrollBarPolicy"   |Qt.ScrollBarAlwaysOff|
-                              "sizePolicy" (qnew "QSizePolicy(QSizePolicy::Policy,QSizePolicy::Policy)"
-                                                 |QSizePolicy.Ignored| |QSizePolicy.Ignored|)
-                              "minimumSize" (list 50 50)))
+                              "sizePolicy" (qnew "QSizePolicy(...)" |QSizePolicy.Ignored| |QSizePolicy.Ignored|)
+                              "minimumSize" '(50 50)))
         (central-widget (qnew "QWidget"))
         (central-layout (qnew "QGridLayout"))
         (x-slider (create-slider '*x-rotation-changed* 'set-x-rotation))

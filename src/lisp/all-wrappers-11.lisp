@@ -1,5 +1,26 @@
 (in-package :eql)
 
+(defun |setStrikeOut| (object &rest arguments)
+  (%qinvoke-method object nil "setStrikeOut" arguments))
+
+(defun |setStringList| (object &rest arguments)
+  (%qinvoke-method object nil "setStringList" arguments))
+
+(defun |setStyle(QString).QApplication| (&rest arguments)
+  (%qinvoke-method "QApplication" nil "setStyle(QString)" arguments))
+
+(defun |setStyle(QStyle*).QApplication| (&rest arguments)
+  (%qinvoke-method "QApplication" nil "setStyle(QStyle*)" arguments))
+
+(defun |setStyle.QApplication| (&rest arguments)
+  (%qinvoke-method "QApplication" nil "setStyle" arguments))
+
+(defun |setStyleHint| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleHint" arguments))
+
+(defun |setStyleName| (object &rest arguments)
+  (%qinvoke-method object nil "setStyleName" arguments))
+
 (defun |setStyleProperty| (object &rest arguments)
   (%qinvoke-method object nil "setStyleProperty" arguments))
 
@@ -3578,24 +3599,3 @@
 
 (defun |yOffset| (object &rest arguments)
   (%qinvoke-method object nil "yOffset" arguments))
-
-(defun |yScaleChanged| (object &rest arguments)
-  (%qinvoke-method object nil "yScaleChanged" arguments))
-
-(defun |yScale| (object &rest arguments)
-  (%qinvoke-method object nil "yScale" arguments))
-
-(defun |yTilt| (object &rest arguments)
-  (%qinvoke-method object nil "yTilt" arguments))
-
-(defun |yearShown| (object &rest arguments)
-  (%qinvoke-method object nil "yearShown" arguments))
-
-(defun |year| (object &rest arguments)
-  (%qinvoke-method object nil "year" arguments))
-
-(defun |yellowF| (object &rest arguments)
-  (%qinvoke-method object nil "yellowF" arguments))
-
-(defun |yellow| (object &rest arguments)
-  (%qinvoke-method object nil "yellow" arguments))

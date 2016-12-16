@@ -1630,9 +1630,10 @@ cl_object qnew_instance2(cl_object l_name, cl_object l_args) {
     /// alias: qnew
     /// Creates a new Qt object, optionally passing the given arguments to the constructor.<br>Additionally you can pass any number of property/value pairs.<br>Please note how you can abbreviate long type lists.
     ///     (qnew "QWidget")
-    ///     (qnew "QPixmap(int,int)" 50 50) ; constructor
-    ///     (qnew "QLabel" "text" "Readme") ; set property
-    ///     (qnew "QMatrix4x4(qreal...)" 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4)
+    ///     (qnew "QPixmap(int,int)" 50 50)                                           ; providing constructor types
+    ///     (qnew "QLabel" "text" "Readme")                                           ; set properties (any number); can be combined with above
+    ///     (qnew "QMatrix4x4(qreal...)" 1 2 3 4 1 2 3 4 1 2 3 4 1 2 3 4)             ; abbreviate long type lists
+    ///     (qnew "QSizePolicy(...)" |QSizePolicy.Expanding| |QSizePolicy.Expanding|) ; will work if type unambiguous, and no properties are passed
     ecl_process_env()->nvalues = 1;
     static QHash<QByteArray, int> i_constructor;
     if(ECL_STRINGP(l_name)) {

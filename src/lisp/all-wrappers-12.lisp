@@ -1,5 +1,26 @@
 (in-package :eql)
 
+(defun |yScaleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "yScaleChanged" arguments))
+
+(defun |yScale| (object &rest arguments)
+  (%qinvoke-method object nil "yScale" arguments))
+
+(defun |yTilt| (object &rest arguments)
+  (%qinvoke-method object nil "yTilt" arguments))
+
+(defun |yearShown| (object &rest arguments)
+  (%qinvoke-method object nil "yearShown" arguments))
+
+(defun |year| (object &rest arguments)
+  (%qinvoke-method object nil "year" arguments))
+
+(defun |yellowF| (object &rest arguments)
+  (%qinvoke-method object nil "yellowF" arguments))
+
+(defun |yellow| (object &rest arguments)
+  (%qinvoke-method object nil "yellow" arguments))
+
 (defun |y| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "y" arguments))
 

@@ -999,11 +999,14 @@ class EQL_EXPORT Q111 : public Q136 { // QLayout
     Q_OBJECT
 public:
     Q_INVOKABLE bool Mactivate(QLayout* o) { return o->activate(); }
+    Q_INVOKABLE void MaddItem(QLayout* o, QLayoutItem* x1) { o->addItem(x1); }
     Q_INVOKABLE void MaddWidget(QLayout* o, QWidget* x1) { o->addWidget(x1); }
     Q_INVOKABLE QMargins McontentsMargins(QLayout* o) const { return o->contentsMargins(); }
     Q_INVOKABLE QRect McontentsRect(QLayout* o) const { return o->contentsRect(); }
+    Q_INVOKABLE int Mcount(QLayout* o) const { return o->count(); }
     Q_INVOKABLE int MindexOf(QLayout* o, QWidget* x1) const { return o->indexOf(x1); }
     Q_INVOKABLE bool MisEnabled(QLayout* o) const { return o->isEnabled(); }
+    Q_INVOKABLE QLayoutItem* MitemAt(QLayout* o, int x1) const { return o->itemAt(x1); }
     Q_INVOKABLE QWidget* MmenuBar(QLayout* o) const { return o->menuBar(); }
     Q_INVOKABLE QWidget* MparentWidget(QLayout* o) const { return o->parentWidget(); }
     Q_INVOKABLE void MremoveItem(QLayout* o, QLayoutItem* x1) { o->removeItem(x1); }
@@ -1019,6 +1022,7 @@ public:
     Q_INVOKABLE void MsetSpacing(QLayout* o, int x1) { o->setSpacing(x1); }
     Q_INVOKABLE int MsizeConstraint(QLayout* o) const { return o->sizeConstraint(); }
     Q_INVOKABLE int Mspacing(QLayout* o) const { return o->spacing(); }
+    Q_INVOKABLE QLayoutItem* MtakeAt(QLayout* o, int x1) { return o->takeAt(x1); }
     Q_INVOKABLE void Mupdate(QLayout* o) { o->update(); }
     Q_INVOKABLE int McontrolTypes(QLayout* o) const { return o->controlTypes(); }
     Q_INVOKABLE int MexpandingDirections(QLayout* o) const { return o->expandingDirections(); }
@@ -1769,15 +1773,27 @@ class EQL_EXPORT Q192 : public Q136 { // QStyle
     Q_OBJECT
 public:
     Q_INVOKABLE int McombinedLayoutSpacing(QStyle* o, QSizePolicy::ControlTypes x1, QSizePolicy::ControlTypes x2, Qt::Orientation x3, QStyleOption* x4 = 0, QWidget* x5 = 0) const { return o->combinedLayoutSpacing(x1, x2, x3, x4, x5); }
+    Q_INVOKABLE void MdrawComplexControl(QStyle* o, QStyle::ComplexControl x1, const QStyleOptionComplex* x2, QPainter* x3, const QWidget* x4 = 0) const { o->drawComplexControl(x1, x2, x3, x4); }
+    Q_INVOKABLE void MdrawControl(QStyle* o, QStyle::ControlElement x1, const QStyleOption* x2, QPainter* x3, const QWidget* x4 = 0) const { o->drawControl(x1, x2, x3, x4); }
     Q_INVOKABLE void MdrawItemPixmap(QStyle* o, QPainter* x1, const QRect& x2, int x3, const QPixmap& x4) const { o->drawItemPixmap(x1, x2, x3, x4); }
     Q_INVOKABLE void MdrawItemText(QStyle* o, QPainter* x1, const QRect& x2, int x3, const QPalette& x4, bool x5, const QString& x6, QPalette::ColorRole x7 = QPalette::NoRole) const { o->drawItemText(x1, x2, x3, x4, x5, x6, x7); }
+    Q_INVOKABLE void MdrawPrimitive(QStyle* o, QStyle::PrimitiveElement x1, const QStyleOption* x2, QPainter* x3, const QWidget* x4 = 0) const { o->drawPrimitive(x1, x2, x3, x4); }
+    Q_INVOKABLE QPixmap MgeneratedIconPixmap(QStyle* o, QIcon::Mode x1, const QPixmap& x2, const QStyleOption* x3) const { return o->generatedIconPixmap(x1, x2, x3); }
+    Q_INVOKABLE int MhitTestComplexControl(QStyle* o, QStyle::ComplexControl x1, const QStyleOptionComplex* x2, const QPoint& x3, const QWidget* x4 = 0) const { return o->hitTestComplexControl(x1, x2, x3, x4); }
     Q_INVOKABLE QRect MitemPixmapRect(QStyle* o, const QRect& x1, int x2, const QPixmap& x3) const { return o->itemPixmapRect(x1, x2, x3); }
     Q_INVOKABLE QRect MitemTextRect(QStyle* o, const QFontMetrics& x1, const QRect& x2, int x3, bool x4, const QString& x5) const { return o->itemTextRect(x1, x2, x3, x4, x5); }
+    Q_INVOKABLE int MlayoutSpacing(QStyle* o, QSizePolicy::ControlType x1, QSizePolicy::ControlType x2, Qt::Orientation x3, const QStyleOption* x4 = 0, const QWidget* x5 = 0) const { return o->layoutSpacing(x1, x2, x3, x4, x5); }
+    Q_INVOKABLE int MpixelMetric(QStyle* o, QStyle::PixelMetric x1, const QStyleOption* x2 = 0, const QWidget* x3 = 0) const { return o->pixelMetric(x1, x2, x3); }
     Q_INVOKABLE void Mpolish(QStyle* o, QWidget* x1) { o->polish(x1); }
     Q_INVOKABLE void Mpolish(QStyle* o, QApplication* x1) { o->polish(x1); }
     Q_INVOKABLE void Mpolish(QStyle* o, QPalette& x1) { o->polish(x1); }
     Q_INVOKABLE const QStyle* Mproxy(QStyle* o) const { return o->proxy(); }
+    Q_INVOKABLE QSize MsizeFromContents(QStyle* o, QStyle::ContentsType x1, const QStyleOption* x2, const QSize& x3, const QWidget* x4 = 0) const { return o->sizeFromContents(x1, x2, x3, x4); }
+    Q_INVOKABLE QIcon MstandardIcon(QStyle* o, QStyle::StandardPixmap x1, const QStyleOption* x2 = 0, const QWidget* x3 = 0) const { return o->standardIcon(x1, x2, x3); }
     Q_INVOKABLE QPalette MstandardPalette(QStyle* o) const { return o->standardPalette(); }
+    Q_INVOKABLE int MstyleHint(QStyle* o, QStyle::StyleHint x1, const QStyleOption* x2 = 0, const QWidget* x3 = 0, QStyleHintReturn* x4 = 0) const { return o->styleHint(x1, x2, x3, x4); }
+    Q_INVOKABLE QRect MsubControlRect(QStyle* o, QStyle::ComplexControl x1, const QStyleOptionComplex* x2, QStyle::SubControl x3, const QWidget* x4 = 0) const { return o->subControlRect(x1, x2, x3, x4); }
+    Q_INVOKABLE QRect MsubElementRect(QStyle* o, QStyle::SubElement x1, const QStyleOption* x2, const QWidget* x3 = 0) const { return o->subElementRect(x1, x2, x3); }
     Q_INVOKABLE void Munpolish(QStyle* o, QWidget* x1) { o->unpolish(x1); }
     Q_INVOKABLE void Munpolish(QStyle* o, QApplication* x1) { o->unpolish(x1); }
     Q_INVOKABLE QRect SalignedRect(Qt::LayoutDirection x1, Qt::Alignment x2, const QSize& x3, const QRect& x4) { return QStyle::alignedRect(x1, x2, x3, x4); }

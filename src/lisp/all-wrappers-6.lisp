@@ -1,5 +1,12 @@
 (defpackage :eql
   (:export
+   #:|yScaleChanged|
+   #:|yScale|
+   #:|yTilt|
+   #:|yearShown|
+   #:|year|
+   #:|yellowF|
+   #:|yellow|
    #:|y|
    #:|zChanged|
    #:|zScaleChanged|

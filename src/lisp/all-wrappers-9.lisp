@@ -1,5 +1,14 @@
 (in-package :eql)
 
+(defun |kerning| (object &rest arguments)
+  (%qinvoke-method object nil "kerning" arguments))
+
+(defun |keyBindings.QKeySequence| (&rest arguments)
+  (%qinvoke-method "QKeySequence" nil "keyBindings" arguments))
+
+(defun |keyBindingsForAction| (object &rest arguments)
+  (%qinvoke-method object nil "keyBindingsForAction" arguments))
+
 (defun |keyExchangeMethod| (object &rest arguments)
   (%qinvoke-method object nil "keyExchangeMethod" arguments))
 
@@ -2199,6 +2208,9 @@
 (defun |prependOutside| (object &rest arguments)
   (%qinvoke-method object nil "prependOutside" arguments))
 
+(defun |present| (object &rest arguments)
+  (%qinvoke-method object nil "present" arguments))
+
 (defun |pressed| (object &rest arguments)
   (%qinvoke-method object nil "pressed" arguments))
 
@@ -2607,6 +2619,9 @@
 (defun |relativeFilePath| (object &rest arguments)
   (%qinvoke-method object nil "relativeFilePath" arguments))
 
+(defun |releaseControl| (object &rest arguments)
+  (%qinvoke-method object nil "releaseControl" arguments))
+
 (defun |releaseKeyboard| (object &rest arguments)
   (%qinvoke-method object nil "releaseKeyboard" arguments))
 
@@ -2886,6 +2901,9 @@
 (defun |requestActivate| (object &rest arguments)
   (%qinvoke-method object nil "requestActivate" arguments))
 
+(defun |requestControl| (object &rest arguments)
+  (%qinvoke-method object nil "requestControl" arguments))
+
 (defun |requestPhase2| (object &rest arguments)
   (%qinvoke-method object nil "requestPhase2" arguments))
 
@@ -3020,6 +3038,9 @@
 
 (defun |resolve| (object &rest arguments)
   (%qinvoke-method object nil "resolve" arguments))
+
+(defun |resources| (object &rest arguments)
+  (%qinvoke-method object nil "resources" arguments))
 
 (defun |resource| (object &rest arguments)
   (%qinvoke-method object nil "resource" arguments))
@@ -3578,24 +3599,3 @@
 
 (defun |seekableChanged| (object &rest arguments)
   (%qinvoke-method object nil "seekableChanged" arguments))
-
-(defun |seek| (object &rest arguments)
-  (%qinvoke-method object nil "seek" arguments))
-
-(defun |segmentStyle| (object &rest arguments)
-  (%qinvoke-method object nil "segmentStyle" arguments))
-
-(defun |select(QItemSelection...)| (object &rest arguments)
-  (%qinvoke-method object nil "select(QItemSelection...)" arguments))
-
-(defun |select(QModelIndex...)| (object &rest arguments)
-  (%qinvoke-method object nil "select(QModelIndex...)" arguments))
-
-(defun |selectAll| (object &rest arguments)
-  (%qinvoke-method object nil "selectAll" arguments))
-
-(defun |selectColumn| (object &rest arguments)
-  (%qinvoke-method object nil "selectColumn" arguments))
-
-(defun |selectFile| (object &rest arguments)
-  (%qinvoke-method object nil "selectFile" arguments))

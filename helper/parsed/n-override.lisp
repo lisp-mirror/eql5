@@ -267,6 +267,7 @@
   (("QMargins" . NIL))
   (("QMatrix" . NIL))
   (("QMatrix4x4" . NIL))
+  (("QMediaContent" . NIL))
   (("QMetaObject" . NIL))
   (("QModelIndex" . NIL))
   (("QMouseEvent" . "QInputEvent"))

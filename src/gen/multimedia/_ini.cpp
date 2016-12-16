@@ -25,6 +25,7 @@ NumList LAudioFormat::overrideIds = NumList();
 NumList LCameraInfo::overrideIds = NumList();
 NumList LCameraViewfinderSettings::overrideIds = NumList();
 NumList LImageEncoderSettings::overrideIds = NumList();
+NumList LMediaContent::overrideIds = NumList();
 NumList LVideoEncoderSettings::overrideIds = NumList();
 NumList LVideoFrame::overrideIds = NumList();
 NumList LVideoSurfaceFormat::overrideIds = NumList();
@@ -56,9 +57,10 @@ void ini() {
     LObjects::N[15] = new N16;
     LObjects::N[16] = new N17;
     LObjects::N[79] = new N80;
-    LObjects::N[198] = new N199;
+    LObjects::N[94] = new N95;
     LObjects::N[199] = new N200;
-    LObjects::N[200] = new N201; }
+    LObjects::N[200] = new N201;
+    LObjects::N[201] = new N202; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -91,9 +93,10 @@ void deleteNObject(int n, void* p, int gc) {
         case 16: if(gc) delete (QCameraInfo*)p; else delete (LCameraInfo*)p; break;
         case 17: if(gc) delete (QCameraViewfinderSettings*)p; else delete (LCameraViewfinderSettings*)p; break;
         case 80: if(gc) delete (QImageEncoderSettings*)p; else delete (LImageEncoderSettings*)p; break;
-        case 199: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
-        case 200: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
-        case 201: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
+        case 95: if(gc) delete (QMediaContent*)p; else delete (LMediaContent*)p; break;
+        case 200: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
+        case 201: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
+        case 202: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -122,9 +125,10 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 16: ids = &LCameraInfo::overrideIds; break;
             case 17: ids = &LCameraViewfinderSettings::overrideIds; break;
             case 80: ids = &LImageEncoderSettings::overrideIds; break;
-            case 199: ids = &LVideoEncoderSettings::overrideIds; break;
-            case 200: ids = &LVideoFrame::overrideIds; break;
-            case 201: ids = &LVideoSurfaceFormat::overrideIds; break; }}
+            case 95: ids = &LMediaContent::overrideIds; break;
+            case 200: ids = &LVideoEncoderSettings::overrideIds; break;
+            case 201: ids = &LVideoFrame::overrideIds; break;
+            case 202: ids = &LVideoSurfaceFormat::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

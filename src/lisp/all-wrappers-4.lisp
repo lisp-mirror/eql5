@@ -1,5 +1,12 @@
 (defpackage :eql
   (:export
+   #:|seek|
+   #:|segmentStyle|
+   #:|select(QItemSelection...)|
+   #:|select(QModelIndex...)|
+   #:|selectAll|
+   #:|selectColumn|
+   #:|selectFile|
    #:|selectMimeTypeFilter|
    #:|selectNameFilter|
    #:|selectRow|
@@ -1192,11 +1199,4 @@
    #:|setStretchFactor(QWidget*...)|
    #:|setStretchFactor|
    #:|setStretchLastSection|
-   #:|setStretch|
-   #:|setStrikeOut|
-   #:|setStringList|
-   #:|setStyle(QString).QApplication|
-   #:|setStyle(QStyle*).QApplication|
-   #:|setStyle.QApplication|
-   #:|setStyleHint|
-   #:|setStyleName|))
+   #:|setStretch|))

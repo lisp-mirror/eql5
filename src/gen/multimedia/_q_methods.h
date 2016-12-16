@@ -37,6 +37,7 @@ public:
     Q_INVOKABLE bool MisFormatSupported(QAbstractVideoSurface* o, const QVideoSurfaceFormat& x1) const { return o->isFormatSupported(x1); }
     Q_INVOKABLE QSize MnativeResolution(QAbstractVideoSurface* o) const { return o->nativeResolution(); }
     Q_INVOKABLE QVideoSurfaceFormat MnearestFormat(QAbstractVideoSurface* o, const QVideoSurfaceFormat& x1) const { return o->nearestFormat(x1); }
+    Q_INVOKABLE bool Mpresent(QAbstractVideoSurface* o, const QVideoFrame& x1) { return o->present(x1); }
     Q_INVOKABLE bool Mstart(QAbstractVideoSurface* o, const QVideoSurfaceFormat& x1) { return o->start(x1); }
     Q_INVOKABLE void Mstop(QAbstractVideoSurface* o) { o->stop(); }
     Q_INVOKABLE QVideoSurfaceFormat MsurfaceFormat(QAbstractVideoSurface* o) const { return o->surfaceFormat(); }
@@ -295,6 +296,8 @@ public:
 class Q125 : public Q136 { // QMediaService
     Q_OBJECT
 public:
+    Q_INVOKABLE void MreleaseControl(QMediaService* o, QMediaControl* x1) { o->releaseControl(x1); }
+    Q_INVOKABLE QMediaControl* MrequestControl(QMediaService* o, const char* x1) { return o->requestControl(x1); }
 };
 
 class Q162 : public Q121 { // QRadioTuner

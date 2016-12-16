@@ -8,6 +8,7 @@
         "QCameraInfo"
         "QCameraViewfinderSettings"
         "QImageEncoderSettings"
+        "QMediaContent"
         "QVideoEncoderSettings"
         "QVideoFrame"
         "QVideoSurfaceFormat"))

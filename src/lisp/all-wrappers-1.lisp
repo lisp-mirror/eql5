@@ -562,6 +562,9 @@
    #:|cancel|
    #:|canonicalFilePath|
    #:|canonicalPath|
+   #:|canonicalRequest|
+   #:|canonicalResource|
+   #:|canonicalUrl|
    #:|capStyle|
    #:|capabilities|
    #:|capitalization|
@@ -1196,10 +1199,7 @@
    #:|drawLine(QPointF...)|
    #:|drawLines(QVector<QLine>)|
    #:|drawLines(QVector<QLineF>)|
-   #:|drawLines(QVector<QPoint>)|
-   #:|drawLines(QVector<QPointF>)|
-   #:|drawLines(const QLine*...)|
-   #:|drawLines(const QLineF*...)|))
+   #:|drawLines(QVector<QPoint>)|))
 
 (in-package :eql)
 

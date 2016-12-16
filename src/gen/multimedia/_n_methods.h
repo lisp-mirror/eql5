@@ -134,7 +134,25 @@ public:
     Q_INVOKABLE void MsetResolution(QImageEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N199 : public QObject { // QVideoEncoderSettings
+class N95 : public QObject { // QMediaContent
+    Q_OBJECT
+public:
+    Q_INVOKABLE void* C(uint u) { return new LMediaContent(u); }
+    Q_INVOKABLE void* C(uint u, const QUrl& x1) { return new LMediaContent(u, x1); }
+    Q_INVOKABLE void* C(uint u, const QNetworkRequest& x1) { return new LMediaContent(u, x1); }
+    Q_INVOKABLE void* C(uint u, const QMediaResource& x1) { return new LMediaContent(u, x1); }
+    Q_INVOKABLE void* C(uint u, const QMediaResourceList& x1) { return new LMediaContent(u, x1); }
+    Q_INVOKABLE void* C(uint u, const QMediaContent& x1) { return new LMediaContent(u, x1); }
+    Q_INVOKABLE void* C(uint u, QMediaPlaylist* x1, const QUrl& x2 = QUrl(), bool x3 = false) { return new LMediaContent(u, x1, x2, x3); }
+    Q_INVOKABLE QNetworkRequest McanonicalRequest(QMediaContent* o) const { return o->canonicalRequest(); }
+    Q_INVOKABLE QMediaResource McanonicalResource(QMediaContent* o) const { return o->canonicalResource(); }
+    Q_INVOKABLE QUrl McanonicalUrl(QMediaContent* o) const { return o->canonicalUrl(); }
+    Q_INVOKABLE bool MisNull(QMediaContent* o) const { return o->isNull(); }
+    Q_INVOKABLE QMediaPlaylist* Mplaylist(QMediaContent* o) const { return o->playlist(); }
+    Q_INVOKABLE QMediaResourceList Mresources(QMediaContent* o) const { return o->resources(); }
+};
+
+class N200 : public QObject { // QVideoEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoEncoderSettings(u); }
@@ -157,7 +175,7 @@ public:
     Q_INVOKABLE void MsetResolution(QVideoEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N200 : public QObject { // QVideoFrame
+class N201 : public QObject { // QVideoFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoFrame(u); }
@@ -193,7 +211,7 @@ public:
     Q_INVOKABLE int SpixelFormatFromImageFormat(QImage::Format x1) { return QVideoFrame::pixelFormatFromImageFormat(x1); }
 };
 
-class N201 : public QObject { // QVideoSurfaceFormat
+class N202 : public QObject { // QVideoSurfaceFormat
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoSurfaceFormat(u); }

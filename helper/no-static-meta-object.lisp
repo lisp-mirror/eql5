@@ -64,6 +64,7 @@
   "QMargins" 
   "QMatrix" 
   "QMatrix4x4" 
+  "QMediaContent"
   "QMetaObject" 
   "QModelIndex" 
   "QNetworkAddressEntry" 

@@ -1,5 +1,12 @@
 (defpackage :eql
   (:export
+   #:|setStrikeOut|
+   #:|setStringList|
+   #:|setStyle(QString).QApplication|
+   #:|setStyle(QStyle*).QApplication|
+   #:|setStyle.QApplication|
+   #:|setStyleHint|
+   #:|setStyleName|
    #:|setStyleProperty|
    #:|setStyleSheet|
    #:|setStyleStrategy|
@@ -1192,11 +1199,4 @@
    #:|x|
    #:|yCbCrColorSpace|
    #:|yChanged|
-   #:|yOffset|
-   #:|yScaleChanged|
-   #:|yScale|
-   #:|yTilt|
-   #:|yearShown|
-   #:|year|
-   #:|yellowF|
-   #:|yellow|))
+   #:|yOffset|))

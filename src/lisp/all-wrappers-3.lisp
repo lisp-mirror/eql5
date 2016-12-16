@@ -1,5 +1,8 @@
 (defpackage :eql
   (:export
+   #:|kerning|
+   #:|keyBindings.QKeySequence|
+   #:|keyBindingsForAction|
    #:|keyExchangeMethod|
    #:|keyValueAt|
    #:|keyValues|
@@ -733,6 +736,7 @@
    #:|prependOutside(QString)|
    #:|prependOutside(QWebElement)|
    #:|prependOutside|
+   #:|present|
    #:|pressed|
    #:|pressure|
    #:|prettyProductName.QSysInfo|
@@ -869,6 +873,7 @@
    #:|relationModel|
    #:|relation|
    #:|relativeFilePath|
+   #:|releaseControl|
    #:|releaseKeyboard|
    #:|releaseMouse|
    #:|releaseShortcut|
@@ -962,6 +967,7 @@
    #:|replace|
    #:|reportContentOrientationChange|
    #:|requestActivate|
+   #:|requestControl|
    #:|requestPhase2|
    #:|requestShowLink|
    #:|requestUpdate|
@@ -1007,6 +1013,7 @@
    #:|resolveSymlinks|
    #:|resolved|
    #:|resolve|
+   #:|resources|
    #:|resource|
    #:|restartCommand|
    #:|restartHint|
@@ -1192,11 +1199,4 @@
    #:|sectionsMovable|
    #:|sectionsMoved|
    #:|securityOrigin|
-   #:|seekableChanged|
-   #:|seek|
-   #:|segmentStyle|
-   #:|select(QItemSelection...)|
-   #:|select(QModelIndex...)|
-   #:|selectAll|
-   #:|selectColumn|
-   #:|selectFile|))
+   #:|seekableChanged|))

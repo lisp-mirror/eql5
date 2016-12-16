@@ -679,9 +679,7 @@
                                                 (when (and c-ret-arg
                                                            (every (lambda (x)
                                                                     (not (search x c-args)))
-                                                                  +special-typedefs-and-classes+)
-                                                           (or (not (pure-virtual-p fun class super))
-                                                               (new-p obj)))
+                                                                  +special-typedefs-and-classes+))
                                                   (format s "    Q_INVOKABLE ~A ~A~A(~A~A~A)~A { ~A~A~A~A; }~%"
                                                           c-ret-arg
                                                           (if (static-p fun) "S" "M")

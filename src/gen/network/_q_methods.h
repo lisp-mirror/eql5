@@ -14,6 +14,10 @@ QT_BEGIN_NAMESPACE
 class Q7 : public Q136 { // QAbstractNetworkCache
     Q_OBJECT
 public:
+    Q_INVOKABLE qlonglong McacheSize(QAbstractNetworkCache* o) const { return o->cacheSize(); }
+    Q_INVOKABLE QNetworkCacheMetaData MmetaData(QAbstractNetworkCache* o, const QUrl& x1) { return o->metaData(x1); }
+    Q_INVOKABLE bool Mremove(QAbstractNetworkCache* o, const QUrl& x1) { return o->remove(x1); }
+    Q_INVOKABLE void MupdateMetaData(QAbstractNetworkCache* o, const QNetworkCacheMetaData& x1) { o->updateMetaData(x1); }
 };
 
 class Q116 : public Q136 { // QLocalServer

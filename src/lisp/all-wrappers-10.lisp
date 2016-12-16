@@ -1,5 +1,26 @@
 (in-package :eql)
 
+(defun |seek| (object &rest arguments)
+  (%qinvoke-method object nil "seek" arguments))
+
+(defun |segmentStyle| (object &rest arguments)
+  (%qinvoke-method object nil "segmentStyle" arguments))
+
+(defun |select(QItemSelection...)| (object &rest arguments)
+  (%qinvoke-method object nil "select(QItemSelection...)" arguments))
+
+(defun |select(QModelIndex...)| (object &rest arguments)
+  (%qinvoke-method object nil "select(QModelIndex...)" arguments))
+
+(defun |selectAll| (object &rest arguments)
+  (%qinvoke-method object nil "selectAll" arguments))
+
+(defun |selectColumn| (object &rest arguments)
+  (%qinvoke-method object nil "selectColumn" arguments))
+
+(defun |selectFile| (object &rest arguments)
+  (%qinvoke-method object nil "selectFile" arguments))
+
 (defun |selectMimeTypeFilter| (object &rest arguments)
   (%qinvoke-method object nil "selectMimeTypeFilter" arguments))
 
@@ -3578,24 +3599,3 @@
 
 (defun |setStretch| (object &rest arguments)
   (%qinvoke-method object nil "setStretch" arguments))
-
-(defun |setStrikeOut| (object &rest arguments)
-  (%qinvoke-method object nil "setStrikeOut" arguments))
-
-(defun |setStringList| (object &rest arguments)
-  (%qinvoke-method object nil "setStringList" arguments))
-
-(defun |setStyle(QString).QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setStyle(QString)" arguments))
-
-(defun |setStyle(QStyle*).QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setStyle(QStyle*)" arguments))
-
-(defun |setStyle.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setStyle" arguments))
-
-(defun |setStyleHint| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleHint" arguments))
-
-(defun |setStyleName| (object &rest arguments)
-  (%qinvoke-method object nil "setStyleName" arguments))

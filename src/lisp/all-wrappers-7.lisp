@@ -1686,6 +1686,15 @@
 (defun |canonicalPath| (object &rest arguments)
   (%qinvoke-method object nil "canonicalPath" arguments))
 
+(defun |canonicalRequest| (object &rest arguments)
+  (%qinvoke-method object nil "canonicalRequest" arguments))
+
+(defun |canonicalResource| (object &rest arguments)
+  (%qinvoke-method object nil "canonicalResource" arguments))
+
+(defun |canonicalUrl| (object &rest arguments)
+  (%qinvoke-method object nil "canonicalUrl" arguments))
+
 (defun |capStyle| (object &rest arguments)
   (%qinvoke-method object nil "capStyle" arguments))
 
@@ -3590,12 +3599,3 @@
 
 (defun |drawLines(QVector<QPoint>)| (object &rest arguments)
   (%qinvoke-method object nil "drawLines(QVector<QPoint>)" arguments))
-
-(defun |drawLines(QVector<QPointF>)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(QVector<QPointF>)" arguments))
-
-(defun |drawLines(const QLine*...)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(const QLine*...)" arguments))
-
-(defun |drawLines(const QLineF*...)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(const QLineF*...)" arguments))
