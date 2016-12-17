@@ -450,14 +450,14 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::ChildAdded:
             name = "QChildEvent";
             break;
-        case QEvent::Clipboard:
-            name = "QClipboardEvent";
-            break;
         case QEvent::Close:
             name = "QCloseEvent";
             break;
         case QEvent::ContextMenu:
             name = "QContextMenuEvent";
+            break;
+        case QEvent::DeferredDelete:
+            name = "QDeferredDeleteEvent";
             break;
         case QEvent::DragEnter:
             name = "QDragEnterEvent";
@@ -471,11 +471,15 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::Drop:
             name = "QDropEvent";
             break;
+        case QEvent::Enter:
+            name = "QEnterEvent";
+            break;
         case QEvent::FileOpen:
             name = "QFileOpenEvent";
             break;
         case QEvent::FocusOut:
         case QEvent::FocusIn:
+        case QEvent::FocusAboutToChange:
             name = "QFocusEvent";
             break;
         case QEvent::GraphicsSceneContextMenu:
@@ -486,9 +490,6 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::GraphicsSceneDragLeave:
         case QEvent::GraphicsSceneDragEnter:
             name = "QGraphicsSceneDragDropEvent";
-            break;
-        case QEvent::GraphicsSceneHelp:
-            name = "QHelpEvent";
             break;
         case QEvent::GraphicsSceneHoverMove:
         case QEvent::GraphicsSceneHoverLeave:
@@ -510,6 +511,9 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::GraphicsSceneWheel:
             name = "QGraphicsSceneWheelEvent";
             break;
+        case QEvent::GraphicsSceneHelp:
+            name = "QHelpEvent";
+            break;
         case QEvent::Hide:
             name = "QHideEvent";
             break;
@@ -524,6 +528,10 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::InputMethod:
             name = "QInputMethodEvent";
             break;
+        case QEvent::InputMethodQuery:
+            name = "QInputMethodQueryEvent";
+            break;
+        case QEvent::ShortcutOverride:
         case QEvent::KeyRelease:
         case QEvent::KeyPress:
             name = "QKeyEvent";
@@ -537,17 +545,29 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::Move:
             name = "QMoveEvent";
             break;
+        case QEvent::NativeGesture:
+            name  = "QNativeGestureEvent";
+            break;
         case QEvent::Paint:
             name = "QPaintEvent";
+            break;
+        case QEvent::PlatformSurface:
+            name = "QPlatformSurfaceEvent";
             break;
         case QEvent::Resize:
             name = "QResizeEvent";
             break;
+        case QEvent::OrientationChange:
+            name = "QScreenOrientationChangeEvent";
+            break;
+        case QEvent::Scroll:
+            name = "QScrollEvent";
+            break;
+        case QEvent::ScrollPrepare:
+            name = "QScrollPrepareEvent";
+            break;
         case QEvent::Shortcut:
             name = "QShortcutEvent";
-            break;
-        case QEvent::ShortcutOverride:
-            name = "QKeyEvent";
             break;
         case QEvent::Show:
             name = "QShowEvent";
@@ -572,8 +592,12 @@ static const char* eventName(QEvent::Type type) {
         case QEvent::Wheel:
             name = "QWheelEvent";
             break;
-        case QEvent::TouchEnd:
+        case QEvent::WindowStateChange:
+            name = "QWindowStateChangeEvent";
+            break;
         case QEvent::TouchUpdate:
+        case QEvent::TouchEnd:
+        case QEvent::TouchCancel:
         case QEvent::TouchBegin:
             name = "QTouchEvent";
             break;
