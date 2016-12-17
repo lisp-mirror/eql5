@@ -21,6 +21,11 @@
       str)))
 
 (defun set-icon (action name)
+  "Icon from current theme."
+  (|setIcon| action (|fromTheme.QIcon| name)))
+
+(defun set-icon-from-file (action name)
+  "Icon from custom pixmap."
   (|setIcon| action (qnew "QIcon(QString)"
                           (in-home (format nil "examples/data/icons/~A.png" name)))))
 
@@ -28,8 +33,8 @@
   (x:do-with (qset *main*)
     ("pos" '(50 50))
     ("size" '(700 500)))
-  (set-icon *action-open* "open")
-  (set-icon *action-save* "save")
+  (set-icon *action-open* "document-open")
+  (set-icon *action-save* "document-save")
   (qconnect *action-open* "triggered()" 'file-open)
   (qconnect *action-save* "triggered()" 'file-save)
   (|setHtml| *editor* (read-file (in-home "examples/data/utf8.htm")))

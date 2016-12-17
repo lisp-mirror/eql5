@@ -9,6 +9,7 @@
   (:nicknames :vid)
   (:use :common-lisp :eql)
   (:export
+   #:*media-player*
    #:ini))
 
 (in-package :video-widget)
@@ -19,6 +20,11 @@
 
 (defun standard-icon (style-sp)
   (|standardIcon| (|style| ui:*main*) style-sp))
+
+(defun theme-icon (name) ; optional (not used here)
+  ;; the names would be:
+  ;; "media-playback-start" and "media-playback-pause" (see Qt Assistant)
+  (|fromTheme.QIcon| name))
 
 (defun ini ()
   (ui:ini)
