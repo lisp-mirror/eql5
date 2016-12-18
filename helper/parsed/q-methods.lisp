@@ -4986,7 +4986,7 @@
    "QRect frameGeometry () const"
    "QSize frameSize () const"
    "const QRect & geometry () const"
-   "QPixmap grab ( const QRect & = QRect_QWIDGET_GRAB )"
+   "QPixmap grab ( const QRect & = QRect_DEFAULT )"
    "void grabGesture ( Qt::GestureType , Qt::GestureFlags = Qt::GestureFlags() )"
    "void grabKeyboard ()"
    "void grabMouse ()"

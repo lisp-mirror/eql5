@@ -70,7 +70,10 @@ META_TYPE (T_QWidgetList,                      QWidgetList)
 META_TYPE (T_QList_int,                        QList<int>)
 META_TYPE (T_QList_qreal,                      QList<qreal>)
 META_TYPE (T_QMargins,                         QMargins)
+META_TYPE (T_QMarginsF,                        QMarginsF)
 META_TYPE (T_QModelIndex,                      QModelIndex)
+META_TYPE (T_QPageLayout,                      QPageLayout)
+META_TYPE (T_QPageSize,                        QPageSize)
 META_TYPE (T_QPainterPath,                     QPainterPath)
 META_TYPE (T_QPolygonF,                        QPolygonF)
 META_TYPE (T_QRgb,                             QRgb)
@@ -775,7 +778,10 @@ TO_QT_TYPE_PTR2 (QKeySequence, qkeysequence)
 TO_QT_TYPE_PTR2 (QLocale, qlocale)
 TO_QT_TYPE_PTR2 (QMatrix, qmatrix)
 TO_QT_TYPE_PTR  (QMargins, qmargins)
+TO_QT_TYPE_PTR  (QMarginsF, qmarginsf)
 TO_QT_TYPE_PTR2 (QModelIndex, qmodelindex)
+TO_QT_TYPE_PTR  (QPageLayout, qpagelayout)
+TO_QT_TYPE_PTR  (QPageSize, qpagesize)
 TO_QT_TYPE_PTR  (QPainterPath, qpainterpath)
 TO_QT_TYPE_PTR2 (QPalette, qpalette)
 TO_QT_TYPE_PTR2 (QPen, qpen)
@@ -1222,7 +1228,10 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QList_int == n)                        p = new QList<int>(toIntList(l_arg));
         else if(T_QList_qreal == n)                      p = new QList<qreal>(toRealList(l_arg));
         else if(T_QMargins == n)                         p = new QMargins(*toQMarginsPointer(l_arg));
+        else if(T_QMarginsF == n)                        p = new QMarginsF(*toQMarginsFPointer(l_arg));
         else if(T_QModelIndex == n)                      p = new QModelIndex(*toQModelIndexPointer(l_arg));
+        else if(T_QPageLayout == n)                      p = new QPageLayout(*toQPageLayoutPointer(l_arg));
+        else if(T_QPageSize == n)                        p = new QPageSize(*toQPageSizePointer(l_arg));
         else if(T_QPainterPath == n)                     p = new QPainterPath(*toQPainterPathPointer(l_arg));
         else if(T_QPolygonF == n)                        p = new QPolygonF(toQPolygonF(l_arg));
         else if(T_QRgb == n)                             p = new QRgb(toUInt(l_arg));
@@ -1383,7 +1392,10 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QList_int == n)                        l_ret = from_intlist(*(QList<int>*)p);
             else if(T_QList_qreal == n)                      l_ret = from_qreallist(*(QList<qreal>*)p);
             else if(T_QMargins == n)                         l_ret = from_qmargins(*(QMargins*)p);
+            else if(T_QMarginsF == n)                        l_ret = from_qmarginsf(*(QMarginsF*)p);
             else if(T_QModelIndex == n)                      l_ret = from_qmodelindex(*(QModelIndex*)p);
+            else if(T_QPageLayout == n)                      l_ret = from_qpagelayout(*(QPageLayout*)p);
+            else if(T_QPageSize == n)                        l_ret = from_qpagesize(*(QPageSize*)p);
             else if(T_QPainterPath == n)                     l_ret = from_qpainterpath(*(QPainterPath*)p);
             else if(T_QPolygonF == n)                        l_ret = from_qpolygonf(*(QPolygonF*)p);
             else if(T_QRgb == n)                             l_ret = ecl_make_unsigned_integer(*(QRgb*)p);
@@ -1579,7 +1591,7 @@ cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type) {
     ///     (qapropos nil "QWidget")
     ///     (qapropos)             
     ///     (qapropos '|toString|)   ; wrapper function symbol
-    ///     (qapropos nil *qt-main*) ; see Qt_EQL, Qt_EQL (custom Qt classes)
+    ///     (qapropos nil *qt-main*) ; see Qt_EQL (QObject derived C++ classes)
     ecl_process_env()->nvalues = 1;    
     QByteArray search;
     if(ECL_STRINGP(l_search)) {

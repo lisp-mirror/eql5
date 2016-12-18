@@ -1,5 +1,110 @@
 (in-package :eql)
 
+(defun |wizardStyle| (object &rest arguments)
+  (%qinvoke-method object nil "wizardStyle" arguments))
+
+(defun |wizard| (object &rest arguments)
+  (%qinvoke-method object nil "wizard" arguments))
+
+(defun |wordSpacing| (object &rest arguments)
+  (%qinvoke-method object nil "wordSpacing" arguments))
+
+(defun |wordWrapMode| (object &rest arguments)
+  (%qinvoke-method object nil "wordWrapMode" arguments))
+
+(defun |wordWrap| (object &rest arguments)
+  (%qinvoke-method object nil "wordWrap" arguments))
+
+(defun |workAreaResized| (object &rest arguments)
+  (%qinvoke-method object nil "workAreaResized" arguments))
+
+(defun |workingDirectory| (object &rest arguments)
+  (%qinvoke-method object nil "workingDirectory" arguments))
+
+(defun |worldMatrixEnabled| (object &rest arguments)
+  (%qinvoke-method object nil "worldMatrixEnabled" arguments))
+
+(defun |worldTransform| (object &rest arguments)
+  (%qinvoke-method object nil "worldTransform" arguments))
+
+(defun |wrapAround| (object &rest arguments)
+  (%qinvoke-method object nil "wrapAround" arguments))
+
+(defun |wrapMode| (object &rest arguments)
+  (%qinvoke-method object nil "wrapMode" arguments))
+
+(defun |wrapping| (object &rest arguments)
+  (%qinvoke-method object nil "wrapping" arguments))
+
+(defun |writableLocation.QStandardPaths| (&rest arguments)
+  (%qinvoke-method "QStandardPaths" nil "writableLocation" arguments))
+
+(defun |write(QByteArray)| (object &rest arguments)
+  (%qinvoke-method object nil "write(QByteArray)" arguments))
+
+(defun |write(QTextDocumentFragment)| (object &rest arguments)
+  (%qinvoke-method object nil "write(QTextDocumentFragment)" arguments))
+
+(defun |write(const QTextDocument*)| (object &rest arguments)
+  (%qinvoke-method object nil "write(const QTextDocument*)" arguments))
+
+(defun |write(const char*)| (object &rest arguments)
+  (%qinvoke-method object nil "write(const char*)" arguments))
+
+(defun |writeDatagram| (object &rest arguments)
+  (%qinvoke-method object nil "writeDatagram" arguments))
+
+(defun |write| (object &rest arguments)
+  (%qinvoke-method object nil "write" arguments))
+
+(defun |writingSystemName.QFontDatabase| (&rest arguments)
+  (%qinvoke-method "QFontDatabase" nil "writingSystemName" arguments))
+
+(defun |writingSystemSample.QFontDatabase| (&rest arguments)
+  (%qinvoke-method "QFontDatabase" nil "writingSystemSample" arguments))
+
+(defun |writingSystem| (object &rest arguments)
+  (%qinvoke-method object nil "writingSystem" arguments))
+
+(defun |w| (object &rest arguments)
+  (%qinvoke-method object nil "w" arguments))
+
+(defun |xChanged| (object &rest arguments)
+  (%qinvoke-method object nil "xChanged" arguments))
+
+(defun |xHeight| (object &rest arguments)
+  (%qinvoke-method object nil "xHeight" arguments))
+
+(defun |xOffset| (object &rest arguments)
+  (%qinvoke-method object nil "xOffset" arguments))
+
+(defun |xScaleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "xScaleChanged" arguments))
+
+(defun |xScale| (object &rest arguments)
+  (%qinvoke-method object nil "xScale" arguments))
+
+(defun |xTilt| (object &rest arguments)
+  (%qinvoke-method object nil "xTilt" arguments))
+
+(defun |xToCursor| (object &rest arguments)
+  (%qinvoke-method object nil "xToCursor" arguments))
+
+(defun |xored| (object &rest arguments)
+  (%qinvoke-method object nil "xored" arguments))
+
+(defun |x| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "x" arguments))
+
+(defun |yCbCrColorSpace| (object &rest arguments)
+  (%qinvoke-method object nil "yCbCrColorSpace" arguments))
+
+(defun |yChanged| (object &rest arguments)
+  (%qinvoke-method object nil "yChanged" arguments))
+
+(defun |yOffset| (object &rest arguments)
+  (%qinvoke-method object nil "yOffset" arguments))
+
 (defun |yScaleChanged| (object &rest arguments)
   (%qinvoke-method object nil "yScaleChanged" arguments))
 

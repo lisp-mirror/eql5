@@ -1,5 +1,40 @@
 (defpackage :eql
   (:export
+   #:|wizardStyle|
+   #:|wizard|
+   #:|wordSpacing|
+   #:|wordWrapMode|
+   #:|wordWrap|
+   #:|workAreaResized|
+   #:|workingDirectory|
+   #:|worldMatrixEnabled|
+   #:|worldTransform|
+   #:|wrapAround|
+   #:|wrapMode|
+   #:|wrapping|
+   #:|writableLocation.QStandardPaths|
+   #:|write(QByteArray)|
+   #:|write(QTextDocumentFragment)|
+   #:|write(const QTextDocument*)|
+   #:|write(const char*)|
+   #:|writeDatagram|
+   #:|write|
+   #:|writingSystemName.QFontDatabase|
+   #:|writingSystemSample.QFontDatabase|
+   #:|writingSystem|
+   #:|w|
+   #:|xChanged|
+   #:|xHeight|
+   #:|xOffset|
+   #:|xScaleChanged|
+   #:|xScale|
+   #:|xTilt|
+   #:|xToCursor|
+   #:|xored|
+   #:|x|
+   #:|yCbCrColorSpace|
+   #:|yChanged|
+   #:|yOffset|
    #:|yScaleChanged|
    #:|yScale|
    #:|yTilt|

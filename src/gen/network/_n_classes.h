@@ -45,7 +45,7 @@ public:
 };
 
 class LNetworkAddressEntry : public QNetworkAddressEntry {
-    friend class N100;
+    friend class N101;
 public:
     LNetworkAddressEntry(uint u) : unique(u) {}
     LNetworkAddressEntry(uint u, const QNetworkAddressEntry& x1) : QNetworkAddressEntry(x1), unique(u) {}
@@ -55,7 +55,7 @@ public:
 };
 
 class LNetworkCacheMetaData : public QNetworkCacheMetaData {
-    friend class N101;
+    friend class N102;
 public:
     LNetworkCacheMetaData(uint u) : unique(u) {}
     LNetworkCacheMetaData(uint u, const QNetworkCacheMetaData& x1) : QNetworkCacheMetaData(x1), unique(u) {}
@@ -65,7 +65,7 @@ public:
 };
 
 class LNetworkCookie : public QNetworkCookie {
-    friend class N102;
+    friend class N103;
 public:
     LNetworkCookie(uint u, const QByteArray& x1 = QByteArray(), const QByteArray& x2 = QByteArray()) : QNetworkCookie(x1, x2), unique(u) {}
     LNetworkCookie(uint u, const QNetworkCookie& x1) : QNetworkCookie(x1), unique(u) {}
@@ -75,7 +75,7 @@ public:
 };
 
 class LNetworkInterface : public QNetworkInterface {
-    friend class N103;
+    friend class N104;
 public:
     LNetworkInterface(uint u) : unique(u) {}
     LNetworkInterface(uint u, const QNetworkInterface& x1) : QNetworkInterface(x1), unique(u) {}
@@ -85,7 +85,7 @@ public:
 };
 
 class LNetworkProxy : public QNetworkProxy {
-    friend class N104;
+    friend class N105;
 public:
     LNetworkProxy(uint u) : unique(u) {}
     LNetworkProxy(uint u, ProxyType x1, const QString& x2 = QString(), quint16 x3 = 0, const QString& x4 = QString(), const QString& x5 = QString()) : QNetworkProxy(x1, x2, x3, x4, x5), unique(u) {}
@@ -96,7 +96,7 @@ public:
 };
 
 class LNetworkProxyFactory : public QNetworkProxyFactory {
-    friend class N105;
+    friend class N106;
 public:
     LNetworkProxyFactory(uint u) : unique(u) {}
 
@@ -107,7 +107,7 @@ public:
 };
 
 class LNetworkProxyQuery : public QNetworkProxyQuery {
-    friend class N106;
+    friend class N107;
 public:
     LNetworkProxyQuery(uint u) : unique(u) {}
     LNetworkProxyQuery(uint u, const QUrl& x1, QueryType x2 = UrlRequest) : QNetworkProxyQuery(x1, x2), unique(u) {}
@@ -123,7 +123,7 @@ public:
 };
 
 class LNetworkRequest : public QNetworkRequest {
-    friend class N107;
+    friend class N108;
 public:
     LNetworkRequest(uint u, const QUrl& x1 = QUrl()) : QNetworkRequest(x1), unique(u) {}
     LNetworkRequest(uint u, const QNetworkRequest& x1) : QNetworkRequest(x1), unique(u) {}
@@ -133,7 +133,7 @@ public:
 };
 
 class LSslCertificate : public QSslCertificate {
-    friend class N147;
+    friend class N150;
 public:
     LSslCertificate(uint u, const QByteArray& x1 = QByteArray(), QSsl::EncodingFormat x2 = QSsl::Pem) : QSslCertificate(x1, x2), unique(u) {}
     LSslCertificate(uint u, const QSslCertificate& x1) : QSslCertificate(x1), unique(u) {}
@@ -143,7 +143,7 @@ public:
 };
 
 class LSslCipher : public QSslCipher {
-    friend class N148;
+    friend class N151;
 public:
     LSslCipher(uint u) : unique(u) {}
     LSslCipher(uint u, const QString& x1) : QSslCipher(x1), unique(u) {}
@@ -155,7 +155,7 @@ public:
 };
 
 class LSslConfiguration : public QSslConfiguration {
-    friend class N149;
+    friend class N152;
 public:
     LSslConfiguration(uint u) : unique(u) {}
     LSslConfiguration(uint u, const QSslConfiguration& x1) : QSslConfiguration(x1), unique(u) {}
@@ -165,7 +165,7 @@ public:
 };
 
 class LSslError : public QSslError {
-    friend class N150;
+    friend class N153;
 public:
     LSslError(uint u) : unique(u) {}
     LSslError(uint u, SslError x1) : QSslError(x1), unique(u) {}
@@ -177,7 +177,7 @@ public:
 };
 
 class LSslKey : public QSslKey {
-    friend class N151;
+    friend class N154;
 public:
     LSslKey(uint u) : unique(u) {}
     LSslKey(uint u, const QByteArray& x1, QSsl::KeyAlgorithm x2, QSsl::EncodingFormat x3 = QSsl::Pem, QSsl::KeyType x4 = QSsl::PrivateKey, const QByteArray& x5 = QByteArray()) : QSslKey(x1, x2, x3, x4, x5), unique(u) {}

@@ -1,5 +1,9 @@
 (defpackage :eql
   (:export
+   #:|drawLine(QPointF...)|
+   #:|drawLines(QVector<QLine>)|
+   #:|drawLines(QVector<QLineF>)|
+   #:|drawLines(QVector<QPoint>)|
    #:|drawLines(QVector<QPointF>)|
    #:|drawLines(const QLine*...)|
    #:|drawLines(const QLineF*...)|
@@ -500,6 +504,9 @@
    #:|fromWinId.QWindow|
    #:|frustum|
    #:|fullPage|
+   #:|fullRectPixels|
+   #:|fullRectPoints|
+   #:|fullRect|
    #:|fullScreenChanged|
    #:|fullServerName|
    #:|functions|
@@ -714,6 +721,11 @@
    #:|iconSize|
    #:|iconText|
    #:|icon|
+   #:|id(QSize).QPageSize|
+   #:|id(QSize...).QPageSize|
+   #:|id(QSizeF...).QPageSize|
+   #:|id(int).QPageSize|
+   #:|id.QPageSize|
    #:|idealWidth|
    #:|idnWhitelist.QUrl|
    #:|id|
@@ -973,6 +985,7 @@
    #:|isEnabledTo|
    #:|isEnabled|
    #:|isEqual|
+   #:|isEquivalentTo|
    #:|isExclusive|
    #:|isExecutable|
    #:|isExpanded|
@@ -1186,17 +1199,4 @@
    #:|items(QRectF)|
    #:|items(QRectF...)|
    #:|items(Qt::SortOrder)|
-   #:|items(int...)|
-   #:|itemsBoundingRect|
-   #:|itemsExpandable|
-   #:|items|
-   #:|item|
-   #:|javaScriptWindowObjectCleared|
-   #:|joinMulticastGroup|
-   #:|joinPreviousEditBlock|
-   #:|joinStyle|
-   #:|jumpToFrame|
-   #:|jumpToNextFrame|
-   #:|keepPositionOnInsert|
-   #:|kernelType.QSysInfo|
-   #:|kernelVersion.QSysInfo|))
+   #:|items(int...)|))

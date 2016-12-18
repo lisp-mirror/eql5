@@ -1,7 +1,49 @@
 (in-package :eql)
 
+(defun |itemsBoundingRect| (object &rest arguments)
+  (%qinvoke-method object nil "itemsBoundingRect" arguments))
+
+(defun |itemsExpandable| (object &rest arguments)
+  (%qinvoke-method object nil "itemsExpandable" arguments))
+
+(defun |items| (object &rest arguments)
+  (%qinvoke-method object nil "items" arguments))
+
+(defun |item| (object &rest arguments)
+  (%qinvoke-method object nil "item" arguments))
+
+(defun |javaScriptWindowObjectCleared| (object &rest arguments)
+  (%qinvoke-method object nil "javaScriptWindowObjectCleared" arguments))
+
+(defun |joinMulticastGroup| (object &rest arguments)
+  (%qinvoke-method object nil "joinMulticastGroup" arguments))
+
+(defun |joinPreviousEditBlock| (object &rest arguments)
+  (%qinvoke-method object nil "joinPreviousEditBlock" arguments))
+
+(defun |joinStyle| (object &rest arguments)
+  (%qinvoke-method object nil "joinStyle" arguments))
+
+(defun |jumpToFrame| (object &rest arguments)
+  (%qinvoke-method object nil "jumpToFrame" arguments))
+
+(defun |jumpToNextFrame| (object &rest arguments)
+  (%qinvoke-method object nil "jumpToNextFrame" arguments))
+
+(defun |keepPositionOnInsert| (object &rest arguments)
+  (%qinvoke-method object nil "keepPositionOnInsert" arguments))
+
+(defun |kernelType.QSysInfo| (&rest arguments)
+  (%qinvoke-method "QSysInfo" nil "kernelType" arguments))
+
+(defun |kernelVersion.QSysInfo| (&rest arguments)
+  (%qinvoke-method "QSysInfo" nil "kernelVersion" arguments))
+
 (defun |kerning| (object &rest arguments)
   (%qinvoke-method object nil "kerning" arguments))
+
+(defun |key.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "key" arguments))
 
 (defun |keyBindings.QKeySequence| (&rest arguments)
   (%qinvoke-method "QKeySequence" nil "keyBindings" arguments))
@@ -789,6 +831,9 @@
 (defun |map| (object &rest arguments)
   (%qinvoke-method object nil "map" arguments))
 
+(defun |margins| (object &rest arguments)
+  (%qinvoke-method object nil "margins" arguments))
+
 (defun |margin| (object &rest arguments)
   (%qinvoke-method object nil "margin" arguments))
 
@@ -893,6 +938,9 @@
 
 (defun |maximumLevelOfDetail| (object &rest arguments)
   (%qinvoke-method object nil "maximumLevelOfDetail" arguments))
+
+(defun |maximumMargins| (object &rest arguments)
+  (%qinvoke-method object nil "maximumMargins" arguments))
 
 (defun |maximumMipLevels| (object &rest arguments)
   (%qinvoke-method object nil "maximumMipLevels" arguments))
@@ -1110,6 +1158,9 @@
 (defun |minimumLevelOfDetail| (object &rest arguments)
   (%qinvoke-method object nil "minimumLevelOfDetail" arguments))
 
+(defun |minimumMargins| (object &rest arguments)
+  (%qinvoke-method object nil "minimumMargins" arguments))
+
 (defun |minimumPhysicalPageSize| (object &rest arguments)
   (%qinvoke-method object nil "minimumPhysicalPageSize" arguments))
 
@@ -1292,6 +1343,9 @@
 
 (defun |myComputer| (object &rest arguments)
   (%qinvoke-method object nil "myComputer" arguments))
+
+(defun |name.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "name" arguments))
 
 (defun |nameFilterDisables| (object &rest arguments)
   (%qinvoke-method object nil "nameFilterDisables" arguments))
@@ -1769,6 +1823,15 @@
 
 (defun |paintFlipped| (object &rest arguments)
   (%qinvoke-method object nil "paintFlipped" arguments))
+
+(defun |paintRectPixels| (object &rest arguments)
+  (%qinvoke-method object nil "paintRectPixels" arguments))
+
+(defun |paintRectPoints| (object &rest arguments)
+  (%qinvoke-method object nil "paintRectPoints" arguments))
+
+(defun |paintRect| (object &rest arguments)
+  (%qinvoke-method object nil "paintRect" arguments))
 
 (defun |paintRequested| (object &rest arguments)
   (%qinvoke-method object nil "paintRequested" arguments))
@@ -2519,6 +2582,12 @@
 
 (defun |rectForIndex| (object &rest arguments)
   (%qinvoke-method object nil "rectForIndex" arguments))
+
+(defun |rectPixels| (object &rest arguments)
+  (%qinvoke-method object nil "rectPixels" arguments))
+
+(defun |rectPoints| (object &rest arguments)
+  (%qinvoke-method object nil "rectPoints" arguments))
 
 (defun |rects| (object &rest arguments)
   (%qinvoke-method object nil "rects" arguments))
@@ -3530,72 +3599,3 @@
 
 (defun |sectionAt| (object &rest arguments)
   (%qinvoke-method object nil "sectionAt" arguments))
-
-(defun |sectionClicked| (object &rest arguments)
-  (%qinvoke-method object nil "sectionClicked" arguments))
-
-(defun |sectionCountChanged| (object &rest arguments)
-  (%qinvoke-method object nil "sectionCountChanged" arguments))
-
-(defun |sectionCount| (object &rest arguments)
-  (%qinvoke-method object nil "sectionCount" arguments))
-
-(defun |sectionDoubleClicked| (object &rest arguments)
-  (%qinvoke-method object nil "sectionDoubleClicked" arguments))
-
-(defun |sectionEntered| (object &rest arguments)
-  (%qinvoke-method object nil "sectionEntered" arguments))
-
-(defun |sectionHandleDoubleClicked| (object &rest arguments)
-  (%qinvoke-method object nil "sectionHandleDoubleClicked" arguments))
-
-(defun |sectionMoved| (object &rest arguments)
-  (%qinvoke-method object nil "sectionMoved" arguments))
-
-(defun |sectionPosition| (object &rest arguments)
-  (%qinvoke-method object nil "sectionPosition" arguments))
-
-(defun |sectionPressed| (object &rest arguments)
-  (%qinvoke-method object nil "sectionPressed" arguments))
-
-(defun |sectionResizeMode| (object &rest arguments)
-  (%qinvoke-method object nil "sectionResizeMode" arguments))
-
-(defun |sectionResized| (object &rest arguments)
-  (%qinvoke-method object nil "sectionResized" arguments))
-
-(defun |sectionSizeHint| (object &rest arguments)
-  (%qinvoke-method object nil "sectionSizeHint" arguments))
-
-(defun |sectionSize| (object &rest arguments)
-  (%qinvoke-method object nil "sectionSize" arguments))
-
-(defun |sectionText| (object &rest arguments)
-  (%qinvoke-method object nil "sectionText" arguments))
-
-(defun |sectionViewportPosition| (object &rest arguments)
-  (%qinvoke-method object nil "sectionViewportPosition" arguments))
-
-(defun |sectionsAboutToBeRemoved| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsAboutToBeRemoved" arguments))
-
-(defun |sectionsClickable| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsClickable" arguments))
-
-(defun |sectionsHidden| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsHidden" arguments))
-
-(defun |sectionsInserted| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsInserted" arguments))
-
-(defun |sectionsMovable| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsMovable" arguments))
-
-(defun |sectionsMoved| (object &rest arguments)
-  (%qinvoke-method object nil "sectionsMoved" arguments))
-
-(defun |securityOrigin| (object &rest arguments)
-  (%qinvoke-method object nil "securityOrigin" arguments))
-
-(defun |seekableChanged| (object &rest arguments)
-  (%qinvoke-method object nil "seekableChanged" arguments))

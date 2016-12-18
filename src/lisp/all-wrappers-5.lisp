@@ -1,5 +1,30 @@
 (defpackage :eql
   (:export
+   #:|setStandardErrorFile|
+   #:|setStandardInputFile|
+   #:|setStandardOutputFile|
+   #:|setStandardOutputProcess|
+   #:|setStartAngle|
+   #:|setStartCenterPoint|
+   #:|setStartDragDistance.QApplication|
+   #:|setStartDragTime.QApplication|
+   #:|setStartFrame|
+   #:|setStartId|
+   #:|setStartTime|
+   #:|setStartValue|
+   #:|setStart|
+   #:|setState|
+   #:|setStatusBar|
+   #:|setStatusTip|
+   #:|setStereoMode|
+   #:|setStickyFocus|
+   #:|setStops|
+   #:|setStrength|
+   #:|setStretchFactor(QLayout*...)|
+   #:|setStretchFactor(QWidget*...)|
+   #:|setStretchFactor|
+   #:|setStretchLastSection|
+   #:|setStretch|
    #:|setStrikeOut|
    #:|setStringList|
    #:|setStyle(QString).QApplication|
@@ -142,6 +167,7 @@
    #:|setUniformValue(int,QVector4D)|
    #:|setUniformValue(int...)|
    #:|setUniformValue|
+   #:|setUnits|
    #:|setUpdateBehavior|
    #:|setUpdateInterval|
    #:|setUpdatesEnabled|
@@ -312,6 +338,7 @@
    #:|signal|
    #:|simplified|
    #:|singleStep|
+   #:|size.QPageSize|
    #:|sizeAdjustPolicy|
    #:|sizeConstraint|
    #:|sizeFromContents|
@@ -321,6 +348,10 @@
    #:|sizeHintForRow|
    #:|sizeHint|
    #:|sizeIncrement|
+   #:|sizePixels.QPageSize|
+   #:|sizePixels|
+   #:|sizePoints.QPageSize|
+   #:|sizePoints|
    #:|sizePolicy|
    #:|sizes|
    #:|size|
@@ -762,6 +793,7 @@
    #:|toLongLong|
    #:|toLower|
    #:|toMSecsSinceEpoch|
+   #:|toMargins|
    #:|toModelIndex|
    #:|toNativeSeparators.QDir|
    #:|toNextBoundary|
@@ -970,6 +1002,7 @@
    #:|united(QRect)|
    #:|united(QRegion)|
    #:|united|
+   #:|units|
    #:|unload|
    #:|unlock|
    #:|unmap|
@@ -1161,42 +1194,9 @@
    #:|windowTitleChanged|
    #:|windowTitle|
    #:|windowType|
+   #:|windowsId.QPageSize|
    #:|windowsIdToDefaultIanaId.QTimeZone|
    #:|windowsIdToIanaIds.QTimeZone|
+   #:|windowsId|
    #:|windowsVersion.QSysInfo|
-   #:|window|
-   #:|wizardStyle|
-   #:|wizard|
-   #:|wordSpacing|
-   #:|wordWrapMode|
-   #:|wordWrap|
-   #:|workAreaResized|
-   #:|workingDirectory|
-   #:|worldMatrixEnabled|
-   #:|worldTransform|
-   #:|wrapAround|
-   #:|wrapMode|
-   #:|wrapping|
-   #:|writableLocation.QStandardPaths|
-   #:|write(QByteArray)|
-   #:|write(QTextDocumentFragment)|
-   #:|write(const QTextDocument*)|
-   #:|write(const char*)|
-   #:|writeDatagram|
-   #:|write|
-   #:|writingSystemName.QFontDatabase|
-   #:|writingSystemSample.QFontDatabase|
-   #:|writingSystem|
-   #:|w|
-   #:|xChanged|
-   #:|xHeight|
-   #:|xOffset|
-   #:|xScaleChanged|
-   #:|xScale|
-   #:|xTilt|
-   #:|xToCursor|
-   #:|xored|
-   #:|x|
-   #:|yCbCrColorSpace|
-   #:|yChanged|
-   #:|yOffset|))
+   #:|window|))

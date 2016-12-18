@@ -265,6 +265,7 @@
    "virtual void setData ( int , const QVariant & )")
   (("QLocale" . NIL))
   (("QMargins" . NIL))
+  (("QMarginsF" . NIL))
   (("QMatrix" . NIL))
   (("QMatrix4x4" . NIL))
   (("QMediaContent" . NIL))
@@ -285,6 +286,8 @@
    "virtual void ensureActiveTarget ()"
    "virtual int metric ( QPaintDevice::PaintDeviceMetric ) const")
   (("QOpenGLTexture" . NIL))
+  (("QPageLayout" . NIL))
+  (("QPageSize" . NIL))
   (("QPagedPaintDevice" . "QPaintDevice")
    "virtual bool newPage () = 0"
    "virtual void setPageSize ( PageSize )"

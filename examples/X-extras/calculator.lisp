@@ -126,11 +126,15 @@
      ,@(loop :for arg :in args :collect
           `(qconnect ,arg "clicked()" ',(intern (string-upcase (format nil "~A-clicked" arg)))))))
 
+(let (policy)
+  (defun size-policy-expanding ()
+    (or policy (setf policy (qnew "QSizePolicy(...)" |QSizePolicy.Expanding| |QSizePolicy.Expanding|)))))
+
 (defun run ()
   (flet ((b ()
            (qnew "QToolButton"
                  "minimumSize" '(35 25)
-                 "sizePolicy" #.(qnew "QSizePolicy(...)" |QSizePolicy.Expanding| |QSizePolicy.Expanding|))))
+                 "sizePolicy" (size-policy-expanding))))
     (let* ((layout* (|layout| *main*))
            (layout (if (qnull layout*) ; for multiple calls of RUN
                        (qnew "QGridLayout(QWidget*)" *main*)

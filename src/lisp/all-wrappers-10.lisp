@@ -1,5 +1,74 @@
 (in-package :eql)
 
+(defun |sectionClicked| (object &rest arguments)
+  (%qinvoke-method object nil "sectionClicked" arguments))
+
+(defun |sectionCountChanged| (object &rest arguments)
+  (%qinvoke-method object nil "sectionCountChanged" arguments))
+
+(defun |sectionCount| (object &rest arguments)
+  (%qinvoke-method object nil "sectionCount" arguments))
+
+(defun |sectionDoubleClicked| (object &rest arguments)
+  (%qinvoke-method object nil "sectionDoubleClicked" arguments))
+
+(defun |sectionEntered| (object &rest arguments)
+  (%qinvoke-method object nil "sectionEntered" arguments))
+
+(defun |sectionHandleDoubleClicked| (object &rest arguments)
+  (%qinvoke-method object nil "sectionHandleDoubleClicked" arguments))
+
+(defun |sectionMoved| (object &rest arguments)
+  (%qinvoke-method object nil "sectionMoved" arguments))
+
+(defun |sectionPosition| (object &rest arguments)
+  (%qinvoke-method object nil "sectionPosition" arguments))
+
+(defun |sectionPressed| (object &rest arguments)
+  (%qinvoke-method object nil "sectionPressed" arguments))
+
+(defun |sectionResizeMode| (object &rest arguments)
+  (%qinvoke-method object nil "sectionResizeMode" arguments))
+
+(defun |sectionResized| (object &rest arguments)
+  (%qinvoke-method object nil "sectionResized" arguments))
+
+(defun |sectionSizeHint| (object &rest arguments)
+  (%qinvoke-method object nil "sectionSizeHint" arguments))
+
+(defun |sectionSize| (object &rest arguments)
+  (%qinvoke-method object nil "sectionSize" arguments))
+
+(defun |sectionText| (object &rest arguments)
+  (%qinvoke-method object nil "sectionText" arguments))
+
+(defun |sectionViewportPosition| (object &rest arguments)
+  (%qinvoke-method object nil "sectionViewportPosition" arguments))
+
+(defun |sectionsAboutToBeRemoved| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsAboutToBeRemoved" arguments))
+
+(defun |sectionsClickable| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsClickable" arguments))
+
+(defun |sectionsHidden| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsHidden" arguments))
+
+(defun |sectionsInserted| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsInserted" arguments))
+
+(defun |sectionsMovable| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsMovable" arguments))
+
+(defun |sectionsMoved| (object &rest arguments)
+  (%qinvoke-method object nil "sectionsMoved" arguments))
+
+(defun |securityOrigin| (object &rest arguments)
+  (%qinvoke-method object nil "securityOrigin" arguments))
+
+(defun |seekableChanged| (object &rest arguments)
+  (%qinvoke-method object nil "seekableChanged" arguments))
+
 (defun |seek| (object &rest arguments)
   (%qinvoke-method object nil "seek" arguments))
 
@@ -2277,6 +2346,9 @@
 (defun |setManualWhiteBalance| (object &rest arguments)
   (%qinvoke-method object nil "setManualWhiteBalance" arguments))
 
+(defun |setMargins| (object &rest arguments)
+  (%qinvoke-method object nil "setMargins" arguments))
+
 (defun |setMargin| (object &rest arguments)
   (%qinvoke-method object nil "setMargin" arguments))
 
@@ -2417,6 +2489,9 @@
 
 (defun |setMinimumLevelOfDetail| (object &rest arguments)
   (%qinvoke-method object nil "setMinimumLevelOfDetail" arguments))
+
+(defun |setMinimumMargins| (object &rest arguments)
+  (%qinvoke-method object nil "setMinimumMargins" arguments))
 
 (defun |setMinimumRenderSize| (object &rest arguments)
   (%qinvoke-method object nil "setMinimumRenderSize" arguments))
@@ -3524,78 +3599,3 @@
 
 (defun |setStandardColor.QColorDialog| (&rest arguments)
   (%qinvoke-method "QColorDialog" nil "setStandardColor" arguments))
-
-(defun |setStandardErrorFile| (object &rest arguments)
-  (%qinvoke-method object nil "setStandardErrorFile" arguments))
-
-(defun |setStandardInputFile| (object &rest arguments)
-  (%qinvoke-method object nil "setStandardInputFile" arguments))
-
-(defun |setStandardOutputFile| (object &rest arguments)
-  (%qinvoke-method object nil "setStandardOutputFile" arguments))
-
-(defun |setStandardOutputProcess| (object &rest arguments)
-  (%qinvoke-method object nil "setStandardOutputProcess" arguments))
-
-(defun |setStartAngle| (object &rest arguments)
-  (%qinvoke-method object nil "setStartAngle" arguments))
-
-(defun |setStartCenterPoint| (object &rest arguments)
-  (%qinvoke-method object nil "setStartCenterPoint" arguments))
-
-(defun |setStartDragDistance.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setStartDragDistance" arguments))
-
-(defun |setStartDragTime.QApplication| (&rest arguments)
-  (%qinvoke-method "QApplication" nil "setStartDragTime" arguments))
-
-(defun |setStartFrame| (object &rest arguments)
-  (%qinvoke-method object nil "setStartFrame" arguments))
-
-(defun |setStartId| (object &rest arguments)
-  (%qinvoke-method object nil "setStartId" arguments))
-
-(defun |setStartTime| (object &rest arguments)
-  (%qinvoke-method object nil "setStartTime" arguments))
-
-(defun |setStartValue| (object &rest arguments)
-  (%qinvoke-method object nil "setStartValue" arguments))
-
-(defun |setStart| (object &rest arguments)
-  (%qinvoke-method object nil "setStart" arguments))
-
-(defun |setState| (object &rest arguments)
-  (%qinvoke-method object nil "setState" arguments))
-
-(defun |setStatusBar| (object &rest arguments)
-  (%qinvoke-method object nil "setStatusBar" arguments))
-
-(defun |setStatusTip| (object &rest arguments)
-  (%qinvoke-method object nil "setStatusTip" arguments))
-
-(defun |setStereoMode| (object &rest arguments)
-  (%qinvoke-method object nil "setStereoMode" arguments))
-
-(defun |setStickyFocus| (object &rest arguments)
-  (%qinvoke-method object nil "setStickyFocus" arguments))
-
-(defun |setStops| (object &rest arguments)
-  (%qinvoke-method object nil "setStops" arguments))
-
-(defun |setStrength| (object &rest arguments)
-  (%qinvoke-method object nil "setStrength" arguments))
-
-(defun |setStretchFactor(QLayout*...)| (object &rest arguments)
-  (%qinvoke-method object nil "setStretchFactor(QLayout*...)" arguments))
-
-(defun |setStretchFactor(QWidget*...)| (object &rest arguments)
-  (%qinvoke-method object nil "setStretchFactor(QWidget*...)" arguments))
-
-(defun |setStretchFactor| (object &rest arguments)
-  (%qinvoke-method object nil "setStretchFactor" arguments))
-
-(defun |setStretchLastSection| (object &rest arguments)
-  (%qinvoke-method object nil "setStretchLastSection" arguments))
-
-(defun |setStretch| (object &rest arguments)
-  (%qinvoke-method object nil "setStretch" arguments))

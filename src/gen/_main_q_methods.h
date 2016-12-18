@@ -2130,7 +2130,7 @@ public:
     Q_INVOKABLE QRect MframeGeometry(QWidget* o) const { return o->frameGeometry(); }
     Q_INVOKABLE QSize MframeSize(QWidget* o) const { return o->frameSize(); }
     Q_INVOKABLE QRect Mgeometry(QWidget* o) const { return o->geometry(); }
-    Q_INVOKABLE QPixmap Mgrab(QWidget* o, const QRect& x1 = QRect_QWIDGET_GRAB) { return o->grab(x1); }
+    Q_INVOKABLE QPixmap Mgrab(QWidget* o, const QRect& x1 = QRect_DEFAULT) { return o->grab(x1); }
     Q_INVOKABLE void MgrabGesture(QWidget* o, Qt::GestureType x1, Qt::GestureFlags x2 = Qt::GestureFlags()) { o->grabGesture(x1, x2); }
     Q_INVOKABLE void MgrabKeyboard(QWidget* o) { o->grabKeyboard(); }
     Q_INVOKABLE void MgrabMouse(QWidget* o) { o->grabMouse(); }

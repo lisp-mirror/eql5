@@ -60,7 +60,7 @@
   (|about.QMessageBox|
     *me*
     (tr "About Grabber")
-    (tr "The <b>Grabber</b> example demonstrates two approaches for rendering OpenGL into a Qt pixmap.")))
+    (tr "The <b>Grabber</b> example demonstrates how to render an OpenGL frame buffer into a Qt pixmap.")))
 
 (defun add-action (menu text shortcut function)
   (let ((action (|addAction| menu text)))

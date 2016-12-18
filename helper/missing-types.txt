@@ -45,7 +45,6 @@ QList<QWebElement>
 QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
-QMarginsF
 QMediaControl
 QMediaResource
 QMediaResourceList
@@ -53,8 +52,6 @@ QMultiMap<QString,QString>
 QNetworkConfiguration
 QOpenGLContextGroup
 QOpenGLFunctions
-QPageLayout
-QPageSize
 QPixelFormat
 QPlatformNativeInterface
 QPlatformScreen

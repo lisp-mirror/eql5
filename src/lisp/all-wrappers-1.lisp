@@ -1055,6 +1055,10 @@
    #:|defaultTextOption|
    #:|defaultValue|
    #:|defaultWidget|
+   #:|definitionSize.QPageSize|
+   #:|definitionSize|
+   #:|definitionUnits.QPageSize|
+   #:|definitionUnits|
    #:|deleteAccessibleInterface.QAccessible|
    #:|deleteChar|
    #:|deleteCookie|
@@ -1195,11 +1199,7 @@
    #:|drawItemText|
    #:|drawLine(QLine)|
    #:|drawLine(QLineF)|
-   #:|drawLine(QPoint...)|
-   #:|drawLine(QPointF...)|
-   #:|drawLines(QVector<QLine>)|
-   #:|drawLines(QVector<QLineF>)|
-   #:|drawLines(QVector<QPoint>)|))
+   #:|drawLine(QPoint...)|))
 
 (in-package :eql)
 

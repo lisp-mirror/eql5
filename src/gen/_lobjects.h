@@ -26,7 +26,8 @@ QT_BEGIN_NAMESPACE
 typedef QList<int>        NumList;
 typedef QList<QByteArray> StrList;
 
-#define QRect_QWIDGET_GRAB QRect(0, 0, -1, -1)
+#define QMarginsF_DEFAULT QMarginsF(0, 0, 0, 0)
+#define QRect_DEFAULT     QRect(0, 0, -1, -1)
 
 class EQL;
 class DynObject;

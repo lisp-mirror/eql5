@@ -1,5 +1,28 @@
 (defpackage :eql
   (:export
+   #:|sectionClicked|
+   #:|sectionCountChanged|
+   #:|sectionCount|
+   #:|sectionDoubleClicked|
+   #:|sectionEntered|
+   #:|sectionHandleDoubleClicked|
+   #:|sectionMoved|
+   #:|sectionPosition|
+   #:|sectionPressed|
+   #:|sectionResizeMode|
+   #:|sectionResized|
+   #:|sectionSizeHint|
+   #:|sectionSize|
+   #:|sectionText|
+   #:|sectionViewportPosition|
+   #:|sectionsAboutToBeRemoved|
+   #:|sectionsClickable|
+   #:|sectionsHidden|
+   #:|sectionsInserted|
+   #:|sectionsMovable|
+   #:|sectionsMoved|
+   #:|securityOrigin|
+   #:|seekableChanged|
    #:|seek|
    #:|segmentStyle|
    #:|select(QItemSelection...)|
@@ -759,6 +782,7 @@
    #:|setManualIsoSensitivity|
    #:|setManualShutterSpeed|
    #:|setManualWhiteBalance|
+   #:|setMargins|
    #:|setMargin|
    #:|setMask(QBitmap)|
    #:|setMask(QRegion)|
@@ -806,6 +830,7 @@
    #:|setMinimumFrameRate|
    #:|setMinimumHeight|
    #:|setMinimumLevelOfDetail|
+   #:|setMinimumMargins|
    #:|setMinimumRenderSize|
    #:|setMinimumSectionSize|
    #:|setMinimumSize|
@@ -1174,29 +1199,4 @@
    #:|setStackingMode|
    #:|setStack|
    #:|setStandardButtons|
-   #:|setStandardColor.QColorDialog|
-   #:|setStandardErrorFile|
-   #:|setStandardInputFile|
-   #:|setStandardOutputFile|
-   #:|setStandardOutputProcess|
-   #:|setStartAngle|
-   #:|setStartCenterPoint|
-   #:|setStartDragDistance.QApplication|
-   #:|setStartDragTime.QApplication|
-   #:|setStartFrame|
-   #:|setStartId|
-   #:|setStartTime|
-   #:|setStartValue|
-   #:|setStart|
-   #:|setState|
-   #:|setStatusBar|
-   #:|setStatusTip|
-   #:|setStereoMode|
-   #:|setStickyFocus|
-   #:|setStops|
-   #:|setStrength|
-   #:|setStretchFactor(QLayout*...)|
-   #:|setStretchFactor(QWidget*...)|
-   #:|setStretchFactor|
-   #:|setStretchLastSection|
-   #:|setStretch|))
+   #:|setStandardColor.QColorDialog|))

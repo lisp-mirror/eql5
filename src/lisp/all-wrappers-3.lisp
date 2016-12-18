@@ -1,6 +1,20 @@
 (defpackage :eql
   (:export
+   #:|itemsBoundingRect|
+   #:|itemsExpandable|
+   #:|items|
+   #:|item|
+   #:|javaScriptWindowObjectCleared|
+   #:|joinMulticastGroup|
+   #:|joinPreviousEditBlock|
+   #:|joinStyle|
+   #:|jumpToFrame|
+   #:|jumpToNextFrame|
+   #:|keepPositionOnInsert|
+   #:|kernelType.QSysInfo|
+   #:|kernelVersion.QSysInfo|
    #:|kerning|
+   #:|key.QPageSize|
    #:|keyBindings.QKeySequence|
    #:|keyBindingsForAction|
    #:|keyExchangeMethod|
@@ -263,6 +277,7 @@
    #:|mappedSection|
    #:|mappedWidgetAt|
    #:|map|
+   #:|margins|
    #:|margin|
    #:|markContentsDirty|
    #:|mask|
@@ -298,6 +313,7 @@
    #:|maximumHeight|
    #:|maximumItemCount|
    #:|maximumLevelOfDetail|
+   #:|maximumMargins|
    #:|maximumMipLevels|
    #:|maximumOpticalZoomChanged|
    #:|maximumOpticalZoom|
@@ -370,6 +386,7 @@
    #:|minimumHeightForWidth|
    #:|minimumHeight|
    #:|minimumLevelOfDetail|
+   #:|minimumMargins|
    #:|minimumPhysicalPageSize|
    #:|minimumRenderSize|
    #:|minimumSectionSize|
@@ -431,6 +448,7 @@
    #:|multicastInterface|
    #:|mutedChanged|
    #:|myComputer|
+   #:|name.QPageSize|
    #:|nameFilterDisables|
    #:|nameFilters|
    #:|nameToType.QVariant|
@@ -590,6 +608,9 @@
    #:|paint(QPainter*,int...)|
    #:|paintDevice|
    #:|paintFlipped|
+   #:|paintRectPixels|
+   #:|paintRectPoints|
+   #:|paintRect|
    #:|paintRequested|
    #:|paintWindowFrame|
    #:|paintingActive|
@@ -840,6 +861,8 @@
    #:|record|
    #:|rectCount|
    #:|rectForIndex|
+   #:|rectPixels|
+   #:|rectPoints|
    #:|rects|
    #:|rect|
    #:|redF|
@@ -1176,27 +1199,4 @@
    #:|search|
    #:|second|
    #:|secsTo|
-   #:|sectionAt|
-   #:|sectionClicked|
-   #:|sectionCountChanged|
-   #:|sectionCount|
-   #:|sectionDoubleClicked|
-   #:|sectionEntered|
-   #:|sectionHandleDoubleClicked|
-   #:|sectionMoved|
-   #:|sectionPosition|
-   #:|sectionPressed|
-   #:|sectionResizeMode|
-   #:|sectionResized|
-   #:|sectionSizeHint|
-   #:|sectionSize|
-   #:|sectionText|
-   #:|sectionViewportPosition|
-   #:|sectionsAboutToBeRemoved|
-   #:|sectionsClickable|
-   #:|sectionsHidden|
-   #:|sectionsInserted|
-   #:|sectionsMovable|
-   #:|sectionsMoved|
-   #:|securityOrigin|
-   #:|seekableChanged|))
+   #:|sectionAt|))

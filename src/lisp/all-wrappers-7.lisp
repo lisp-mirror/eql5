@@ -3165,6 +3165,18 @@
 (defun |defaultWidget| (object &rest arguments)
   (%qinvoke-method object nil "defaultWidget" arguments))
 
+(defun |definitionSize.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "definitionSize" arguments))
+
+(defun |definitionSize| (object &rest arguments)
+  (%qinvoke-method object nil "definitionSize" arguments))
+
+(defun |definitionUnits.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "definitionUnits" arguments))
+
+(defun |definitionUnits| (object &rest arguments)
+  (%qinvoke-method object nil "definitionUnits" arguments))
+
 (defun |deleteAccessibleInterface.QAccessible| (&rest arguments)
   (%qinvoke-method "QAccessible" nil "deleteAccessibleInterface" arguments))
 
@@ -3587,15 +3599,3 @@
 
 (defun |drawLine(QPoint...)| (object &rest arguments)
   (%qinvoke-method object nil "drawLine(QPoint...)" arguments))
-
-(defun |drawLine(QPointF...)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLine(QPointF...)" arguments))
-
-(defun |drawLines(QVector<QLine>)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(QVector<QLine>)" arguments))
-
-(defun |drawLines(QVector<QLineF>)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(QVector<QLineF>)" arguments))
-
-(defun |drawLines(QVector<QPoint>)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLines(QVector<QPoint>)" arguments))

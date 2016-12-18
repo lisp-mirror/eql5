@@ -1,5 +1,17 @@
 (in-package :eql)
 
+(defun |drawLine(QPointF...)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLine(QPointF...)" arguments))
+
+(defun |drawLines(QVector<QLine>)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(QVector<QLine>)" arguments))
+
+(defun |drawLines(QVector<QLineF>)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(QVector<QLineF>)" arguments))
+
+(defun |drawLines(QVector<QPoint>)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLines(QVector<QPoint>)" arguments))
+
 (defun |drawLines(QVector<QPointF>)| (object &rest arguments)
   (%qinvoke-method object nil "drawLines(QVector<QPointF>)" arguments))
 
@@ -1500,6 +1512,15 @@
 (defun |fullPage| (object &rest arguments)
   (%qinvoke-method object nil "fullPage" arguments))
 
+(defun |fullRectPixels| (object &rest arguments)
+  (%qinvoke-method object nil "fullRectPixels" arguments))
+
+(defun |fullRectPoints| (object &rest arguments)
+  (%qinvoke-method object nil "fullRectPoints" arguments))
+
+(defun |fullRect| (object &rest arguments)
+  (%qinvoke-method object nil "fullRect" arguments))
+
 (defun |fullScreenChanged| (object &rest arguments)
   (%qinvoke-method object nil "fullScreenChanged" arguments))
 
@@ -2141,6 +2162,21 @@
 
 (defun |icon| (object &rest arguments)
   (%qinvoke-method object nil "icon" arguments))
+
+(defun |id(QSize).QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "id(QSize)" arguments))
+
+(defun |id(QSize...).QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "id(QSize...)" arguments))
+
+(defun |id(QSizeF...).QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "id(QSizeF...)" arguments))
+
+(defun |id(int).QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "id(int)" arguments))
+
+(defun |id.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "id" arguments))
 
 (defun |idealWidth| (object &rest arguments)
   (%qinvoke-method object nil "idealWidth" arguments))
@@ -2919,6 +2955,9 @@
 (defun |isEqual| (object &rest arguments)
   (%qinvoke-method object nil "isEqual" arguments))
 
+(defun |isEquivalentTo| (object &rest arguments)
+  (%qinvoke-method object nil "isEquivalentTo" arguments))
+
 (defun |isExclusive| (object &rest arguments)
   (%qinvoke-method object nil "isExclusive" arguments))
 
@@ -3560,42 +3599,3 @@
 
 (defun |items(int...)| (object &rest arguments)
   (%qinvoke-method object nil "items(int...)" arguments))
-
-(defun |itemsBoundingRect| (object &rest arguments)
-  (%qinvoke-method object nil "itemsBoundingRect" arguments))
-
-(defun |itemsExpandable| (object &rest arguments)
-  (%qinvoke-method object nil "itemsExpandable" arguments))
-
-(defun |items| (object &rest arguments)
-  (%qinvoke-method object nil "items" arguments))
-
-(defun |item| (object &rest arguments)
-  (%qinvoke-method object nil "item" arguments))
-
-(defun |javaScriptWindowObjectCleared| (object &rest arguments)
-  (%qinvoke-method object nil "javaScriptWindowObjectCleared" arguments))
-
-(defun |joinMulticastGroup| (object &rest arguments)
-  (%qinvoke-method object nil "joinMulticastGroup" arguments))
-
-(defun |joinPreviousEditBlock| (object &rest arguments)
-  (%qinvoke-method object nil "joinPreviousEditBlock" arguments))
-
-(defun |joinStyle| (object &rest arguments)
-  (%qinvoke-method object nil "joinStyle" arguments))
-
-(defun |jumpToFrame| (object &rest arguments)
-  (%qinvoke-method object nil "jumpToFrame" arguments))
-
-(defun |jumpToNextFrame| (object &rest arguments)
-  (%qinvoke-method object nil "jumpToNextFrame" arguments))
-
-(defun |keepPositionOnInsert| (object &rest arguments)
-  (%qinvoke-method object nil "keepPositionOnInsert" arguments))
-
-(defun |kernelType.QSysInfo| (&rest arguments)
-  (%qinvoke-method "QSysInfo" nil "kernelType" arguments))
-
-(defun |kernelVersion.QSysInfo| (&rest arguments)
-  (%qinvoke-method "QSysInfo" nil "kernelVersion" arguments))

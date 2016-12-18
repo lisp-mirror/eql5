@@ -28,14 +28,14 @@ void ini() {
     LObjects::Q[181] = new Q182;
     LObjects::Q[182] = new Q183;
     LObjects::Q[183] = new Q184;
-    LObjects::N[138] = new N139;
-    LObjects::N[139] = new N140;
-    LObjects::N[140] = new N141;
     LObjects::N[141] = new N142;
     LObjects::N[142] = new N143;
     LObjects::N[143] = new N144;
     LObjects::N[144] = new N145;
-    LObjects::N[145] = new N146; }
+    LObjects::N[145] = new N146;
+    LObjects::N[146] = new N147;
+    LObjects::N[147] = new N148;
+    LObjects::N[148] = new N149; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -49,14 +49,14 @@ const QMetaObject* staticMetaObject(int n) {
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 139: if(gc) delete (QSqlDatabase*)p; else delete (LSqlDatabase*)p; break;
-        case 140: if(gc) delete (QSqlError*)p; else delete (LSqlError*)p; break;
-        case 141: if(gc) delete (QSqlField*)p; else delete (LSqlField*)p; break;
-        case 142: if(gc) delete (QSqlIndex*)p; else delete (LSqlIndex*)p; break;
-        case 143: if(gc) delete (QSqlQuery*)p; else delete (LSqlQuery*)p; break;
-        case 144: if(gc) delete (QSqlRecord*)p; else delete (LSqlRecord*)p; break;
-        case 145: if(gc) delete (QSqlRelation*)p; else delete (LSqlRelation*)p; break;
-        case 146: if(gc) delete (QSqlResult*)p; else delete (LSqlResult*)p; break; }}
+        case 142: if(gc) delete (QSqlDatabase*)p; else delete (LSqlDatabase*)p; break;
+        case 143: if(gc) delete (QSqlError*)p; else delete (LSqlError*)p; break;
+        case 144: if(gc) delete (QSqlField*)p; else delete (LSqlField*)p; break;
+        case 145: if(gc) delete (QSqlIndex*)p; else delete (LSqlIndex*)p; break;
+        case 146: if(gc) delete (QSqlQuery*)p; else delete (LSqlQuery*)p; break;
+        case 147: if(gc) delete (QSqlRecord*)p; else delete (LSqlRecord*)p; break;
+        case 148: if(gc) delete (QSqlRelation*)p; else delete (LSqlRelation*)p; break;
+        case 149: if(gc) delete (QSqlResult*)p; else delete (LSqlResult*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -71,14 +71,14 @@ NumList* overrideFunctions(const QByteArray& name) {
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 139: ids = &LSqlDatabase::overrideIds; break;
-            case 140: ids = &LSqlError::overrideIds; break;
-            case 141: ids = &LSqlField::overrideIds; break;
-            case 142: ids = &LSqlIndex::overrideIds; break;
-            case 143: ids = &LSqlQuery::overrideIds; break;
-            case 144: ids = &LSqlRecord::overrideIds; break;
-            case 145: ids = &LSqlRelation::overrideIds; break;
-            case 146: ids = &LSqlResult::overrideIds; break; }}
+            case 142: ids = &LSqlDatabase::overrideIds; break;
+            case 143: ids = &LSqlError::overrideIds; break;
+            case 144: ids = &LSqlField::overrideIds; break;
+            case 145: ids = &LSqlIndex::overrideIds; break;
+            case 146: ids = &LSqlQuery::overrideIds; break;
+            case 147: ids = &LSqlRecord::overrideIds; break;
+            case 148: ids = &LSqlRelation::overrideIds; break;
+            case 149: ids = &LSqlResult::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE
