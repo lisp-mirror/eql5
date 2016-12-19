@@ -161,6 +161,7 @@
         "QTimerEvent"
         "QTimeZone"
         "QToolTip"
+        "QTouchDevice"
         "QTouchEvent"
         "QTransform"
         "QTreeWidgetItem"

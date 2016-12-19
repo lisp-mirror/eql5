@@ -62,6 +62,7 @@ META_TYPE (T_QList_QTableWidgetSelectionRange, QList<QTableWidgetSelectionRange>
 META_TYPE (T_QList_QTextBlock,                 QList<QTextBlock>)
 META_TYPE (T_QList_QTextEdit_ExtraSelection,   QList<QTextEdit::ExtraSelection>)
 META_TYPE (T_QList_QTextFrame,                 QList<QTextFrame*>)
+META_TYPE (T_QList_QTouchDevice,               QList<const QTouchDevice*>)
 META_TYPE (T_QList_QTreeWidgetItem,            QList<QTreeWidgetItem*>)
 META_TYPE (T_QList_QUndoStack,                 QList<QUndoStack*>)
 META_TYPE (T_QList_QUrl,                       QList<QUrl>)
@@ -1041,6 +1042,7 @@ TO_CL_LIST_PTR (QMdiSubWindow, qmdisubwindow)
 TO_CL_LIST_PTR (QStandardItem, qstandarditem)
 TO_CL_LIST_PTR (QTableWidgetItem, qtablewidgetitem)
 TO_CL_LIST_PTR (QTextFrame, qtextframe)
+TO_CL_LIST_PTR (QTouchDevice, qtouchdevice)
 TO_CL_LIST_PTR (QTreeWidgetItem, qtreewidgetitem)
 TO_CL_LIST_PTR (QUndoStack, qundostack)
 
@@ -1384,6 +1386,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QList_QTextBlock == n)                 l_ret = from_qtextblocklist(*(QList<QTextBlock>*)p);
             else if(T_QList_QTextEdit_ExtraSelection == n)   l_ret = from_qtexteditextraselectionlist(*(QList<QTextEdit::ExtraSelection>*)p);
             else if(T_QList_QTextFrame == n)                 l_ret = from_qtextframelist(*(QList<QTextFrame*>*)p);
+            else if(T_QList_QTouchDevice == n)               l_ret = from_qtouchdevicelist(*(QList<QTouchDevice*>*)p);
             else if(T_QList_QTreeWidgetItem == n)            l_ret = from_qtreewidgetitemlist(*(QList<QTreeWidgetItem*>*)p);
             else if(T_QList_QUndoStack == n)                 l_ret = from_qundostacklist(*(QList<QUndoStack*>*)p);
             else if(T_QList_QUrl == n)                       l_ret = from_qurllist(*(QList<QUrl>*)p);

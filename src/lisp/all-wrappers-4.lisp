@@ -1,5 +1,11 @@
 (defpackage :eql
   (:export
+   #:|searchingFinished|
+   #:|searchingStarted|
+   #:|search|
+   #:|second|
+   #:|secsTo|
+   #:|sectionAt|
    #:|sectionClicked|
    #:|sectionCountChanged|
    #:|sectionCount|
@@ -152,6 +158,8 @@
    #:|setAttributeValue(int...)|
    #:|setAttributeValue|
    #:|setAttribute|
+   #:|setAudioBitRate|
+   #:|setAudioCodec|
    #:|setAudioInput|
    #:|setAudioRole|
    #:|setAudioSettings|
@@ -384,6 +392,7 @@
    #:|setDashPattern(QVector<qreal>)|
    #:|setDashPattern(Qt::PenStyle)|
    #:|setDashPattern|
+   #:|setDataSize|
    #:|setDatabaseName|
    #:|setDatabaseQuota|
    #:|setData|
@@ -736,6 +745,7 @@
    #:|setLabelText|
    #:|setLabel|
    #:|setLandscapeOrientation|
+   #:|setLanguage|
    #:|setLastCenterPoint|
    #:|setLastError|
    #:|setLastModified|
@@ -805,6 +815,7 @@
    #:|setMaximumSectionSize|
    #:|setMaximumSize|
    #:|setMaximumTime|
+   #:|setMaximumTouchPoints|
    #:|setMaximumWidth|
    #:|setMaximum|
    #:|setMediaObject|
@@ -1188,15 +1199,4 @@
    #:|setSourceModel|
    #:|setSource|
    #:|setSpacing|
-   #:|setSpanAngle|
-   #:|setSpan|
-   #:|setSpecialValueText|
-   #:|setSpeed|
-   #:|setSpotMeteringPoint|
-   #:|setSpread|
-   #:|setSslConfiguration|
-   #:|setSslOption|
-   #:|setStackingMode|
-   #:|setStack|
-   #:|setStandardButtons|
-   #:|setStandardColor.QColorDialog|))
+   #:|setSpanAngle|))

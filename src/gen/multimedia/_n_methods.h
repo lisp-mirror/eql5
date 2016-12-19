@@ -152,7 +152,39 @@ public:
     Q_INVOKABLE QMediaResourceList Mresources(QMediaContent* o) const { return o->resources(); }
 };
 
-class N203 : public QObject { // QVideoEncoderSettings
+class N97 : public QObject { // QMediaResource
+    Q_OBJECT
+public:
+    Q_INVOKABLE void* C(uint u) { return new LMediaResource(u); }
+    Q_INVOKABLE void* C(uint u, const QUrl& x1, const QString& x2 = QString()) { return new LMediaResource(u, x1, x2); }
+    Q_INVOKABLE void* C(uint u, const QNetworkRequest& x1, const QString& x2 = QString()) { return new LMediaResource(u, x1, x2); }
+    Q_INVOKABLE void* C(uint u, const QMediaResource& x1) { return new LMediaResource(u, x1); }
+    Q_INVOKABLE int MaudioBitRate(QMediaResource* o) const { return o->audioBitRate(); }
+    Q_INVOKABLE QString MaudioCodec(QMediaResource* o) const { return o->audioCodec(); }
+    Q_INVOKABLE int MchannelCount(QMediaResource* o) const { return o->channelCount(); }
+    Q_INVOKABLE qlonglong MdataSize(QMediaResource* o) const { return o->dataSize(); }
+    Q_INVOKABLE bool MisNull(QMediaResource* o) const { return o->isNull(); }
+    Q_INVOKABLE QString Mlanguage(QMediaResource* o) const { return o->language(); }
+    Q_INVOKABLE QString MmimeType(QMediaResource* o) const { return o->mimeType(); }
+    Q_INVOKABLE QNetworkRequest Mrequest(QMediaResource* o) const { return o->request(); }
+    Q_INVOKABLE QSize Mresolution(QMediaResource* o) const { return o->resolution(); }
+    Q_INVOKABLE int MsampleRate(QMediaResource* o) const { return o->sampleRate(); }
+    Q_INVOKABLE void MsetAudioBitRate(QMediaResource* o, int x1) { o->setAudioBitRate(x1); }
+    Q_INVOKABLE void MsetAudioCodec(QMediaResource* o, const QString& x1) { o->setAudioCodec(x1); }
+    Q_INVOKABLE void MsetChannelCount(QMediaResource* o, int x1) { o->setChannelCount(x1); }
+    Q_INVOKABLE void MsetDataSize(QMediaResource* o, const qint64 x1) { o->setDataSize(x1); }
+    Q_INVOKABLE void MsetLanguage(QMediaResource* o, const QString& x1) { o->setLanguage(x1); }
+    Q_INVOKABLE void MsetResolution(QMediaResource* o, const QSize& x1) { o->setResolution(x1); }
+    Q_INVOKABLE void MsetResolution(QMediaResource* o, int x1, int x2) { o->setResolution(x1, x2); }
+    Q_INVOKABLE void MsetSampleRate(QMediaResource* o, int x1) { o->setSampleRate(x1); }
+    Q_INVOKABLE void MsetVideoBitRate(QMediaResource* o, int x1) { o->setVideoBitRate(x1); }
+    Q_INVOKABLE void MsetVideoCodec(QMediaResource* o, const QString& x1) { o->setVideoCodec(x1); }
+    Q_INVOKABLE QUrl Murl(QMediaResource* o) const { return o->url(); }
+    Q_INVOKABLE int MvideoBitRate(QMediaResource* o) const { return o->videoBitRate(); }
+    Q_INVOKABLE QString MvideoCodec(QMediaResource* o) const { return o->videoCodec(); }
+};
+
+class N205 : public QObject { // QVideoEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoEncoderSettings(u); }
@@ -175,7 +207,7 @@ public:
     Q_INVOKABLE void MsetResolution(QVideoEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N204 : public QObject { // QVideoFrame
+class N206 : public QObject { // QVideoFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoFrame(u); }
@@ -211,7 +243,7 @@ public:
     Q_INVOKABLE int SpixelFormatFromImageFormat(QImage::Format x1) { return QVideoFrame::pixelFormatFromImageFormat(x1); }
 };
 
-class N205 : public QObject { // QVideoSurfaceFormat
+class N207 : public QObject { // QVideoSurfaceFormat
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoSurfaceFormat(u); }

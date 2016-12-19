@@ -1,5 +1,9 @@
 (defpackage :eql
   (:export
+   #:|items(QRectF)|
+   #:|items(QRectF...)|
+   #:|items(Qt::SortOrder)|
+   #:|items(int...)|
    #:|itemsBoundingRect|
    #:|itemsExpandable|
    #:|items|
@@ -322,6 +326,7 @@
    #:|maximumSectionSize|
    #:|maximumSize|
    #:|maximumTime|
+   #:|maximumTouchPoints|
    #:|maximumViewportSize|
    #:|maximumWidthChanged|
    #:|maximumWidth|
@@ -373,6 +378,7 @@
    #:|mimeData|
    #:|mimeTypeFilters|
    #:|mimeTypes|
+   #:|mimeType|
    #:|minLeftBearing|
    #:|minPage|
    #:|minRightBearing|
@@ -1193,10 +1199,4 @@
    #:|searchForward|
    #:|searchPaths.QDir|
    #:|searchPaths|
-   #:|searchingChanged|
-   #:|searchingFinished|
-   #:|searchingStarted|
-   #:|search|
-   #:|second|
-   #:|secsTo|
-   #:|sectionAt|))
+   #:|searchingChanged|))

@@ -1835,6 +1835,34 @@
    "bool isNull () const"
    "QMediaPlaylist * playlist () const"
    "QMediaResourceList resources () const")
+  (("QMediaResource" . NIL)
+   "new QMediaResource ()"
+   "new QMediaResource ( const QUrl & , const QString & = QString() )"
+   "new QMediaResource ( const QNetworkRequest & , const QString & = QString() )"
+   "new QMediaResource ( const QMediaResource & )"
+   "int audioBitRate () const"
+   "QString audioCodec () const"
+   "int channelCount () const"
+   "qint64 dataSize () const"
+   "bool isNull () const"
+   "QString language () const"
+   "QString mimeType () const"
+   "QNetworkRequest request () const"
+   "QSize resolution () const"
+   "int sampleRate () const"
+   "void setAudioBitRate ( int )"
+   "void setAudioCodec ( const QString & )"
+   "void setChannelCount ( int )"
+   "void setDataSize ( const qint64 )"
+   "void setLanguage ( const QString & )"
+   "void setResolution ( const QSize & )"
+   "void setResolution ( int , int )"
+   "void setSampleRate ( int )"
+   "void setVideoBitRate ( int )"
+   "void setVideoCodec ( const QString & )"
+   "QUrl url () const"
+   "int videoBitRate () const"
+   "QString videoCodec () const")
   (("QMetaObject" . NIL)
    "int classInfoCount () const"
    "int classInfoOffset () const"
@@ -4026,6 +4054,17 @@
    "static void showText ( const QPoint & , const QString & , QWidget * , const QRect & , int )"
    "static void showText ( const QPoint & , const QString & , QWidget * = 0 )"
    "static QString text ()")
+  (("QTouchDevice" . NIL)
+   "new QTouchDevice ()"
+   "Capabilities capabilities () const"
+   "int maximumTouchPoints () const"
+   "QString name () const"
+   "void setCapabilities ( Capabilities )"
+   "void setMaximumTouchPoints ( int )"
+   "void setName ( const QString & )"
+   "void setType ( DeviceType )"
+   "DeviceType type () const"
+   "static QList<const QTouchDevice *> devices ()")
   (("QTouchEvent" . "QInputEvent")
    "new QTouchEvent ( QEvent::Type , QTouchDevice * = 0 , Qt::KeyboardModifiers = Qt::NoModifier , Qt::TouchPointStates = 0 , const QList<QTouchEvent::TouchPoint> & = QList<QTouchEvent::TouchPoint> () )"
    "QTouchDevice * device () const"

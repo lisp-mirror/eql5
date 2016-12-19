@@ -87,7 +87,10 @@
           (assoc* module *module-streams*)))
 
 (defun no-spaces (s)
-  (remove #\Space s))
+  (cond ((string= "static QList<const QTouchDevice *>" s)
+         "staticQList<const QTouchDevice*>")
+        (t
+         (remove #\Space s))))
 
 (defun find* (x list &optional (key 'identity))
   (find x list :test 'string= :key key))

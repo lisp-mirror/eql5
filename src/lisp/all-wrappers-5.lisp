@@ -1,5 +1,16 @@
 (defpackage :eql
   (:export
+   #:|setSpan|
+   #:|setSpecialValueText|
+   #:|setSpeed|
+   #:|setSpotMeteringPoint|
+   #:|setSpread|
+   #:|setSslConfiguration|
+   #:|setSslOption|
+   #:|setStackingMode|
+   #:|setStack|
+   #:|setStandardButtons|
+   #:|setStandardColor.QColorDialog|
    #:|setStandardErrorFile|
    #:|setStandardInputFile|
    #:|setStandardOutputFile|
@@ -199,6 +210,8 @@
    #:|setVerticalScrollMode|
    #:|setVerticalSpacing|
    #:|setVerticalStretch|
+   #:|setVideoBitRate|
+   #:|setVideoCodec|
    #:|setVideoOutput(QAbstractVideoSurface*)|
    #:|setVideoOutput(QGraphicsVideoItem*)|
    #:|setVideoOutput(QVideoWidget*)|
@@ -1102,7 +1115,9 @@
    #:|verticalSpacing|
    #:|verticalStretch|
    #:|videoAvailableChanged|
+   #:|videoBitRate|
    #:|videoCodecDescription|
+   #:|videoCodec|
    #:|videoSettings|
    #:|videoWidget|
    #:|viewBoxF|
@@ -1184,19 +1199,4 @@
    #:|windowIconTextChanged|
    #:|windowIconText|
    #:|windowIcon|
-   #:|windowModality|
-   #:|windowOpacity|
-   #:|windowPos|
-   #:|windowRole|
-   #:|windowStateChanged|
-   #:|windowState|
-   #:|windowText|
-   #:|windowTitleChanged|
-   #:|windowTitle|
-   #:|windowType|
-   #:|windowsId.QPageSize|
-   #:|windowsIdToDefaultIanaId.QTimeZone|
-   #:|windowsIdToIanaIds.QTimeZone|
-   #:|windowsId|
-   #:|windowsVersion.QSysInfo|
-   #:|window|))
+   #:|windowModality|))

@@ -1,5 +1,17 @@
 (in-package :eql)
 
+(defun |items(QRectF)| (object &rest arguments)
+  (%qinvoke-method object nil "items(QRectF)" arguments))
+
+(defun |items(QRectF...)| (object &rest arguments)
+  (%qinvoke-method object nil "items(QRectF...)" arguments))
+
+(defun |items(Qt::SortOrder)| (object &rest arguments)
+  (%qinvoke-method object nil "items(Qt::SortOrder)" arguments))
+
+(defun |items(int...)| (object &rest arguments)
+  (%qinvoke-method object nil "items(int...)" arguments))
+
 (defun |itemsBoundingRect| (object &rest arguments)
   (%qinvoke-method object nil "itemsBoundingRect" arguments))
 
@@ -966,6 +978,9 @@
 (defun |maximumTime| (object &rest arguments)
   (%qinvoke-method object nil "maximumTime" arguments))
 
+(defun |maximumTouchPoints| (object &rest arguments)
+  (%qinvoke-method object nil "maximumTouchPoints" arguments))
+
 (defun |maximumViewportSize| (object &rest arguments)
   (%qinvoke-method object nil "maximumViewportSize" arguments))
 
@@ -1118,6 +1133,9 @@
 
 (defun |mimeTypes| (object &rest arguments)
   (%qinvoke-method object nil "mimeTypes" arguments))
+
+(defun |mimeType| (object &rest arguments)
+  (%qinvoke-method object nil "mimeType" arguments))
 
 (defun |minLeftBearing| (object &rest arguments)
   (%qinvoke-method object nil "minLeftBearing" arguments))
@@ -3581,21 +3599,3 @@
 
 (defun |searchingChanged| (object &rest arguments)
   (%qinvoke-method object nil "searchingChanged" arguments))
-
-(defun |searchingFinished| (object &rest arguments)
-  (%qinvoke-method object nil "searchingFinished" arguments))
-
-(defun |searchingStarted| (object &rest arguments)
-  (%qinvoke-method object nil "searchingStarted" arguments))
-
-(defun |search| (object &rest arguments)
-  (%qinvoke-method object nil "search" arguments))
-
-(defun |second| (object &rest arguments)
-  (%qinvoke-method object nil "second" arguments))
-
-(defun |secsTo| (object &rest arguments)
-  (%qinvoke-method object nil "secsTo" arguments))
-
-(defun |sectionAt| (object &rest arguments)
-  (%qinvoke-method object nil "sectionAt" arguments))

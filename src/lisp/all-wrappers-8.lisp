@@ -1,5 +1,17 @@
 (in-package :eql)
 
+(defun |drawItemText| (object &rest arguments)
+  (%qinvoke-method object nil "drawItemText" arguments))
+
+(defun |drawLine(QLine)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLine(QLine)" arguments))
+
+(defun |drawLine(QLineF)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLine(QLineF)" arguments))
+
+(defun |drawLine(QPoint...)| (object &rest arguments)
+  (%qinvoke-method object nil "drawLine(QPoint...)" arguments))
+
 (defun |drawLine(QPointF...)| (object &rest arguments)
   (%qinvoke-method object nil "drawLine(QPointF...)" arguments))
 
@@ -3587,15 +3599,3 @@
 
 (defun |items(QRect...)| (object &rest arguments)
   (%qinvoke-method object nil "items(QRect...)" arguments))
-
-(defun |items(QRectF)| (object &rest arguments)
-  (%qinvoke-method object nil "items(QRectF)" arguments))
-
-(defun |items(QRectF...)| (object &rest arguments)
-  (%qinvoke-method object nil "items(QRectF...)" arguments))
-
-(defun |items(Qt::SortOrder)| (object &rest arguments)
-  (%qinvoke-method object nil "items(Qt::SortOrder)" arguments))
-
-(defun |items(int...)| (object &rest arguments)
-  (%qinvoke-method object nil "items(int...)" arguments))

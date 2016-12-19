@@ -1,5 +1,20 @@
 (defpackage :eql
   (:export
+   #:|windowOpacity|
+   #:|windowPos|
+   #:|windowRole|
+   #:|windowStateChanged|
+   #:|windowState|
+   #:|windowText|
+   #:|windowTitleChanged|
+   #:|windowTitle|
+   #:|windowType|
+   #:|windowsId.QPageSize|
+   #:|windowsIdToDefaultIanaId.QTimeZone|
+   #:|windowsIdToIanaIds.QTimeZone|
+   #:|windowsId|
+   #:|windowsVersion.QSysInfo|
+   #:|window|
    #:|wizardStyle|
    #:|wizard|
    #:|wordSpacing|

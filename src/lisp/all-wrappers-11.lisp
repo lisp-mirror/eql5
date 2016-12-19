@@ -1,5 +1,38 @@
 (in-package :eql)
 
+(defun |setSpan| (object &rest arguments)
+  (%qinvoke-method object nil "setSpan" arguments))
+
+(defun |setSpecialValueText| (object &rest arguments)
+  (%qinvoke-method object nil "setSpecialValueText" arguments))
+
+(defun |setSpeed| (object &rest arguments)
+  (%qinvoke-method object nil "setSpeed" arguments))
+
+(defun |setSpotMeteringPoint| (object &rest arguments)
+  (%qinvoke-method object nil "setSpotMeteringPoint" arguments))
+
+(defun |setSpread| (object &rest arguments)
+  (%qinvoke-method object nil "setSpread" arguments))
+
+(defun |setSslConfiguration| (object &rest arguments)
+  (%qinvoke-method object nil "setSslConfiguration" arguments))
+
+(defun |setSslOption| (object &rest arguments)
+  (%qinvoke-method object nil "setSslOption" arguments))
+
+(defun |setStackingMode| (object &rest arguments)
+  (%qinvoke-method object nil "setStackingMode" arguments))
+
+(defun |setStack| (object &rest arguments)
+  (%qinvoke-method object nil "setStack" arguments))
+
+(defun |setStandardButtons| (object &rest arguments)
+  (%qinvoke-method object nil "setStandardButtons" arguments))
+
+(defun |setStandardColor.QColorDialog| (&rest arguments)
+  (%qinvoke-method "QColorDialog" nil "setStandardColor" arguments))
+
 (defun |setStandardErrorFile| (object &rest arguments)
   (%qinvoke-method object nil "setStandardErrorFile" arguments))
 
@@ -596,6 +629,12 @@
 
 (defun |setVerticalStretch| (object &rest arguments)
   (%qinvoke-method object nil "setVerticalStretch" arguments))
+
+(defun |setVideoBitRate| (object &rest arguments)
+  (%qinvoke-method object nil "setVideoBitRate" arguments))
+
+(defun |setVideoCodec| (object &rest arguments)
+  (%qinvoke-method object nil "setVideoCodec" arguments))
 
 (defun |setVideoOutput(QAbstractVideoSurface*)| (object &rest arguments)
   (%qinvoke-method object nil "setVideoOutput(QAbstractVideoSurface*)" arguments))
@@ -3306,8 +3345,14 @@
 (defun |videoAvailableChanged| (object &rest arguments)
   (%qinvoke-method object nil "videoAvailableChanged" arguments))
 
+(defun |videoBitRate| (object &rest arguments)
+  (%qinvoke-method object nil "videoBitRate" arguments))
+
 (defun |videoCodecDescription| (object &rest arguments)
   (%qinvoke-method object nil "videoCodecDescription" arguments))
+
+(defun |videoCodec| (object &rest arguments)
+  (%qinvoke-method object nil "videoCodec" arguments))
 
 (defun |videoSettings| (object &rest arguments)
   (%qinvoke-method object nil "videoSettings" arguments))
@@ -3554,48 +3599,3 @@
 
 (defun |windowModality| (object &rest arguments)
   (%qinvoke-method object nil "windowModality" arguments))
-
-(defun |windowOpacity| (object &rest arguments)
-  (%qinvoke-method object nil "windowOpacity" arguments))
-
-(defun |windowPos| (object &rest arguments)
-  (%qinvoke-method object nil "windowPos" arguments))
-
-(defun |windowRole| (object &rest arguments)
-  (%qinvoke-method object nil "windowRole" arguments))
-
-(defun |windowStateChanged| (object &rest arguments)
-  (%qinvoke-method object nil "windowStateChanged" arguments))
-
-(defun |windowState| (object &rest arguments)
-  (%qinvoke-method object nil "windowState" arguments))
-
-(defun |windowText| (object &rest arguments)
-  (%qinvoke-method object nil "windowText" arguments))
-
-(defun |windowTitleChanged| (object &rest arguments)
-  (%qinvoke-method object nil "windowTitleChanged" arguments))
-
-(defun |windowTitle| (object &rest arguments)
-  (%qinvoke-method object nil "windowTitle" arguments))
-
-(defun |windowType| (object &rest arguments)
-  (%qinvoke-method object nil "windowType" arguments))
-
-(defun |windowsId.QPageSize| (&rest arguments)
-  (%qinvoke-method "QPageSize" nil "windowsId" arguments))
-
-(defun |windowsIdToDefaultIanaId.QTimeZone| (&rest arguments)
-  (%qinvoke-method "QTimeZone" nil "windowsIdToDefaultIanaId" arguments))
-
-(defun |windowsIdToIanaIds.QTimeZone| (&rest arguments)
-  (%qinvoke-method "QTimeZone" nil "windowsIdToIanaIds" arguments))
-
-(defun |windowsId| (object &rest arguments)
-  (%qinvoke-method object nil "windowsId" arguments))
-
-(defun |windowsVersion.QSysInfo| (&rest arguments)
-  (%qinvoke-method "QSysInfo" nil "windowsVersion" arguments))
-
-(defun |window| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "window" arguments))

@@ -66,6 +66,7 @@
   "QMatrix" 
   "QMatrix4x4" 
   "QMediaContent"
+  "QMediaResource"
   "QMetaObject" 
   "QModelIndex" 
   "QNetworkAddressEntry" 

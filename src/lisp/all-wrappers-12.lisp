@@ -1,5 +1,50 @@
 (in-package :eql)
 
+(defun |windowOpacity| (object &rest arguments)
+  (%qinvoke-method object nil "windowOpacity" arguments))
+
+(defun |windowPos| (object &rest arguments)
+  (%qinvoke-method object nil "windowPos" arguments))
+
+(defun |windowRole| (object &rest arguments)
+  (%qinvoke-method object nil "windowRole" arguments))
+
+(defun |windowStateChanged| (object &rest arguments)
+  (%qinvoke-method object nil "windowStateChanged" arguments))
+
+(defun |windowState| (object &rest arguments)
+  (%qinvoke-method object nil "windowState" arguments))
+
+(defun |windowText| (object &rest arguments)
+  (%qinvoke-method object nil "windowText" arguments))
+
+(defun |windowTitleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "windowTitleChanged" arguments))
+
+(defun |windowTitle| (object &rest arguments)
+  (%qinvoke-method object nil "windowTitle" arguments))
+
+(defun |windowType| (object &rest arguments)
+  (%qinvoke-method object nil "windowType" arguments))
+
+(defun |windowsId.QPageSize| (&rest arguments)
+  (%qinvoke-method "QPageSize" nil "windowsId" arguments))
+
+(defun |windowsIdToDefaultIanaId.QTimeZone| (&rest arguments)
+  (%qinvoke-method "QTimeZone" nil "windowsIdToDefaultIanaId" arguments))
+
+(defun |windowsIdToIanaIds.QTimeZone| (&rest arguments)
+  (%qinvoke-method "QTimeZone" nil "windowsIdToIanaIds" arguments))
+
+(defun |windowsId| (object &rest arguments)
+  (%qinvoke-method object nil "windowsId" arguments))
+
+(defun |windowsVersion.QSysInfo| (&rest arguments)
+  (%qinvoke-method "QSysInfo" nil "windowsVersion" arguments))
+
+(defun |window| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "window" arguments))
+
 (defun |wizardStyle| (object &rest arguments)
   (%qinvoke-method object nil "wizardStyle" arguments))
 

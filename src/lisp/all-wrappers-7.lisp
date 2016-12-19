@@ -897,8 +897,14 @@
 (defun |audioAvailableChanged| (object &rest arguments)
   (%qinvoke-method object nil "audioAvailableChanged" arguments))
 
+(defun |audioBitRate| (object &rest arguments)
+  (%qinvoke-method object nil "audioBitRate" arguments))
+
 (defun |audioCodecDescription| (object &rest arguments)
   (%qinvoke-method object nil "audioCodecDescription" arguments))
+
+(defun |audioCodec| (object &rest arguments)
+  (%qinvoke-method object nil "audioCodec" arguments))
 
 (defun |audioInputChanged| (object &rest arguments)
   (%qinvoke-method object nil "audioInputChanged" arguments))
@@ -2970,6 +2976,9 @@
 (defun |dataChanged| (object &rest arguments)
   (%qinvoke-method object nil "dataChanged" arguments))
 
+(defun |dataSize| (object &rest arguments)
+  (%qinvoke-method object nil "dataSize" arguments))
+
 (defun |database.QSqlDatabase| (&rest arguments)
   (%qinvoke-method "QSqlDatabase" nil "database" arguments))
 
@@ -3254,6 +3263,9 @@
 
 (defun |deviceTransform| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "deviceTransform" arguments))
+
+(defun |devices.QTouchDevice| (&rest arguments)
+  (%qinvoke-method "QTouchDevice" nil "devices" arguments))
 
 (defun |device| (object &rest arguments)
   (%qinvoke-method object nil "device" arguments))
@@ -3587,15 +3599,3 @@
 
 (defun |drawItemPixmap| (object &rest arguments)
   (%qinvoke-method object nil "drawItemPixmap" arguments))
-
-(defun |drawItemText| (object &rest arguments)
-  (%qinvoke-method object nil "drawItemText" arguments))
-
-(defun |drawLine(QLine)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLine(QLine)" arguments))
-
-(defun |drawLine(QLineF)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLine(QLineF)" arguments))
-
-(defun |drawLine(QPoint...)| (object &rest arguments)
-  (%qinvoke-method object nil "drawLine(QPoint...)" arguments))

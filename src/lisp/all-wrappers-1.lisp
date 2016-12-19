@@ -299,7 +299,9 @@
    #:|attribute|
    #:|at|
    #:|audioAvailableChanged|
+   #:|audioBitRate|
    #:|audioCodecDescription|
+   #:|audioCodec|
    #:|audioInputChanged|
    #:|audioInputDescription|
    #:|audioInputs|
@@ -990,6 +992,7 @@
    #:|dashOffset|
    #:|dashPattern|
    #:|dataChanged|
+   #:|dataSize|
    #:|database.QSqlDatabase|
    #:|databaseName|
    #:|databaseQuotaExceeded|
@@ -1085,6 +1088,7 @@
    #:|deviceName|
    #:|devicePixelRatio|
    #:|deviceTransform|
+   #:|devices.QTouchDevice|
    #:|device|
    #:|digest|
    #:|digitCount|
@@ -1195,11 +1199,7 @@
    #:|drawImage(QRectF...)|
    #:|drawImage(int...)|
    #:|drawImage|
-   #:|drawItemPixmap|
-   #:|drawItemText|
-   #:|drawLine(QLine)|
-   #:|drawLine(QLineF)|
-   #:|drawLine(QPoint...)|))
+   #:|drawItemPixmap|))
 
 (in-package :eql)
 

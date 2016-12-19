@@ -1,5 +1,9 @@
 (defpackage :eql
   (:export
+   #:|drawItemText|
+   #:|drawLine(QLine)|
+   #:|drawLine(QLineF)|
+   #:|drawLine(QPoint...)|
    #:|drawLine(QPointF...)|
    #:|drawLines(QVector<QLine>)|
    #:|drawLines(QVector<QLineF>)|
@@ -1195,8 +1199,4 @@
    #:|items(QPolygonF)|
    #:|items(QPolygonF...)|
    #:|items(QRect)|
-   #:|items(QRect...)|
-   #:|items(QRectF)|
-   #:|items(QRectF...)|
-   #:|items(Qt::SortOrder)|
-   #:|items(int...)|))
+   #:|items(QRect...)|))

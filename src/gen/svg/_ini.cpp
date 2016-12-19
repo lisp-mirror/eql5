@@ -17,7 +17,7 @@ void ini() {
     LObjects::Q[81] = new Q82;
     LObjects::Q[193] = new Q194;
     LObjects::Q[194] = new Q195;
-    LObjects::N[160] = new N161; }
+    LObjects::N[161] = new N162; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -29,7 +29,7 @@ const QMetaObject* staticMetaObject(int n) {
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 161: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
+        case 162: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -42,7 +42,7 @@ NumList* overrideFunctions(const QByteArray& name) {
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 161: ids = &LSvgGenerator::overrideIds; break; }}
+            case 162: ids = &LSvgGenerator::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

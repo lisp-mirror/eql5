@@ -1,5 +1,23 @@
 (in-package :eql)
 
+(defun |searchingFinished| (object &rest arguments)
+  (%qinvoke-method object nil "searchingFinished" arguments))
+
+(defun |searchingStarted| (object &rest arguments)
+  (%qinvoke-method object nil "searchingStarted" arguments))
+
+(defun |search| (object &rest arguments)
+  (%qinvoke-method object nil "search" arguments))
+
+(defun |second| (object &rest arguments)
+  (%qinvoke-method object nil "second" arguments))
+
+(defun |secsTo| (object &rest arguments)
+  (%qinvoke-method object nil "secsTo" arguments))
+
+(defun |sectionAt| (object &rest arguments)
+  (%qinvoke-method object nil "sectionAt" arguments))
+
 (defun |sectionClicked| (object &rest arguments)
   (%qinvoke-method object nil "sectionClicked" arguments))
 
@@ -455,6 +473,12 @@
 
 (defun |setAttribute| (object &rest arguments)
   (%qinvoke-method object nil "setAttribute" arguments))
+
+(defun |setAudioBitRate| (object &rest arguments)
+  (%qinvoke-method object nil "setAudioBitRate" arguments))
+
+(defun |setAudioCodec| (object &rest arguments)
+  (%qinvoke-method object nil "setAudioCodec" arguments))
 
 (defun |setAudioInput| (object &rest arguments)
   (%qinvoke-method object nil "setAudioInput" arguments))
@@ -1151,6 +1175,9 @@
 
 (defun |setDashPattern| (object &rest arguments)
   (%qinvoke-method object nil "setDashPattern" arguments))
+
+(defun |setDataSize| (object &rest arguments)
+  (%qinvoke-method object nil "setDataSize" arguments))
 
 (defun |setDatabaseName| (object &rest arguments)
   (%qinvoke-method object nil "setDatabaseName" arguments))
@@ -2208,6 +2235,9 @@
 (defun |setLandscapeOrientation| (object &rest arguments)
   (%qinvoke-method object nil "setLandscapeOrientation" arguments))
 
+(defun |setLanguage| (object &rest arguments)
+  (%qinvoke-method object nil "setLanguage" arguments))
+
 (defun |setLastCenterPoint| (object &rest arguments)
   (%qinvoke-method object nil "setLastCenterPoint" arguments))
 
@@ -2414,6 +2444,9 @@
 
 (defun |setMaximumTime| (object &rest arguments)
   (%qinvoke-method object nil "setMaximumTime" arguments))
+
+(defun |setMaximumTouchPoints| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumTouchPoints" arguments))
 
 (defun |setMaximumWidth| (object &rest arguments)
   (%qinvoke-method object nil "setMaximumWidth" arguments))
@@ -3566,36 +3599,3 @@
 
 (defun |setSpanAngle| (object &rest arguments)
   (%qinvoke-method object nil "setSpanAngle" arguments))
-
-(defun |setSpan| (object &rest arguments)
-  (%qinvoke-method object nil "setSpan" arguments))
-
-(defun |setSpecialValueText| (object &rest arguments)
-  (%qinvoke-method object nil "setSpecialValueText" arguments))
-
-(defun |setSpeed| (object &rest arguments)
-  (%qinvoke-method object nil "setSpeed" arguments))
-
-(defun |setSpotMeteringPoint| (object &rest arguments)
-  (%qinvoke-method object nil "setSpotMeteringPoint" arguments))
-
-(defun |setSpread| (object &rest arguments)
-  (%qinvoke-method object nil "setSpread" arguments))
-
-(defun |setSslConfiguration| (object &rest arguments)
-  (%qinvoke-method object nil "setSslConfiguration" arguments))
-
-(defun |setSslOption| (object &rest arguments)
-  (%qinvoke-method object nil "setSslOption" arguments))
-
-(defun |setStackingMode| (object &rest arguments)
-  (%qinvoke-method object nil "setStackingMode" arguments))
-
-(defun |setStack| (object &rest arguments)
-  (%qinvoke-method object nil "setStack" arguments))
-
-(defun |setStandardButtons| (object &rest arguments)
-  (%qinvoke-method object nil "setStandardButtons" arguments))
-
-(defun |setStandardColor.QColorDialog| (&rest arguments)
-  (%qinvoke-method "QColorDialog" nil "setStandardColor" arguments))
