@@ -12,7 +12,7 @@
 (defun ini (html-file size)
   (qconnect h:*web-view* "loadFinished(bool)" (lambda (ok) (ini-html)))
   (x:do-with h:*web-view*
-    ("setUrl" (qnew "QUrl(QString)" html-file))
+    ("setUrl" (|fromUserInput.QUrl| html-file))
     ("setWindowTitle" "")
     ("resize" size)
     ("show")))

@@ -62,7 +62,7 @@
 (defun gui ()
   (qset *gui* "windowTitle" "EQL - Embedded Qt Lisp")
   (qset *select* "toolTip" (tr "Select any (child) widget (see qsel:*q*)"))
-  (qset *help* "source" (qnew "QUrl(QString)" (x:cc "file:///" (in-home "doc/auto-doc.htm"))))
+  (qset *help* "source" (! "fromLocalFile" "QUrl" (in-home "doc/auto-doc.htm")))
   (qset-color *help* |QPalette.Highlight|       "yellow")
   (qset-color *help* |QPalette.HighlightedText| "black")
   (set-tree *q-override*)

@@ -18,67 +18,67 @@ NumList LSqlIndex::overrideIds = NumList();
 NumList LSqlQuery::overrideIds = NumList();
 NumList LSqlRecord::overrideIds = NumList();
 NumList LSqlRelation::overrideIds = NumList();
-NumList LSqlResult::overrideIds = NumList() << 332 << 468 << 469 << 459 << 107 << 470 << 471 << 472 << 473 << 474 << 475 << 476 << 477 << 478 << 479 << 480 << 481 << 482 << 483 << 484 << 346 << 485 << 486 << 141;
+NumList LSqlResult::overrideIds = NumList() << 332 << 469 << 470 << 460 << 107 << 471 << 472 << 473 << 474 << 475 << 476 << 477 << 478 << 479 << 480 << 481 << 482 << 483 << 484 << 485 << 346 << 486 << 487 << 141;
 
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
-    LObjects::Q[179] = new Q180;
     LObjects::Q[180] = new Q181;
     LObjects::Q[181] = new Q182;
     LObjects::Q[182] = new Q183;
     LObjects::Q[183] = new Q184;
-    LObjects::N[142] = new N143;
+    LObjects::Q[184] = new Q185;
     LObjects::N[143] = new N144;
     LObjects::N[144] = new N145;
     LObjects::N[145] = new N146;
     LObjects::N[146] = new N147;
     LObjects::N[147] = new N148;
     LObjects::N[148] = new N149;
-    LObjects::N[149] = new N150; }
+    LObjects::N[149] = new N150;
+    LObjects::N[150] = new N151; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
-        case 180: m = &QSqlDriver::staticMetaObject; break;
-        case 181: m = &QSqlQueryModel::staticMetaObject; break;
-        case 182: m = &QSqlRelationalDelegate::staticMetaObject; break;
-        case 183: m = &QSqlRelationalTableModel::staticMetaObject; break;
-        case 184: m = &QSqlTableModel::staticMetaObject; break; }
+        case 181: m = &QSqlDriver::staticMetaObject; break;
+        case 182: m = &QSqlQueryModel::staticMetaObject; break;
+        case 183: m = &QSqlRelationalDelegate::staticMetaObject; break;
+        case 184: m = &QSqlRelationalTableModel::staticMetaObject; break;
+        case 185: m = &QSqlTableModel::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 143: if(gc) delete (QSqlDatabase*)p; else delete (LSqlDatabase*)p; break;
-        case 144: if(gc) delete (QSqlError*)p; else delete (LSqlError*)p; break;
-        case 145: if(gc) delete (QSqlField*)p; else delete (LSqlField*)p; break;
-        case 146: if(gc) delete (QSqlIndex*)p; else delete (LSqlIndex*)p; break;
-        case 147: if(gc) delete (QSqlQuery*)p; else delete (LSqlQuery*)p; break;
-        case 148: if(gc) delete (QSqlRecord*)p; else delete (LSqlRecord*)p; break;
-        case 149: if(gc) delete (QSqlRelation*)p; else delete (LSqlRelation*)p; break;
-        case 150: if(gc) delete (QSqlResult*)p; else delete (LSqlResult*)p; break; }}
+        case 144: if(gc) delete (QSqlDatabase*)p; else delete (LSqlDatabase*)p; break;
+        case 145: if(gc) delete (QSqlError*)p; else delete (LSqlError*)p; break;
+        case 146: if(gc) delete (QSqlField*)p; else delete (LSqlField*)p; break;
+        case 147: if(gc) delete (QSqlIndex*)p; else delete (LSqlIndex*)p; break;
+        case 148: if(gc) delete (QSqlQuery*)p; else delete (LSqlQuery*)p; break;
+        case 149: if(gc) delete (QSqlRecord*)p; else delete (LSqlRecord*)p; break;
+        case 150: if(gc) delete (QSqlRelation*)p; else delete (LSqlRelation*)p; break;
+        case 151: if(gc) delete (QSqlResult*)p; else delete (LSqlResult*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
         switch(n) {
-            case 180: ids = &LSqlDriver::overrideIds; break;
-            case 181: ids = &LSqlQueryModel::overrideIds; break;
-            case 182: ids = &LSqlRelationalDelegate::overrideIds; break;
-            case 183: ids = &LSqlRelationalTableModel::overrideIds; break;
-            case 184: ids = &LSqlTableModel::overrideIds; break; }}
+            case 181: ids = &LSqlDriver::overrideIds; break;
+            case 182: ids = &LSqlQueryModel::overrideIds; break;
+            case 183: ids = &LSqlRelationalDelegate::overrideIds; break;
+            case 184: ids = &LSqlRelationalTableModel::overrideIds; break;
+            case 185: ids = &LSqlTableModel::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 143: ids = &LSqlDatabase::overrideIds; break;
-            case 144: ids = &LSqlError::overrideIds; break;
-            case 145: ids = &LSqlField::overrideIds; break;
-            case 146: ids = &LSqlIndex::overrideIds; break;
-            case 147: ids = &LSqlQuery::overrideIds; break;
-            case 148: ids = &LSqlRecord::overrideIds; break;
-            case 149: ids = &LSqlRelation::overrideIds; break;
-            case 150: ids = &LSqlResult::overrideIds; break; }}
+            case 144: ids = &LSqlDatabase::overrideIds; break;
+            case 145: ids = &LSqlError::overrideIds; break;
+            case 146: ids = &LSqlField::overrideIds; break;
+            case 147: ids = &LSqlIndex::overrideIds; break;
+            case 148: ids = &LSqlQuery::overrideIds; break;
+            case 149: ids = &LSqlRecord::overrideIds; break;
+            case 150: ids = &LSqlRelation::overrideIds; break;
+            case 151: ids = &LSqlResult::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

@@ -1,22 +1,25 @@
-;; port of Qt example "videowidget" (QtMultimediaWidgets)
+;; port of Qt example "videographicsitem" (QtMultimediaWidgets)
 
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
 
 (qrequire :multimedia)
 
-(require :ui (in-home "examples/M-modules/multimedia/video-widget/ui/ui-video-widget"))
+(require :ui (in-home "examples/M-modules/multimedia/video-graphics-item/ui/ui-video-graphics-item"))
 
-(defpackage :video-widget
-  (:nicknames :vw)
+(defpackage :video-item
+  (:nicknames :vi)
   (:use :common-lisp :eql)
   (:export
    #:*media-player*
+   #:*video-item*
    #:ini))
 
-(in-package :video-widget)
+(in-package :video-item)
 
-(defvar *media-player* (qnew "QMediaPlayer(...)" nil |QMediaPlayer.VideoSurface|))
+(defvar *media-player*   (qnew "QMediaPlayer(...)" nil |QMediaPlayer.VideoSurface|))
+(defvar *video-item*     (qnew "QGraphicsVideoItem"))
+(defvar *graphics-scene* nil)
 
 (defun standard-icon (style-sp)
   (|standardIcon| (|style| ui:*main*) style-sp))
@@ -28,17 +31,25 @@
 
 (defun ini ()
   (ui:ini)
-  ;; settings
+  (setf *graphics-scene* (qnew "QGraphicsScene(QObject*)" ui:*main*))
+  (let ((size (list 640 480)))
+    (|setMinimumSize| ui:*graphics-view* (mapcar (lambda (x) (+ 50 x)) size))
+    (|setSize| *video-item* size))
+  (|setScene| ui:*graphics-view* *graphics-scene*)
+  (|addItem| *graphics-scene* *video-item*)
+  (|setRange| ui:*rotate-slider* -180 180)
+  (|setValue| ui:*rotate-slider* 0)
   (|setEnabled| ui:*play-button* nil)
   (|setIcon| ui:*play-button* (standard-icon |QStyle.SP_MediaPlay|))
   (|setRange| ui:*position-slider* 0 0)
   (|setSizePolicy| ui:*error-label* (qnew "QSizePolicy(...)" |QSizePolicy.Preferred| |QSizePolicy.Maximum|))
-  (|setVideoOutput| *media-player* ui:*video-widget*)
+  (|setVideoOutput| *media-player* *video-item*)
   ;; connections
   (qconnect ui:*open-button* "clicked()" 'open-file)
   (qconnect ui:*play-button* "clicked()" 'play)
   (qconnect ui:*position-slider* "sliderMoved(int)"
             (lambda (position) (|setPosition| *media-player* position)))
+  (qconnect ui:*rotate-slider* "valueChanged(int)" 'rotate-video)
   (qconnect *media-player* "stateChanged(QMediaPlayer::State)" 'media-state-changed)
   (qconnect *media-player* "positionChanged(qint64)"
             (lambda (position) (|setValue| ui:*position-slider* position)))
@@ -77,6 +88,17 @@
                                                 |QStyle.SP_MediaPause|)
                                                (t
                                                 |QStyle.SP_MediaPlay|)))))
+
+(defun rotate-video (angle)
+  (let* ((rect (|boundingRect| *video-item*))
+         (x (/ (third rect) 2))
+         (y (/ (fourth rect) 2)))
+    (qlet ((transform "QTransform"))
+      (x:do-with transform
+        (|translate| x y)
+        (|rotate| angle)
+        (|translate| (- x) (- y)))
+      (|setTransform| *video-item* transform))))
 
 (defun enum-error-to-string (number class enum-name)
   (first (find number (cdadr (qenums class enum-name)) :key 'cdr)))

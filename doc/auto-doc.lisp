@@ -46,8 +46,13 @@
   (add-cpp-docu)
   (add-lisp-docu)
   (with-open-file (s (eql:in-home "doc/auto-doc.htm") :direction :output :if-exists :supersede)
-    (write-string "<!doctype html><html lang=\"en\"><head><title>Function List</title><meta charset=\"utf-8\">" s)
-    (write-string "</head><body style=\"font-family: sans-serif; font-size: 10.5pt;\">" s)
+    (format s "<!doctype html>~%~
+               <html lang=\"en\">~%~
+               <head>~%~
+               <title>Function List</title>~%~
+               <meta charset=\"utf-8\">~%~
+               </head>~%~
+               <body style=\"font-family: sans-serif; font-size: 10.5pt;\">~%")
     (flet ((el (tag x)
              (format nil "<~A>~A</~A>" tag x tag))
            (! (x)
@@ -73,7 +78,7 @@
                 (! example))
               (! "</pre>"))))
         (! "<br><br>"))
-      (write-string "</body></html>" s))))
+      (format s "</body>~%</html>~%"))))
 
 (progn
   (help)

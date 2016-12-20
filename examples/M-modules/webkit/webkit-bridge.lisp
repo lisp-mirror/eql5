@@ -24,8 +24,7 @@
             (lambda ()
               (|addToJavaScriptWindowObject| (frame) "Lisp"    eql-user::*webkit-bridge*) ; for examples 1, 2, 3
               (|addToJavaScriptWindowObject| (frame) "WebView" *web-view*)))              ; for examples 4, 5
-  (|setUrl| *web-view* (qnew "QUrl(QString)"
-                             (x:cc "file://" (namestring (probe-file "webkit-bridge.htm")))))
+  (|setUrl| *web-view* (|fromUserInput.QUrl| (namestring (probe-file "webkit-bridge.htm"))))
   (when (find "debug" (|arguments.QCoreApplication|) :test 'string=)
     (inspector))
   (|show| *web-view*))

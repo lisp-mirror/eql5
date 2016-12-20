@@ -54,19 +54,12 @@
                 (text (|toPlainText| element)))
            ,@body)))))
 
-(defun ensure-url (name)
-  (if (or (x:starts-with "http" name)
-          (x:starts-with "file" name))
-      name
-      (x:cc "file://" name)))
-
 (defun set-url (name)
   (unless (x:empty-string name)
     (|setWindowTitle| *web-view* name)
-    (qlet ((url "QUrl(QString)" (ensure-url name)))
-      (x:do-with *web-view*
-        (|load| url)
-        (|show|)))))
+    (x:do-with *web-view*
+      (|load| (|fromUserInput.QUrl| name))
+      (|show|))))
 
 (defun open-url ()
   (let ((name (|getText.QInputDialog| *web-view* nil (tr "Enter URL:") |QLineEdit.Normal|

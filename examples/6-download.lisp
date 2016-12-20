@@ -20,8 +20,7 @@
   (when *ini*
     (setf *ini* nil)
     (qconnect *manager* "finished(QNetworkReply*)" 'download-finished))
-  (qlet ((url "QUrl(QString)" name)
-         (request "QNetworkRequest(QUrl)" url))
+  (qlet ((request "QNetworkRequest(QUrl)" (|fromUserInput.QUrl| name)))
     (|get| *manager* request)))
 
 (defun download-finished (reply)

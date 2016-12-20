@@ -73,7 +73,7 @@ public:
 };
 
 class LMediaContent : public QMediaContent {
-    friend class N96;
+    friend class N97;
 public:
     LMediaContent(uint u) : unique(u) {}
     LMediaContent(uint u, const QUrl& x1) : QMediaContent(x1), unique(u) {}
@@ -88,7 +88,7 @@ public:
 };
 
 class LMediaResource : public QMediaResource {
-    friend class N97;
+    friend class N98;
 public:
     LMediaResource(uint u) : unique(u) {}
     LMediaResource(uint u, const QUrl& x1, const QString& x2 = QString()) : QMediaResource(x1, x2), unique(u) {}
@@ -100,7 +100,7 @@ public:
 };
 
 class LVideoEncoderSettings : public QVideoEncoderSettings {
-    friend class N205;
+    friend class N206;
 public:
     LVideoEncoderSettings(uint u) : unique(u) {}
     LVideoEncoderSettings(uint u, const QVideoEncoderSettings& x1) : QVideoEncoderSettings(x1), unique(u) {}
@@ -110,7 +110,7 @@ public:
 };
 
 class LVideoFrame : public QVideoFrame {
-    friend class N206;
+    friend class N207;
 public:
     LVideoFrame(uint u) : unique(u) {}
     LVideoFrame(uint u, QAbstractVideoBuffer* x1, const QSize& x2, PixelFormat x3) : QVideoFrame(x1, x2, x3), unique(u) {}
@@ -123,7 +123,7 @@ public:
 };
 
 class LVideoSurfaceFormat : public QVideoSurfaceFormat {
-    friend class N207;
+    friend class N208;
 public:
     LVideoSurfaceFormat(uint u) : unique(u) {}
     LVideoSurfaceFormat(uint u, const QVideoSurfaceFormat& x1) : QVideoSurfaceFormat(x1), unique(u) {}

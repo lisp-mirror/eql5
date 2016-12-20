@@ -73,6 +73,7 @@
         "QImage"
         "QInputEvent"
         "QInputMethodEvent"
+        "QItemEditorCreatorBase"
         "QItemEditorFactory"
         "QItemSelectionRange"
         "QKeyEvent"

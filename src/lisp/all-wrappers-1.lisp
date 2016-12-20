@@ -885,6 +885,7 @@
    #:|createStroke|
    #:|createTextureView|
    #:|createUndoAction|
+   #:|createWidget|
    #:|createWindowContainer.QWidget|
    #:|createdWidgets|
    #:|created|
@@ -1198,8 +1199,7 @@
    #:|drawImage(QRect...)|
    #:|drawImage(QRectF...)|
    #:|drawImage(int...)|
-   #:|drawImage|
-   #:|drawItemPixmap|))
+   #:|drawImage|))
 
 (in-package :eql)
 
@@ -1209,5 +1209,6 @@
   (when (find (qt-object-id (ensure-qt-object object))
               '#.(list (qid "QGraphicsSvgItem")
                        (qid "QGraphicsTextItem")
+                       (qid "QGraphicsVideoItem")
                        (qid "QGraphicsWidget")))
     "QGraphicsItem"))

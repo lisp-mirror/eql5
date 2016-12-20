@@ -1,3 +1,4 @@
+;;;
 ;;; copyright (c) Polos Ruetz
 ;;;
 ;;; (please note that this is an outdated experiment)
@@ -14,13 +15,12 @@
 ;;;   - an independent local Lisp server process for evaluation
 ;;;   - eval region
 ;;;
-;;; N.B: requires Qt 4.7 for signal QFileSystemModel::directoryLoaded(QString)
 
 (require :local-client (probe-file "local-client.lisp"))
 (require :settings     (probe-file "settings.lisp"))
 
 ;; load all available modules for code completions
-(dolist (module (list :help :network :sql :svg :webkit))
+(dolist (module (list :help :multimedia :network :sql :svg :webkit))
   (eql:qrequire module :quiet))
 
 (defpackage :editor

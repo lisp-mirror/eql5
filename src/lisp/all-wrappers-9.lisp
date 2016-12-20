@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |items(QRect...)| (object &rest arguments)
+  (%qinvoke-method object nil "items(QRect...)" arguments))
+
 (defun |items(QRectF)| (object &rest arguments)
   (%qinvoke-method object nil "items(QRectF)" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |searchPaths| (object &rest arguments)
   (%qinvoke-method object nil "searchPaths" arguments))
-
-(defun |searchingChanged| (object &rest arguments)
-  (%qinvoke-method object nil "searchingChanged" arguments))

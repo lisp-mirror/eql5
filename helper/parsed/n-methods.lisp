@@ -1499,6 +1499,9 @@
    "int replacementLength () const"
    "int replacementStart () const"
    "void setCommitString ( const QString & , int = 0 , int = 0 )")
+  (("QItemEditorCreatorBase" . NIL)
+   "virtual QWidget * createWidget ( QWidget * ) const = 0"
+   "virtual QByteArray valuePropertyName () const = 0")
   (("QItemEditorFactory" . NIL)
    "new QItemEditorFactory ()"
    "virtual QWidget * createEditor ( int , QWidget * ) const"

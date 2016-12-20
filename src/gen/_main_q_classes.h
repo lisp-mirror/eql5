@@ -2771,9 +2771,60 @@ public:
     void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIODevice::timerEvent(x1); }}
 };
 
-class LInputDialog : public QInputDialog {
+class LIdentityProxyModel : public QIdentityProxyModel {
     Q_OBJECT
     friend class Q104;
+public:
+    LIdentityProxyModel(uint u, QObject* x1 = 0) : QIdentityProxyModel(x1), unique(u) {}
+
+    static NumList overrideIds;
+    uint unique;
+
+    int columnCount(const QModelIndex& x1 = QModelIndex()) const { quint64 id = LObjects::override_id(unique, 58); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 58, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::columnCount(x1); } return ret; }
+    bool dropMimeData(const QMimeData* x1, Qt::DropAction x2, int x3, int x4, const QModelIndex& x5) { quint64 id = LObjects::override_id(unique, 60); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4, &x5 }; ret = callOverrideFun(fun, 60, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::dropMimeData(x1, x2, x3, x4, x5); } return ret; }
+    QVariant headerData(int x1, Qt::Orientation x2, int x3 = Qt::DisplayRole) const { quint64 id = LObjects::override_id(unique, 64); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 64, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::headerData(x1, x2, x3); } return ret; }
+    QModelIndex index(int x1, int x2, const QModelIndex& x3 = QModelIndex()) const { quint64 id = LObjects::override_id(unique, 65); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 65, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::index(x1, x2, x3); } return ret; }
+    bool insertColumns(int x1, int x2, const QModelIndex& x3 = QModelIndex()) { quint64 id = LObjects::override_id(unique, 66); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 66, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::insertColumns(x1, x2, x3); } return ret; }
+    bool insertRows(int x1, int x2, const QModelIndex& x3 = QModelIndex()) { quint64 id = LObjects::override_id(unique, 67); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 67, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::insertRows(x1, x2, x3); } return ret; }
+    QModelIndex mapFromSource(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 109); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 109, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mapFromSource(x1); } return ret; }
+    QItemSelection mapSelectionFromSource(const QItemSelection& x1) const { quint64 id = LObjects::override_id(unique, 110); void* fun = LObjects::overrideFun(id); QItemSelection ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 110, args, id).value<QItemSelection>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mapSelectionFromSource(x1); } return ret; }
+    QItemSelection mapSelectionToSource(const QItemSelection& x1) const { quint64 id = LObjects::override_id(unique, 111); void* fun = LObjects::overrideFun(id); QItemSelection ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 111, args, id).value<QItemSelection>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mapSelectionToSource(x1); } return ret; }
+    QModelIndex mapToSource(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 112); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 112, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mapToSource(x1); } return ret; }
+    QModelIndexList match(const QModelIndex& x1, int x2, const QVariant& x3, int x4 = 1, Qt::MatchFlags x5 = Qt::MatchFlags(Qt::MatchStartsWith|Qt::MatchWrap)) const { quint64 id = LObjects::override_id(unique, 68); void* fun = LObjects::overrideFun(id); QModelIndexList ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4, &x5 }; ret = callOverrideFun(fun, 68, args, id).value<QModelIndexList>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::match(x1, x2, x3, x4, x5); } return ret; }
+    QModelIndex parent(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 73); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 73, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::parent(x1); } return ret; }
+    bool removeColumns(int x1, int x2, const QModelIndex& x3 = QModelIndex()) { quint64 id = LObjects::override_id(unique, 74); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 74, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::removeColumns(x1, x2, x3); } return ret; }
+    bool removeRows(int x1, int x2, const QModelIndex& x3 = QModelIndex()) { quint64 id = LObjects::override_id(unique, 75); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 75, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::removeRows(x1, x2, x3); } return ret; }
+    int rowCount(const QModelIndex& x1 = QModelIndex()) const { quint64 id = LObjects::override_id(unique, 76); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 76, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::rowCount(x1); } return ret; }
+    void setSourceModel(QAbstractItemModel* x1) { quint64 id = LObjects::override_id(unique, 113); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 113, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::setSourceModel(x1); }}
+    QModelIndex sibling(int x1, int x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 79); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 79, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::sibling(x1, x2, x3); } return ret; }
+    QModelIndex buddy(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 55); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 55, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::buddy(x1); } return ret; }
+    bool canDropMimeData(const QMimeData* x1, Qt::DropAction x2, int x3, int x4, const QModelIndex& x5) const { quint64 id = LObjects::override_id(unique, 56); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4, &x5 }; ret = callOverrideFun(fun, 56, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::canDropMimeData(x1, x2, x3, x4, x5); } return ret; }
+    bool canFetchMore(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 57); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 57, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::canFetchMore(x1); } return ret; }
+    QVariant data(const QModelIndex& x1, int x2 = Qt::DisplayRole) const { quint64 id = LObjects::override_id(unique, 59); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 59, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::data(x1, x2); } return ret; }
+    void fetchMore(const QModelIndex& x1) { quint64 id = LObjects::override_id(unique, 61); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 61, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::fetchMore(x1); }}
+    Qt::ItemFlags flags(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 62); void* fun = LObjects::overrideFun(id); Qt::ItemFlags ret = (Qt::ItemFlags)0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (Qt::ItemFlags)callOverrideFun(fun, 62, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::flags(x1); } return ret; }
+    bool hasChildren(const QModelIndex& x1 = QModelIndex()) const { quint64 id = LObjects::override_id(unique, 63); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 63, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::hasChildren(x1); } return ret; }
+    QMimeData* mimeData(const QModelIndexList& x1) const { quint64 id = LObjects::override_id(unique, 69); void* fun = LObjects::overrideFun(id); QMimeData* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QMimeData*)callOverrideFun(fun, 69, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mimeData(x1); } return ret; }
+    QStringList mimeTypes() const { quint64 id = LObjects::override_id(unique, 70); void* fun = LObjects::overrideFun(id); QStringList ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 70, 0, id).value<QStringList>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::mimeTypes(); } return ret; }
+    void revert() { quint64 id = LObjects::override_id(unique, 114); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 114, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::revert(); }}
+    bool setData(const QModelIndex& x1, const QVariant& x2, int x3 = Qt::EditRole) { quint64 id = LObjects::override_id(unique, 77); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 77, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::setData(x1, x2, x3); } return ret; }
+    bool setHeaderData(int x1, Qt::Orientation x2, const QVariant& x3, int x4 = Qt::EditRole) { quint64 id = LObjects::override_id(unique, 78); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 78, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::setHeaderData(x1, x2, x3, x4); } return ret; }
+    void sort(int x1, Qt::SortOrder x2 = Qt::AscendingOrder) { quint64 id = LObjects::override_id(unique, 80); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 80, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::sort(x1, x2); }}
+    QSize span(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 81); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 81, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::span(x1); } return ret; }
+    bool submit() { quint64 id = LObjects::override_id(unique, 115); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 115, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::submit(); } return ret; }
+    Qt::DropActions supportedDragActions() const { quint64 id = LObjects::override_id(unique, 82); void* fun = LObjects::overrideFun(id); Qt::DropActions ret = (Qt::DropActions)0; if(fun && (LObjects::calling != id)) { ret = (Qt::DropActions)callOverrideFun(fun, 82, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::supportedDragActions(); } return ret; }
+    Qt::DropActions supportedDropActions() const { quint64 id = LObjects::override_id(unique, 83); void* fun = LObjects::overrideFun(id); Qt::DropActions ret = (Qt::DropActions)0; if(fun && (LObjects::calling != id)) { ret = (Qt::DropActions)callOverrideFun(fun, 83, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::supportedDropActions(); } return ret; }
+    bool moveColumns(const QModelIndex& x1, int x2, int x3, const QModelIndex& x4, int x5) { quint64 id = LObjects::override_id(unique, 71); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4, &x5 }; ret = callOverrideFun(fun, 71, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::moveColumns(x1, x2, x3, x4, x5); } return ret; }
+    bool moveRows(const QModelIndex& x1, int x2, int x3, const QModelIndex& x4, int x5) { quint64 id = LObjects::override_id(unique, 72); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4, &x5 }; ret = callOverrideFun(fun, 72, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::moveRows(x1, x2, x3, x4, x5); } return ret; }
+    bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QIdentityProxyModel::eventFilter(x1, x2); } return ret; }
+    void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::childEvent(x1); }}
+    void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::customEvent(x1); }}
+    void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QIdentityProxyModel::timerEvent(x1); }}
+};
+
+class LInputDialog : public QInputDialog {
+    Q_OBJECT
+    friend class Q105;
 public:
     LInputDialog(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QInputDialog(x1, x2), unique(u) {}
 
@@ -2824,7 +2875,7 @@ public:
 
 class LIntValidator : public QIntValidator {
     Q_OBJECT
-    friend class Q105;
+    friend class Q106;
 public:
     LIntValidator(uint u, QObject* x1 = 0) : QIntValidator(x1), unique(u) {}
     LIntValidator(uint u, int x1, int x2, QObject* x3 = 0) : QIntValidator(x1, x2, x3), unique(u) {}
@@ -2843,7 +2894,7 @@ public:
 
 class LItemDelegate : public QItemDelegate {
     Q_OBJECT
-    friend class Q106;
+    friend class Q107;
 public:
     LItemDelegate(uint u, QObject* x1 = 0) : QItemDelegate(x1), unique(u) {}
 
@@ -2871,7 +2922,7 @@ public:
 
 class LItemSelectionModel : public QItemSelectionModel {
     Q_OBJECT
-    friend class Q107;
+    friend class Q108;
 public:
     LItemSelectionModel(uint u, QAbstractItemModel* x1 = 0) : QItemSelectionModel(x1), unique(u) {}
     LItemSelectionModel(uint u, QAbstractItemModel* x1, QObject* x2) : QItemSelectionModel(x1, x2), unique(u) {}
@@ -2887,7 +2938,7 @@ public:
 
 class LKeyEventTransition : public QKeyEventTransition {
     Q_OBJECT
-    friend class Q108;
+    friend class Q109;
 public:
     LKeyEventTransition(uint u, QState* x1 = 0) : QKeyEventTransition(x1), unique(u) {}
     LKeyEventTransition(uint u, QObject* x1, QEvent::Type x2, int x3, QState* x4 = 0) : QKeyEventTransition(x1, x2, x3, x4), unique(u) {}
@@ -2905,7 +2956,7 @@ public:
 
 class LLCDNumber : public QLCDNumber {
     Q_OBJECT
-    friend class Q109;
+    friend class Q110;
 public:
     LLCDNumber(uint u, QWidget* x1 = 0) : QLCDNumber(x1), unique(u) {}
     LLCDNumber(uint u, uint x1, QWidget* x2 = 0) : QLCDNumber(x1, x2), unique(u) {}
@@ -2955,7 +3006,7 @@ public:
 
 class LLabel : public QLabel {
     Q_OBJECT
-    friend class Q110;
+    friend class Q111;
 public:
     LLabel(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QLabel(x1, x2), unique(u) {}
     LLabel(uint u, const QString& x1, QWidget* x2 = 0, Qt::WindowFlags x3 = 0) : QLabel(x1, x2, x3), unique(u) {}
@@ -3005,7 +3056,7 @@ public:
 
 class LLibrary : public QLibrary {
     Q_OBJECT
-    friend class Q112;
+    friend class Q113;
 public:
     LLibrary(uint u, QObject* x1 = 0) : QLibrary(x1), unique(u) {}
     LLibrary(uint u, const QString& x1, QObject* x2 = 0) : QLibrary(x1, x2), unique(u) {}
@@ -3023,7 +3074,7 @@ public:
 
 class LLineEdit : public QLineEdit {
     Q_OBJECT
-    friend class Q113;
+    friend class Q114;
 public:
     LLineEdit(uint u, QWidget* x1 = 0) : QLineEdit(x1), unique(u) {}
     LLineEdit(uint u, const QString& x1, QWidget* x2 = 0) : QLineEdit(x1, x2), unique(u) {}
@@ -3073,7 +3124,7 @@ public:
 
 class LListView : public QListView {
     Q_OBJECT
-    friend class Q114;
+    friend class Q115;
 public:
     LListView(uint u, QWidget* x1 = 0) : QListView(x1), unique(u) {}
 
@@ -3151,7 +3202,7 @@ public:
 
 class LListWidget : public QListWidget {
     Q_OBJECT
-    friend class Q115;
+    friend class Q116;
 public:
     LListWidget(uint u, QWidget* x1 = 0) : QListWidget(x1), unique(u) {}
 
@@ -3232,7 +3283,7 @@ public:
 
 class LMainWindow : public QMainWindow {
     Q_OBJECT
-    friend class Q118;
+    friend class Q119;
 public:
     LMainWindow(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QMainWindow(x1, x2), unique(u) {}
 
@@ -3282,7 +3333,7 @@ public:
 
 class LMdiArea : public QMdiArea {
     Q_OBJECT
-    friend class Q119;
+    friend class Q120;
 public:
     LMdiArea(uint u, QWidget* x1 = 0) : QMdiArea(x1), unique(u) {}
 
@@ -3335,7 +3386,7 @@ public:
 
 class LMdiSubWindow : public QMdiSubWindow {
     Q_OBJECT
-    friend class Q120;
+    friend class Q121;
 public:
     LMdiSubWindow(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QMdiSubWindow(x1, x2), unique(u) {}
 
@@ -3384,7 +3435,7 @@ public:
 
 class LMenu : public QMenu {
     Q_OBJECT
-    friend class Q126;
+    friend class Q127;
 public:
     LMenu(uint u, QWidget* x1 = 0) : QMenu(x1), unique(u) {}
     LMenu(uint u, const QString& x1, QWidget* x2 = 0) : QMenu(x1, x2), unique(u) {}
@@ -3434,7 +3485,7 @@ public:
 
 class LMenuBar : public QMenuBar {
     Q_OBJECT
-    friend class Q127;
+    friend class Q128;
 public:
     LMenuBar(uint u, QWidget* x1 = 0) : QMenuBar(x1), unique(u) {}
 
@@ -3483,7 +3534,7 @@ public:
 
 class LMessageBox : public QMessageBox {
     Q_OBJECT
-    friend class Q128;
+    friend class Q129;
 public:
     LMessageBox(uint u, QWidget* x1 = 0) : QMessageBox(x1), unique(u) {}
     LMessageBox(uint u, Icon x1, const QString& x2, const QString& x3, StandardButtons x4 = NoButton, QWidget* x5 = 0, Qt::WindowFlags x6 = Qt::Dialog|Qt::MSWindowsFixedSizeDialogHint) : QMessageBox(x1, x2, x3, x4, x5, x6), unique(u) {}
@@ -3534,7 +3585,7 @@ public:
 
 class LMimeData : public QMimeData {
     Q_OBJECT
-    friend class Q129;
+    friend class Q130;
 public:
     LMimeData(uint u) : unique(u) {}
 
@@ -3552,7 +3603,7 @@ public:
 
 class LMouseEventTransition : public QMouseEventTransition {
     Q_OBJECT
-    friend class Q130;
+    friend class Q131;
 public:
     LMouseEventTransition(uint u, QState* x1 = 0) : QMouseEventTransition(x1), unique(u) {}
     LMouseEventTransition(uint u, QObject* x1, QEvent::Type x2, Qt::MouseButton x3, QState* x4 = 0) : QMouseEventTransition(x1, x2, x3, x4), unique(u) {}
@@ -3570,7 +3621,7 @@ public:
 
 class LMovie : public QMovie {
     Q_OBJECT
-    friend class Q131;
+    friend class Q132;
 public:
     LMovie(uint u, QObject* x1 = 0) : QMovie(x1), unique(u) {}
     LMovie(uint u, const QString& x1, const QByteArray& x2 = QByteArray(), QObject* x3 = 0) : QMovie(x1, x2, x3), unique(u) {}
@@ -3586,7 +3637,7 @@ public:
 
 class LObject : public QObject {
     Q_OBJECT
-    friend class Q136;
+    friend class Q137;
 public:
     LObject(uint u, QObject* x1 = 0) : QObject(x1), unique(u) {}
 
@@ -3601,7 +3652,7 @@ public:
 
 class LOpenGLContext : public QOpenGLContext {
     Q_OBJECT
-    friend class Q137;
+    friend class Q138;
 public:
     LOpenGLContext(uint u, QObject* x1 = 0) : QOpenGLContext(x1), unique(u) {}
 
@@ -3616,7 +3667,7 @@ public:
 
 class LOpenGLShader : public QOpenGLShader {
     Q_OBJECT
-    friend class Q138;
+    friend class Q139;
 public:
     LOpenGLShader(uint u, QOpenGLShader::ShaderType x1, QObject* x2 = 0) : QOpenGLShader(x1, x2), unique(u) {}
 
@@ -3631,7 +3682,7 @@ public:
 
 class LOpenGLShaderProgram : public QOpenGLShaderProgram {
     Q_OBJECT
-    friend class Q139;
+    friend class Q140;
 public:
     LOpenGLShaderProgram(uint u, QObject* x1 = 0) : QOpenGLShaderProgram(x1), unique(u) {}
 
@@ -3647,7 +3698,7 @@ public:
 
 class LOpenGLWidget : public QOpenGLWidget {
     Q_OBJECT
-    friend class Q140;
+    friend class Q141;
 public:
     LOpenGLWidget(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QOpenGLWidget(x1, x2), unique(u) {}
 
@@ -3699,7 +3750,7 @@ public:
 
 class LOpenGLWindow : public QOpenGLWindow {
     Q_OBJECT
-    friend class Q141;
+    friend class Q142;
 public:
     LOpenGLWindow(uint u, UpdateBehavior x1 = NoPartialUpdate, QWindow* x2 = 0) : QOpenGLWindow(x1, x2), unique(u) {}
     LOpenGLWindow(uint u, QOpenGLContext* x1, UpdateBehavior x2 = NoPartialUpdate, QWindow* x3 = 0) : QOpenGLWindow(x1, x2, x3), unique(u) {}
@@ -3741,7 +3792,7 @@ public:
 
 class LPageSetupDialog : public QPageSetupDialog {
     Q_OBJECT
-    friend class Q142;
+    friend class Q143;
 public:
     LPageSetupDialog(uint u, QPrinter* x1, QWidget* x2 = 0) : QPageSetupDialog(x1, x2), unique(u) {}
     LPageSetupDialog(uint u, QWidget* x1 = 0) : QPageSetupDialog(x1), unique(u) {}
@@ -3794,7 +3845,7 @@ public:
 
 class LPaintDeviceWindow : public QPaintDeviceWindow {
     Q_OBJECT
-    friend class Q143;
+    friend class Q144;
 public:
 
     static NumList overrideIds;
@@ -3829,7 +3880,7 @@ public:
 
 class LPanGesture : public QPanGesture {
     Q_OBJECT
-    friend class Q144;
+    friend class Q145;
 public:
 
     static NumList overrideIds;
@@ -3843,7 +3894,7 @@ public:
 
 class LParallelAnimationGroup : public QParallelAnimationGroup {
     Q_OBJECT
-    friend class Q145;
+    friend class Q146;
 public:
     LParallelAnimationGroup(uint u, QObject* x1 = 0) : QParallelAnimationGroup(x1), unique(u) {}
 
@@ -3862,7 +3913,7 @@ public:
 
 class LPauseAnimation : public QPauseAnimation {
     Q_OBJECT
-    friend class Q146;
+    friend class Q147;
 public:
     LPauseAnimation(uint u, QObject* x1 = 0) : QPauseAnimation(x1), unique(u) {}
     LPauseAnimation(uint u, int x1, QObject* x2 = 0) : QPauseAnimation(x1, x2), unique(u) {}
@@ -3882,7 +3933,7 @@ public:
 
 class LPdfWriter : public QPdfWriter {
     Q_OBJECT
-    friend class Q147;
+    friend class Q148;
 public:
     LPdfWriter(uint u, const QString& x1) : QPdfWriter(x1), unique(u) {}
 
@@ -3898,7 +3949,7 @@ public:
 
 class LPinchGesture : public QPinchGesture {
     Q_OBJECT
-    friend class Q148;
+    friend class Q149;
 public:
 
     static NumList overrideIds;
@@ -3912,7 +3963,7 @@ public:
 
 class LPlainTextDocumentLayout : public QPlainTextDocumentLayout {
     Q_OBJECT
-    friend class Q149;
+    friend class Q150;
 public:
     LPlainTextDocumentLayout(uint u, QTextDocument* x1) : QPlainTextDocumentLayout(x1), unique(u) {}
 
@@ -3937,7 +3988,7 @@ public:
 
 class LPlainTextEdit : public QPlainTextEdit {
     Q_OBJECT
-    friend class Q150;
+    friend class Q151;
 public:
     LPlainTextEdit(uint u, QWidget* x1 = 0) : QPlainTextEdit(x1), unique(u) {}
     LPlainTextEdit(uint u, const QString& x1, QWidget* x2 = 0) : QPlainTextEdit(x1, x2), unique(u) {}
@@ -3995,7 +4046,7 @@ public:
 
 class LPluginLoader : public QPluginLoader {
     Q_OBJECT
-    friend class Q151;
+    friend class Q152;
 public:
     LPluginLoader(uint u, QObject* x1 = 0) : QPluginLoader(x1), unique(u) {}
     LPluginLoader(uint u, const QString& x1, QObject* x2 = 0) : QPluginLoader(x1, x2), unique(u) {}
@@ -4011,7 +4062,7 @@ public:
 
 class LPrintDialog : public QPrintDialog {
     Q_OBJECT
-    friend class Q152;
+    friend class Q153;
 public:
     LPrintDialog(uint u, QPrinter* x1, QWidget* x2 = 0) : QPrintDialog(x1, x2), unique(u) {}
     LPrintDialog(uint u, QWidget* x1 = 0) : QPrintDialog(x1), unique(u) {}
@@ -4064,7 +4115,7 @@ public:
 
 class LPrintPreviewDialog : public QPrintPreviewDialog {
     Q_OBJECT
-    friend class Q153;
+    friend class Q154;
 public:
     LPrintPreviewDialog(uint u, QPrinter* x1, QWidget* x2 = 0, Qt::WindowFlags x3 = 0) : QPrintPreviewDialog(x1, x2, x3), unique(u) {}
     LPrintPreviewDialog(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QPrintPreviewDialog(x1, x2), unique(u) {}
@@ -4116,7 +4167,7 @@ public:
 
 class LPrintPreviewWidget : public QPrintPreviewWidget {
     Q_OBJECT
-    friend class Q154;
+    friend class Q155;
 public:
     LPrintPreviewWidget(uint u, QPrinter* x1, QWidget* x2 = 0, Qt::WindowFlags x3 = 0) : QPrintPreviewWidget(x1, x2, x3), unique(u) {}
     LPrintPreviewWidget(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QPrintPreviewWidget(x1, x2), unique(u) {}
@@ -4167,7 +4218,7 @@ public:
 
 class LProcess : public QProcess {
     Q_OBJECT
-    friend class Q155;
+    friend class Q156;
 public:
     LProcess(uint u, QObject* x1 = 0) : QProcess(x1), unique(u) {}
 
@@ -4199,7 +4250,7 @@ public:
 
 class LProgressBar : public QProgressBar {
     Q_OBJECT
-    friend class Q156;
+    friend class Q157;
 public:
     LProgressBar(uint u, QWidget* x1 = 0) : QProgressBar(x1), unique(u) {}
 
@@ -4249,7 +4300,7 @@ public:
 
 class LProgressDialog : public QProgressDialog {
     Q_OBJECT
-    friend class Q157;
+    friend class Q158;
 public:
     LProgressDialog(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QProgressDialog(x1, x2), unique(u) {}
     LProgressDialog(uint u, const QString& x1, const QString& x2, int x3, int x4, QWidget* x5 = 0, Qt::WindowFlags x6 = 0) : QProgressDialog(x1, x2, x3, x4, x5, x6), unique(u) {}
@@ -4300,7 +4351,7 @@ public:
 
 class LPropertyAnimation : public QPropertyAnimation {
     Q_OBJECT
-    friend class Q158;
+    friend class Q159;
 public:
     LPropertyAnimation(uint u, QObject* x1 = 0) : QPropertyAnimation(x1), unique(u) {}
     LPropertyAnimation(uint u, QObject* x1, const QByteArray& x2, QObject* x3 = 0) : QPropertyAnimation(x1, x2, x3), unique(u) {}
@@ -4322,7 +4373,7 @@ public:
 
 class LProxyStyle : public QProxyStyle {
     Q_OBJECT
-    friend class Q159;
+    friend class Q160;
 public:
     LProxyStyle(uint u, QStyle* x1 = 0) : QProxyStyle(x1), unique(u) {}
     LProxyStyle(uint u, const QString& x1) : QProxyStyle(x1), unique(u) {}
@@ -4358,7 +4409,7 @@ public:
 
 class LPushButton : public QPushButton {
     Q_OBJECT
-    friend class Q160;
+    friend class Q161;
 public:
     LPushButton(uint u, QWidget* x1 = 0) : QPushButton(x1), unique(u) {}
     LPushButton(uint u, const QString& x1, QWidget* x2 = 0) : QPushButton(x1, x2), unique(u) {}
@@ -4412,7 +4463,7 @@ public:
 
 class LRadioButton : public QRadioButton {
     Q_OBJECT
-    friend class Q161;
+    friend class Q162;
 public:
     LRadioButton(uint u, QWidget* x1 = 0) : QRadioButton(x1), unique(u) {}
     LRadioButton(uint u, const QString& x1, QWidget* x2 = 0) : QRadioButton(x1, x2), unique(u) {}
@@ -4465,7 +4516,7 @@ public:
 
 class LRegExpValidator : public QRegExpValidator {
     Q_OBJECT
-    friend class Q163;
+    friend class Q164;
 public:
     LRegExpValidator(uint u, QObject* x1 = 0) : QRegExpValidator(x1), unique(u) {}
     LRegExpValidator(uint u, const QRegExp& x1, QObject* x2 = 0) : QRegExpValidator(x1, x2), unique(u) {}
@@ -4483,7 +4534,7 @@ public:
 
 class LRubberBand : public QRubberBand {
     Q_OBJECT
-    friend class Q164;
+    friend class Q165;
 public:
     LRubberBand(uint u, Shape x1, QWidget* x2 = 0) : QRubberBand(x1, x2), unique(u) {}
 
@@ -4532,7 +4583,7 @@ public:
 
 class LScrollArea : public QScrollArea {
     Q_OBJECT
-    friend class Q166;
+    friend class Q167;
 public:
     LScrollArea(uint u, QWidget* x1 = 0) : QScrollArea(x1), unique(u) {}
 
@@ -4585,7 +4636,7 @@ public:
 
 class LScrollBar : public QScrollBar {
     Q_OBJECT
-    friend class Q167;
+    friend class Q168;
 public:
     LScrollBar(uint u, QWidget* x1 = 0) : QScrollBar(x1), unique(u) {}
     LScrollBar(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QScrollBar(x1, x2), unique(u) {}
@@ -4636,7 +4687,7 @@ public:
 
 class LSequentialAnimationGroup : public QSequentialAnimationGroup {
     Q_OBJECT
-    friend class Q168;
+    friend class Q169;
 public:
     LSequentialAnimationGroup(uint u, QObject* x1 = 0) : QSequentialAnimationGroup(x1), unique(u) {}
 
@@ -4655,7 +4706,7 @@ public:
 
 class LSettings : public QSettings {
     Q_OBJECT
-    friend class Q170;
+    friend class Q171;
 public:
     LSettings(uint u, const QString& x1, const QString& x2 = QString(), QObject* x3 = 0) : QSettings(x1, x2, x3), unique(u) {}
     LSettings(uint u, Scope x1, const QString& x2, const QString& x3 = QString(), QObject* x4 = 0) : QSettings(x1, x2, x3, x4), unique(u) {}
@@ -4674,7 +4725,7 @@ public:
 
 class LShortcut : public QShortcut {
     Q_OBJECT
-    friend class Q171;
+    friend class Q172;
 public:
     LShortcut(uint u, QWidget* x1) : QShortcut(x1), unique(u) {}
     LShortcut(uint u, const QKeySequence& x1, QWidget* x2, const char* x3 = 0, const char* x4 = 0, Qt::ShortcutContext x5 = Qt::WindowShortcut) : QShortcut(x1, x2, x3, x4, x5), unique(u) {}
@@ -4690,7 +4741,7 @@ public:
 
 class LSignalTransition : public QSignalTransition {
     Q_OBJECT
-    friend class Q172;
+    friend class Q173;
 public:
     LSignalTransition(uint u, QState* x1 = 0) : QSignalTransition(x1), unique(u) {}
     LSignalTransition(uint u, const QObject* x1, const char* x2, QState* x3 = 0) : QSignalTransition(x1, x2, x3), unique(u) {}
@@ -4708,7 +4759,7 @@ public:
 
 class LSizeGrip : public QSizeGrip {
     Q_OBJECT
-    friend class Q173;
+    friend class Q174;
 public:
     LSizeGrip(uint u, QWidget* x1) : QSizeGrip(x1), unique(u) {}
 
@@ -4758,7 +4809,7 @@ public:
 
 class LSlider : public QSlider {
     Q_OBJECT
-    friend class Q174;
+    friend class Q175;
 public:
     LSlider(uint u, QWidget* x1 = 0) : QSlider(x1), unique(u) {}
     LSlider(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QSlider(x1, x2), unique(u) {}
@@ -4809,7 +4860,7 @@ public:
 
 class LSortFilterProxyModel : public QSortFilterProxyModel {
     Q_OBJECT
-    friend class Q175;
+    friend class Q176;
 public:
     LSortFilterProxyModel(uint u, QObject* x1 = 0) : QSortFilterProxyModel(x1), unique(u) {}
 
@@ -4863,7 +4914,7 @@ public:
 
 class LSpinBox : public QSpinBox {
     Q_OBJECT
-    friend class Q176;
+    friend class Q177;
 public:
     LSpinBox(uint u, QWidget* x1 = 0) : QSpinBox(x1), unique(u) {}
 
@@ -4918,7 +4969,7 @@ public:
 
 class LSplashScreen : public QSplashScreen {
     Q_OBJECT
-    friend class Q177;
+    friend class Q178;
 public:
     LSplashScreen(uint u, const QPixmap& x1 = QPixmap(), Qt::WindowFlags x2 = 0) : QSplashScreen(x1, x2), unique(u) {}
     LSplashScreen(uint u, QWidget* x1, const QPixmap& x2 = QPixmap(), Qt::WindowFlags x3 = 0) : QSplashScreen(x1, x2, x3), unique(u) {}
@@ -4969,7 +5020,7 @@ public:
 
 class LSplitter : public QSplitter {
     Q_OBJECT
-    friend class Q178;
+    friend class Q179;
 public:
     LSplitter(uint u, QWidget* x1 = 0) : QSplitter(x1), unique(u) {}
     LSplitter(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QSplitter(x1, x2), unique(u) {}
@@ -5019,7 +5070,7 @@ public:
 
 class LSplitterHandle : public QSplitterHandle {
     Q_OBJECT
-    friend class Q179;
+    friend class Q180;
 public:
 
     static NumList overrideIds;
@@ -5067,7 +5118,7 @@ public:
 
 class LStackedLayout : public QStackedLayout {
     Q_OBJECT
-    friend class Q185;
+    friend class Q186;
 public:
     LStackedLayout(uint u) : unique(u) {}
     LStackedLayout(uint u, QWidget* x1) : QStackedLayout(x1), unique(u) {}
@@ -5101,7 +5152,7 @@ public:
 
 class LStackedWidget : public QStackedWidget {
     Q_OBJECT
-    friend class Q186;
+    friend class Q187;
 public:
     LStackedWidget(uint u, QWidget* x1 = 0) : QStackedWidget(x1), unique(u) {}
 
@@ -5150,7 +5201,7 @@ public:
 
 class LStandardItemModel : public QStandardItemModel {
     Q_OBJECT
-    friend class Q187;
+    friend class Q188;
 public:
     LStandardItemModel(uint u, QObject* x1 = 0) : QStandardItemModel(x1), unique(u) {}
     LStandardItemModel(uint u, int x1, int x2, QObject* x3 = 0) : QStandardItemModel(x1, x2, x3), unique(u) {}
@@ -5195,7 +5246,7 @@ public:
 
 class LState : public QState {
     Q_OBJECT
-    friend class Q188;
+    friend class Q189;
 public:
     LState(uint u, QState* x1 = 0) : QState(x1), unique(u) {}
     LState(uint u, ChildMode x1, QState* x2 = 0) : QState(x1, x2), unique(u) {}
@@ -5213,7 +5264,7 @@ public:
 
 class LStateMachine : public QStateMachine {
     Q_OBJECT
-    friend class Q189;
+    friend class Q190;
 public:
     LStateMachine(uint u, QObject* x1 = 0) : QStateMachine(x1), unique(u) {}
     LStateMachine(uint u, QState::ChildMode x1, QObject* x2 = 0) : QStateMachine(x1, x2), unique(u) {}
@@ -5231,7 +5282,7 @@ public:
 
 class LStatusBar : public QStatusBar {
     Q_OBJECT
-    friend class Q190;
+    friend class Q191;
 public:
     LStatusBar(uint u, QWidget* x1 = 0) : QStatusBar(x1), unique(u) {}
 
@@ -5280,7 +5331,7 @@ public:
 
 class LStringListModel : public QStringListModel {
     Q_OBJECT
-    friend class Q191;
+    friend class Q192;
 public:
     LStringListModel(uint u, QObject* x1 = 0) : QStringListModel(x1), unique(u) {}
     LStringListModel(uint u, const QStringList& x1, QObject* x2 = 0) : QStringListModel(x1, x2), unique(u) {}
@@ -5322,7 +5373,7 @@ public:
 
 class LStyledItemDelegate : public QStyledItemDelegate {
     Q_OBJECT
-    friend class Q193;
+    friend class Q194;
 public:
     LStyledItemDelegate(uint u, QObject* x1 = 0) : QStyledItemDelegate(x1), unique(u) {}
 
@@ -5348,7 +5399,7 @@ public:
 
 class LSwipeGesture : public QSwipeGesture {
     Q_OBJECT
-    friend class Q196;
+    friend class Q197;
 public:
 
     static NumList overrideIds;
@@ -5362,7 +5413,7 @@ public:
 
 class LSyntaxHighlighter : public QSyntaxHighlighter {
     Q_OBJECT
-    friend class Q197;
+    friend class Q198;
 public:
     LSyntaxHighlighter(uint u, QObject* x1) : QSyntaxHighlighter(x1), unique(u) {}
     LSyntaxHighlighter(uint u, QTextDocument* x1) : QSyntaxHighlighter(x1), unique(u) {}
@@ -5379,7 +5430,7 @@ public:
 
 class LSystemTrayIcon : public QSystemTrayIcon {
     Q_OBJECT
-    friend class Q198;
+    friend class Q199;
 public:
     LSystemTrayIcon(uint u, QObject* x1 = 0) : QSystemTrayIcon(x1), unique(u) {}
     LSystemTrayIcon(uint u, const QIcon& x1, QObject* x2 = 0) : QSystemTrayIcon(x1, x2), unique(u) {}
@@ -5395,7 +5446,7 @@ public:
 
 class LTabBar : public QTabBar {
     Q_OBJECT
-    friend class Q199;
+    friend class Q200;
 public:
     LTabBar(uint u, QWidget* x1 = 0) : QTabBar(x1), unique(u) {}
 
@@ -5449,7 +5500,7 @@ public:
 
 class LTabWidget : public QTabWidget {
     Q_OBJECT
-    friend class Q200;
+    friend class Q201;
 public:
     LTabWidget(uint u, QWidget* x1 = 0) : QTabWidget(x1), unique(u) {}
 
@@ -5500,7 +5551,7 @@ public:
 
 class LTableView : public QTableView {
     Q_OBJECT
-    friend class Q201;
+    friend class Q202;
 public:
     LTableView(uint u, QWidget* x1 = 0) : QTableView(x1), unique(u) {}
 
@@ -5576,7 +5627,7 @@ public:
 
 class LTableWidget : public QTableWidget {
     Q_OBJECT
-    friend class Q202;
+    friend class Q203;
 public:
     LTableWidget(uint u, QWidget* x1 = 0) : QTableWidget(x1), unique(u) {}
     LTableWidget(uint u, int x1, int x2, QWidget* x3 = 0) : QTableWidget(x1, x2, x3), unique(u) {}
@@ -5656,7 +5707,7 @@ public:
 
 class LTapAndHoldGesture : public QTapAndHoldGesture {
     Q_OBJECT
-    friend class Q203;
+    friend class Q204;
 public:
 
     static NumList overrideIds;
@@ -5670,7 +5721,7 @@ public:
 
 class LTapGesture : public QTapGesture {
     Q_OBJECT
-    friend class Q204;
+    friend class Q205;
 public:
 
     static NumList overrideIds;
@@ -5684,7 +5735,7 @@ public:
 
 class LTextBlockGroup : public QTextBlockGroup {
     Q_OBJECT
-    friend class Q207;
+    friend class Q208;
 public:
 
     static NumList overrideIds;
@@ -5701,7 +5752,7 @@ public:
 
 class LTextBrowser : public QTextBrowser {
     Q_OBJECT
-    friend class Q208;
+    friend class Q209;
 public:
     LTextBrowser(uint u, QWidget* x1 = 0) : QTextBrowser(x1), unique(u) {}
 
@@ -5758,7 +5809,7 @@ public:
 
 class LTextDocument : public QTextDocument {
     Q_OBJECT
-    friend class Q209;
+    friend class Q210;
 public:
     LTextDocument(uint u, QObject* x1 = 0) : QTextDocument(x1), unique(u) {}
     LTextDocument(uint u, const QString& x1, QObject* x2 = 0) : QTextDocument(x1, x2), unique(u) {}
@@ -5777,7 +5828,7 @@ public:
 
 class LTextEdit : public QTextEdit {
     Q_OBJECT
-    friend class Q210;
+    friend class Q211;
 public:
     LTextEdit(uint u, QWidget* x1 = 0) : QTextEdit(x1), unique(u) {}
     LTextEdit(uint u, const QString& x1, QWidget* x2 = 0) : QTextEdit(x1, x2), unique(u) {}
@@ -5835,7 +5886,7 @@ public:
 
 class LTextFrame : public QTextFrame {
     Q_OBJECT
-    friend class Q211;
+    friend class Q212;
 public:
     LTextFrame(uint u, QTextDocument* x1) : QTextFrame(x1), unique(u) {}
 
@@ -5850,7 +5901,7 @@ public:
 
 class LTextList : public QTextList {
     Q_OBJECT
-    friend class Q212;
+    friend class Q213;
 public:
 
     static NumList overrideIds;
@@ -5867,7 +5918,7 @@ public:
 
 class LTextObject : public QTextObject {
     Q_OBJECT
-    friend class Q213;
+    friend class Q214;
 public:
 
     static NumList overrideIds;
@@ -5881,7 +5932,7 @@ public:
 
 class LTextTable : public QTextTable {
     Q_OBJECT
-    friend class Q214;
+    friend class Q215;
 public:
 
     static NumList overrideIds;
@@ -5895,7 +5946,7 @@ public:
 
 class LTimeEdit : public QTimeEdit {
     Q_OBJECT
-    friend class Q215;
+    friend class Q216;
 public:
     LTimeEdit(uint u, QWidget* x1 = 0) : QTimeEdit(x1), unique(u) {}
     LTimeEdit(uint u, const QTime& x1, QWidget* x2 = 0) : QTimeEdit(x1, x2), unique(u) {}
@@ -5952,7 +6003,7 @@ public:
 
 class LTimeLine : public QTimeLine {
     Q_OBJECT
-    friend class Q216;
+    friend class Q217;
 public:
     LTimeLine(uint u, int x1 = 1000, QObject* x2 = 0) : QTimeLine(x1, x2), unique(u) {}
 
@@ -5968,7 +6019,7 @@ public:
 
 class LTimer : public QTimer {
     Q_OBJECT
-    friend class Q217;
+    friend class Q218;
 public:
     LTimer(uint u, QObject* x1 = 0) : QTimer(x1), unique(u) {}
 
@@ -5983,7 +6034,7 @@ public:
 
 class LToolBar : public QToolBar {
     Q_OBJECT
-    friend class Q218;
+    friend class Q219;
 public:
     LToolBar(uint u, const QString& x1, QWidget* x2 = 0) : QToolBar(x1, x2), unique(u) {}
     LToolBar(uint u, QWidget* x1 = 0) : QToolBar(x1), unique(u) {}
@@ -6033,7 +6084,7 @@ public:
 
 class LToolBox : public QToolBox {
     Q_OBJECT
-    friend class Q219;
+    friend class Q220;
 public:
     LToolBox(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QToolBox(x1, x2), unique(u) {}
 
@@ -6084,7 +6135,7 @@ public:
 
 class LToolButton : public QToolButton {
     Q_OBJECT
-    friend class Q220;
+    friend class Q221;
 public:
     LToolButton(uint u, QWidget* x1 = 0) : QToolButton(x1), unique(u) {}
 
@@ -6136,7 +6187,7 @@ public:
 
 class LTranslator : public QTranslator {
     Q_OBJECT
-    friend class Q221;
+    friend class Q222;
 public:
     LTranslator(uint u, QObject* x1 = 0) : QTranslator(x1), unique(u) {}
 
@@ -6153,7 +6204,7 @@ public:
 
 class LTreeView : public QTreeView {
     Q_OBJECT
-    friend class Q222;
+    friend class Q223;
 public:
     LTreeView(uint u, QWidget* x1 = 0) : QTreeView(x1), unique(u) {}
 
@@ -6236,7 +6287,7 @@ public:
 
 class LTreeWidget : public QTreeWidget {
     Q_OBJECT
-    friend class Q223;
+    friend class Q224;
 public:
     LTreeWidget(uint u, QWidget* x1 = 0) : QTreeWidget(x1), unique(u) {}
 
@@ -6322,7 +6373,7 @@ public:
 
 class LUndoGroup : public QUndoGroup {
     Q_OBJECT
-    friend class Q225;
+    friend class Q226;
 public:
     LUndoGroup(uint u, QObject* x1 = 0) : QUndoGroup(x1), unique(u) {}
 
@@ -6337,7 +6388,7 @@ public:
 
 class LUndoStack : public QUndoStack {
     Q_OBJECT
-    friend class Q226;
+    friend class Q227;
 public:
     LUndoStack(uint u, QObject* x1 = 0) : QUndoStack(x1), unique(u) {}
 
@@ -6352,7 +6403,7 @@ public:
 
 class LUndoView : public QUndoView {
     Q_OBJECT
-    friend class Q227;
+    friend class Q228;
 public:
     LUndoView(uint u, QWidget* x1 = 0) : QUndoView(x1), unique(u) {}
     LUndoView(uint u, QUndoStack* x1, QWidget* x2 = 0) : QUndoView(x1, x2), unique(u) {}
@@ -6432,7 +6483,7 @@ public:
 
 class LVBoxLayout : public QVBoxLayout {
     Q_OBJECT
-    friend class Q228;
+    friend class Q229;
 public:
     LVBoxLayout(uint u) : unique(u) {}
     LVBoxLayout(uint u, QWidget* x1) : QVBoxLayout(x1), unique(u) {}
@@ -6466,7 +6517,7 @@ public:
 
 class LValidator : public QValidator {
     Q_OBJECT
-    friend class Q229;
+    friend class Q230;
 public:
     LValidator(uint u, QObject* x1 = 0) : QValidator(x1), unique(u) {}
 
@@ -6483,7 +6534,7 @@ public:
 
 class LVariantAnimation : public QVariantAnimation {
     Q_OBJECT
-    friend class Q230;
+    friend class Q231;
 public:
     LVariantAnimation(uint u, QObject* x1 = 0) : QVariantAnimation(x1), unique(u) {}
 
@@ -6504,7 +6555,7 @@ public:
 
 class LWidget : public QWidget {
     Q_OBJECT
-    friend class Q239;
+    friend class Q240;
 public:
     LWidget(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QWidget(x1, x2), unique(u) {}
 
@@ -6553,7 +6604,7 @@ public:
 
 class LWidgetAction : public QWidgetAction {
     Q_OBJECT
-    friend class Q240;
+    friend class Q241;
 public:
     LWidgetAction(uint u, QObject* x1) : QWidgetAction(x1), unique(u) {}
 
@@ -6570,7 +6621,7 @@ public:
 
 class LWindow : public QWindow {
     Q_OBJECT
-    friend class Q241;
+    friend class Q242;
 public:
     LWindow(uint u, QScreen* x1 = 0) : QWindow(x1), unique(u) {}
     LWindow(uint u, QWindow* x1) : QWindow(x1), unique(u) {}
@@ -6606,7 +6657,7 @@ public:
 
 class LWizard : public QWizard {
     Q_OBJECT
-    friend class Q242;
+    friend class Q243;
 public:
     LWizard(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QWizard(x1, x2), unique(u) {}
 
@@ -6661,7 +6712,7 @@ public:
 
 class LWizardPage : public QWizardPage {
     Q_OBJECT
-    friend class Q243;
+    friend class Q244;
 public:
     LWizardPage(uint u, QWidget* x1 = 0) : QWizardPage(x1), unique(u) {}
 

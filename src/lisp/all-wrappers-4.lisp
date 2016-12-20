@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|searchingChanged|
    #:|searchingFinished|
    #:|searchingStarted|
    #:|search|
@@ -1198,5 +1199,4 @@
    #:|setSort|
    #:|setSourceModel|
    #:|setSource|
-   #:|setSpacing|
-   #:|setSpanAngle|))
+   #:|setSpacing|))

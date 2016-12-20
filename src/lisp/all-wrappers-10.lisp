@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |searchingChanged| (object &rest arguments)
+  (%qinvoke-method object nil "searchingChanged" arguments))
+
 (defun |searchingFinished| (object &rest arguments)
   (%qinvoke-method object nil "searchingFinished" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |setSpacing| (object &rest arguments)
   (%qinvoke-method object nil "setSpacing" arguments))
-
-(defun |setSpanAngle| (object &rest arguments)
-  (%qinvoke-method object nil "setSpanAngle" arguments))

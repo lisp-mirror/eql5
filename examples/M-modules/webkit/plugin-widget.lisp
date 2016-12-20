@@ -49,8 +49,7 @@
   (qconnect (frame) "javaScriptWindowObjectCleared()"
             (lambda ()
               (|addToJavaScriptWindowObject| (frame) "Lisp" *webkit-bridge*)))
-  (|setUrl| *web-view* (qnew "QUrl(QString)"
-                             (x:cc "file://" (namestring (probe-file "plugin-widget.htm")))))
+  (|setUrl| *web-view* (|fromUserInput.QUrl| (namestring (probe-file "plugin-widget.htm"))))
   (|show| *web-view*))
 
 (ini)

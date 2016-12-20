@@ -37,15 +37,13 @@
             (lambda ()
               (|addToJavaScriptWindowObject| (frame) "Lisp" *webkit-bridge*)))
   (qconnect *network-manager* "finished(QNetworkReply*)" 'download-finished)
-  (|setUrl| *web-view* (qnew "QUrl(QString)"
-                             (x:cc "file://" (namestring (probe-file "examples-browser.htm")))))
+  (|setUrl| *web-view* (|fromUserInput.QUrl| (namestring (probe-file "examples-browser.htm"))))
   (|showMaximized| *web-view*))
 
 ;;; download
 
 (defun download (url id name)
-  (qlet ((qurl "QUrl(QString)" url)
-         (request "QNetworkRequest(QUrl)" qurl)
+  (qlet ((request "QNetworkRequest(QUrl)" url)
          (qid "QVariant(QString)" id)
          (qname "QVariant(QString)" name))
     (let ((reply (|get| *network-manager* request)))
@@ -108,7 +106,7 @@
                 *ini-file*   ini-file)
           ;; QNetworkAccessManager does it all for us (asynchroneous, parallel download)
           (dolist (name file-names)
-            (download (format nil "file:///~A" (in-home "examples/" name)) ; change this to a network location
+            (download (|fromUserInput.QUrl| (in-home "examples/" name)) ; change this to a network location
                       id
                       name))))))
 

@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |setSpanAngle| (object &rest arguments)
+  (%qinvoke-method object nil "setSpanAngle" arguments))
+
 (defun |setSpan| (object &rest arguments)
   (%qinvoke-method object nil "setSpan" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |windowIcon| (object &rest arguments)
   (%qinvoke-method object nil "windowIcon" arguments))
-
-(defun |windowModality| (object &rest arguments)
-  (%qinvoke-method object nil "windowModality" arguments))

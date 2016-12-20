@@ -7,7 +7,7 @@ BUILD / RUN / CALL
 qmake
 make
 
-eql run.lisp -qtpl
+eql5 run.lisp -qtpl
 
 ________________________________________
 

@@ -52,7 +52,7 @@ public:
 
 class LLocalServer : public QLocalServer {
     Q_OBJECT
-    friend class Q116;
+    friend class Q117;
 public:
     LLocalServer(uint u, QObject* x1 = 0) : QLocalServer(x1), unique(u) {}
 
@@ -69,7 +69,7 @@ public:
 
 class LLocalSocket : public QLocalSocket {
     Q_OBJECT
-    friend class Q117;
+    friend class Q118;
 public:
     LLocalSocket(uint u, QObject* x1 = 0) : QLocalSocket(x1), unique(u) {}
 
@@ -100,7 +100,7 @@ public:
 
 class LNetworkAccessManager : public QNetworkAccessManager {
     Q_OBJECT
-    friend class Q132;
+    friend class Q133;
 public:
     LNetworkAccessManager(uint u, QObject* x1 = 0) : QNetworkAccessManager(x1), unique(u) {}
 
@@ -115,7 +115,7 @@ public:
 
 class LNetworkCookieJar : public QNetworkCookieJar {
     Q_OBJECT
-    friend class Q133;
+    friend class Q134;
 public:
     LNetworkCookieJar(uint u, QObject* x1 = 0) : QNetworkCookieJar(x1), unique(u) {}
 
@@ -136,7 +136,7 @@ public:
 
 class LNetworkDiskCache : public QNetworkDiskCache {
     Q_OBJECT
-    friend class Q134;
+    friend class Q135;
 public:
     LNetworkDiskCache(uint u, QObject* x1 = 0) : QNetworkDiskCache(x1), unique(u) {}
 
@@ -156,7 +156,7 @@ public:
 
 class LTcpServer : public QTcpServer {
     Q_OBJECT
-    friend class Q205;
+    friend class Q206;
 public:
     LTcpServer(uint u, QObject* x1 = 0) : QTcpServer(x1), unique(u) {}
 
@@ -173,7 +173,7 @@ public:
 
 class LTcpSocket : public QTcpSocket {
     Q_OBJECT
-    friend class Q206;
+    friend class Q207;
 public:
     LTcpSocket(uint u, QObject* x1 = 0) : QTcpSocket(x1), unique(u) {}
 
@@ -212,7 +212,7 @@ public:
 
 class LUdpSocket : public QUdpSocket {
     Q_OBJECT
-    friend class Q224;
+    friend class Q225;
 public:
     LUdpSocket(uint u, QObject* x1 = 0) : QUdpSocket(x1), unique(u) {}
 

@@ -817,6 +817,24 @@
    "virtual qint64 readData ( char * , qint64 ) = 0"
    "virtual qint64 readLineData ( char * , qint64 )"
    "virtual qint64 writeData ( const char * , qint64 ) = 0")
+  (("QIdentityProxyModel" . "QAbstractProxyModel")
+   "virtual int columnCount ( const QModelIndex & = QModelIndex() ) const"
+   "virtual bool dropMimeData ( const QMimeData * , Qt::DropAction , int , int , const QModelIndex & )"
+   "virtual QVariant headerData ( int , Qt::Orientation , int = Qt::DisplayRole ) const"
+   "virtual QModelIndex index ( int , int , const QModelIndex & = QModelIndex() ) const"
+   "virtual bool insertColumns ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual bool insertRows ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual QModelIndex mapFromSource ( const QModelIndex & ) const"
+   "virtual QItemSelection mapSelectionFromSource ( const QItemSelection & ) const"
+   "virtual QItemSelection mapSelectionToSource ( const QItemSelection & ) const"
+   "virtual QModelIndex mapToSource ( const QModelIndex & ) const"
+   "virtual QModelIndexList match ( const QModelIndex & , int , const QVariant & , int = 1 , Qt::MatchFlags = Qt::MatchFlags( Qt::MatchStartsWith | Qt::MatchWrap ) ) const"
+   "virtual QModelIndex parent ( const QModelIndex & ) const"
+   "virtual bool removeColumns ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual bool removeRows ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual int rowCount ( const QModelIndex & = QModelIndex() ) const"
+   "virtual void setSourceModel ( QAbstractItemModel * )"
+   "virtual QModelIndex sibling ( int , int , const QModelIndex & ) const")
   (("QInputDialog" . "QDialog")
    "virtual void done ( int )"
    "virtual QSize minimumSizeHint () const"

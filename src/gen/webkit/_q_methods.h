@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q233 : public Q136 { // QWebFrame
+class Q234 : public Q137 { // QWebFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void MaddToJavaScriptWindowObject(QWebFrame* o, const QString& x1, QObject* x2, QWebFrame::ValueOwnership x3 = QWebFrame::QtOwnership) { o->addToJavaScriptWindowObject(x1, x2, x3); }
@@ -62,7 +62,7 @@ public:
     Q_INVOKABLE bool Mevent(QWebFrame* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q234 : public Q136 { // QWebHistoryInterface
+class Q235 : public Q137 { // QWebHistoryInterface
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebHistoryInterface(u, x1); }
@@ -72,7 +72,7 @@ public:
     Q_INVOKABLE void SsetDefaultInterface(QWebHistoryInterface* x1) { QWebHistoryInterface::setDefaultInterface(x1); }
 };
 
-class Q236 : public Q136 { // QWebPage
+class Q237 : public Q137 { // QWebPage
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPage(u, x1); }
@@ -126,7 +126,7 @@ public:
     Q_INVOKABLE bool Mevent(QWebPage* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q237 : public Q136 { // QWebPluginFactory
+class Q238 : public Q137 { // QWebPluginFactory
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPluginFactory(u, x1); }
@@ -173,7 +173,7 @@ public:
     Q_INVOKABLE void MupdateGeometry(QGraphicsWebView* o) { o->updateGeometry(); }
 };
 
-class Q235 : public Q239 { // QWebInspector
+class Q236 : public Q240 { // QWebInspector
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebInspector(u, x1); }
@@ -183,7 +183,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QWebInspector* o) const { return o->sizeHint(); }
 };
 
-class Q238 : public Q239 { // QWebView
+class Q239 : public Q240 { // QWebView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebView(u, x1); }

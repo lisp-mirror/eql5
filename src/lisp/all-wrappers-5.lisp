@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|setSpanAngle|
    #:|setSpan|
    #:|setSpecialValueText|
    #:|setSpeed|
@@ -1198,5 +1199,4 @@
    #:|windowIconChanged|
    #:|windowIconTextChanged|
    #:|windowIconText|
-   #:|windowIcon|
-   #:|windowModality|))
+   #:|windowIcon|))

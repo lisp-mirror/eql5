@@ -2117,6 +2117,25 @@
    "qint64 write ( const QByteArray & )"
    "protected void setErrorString ( const QString & )"
    "protected void setOpenMode ( OpenMode )")
+  (("QIdentityProxyModel" . "QAbstractProxyModel")
+   "new QIdentityProxyModel ( QObject * = 0 )"
+   "virtual int columnCount ( const QModelIndex & = QModelIndex() ) const"
+   "virtual bool dropMimeData ( const QMimeData * , Qt::DropAction , int , int , const QModelIndex & )"
+   "virtual QVariant headerData ( int , Qt::Orientation , int = Qt::DisplayRole ) const"
+   "virtual QModelIndex index ( int , int , const QModelIndex & = QModelIndex() ) const"
+   "virtual bool insertColumns ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual bool insertRows ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual QModelIndex mapFromSource ( const QModelIndex & ) const"
+   "virtual QItemSelection mapSelectionFromSource ( const QItemSelection & ) const"
+   "virtual QItemSelection mapSelectionToSource ( const QItemSelection & ) const"
+   "virtual QModelIndex mapToSource ( const QModelIndex & ) const"
+   "virtual QModelIndexList match ( const QModelIndex & , int , const QVariant & , int = 1 , Qt::MatchFlags = Qt::MatchFlags( Qt::MatchStartsWith | Qt::MatchWrap ) ) const"
+   "virtual QModelIndex parent ( const QModelIndex & ) const"
+   "virtual bool removeColumns ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual bool removeRows ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual int rowCount ( const QModelIndex & = QModelIndex() ) const"
+   "virtual void setSourceModel ( QAbstractItemModel * )"
+   "virtual QModelIndex sibling ( int , int , const QModelIndex & ) const")
   (("QInputDialog" . "QDialog")
    "new QInputDialog ( QWidget * = 0 , Qt::WindowFlags = 0 )"
    "QString cancelButtonText () const"

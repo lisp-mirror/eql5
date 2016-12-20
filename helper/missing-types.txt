@@ -1,4 +1,3 @@
- QList<const QTouchDevice*>
 QAccessibleActionInterface
 QAccessibleTableCellInterface
 QAccessibleTableInterface
@@ -46,6 +45,7 @@ QList<QWebElement>
 QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
+QList<const QTouchDevice*>
 QMediaControl
 QMediaResourceList
 QMultiMap<QString,QString>

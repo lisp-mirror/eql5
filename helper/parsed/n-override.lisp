@@ -235,6 +235,9 @@
   (("QImageEncoderSettings" . NIL))
   (("QInputEvent" . "QEvent"))
   (("QInputMethodEvent" . "QEvent"))
+  (("QItemEditorCreatorBase" . NIL)
+   "virtual QWidget * createWidget ( QWidget * ) const = 0"
+   "virtual QByteArray valuePropertyName () const = 0")
   (("QItemEditorFactory" . NIL)
    "virtual QWidget * createEditor ( int , QWidget * ) const"
    "virtual QByteArray valuePropertyName ( int ) const")

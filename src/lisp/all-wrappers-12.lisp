@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |windowModality| (object &rest arguments)
+  (%qinvoke-method object nil "windowModality" arguments))
+
 (defun |windowOpacity| (object &rest arguments)
   (%qinvoke-method object nil "windowOpacity" arguments))
 

@@ -16,8 +16,7 @@
     (set-url url)))
 
 (defun set-url (string)
-  (qlet ((url "QUrl(QString)" string))
-    (|setUrl| ui:*web-view* url)))
+  (|setUrl| ui:*web-view* (|fromUserInput.QUrl| string)))
 
 (defun load-finished (ok)
   (|clear| ui:*tree-widget*)
@@ -33,11 +32,5 @@
         (examine-child-elements element item)
         (setf element (|nextSibling| element))))))
 
-(defun ensure-url (string)
-  (if (or (x:starts-with "http" string)
-          (x:starts-with "file" string))
-      string
-      (x:cc "file://" string)))
-
-(ini (ensure-url (or (third (|arguments.QCoreApplication|))
-                     (namestring (probe-file "../../../doc/index.html")))))
+(ini (or (third (|arguments.QCoreApplication|))
+         (namestring (probe-file "../../../doc/index.html"))))

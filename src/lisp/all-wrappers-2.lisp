@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|drawItemPixmap|
    #:|drawItemText|
    #:|drawLine(QLine)|
    #:|drawLine(QLineF)|
@@ -1198,5 +1199,4 @@
    #:|items(QPolygon...)|
    #:|items(QPolygonF)|
    #:|items(QPolygonF...)|
-   #:|items(QRect)|
-   #:|items(QRect...)|))
+   #:|items(QRect)|))

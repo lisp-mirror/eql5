@@ -44,25 +44,25 @@ void ini() {
     LObjects::Q[32] = new Q33;
     LObjects::Q[33] = new Q34;
     LObjects::Q[84] = new Q85;
-    LObjects::Q[120] = new Q121;
     LObjects::Q[121] = new Q122;
     LObjects::Q[122] = new Q123;
     LObjects::Q[123] = new Q124;
     LObjects::Q[124] = new Q125;
-    LObjects::Q[161] = new Q162;
-    LObjects::Q[230] = new Q231;
+    LObjects::Q[125] = new Q126;
+    LObjects::Q[162] = new Q163;
     LObjects::Q[231] = new Q232;
+    LObjects::Q[232] = new Q233;
     LObjects::N[7] = new N8;
     LObjects::N[8] = new N9;
     LObjects::N[9] = new N10;
     LObjects::N[15] = new N16;
     LObjects::N[16] = new N17;
     LObjects::N[79] = new N80;
-    LObjects::N[95] = new N96;
     LObjects::N[96] = new N97;
-    LObjects::N[204] = new N205;
+    LObjects::N[97] = new N98;
     LObjects::N[205] = new N206;
-    LObjects::N[206] = new N207; }
+    LObjects::N[206] = new N207;
+    LObjects::N[207] = new N208; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -77,14 +77,14 @@ const QMetaObject* staticMetaObject(int n) {
         case 33: m = &QCameraImageProcessing::staticMetaObject; break;
         case 34: m = &QCameraViewfinder::staticMetaObject; break;
         case 85: m = &QGraphicsVideoItem::staticMetaObject; break;
-        case 121: m = &QMediaObject::staticMetaObject; break;
-        case 122: m = &QMediaPlayer::staticMetaObject; break;
-        case 123: m = &QMediaPlaylist::staticMetaObject; break;
-        case 124: m = &QMediaRecorder::staticMetaObject; break;
-        case 125: m = &QMediaService::staticMetaObject; break;
-        case 162: m = &QRadioTuner::staticMetaObject; break;
-        case 231: m = &QVideoWidget::staticMetaObject; break;
-        case 232: m = &QVideoWidgetControl::staticMetaObject; break; }
+        case 122: m = &QMediaObject::staticMetaObject; break;
+        case 123: m = &QMediaPlayer::staticMetaObject; break;
+        case 124: m = &QMediaPlaylist::staticMetaObject; break;
+        case 125: m = &QMediaRecorder::staticMetaObject; break;
+        case 126: m = &QMediaService::staticMetaObject; break;
+        case 163: m = &QRadioTuner::staticMetaObject; break;
+        case 232: m = &QVideoWidget::staticMetaObject; break;
+        case 233: m = &QVideoWidgetControl::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -95,11 +95,11 @@ void deleteNObject(int n, void* p, int gc) {
         case 16: if(gc) delete (QCameraInfo*)p; else delete (LCameraInfo*)p; break;
         case 17: if(gc) delete (QCameraViewfinderSettings*)p; else delete (LCameraViewfinderSettings*)p; break;
         case 80: if(gc) delete (QImageEncoderSettings*)p; else delete (LImageEncoderSettings*)p; break;
-        case 96: if(gc) delete (QMediaContent*)p; else delete (LMediaContent*)p; break;
-        case 97: if(gc) delete (QMediaResource*)p; else delete (LMediaResource*)p; break;
-        case 205: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
-        case 206: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
-        case 207: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
+        case 97: if(gc) delete (QMediaContent*)p; else delete (LMediaContent*)p; break;
+        case 98: if(gc) delete (QMediaResource*)p; else delete (LMediaResource*)p; break;
+        case 206: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
+        case 207: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
+        case 208: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -112,13 +112,13 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 32: ids = &LCameraImageCapture::overrideIds; break;
             case 34: ids = &LCameraViewfinder::overrideIds; break;
             case 85: ids = &LGraphicsVideoItem::overrideIds; break;
-            case 121: ids = &LMediaObject::overrideIds; break;
-            case 122: ids = &LMediaPlayer::overrideIds; break;
-            case 123: ids = &LMediaPlaylist::overrideIds; break;
-            case 124: ids = &LMediaRecorder::overrideIds; break;
-            case 162: ids = &LRadioTuner::overrideIds; break;
-            case 231: ids = &LVideoWidget::overrideIds; break;
-            case 232: ids = &LVideoWidgetControl::overrideIds; break; }}
+            case 122: ids = &LMediaObject::overrideIds; break;
+            case 123: ids = &LMediaPlayer::overrideIds; break;
+            case 124: ids = &LMediaPlaylist::overrideIds; break;
+            case 125: ids = &LMediaRecorder::overrideIds; break;
+            case 163: ids = &LRadioTuner::overrideIds; break;
+            case 232: ids = &LVideoWidget::overrideIds; break;
+            case 233: ids = &LVideoWidgetControl::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
@@ -128,11 +128,11 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 16: ids = &LCameraInfo::overrideIds; break;
             case 17: ids = &LCameraViewfinderSettings::overrideIds; break;
             case 80: ids = &LImageEncoderSettings::overrideIds; break;
-            case 96: ids = &LMediaContent::overrideIds; break;
-            case 97: ids = &LMediaResource::overrideIds; break;
-            case 205: ids = &LVideoEncoderSettings::overrideIds; break;
-            case 206: ids = &LVideoFrame::overrideIds; break;
-            case 207: ids = &LVideoSurfaceFormat::overrideIds; break; }}
+            case 97: ids = &LMediaContent::overrideIds; break;
+            case 98: ids = &LMediaResource::overrideIds; break;
+            case 206: ids = &LVideoEncoderSettings::overrideIds; break;
+            case 207: ids = &LVideoFrame::overrideIds; break;
+            case 208: ids = &LVideoSurfaceFormat::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

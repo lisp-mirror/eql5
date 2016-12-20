@@ -9,27 +9,27 @@ QT_BEGIN_NAMESPACE
 NumList LGraphicsSvgItem::overrideIds = NumList() << 260 << 231 << 233;
 NumList LSvgRenderer::overrideIds = NumList();
 NumList LSvgWidget::overrideIds = NumList() << 25 << 20;
-NumList LSvgGenerator::overrideIds = NumList() << 463;
+NumList LSvgGenerator::overrideIds = NumList() << 464;
 
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[81] = new Q82;
-    LObjects::Q[193] = new Q194;
     LObjects::Q[194] = new Q195;
-    LObjects::N[161] = new N162; }
+    LObjects::Q[195] = new Q196;
+    LObjects::N[162] = new N163; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 82: m = &QGraphicsSvgItem::staticMetaObject; break;
-        case 194: m = &QSvgRenderer::staticMetaObject; break;
-        case 195: m = &QSvgWidget::staticMetaObject; break; }
+        case 195: m = &QSvgRenderer::staticMetaObject; break;
+        case 196: m = &QSvgWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 162: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
+        case 163: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -37,12 +37,12 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 82: ids = &LGraphicsSvgItem::overrideIds; break;
-            case 194: ids = &LSvgRenderer::overrideIds; break;
-            case 195: ids = &LSvgWidget::overrideIds; break; }}
+            case 195: ids = &LSvgRenderer::overrideIds; break;
+            case 196: ids = &LSvgWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 162: ids = &LSvgGenerator::overrideIds; break; }}
+            case 163: ids = &LSvgGenerator::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

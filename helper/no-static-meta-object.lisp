@@ -54,6 +54,7 @@
   "QIcon" 
   "QImage" 
   "QImageEncoderSettings" 
+  "QItemEditorCreatorBase" 
   "QItemEditorFactory" 
   "QItemSelection" 
   "QItemSelectionRange" 

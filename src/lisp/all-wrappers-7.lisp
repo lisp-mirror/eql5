@@ -2655,6 +2655,9 @@
 (defun |createUndoAction| (object &rest arguments)
   (%qinvoke-method object nil "createUndoAction" arguments))
 
+(defun |createWidget| (object &rest arguments)
+  (%qinvoke-method object nil "createWidget" arguments))
+
 (defun |createWindowContainer.QWidget| (&rest arguments)
   (%qinvoke-method "QWidget" nil "createWindowContainer" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |drawImage| (object &rest arguments)
   (%qinvoke-method object nil "drawImage" arguments))
-
-(defun |drawItemPixmap| (object &rest arguments)
-  (%qinvoke-method object nil "drawItemPixmap" arguments))

@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|items(QRect...)|
    #:|items(QRectF)|
    #:|items(QRectF...)|
    #:|items(Qt::SortOrder)|
@@ -1198,5 +1199,4 @@
    #:|searchBackward|
    #:|searchForward|
    #:|searchPaths.QDir|
-   #:|searchPaths|
-   #:|searchingChanged|))
+   #:|searchPaths|))

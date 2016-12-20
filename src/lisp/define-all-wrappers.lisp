@@ -152,6 +152,7 @@
                        ~%  (when (find (qt-object-id (ensure-qt-object object))~
                        ~%              '#.(list (qid \"QGraphicsSvgItem\")~
                        ~%                       (qid \"QGraphicsTextItem\")~
+                       ~%                       (qid \"QGraphicsVideoItem\")~
                        ~%                       (qid \"QGraphicsWidget\")))~
                        ~%    \"QGraphicsItem\"))~%")))))
     (setf definitions (sort (delete-duplicates definitions :test 'string=) 'string<))

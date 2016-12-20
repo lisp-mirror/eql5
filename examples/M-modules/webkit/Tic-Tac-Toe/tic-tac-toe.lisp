@@ -27,7 +27,7 @@
 (defun ini (html-file size)
   (qconnect h:*web-view* "loadFinished(bool)" (lambda (ok) (ini-html)))
   (x:do-with h:*web-view*
-    ("setUrl" (qnew "QUrl(QString)" html-file))
+    ("setUrl" (|fromUserInput.QUrl| html-file))
     ("setWindowTitle" "WebKit Application")
     ("resize" size)
     ("show")))
@@ -255,6 +255,6 @@
 ;;; run
 
 (progn
-  (ini (x:cc "file://" (namestring (probe-file "tic-tac-toe.htm")))
+  (ini (namestring (probe-file "tic-tac-toe.htm"))
        '(350 450))
   (qlater (lambda () (in-package :tic-tac-toe))))

@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |drawItemPixmap| (object &rest arguments)
+  (%qinvoke-method object nil "drawItemPixmap" arguments))
+
 (defun |drawItemText| (object &rest arguments)
   (%qinvoke-method object nil "drawItemText" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |items(QRect)| (object &rest arguments)
   (%qinvoke-method object nil "items(QRect)" arguments))
-
-(defun |items(QRect...)| (object &rest arguments)
-  (%qinvoke-method object nil "items(QRect...)" arguments))

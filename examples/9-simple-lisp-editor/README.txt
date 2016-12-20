@@ -8,10 +8,10 @@ Run it:
   0) You'll need the :network module (see QREQUIRE).
 
   1) Run the independent local Lisp server:
-      eql -norc local-server
+      eql5 -norc local-server
 
   2) Run the editor:
-      eql editor <file>.lisp (defaults to "my.lisp")
+      eql5 editor <file>.lisp (defaults to "my.lisp")
 
 The main motivation behind this editor is the need for a popup completer
 for the (huge) Qt library.

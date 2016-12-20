@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|windowModality|
    #:|windowOpacity|
    #:|windowPos|
    #:|windowRole|

@@ -82,6 +82,7 @@
         "QHeaderView"
         "QHBoxLayout"
         "QHistoryState"
+        "QIdentityProxyModel"
         "QInputDialog"
         "QIntValidator"
         "QItemDelegate"
