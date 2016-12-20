@@ -134,7 +134,7 @@ public:
 
 class LGraphicsVideoItem : public QGraphicsVideoItem {
     Q_OBJECT
-    friend class Q85;
+    friend class Q86;
 public:
     LGraphicsVideoItem(uint u, QGraphicsItem* x1 = 0) : QGraphicsVideoItem(x1), unique(u) {}
 
@@ -151,7 +151,7 @@ public:
 
 class LMediaObject : public QMediaObject {
     Q_OBJECT
-    friend class Q122;
+    friend class Q124;
 public:
 
     static NumList overrideIds;
@@ -170,7 +170,7 @@ public:
 
 class LMediaPlayer : public QMediaPlayer {
     Q_OBJECT
-    friend class Q123;
+    friend class Q125;
 public:
     LMediaPlayer(uint u, QObject* x1 = 0, Flags x2 = 0) : QMediaPlayer(x1, x2), unique(u) {}
 
@@ -190,7 +190,7 @@ public:
 
 class LMediaPlaylist : public QMediaPlaylist {
     Q_OBJECT
-    friend class Q124;
+    friend class Q126;
 public:
     LMediaPlaylist(uint u, QObject* x1 = 0) : QMediaPlaylist(x1), unique(u) {}
 
@@ -206,7 +206,7 @@ public:
 
 class LMediaRecorder : public QMediaRecorder {
     Q_OBJECT
-    friend class Q125;
+    friend class Q127;
 public:
     LMediaRecorder(uint u, QMediaObject* x1, QObject* x2 = 0) : QMediaRecorder(x1, x2), unique(u) {}
 
@@ -222,7 +222,7 @@ public:
 
 class LRadioTuner : public QRadioTuner {
     Q_OBJECT
-    friend class Q163;
+    friend class Q166;
 public:
     LRadioTuner(uint u, QObject* x1 = 0) : QRadioTuner(x1), unique(u) {}
 
@@ -242,7 +242,7 @@ public:
 
 class LVideoWidget : public QVideoWidget {
     Q_OBJECT
-    friend class Q232;
+    friend class Q237;
 public:
     LVideoWidget(uint u, QWidget* x1 = 0) : QVideoWidget(x1), unique(u) {}
 
@@ -291,7 +291,7 @@ public:
 
 class LVideoWidgetControl : public QVideoWidgetControl {
     Q_OBJECT
-    friend class Q233;
+    friend class Q238;
 public:
 
     static NumList overrideIds;

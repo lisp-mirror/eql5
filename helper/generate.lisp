@@ -997,7 +997,9 @@
                         (module-stream module :ini))
                     "~%        case ~D: if(gc) ~A; else delete (~A*)p; break;"
                     i
-                    (if (find* (class-name* obj) '("QAccessibleWidget" "QTextCodec")) ; virtual protected destructors
+                    (if (find* (class-name* obj) '("QAccessibleWidget"    ; virtual protected destructors
+                                                   "QAccessibleInterface"
+                                                   "QTextCodec"))
                         "/* nothing */"
                         (format nil "delete (~A*)p" (class-name* obj)))
                     (sub-class-name obj))))))

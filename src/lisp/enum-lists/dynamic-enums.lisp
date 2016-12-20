@@ -630,6 +630,8 @@
 ("|QHeaderView.Stretch|" . 1)
 ("|QHistoryState.DeepHistory|" . 1)
 ("|QHistoryState.ShallowHistory|" . 0)
+("|QInputMethod.Click|" . 0)
+("|QInputMethod.ContextMenu|" . 1)
 ("|QItemSelectionModel.ClearAndSelect|" . 3)
 ("|QItemSelectionModel.Clear|" . 1)
 ("|QItemSelectionModel.Columns|" . 64)

@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class N8 : public QObject { // QAudioDeviceInfo
+class N18 : public QObject { // QAudioDeviceInfo
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LAudioDeviceInfo(u); }
@@ -32,7 +32,7 @@ public:
     Q_INVOKABLE QAudioDeviceInfo SdefaultOutputDevice() { return QAudioDeviceInfo::defaultOutputDevice(); }
 };
 
-class N9 : public QObject { // QAudioEncoderSettings
+class N19 : public QObject { // QAudioEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LAudioEncoderSettings(u); }
@@ -54,7 +54,7 @@ public:
     Q_INVOKABLE void MsetSampleRate(QAudioEncoderSettings* o, int x1) { o->setSampleRate(x1); }
 };
 
-class N10 : public QObject { // QAudioFormat
+class N20 : public QObject { // QAudioFormat
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LAudioFormat(u); }
@@ -81,7 +81,7 @@ public:
     Q_INVOKABLE void MsetSampleType(QAudioFormat* o, QAudioFormat::SampleType x1) { o->setSampleType(x1); }
 };
 
-class N16 : public QObject { // QCameraInfo
+class N27 : public QObject { // QCameraInfo
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QByteArray& x1 = QByteArray()) { return new LCameraInfo(u, x1); }
@@ -96,7 +96,7 @@ public:
     Q_INVOKABLE QCameraInfo SdefaultCamera() { return QCameraInfo::defaultCamera(); }
 };
 
-class N17 : public QObject { // QCameraViewfinderSettings
+class N28 : public QObject { // QCameraViewfinderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LCameraViewfinderSettings(u); }
@@ -117,7 +117,7 @@ public:
     Q_INVOKABLE void Mswap(QCameraViewfinderSettings* o, QCameraViewfinderSettings& x1) { o->swap(x1); }
 };
 
-class N80 : public QObject { // QImageEncoderSettings
+class N96 : public QObject { // QImageEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LImageEncoderSettings(u); }
@@ -134,7 +134,7 @@ public:
     Q_INVOKABLE void MsetResolution(QImageEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N97 : public QObject { // QMediaContent
+class N114 : public QObject { // QMediaContent
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LMediaContent(u); }
@@ -152,7 +152,7 @@ public:
     Q_INVOKABLE QMediaResourceList Mresources(QMediaContent* o) const { return o->resources(); }
 };
 
-class N98 : public QObject { // QMediaResource
+class N115 : public QObject { // QMediaResource
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LMediaResource(u); }
@@ -184,7 +184,7 @@ public:
     Q_INVOKABLE QString MvideoCodec(QMediaResource* o) const { return o->videoCodec(); }
 };
 
-class N206 : public QObject { // QVideoEncoderSettings
+class N229 : public QObject { // QVideoEncoderSettings
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoEncoderSettings(u); }
@@ -207,7 +207,7 @@ public:
     Q_INVOKABLE void MsetResolution(QVideoEncoderSettings* o, int x1, int x2) { o->setResolution(x1, x2); }
 };
 
-class N207 : public QObject { // QVideoFrame
+class N230 : public QObject { // QVideoFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoFrame(u); }
@@ -243,7 +243,7 @@ public:
     Q_INVOKABLE int SpixelFormatFromImageFormat(QImage::Format x1) { return QVideoFrame::pixelFormatFromImageFormat(x1); }
 };
 
-class N208 : public QObject { // QVideoSurfaceFormat
+class N231 : public QObject { // QVideoSurfaceFormat
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LVideoSurfaceFormat(u); }

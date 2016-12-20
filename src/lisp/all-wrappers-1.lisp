@@ -157,6 +157,7 @@
    #:|addSearchPath.QDir|
    #:|addSecs|
    #:|addSection|
+   #:|addSelection|
    #:|addSeparator|
    #:|addShaderFromSourceCode(QOpenGLShader::ShaderType,QByteArray)|
    #:|addShaderFromSourceCode(QOpenGLShader::ShaderType,QString)|
@@ -210,6 +211,7 @@
    #:|allInterfaces.QNetworkInterface|
    #:|allKeys|
    #:|allOrigins.QWebSecurityOrigin|
+   #:|allSelectors|
    #:|allWidgets.QApplication|
    #:|allWindows.QGuiApplication|
    #:|allocateStorage|
@@ -218,6 +220,7 @@
    #:|allowedNextProtocols|
    #:|allowsErrorInteraction|
    #:|allowsInteraction|
+   #:|alphaBufferSize|
    #:|alphaF|
    #:|alpha|
    #:|alternateBase|
@@ -237,6 +240,7 @@
    #:|angle|
    #:|animateClick|
    #:|animated|
+   #:|animatingChanged|
    #:|animationAt|
    #:|animationCount|
    #:|animations|
@@ -290,6 +294,7 @@
    #:|atBlockStart|
    #:|atEnd|
    #:|atStart|
+   #:|attachment|
    #:|attributeLocation(QByteArray)|
    #:|attributeLocation(QString)|
    #:|attributeLocation(const char*)|
@@ -401,6 +406,7 @@
    #:|beginMoveColumns|
    #:|beginMoveRows|
    #:|beginNativePainting|
+   #:|beginPaint|
    #:|beginReadArray|
    #:|beginRemoveColumns|
    #:|beginRemoveRows|
@@ -416,6 +422,7 @@
    #:|bindAttributeLocation(QString...)|
    #:|bindAttributeLocation(const char*...)|
    #:|bindAttributeLocation|
+   #:|bindDefault.QOpenGLFramebufferObject|
    #:|bindValue(QString...)|
    #:|bindValue(int...)|
    #:|bindValueType(QString)|
@@ -429,6 +436,9 @@
    #:|bitmap|
    #:|blackF|
    #:|black|
+   #:|blitFramebuffer(QOpenGLFramebufferObject*,QOpenGLFramebufferObject*...).QOpenGLFramebufferObject|
+   #:|blitFramebuffer(QOpenGLFramebufferObject*,QRect...).QOpenGLFramebufferObject|
+   #:|blitFramebuffer.QOpenGLFramebufferObject|
    #:|blockBoundingGeometry|
    #:|blockBoundingRect|
    #:|blockCharFormat|
@@ -440,6 +450,7 @@
    #:|blockNumber|
    #:|blockSignals|
    #:|block|
+   #:|blueBufferSize|
    #:|blueF|
    #:|blue|
    #:|blurHintsChanged|
@@ -525,6 +536,7 @@
    #:|bytesPerLine|
    #:|bytesReceived|
    #:|bytesToWrite|
+   #:|bytesTotal|
    #:|bytesWritten|
    #:|c.QLocale|
    #:|caCertificates|
@@ -616,6 +628,7 @@
    #:|changeOverrideCursor.QGuiApplication|
    #:|changePersistentIndexList|
    #:|changePersistentIndex|
+   #:|changePosition|
    #:|changeSize|
    #:|changed|
    #:|channelCount|
@@ -623,6 +636,7 @@
    #:|charFormat|
    #:|characterAt|
    #:|characterCount|
+   #:|characterRect|
    #:|checkBox|
    #:|checkConnectArgs.QMetaObject|
    #:|checkOverflow(double)|
@@ -699,6 +713,7 @@
    #:|clipPath|
    #:|clipRegion|
    #:|clipboard.QGuiApplication|
+   #:|clockType.QElapsedTimer|
    #:|cloneDatabase.QSqlDatabase|
    #:|clone|
    #:|closeActiveSubWindow|
@@ -828,6 +843,8 @@
    #:|contentOffset|
    #:|contentOrientationChanged|
    #:|contentOrientation|
+   #:|contentPosRange|
+   #:|contentPos|
    #:|contentsChanged|
    #:|contentsChange|
    #:|contentsCreated|
@@ -885,6 +902,12 @@
    #:|createStroke|
    #:|createTextureView|
    #:|createUndoAction|
+   #:|createUuid.QUuid|
+   #:|createUuidV3(QUuid,QByteArray).QUuid|
+   #:|createUuidV3(QUuid,QString).QUuid|
+   #:|createUuidV3.QUuid|
+   #:|createUuidV5(QUuid,QByteArray).QUuid|
+   #:|createUuidV5(QUuid,QString).QUuid|
    #:|createWidget|
    #:|createWindowContainer.QWidget|
    #:|createdWidgets|
@@ -963,6 +986,8 @@
    #:|currentWidget|
    #:|cursorBackward|
    #:|cursorFlashTime.QApplication|
+   #:|cursorFlashTimeChanged|
+   #:|cursorFlashTime|
    #:|cursorForPosition|
    #:|cursorForward|
    #:|cursorMoveStyle|
@@ -970,6 +995,8 @@
    #:|cursorPositionAt|
    #:|cursorPositionChanged|
    #:|cursorPosition|
+   #:|cursorRectangleChanged|
+   #:|cursorRectangle|
    #:|cursorRect|
    #:|cursorToX|
    #:|cursorWidth|
@@ -1040,6 +1067,7 @@
    #:|defaultFamily|
    #:|defaultFont|
    #:|defaultFormat.QSettings|
+   #:|defaultFormat.QSurfaceFormat|
    #:|defaultFramebufferObject|
    #:|defaultInnerTessellationLevels|
    #:|defaultInputDevice.QAudioDeviceInfo|
@@ -1069,9 +1097,11 @@
    #:|deleteLater|
    #:|deletePreviousChar|
    #:|deleteResource|
+   #:|deleteText|
    #:|delta|
    #:|del|
    #:|denoisingLevel|
+   #:|depthBufferSize|
    #:|depthStencilMode|
    #:|depth|
    #:|descent|
@@ -1169,37 +1199,7 @@
    #:|downloadProgress|
    #:|downloadRequested|
    #:|dragCursor|
-   #:|dragDropMode|
-   #:|dragDropOverwriteMode|
-   #:|dragEnabled|
-   #:|dragMode|
-   #:|drawArc(QRect...)|
-   #:|drawArc(QRectF...)|
-   #:|drawArc|
-   #:|drawBackground|
-   #:|drawBase|
-   #:|drawChord(QRect...)|
-   #:|drawChord(QRectF...)|
-   #:|drawChord|
-   #:|drawComplexControl|
-   #:|drawContents|
-   #:|drawControl|
-   #:|drawConvexPolygon(QPolygon)|
-   #:|drawConvexPolygon(QPolygonF)|
-   #:|drawConvexPolygon|
-   #:|drawCursor|
-   #:|drawEllipse(QPoint...)|
-   #:|drawEllipse(QPointF...)|
-   #:|drawEllipse(QRect)|
-   #:|drawEllipse(QRectF)|
-   #:|drawEllipse|
-   #:|drawGlyphRun|
-   #:|drawImage(QPoint...)|
-   #:|drawImage(QPointF...)|
-   #:|drawImage(QRect...)|
-   #:|drawImage(QRectF...)|
-   #:|drawImage(int...)|
-   #:|drawImage|))
+   #:|dragDropMode|))
 
 (in-package :eql)
 

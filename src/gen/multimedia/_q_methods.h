@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q233 : public QObject { // QVideoWidgetControl
+class Q238 : public QObject { // QVideoWidgetControl
     Q_OBJECT
 public:
     Q_INVOKABLE int MaspectRatioMode(QVideoWidgetControl* o) const { return o->aspectRatioMode(); }
@@ -29,7 +29,7 @@ public:
     Q_INVOKABLE QWidget* MvideoWidget(QVideoWidgetControl* o) { return o->videoWidget(); }
 };
 
-class Q18 : public Q137 { // QAbstractVideoSurface
+class Q18 : public Q139 { // QAbstractVideoSurface
     Q_OBJECT
 public:
     Q_INVOKABLE int Merror(QAbstractVideoSurface* o) const { return o->error(); }
@@ -43,7 +43,7 @@ public:
     Q_INVOKABLE QVideoSurfaceFormat MsurfaceFormat(QAbstractVideoSurface* o) const { return o->surfaceFormat(); }
 };
 
-class Q23 : public Q137 { // QAudioOutput
+class Q23 : public Q139 { // QAudioOutput
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QAudioFormat& x1 = QAudioFormat(), QObject* x2 = 0) { return new LAudioOutput(u, x1, x2); }
@@ -69,7 +69,7 @@ public:
     Q_INVOKABLE qreal Mvolume(QAudioOutput* o) const { return o->volume(); }
 };
 
-class Q30 : public Q137 { // QCameraExposure
+class Q30 : public Q139 { // QCameraExposure
     Q_OBJECT
 public:
     Q_INVOKABLE qreal Maperture(QCameraExposure* o) const { return o->aperture(); }
@@ -94,7 +94,7 @@ public:
     Q_INVOKABLE QList<qreal> MsupportedShutterSpeeds(QCameraExposure* o, bool* x1 = 0) const { return o->supportedShutterSpeeds(x1); }
 };
 
-class Q31 : public Q137 { // QCameraFocus
+class Q31 : public Q139 { // QCameraFocus
     Q_OBJECT
 public:
     Q_INVOKABLE QPointF McustomFocusPoint(QCameraFocus* o) const { return o->customFocusPoint(); }
@@ -114,7 +114,7 @@ public:
     Q_INVOKABLE void MzoomTo(QCameraFocus* o, qreal x1, qreal x2) { o->zoomTo(x1, x2); }
 };
 
-class Q32 : public Q137 { // QCameraImageCapture
+class Q32 : public Q139 { // QCameraImageCapture
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QMediaObject* x1, QObject* x2 = 0) { return new LCameraImageCapture(u, x1, x2); }
@@ -137,7 +137,7 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QCameraImageCapture* o) const { return o->mediaObject(); }
 };
 
-class Q33 : public Q137 { // QCameraImageProcessing
+class Q33 : public Q139 { // QCameraImageProcessing
     Q_OBJECT
 public:
     Q_INVOKABLE int McolorFilter(QCameraImageProcessing* o) const { return o->colorFilter(); }
@@ -159,7 +159,7 @@ public:
     Q_INVOKABLE int MwhiteBalanceMode(QCameraImageProcessing* o) const { return o->whiteBalanceMode(); }
 };
 
-class Q85 : public Q76 { // QGraphicsVideoItem
+class Q86 : public Q77 { // QGraphicsVideoItem
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QGraphicsItem* x1 = 0) { return new LGraphicsVideoItem(u, x1); }
@@ -175,7 +175,7 @@ public:
     Q_INVOKABLE void Mpaint(QGraphicsVideoItem* o, QPainter* x1, const QStyleOptionGraphicsItem* x2, QWidget* x3 = 0) { o->paint(x1, x2, x3); }
 };
 
-class Q122 : public Q137 { // QMediaObject
+class Q124 : public Q139 { // QMediaObject
     Q_OBJECT
 public:
     Q_INVOKABLE int Mavailability(QMediaObject* o) const { return o->availability(); }
@@ -192,7 +192,7 @@ public:
     Q_INVOKABLE void MremovePropertyWatch(QMediaObject* o, const QByteArray& x1) { ((LMediaObject*)o)->removePropertyWatch(x1); }
 };
 
-class Q123 : public Q122 { // QMediaPlayer
+class Q125 : public Q124 { // QMediaPlayer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0, QMediaPlayer::Flags x2 = 0) { return new LMediaPlayer(u, x1, x2); }
@@ -223,7 +223,7 @@ public:
     Q_INVOKABLE int ShasSupport(const QString& x1, const QStringList& x2 = QStringList(), QMediaPlayer::Flags x3 = 0) { return QMediaPlayer::hasSupport(x1, x2, x3); }
 };
 
-class Q124 : public Q137 { // QMediaPlaylist
+class Q126 : public Q139 { // QMediaPlaylist
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LMediaPlaylist(u, x1); }
@@ -253,7 +253,7 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QMediaPlaylist* o) const { return o->mediaObject(); }
 };
 
-class Q125 : public Q137 { // QMediaRecorder
+class Q127 : public Q139 { // QMediaRecorder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QMediaObject* x1, QObject* x2 = 0) { return new LMediaRecorder(u, x1, x2); }
@@ -293,14 +293,14 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QMediaRecorder* o) const { return o->mediaObject(); }
 };
 
-class Q126 : public Q137 { // QMediaService
+class Q128 : public Q139 { // QMediaService
     Q_OBJECT
 public:
     Q_INVOKABLE void MreleaseControl(QMediaService* o, QMediaControl* x1) { o->releaseControl(x1); }
     Q_INVOKABLE QMediaControl* MrequestControl(QMediaService* o, const char* x1) { return o->requestControl(x1); }
 };
 
-class Q163 : public Q122 { // QRadioTuner
+class Q166 : public Q124 { // QRadioTuner
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LRadioTuner(u, x1); }
@@ -323,7 +323,7 @@ public:
     Q_INVOKABLE int Mavailability(QRadioTuner* o) const { return o->availability(); }
 };
 
-class Q24 : public Q125 { // QAudioRecorder
+class Q24 : public Q127 { // QAudioRecorder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LAudioRecorder(u, x1); }
@@ -333,7 +333,7 @@ public:
     Q_INVOKABLE QString MdefaultAudioInput(QAudioRecorder* o) const { return o->defaultAudioInput(); }
 };
 
-class Q29 : public Q122 { // QCamera
+class Q29 : public Q124 { // QCamera
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LCamera(u, x1); }
@@ -365,7 +365,7 @@ public:
     Q_INVOKABLE int Mavailability(QCamera* o) const { return o->availability(); }
 };
 
-class Q232 : public Q240 { // QVideoWidget
+class Q237 : public Q245 { // QVideoWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LVideoWidget(u, x1); }
@@ -379,7 +379,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QVideoWidget* o) const { return o->sizeHint(); }
 };
 
-class Q34 : public Q232 { // QCameraViewfinder
+class Q34 : public Q237 { // QCameraViewfinder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LCameraViewfinder(u, x1); }

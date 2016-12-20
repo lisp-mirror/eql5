@@ -18,6 +18,10 @@
    "static void setRootObject ( QObject * )"
    "static Id uniqueId ( QAccessibleInterface * )"
    "static void updateAccessibility ( QAccessibleEvent * )")
+  (("QAccessibleEditableTextInterface" . NIL)
+   "virtual void deleteText ( int , int ) = 0"
+   "virtual void insertText ( int , const QString & ) = 0"
+   "virtual void replaceText ( int , int , const QString & ) = 0")
   (("QAccessibleEvent" . NIL)
    "new QAccessibleEvent ( QObject * , QAccessible::Event )"
    "new QAccessibleEvent ( QAccessibleInterface * , QAccessible::Event )"
@@ -53,6 +57,57 @@
    "virtual QObject * object () const"
    "virtual QRect rect () const"
    "virtual void setText ( QAccessible::Text , const QString & )")
+  (("QAccessibleStateChangeEvent" . "QAccessibleEvent"))
+  (("QAccessibleTextCursorEvent" . "QAccessibleEvent")
+   "new QAccessibleTextCursorEvent ( QObject * , int )"
+   "new QAccessibleTextCursorEvent ( QAccessibleInterface * , int )"
+   "int cursorPosition () const"
+   "void setCursorPosition ( int )")
+  (("QAccessibleTextInsertEvent" . "QAccessibleTextCursorEvent")
+   "new QAccessibleTextInsertEvent ( QObject * , int , const QString & )"
+   "new QAccessibleTextInsertEvent ( QAccessibleInterface * , int , const QString & )"
+   "int changePosition () const"
+   "QString textInserted () const")
+  (("QAccessibleTextInterface" . NIL)
+   "virtual void addSelection ( int , int ) = 0"
+   "virtual int characterCount () const = 0"
+   "virtual QRect characterRect ( int ) const = 0"
+   "virtual int cursorPosition () const = 0"
+   "virtual int offsetAtPoint ( const QPoint & ) const = 0"
+   "virtual void removeSelection ( int ) = 0"
+   "virtual void scrollToSubstring ( int , int ) = 0"
+   "virtual int selectionCount () const = 0"
+   "virtual void setCursorPosition ( int ) = 0"
+   "virtual void setSelection ( int , int , int ) = 0"
+   "virtual QString text ( int , int ) const = 0")
+  (("QAccessibleTextRemoveEvent" . "QAccessibleTextCursorEvent")
+   "new QAccessibleTextRemoveEvent ( QObject * , int , const QString & )"
+   "new QAccessibleTextRemoveEvent ( QAccessibleInterface * , int , const QString & )"
+   "int changePosition () const"
+   "QString textRemoved () const")
+  (("QAccessibleTextSelectionEvent" . "QAccessibleTextCursorEvent")
+   "new QAccessibleTextSelectionEvent ( QObject * , int , int )"
+   "new QAccessibleTextSelectionEvent ( QAccessibleInterface * , int , int )"
+   "int selectionEnd () const"
+   "int selectionStart () const"
+   "void setSelection ( int , int )")
+  (("QAccessibleTextUpdateEvent" . "QAccessibleTextCursorEvent")
+   "new QAccessibleTextUpdateEvent ( QObject * , int , const QString & , const QString & )"
+   "new QAccessibleTextUpdateEvent ( QAccessibleInterface * , int , const QString & , const QString & )"
+   "int changePosition () const"
+   "QString textInserted () const"
+   "QString textRemoved () const")
+  (("QAccessibleValueChangeEvent" . "QAccessibleEvent")
+   "new QAccessibleValueChangeEvent ( QObject * , const QVariant & )"
+   "new QAccessibleValueChangeEvent ( QAccessibleInterface * , const QVariant & )"
+   "void setValue ( const QVariant & )"
+   "QVariant value () const")
+  (("QAccessibleValueInterface" . NIL)
+   "virtual QVariant currentValue () const = 0"
+   "virtual QVariant maximumValue () const = 0"
+   "virtual QVariant minimumStepSize () const = 0"
+   "virtual QVariant minimumValue () const = 0"
+   "virtual void setCurrentValue ( const QVariant & ) = 0")
   (("QAccessibleWidget" . "QAccessibleObject")
    "new QAccessibleWidget ( QWidget * , QAccessible::Role = QAccessible::Client , const QString & = QString() )"
    "protected void addControllingSignal ( const QString & )"
@@ -147,6 +202,20 @@
    "void setPassword ( const QString & )"
    "void setUser ( const QString & )"
    "QString user () const")
+  (("QBackingStore" . NIL)
+   "new QBackingStore ( QWindow * )"
+   "void beginPaint ( const QRegion & )"
+   "void endPaint ()"
+   "void flush ( const QRegion & , QWindow * = 0 , const QPoint & = QPoint() )"
+   "QPlatformBackingStore * handle () const"
+   "bool hasStaticContents () const"
+   "QPaintDevice * paintDevice ()"
+   "void resize ( const QSize & )"
+   "bool scroll ( const QRegion & , int , int )"
+   "void setStaticContents ( const QRegion & )"
+   "QSize size () const"
+   "QRegion staticContents () const"
+   "QWindow * window () const")
   (("QBasicTimer" . NIL)
    "new QBasicTimer ()"
    "bool isActive () const"
@@ -579,6 +648,31 @@
    "QVector<QPointF> toCubicSpline () const"
    "Type type () const"
    "qreal valueForProgress ( qreal ) const")
+  (("QElapsedTimer" . NIL)
+   "new QElapsedTimer ()"
+   "qint64 elapsed () const"
+   "bool hasExpired ( qint64 ) const"
+   "void invalidate ()"
+   "bool isValid () const"
+   "qint64 msecsSinceReference () const"
+   "qint64 msecsTo ( const QElapsedTimer & ) const"
+   "qint64 nsecsElapsed () const"
+   "qint64 restart ()"
+   "qint64 secsTo ( const QElapsedTimer & ) const"
+   "void start ()"
+   "static ClockType clockType ()"
+   "static bool isMonotonic ()")
+  (("QEnterEvent" . "QEvent")
+   "new QEnterEvent ( const QPointF & , const QPointF & , const QPointF & )"
+   "QPoint globalPos () const"
+   "int globalX () const"
+   "int globalY () const"
+   "const QPointF & localPos () const"
+   "QPoint pos () const"
+   "const QPointF & screenPos () const"
+   "const QPointF & windowPos () const"
+   "int x () const"
+   "int y () const")
   (("QEvent" . NIL)
    "new QEvent ( Type )"
    "void accept ()"
@@ -588,6 +682,13 @@
    "bool spontaneous () const"
    "Type type () const"
    "static int registerEventType ( int = -1 )")
+  (("QEventLoopLocker" . NIL)
+   "new QEventLoopLocker ()"
+   "new QEventLoopLocker ( QEventLoop * )"
+   "new QEventLoopLocker ( QThread * )")
+  (("QExposeEvent" . "QEvent")
+   "new QExposeEvent ( const QRegion & )"
+   "const QRegion & region () const")
   (("QFileIconProvider" . NIL)
    "new QFileIconProvider ()"
    "virtual QIcon icon ( IconType ) const"
@@ -791,6 +892,36 @@
    "int width ( const QString & , int = -1 ) const"
    "int width ( QChar ) const"
    "int xHeight () const")
+  (("QFontMetricsF" . NIL)
+   "new QFontMetricsF ( const QFont & )"
+   "new QFontMetricsF ( const QFont & , QPaintDevice * )"
+   "new QFontMetricsF ( const QFontMetrics & )"
+   "new QFontMetricsF ( const QFontMetricsF & )"
+   "qreal ascent () const"
+   "qreal averageCharWidth () const"
+   "QRectF boundingRect ( const QString & ) const"
+   "QRectF boundingRect ( QChar ) const"
+   "qreal descent () const"
+   "QString elidedText ( const QString & , Qt::TextElideMode , qreal , int = 0 ) const"
+   "qreal height () const"
+   "bool inFont ( QChar ) const"
+   "bool inFontUcs4 ( uint ) const"
+   "qreal leading () const"
+   "qreal leftBearing ( QChar ) const"
+   "qreal lineSpacing () const"
+   "qreal lineWidth () const"
+   "qreal maxWidth () const"
+   "qreal minLeftBearing () const"
+   "qreal minRightBearing () const"
+   "qreal overlinePos () const"
+   "qreal rightBearing ( QChar ) const"
+   "qreal strikeOutPos () const"
+   "void swap ( QFontMetricsF & )"
+   "QRectF tightBoundingRect ( const QString & ) const"
+   "qreal underlinePos () const"
+   "qreal width ( const QString & ) const"
+   "qreal width ( QChar ) const"
+   "qreal xHeight () const")
   (("QGestureEvent" . "QEvent")
    "new QGestureEvent ( const QList<QGesture *> & )"
    "void accept ( QGesture * )"
@@ -1499,6 +1630,11 @@
    "int replacementLength () const"
    "int replacementStart () const"
    "void setCommitString ( const QString & , int = 0 , int = 0 )")
+  (("QInputMethodQueryEvent" . "QEvent")
+   "new QInputMethodQueryEvent ( Qt::InputMethodQueries )"
+   "Qt::InputMethodQueries queries () const"
+   "void setValue ( Qt::InputMethodQuery , const QVariant & )"
+   "QVariant value ( Qt::InputMethodQuery ) const")
   (("QItemEditorCreatorBase" . NIL)
    "virtual QWidget * createWidget ( QWidget * ) const = 0"
    "virtual QByteArray valuePropertyName () const = 0")
@@ -1866,6 +2002,14 @@
    "QUrl url () const"
    "int videoBitRate () const"
    "QString videoCodec () const")
+  (("QMessageAuthenticationCode" . NIL)
+   "new QMessageAuthenticationCode ( QCryptographicHash::Algorithm , const QByteArray & = QByteArray() )"
+   "void addData ( const char * , int )"
+   "void addData ( const QByteArray & )"
+   "void reset ()"
+   "QByteArray result () const"
+   "void setKey ( const QByteArray & )"
+   "static QByteArray hash ( const QByteArray & , const QByteArray & , QCryptographicHash::Algorithm )")
   (("QMetaObject" . NIL)
    "int classInfoCount () const"
    "int classInfoOffset () const"
@@ -2066,6 +2210,46 @@
    "QSslConfiguration sslConfiguration () const"
    "void swap ( QNetworkRequest & )"
    "QUrl url () const")
+  (("QOpenGLFramebufferObject" . NIL)
+   "new QOpenGLFramebufferObject ( const QSize & , GLenum = GL_TEXTURE_2D )"
+   "new QOpenGLFramebufferObject ( int , int , GLenum = GL_TEXTURE_2D )"
+   "new QOpenGLFramebufferObject ( const QSize & , const QOpenGLFramebufferObjectFormat & )"
+   "new QOpenGLFramebufferObject ( int , int , const QOpenGLFramebufferObjectFormat & )"
+   "new QOpenGLFramebufferObject ( int , int , Attachment , GLenum = GL_TEXTURE_2D , GLenum = 0 )"
+   "new QOpenGLFramebufferObject ( const QSize & , Attachment , GLenum = GL_TEXTURE_2D , GLenum = 0 )"
+   "Attachment attachment () const"
+   "bool bind ()"
+   "QOpenGLFramebufferObjectFormat format () const"
+   "GLuint handle () const"
+   "int height () const"
+   "bool isBound () const"
+   "bool isValid () const"
+   "bool release ()"
+   "void setAttachment ( Attachment )"
+   "QSize size () const"
+   "GLuint takeTexture ()"
+   "GLuint texture () const"
+   "QImage toImage ( bool ) const"
+   "QImage toImage () const"
+   "int width () const"
+   "static bool bindDefault ()"
+   "static void blitFramebuffer ( QOpenGLFramebufferObject * , const QRect & , QOpenGLFramebufferObject * , const QRect & , GLbitfield = GL_COLOR_BUFFER_BIT , GLenum = GL_NEAREST )"
+   "static void blitFramebuffer ( QOpenGLFramebufferObject * , QOpenGLFramebufferObject * , GLbitfield = GL_COLOR_BUFFER_BIT , GLenum = GL_NEAREST )"
+   "static bool hasOpenGLFramebufferBlit ()"
+   "static bool hasOpenGLFramebufferObjects ()")
+  (("QOpenGLFramebufferObjectFormat" . NIL)
+   "new QOpenGLFramebufferObjectFormat ()"
+   "new QOpenGLFramebufferObjectFormat ( const QOpenGLFramebufferObjectFormat & )"
+   "QOpenGLFramebufferObject::Attachment attachment () const"
+   "GLenum internalTextureFormat () const"
+   "bool mipmap () const"
+   "int samples () const"
+   "void setAttachment ( QOpenGLFramebufferObject::Attachment )"
+   "void setInternalTextureFormat ( GLenum )"
+   "void setMipmap ( bool )"
+   "void setSamples ( int )"
+   "void setTextureTarget ( GLenum )"
+   "GLenum textureTarget () const")
   (("QOpenGLPaintDevice" . "QPaintDevice")
    "new QOpenGLPaintDevice ()"
    "new QOpenGLPaintDevice ( const QSize & )"
@@ -2828,20 +3012,6 @@
    "void setFocalPoint ( qreal , qreal )"
    "void setFocalRadius ( qreal )"
    "void setRadius ( qreal )")
-  (("QReadLocker" . NIL)
-   "new QReadLocker ( QReadWriteLock * )"
-   "QReadWriteLock * readWriteLock () const"
-   "void relock ()"
-   "void unlock ()")
-  (("QReadWriteLock" . NIL)
-   "new QReadWriteLock ( RecursionMode = NonRecursive )"
-   "void lockForRead ()"
-   "void lockForWrite ()"
-   "bool tryLockForRead ()"
-   "bool tryLockForRead ( int )"
-   "bool tryLockForWrite ()"
-   "bool tryLockForWrite ( int )"
-   "void unlock ()")
   (("QRegExp" . NIL)
    "new QRegExp ()"
    "new QRegExp ( const QString & , Qt::CaseSensitivity = Qt::CaseSensitive , PatternSyntax = RegExp )"
@@ -2924,6 +3094,20 @@
    "bool autoDelete () const"
    "virtual void run () = 0"
    "void setAutoDelete ( bool )")
+  (("QScrollEvent" . "QEvent")
+   "new QScrollEvent ( const QPointF & , const QPointF & , ScrollState )"
+   "QPointF contentPos () const"
+   "QPointF overshootDistance () const"
+   "ScrollState scrollState () const")
+  (("QScrollPrepareEvent" . "QEvent")
+   "new QScrollPrepareEvent ( const QPointF & )"
+   "QPointF contentPos () const"
+   "QRectF contentPosRange () const"
+   "void setContentPos ( const QPointF & )"
+   "void setContentPosRange ( const QRectF & )"
+   "void setViewportSize ( const QSizeF & )"
+   "QPointF startPos () const"
+   "QSizeF viewportSize () const")
   (("QSemaphore" . NIL)
    "new QSemaphore ( int = 0 )"
    "void acquire ( int = 1 )"
@@ -3363,6 +3547,28 @@
   (("QStatusTipEvent" . "QEvent")
    "new QStatusTipEvent ( const QString & )"
    "QString tip () const")
+  (("QStorageInfo" . NIL)
+   "new QStorageInfo ()"
+   "new QStorageInfo ( const QString & )"
+   "new QStorageInfo ( const QDir & )"
+   "new QStorageInfo ( const QStorageInfo & )"
+   "qint64 bytesAvailable () const"
+   "qint64 bytesFree () const"
+   "qint64 bytesTotal () const"
+   "QByteArray device () const"
+   "QString displayName () const"
+   "QByteArray fileSystemType () const"
+   "bool isReadOnly () const"
+   "bool isReady () const"
+   "bool isRoot () const"
+   "bool isValid () const"
+   "QString name () const"
+   "void refresh ()"
+   "QString rootPath () const"
+   "void setPath ( const QString & )"
+   "void swap ( QStorageInfo & )"
+   "static QList<QStorageInfo> mountedVolumes ()"
+   "static QStorageInfo root ()")
   (("QStyleOption" . NIL)
    "new QStyleOption ( int = QStyleOption::Version , int = SO_Default )"
    "new QStyleOption ( const QStyleOption & )"
@@ -3377,6 +3583,46 @@
    "bool supportsOpenGL () const"
    "SurfaceClass surfaceClass () const"
    "virtual SurfaceType surfaceType () const = 0")
+  (("QSurfaceFormat" . NIL)
+   "new QSurfaceFormat ()"
+   "new QSurfaceFormat ( FormatOptions )"
+   "new QSurfaceFormat ( const QSurfaceFormat & )"
+   "int alphaBufferSize () const"
+   "int blueBufferSize () const"
+   "int depthBufferSize () const"
+   "int greenBufferSize () const"
+   "bool hasAlpha () const"
+   "int majorVersion () const"
+   "int minorVersion () const"
+   "QSurfaceFormat::FormatOptions options () const"
+   "OpenGLContextProfile profile () const"
+   "int redBufferSize () const"
+   "RenderableType renderableType () const"
+   "int samples () const"
+   "void setAlphaBufferSize ( int )"
+   "void setBlueBufferSize ( int )"
+   "void setDepthBufferSize ( int )"
+   "void setGreenBufferSize ( int )"
+   "void setMajorVersion ( int )"
+   "void setMinorVersion ( int )"
+   "void setOption ( FormatOption , bool = true )"
+   "void setOptions ( QSurfaceFormat::FormatOptions )"
+   "void setProfile ( OpenGLContextProfile )"
+   "void setRedBufferSize ( int )"
+   "void setRenderableType ( RenderableType )"
+   "void setSamples ( int )"
+   "void setStencilBufferSize ( int )"
+   "void setStereo ( bool )"
+   "void setSwapBehavior ( SwapBehavior )"
+   "void setSwapInterval ( int )"
+   "void setVersion ( int , int )"
+   "int stencilBufferSize () const"
+   "bool stereo () const"
+   "SwapBehavior swapBehavior () const"
+   "int swapInterval () const"
+   "bool testOption ( FormatOption ) const"
+   "static QSurfaceFormat defaultFormat ()"
+   "static void setDefaultFormat ( const QSurfaceFormat & )")
   (("QSvgGenerator" . "QPaintDevice")
    "new QSvgGenerator ()"
    "QString description () const"
@@ -4261,6 +4507,23 @@
    "static QByteArray toAce ( const QString & )"
    "static QByteArray toPercentEncoding ( const QString & , const QByteArray & = QByteArray() , const QByteArray & = QByteArray() )"
    "static QStringList toStringList ( const QList<QUrl> & , FormattingOptions = FormattingOptions( PrettyDecoded ) )")
+  (("QUuid" . NIL)
+   "new QUuid ()"
+   "new QUuid ( uint , ushort , ushort , uchar , uchar , uchar , uchar , uchar , uchar , uchar , uchar )"
+   "new QUuid ( const QString & )"
+   "new QUuid ( const QByteArray & )"
+   "bool isNull () const"
+   "QByteArray toByteArray () const"
+   "QByteArray toRfc4122 () const"
+   "QString toString () const"
+   "QUuid::Variant variant () const"
+   "QUuid::Version version () const"
+   "static QUuid createUuid ()"
+   "static QUuid createUuidV3 ( const QUuid & , const QByteArray & )"
+   "static QUuid createUuidV3 ( const QUuid & , const QString & )"
+   "static QUuid createUuidV5 ( const QUuid & , const QByteArray & )"
+   "static QUuid createUuidV5 ( const QUuid & , const QString & )"
+   "static QUuid fromRfc4122 ( const QByteArray & )")
   (("QVariant" . NIL)
    "new QVariant ( const QCursor & )"
    "new QVariant ()"
@@ -4743,9 +5006,4 @@
    "virtual QWidget * widget ()")
   (("QWindowStateChangeEvent" . "QEvent")
    "Qt::WindowStates oldState () const")
-  (("QWriteLocker" . NIL)
-   "new QWriteLocker ( QReadWriteLock * )"
-   "QReadWriteLock * readWriteLock () const"
-   "void relock ()"
-   "void unlock ()")
 ))

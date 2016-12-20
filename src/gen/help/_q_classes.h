@@ -13,7 +13,7 @@ QT_BEGIN_NAMESPACE
 
 class LHelpContentModel : public QHelpContentModel {
     Q_OBJECT
-    friend class Q94;
+    friend class Q95;
 public:
 
     static NumList overrideIds;
@@ -56,7 +56,7 @@ public:
 
 class LHelpContentWidget : public QHelpContentWidget {
     Q_OBJECT
-    friend class Q95;
+    friend class Q96;
 public:
 
     static NumList overrideIds;
@@ -138,7 +138,7 @@ public:
 
 class LHelpEngineCore : public QHelpEngineCore {
     Q_OBJECT
-    friend class Q96;
+    friend class Q97;
 public:
 
     static NumList overrideIds;
@@ -152,7 +152,7 @@ public:
 
 class LHelpIndexWidget : public QHelpIndexWidget {
     Q_OBJECT
-    friend class Q98;
+    friend class Q99;
 public:
 
     static NumList overrideIds;
@@ -229,7 +229,7 @@ public:
 
 class LHelpSearchEngine : public QHelpSearchEngine {
     Q_OBJECT
-    friend class Q99;
+    friend class Q100;
 public:
 
     static NumList overrideIds;
@@ -243,7 +243,7 @@ public:
 
 class LHelpSearchQueryWidget : public QHelpSearchQueryWidget {
     Q_OBJECT
-    friend class Q100;
+    friend class Q101;
 public:
     LHelpSearchQueryWidget(uint u, QWidget* x1 = 0) : QHelpSearchQueryWidget(x1), unique(u) {}
 
@@ -290,7 +290,7 @@ public:
 
 class LHelpSearchResultWidget : public QHelpSearchResultWidget {
     Q_OBJECT
-    friend class Q101;
+    friend class Q102;
 public:
 
     static NumList overrideIds;

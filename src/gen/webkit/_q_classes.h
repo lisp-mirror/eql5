@@ -15,7 +15,7 @@ typedef QList<int> NumList;
 
 class LGraphicsWebView : public QGraphicsWebView {
     Q_OBJECT
-    friend class Q87;
+    friend class Q88;
 public:
     LGraphicsWebView(uint u, QGraphicsItem* x1 = 0) : QGraphicsWebView(x1), unique(u) {}
 
@@ -73,7 +73,7 @@ public:
 
 class LWebHistoryInterface : public QWebHistoryInterface {
     Q_OBJECT
-    friend class Q235;
+    friend class Q240;
 public:
     LWebHistoryInterface(uint u, QObject* x1 = 0) : QWebHistoryInterface(x1), unique(u) {}
 
@@ -90,7 +90,7 @@ public:
 
 class LWebInspector : public QWebInspector {
     Q_OBJECT
-    friend class Q236;
+    friend class Q241;
 public:
     LWebInspector(uint u, QWidget* x1 = 0) : QWebInspector(x1), unique(u) {}
 
@@ -139,7 +139,7 @@ public:
 
 class LWebPage : public QWebPage {
     Q_OBJECT
-    friend class Q237;
+    friend class Q242;
 public:
     LWebPage(uint u, QObject* x1 = 0) : QWebPage(x1), unique(u) {}
 
@@ -167,7 +167,7 @@ public:
 
 class LWebPluginFactory : public QWebPluginFactory {
     Q_OBJECT
-    friend class Q238;
+    friend class Q243;
 public:
     LWebPluginFactory(uint u, QObject* x1 = 0) : QWebPluginFactory(x1), unique(u) {}
 
@@ -185,7 +185,7 @@ public:
 
 class LWebView : public QWebView {
     Q_OBJECT
-    friend class Q239;
+    friend class Q244;
 public:
     LWebView(uint u, QWidget* x1 = 0) : QWebView(x1), unique(u) {}
 

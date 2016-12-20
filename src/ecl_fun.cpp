@@ -789,6 +789,7 @@ TO_QT_TYPE_PTR2 (QPen, qpen)
 TO_QT_TYPE_PTR2 (QPixmap, qpixmap)
 TO_QT_TYPE_PTR  (QRegion, qregion)
 TO_QT_TYPE_PTR  (QRegExp, qregexp)
+TO_QT_TYPE_PTR  (QRegularExpression, qregularexpression)
 TO_QT_TYPE_PTR2 (QSizePolicy, qsizepolicy)
 TO_QT_TYPE_PTR2 (QTableWidgetSelectionRange, qtablewidgetselectionrange)
 TO_QT_TYPE_PTR2 (QTextBlock, qtextblock)
@@ -1156,6 +1157,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         case QMetaType::QRectF:                  p = new QRectF(toQRectF(l_arg)); break;
         case QMetaType::QRegion:                 p = new QRegion(*toQRegionPointer(l_arg)); break;
         case QMetaType::QRegExp:                 p = new QRegExp(*toQRegExpPointer(l_arg)); break;
+        case QMetaType::QRegularExpression:      p = new QRegularExpression(*toQRegularExpressionPointer(l_arg)); break;
         case QMetaType::QSize:                   p = new QSize(toQSize(l_arg)); break;
         case QMetaType::QSizeF:                  p = new QSizeF(toQSizeF(l_arg)); break;
         case QMetaType::QSizePolicy:             p = new QSizePolicy(*toQSizePolicyPointer(l_arg)); break;
@@ -1336,6 +1338,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             case QMetaType::QRectF:                  l_ret = from_qrectf(*(QRectF*)p); break;
             case QMetaType::QRegion:                 l_ret = from_qregion(*(QRegion*)p); break;
             case QMetaType::QRegExp:                 l_ret = from_qregexp(*(QRegExp*)p); break;
+            case QMetaType::QRegularExpression:      l_ret = from_qregularexpression(*(QRegularExpression*)p); break;
             case QMetaType::QSize:                   l_ret = from_qsize(*(QSize*)p); break;
             case QMetaType::QSizePolicy:             l_ret = from_qsizepolicy(*(QSizePolicy*)p); break;
             case QMetaType::QSizeF:                  l_ret = from_qsizef(*(QSizeF*)p); break;

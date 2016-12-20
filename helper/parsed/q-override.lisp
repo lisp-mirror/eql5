@@ -489,6 +489,7 @@
    "virtual void accept ()"
    "virtual void changeEvent ( QEvent * )"
    "virtual void done ( int )")
+  (("QFileSelector" . "QObject"))
   (("QFileSystemModel" . "QAbstractItemModel")
    "virtual bool canFetchMore ( const QModelIndex & ) const"
    "virtual int columnCount ( const QModelIndex & = QModelIndex() ) const"
@@ -840,6 +841,7 @@
    "virtual QSize minimumSizeHint () const"
    "virtual void setVisible ( bool )"
    "virtual QSize sizeHint () const")
+  (("QInputMethod" . "QObject"))
   (("QIntValidator" . "QValidator")
    "virtual void setRange ( int , int )"
    "virtual void fixup ( QString & ) const"
@@ -1098,6 +1100,7 @@
    "virtual void childEvent ( QChildEvent * )"
    "virtual void customEvent ( QEvent * )"
    "virtual void timerEvent ( QTimerEvent * )")
+  (("QObjectCleanupHandler" . "QObject"))
   (("QOpenGLContext" . "QObject"))
   (("QOpenGLShader" . "QObject"))
   (("QOpenGLShaderProgram" . "QObject")
@@ -1292,6 +1295,7 @@
   (("QSettings" . "QObject")
    "virtual bool event ( QEvent * )")
   (("QShortcut" . "QObject"))
+  (("QSignalMapper" . "QObject"))
   (("QSignalTransition" . "QAbstractTransition")
    "virtual bool event ( QEvent * )"
    "virtual bool eventTest ( QEvent * )"
@@ -1530,6 +1534,7 @@
    "virtual QRect subElementRect ( SubElement , const QStyleOption * , const QWidget * = 0 ) const = 0"
    "virtual void unpolish ( QWidget * )"
    "virtual void unpolish ( QApplication * )")
+  (("QStyleHints" . "QObject"))
   (("QStyledItemDelegate" . "QAbstractItemDelegate")
    "virtual QString displayText ( const QVariant & , const QLocale & ) const"
    "virtual void initStyleOption ( QStyleOptionViewItem * , const QModelIndex & ) const"

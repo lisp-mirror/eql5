@@ -136,6 +136,7 @@ NumList LEventLoop::overrideIds = NumList();
 NumList LEventTransition::overrideIds = NumList() << 158 << 159;
 NumList LFile::overrideIds = NumList() << 223 << 137 << 224 << 225 << 226 << 141;
 NumList LFileDialog::overrideIds = NumList() << 108 << 227 << 12 << 184;
+NumList LFileSelector::overrideIds = NumList();
 NumList LFileSystemModel::overrideIds = NumList() << 57 << 58 << 59 << 60 << 61 << 62 << 63 << 64 << 65 << 69 << 70 << 73 << 76 << 77 << 80 << 83 << 8;
 NumList LFileSystemWatcher::overrideIds = NumList();
 NumList LFinalState::overrideIds = NumList() << 146 << 147;
@@ -187,6 +188,7 @@ NumList LMimeData::overrideIds = NumList() << 288 << 289 << 290;
 NumList LMouseEventTransition::overrideIds = NumList() << 158 << 159;
 NumList LMovie::overrideIds = NumList();
 NumList LObject::overrideIds = NumList() << 5 << 6 << 7 << 8;
+NumList LObjectCleanupHandler::overrideIds = NumList();
 NumList LOpenGLContext::overrideIds = NumList();
 NumList LOpenGLShader::overrideIds = NumList();
 NumList LOpenGLShaderProgram::overrideIds = NumList() << 302;
@@ -219,6 +221,7 @@ NumList LScrollBar::overrideIds = NumList() << 25 << 28 << 35 << 17 << 18 << 19 
 NumList LSequentialAnimationGroup::overrideIds = NumList() << 1 << 2 << 3 << 4;
 NumList LSettings::overrideIds = NumList();
 NumList LShortcut::overrideIds = NumList();
+NumList LSignalMapper::overrideIds = NumList();
 NumList LSignalTransition::overrideIds = NumList() << 158 << 159;
 NumList LSizeGrip::overrideIds = NumList() << 108 << 25 << 5 << 35 << 17 << 18 << 19 << 39 << 20 << 41;
 NumList LSlider::overrideIds = NumList() << 24 << 25 << 17 << 18 << 19 << 20;
@@ -234,6 +237,7 @@ NumList LState::overrideIds = NumList() << 146 << 147;
 NumList LStateMachine::overrideIds = NumList() << 5 << 146 << 147;
 NumList LStatusBar::overrideIds = NumList() << 20 << 40 << 41;
 NumList LStringListModel::overrideIds = NumList() << 59 << 62 << 67 << 75 << 76 << 77 << 79 << 80 << 83;
+NumList LStyleHints::overrideIds = NumList();
 NumList LStyledItemDelegate::overrideIds = NumList() << 364 << 365 << 46 << 50 << 51 << 52 << 53 << 54 << 48 << 5;
 NumList LSwipeGesture::overrideIds = NumList();
 NumList LSyntaxHighlighter::overrideIds = NumList() << 366;
@@ -274,9 +278,21 @@ NumList LWizard::overrideIds = NumList() << 418 << 419 << 420 << 421 << 108 << 2
 NumList LWizardPage::overrideIds = NumList() << 422 << 423 << 424 << 418 << 425;
 NumList LAbstractGraphicsShapeItem::overrideIds = NumList() << 268 << 269;
 NumList LAccessible::overrideIds = NumList();
-NumList LAccessibleEvent::overrideIds = NumList() << 430;
-NumList LAccessibleWidget::overrideIds = NumList() << 431 << 432 << 433 << 434 << 435 << 436 << 437 << 438 << 439 << 440 << 441 << 442 << 443 << 444 << 445;
+NumList LAccessibleEditableTextInterface::overrideIds = NumList() << 430 << 431 << 432;
+NumList LAccessibleEvent::overrideIds = NumList() << 433;
+NumList LAccessibleInterface::overrideIds = NumList() << 434 << 435 << 436 << 437 << 438 << 439 << 440 << 441 << 442 << 443 << 444 << 445 << 446 << 447 << 448;
+NumList LAccessibleStateChangeEvent::overrideIds = NumList();
+NumList LAccessibleTextCursorEvent::overrideIds = NumList();
+NumList LAccessibleTextInsertEvent::overrideIds = NumList();
+NumList LAccessibleTextInterface::overrideIds = NumList() << 449 << 450 << 451 << 452 << 453 << 454 << 455 << 456 << 457 << 458 << 459;
+NumList LAccessibleTextRemoveEvent::overrideIds = NumList();
+NumList LAccessibleTextSelectionEvent::overrideIds = NumList();
+NumList LAccessibleTextUpdateEvent::overrideIds = NumList();
+NumList LAccessibleValueChangeEvent::overrideIds = NumList();
+NumList LAccessibleValueInterface::overrideIds = NumList() << 460 << 461 << 462 << 463 << 464;
+NumList LAccessibleWidget::overrideIds = NumList() << 465 << 434 << 435 << 437 << 466 << 438 << 439 << 440 << 441 << 467 << 443 << 444 << 445 << 447 << 448;
 NumList LActionEvent::overrideIds = NumList();
+NumList LBackingStore::overrideIds = NumList();
 NumList LBasicTimer::overrideIds = NumList();
 NumList LBitArray::overrideIds = NumList();
 NumList LBitmap::overrideIds = NumList();
@@ -298,8 +314,12 @@ NumList LDragMoveEvent::overrideIds = NumList();
 NumList LDropEvent::overrideIds = NumList();
 NumList LDynamicPropertyChangeEvent::overrideIds = NumList();
 NumList LEasingCurve::overrideIds = NumList();
+NumList LElapsedTimer::overrideIds = NumList();
+NumList LEnterEvent::overrideIds = NumList();
 NumList LEvent::overrideIds = NumList();
-NumList LFileIconProvider::overrideIds = NumList() << 449 << 450 << 451;
+NumList LEventLoopLocker::overrideIds = NumList();
+NumList LExposeEvent::overrideIds = NumList();
+NumList LFileIconProvider::overrideIds = NumList() << 468 << 469 << 470;
 NumList LFileInfo::overrideIds = NumList();
 NumList LFileOpenEvent::overrideIds = NumList();
 NumList LFocusEvent::overrideIds = NumList();
@@ -307,17 +327,18 @@ NumList LFont::overrideIds = NumList();
 NumList LFontDatabase::overrideIds = NumList();
 NumList LFontInfo::overrideIds = NumList();
 NumList LFontMetrics::overrideIds = NumList();
+NumList LFontMetricsF::overrideIds = NumList();
 NumList LGestureEvent::overrideIds = NumList();
 NumList LGradient::overrideIds = NumList();
-NumList LGraphicsAnchorLayout::overrideIds = NumList() << 163 << 165 << 166 << 452 << 232 << 249;
+NumList LGraphicsAnchorLayout::overrideIds = NumList() << 163 << 165 << 166 << 471 << 232 << 249;
 NumList LGraphicsEllipseItem::overrideIds = NumList() << 260 << 267 << 268 << 269 << 231 << 261 << 233;
-NumList LGraphicsGridLayout::overrideIds = NumList() << 163 << 165 << 166 << 452 << 232 << 249;
+NumList LGraphicsGridLayout::overrideIds = NumList() << 163 << 165 << 166 << 471 << 232 << 249;
 NumList LGraphicsItem::overrideIds = NumList() << 426 << 260 << 427 << 428 << 267 << 268 << 269 << 231 << 261 << 233 << 234 << 235 << 236 << 237 << 238 << 13 << 14 << 240 << 241 << 242 << 36 << 23 << 243 << 15 << 16 << 244 << 245 << 246 << 247 << 262 << 429 << 251;
 NumList LGraphicsItemGroup::overrideIds = NumList() << 260 << 268 << 269 << 231 << 233;
-NumList LGraphicsLayout::overrideIds = NumList() << 163 << 165 << 166 << 452 << 453 << 263;
+NumList LGraphicsLayout::overrideIds = NumList() << 163 << 165 << 166 << 471 << 472 << 263;
 NumList LGraphicsLayoutItem::overrideIds = NumList() << 232 << 263 << 249;
 NumList LGraphicsLineItem::overrideIds = NumList() << 260 << 267 << 268 << 269 << 231 << 261 << 233;
-NumList LGraphicsLinearLayout::overrideIds = NumList() << 163 << 165 << 166 << 452 << 232 << 249;
+NumList LGraphicsLinearLayout::overrideIds = NumList() << 163 << 165 << 166 << 471 << 232 << 249;
 NumList LGraphicsPathItem::overrideIds = NumList() << 260 << 267 << 268 << 269 << 231 << 261 << 233;
 NumList LGraphicsPixmapItem::overrideIds = NumList() << 260 << 267 << 268 << 269 << 231 << 261 << 233;
 NumList LGraphicsPolygonItem::overrideIds = NumList() << 260 << 267 << 268 << 269 << 231 << 261 << 233;
@@ -340,25 +361,29 @@ NumList LIconDragEvent::overrideIds = NumList();
 NumList LImage::overrideIds = NumList();
 NumList LInputEvent::overrideIds = NumList();
 NumList LInputMethodEvent::overrideIds = NumList();
-NumList LItemEditorCreatorBase::overrideIds = NumList() << 416 << 454;
-NumList LItemEditorFactory::overrideIds = NumList() << 455 << 456;
+NumList LInputMethodQueryEvent::overrideIds = NumList();
+NumList LItemEditorCreatorBase::overrideIds = NumList() << 416 << 473;
+NumList LItemEditorFactory::overrideIds = NumList() << 474 << 475;
 NumList LItemSelectionRange::overrideIds = NumList();
 NumList LKeyEvent::overrideIds = NumList();
 NumList LKeySequence::overrideIds = NumList();
-NumList LLayoutItem::overrideIds = NumList() << 173 << 164 << 174 << 21 << 22 << 165 << 175 << 176 << 167 << 168 << 169 << 170 << 25 << 457 << 458;
+NumList LLayoutItem::overrideIds = NumList() << 173 << 164 << 174 << 21 << 22 << 165 << 175 << 176 << 167 << 168 << 169 << 170 << 25 << 476 << 477;
 NumList LLibraryInfo::overrideIds = NumList();
 NumList LLinearGradient::overrideIds = NumList();
-NumList LListWidgetItem::overrideIds = NumList() << 459 << 460 << 461;
+NumList LListWidgetItem::overrideIds = NumList() << 478 << 479 << 480;
 NumList LLocale::overrideIds = NumList();
 NumList LMargins::overrideIds = NumList();
 NumList LMarginsF::overrideIds = NumList();
 NumList LMatrix::overrideIds = NumList();
 NumList LMatrix4x4::overrideIds = NumList();
+NumList LMessageAuthenticationCode::overrideIds = NumList();
 NumList LMetaObject::overrideIds = NumList();
 NumList LModelIndex::overrideIds = NumList();
 NumList LMouseEvent::overrideIds = NumList();
 NumList LMoveEvent::overrideIds = NumList();
-NumList LOpenGLPaintDevice::overrideIds = NumList() << 463 << 464;
+NumList LOpenGLFramebufferObject::overrideIds = NumList();
+NumList LOpenGLFramebufferObjectFormat::overrideIds = NumList();
+NumList LOpenGLPaintDevice::overrideIds = NumList() << 482 << 483;
 NumList LOpenGLTexture::overrideIds = NumList();
 NumList LPageLayout::overrideIds = NumList();
 NumList LPageSize::overrideIds = NumList();
@@ -369,7 +394,7 @@ NumList LPainterPathStroker::overrideIds = NumList();
 NumList LPalette::overrideIds = NumList();
 NumList LPen::overrideIds = NumList();
 NumList LPersistentModelIndex::overrideIds = NumList();
-NumList LPicture::overrideIds = NumList() << 465;
+NumList LPicture::overrideIds = NumList() << 484;
 NumList LPixmap::overrideIds = NumList();
 NumList LPixmapCache::overrideIds = NumList();
 NumList LPrinter::overrideIds = NumList() << 313;
@@ -377,24 +402,26 @@ NumList LPrinterInfo::overrideIds = NumList();
 NumList LProcessEnvironment::overrideIds = NumList();
 NumList LQuaternion::overrideIds = NumList();
 NumList LRadialGradient::overrideIds = NumList();
-NumList LReadLocker::overrideIds = NumList();
-NumList LReadWriteLock::overrideIds = NumList();
 NumList LRegExp::overrideIds = NumList();
 NumList LRegion::overrideIds = NumList();
 NumList LRegularExpression::overrideIds = NumList();
 NumList LResizeEvent::overrideIds = NumList();
-NumList LRunnable::overrideIds = NumList() << 468;
+NumList LRunnable::overrideIds = NumList() << 487;
+NumList LScrollEvent::overrideIds = NumList();
+NumList LScrollPrepareEvent::overrideIds = NumList();
 NumList LSemaphore::overrideIds = NumList();
 NumList LShortcutEvent::overrideIds = NumList();
 NumList LShowEvent::overrideIds = NumList();
 NumList LSizePolicy::overrideIds = NumList();
-NumList LSpacerItem::overrideIds = NumList() << 164 << 174 << 175 << 167 << 169 << 170 << 25 << 457;
-NumList LStandardItem::overrideIds = NumList() << 459 << 460 << 488 << 233;
+NumList LSpacerItem::overrideIds = NumList() << 164 << 174 << 175 << 167 << 169 << 170 << 25 << 476;
+NumList LStandardItem::overrideIds = NumList() << 478 << 479 << 507 << 233;
 NumList LStatusTipEvent::overrideIds = NumList();
+NumList LStorageInfo::overrideIds = NumList();
 NumList LStyleOption::overrideIds = NumList();
 NumList LStyleOptionGraphicsItem::overrideIds = NumList();
+NumList LSurfaceFormat::overrideIds = NumList();
 NumList LSystemSemaphore::overrideIds = NumList();
-NumList LTableWidgetItem::overrideIds = NumList() << 459 << 460 << 461;
+NumList LTableWidgetItem::overrideIds = NumList() << 478 << 479 << 480;
 NumList LTableWidgetSelectionRange::overrideIds = NumList();
 NumList LTabletEvent::overrideIds = NumList();
 NumList LTextBlock::overrideIds = NumList();
@@ -402,7 +429,7 @@ NumList LTextBlockFormat::overrideIds = NumList();
 NumList LTextBlockUserData::overrideIds = NumList();
 NumList LTextBoundaryFinder::overrideIds = NumList();
 NumList LTextCharFormat::overrideIds = NumList();
-NumList LTextCodec::overrideIds = NumList() << 489 << 490 << 491 << 492 << 493;
+NumList LTextCodec::overrideIds = NumList() << 508 << 509 << 510 << 511 << 512;
 NumList LTextCursor::overrideIds = NumList();
 NumList LTextDecoder::overrideIds = NumList();
 NumList LTextDocumentFragment::overrideIds = NumList();
@@ -427,9 +454,10 @@ NumList LToolTip::overrideIds = NumList();
 NumList LTouchDevice::overrideIds = NumList();
 NumList LTouchEvent::overrideIds = NumList();
 NumList LTransform::overrideIds = NumList();
-NumList LTreeWidgetItem::overrideIds = NumList() << 459 << 494 << 495;
-NumList LUndoCommand::overrideIds = NumList() << 496 << 497 << 498 << 499;
+NumList LTreeWidgetItem::overrideIds = NumList() << 478 << 513 << 514;
+NumList LUndoCommand::overrideIds = NumList() << 515 << 516 << 517 << 518;
 NumList LUrl::overrideIds = NumList();
+NumList LUuid::overrideIds = NumList();
 NumList LVariant::overrideIds = NumList();
 NumList LVector2D::overrideIds = NumList();
 NumList LVector3D::overrideIds = NumList();
@@ -437,9 +465,8 @@ NumList LVector4D::overrideIds = NumList();
 NumList LWhatsThis::overrideIds = NumList();
 NumList LWhatsThisClickedEvent::overrideIds = NumList();
 NumList LWheelEvent::overrideIds = NumList();
-NumList LWidgetItem::overrideIds = NumList() << 173 << 164 << 174 << 21 << 22 << 175 << 167 << 169 << 170 << 25 << 458;
+NumList LWidgetItem::overrideIds = NumList() << 173 << 164 << 174 << 21 << 22 << 175 << 167 << 169 << 170 << 25 << 477;
 NumList LWindowStateChangeEvent::overrideIds = NumList();
-NumList LWriteLocker::overrideIds = NumList();
 
 void LObjects::ini(EQL* e) {
     static bool ok = false;
@@ -447,8 +474,8 @@ void LObjects::ini(EQL* e) {
         ok = true;
         eql = e;
         dynObject = new DynObject;
-        Q = new QObject* [244]; for(int i = 0; i < 244; ++i) { Q[i] = 0; }
-        N = new QObject* [222]; for(int i = 0; i < 222; ++i) { N[i] = 0; }
+        Q = new QObject* [249]; for(int i = 0; i < 249; ++i) { Q[i] = 0; }
+        N = new QObject* [244]; for(int i = 0; i < 244; ++i) { N[i] = 0; }
         Q[0] = new Q1;
         Q[1] = new Q2;
         Q[2] = new Q3;
@@ -519,16 +546,16 @@ void LObjects::ini(EQL* e) {
         Q[78] = new Q79;
         Q[79] = new Q80;
         Q[80] = new Q81;
-        Q[82] = new Q83;
+        Q[81] = new Q82;
         Q[83] = new Q84;
-        Q[85] = new Q86;
-        Q[87] = new Q88;
+        Q[84] = new Q85;
+        Q[86] = new Q87;
         Q[88] = new Q89;
         Q[89] = new Q90;
         Q[90] = new Q91;
         Q[91] = new Q92;
         Q[92] = new Q93;
-        Q[101] = new Q102;
+        Q[93] = new Q94;
         Q[102] = new Q103;
         Q[103] = new Q104;
         Q[104] = new Q105;
@@ -543,17 +570,17 @@ void LObjects::ini(EQL* e) {
         Q[113] = new Q114;
         Q[114] = new Q115;
         Q[115] = new Q116;
-        Q[118] = new Q119;
-        Q[119] = new Q120;
+        Q[116] = new Q117;
+        Q[117] = new Q118;
         Q[120] = new Q121;
-        Q[126] = new Q127;
-        Q[127] = new Q128;
+        Q[121] = new Q122;
+        Q[122] = new Q123;
         Q[128] = new Q129;
         Q[129] = new Q130;
         Q[130] = new Q131;
         Q[131] = new Q132;
-        Q[136] = new Q137;
-        Q[137] = new Q138;
+        Q[132] = new Q133;
+        Q[133] = new Q134;
         Q[138] = new Q139;
         Q[139] = new Q140;
         Q[140] = new Q141;
@@ -578,9 +605,9 @@ void LObjects::ini(EQL* e) {
         Q[159] = new Q160;
         Q[160] = new Q161;
         Q[161] = new Q162;
+        Q[162] = new Q163;
         Q[163] = new Q164;
         Q[164] = new Q165;
-        Q[165] = new Q166;
         Q[166] = new Q167;
         Q[167] = new Q168;
         Q[168] = new Q169;
@@ -595,29 +622,29 @@ void LObjects::ini(EQL* e) {
         Q[177] = new Q178;
         Q[178] = new Q179;
         Q[179] = new Q180;
-        Q[185] = new Q186;
-        Q[186] = new Q187;
-        Q[187] = new Q188;
-        Q[188] = new Q189;
+        Q[180] = new Q181;
+        Q[181] = new Q182;
+        Q[182] = new Q183;
+        Q[183] = new Q184;
         Q[189] = new Q190;
         Q[190] = new Q191;
         Q[191] = new Q192;
         Q[192] = new Q193;
         Q[193] = new Q194;
+        Q[194] = new Q195;
+        Q[195] = new Q196;
         Q[196] = new Q197;
         Q[197] = new Q198;
         Q[198] = new Q199;
-        Q[199] = new Q200;
-        Q[200] = new Q201;
         Q[201] = new Q202;
         Q[202] = new Q203;
         Q[203] = new Q204;
         Q[204] = new Q205;
+        Q[205] = new Q206;
+        Q[206] = new Q207;
         Q[207] = new Q208;
         Q[208] = new Q209;
         Q[209] = new Q210;
-        Q[210] = new Q211;
-        Q[211] = new Q212;
         Q[212] = new Q213;
         Q[213] = new Q214;
         Q[214] = new Q215;
@@ -630,17 +657,22 @@ void LObjects::ini(EQL* e) {
         Q[221] = new Q222;
         Q[222] = new Q223;
         Q[223] = new Q224;
+        Q[224] = new Q225;
         Q[225] = new Q226;
         Q[226] = new Q227;
         Q[227] = new Q228;
         Q[228] = new Q229;
-        Q[229] = new Q230;
         Q[230] = new Q231;
-        Q[239] = new Q240;
-        Q[240] = new Q241;
-        Q[241] = new Q242;
-        Q[242] = new Q243;
-        Q[243] = new Q244;
+        Q[231] = new Q232;
+        Q[232] = new Q233;
+        Q[233] = new Q234;
+        Q[234] = new Q235;
+        Q[235] = new Q236;
+        Q[244] = new Q245;
+        Q[245] = new Q246;
+        Q[246] = new Q247;
+        Q[247] = new Q248;
+        Q[248] = new Q249;
         N[0] = new N1;
         N[1] = new N2;
         N[2] = new N3;
@@ -648,21 +680,21 @@ void LObjects::ini(EQL* e) {
         N[4] = new N5;
         N[5] = new N6;
         N[6] = new N7;
+        N[7] = new N8;
+        N[8] = new N9;
+        N[9] = new N10;
+        N[10] = new N11;
         N[11] = new N12;
         N[12] = new N13;
         N[13] = new N14;
         N[14] = new N15;
-        N[17] = new N18;
-        N[18] = new N19;
-        N[19] = new N20;
-        N[20] = new N21;
+        N[15] = new N16;
+        N[16] = new N17;
         N[21] = new N22;
         N[22] = new N23;
         N[23] = new N24;
         N[24] = new N25;
         N[25] = new N26;
-        N[26] = new N27;
-        N[27] = new N28;
         N[28] = new N29;
         N[29] = new N30;
         N[30] = new N31;
@@ -704,50 +736,50 @@ void LObjects::ini(EQL* e) {
         N[66] = new N67;
         N[67] = new N68;
         N[68] = new N69;
+        N[69] = new N70;
         N[70] = new N71;
+        N[71] = new N72;
         N[72] = new N73;
+        N[73] = new N74;
+        N[74] = new N75;
         N[75] = new N76;
         N[76] = new N77;
         N[77] = new N78;
         N[78] = new N79;
+        N[79] = new N80;
         N[80] = new N81;
         N[81] = new N82;
         N[82] = new N83;
         N[83] = new N84;
         N[84] = new N85;
-        N[85] = new N86;
         N[86] = new N87;
-        N[87] = new N88;
         N[88] = new N89;
-        N[89] = new N90;
-        N[90] = new N91;
         N[91] = new N92;
         N[92] = new N93;
         N[93] = new N94;
         N[94] = new N95;
-        N[95] = new N96;
+        N[96] = new N97;
+        N[97] = new N98;
         N[98] = new N99;
         N[99] = new N100;
         N[100] = new N101;
         N[101] = new N102;
+        N[102] = new N103;
+        N[103] = new N104;
+        N[104] = new N105;
+        N[105] = new N106;
+        N[106] = new N107;
+        N[107] = new N108;
+        N[108] = new N109;
+        N[109] = new N110;
         N[110] = new N111;
         N[111] = new N112;
         N[112] = new N113;
-        N[113] = new N114;
-        N[114] = new N115;
         N[115] = new N116;
         N[116] = new N117;
         N[117] = new N118;
         N[118] = new N119;
         N[119] = new N120;
-        N[120] = new N121;
-        N[121] = new N122;
-        N[122] = new N123;
-        N[123] = new N124;
-        N[124] = new N125;
-        N[125] = new N126;
-        N[126] = new N127;
-        N[127] = new N128;
         N[128] = new N129;
         N[129] = new N130;
         N[130] = new N131;
@@ -763,25 +795,26 @@ void LObjects::ini(EQL* e) {
         N[140] = new N141;
         N[141] = new N142;
         N[142] = new N143;
+        N[143] = new N144;
+        N[144] = new N145;
+        N[145] = new N146;
+        N[146] = new N147;
+        N[147] = new N148;
+        N[148] = new N149;
+        N[149] = new N150;
+        N[150] = new N151;
+        N[151] = new N152;
+        N[152] = new N153;
+        N[153] = new N154;
+        N[154] = new N155;
+        N[155] = new N156;
         N[156] = new N157;
         N[157] = new N158;
         N[158] = new N159;
         N[159] = new N160;
         N[160] = new N161;
         N[161] = new N162;
-        N[163] = new N164;
-        N[164] = new N165;
-        N[165] = new N166;
-        N[166] = new N167;
-        N[167] = new N168;
-        N[168] = new N169;
-        N[169] = new N170;
-        N[170] = new N171;
-        N[171] = new N172;
-        N[172] = new N173;
-        N[173] = new N174;
-        N[174] = new N175;
-        N[175] = new N176;
+        N[162] = new N163;
         N[176] = new N177;
         N[177] = new N178;
         N[178] = new N179;
@@ -790,7 +823,6 @@ void LObjects::ini(EQL* e) {
         N[181] = new N182;
         N[182] = new N183;
         N[183] = new N184;
-        N[184] = new N185;
         N[185] = new N186;
         N[186] = new N187;
         N[187] = new N188;
@@ -811,12 +843,34 @@ void LObjects::ini(EQL* e) {
         N[202] = new N203;
         N[203] = new N204;
         N[204] = new N205;
+        N[205] = new N206;
+        N[206] = new N207;
+        N[207] = new N208;
+        N[208] = new N209;
+        N[209] = new N210;
+        N[210] = new N211;
+        N[211] = new N212;
+        N[212] = new N213;
+        N[213] = new N214;
+        N[214] = new N215;
+        N[215] = new N216;
         N[216] = new N217;
         N[217] = new N218;
         N[218] = new N219;
         N[219] = new N220;
         N[220] = new N221;
         N[221] = new N222;
+        N[222] = new N223;
+        N[223] = new N224;
+        N[224] = new N225;
+        N[225] = new N226;
+        N[226] = new N227;
+        N[227] = new N228;
+        N[239] = new N240;
+        N[240] = new N241;
+        N[241] = new N242;
+        N[242] = new N243;
+        N[243] = new N244;
         q_names["QAbstractAnimation"] = 1;
         q_names["QAbstractButton"] = 2;
         q_names["QAbstractItemDelegate"] = 3;
@@ -878,411 +932,438 @@ void LObjects::ini(EQL* e) {
         q_names["QFile"] = 59;
         q_names["QFileDevice"] = 60;
         q_names["QFileDialog"] = 61;
-        q_names["QFileSystemModel"] = 62;
-        q_names["QFileSystemWatcher"] = 63;
-        q_names["QFinalState"] = 64;
-        q_names["QFocusFrame"] = 65;
-        q_names["QFontComboBox"] = 66;
-        q_names["QFontDialog"] = 67;
-        q_names["QFormLayout"] = 68;
-        q_names["QFrame"] = 69;
-        q_names["QGesture"] = 70;
-        q_names["QGraphicsAnchor"] = 71;
-        q_names["QGraphicsBlurEffect"] = 72;
-        q_names["QGraphicsColorizeEffect"] = 73;
-        q_names["QGraphicsDropShadowEffect"] = 74;
-        q_names["QGraphicsEffect"] = 75;
-        q_names["QGraphicsObject"] = 76;
-        q_names["QGraphicsOpacityEffect"] = 77;
-        q_names["QGraphicsProxyWidget"] = 78;
-        q_names["QGraphicsRotation"] = 79;
-        q_names["QGraphicsScale"] = 80;
-        q_names["QGraphicsScene"] = 81;
-        q_names["QGraphicsSvgItem"] = 82;
-        q_names["QGraphicsTextItem"] = 83;
-        q_names["QGraphicsTransform"] = 84;
-        q_names["QGraphicsVideoItem"] = 85;
-        q_names["QGraphicsView"] = 86;
-        q_names["QGraphicsWebView"] = 87;
-        q_names["QGraphicsWidget"] = 88;
-        q_names["QGridLayout"] = 89;
-        q_names["QGroupBox"] = 90;
-        q_names["QGuiApplication"] = 91;
-        q_names["QHBoxLayout"] = 92;
-        q_names["QHeaderView"] = 93;
-        q_names["QHelpContentModel"] = 94;
-        q_names["QHelpContentWidget"] = 95;
-        q_names["QHelpEngineCore"] = 96;
-        q_names["QHelpIndexModel"] = 97;
-        q_names["QHelpIndexWidget"] = 98;
-        q_names["QHelpSearchEngine"] = 99;
-        q_names["QHelpSearchQueryWidget"] = 100;
-        q_names["QHelpSearchResultWidget"] = 101;
-        q_names["QHistoryState"] = 102;
-        q_names["QIODevice"] = 103;
-        q_names["QIdentityProxyModel"] = 104;
-        q_names["QInputDialog"] = 105;
-        q_names["QIntValidator"] = 106;
-        q_names["QItemDelegate"] = 107;
-        q_names["QItemSelectionModel"] = 108;
-        q_names["QKeyEventTransition"] = 109;
-        q_names["QLCDNumber"] = 110;
-        q_names["QLabel"] = 111;
-        q_names["QLayout"] = 112;
-        q_names["QLibrary"] = 113;
-        q_names["QLineEdit"] = 114;
-        q_names["QListView"] = 115;
-        q_names["QListWidget"] = 116;
-        q_names["QLocalServer"] = 117;
-        q_names["QLocalSocket"] = 118;
-        q_names["QMainWindow"] = 119;
-        q_names["QMdiArea"] = 120;
-        q_names["QMdiSubWindow"] = 121;
-        q_names["QMediaObject"] = 122;
-        q_names["QMediaPlayer"] = 123;
-        q_names["QMediaPlaylist"] = 124;
-        q_names["QMediaRecorder"] = 125;
-        q_names["QMediaService"] = 126;
-        q_names["QMenu"] = 127;
-        q_names["QMenuBar"] = 128;
-        q_names["QMessageBox"] = 129;
-        q_names["QMimeData"] = 130;
-        q_names["QMouseEventTransition"] = 131;
-        q_names["QMovie"] = 132;
-        q_names["QNetworkAccessManager"] = 133;
-        q_names["QNetworkCookieJar"] = 134;
-        q_names["QNetworkDiskCache"] = 135;
-        q_names["QNetworkReply"] = 136;
-        q_names["QObject"] = 137;
-        q_names["QOpenGLContext"] = 138;
-        q_names["QOpenGLShader"] = 139;
-        q_names["QOpenGLShaderProgram"] = 140;
-        q_names["QOpenGLWidget"] = 141;
-        q_names["QOpenGLWindow"] = 142;
-        q_names["QPageSetupDialog"] = 143;
-        q_names["QPaintDeviceWindow"] = 144;
-        q_names["QPanGesture"] = 145;
-        q_names["QParallelAnimationGroup"] = 146;
-        q_names["QPauseAnimation"] = 147;
-        q_names["QPdfWriter"] = 148;
-        q_names["QPinchGesture"] = 149;
-        q_names["QPlainTextDocumentLayout"] = 150;
-        q_names["QPlainTextEdit"] = 151;
-        q_names["QPluginLoader"] = 152;
-        q_names["QPrintDialog"] = 153;
-        q_names["QPrintPreviewDialog"] = 154;
-        q_names["QPrintPreviewWidget"] = 155;
-        q_names["QProcess"] = 156;
-        q_names["QProgressBar"] = 157;
-        q_names["QProgressDialog"] = 158;
-        q_names["QPropertyAnimation"] = 159;
-        q_names["QProxyStyle"] = 160;
-        q_names["QPushButton"] = 161;
-        q_names["QRadioButton"] = 162;
-        q_names["QRadioTuner"] = 163;
-        q_names["QRegExpValidator"] = 164;
-        q_names["QRubberBand"] = 165;
-        q_names["QScreen"] = 166;
-        q_names["QScrollArea"] = 167;
-        q_names["QScrollBar"] = 168;
-        q_names["QSequentialAnimationGroup"] = 169;
-        q_names["QSessionManager"] = 170;
-        q_names["QSettings"] = 171;
-        q_names["QShortcut"] = 172;
-        q_names["QSignalTransition"] = 173;
-        q_names["QSizeGrip"] = 174;
-        q_names["QSlider"] = 175;
-        q_names["QSortFilterProxyModel"] = 176;
-        q_names["QSpinBox"] = 177;
-        q_names["QSplashScreen"] = 178;
-        q_names["QSplitter"] = 179;
-        q_names["QSplitterHandle"] = 180;
-        q_names["QSqlDriver"] = 181;
-        q_names["QSqlQueryModel"] = 182;
-        q_names["QSqlRelationalDelegate"] = 183;
-        q_names["QSqlRelationalTableModel"] = 184;
-        q_names["QSqlTableModel"] = 185;
-        q_names["QStackedLayout"] = 186;
-        q_names["QStackedWidget"] = 187;
-        q_names["QStandardItemModel"] = 188;
-        q_names["QState"] = 189;
-        q_names["QStateMachine"] = 190;
-        q_names["QStatusBar"] = 191;
-        q_names["QStringListModel"] = 192;
-        q_names["QStyle"] = 193;
-        q_names["QStyledItemDelegate"] = 194;
-        q_names["QSvgRenderer"] = 195;
-        q_names["QSvgWidget"] = 196;
-        q_names["QSwipeGesture"] = 197;
-        q_names["QSyntaxHighlighter"] = 198;
-        q_names["QSystemTrayIcon"] = 199;
-        q_names["QTabBar"] = 200;
-        q_names["QTabWidget"] = 201;
-        q_names["QTableView"] = 202;
-        q_names["QTableWidget"] = 203;
-        q_names["QTapAndHoldGesture"] = 204;
-        q_names["QTapGesture"] = 205;
-        q_names["QTcpServer"] = 206;
-        q_names["QTcpSocket"] = 207;
-        q_names["QTextBlockGroup"] = 208;
-        q_names["QTextBrowser"] = 209;
-        q_names["QTextDocument"] = 210;
-        q_names["QTextEdit"] = 211;
-        q_names["QTextFrame"] = 212;
-        q_names["QTextList"] = 213;
-        q_names["QTextObject"] = 214;
-        q_names["QTextTable"] = 215;
-        q_names["QTimeEdit"] = 216;
-        q_names["QTimeLine"] = 217;
-        q_names["QTimer"] = 218;
-        q_names["QToolBar"] = 219;
-        q_names["QToolBox"] = 220;
-        q_names["QToolButton"] = 221;
-        q_names["QTranslator"] = 222;
-        q_names["QTreeView"] = 223;
-        q_names["QTreeWidget"] = 224;
-        q_names["QUdpSocket"] = 225;
-        q_names["QUndoGroup"] = 226;
-        q_names["QUndoStack"] = 227;
-        q_names["QUndoView"] = 228;
-        q_names["QVBoxLayout"] = 229;
-        q_names["QValidator"] = 230;
-        q_names["QVariantAnimation"] = 231;
-        q_names["QVideoWidget"] = 232;
-        q_names["QVideoWidgetControl"] = 233;
-        q_names["QWebFrame"] = 234;
-        q_names["QWebHistoryInterface"] = 235;
-        q_names["QWebInspector"] = 236;
-        q_names["QWebPage"] = 237;
-        q_names["QWebPluginFactory"] = 238;
-        q_names["QWebView"] = 239;
-        q_names["QWidget"] = 240;
-        q_names["QWidgetAction"] = 241;
-        q_names["QWindow"] = 242;
-        q_names["QWizard"] = 243;
-        q_names["QWizardPage"] = 244;
+        q_names["QFileSelector"] = 62;
+        q_names["QFileSystemModel"] = 63;
+        q_names["QFileSystemWatcher"] = 64;
+        q_names["QFinalState"] = 65;
+        q_names["QFocusFrame"] = 66;
+        q_names["QFontComboBox"] = 67;
+        q_names["QFontDialog"] = 68;
+        q_names["QFormLayout"] = 69;
+        q_names["QFrame"] = 70;
+        q_names["QGesture"] = 71;
+        q_names["QGraphicsAnchor"] = 72;
+        q_names["QGraphicsBlurEffect"] = 73;
+        q_names["QGraphicsColorizeEffect"] = 74;
+        q_names["QGraphicsDropShadowEffect"] = 75;
+        q_names["QGraphicsEffect"] = 76;
+        q_names["QGraphicsObject"] = 77;
+        q_names["QGraphicsOpacityEffect"] = 78;
+        q_names["QGraphicsProxyWidget"] = 79;
+        q_names["QGraphicsRotation"] = 80;
+        q_names["QGraphicsScale"] = 81;
+        q_names["QGraphicsScene"] = 82;
+        q_names["QGraphicsSvgItem"] = 83;
+        q_names["QGraphicsTextItem"] = 84;
+        q_names["QGraphicsTransform"] = 85;
+        q_names["QGraphicsVideoItem"] = 86;
+        q_names["QGraphicsView"] = 87;
+        q_names["QGraphicsWebView"] = 88;
+        q_names["QGraphicsWidget"] = 89;
+        q_names["QGridLayout"] = 90;
+        q_names["QGroupBox"] = 91;
+        q_names["QGuiApplication"] = 92;
+        q_names["QHBoxLayout"] = 93;
+        q_names["QHeaderView"] = 94;
+        q_names["QHelpContentModel"] = 95;
+        q_names["QHelpContentWidget"] = 96;
+        q_names["QHelpEngineCore"] = 97;
+        q_names["QHelpIndexModel"] = 98;
+        q_names["QHelpIndexWidget"] = 99;
+        q_names["QHelpSearchEngine"] = 100;
+        q_names["QHelpSearchQueryWidget"] = 101;
+        q_names["QHelpSearchResultWidget"] = 102;
+        q_names["QHistoryState"] = 103;
+        q_names["QIODevice"] = 104;
+        q_names["QIdentityProxyModel"] = 105;
+        q_names["QInputDialog"] = 106;
+        q_names["QInputMethod"] = 107;
+        q_names["QIntValidator"] = 108;
+        q_names["QItemDelegate"] = 109;
+        q_names["QItemSelectionModel"] = 110;
+        q_names["QKeyEventTransition"] = 111;
+        q_names["QLCDNumber"] = 112;
+        q_names["QLabel"] = 113;
+        q_names["QLayout"] = 114;
+        q_names["QLibrary"] = 115;
+        q_names["QLineEdit"] = 116;
+        q_names["QListView"] = 117;
+        q_names["QListWidget"] = 118;
+        q_names["QLocalServer"] = 119;
+        q_names["QLocalSocket"] = 120;
+        q_names["QMainWindow"] = 121;
+        q_names["QMdiArea"] = 122;
+        q_names["QMdiSubWindow"] = 123;
+        q_names["QMediaObject"] = 124;
+        q_names["QMediaPlayer"] = 125;
+        q_names["QMediaPlaylist"] = 126;
+        q_names["QMediaRecorder"] = 127;
+        q_names["QMediaService"] = 128;
+        q_names["QMenu"] = 129;
+        q_names["QMenuBar"] = 130;
+        q_names["QMessageBox"] = 131;
+        q_names["QMimeData"] = 132;
+        q_names["QMouseEventTransition"] = 133;
+        q_names["QMovie"] = 134;
+        q_names["QNetworkAccessManager"] = 135;
+        q_names["QNetworkCookieJar"] = 136;
+        q_names["QNetworkDiskCache"] = 137;
+        q_names["QNetworkReply"] = 138;
+        q_names["QObject"] = 139;
+        q_names["QObjectCleanupHandler"] = 140;
+        q_names["QOpenGLContext"] = 141;
+        q_names["QOpenGLShader"] = 142;
+        q_names["QOpenGLShaderProgram"] = 143;
+        q_names["QOpenGLWidget"] = 144;
+        q_names["QOpenGLWindow"] = 145;
+        q_names["QPageSetupDialog"] = 146;
+        q_names["QPaintDeviceWindow"] = 147;
+        q_names["QPanGesture"] = 148;
+        q_names["QParallelAnimationGroup"] = 149;
+        q_names["QPauseAnimation"] = 150;
+        q_names["QPdfWriter"] = 151;
+        q_names["QPinchGesture"] = 152;
+        q_names["QPlainTextDocumentLayout"] = 153;
+        q_names["QPlainTextEdit"] = 154;
+        q_names["QPluginLoader"] = 155;
+        q_names["QPrintDialog"] = 156;
+        q_names["QPrintPreviewDialog"] = 157;
+        q_names["QPrintPreviewWidget"] = 158;
+        q_names["QProcess"] = 159;
+        q_names["QProgressBar"] = 160;
+        q_names["QProgressDialog"] = 161;
+        q_names["QPropertyAnimation"] = 162;
+        q_names["QProxyStyle"] = 163;
+        q_names["QPushButton"] = 164;
+        q_names["QRadioButton"] = 165;
+        q_names["QRadioTuner"] = 166;
+        q_names["QRegExpValidator"] = 167;
+        q_names["QRubberBand"] = 168;
+        q_names["QScreen"] = 169;
+        q_names["QScrollArea"] = 170;
+        q_names["QScrollBar"] = 171;
+        q_names["QSequentialAnimationGroup"] = 172;
+        q_names["QSessionManager"] = 173;
+        q_names["QSettings"] = 174;
+        q_names["QShortcut"] = 175;
+        q_names["QSignalMapper"] = 176;
+        q_names["QSignalTransition"] = 177;
+        q_names["QSizeGrip"] = 178;
+        q_names["QSlider"] = 179;
+        q_names["QSortFilterProxyModel"] = 180;
+        q_names["QSpinBox"] = 181;
+        q_names["QSplashScreen"] = 182;
+        q_names["QSplitter"] = 183;
+        q_names["QSplitterHandle"] = 184;
+        q_names["QSqlDriver"] = 185;
+        q_names["QSqlQueryModel"] = 186;
+        q_names["QSqlRelationalDelegate"] = 187;
+        q_names["QSqlRelationalTableModel"] = 188;
+        q_names["QSqlTableModel"] = 189;
+        q_names["QStackedLayout"] = 190;
+        q_names["QStackedWidget"] = 191;
+        q_names["QStandardItemModel"] = 192;
+        q_names["QState"] = 193;
+        q_names["QStateMachine"] = 194;
+        q_names["QStatusBar"] = 195;
+        q_names["QStringListModel"] = 196;
+        q_names["QStyle"] = 197;
+        q_names["QStyleHints"] = 198;
+        q_names["QStyledItemDelegate"] = 199;
+        q_names["QSvgRenderer"] = 200;
+        q_names["QSvgWidget"] = 201;
+        q_names["QSwipeGesture"] = 202;
+        q_names["QSyntaxHighlighter"] = 203;
+        q_names["QSystemTrayIcon"] = 204;
+        q_names["QTabBar"] = 205;
+        q_names["QTabWidget"] = 206;
+        q_names["QTableView"] = 207;
+        q_names["QTableWidget"] = 208;
+        q_names["QTapAndHoldGesture"] = 209;
+        q_names["QTapGesture"] = 210;
+        q_names["QTcpServer"] = 211;
+        q_names["QTcpSocket"] = 212;
+        q_names["QTextBlockGroup"] = 213;
+        q_names["QTextBrowser"] = 214;
+        q_names["QTextDocument"] = 215;
+        q_names["QTextEdit"] = 216;
+        q_names["QTextFrame"] = 217;
+        q_names["QTextList"] = 218;
+        q_names["QTextObject"] = 219;
+        q_names["QTextTable"] = 220;
+        q_names["QTimeEdit"] = 221;
+        q_names["QTimeLine"] = 222;
+        q_names["QTimer"] = 223;
+        q_names["QToolBar"] = 224;
+        q_names["QToolBox"] = 225;
+        q_names["QToolButton"] = 226;
+        q_names["QTranslator"] = 227;
+        q_names["QTreeView"] = 228;
+        q_names["QTreeWidget"] = 229;
+        q_names["QUdpSocket"] = 230;
+        q_names["QUndoGroup"] = 231;
+        q_names["QUndoStack"] = 232;
+        q_names["QUndoView"] = 233;
+        q_names["QVBoxLayout"] = 234;
+        q_names["QValidator"] = 235;
+        q_names["QVariantAnimation"] = 236;
+        q_names["QVideoWidget"] = 237;
+        q_names["QVideoWidgetControl"] = 238;
+        q_names["QWebFrame"] = 239;
+        q_names["QWebHistoryInterface"] = 240;
+        q_names["QWebInspector"] = 241;
+        q_names["QWebPage"] = 242;
+        q_names["QWebPluginFactory"] = 243;
+        q_names["QWebView"] = 244;
+        q_names["QWidget"] = 245;
+        q_names["QWidgetAction"] = 246;
+        q_names["QWindow"] = 247;
+        q_names["QWizard"] = 248;
+        q_names["QWizardPage"] = 249;
         n_names["QAbstractGraphicsShapeItem"] = 1;
         n_names["QAccessible"] = 2;
-        n_names["QAccessibleEvent"] = 3;
-        n_names["QAccessibleInterface"] = 4;
-        n_names["QAccessibleObject"] = 5;
-        n_names["QAccessibleWidget"] = 6;
-        n_names["QActionEvent"] = 7;
-        n_names["QAudioDeviceInfo"] = 8;
-        n_names["QAudioEncoderSettings"] = 9;
-        n_names["QAudioFormat"] = 10;
-        n_names["QAuthenticator"] = 11;
-        n_names["QBasicTimer"] = 12;
-        n_names["QBitArray"] = 13;
-        n_names["QBitmap"] = 14;
-        n_names["QBrush"] = 15;
-        n_names["QCameraInfo"] = 16;
-        n_names["QCameraViewfinderSettings"] = 17;
-        n_names["QChildEvent"] = 18;
-        n_names["QCloseEvent"] = 19;
-        n_names["QColor"] = 20;
-        n_names["QConicalGradient"] = 21;
-        n_names["QContextMenuEvent"] = 22;
-        n_names["QCryptographicHash"] = 23;
-        n_names["QCursor"] = 24;
-        n_names["QDate"] = 25;
-        n_names["QDateTime"] = 26;
-        n_names["QDesktopServices"] = 27;
-        n_names["QDir"] = 28;
-        n_names["QDirIterator"] = 29;
-        n_names["QDragEnterEvent"] = 30;
-        n_names["QDragLeaveEvent"] = 31;
-        n_names["QDragMoveEvent"] = 32;
-        n_names["QDropEvent"] = 33;
-        n_names["QDynamicPropertyChangeEvent"] = 34;
-        n_names["QEasingCurve"] = 35;
-        n_names["QEvent"] = 36;
-        n_names["QFileIconProvider"] = 37;
-        n_names["QFileInfo"] = 38;
-        n_names["QFileOpenEvent"] = 39;
-        n_names["QFocusEvent"] = 40;
-        n_names["QFont"] = 41;
-        n_names["QFontDatabase"] = 42;
-        n_names["QFontInfo"] = 43;
-        n_names["QFontMetrics"] = 44;
-        n_names["QGestureEvent"] = 45;
-        n_names["QGradient"] = 46;
-        n_names["QGraphicsAnchorLayout"] = 47;
-        n_names["QGraphicsEllipseItem"] = 48;
-        n_names["QGraphicsGridLayout"] = 49;
-        n_names["QGraphicsItem"] = 50;
-        n_names["QGraphicsItemGroup"] = 51;
-        n_names["QGraphicsLayout"] = 52;
-        n_names["QGraphicsLayoutItem"] = 53;
-        n_names["QGraphicsLineItem"] = 54;
-        n_names["QGraphicsLinearLayout"] = 55;
-        n_names["QGraphicsPathItem"] = 56;
-        n_names["QGraphicsPixmapItem"] = 57;
-        n_names["QGraphicsPolygonItem"] = 58;
-        n_names["QGraphicsRectItem"] = 59;
-        n_names["QGraphicsSceneContextMenuEvent"] = 60;
-        n_names["QGraphicsSceneDragDropEvent"] = 61;
-        n_names["QGraphicsSceneEvent"] = 62;
-        n_names["QGraphicsSceneHelpEvent"] = 63;
-        n_names["QGraphicsSceneHoverEvent"] = 64;
-        n_names["QGraphicsSceneMouseEvent"] = 65;
-        n_names["QGraphicsSceneMoveEvent"] = 66;
-        n_names["QGraphicsSceneResizeEvent"] = 67;
-        n_names["QGraphicsSceneWheelEvent"] = 68;
-        n_names["QGraphicsSimpleTextItem"] = 69;
-        n_names["QHelpContentItem"] = 70;
-        n_names["QHelpEvent"] = 71;
-        n_names["QHelpSearchQuery"] = 72;
-        n_names["QHideEvent"] = 73;
-        n_names["QHostAddress"] = 74;
-        n_names["QHostInfo"] = 75;
-        n_names["QHoverEvent"] = 76;
-        n_names["QIcon"] = 77;
-        n_names["QIconDragEvent"] = 78;
-        n_names["QImage"] = 79;
-        n_names["QImageEncoderSettings"] = 80;
-        n_names["QInputEvent"] = 81;
-        n_names["QInputMethodEvent"] = 82;
-        n_names["QItemEditorCreatorBase"] = 83;
-        n_names["QItemEditorFactory"] = 84;
-        n_names["QItemSelectionRange"] = 85;
-        n_names["QKeyEvent"] = 86;
-        n_names["QKeySequence"] = 87;
-        n_names["QLayoutItem"] = 88;
-        n_names["QLibraryInfo"] = 89;
-        n_names["QLinearGradient"] = 90;
-        n_names["QListWidgetItem"] = 91;
-        n_names["QLocale"] = 92;
-        n_names["QMargins"] = 93;
-        n_names["QMarginsF"] = 94;
-        n_names["QMatrix"] = 95;
-        n_names["QMatrix4x4"] = 96;
-        n_names["QMediaContent"] = 97;
-        n_names["QMediaResource"] = 98;
-        n_names["QMetaObject"] = 99;
-        n_names["QModelIndex"] = 100;
-        n_names["QMouseEvent"] = 101;
-        n_names["QMoveEvent"] = 102;
-        n_names["QNetworkAddressEntry"] = 103;
-        n_names["QNetworkCacheMetaData"] = 104;
-        n_names["QNetworkCookie"] = 105;
-        n_names["QNetworkInterface"] = 106;
-        n_names["QNetworkProxy"] = 107;
-        n_names["QNetworkProxyFactory"] = 108;
-        n_names["QNetworkProxyQuery"] = 109;
-        n_names["QNetworkRequest"] = 110;
-        n_names["QOpenGLPaintDevice"] = 111;
-        n_names["QOpenGLTexture"] = 112;
-        n_names["QPageLayout"] = 113;
-        n_names["QPageSize"] = 114;
-        n_names["QPagedPaintDevice"] = 115;
-        n_names["QPaintDevice"] = 116;
-        n_names["QPaintEvent"] = 117;
-        n_names["QPainter"] = 118;
-        n_names["QPainterPath"] = 119;
-        n_names["QPainterPathStroker"] = 120;
-        n_names["QPalette"] = 121;
-        n_names["QPen"] = 122;
-        n_names["QPersistentModelIndex"] = 123;
-        n_names["QPicture"] = 124;
-        n_names["QPixmap"] = 125;
-        n_names["QPixmapCache"] = 126;
-        n_names["QPrinter"] = 127;
-        n_names["QPrinterInfo"] = 128;
-        n_names["QProcessEnvironment"] = 129;
-        n_names["QQuaternion"] = 130;
-        n_names["QRadialGradient"] = 131;
-        n_names["QReadLocker"] = 132;
-        n_names["QReadWriteLock"] = 133;
-        n_names["QRegExp"] = 134;
-        n_names["QRegion"] = 135;
-        n_names["QRegularExpression"] = 136;
-        n_names["QResizeEvent"] = 137;
-        n_names["QRunnable"] = 138;
-        n_names["QSemaphore"] = 139;
-        n_names["QShortcutEvent"] = 140;
-        n_names["QShowEvent"] = 141;
-        n_names["QSizePolicy"] = 142;
-        n_names["QSpacerItem"] = 143;
-        n_names["QSqlDatabase"] = 144;
-        n_names["QSqlError"] = 145;
-        n_names["QSqlField"] = 146;
-        n_names["QSqlIndex"] = 147;
-        n_names["QSqlQuery"] = 148;
-        n_names["QSqlRecord"] = 149;
-        n_names["QSqlRelation"] = 150;
-        n_names["QSqlResult"] = 151;
-        n_names["QSslCertificate"] = 152;
-        n_names["QSslCipher"] = 153;
-        n_names["QSslConfiguration"] = 154;
-        n_names["QSslError"] = 155;
-        n_names["QSslKey"] = 156;
-        n_names["QStandardItem"] = 157;
-        n_names["QStandardPaths"] = 158;
-        n_names["QStatusTipEvent"] = 159;
-        n_names["QStyleOption"] = 160;
-        n_names["QStyleOptionGraphicsItem"] = 161;
-        n_names["QSurface"] = 162;
-        n_names["QSvgGenerator"] = 163;
-        n_names["QSysInfo"] = 164;
-        n_names["QSystemSemaphore"] = 165;
-        n_names["QTableWidgetItem"] = 166;
-        n_names["QTableWidgetSelectionRange"] = 167;
-        n_names["QTabletEvent"] = 168;
-        n_names["QTextBlock"] = 169;
-        n_names["QTextBlockFormat"] = 170;
-        n_names["QTextBlockUserData"] = 171;
-        n_names["QTextBoundaryFinder"] = 172;
-        n_names["QTextCharFormat"] = 173;
-        n_names["QTextCodec"] = 174;
-        n_names["QTextCursor"] = 175;
-        n_names["QTextDecoder"] = 176;
-        n_names["QTextDocumentFragment"] = 177;
-        n_names["QTextDocumentWriter"] = 178;
-        n_names["QTextEncoder"] = 179;
-        n_names["QTextFormat"] = 180;
-        n_names["QTextFragment"] = 181;
-        n_names["QTextFrameFormat"] = 182;
-        n_names["QTextImageFormat"] = 183;
-        n_names["QTextLayout"] = 184;
-        n_names["QTextLength"] = 185;
-        n_names["QTextLine"] = 186;
-        n_names["QTextListFormat"] = 187;
-        n_names["QTextOption"] = 188;
-        n_names["QTextTableCell"] = 189;
-        n_names["QTextTableCellFormat"] = 190;
-        n_names["QTextTableFormat"] = 191;
-        n_names["QTime"] = 192;
-        n_names["QTimeZone"] = 193;
-        n_names["QTimerEvent"] = 194;
-        n_names["QToolTip"] = 195;
-        n_names["QTouchDevice"] = 196;
-        n_names["QTouchEvent"] = 197;
-        n_names["QTransform"] = 198;
-        n_names["QTreeWidgetItem"] = 199;
-        n_names["QUndoCommand"] = 200;
-        n_names["QUrl"] = 201;
-        n_names["QVariant"] = 202;
-        n_names["QVector2D"] = 203;
-        n_names["QVector3D"] = 204;
-        n_names["QVector4D"] = 205;
-        n_names["QVideoEncoderSettings"] = 206;
-        n_names["QVideoFrame"] = 207;
-        n_names["QVideoSurfaceFormat"] = 208;
-        n_names["QWebDatabase"] = 209;
-        n_names["QWebElement"] = 210;
-        n_names["QWebElementCollection"] = 211;
-        n_names["QWebHistory"] = 212;
-        n_names["QWebHistoryItem"] = 213;
-        n_names["QWebHitTestResult"] = 214;
-        n_names["QWebSecurityOrigin"] = 215;
-        n_names["QWebSettings"] = 216;
-        n_names["QWhatsThis"] = 217;
-        n_names["QWhatsThisClickedEvent"] = 218;
-        n_names["QWheelEvent"] = 219;
-        n_names["QWidgetItem"] = 220;
-        n_names["QWindowStateChangeEvent"] = 221;
-        n_names["QWriteLocker"] = 222;
+        n_names["QAccessibleEditableTextInterface"] = 3;
+        n_names["QAccessibleEvent"] = 4;
+        n_names["QAccessibleInterface"] = 5;
+        n_names["QAccessibleObject"] = 6;
+        n_names["QAccessibleStateChangeEvent"] = 7;
+        n_names["QAccessibleTextCursorEvent"] = 8;
+        n_names["QAccessibleTextInsertEvent"] = 9;
+        n_names["QAccessibleTextInterface"] = 10;
+        n_names["QAccessibleTextRemoveEvent"] = 11;
+        n_names["QAccessibleTextSelectionEvent"] = 12;
+        n_names["QAccessibleTextUpdateEvent"] = 13;
+        n_names["QAccessibleValueChangeEvent"] = 14;
+        n_names["QAccessibleValueInterface"] = 15;
+        n_names["QAccessibleWidget"] = 16;
+        n_names["QActionEvent"] = 17;
+        n_names["QAudioDeviceInfo"] = 18;
+        n_names["QAudioEncoderSettings"] = 19;
+        n_names["QAudioFormat"] = 20;
+        n_names["QAuthenticator"] = 21;
+        n_names["QBackingStore"] = 22;
+        n_names["QBasicTimer"] = 23;
+        n_names["QBitArray"] = 24;
+        n_names["QBitmap"] = 25;
+        n_names["QBrush"] = 26;
+        n_names["QCameraInfo"] = 27;
+        n_names["QCameraViewfinderSettings"] = 28;
+        n_names["QChildEvent"] = 29;
+        n_names["QCloseEvent"] = 30;
+        n_names["QColor"] = 31;
+        n_names["QConicalGradient"] = 32;
+        n_names["QContextMenuEvent"] = 33;
+        n_names["QCryptographicHash"] = 34;
+        n_names["QCursor"] = 35;
+        n_names["QDate"] = 36;
+        n_names["QDateTime"] = 37;
+        n_names["QDesktopServices"] = 38;
+        n_names["QDir"] = 39;
+        n_names["QDirIterator"] = 40;
+        n_names["QDragEnterEvent"] = 41;
+        n_names["QDragLeaveEvent"] = 42;
+        n_names["QDragMoveEvent"] = 43;
+        n_names["QDropEvent"] = 44;
+        n_names["QDynamicPropertyChangeEvent"] = 45;
+        n_names["QEasingCurve"] = 46;
+        n_names["QElapsedTimer"] = 47;
+        n_names["QEnterEvent"] = 48;
+        n_names["QEvent"] = 49;
+        n_names["QEventLoopLocker"] = 50;
+        n_names["QExposeEvent"] = 51;
+        n_names["QFileIconProvider"] = 52;
+        n_names["QFileInfo"] = 53;
+        n_names["QFileOpenEvent"] = 54;
+        n_names["QFocusEvent"] = 55;
+        n_names["QFont"] = 56;
+        n_names["QFontDatabase"] = 57;
+        n_names["QFontInfo"] = 58;
+        n_names["QFontMetrics"] = 59;
+        n_names["QFontMetricsF"] = 60;
+        n_names["QGestureEvent"] = 61;
+        n_names["QGradient"] = 62;
+        n_names["QGraphicsAnchorLayout"] = 63;
+        n_names["QGraphicsEllipseItem"] = 64;
+        n_names["QGraphicsGridLayout"] = 65;
+        n_names["QGraphicsItem"] = 66;
+        n_names["QGraphicsItemGroup"] = 67;
+        n_names["QGraphicsLayout"] = 68;
+        n_names["QGraphicsLayoutItem"] = 69;
+        n_names["QGraphicsLineItem"] = 70;
+        n_names["QGraphicsLinearLayout"] = 71;
+        n_names["QGraphicsPathItem"] = 72;
+        n_names["QGraphicsPixmapItem"] = 73;
+        n_names["QGraphicsPolygonItem"] = 74;
+        n_names["QGraphicsRectItem"] = 75;
+        n_names["QGraphicsSceneContextMenuEvent"] = 76;
+        n_names["QGraphicsSceneDragDropEvent"] = 77;
+        n_names["QGraphicsSceneEvent"] = 78;
+        n_names["QGraphicsSceneHelpEvent"] = 79;
+        n_names["QGraphicsSceneHoverEvent"] = 80;
+        n_names["QGraphicsSceneMouseEvent"] = 81;
+        n_names["QGraphicsSceneMoveEvent"] = 82;
+        n_names["QGraphicsSceneResizeEvent"] = 83;
+        n_names["QGraphicsSceneWheelEvent"] = 84;
+        n_names["QGraphicsSimpleTextItem"] = 85;
+        n_names["QHelpContentItem"] = 86;
+        n_names["QHelpEvent"] = 87;
+        n_names["QHelpSearchQuery"] = 88;
+        n_names["QHideEvent"] = 89;
+        n_names["QHostAddress"] = 90;
+        n_names["QHostInfo"] = 91;
+        n_names["QHoverEvent"] = 92;
+        n_names["QIcon"] = 93;
+        n_names["QIconDragEvent"] = 94;
+        n_names["QImage"] = 95;
+        n_names["QImageEncoderSettings"] = 96;
+        n_names["QInputEvent"] = 97;
+        n_names["QInputMethodEvent"] = 98;
+        n_names["QInputMethodQueryEvent"] = 99;
+        n_names["QItemEditorCreatorBase"] = 100;
+        n_names["QItemEditorFactory"] = 101;
+        n_names["QItemSelectionRange"] = 102;
+        n_names["QKeyEvent"] = 103;
+        n_names["QKeySequence"] = 104;
+        n_names["QLayoutItem"] = 105;
+        n_names["QLibraryInfo"] = 106;
+        n_names["QLinearGradient"] = 107;
+        n_names["QListWidgetItem"] = 108;
+        n_names["QLocale"] = 109;
+        n_names["QMargins"] = 110;
+        n_names["QMarginsF"] = 111;
+        n_names["QMatrix"] = 112;
+        n_names["QMatrix4x4"] = 113;
+        n_names["QMediaContent"] = 114;
+        n_names["QMediaResource"] = 115;
+        n_names["QMessageAuthenticationCode"] = 116;
+        n_names["QMetaObject"] = 117;
+        n_names["QModelIndex"] = 118;
+        n_names["QMouseEvent"] = 119;
+        n_names["QMoveEvent"] = 120;
+        n_names["QNetworkAddressEntry"] = 121;
+        n_names["QNetworkCacheMetaData"] = 122;
+        n_names["QNetworkCookie"] = 123;
+        n_names["QNetworkInterface"] = 124;
+        n_names["QNetworkProxy"] = 125;
+        n_names["QNetworkProxyFactory"] = 126;
+        n_names["QNetworkProxyQuery"] = 127;
+        n_names["QNetworkRequest"] = 128;
+        n_names["QOpenGLFramebufferObject"] = 129;
+        n_names["QOpenGLFramebufferObjectFormat"] = 130;
+        n_names["QOpenGLPaintDevice"] = 131;
+        n_names["QOpenGLTexture"] = 132;
+        n_names["QPageLayout"] = 133;
+        n_names["QPageSize"] = 134;
+        n_names["QPagedPaintDevice"] = 135;
+        n_names["QPaintDevice"] = 136;
+        n_names["QPaintEvent"] = 137;
+        n_names["QPainter"] = 138;
+        n_names["QPainterPath"] = 139;
+        n_names["QPainterPathStroker"] = 140;
+        n_names["QPalette"] = 141;
+        n_names["QPen"] = 142;
+        n_names["QPersistentModelIndex"] = 143;
+        n_names["QPicture"] = 144;
+        n_names["QPixmap"] = 145;
+        n_names["QPixmapCache"] = 146;
+        n_names["QPrinter"] = 147;
+        n_names["QPrinterInfo"] = 148;
+        n_names["QProcessEnvironment"] = 149;
+        n_names["QQuaternion"] = 150;
+        n_names["QRadialGradient"] = 151;
+        n_names["QRegExp"] = 152;
+        n_names["QRegion"] = 153;
+        n_names["QRegularExpression"] = 154;
+        n_names["QResizeEvent"] = 155;
+        n_names["QRunnable"] = 156;
+        n_names["QScrollEvent"] = 157;
+        n_names["QScrollPrepareEvent"] = 158;
+        n_names["QSemaphore"] = 159;
+        n_names["QShortcutEvent"] = 160;
+        n_names["QShowEvent"] = 161;
+        n_names["QSizePolicy"] = 162;
+        n_names["QSpacerItem"] = 163;
+        n_names["QSqlDatabase"] = 164;
+        n_names["QSqlError"] = 165;
+        n_names["QSqlField"] = 166;
+        n_names["QSqlIndex"] = 167;
+        n_names["QSqlQuery"] = 168;
+        n_names["QSqlRecord"] = 169;
+        n_names["QSqlRelation"] = 170;
+        n_names["QSqlResult"] = 171;
+        n_names["QSslCertificate"] = 172;
+        n_names["QSslCipher"] = 173;
+        n_names["QSslConfiguration"] = 174;
+        n_names["QSslError"] = 175;
+        n_names["QSslKey"] = 176;
+        n_names["QStandardItem"] = 177;
+        n_names["QStandardPaths"] = 178;
+        n_names["QStatusTipEvent"] = 179;
+        n_names["QStorageInfo"] = 180;
+        n_names["QStyleOption"] = 181;
+        n_names["QStyleOptionGraphicsItem"] = 182;
+        n_names["QSurface"] = 183;
+        n_names["QSurfaceFormat"] = 184;
+        n_names["QSvgGenerator"] = 185;
+        n_names["QSysInfo"] = 186;
+        n_names["QSystemSemaphore"] = 187;
+        n_names["QTableWidgetItem"] = 188;
+        n_names["QTableWidgetSelectionRange"] = 189;
+        n_names["QTabletEvent"] = 190;
+        n_names["QTextBlock"] = 191;
+        n_names["QTextBlockFormat"] = 192;
+        n_names["QTextBlockUserData"] = 193;
+        n_names["QTextBoundaryFinder"] = 194;
+        n_names["QTextCharFormat"] = 195;
+        n_names["QTextCodec"] = 196;
+        n_names["QTextCursor"] = 197;
+        n_names["QTextDecoder"] = 198;
+        n_names["QTextDocumentFragment"] = 199;
+        n_names["QTextDocumentWriter"] = 200;
+        n_names["QTextEncoder"] = 201;
+        n_names["QTextFormat"] = 202;
+        n_names["QTextFragment"] = 203;
+        n_names["QTextFrameFormat"] = 204;
+        n_names["QTextImageFormat"] = 205;
+        n_names["QTextLayout"] = 206;
+        n_names["QTextLength"] = 207;
+        n_names["QTextLine"] = 208;
+        n_names["QTextListFormat"] = 209;
+        n_names["QTextOption"] = 210;
+        n_names["QTextTableCell"] = 211;
+        n_names["QTextTableCellFormat"] = 212;
+        n_names["QTextTableFormat"] = 213;
+        n_names["QTime"] = 214;
+        n_names["QTimeZone"] = 215;
+        n_names["QTimerEvent"] = 216;
+        n_names["QToolTip"] = 217;
+        n_names["QTouchDevice"] = 218;
+        n_names["QTouchEvent"] = 219;
+        n_names["QTransform"] = 220;
+        n_names["QTreeWidgetItem"] = 221;
+        n_names["QUndoCommand"] = 222;
+        n_names["QUrl"] = 223;
+        n_names["QUuid"] = 224;
+        n_names["QVariant"] = 225;
+        n_names["QVector2D"] = 226;
+        n_names["QVector3D"] = 227;
+        n_names["QVector4D"] = 228;
+        n_names["QVideoEncoderSettings"] = 229;
+        n_names["QVideoFrame"] = 230;
+        n_names["QVideoSurfaceFormat"] = 231;
+        n_names["QWebDatabase"] = 232;
+        n_names["QWebElement"] = 233;
+        n_names["QWebElementCollection"] = 234;
+        n_names["QWebHistory"] = 235;
+        n_names["QWebHistoryItem"] = 236;
+        n_names["QWebHitTestResult"] = 237;
+        n_names["QWebSecurityOrigin"] = 238;
+        n_names["QWebSettings"] = 239;
+        n_names["QWhatsThis"] = 240;
+        n_names["QWhatsThisClickedEvent"] = 241;
+        n_names["QWheelEvent"] = 242;
+        n_names["QWidgetItem"] = 243;
+        n_names["QWindowStateChangeEvent"] = 244;
         override_function_ids["duration()"] = 1;
         override_function_ids["updateCurrentTime(int)"] = 2;
         override_function_ids["updateDirection(QAbstractAnimation::Direction)"] = 3;
@@ -1712,77 +1793,96 @@ void LObjects::ini(EQL* e) {
         override_function_ids["collidesWithItem(QGraphicsItem*,Qt::ItemSelectionMode)"] = 427;
         override_function_ids["collidesWithPath(QPainterPath,Qt::ItemSelectionMode)"] = 428;
         override_function_ids["sceneEventFilter(QGraphicsItem*,QEvent*)"] = 429;
-        override_function_ids["accessibleInterface()"] = 430;
-        override_function_ids["actionNames()"] = 431;
-        override_function_ids["backgroundColor()"] = 432;
-        override_function_ids["child(int)"] = 433;
-        override_function_ids["childCount()"] = 434;
-        override_function_ids["doAction(QString)"] = 435;
-        override_function_ids["focusChild()"] = 436;
-        override_function_ids["foregroundColor()"] = 437;
-        override_function_ids["indexOfChild(QAccessibleInterface*)"] = 438;
-        override_function_ids["isValid()"] = 439;
-        override_function_ids["keyBindingsForAction(QString)"] = 440;
-        override_function_ids["parent()"] = 441;
-        override_function_ids["rect()"] = 442;
-        override_function_ids["role()"] = 443;
-        override_function_ids["text(QAccessible::Text)"] = 444;
-        override_function_ids["window()"] = 445;
-        override_function_ids["childAt(int,int)"] = 446;
-        override_function_ids["object()"] = 447;
-        override_function_ids["setText(QAccessible::Text,QString)"] = 448;
-        override_function_ids["icon(IconType)"] = 449;
-        override_function_ids["icon(QFileInfo)"] = 450;
-        override_function_ids["type(QFileInfo)"] = 451;
-        override_function_ids["removeAt(int)"] = 452;
-        override_function_ids["widgetEvent(QEvent*)"] = 453;
-        override_function_ids["valuePropertyName()"] = 454;
-        override_function_ids["createEditor(int,QWidget*)"] = 455;
-        override_function_ids["valuePropertyName(int)"] = 456;
-        override_function_ids["spacerItem()"] = 457;
-        override_function_ids["widget()"] = 458;
-        override_function_ids["clone()"] = 459;
-        override_function_ids["data(int)"] = 460;
-        override_function_ids["setData(int,QVariant)"] = 461;
-        override_function_ids["queryProxy(QNetworkProxyQuery)"] = 462;
-        override_function_ids["ensureActiveTarget()"] = 463;
-        override_function_ids["metric(QPaintDevice::PaintDeviceMetric)"] = 464;
-        override_function_ids["setData(const char*,uint)"] = 465;
-        override_function_ids["setPageSize(PageSize)"] = 466;
-        override_function_ids["setPageSizeMM(QSizeF)"] = 467;
-        override_function_ids["run()"] = 468;
-        override_function_ids["bindValue(int,QVariant,QSql::ParamType)"] = 469;
-        override_function_ids["bindValue(QString,QVariant,QSql::ParamType)"] = 470;
-        override_function_ids["fetch(int)"] = 471;
-        override_function_ids["fetchFirst()"] = 472;
-        override_function_ids["fetchLast()"] = 473;
-        override_function_ids["fetchNext()"] = 474;
-        override_function_ids["fetchPrevious()"] = 475;
-        override_function_ids["isNull(int)"] = 476;
-        override_function_ids["lastInsertId()"] = 477;
-        override_function_ids["numRowsAffected()"] = 478;
-        override_function_ids["prepare(QString)"] = 479;
-        override_function_ids["record()"] = 480;
-        override_function_ids["reset(QString)"] = 481;
-        override_function_ids["savePrepare(QString)"] = 482;
-        override_function_ids["setActive(bool)"] = 483;
-        override_function_ids["setAt(int)"] = 484;
-        override_function_ids["setForwardOnly(bool)"] = 485;
-        override_function_ids["setQuery(QString)"] = 486;
-        override_function_ids["setSelect(bool)"] = 487;
-        override_function_ids["setData(QVariant,int)"] = 488;
-        override_function_ids["aliases()"] = 489;
-        override_function_ids["mibEnum()"] = 490;
-        override_function_ids["name()"] = 491;
-        override_function_ids["convertFromUnicode(QChar*,int,ConverterState*)"] = 492;
-        override_function_ids["convertToUnicode(const char*,int,ConverterState*)"] = 493;
-        override_function_ids["data(int,int)"] = 494;
-        override_function_ids["setData(int,int,QVariant)"] = 495;
-        override_function_ids["id()"] = 496;
-        override_function_ids["mergeWith(QUndoCommand*)"] = 497;
-        override_function_ids["redo()"] = 498;
-        override_function_ids["undo()"] = 499;
-        override_arg_types = new const char** [499];
+        override_function_ids["deleteText(int,int)"] = 430;
+        override_function_ids["insertText(int,QString)"] = 431;
+        override_function_ids["replaceText(int,int,QString)"] = 432;
+        override_function_ids["accessibleInterface()"] = 433;
+        override_function_ids["backgroundColor()"] = 434;
+        override_function_ids["child(int)"] = 435;
+        override_function_ids["childAt(int,int)"] = 436;
+        override_function_ids["childCount()"] = 437;
+        override_function_ids["focusChild()"] = 438;
+        override_function_ids["foregroundColor()"] = 439;
+        override_function_ids["indexOfChild(QAccessibleInterface*)"] = 440;
+        override_function_ids["isValid()"] = 441;
+        override_function_ids["object()"] = 442;
+        override_function_ids["parent()"] = 443;
+        override_function_ids["rect()"] = 444;
+        override_function_ids["role()"] = 445;
+        override_function_ids["setText(QAccessible::Text,QString)"] = 446;
+        override_function_ids["text(QAccessible::Text)"] = 447;
+        override_function_ids["window()"] = 448;
+        override_function_ids["addSelection(int,int)"] = 449;
+        override_function_ids["characterCount()"] = 450;
+        override_function_ids["characterRect(int)"] = 451;
+        override_function_ids["cursorPosition()"] = 452;
+        override_function_ids["offsetAtPoint(QPoint)"] = 453;
+        override_function_ids["removeSelection(int)"] = 454;
+        override_function_ids["scrollToSubstring(int,int)"] = 455;
+        override_function_ids["selectionCount()"] = 456;
+        override_function_ids["setCursorPosition(int)"] = 457;
+        override_function_ids["setSelection(int,int,int)"] = 458;
+        override_function_ids["text(int,int)"] = 459;
+        override_function_ids["currentValue()"] = 460;
+        override_function_ids["maximumValue()"] = 461;
+        override_function_ids["minimumStepSize()"] = 462;
+        override_function_ids["minimumValue()"] = 463;
+        override_function_ids["setCurrentValue(QVariant)"] = 464;
+        override_function_ids["actionNames()"] = 465;
+        override_function_ids["doAction(QString)"] = 466;
+        override_function_ids["keyBindingsForAction(QString)"] = 467;
+        override_function_ids["icon(IconType)"] = 468;
+        override_function_ids["icon(QFileInfo)"] = 469;
+        override_function_ids["type(QFileInfo)"] = 470;
+        override_function_ids["removeAt(int)"] = 471;
+        override_function_ids["widgetEvent(QEvent*)"] = 472;
+        override_function_ids["valuePropertyName()"] = 473;
+        override_function_ids["createEditor(int,QWidget*)"] = 474;
+        override_function_ids["valuePropertyName(int)"] = 475;
+        override_function_ids["spacerItem()"] = 476;
+        override_function_ids["widget()"] = 477;
+        override_function_ids["clone()"] = 478;
+        override_function_ids["data(int)"] = 479;
+        override_function_ids["setData(int,QVariant)"] = 480;
+        override_function_ids["queryProxy(QNetworkProxyQuery)"] = 481;
+        override_function_ids["ensureActiveTarget()"] = 482;
+        override_function_ids["metric(QPaintDevice::PaintDeviceMetric)"] = 483;
+        override_function_ids["setData(const char*,uint)"] = 484;
+        override_function_ids["setPageSize(PageSize)"] = 485;
+        override_function_ids["setPageSizeMM(QSizeF)"] = 486;
+        override_function_ids["run()"] = 487;
+        override_function_ids["bindValue(int,QVariant,QSql::ParamType)"] = 488;
+        override_function_ids["bindValue(QString,QVariant,QSql::ParamType)"] = 489;
+        override_function_ids["fetch(int)"] = 490;
+        override_function_ids["fetchFirst()"] = 491;
+        override_function_ids["fetchLast()"] = 492;
+        override_function_ids["fetchNext()"] = 493;
+        override_function_ids["fetchPrevious()"] = 494;
+        override_function_ids["isNull(int)"] = 495;
+        override_function_ids["lastInsertId()"] = 496;
+        override_function_ids["numRowsAffected()"] = 497;
+        override_function_ids["prepare(QString)"] = 498;
+        override_function_ids["record()"] = 499;
+        override_function_ids["reset(QString)"] = 500;
+        override_function_ids["savePrepare(QString)"] = 501;
+        override_function_ids["setActive(bool)"] = 502;
+        override_function_ids["setAt(int)"] = 503;
+        override_function_ids["setForwardOnly(bool)"] = 504;
+        override_function_ids["setQuery(QString)"] = 505;
+        override_function_ids["setSelect(bool)"] = 506;
+        override_function_ids["setData(QVariant,int)"] = 507;
+        override_function_ids["aliases()"] = 508;
+        override_function_ids["mibEnum()"] = 509;
+        override_function_ids["name()"] = 510;
+        override_function_ids["convertFromUnicode(QChar*,int,ConverterState*)"] = 511;
+        override_function_ids["convertToUnicode(const char*,int,ConverterState*)"] = 512;
+        override_function_ids["data(int,int)"] = 513;
+        override_function_ids["setData(int,int,QVariant)"] = 514;
+        override_function_ids["id()"] = 515;
+        override_function_ids["mergeWith(QUndoCommand*)"] = 516;
+        override_function_ids["redo()"] = 517;
+        override_function_ids["undo()"] = 518;
+        override_arg_types = new const char** [518];
         { static const char* s[] = { "int", 0 }; override_arg_types[0] = s; }
         { static const char* s[] = { 0, "int", 0 }; override_arg_types[1] = s; }
         { static const char* s[] = { 0, "QAbstractAnimation::Direction", 0 }; override_arg_types[2] = s; }
@@ -2212,81 +2312,100 @@ void LObjects::ini(EQL* e) {
         { static const char* s[] = { "bool", "QGraphicsItem*", "Qt::ItemSelectionMode", 0 }; override_arg_types[426] = s; }
         { static const char* s[] = { "bool", "QPainterPath", "Qt::ItemSelectionMode", 0 }; override_arg_types[427] = s; }
         { static const char* s[] = { "bool", "QGraphicsItem*", "QEvent*", 0 }; override_arg_types[428] = s; }
-        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[429] = s; }
-        { static const char* s[] = { "QStringList", 0 }; override_arg_types[430] = s; }
-        { static const char* s[] = { "QColor", 0 }; override_arg_types[431] = s; }
-        { static const char* s[] = { "QAccessibleInterface*", "int", 0 }; override_arg_types[432] = s; }
-        { static const char* s[] = { "int", 0 }; override_arg_types[433] = s; }
-        { static const char* s[] = { 0, "QString", 0 }; override_arg_types[434] = s; }
-        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[435] = s; }
-        { static const char* s[] = { "QColor", 0 }; override_arg_types[436] = s; }
-        { static const char* s[] = { "int", "QAccessibleInterface*", 0 }; override_arg_types[437] = s; }
-        { static const char* s[] = { "bool", 0 }; override_arg_types[438] = s; }
-        { static const char* s[] = { "QStringList", "QString", 0 }; override_arg_types[439] = s; }
-        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[440] = s; }
-        { static const char* s[] = { "QRect", 0 }; override_arg_types[441] = s; }
-        { static const char* s[] = { "QAccessible::Role", 0 }; override_arg_types[442] = s; }
-        { static const char* s[] = { "QString", "QAccessible::Text", 0 }; override_arg_types[443] = s; }
-        { static const char* s[] = { "QWindow*", 0 }; override_arg_types[444] = s; }
-        { static const char* s[] = { "QAccessibleInterface*", "int", "int", 0 }; override_arg_types[445] = s; }
-        { static const char* s[] = { "QObject*", 0 }; override_arg_types[446] = s; }
-        { static const char* s[] = { 0, "QAccessible::Text", "QString", 0 }; override_arg_types[447] = s; }
-        { static const char* s[] = { "QIcon", "IconType", 0 }; override_arg_types[448] = s; }
-        { static const char* s[] = { "QIcon", "QFileInfo", 0 }; override_arg_types[449] = s; }
-        { static const char* s[] = { "QString", "QFileInfo", 0 }; override_arg_types[450] = s; }
-        { static const char* s[] = { 0, "int", 0 }; override_arg_types[451] = s; }
-        { static const char* s[] = { 0, "QEvent*", 0 }; override_arg_types[452] = s; }
-        { static const char* s[] = { "QByteArray", 0 }; override_arg_types[453] = s; }
-        { static const char* s[] = { "QWidget*", "int", "QWidget*", 0 }; override_arg_types[454] = s; }
-        { static const char* s[] = { "QByteArray", "int", 0 }; override_arg_types[455] = s; }
-        { static const char* s[] = { "QSpacerItem*", 0 }; override_arg_types[456] = s; }
-        { static const char* s[] = { "QWidget*", 0 }; override_arg_types[457] = s; }
-        { static const char* s[] = { "QListWidgetItem*", 0 }; override_arg_types[458] = s; }
-        { static const char* s[] = { "QVariant", "int", 0 }; override_arg_types[459] = s; }
-        { static const char* s[] = { 0, "int", "QVariant", 0 }; override_arg_types[460] = s; }
-        { static const char* s[] = { "QList<QNetworkProxy>", "QNetworkProxyQuery", 0 }; override_arg_types[461] = s; }
-        { static const char* s[] = { 0, 0 }; override_arg_types[462] = s; }
-        { static const char* s[] = { "int", "QPaintDevice::PaintDeviceMetric", 0 }; override_arg_types[463] = s; }
-        { static const char* s[] = { 0, "const char*", "uint", 0 }; override_arg_types[464] = s; }
-        { static const char* s[] = { 0, "PageSize", 0 }; override_arg_types[465] = s; }
-        { static const char* s[] = { 0, "QSizeF", 0 }; override_arg_types[466] = s; }
-        { static const char* s[] = { 0, 0 }; override_arg_types[467] = s; }
-        { static const char* s[] = { 0, "int", "QVariant", "QSql::ParamType", 0 }; override_arg_types[468] = s; }
-        { static const char* s[] = { 0, "QString", "QVariant", "QSql::ParamType", 0 }; override_arg_types[469] = s; }
-        { static const char* s[] = { "bool", "int", 0 }; override_arg_types[470] = s; }
-        { static const char* s[] = { "bool", 0 }; override_arg_types[471] = s; }
-        { static const char* s[] = { "bool", 0 }; override_arg_types[472] = s; }
-        { static const char* s[] = { "bool", 0 }; override_arg_types[473] = s; }
-        { static const char* s[] = { "bool", 0 }; override_arg_types[474] = s; }
-        { static const char* s[] = { "bool", "int", 0 }; override_arg_types[475] = s; }
-        { static const char* s[] = { "QVariant", 0 }; override_arg_types[476] = s; }
-        { static const char* s[] = { "int", 0 }; override_arg_types[477] = s; }
-        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[478] = s; }
-        { static const char* s[] = { "QSqlRecord", 0 }; override_arg_types[479] = s; }
-        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[480] = s; }
-        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[481] = s; }
-        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[482] = s; }
-        { static const char* s[] = { 0, "int", 0 }; override_arg_types[483] = s; }
-        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[484] = s; }
-        { static const char* s[] = { 0, "QString", 0 }; override_arg_types[485] = s; }
-        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[486] = s; }
-        { static const char* s[] = { 0, "QVariant", "int", 0 }; override_arg_types[487] = s; }
-        { static const char* s[] = { "QList<QByteArray>", 0 }; override_arg_types[488] = s; }
-        { static const char* s[] = { "int", 0 }; override_arg_types[489] = s; }
-        { static const char* s[] = { "QByteArray", 0 }; override_arg_types[490] = s; }
-        { static const char* s[] = { "QByteArray", "QChar*", "int", "ConverterState*", 0 }; override_arg_types[491] = s; }
-        { static const char* s[] = { "QString", "const char*", "int", "ConverterState*", 0 }; override_arg_types[492] = s; }
-        { static const char* s[] = { "QVariant", "int", "int", 0 }; override_arg_types[493] = s; }
-        { static const char* s[] = { 0, "int", "int", "QVariant", 0 }; override_arg_types[494] = s; }
-        { static const char* s[] = { "int", 0 }; override_arg_types[495] = s; }
-        { static const char* s[] = { "bool", "QUndoCommand*", 0 }; override_arg_types[496] = s; }
-        { static const char* s[] = { 0, 0 }; override_arg_types[497] = s; }
-        { static const char* s[] = { 0, 0 }; override_arg_types[498] = s; }
+        { static const char* s[] = { 0, "int", "int", 0 }; override_arg_types[429] = s; }
+        { static const char* s[] = { 0, "int", "QString", 0 }; override_arg_types[430] = s; }
+        { static const char* s[] = { 0, "int", "int", "QString", 0 }; override_arg_types[431] = s; }
+        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[432] = s; }
+        { static const char* s[] = { "QColor", 0 }; override_arg_types[433] = s; }
+        { static const char* s[] = { "QAccessibleInterface*", "int", 0 }; override_arg_types[434] = s; }
+        { static const char* s[] = { "QAccessibleInterface*", "int", "int", 0 }; override_arg_types[435] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[436] = s; }
+        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[437] = s; }
+        { static const char* s[] = { "QColor", 0 }; override_arg_types[438] = s; }
+        { static const char* s[] = { "int", "QAccessibleInterface*", 0 }; override_arg_types[439] = s; }
+        { static const char* s[] = { "bool", 0 }; override_arg_types[440] = s; }
+        { static const char* s[] = { "QObject*", 0 }; override_arg_types[441] = s; }
+        { static const char* s[] = { "QAccessibleInterface*", 0 }; override_arg_types[442] = s; }
+        { static const char* s[] = { "QRect", 0 }; override_arg_types[443] = s; }
+        { static const char* s[] = { "QAccessible::Role", 0 }; override_arg_types[444] = s; }
+        { static const char* s[] = { 0, "QAccessible::Text", "QString", 0 }; override_arg_types[445] = s; }
+        { static const char* s[] = { "QString", "QAccessible::Text", 0 }; override_arg_types[446] = s; }
+        { static const char* s[] = { "QWindow*", 0 }; override_arg_types[447] = s; }
+        { static const char* s[] = { 0, "int", "int", 0 }; override_arg_types[448] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[449] = s; }
+        { static const char* s[] = { "QRect", "int", 0 }; override_arg_types[450] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[451] = s; }
+        { static const char* s[] = { "int", "QPoint", 0 }; override_arg_types[452] = s; }
+        { static const char* s[] = { 0, "int", 0 }; override_arg_types[453] = s; }
+        { static const char* s[] = { 0, "int", "int", 0 }; override_arg_types[454] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[455] = s; }
+        { static const char* s[] = { 0, "int", 0 }; override_arg_types[456] = s; }
+        { static const char* s[] = { 0, "int", "int", "int", 0 }; override_arg_types[457] = s; }
+        { static const char* s[] = { "QString", "int", "int", 0 }; override_arg_types[458] = s; }
+        { static const char* s[] = { "QVariant", 0 }; override_arg_types[459] = s; }
+        { static const char* s[] = { "QVariant", 0 }; override_arg_types[460] = s; }
+        { static const char* s[] = { "QVariant", 0 }; override_arg_types[461] = s; }
+        { static const char* s[] = { "QVariant", 0 }; override_arg_types[462] = s; }
+        { static const char* s[] = { 0, "QVariant", 0 }; override_arg_types[463] = s; }
+        { static const char* s[] = { "QStringList", 0 }; override_arg_types[464] = s; }
+        { static const char* s[] = { 0, "QString", 0 }; override_arg_types[465] = s; }
+        { static const char* s[] = { "QStringList", "QString", 0 }; override_arg_types[466] = s; }
+        { static const char* s[] = { "QIcon", "IconType", 0 }; override_arg_types[467] = s; }
+        { static const char* s[] = { "QIcon", "QFileInfo", 0 }; override_arg_types[468] = s; }
+        { static const char* s[] = { "QString", "QFileInfo", 0 }; override_arg_types[469] = s; }
+        { static const char* s[] = { 0, "int", 0 }; override_arg_types[470] = s; }
+        { static const char* s[] = { 0, "QEvent*", 0 }; override_arg_types[471] = s; }
+        { static const char* s[] = { "QByteArray", 0 }; override_arg_types[472] = s; }
+        { static const char* s[] = { "QWidget*", "int", "QWidget*", 0 }; override_arg_types[473] = s; }
+        { static const char* s[] = { "QByteArray", "int", 0 }; override_arg_types[474] = s; }
+        { static const char* s[] = { "QSpacerItem*", 0 }; override_arg_types[475] = s; }
+        { static const char* s[] = { "QWidget*", 0 }; override_arg_types[476] = s; }
+        { static const char* s[] = { "QListWidgetItem*", 0 }; override_arg_types[477] = s; }
+        { static const char* s[] = { "QVariant", "int", 0 }; override_arg_types[478] = s; }
+        { static const char* s[] = { 0, "int", "QVariant", 0 }; override_arg_types[479] = s; }
+        { static const char* s[] = { "QList<QNetworkProxy>", "QNetworkProxyQuery", 0 }; override_arg_types[480] = s; }
+        { static const char* s[] = { 0, 0 }; override_arg_types[481] = s; }
+        { static const char* s[] = { "int", "QPaintDevice::PaintDeviceMetric", 0 }; override_arg_types[482] = s; }
+        { static const char* s[] = { 0, "const char*", "uint", 0 }; override_arg_types[483] = s; }
+        { static const char* s[] = { 0, "PageSize", 0 }; override_arg_types[484] = s; }
+        { static const char* s[] = { 0, "QSizeF", 0 }; override_arg_types[485] = s; }
+        { static const char* s[] = { 0, 0 }; override_arg_types[486] = s; }
+        { static const char* s[] = { 0, "int", "QVariant", "QSql::ParamType", 0 }; override_arg_types[487] = s; }
+        { static const char* s[] = { 0, "QString", "QVariant", "QSql::ParamType", 0 }; override_arg_types[488] = s; }
+        { static const char* s[] = { "bool", "int", 0 }; override_arg_types[489] = s; }
+        { static const char* s[] = { "bool", 0 }; override_arg_types[490] = s; }
+        { static const char* s[] = { "bool", 0 }; override_arg_types[491] = s; }
+        { static const char* s[] = { "bool", 0 }; override_arg_types[492] = s; }
+        { static const char* s[] = { "bool", 0 }; override_arg_types[493] = s; }
+        { static const char* s[] = { "bool", "int", 0 }; override_arg_types[494] = s; }
+        { static const char* s[] = { "QVariant", 0 }; override_arg_types[495] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[496] = s; }
+        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[497] = s; }
+        { static const char* s[] = { "QSqlRecord", 0 }; override_arg_types[498] = s; }
+        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[499] = s; }
+        { static const char* s[] = { "bool", "QString", 0 }; override_arg_types[500] = s; }
+        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[501] = s; }
+        { static const char* s[] = { 0, "int", 0 }; override_arg_types[502] = s; }
+        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[503] = s; }
+        { static const char* s[] = { 0, "QString", 0 }; override_arg_types[504] = s; }
+        { static const char* s[] = { 0, "bool", 0 }; override_arg_types[505] = s; }
+        { static const char* s[] = { 0, "QVariant", "int", 0 }; override_arg_types[506] = s; }
+        { static const char* s[] = { "QList<QByteArray>", 0 }; override_arg_types[507] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[508] = s; }
+        { static const char* s[] = { "QByteArray", 0 }; override_arg_types[509] = s; }
+        { static const char* s[] = { "QByteArray", "QChar*", "int", "ConverterState*", 0 }; override_arg_types[510] = s; }
+        { static const char* s[] = { "QString", "const char*", "int", "ConverterState*", 0 }; override_arg_types[511] = s; }
+        { static const char* s[] = { "QVariant", "int", "int", 0 }; override_arg_types[512] = s; }
+        { static const char* s[] = { 0, "int", "int", "QVariant", 0 }; override_arg_types[513] = s; }
+        { static const char* s[] = { "int", 0 }; override_arg_types[514] = s; }
+        { static const char* s[] = { "bool", "QUndoCommand*", 0 }; override_arg_types[515] = s; }
+        { static const char* s[] = { 0, 0 }; override_arg_types[516] = s; }
+        { static const char* s[] = { 0, 0 }; override_arg_types[517] = s; }
         qNames = q_names.keys();
         nNames = n_names.keys(); }}
 
 quint64 LObjects::override_id(uint unique, int id) {
-    return (221 * (quint64)unique + id); }
+    return (243 * (quint64)unique + id); }
 
 void* LObjects::overrideFun(quint64 id) {
     return override_lisp_functions.value(id, 0); }
@@ -2301,68 +2420,73 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
             n = -LObjects::n_names.value(name, 0); }}
     const QMetaObject* m = 0;
     switch(n) {
-        case -221: m = &QWindowStateChangeEvent::staticMetaObject; break;
-        case -219: m = &QWheelEvent::staticMetaObject; break;
-        case -218: m = &QWhatsThisClickedEvent::staticMetaObject; break;
-        case -197: m = &QTouchEvent::staticMetaObject; break;
-        case -196: m = &QTouchDevice::staticMetaObject; break;
-        case -194: m = &QTimerEvent::staticMetaObject; break;
-        case -191: m = &QTextTableFormat::staticMetaObject; break;
-        case -190: m = &QTextTableCellFormat::staticMetaObject; break;
-        case -187: m = &QTextListFormat::staticMetaObject; break;
-        case -183: m = &QTextImageFormat::staticMetaObject; break;
-        case -182: m = &QTextFrameFormat::staticMetaObject; break;
-        case -180: m = &QTextFormat::staticMetaObject; break;
-        case -173: m = &QTextCharFormat::staticMetaObject; break;
-        case -170: m = &QTextBlockFormat::staticMetaObject; break;
-        case -168: m = &QTabletEvent::staticMetaObject; break;
-        case -159: m = &QStatusTipEvent::staticMetaObject; break;
-        case -142: m = &QSizePolicy::staticMetaObject; break;
-        case -141: m = &QShowEvent::staticMetaObject; break;
-        case -140: m = &QShortcutEvent::staticMetaObject; break;
-        case -137: m = &QResizeEvent::staticMetaObject; break;
-        case -131: m = &QRadialGradient::staticMetaObject; break;
-        case -121: m = &QPalette::staticMetaObject; break;
-        case -118: m = &QPainter::staticMetaObject; break;
-        case -117: m = &QPaintEvent::staticMetaObject; break;
-        case -102: m = &QMoveEvent::staticMetaObject; break;
-        case -101: m = &QMouseEvent::staticMetaObject; break;
-        case -92: m = &QLocale::staticMetaObject; break;
-        case -90: m = &QLinearGradient::staticMetaObject; break;
-        case -86: m = &QKeyEvent::staticMetaObject; break;
-        case -82: m = &QInputMethodEvent::staticMetaObject; break;
-        case -81: m = &QInputEvent::staticMetaObject; break;
-        case -78: m = &QIconDragEvent::staticMetaObject; break;
-        case -76: m = &QHoverEvent::staticMetaObject; break;
-        case -73: m = &QHideEvent::staticMetaObject; break;
-        case -71: m = &QHelpEvent::staticMetaObject; break;
-        case -68: m = &QGraphicsSceneWheelEvent::staticMetaObject; break;
-        case -67: m = &QGraphicsSceneResizeEvent::staticMetaObject; break;
-        case -66: m = &QGraphicsSceneMoveEvent::staticMetaObject; break;
-        case -65: m = &QGraphicsSceneMouseEvent::staticMetaObject; break;
-        case -64: m = &QGraphicsSceneHoverEvent::staticMetaObject; break;
-        case -63: m = &QGraphicsSceneHelpEvent::staticMetaObject; break;
-        case -62: m = &QGraphicsSceneEvent::staticMetaObject; break;
-        case -61: m = &QGraphicsSceneDragDropEvent::staticMetaObject; break;
-        case -60: m = &QGraphicsSceneContextMenuEvent::staticMetaObject; break;
-        case -46: m = &QGradient::staticMetaObject; break;
-        case -45: m = &QGestureEvent::staticMetaObject; break;
-        case -42: m = &QFontDatabase::staticMetaObject; break;
-        case -41: m = &QFont::staticMetaObject; break;
-        case -40: m = &QFocusEvent::staticMetaObject; break;
-        case -39: m = &QFileOpenEvent::staticMetaObject; break;
-        case -36: m = &QEvent::staticMetaObject; break;
-        case -35: m = &QEasingCurve::staticMetaObject; break;
-        case -34: m = &QDynamicPropertyChangeEvent::staticMetaObject; break;
-        case -33: m = &QDropEvent::staticMetaObject; break;
-        case -32: m = &QDragMoveEvent::staticMetaObject; break;
-        case -31: m = &QDragLeaveEvent::staticMetaObject; break;
-        case -30: m = &QDragEnterEvent::staticMetaObject; break;
-        case -22: m = &QContextMenuEvent::staticMetaObject; break;
-        case -21: m = &QConicalGradient::staticMetaObject; break;
-        case -19: m = &QCloseEvent::staticMetaObject; break;
-        case -18: m = &QChildEvent::staticMetaObject; break;
-        case -7: m = &QActionEvent::staticMetaObject; break;
+        case -244: m = &QWindowStateChangeEvent::staticMetaObject; break;
+        case -242: m = &QWheelEvent::staticMetaObject; break;
+        case -241: m = &QWhatsThisClickedEvent::staticMetaObject; break;
+        case -219: m = &QTouchEvent::staticMetaObject; break;
+        case -218: m = &QTouchDevice::staticMetaObject; break;
+        case -216: m = &QTimerEvent::staticMetaObject; break;
+        case -213: m = &QTextTableFormat::staticMetaObject; break;
+        case -212: m = &QTextTableCellFormat::staticMetaObject; break;
+        case -209: m = &QTextListFormat::staticMetaObject; break;
+        case -205: m = &QTextImageFormat::staticMetaObject; break;
+        case -204: m = &QTextFrameFormat::staticMetaObject; break;
+        case -202: m = &QTextFormat::staticMetaObject; break;
+        case -195: m = &QTextCharFormat::staticMetaObject; break;
+        case -192: m = &QTextBlockFormat::staticMetaObject; break;
+        case -190: m = &QTabletEvent::staticMetaObject; break;
+        case -179: m = &QStatusTipEvent::staticMetaObject; break;
+        case -162: m = &QSizePolicy::staticMetaObject; break;
+        case -161: m = &QShowEvent::staticMetaObject; break;
+        case -160: m = &QShortcutEvent::staticMetaObject; break;
+        case -158: m = &QScrollPrepareEvent::staticMetaObject; break;
+        case -157: m = &QScrollEvent::staticMetaObject; break;
+        case -155: m = &QResizeEvent::staticMetaObject; break;
+        case -151: m = &QRadialGradient::staticMetaObject; break;
+        case -141: m = &QPalette::staticMetaObject; break;
+        case -138: m = &QPainter::staticMetaObject; break;
+        case -137: m = &QPaintEvent::staticMetaObject; break;
+        case -120: m = &QMoveEvent::staticMetaObject; break;
+        case -119: m = &QMouseEvent::staticMetaObject; break;
+        case -109: m = &QLocale::staticMetaObject; break;
+        case -107: m = &QLinearGradient::staticMetaObject; break;
+        case -103: m = &QKeyEvent::staticMetaObject; break;
+        case -99: m = &QInputMethodQueryEvent::staticMetaObject; break;
+        case -98: m = &QInputMethodEvent::staticMetaObject; break;
+        case -97: m = &QInputEvent::staticMetaObject; break;
+        case -94: m = &QIconDragEvent::staticMetaObject; break;
+        case -92: m = &QHoverEvent::staticMetaObject; break;
+        case -89: m = &QHideEvent::staticMetaObject; break;
+        case -87: m = &QHelpEvent::staticMetaObject; break;
+        case -84: m = &QGraphicsSceneWheelEvent::staticMetaObject; break;
+        case -83: m = &QGraphicsSceneResizeEvent::staticMetaObject; break;
+        case -82: m = &QGraphicsSceneMoveEvent::staticMetaObject; break;
+        case -81: m = &QGraphicsSceneMouseEvent::staticMetaObject; break;
+        case -80: m = &QGraphicsSceneHoverEvent::staticMetaObject; break;
+        case -79: m = &QGraphicsSceneHelpEvent::staticMetaObject; break;
+        case -78: m = &QGraphicsSceneEvent::staticMetaObject; break;
+        case -77: m = &QGraphicsSceneDragDropEvent::staticMetaObject; break;
+        case -76: m = &QGraphicsSceneContextMenuEvent::staticMetaObject; break;
+        case -62: m = &QGradient::staticMetaObject; break;
+        case -61: m = &QGestureEvent::staticMetaObject; break;
+        case -57: m = &QFontDatabase::staticMetaObject; break;
+        case -56: m = &QFont::staticMetaObject; break;
+        case -55: m = &QFocusEvent::staticMetaObject; break;
+        case -54: m = &QFileOpenEvent::staticMetaObject; break;
+        case -51: m = &QExposeEvent::staticMetaObject; break;
+        case -49: m = &QEvent::staticMetaObject; break;
+        case -48: m = &QEnterEvent::staticMetaObject; break;
+        case -46: m = &QEasingCurve::staticMetaObject; break;
+        case -45: m = &QDynamicPropertyChangeEvent::staticMetaObject; break;
+        case -44: m = &QDropEvent::staticMetaObject; break;
+        case -43: m = &QDragMoveEvent::staticMetaObject; break;
+        case -42: m = &QDragLeaveEvent::staticMetaObject; break;
+        case -41: m = &QDragEnterEvent::staticMetaObject; break;
+        case -33: m = &QContextMenuEvent::staticMetaObject; break;
+        case -32: m = &QConicalGradient::staticMetaObject; break;
+        case -30: m = &QCloseEvent::staticMetaObject; break;
+        case -29: m = &QChildEvent::staticMetaObject; break;
+        case -17: m = &QActionEvent::staticMetaObject; break;
         case 1: m = &QAbstractAnimation::staticMetaObject; break;
         case 2: m = &QAbstractButton::staticMetaObject; break;
         case 3: m = &QAbstractItemDelegate::staticMetaObject; break;
@@ -2413,149 +2537,153 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 59: m = &QFile::staticMetaObject; break;
         case 60: m = &QFileDevice::staticMetaObject; break;
         case 61: m = &QFileDialog::staticMetaObject; break;
-        case 62: m = &QFileSystemModel::staticMetaObject; break;
-        case 63: m = &QFileSystemWatcher::staticMetaObject; break;
-        case 64: m = &QFinalState::staticMetaObject; break;
-        case 65: m = &QFocusFrame::staticMetaObject; break;
-        case 66: m = &QFontComboBox::staticMetaObject; break;
-        case 67: m = &QFontDialog::staticMetaObject; break;
-        case 68: m = &QFormLayout::staticMetaObject; break;
-        case 69: m = &QFrame::staticMetaObject; break;
-        case 70: m = &QGesture::staticMetaObject; break;
-        case 71: m = &QGraphicsAnchor::staticMetaObject; break;
-        case 72: m = &QGraphicsBlurEffect::staticMetaObject; break;
-        case 73: m = &QGraphicsColorizeEffect::staticMetaObject; break;
-        case 74: m = &QGraphicsDropShadowEffect::staticMetaObject; break;
-        case 75: m = &QGraphicsEffect::staticMetaObject; break;
-        case 76: m = &QGraphicsObject::staticMetaObject; break;
-        case 77: m = &QGraphicsOpacityEffect::staticMetaObject; break;
-        case 78: m = &QGraphicsProxyWidget::staticMetaObject; break;
-        case 79: m = &QGraphicsRotation::staticMetaObject; break;
-        case 80: m = &QGraphicsScale::staticMetaObject; break;
-        case 81: m = &QGraphicsScene::staticMetaObject; break;
-        case 83: m = &QGraphicsTextItem::staticMetaObject; break;
-        case 84: m = &QGraphicsTransform::staticMetaObject; break;
-        case 86: m = &QGraphicsView::staticMetaObject; break;
-        case 88: m = &QGraphicsWidget::staticMetaObject; break;
-        case 89: m = &QGridLayout::staticMetaObject; break;
-        case 90: m = &QGroupBox::staticMetaObject; break;
-        case 91: m = &QGuiApplication::staticMetaObject; break;
-        case 92: m = &QHBoxLayout::staticMetaObject; break;
-        case 93: m = &QHeaderView::staticMetaObject; break;
-        case 102: m = &QHistoryState::staticMetaObject; break;
-        case 103: m = &QIODevice::staticMetaObject; break;
-        case 104: m = &QIdentityProxyModel::staticMetaObject; break;
-        case 105: m = &QInputDialog::staticMetaObject; break;
-        case 106: m = &QIntValidator::staticMetaObject; break;
-        case 107: m = &QItemDelegate::staticMetaObject; break;
-        case 108: m = &QItemSelectionModel::staticMetaObject; break;
-        case 109: m = &QKeyEventTransition::staticMetaObject; break;
-        case 110: m = &QLCDNumber::staticMetaObject; break;
-        case 111: m = &QLabel::staticMetaObject; break;
-        case 112: m = &QLayout::staticMetaObject; break;
-        case 113: m = &QLibrary::staticMetaObject; break;
-        case 114: m = &QLineEdit::staticMetaObject; break;
-        case 115: m = &QListView::staticMetaObject; break;
-        case 116: m = &QListWidget::staticMetaObject; break;
-        case 119: m = &QMainWindow::staticMetaObject; break;
-        case 120: m = &QMdiArea::staticMetaObject; break;
-        case 121: m = &QMdiSubWindow::staticMetaObject; break;
-        case 127: m = &QMenu::staticMetaObject; break;
-        case 128: m = &QMenuBar::staticMetaObject; break;
-        case 129: m = &QMessageBox::staticMetaObject; break;
-        case 130: m = &QMimeData::staticMetaObject; break;
-        case 131: m = &QMouseEventTransition::staticMetaObject; break;
-        case 132: m = &QMovie::staticMetaObject; break;
-        case 137: m = &QObject::staticMetaObject; break;
-        case 138: m = &QOpenGLContext::staticMetaObject; break;
-        case 139: m = &QOpenGLShader::staticMetaObject; break;
-        case 140: m = &QOpenGLShaderProgram::staticMetaObject; break;
-        case 141: m = &QOpenGLWidget::staticMetaObject; break;
-        case 142: m = &QOpenGLWindow::staticMetaObject; break;
-        case 143: m = &QPageSetupDialog::staticMetaObject; break;
-        case 144: m = &QPaintDeviceWindow::staticMetaObject; break;
-        case 145: m = &QPanGesture::staticMetaObject; break;
-        case 146: m = &QParallelAnimationGroup::staticMetaObject; break;
-        case 147: m = &QPauseAnimation::staticMetaObject; break;
-        case 148: m = &QPdfWriter::staticMetaObject; break;
-        case 149: m = &QPinchGesture::staticMetaObject; break;
-        case 150: m = &QPlainTextDocumentLayout::staticMetaObject; break;
-        case 151: m = &QPlainTextEdit::staticMetaObject; break;
-        case 152: m = &QPluginLoader::staticMetaObject; break;
-        case 153: m = &QPrintDialog::staticMetaObject; break;
-        case 154: m = &QPrintPreviewDialog::staticMetaObject; break;
-        case 155: m = &QPrintPreviewWidget::staticMetaObject; break;
-        case 156: m = &QProcess::staticMetaObject; break;
-        case 157: m = &QProgressBar::staticMetaObject; break;
-        case 158: m = &QProgressDialog::staticMetaObject; break;
-        case 159: m = &QPropertyAnimation::staticMetaObject; break;
-        case 160: m = &QProxyStyle::staticMetaObject; break;
-        case 161: m = &QPushButton::staticMetaObject; break;
-        case 162: m = &QRadioButton::staticMetaObject; break;
-        case 164: m = &QRegExpValidator::staticMetaObject; break;
-        case 165: m = &QRubberBand::staticMetaObject; break;
-        case 166: m = &QScreen::staticMetaObject; break;
-        case 167: m = &QScrollArea::staticMetaObject; break;
-        case 168: m = &QScrollBar::staticMetaObject; break;
-        case 169: m = &QSequentialAnimationGroup::staticMetaObject; break;
-        case 170: m = &QSessionManager::staticMetaObject; break;
-        case 171: m = &QSettings::staticMetaObject; break;
-        case 172: m = &QShortcut::staticMetaObject; break;
-        case 173: m = &QSignalTransition::staticMetaObject; break;
-        case 174: m = &QSizeGrip::staticMetaObject; break;
-        case 175: m = &QSlider::staticMetaObject; break;
-        case 176: m = &QSortFilterProxyModel::staticMetaObject; break;
-        case 177: m = &QSpinBox::staticMetaObject; break;
-        case 178: m = &QSplashScreen::staticMetaObject; break;
-        case 179: m = &QSplitter::staticMetaObject; break;
-        case 180: m = &QSplitterHandle::staticMetaObject; break;
-        case 186: m = &QStackedLayout::staticMetaObject; break;
-        case 187: m = &QStackedWidget::staticMetaObject; break;
-        case 188: m = &QStandardItemModel::staticMetaObject; break;
-        case 189: m = &QState::staticMetaObject; break;
-        case 190: m = &QStateMachine::staticMetaObject; break;
-        case 191: m = &QStatusBar::staticMetaObject; break;
-        case 192: m = &QStringListModel::staticMetaObject; break;
-        case 193: m = &QStyle::staticMetaObject; break;
-        case 194: m = &QStyledItemDelegate::staticMetaObject; break;
-        case 197: m = &QSwipeGesture::staticMetaObject; break;
-        case 198: m = &QSyntaxHighlighter::staticMetaObject; break;
-        case 199: m = &QSystemTrayIcon::staticMetaObject; break;
-        case 200: m = &QTabBar::staticMetaObject; break;
-        case 201: m = &QTabWidget::staticMetaObject; break;
-        case 202: m = &QTableView::staticMetaObject; break;
-        case 203: m = &QTableWidget::staticMetaObject; break;
-        case 204: m = &QTapAndHoldGesture::staticMetaObject; break;
-        case 205: m = &QTapGesture::staticMetaObject; break;
-        case 208: m = &QTextBlockGroup::staticMetaObject; break;
-        case 209: m = &QTextBrowser::staticMetaObject; break;
-        case 210: m = &QTextDocument::staticMetaObject; break;
-        case 211: m = &QTextEdit::staticMetaObject; break;
-        case 212: m = &QTextFrame::staticMetaObject; break;
-        case 213: m = &QTextList::staticMetaObject; break;
-        case 214: m = &QTextObject::staticMetaObject; break;
-        case 215: m = &QTextTable::staticMetaObject; break;
-        case 216: m = &QTimeEdit::staticMetaObject; break;
-        case 217: m = &QTimeLine::staticMetaObject; break;
-        case 218: m = &QTimer::staticMetaObject; break;
-        case 219: m = &QToolBar::staticMetaObject; break;
-        case 220: m = &QToolBox::staticMetaObject; break;
-        case 221: m = &QToolButton::staticMetaObject; break;
-        case 222: m = &QTranslator::staticMetaObject; break;
-        case 223: m = &QTreeView::staticMetaObject; break;
-        case 224: m = &QTreeWidget::staticMetaObject; break;
-        case 226: m = &QUndoGroup::staticMetaObject; break;
-        case 227: m = &QUndoStack::staticMetaObject; break;
-        case 228: m = &QUndoView::staticMetaObject; break;
-        case 229: m = &QVBoxLayout::staticMetaObject; break;
-        case 230: m = &QValidator::staticMetaObject; break;
-        case 231: m = &QVariantAnimation::staticMetaObject; break;
-        case 240: m = &QWidget::staticMetaObject; break;
-        case 241: m = &QWidgetAction::staticMetaObject; break;
-        case 242: m = &QWindow::staticMetaObject; break;
-        case 243: m = &QWizard::staticMetaObject; break;
-        case 244: m = &QWizardPage::staticMetaObject; break;
-        case 94:
+        case 62: m = &QFileSelector::staticMetaObject; break;
+        case 63: m = &QFileSystemModel::staticMetaObject; break;
+        case 64: m = &QFileSystemWatcher::staticMetaObject; break;
+        case 65: m = &QFinalState::staticMetaObject; break;
+        case 66: m = &QFocusFrame::staticMetaObject; break;
+        case 67: m = &QFontComboBox::staticMetaObject; break;
+        case 68: m = &QFontDialog::staticMetaObject; break;
+        case 69: m = &QFormLayout::staticMetaObject; break;
+        case 70: m = &QFrame::staticMetaObject; break;
+        case 71: m = &QGesture::staticMetaObject; break;
+        case 72: m = &QGraphicsAnchor::staticMetaObject; break;
+        case 73: m = &QGraphicsBlurEffect::staticMetaObject; break;
+        case 74: m = &QGraphicsColorizeEffect::staticMetaObject; break;
+        case 75: m = &QGraphicsDropShadowEffect::staticMetaObject; break;
+        case 76: m = &QGraphicsEffect::staticMetaObject; break;
+        case 77: m = &QGraphicsObject::staticMetaObject; break;
+        case 78: m = &QGraphicsOpacityEffect::staticMetaObject; break;
+        case 79: m = &QGraphicsProxyWidget::staticMetaObject; break;
+        case 80: m = &QGraphicsRotation::staticMetaObject; break;
+        case 81: m = &QGraphicsScale::staticMetaObject; break;
+        case 82: m = &QGraphicsScene::staticMetaObject; break;
+        case 84: m = &QGraphicsTextItem::staticMetaObject; break;
+        case 85: m = &QGraphicsTransform::staticMetaObject; break;
+        case 87: m = &QGraphicsView::staticMetaObject; break;
+        case 89: m = &QGraphicsWidget::staticMetaObject; break;
+        case 90: m = &QGridLayout::staticMetaObject; break;
+        case 91: m = &QGroupBox::staticMetaObject; break;
+        case 92: m = &QGuiApplication::staticMetaObject; break;
+        case 93: m = &QHBoxLayout::staticMetaObject; break;
+        case 94: m = &QHeaderView::staticMetaObject; break;
+        case 103: m = &QHistoryState::staticMetaObject; break;
+        case 104: m = &QIODevice::staticMetaObject; break;
+        case 105: m = &QIdentityProxyModel::staticMetaObject; break;
+        case 106: m = &QInputDialog::staticMetaObject; break;
+        case 107: m = &QInputMethod::staticMetaObject; break;
+        case 108: m = &QIntValidator::staticMetaObject; break;
+        case 109: m = &QItemDelegate::staticMetaObject; break;
+        case 110: m = &QItemSelectionModel::staticMetaObject; break;
+        case 111: m = &QKeyEventTransition::staticMetaObject; break;
+        case 112: m = &QLCDNumber::staticMetaObject; break;
+        case 113: m = &QLabel::staticMetaObject; break;
+        case 114: m = &QLayout::staticMetaObject; break;
+        case 115: m = &QLibrary::staticMetaObject; break;
+        case 116: m = &QLineEdit::staticMetaObject; break;
+        case 117: m = &QListView::staticMetaObject; break;
+        case 118: m = &QListWidget::staticMetaObject; break;
+        case 121: m = &QMainWindow::staticMetaObject; break;
+        case 122: m = &QMdiArea::staticMetaObject; break;
+        case 123: m = &QMdiSubWindow::staticMetaObject; break;
+        case 129: m = &QMenu::staticMetaObject; break;
+        case 130: m = &QMenuBar::staticMetaObject; break;
+        case 131: m = &QMessageBox::staticMetaObject; break;
+        case 132: m = &QMimeData::staticMetaObject; break;
+        case 133: m = &QMouseEventTransition::staticMetaObject; break;
+        case 134: m = &QMovie::staticMetaObject; break;
+        case 139: m = &QObject::staticMetaObject; break;
+        case 140: m = &QObjectCleanupHandler::staticMetaObject; break;
+        case 141: m = &QOpenGLContext::staticMetaObject; break;
+        case 142: m = &QOpenGLShader::staticMetaObject; break;
+        case 143: m = &QOpenGLShaderProgram::staticMetaObject; break;
+        case 144: m = &QOpenGLWidget::staticMetaObject; break;
+        case 145: m = &QOpenGLWindow::staticMetaObject; break;
+        case 146: m = &QPageSetupDialog::staticMetaObject; break;
+        case 147: m = &QPaintDeviceWindow::staticMetaObject; break;
+        case 148: m = &QPanGesture::staticMetaObject; break;
+        case 149: m = &QParallelAnimationGroup::staticMetaObject; break;
+        case 150: m = &QPauseAnimation::staticMetaObject; break;
+        case 151: m = &QPdfWriter::staticMetaObject; break;
+        case 152: m = &QPinchGesture::staticMetaObject; break;
+        case 153: m = &QPlainTextDocumentLayout::staticMetaObject; break;
+        case 154: m = &QPlainTextEdit::staticMetaObject; break;
+        case 155: m = &QPluginLoader::staticMetaObject; break;
+        case 156: m = &QPrintDialog::staticMetaObject; break;
+        case 157: m = &QPrintPreviewDialog::staticMetaObject; break;
+        case 158: m = &QPrintPreviewWidget::staticMetaObject; break;
+        case 159: m = &QProcess::staticMetaObject; break;
+        case 160: m = &QProgressBar::staticMetaObject; break;
+        case 161: m = &QProgressDialog::staticMetaObject; break;
+        case 162: m = &QPropertyAnimation::staticMetaObject; break;
+        case 163: m = &QProxyStyle::staticMetaObject; break;
+        case 164: m = &QPushButton::staticMetaObject; break;
+        case 165: m = &QRadioButton::staticMetaObject; break;
+        case 167: m = &QRegExpValidator::staticMetaObject; break;
+        case 168: m = &QRubberBand::staticMetaObject; break;
+        case 169: m = &QScreen::staticMetaObject; break;
+        case 170: m = &QScrollArea::staticMetaObject; break;
+        case 171: m = &QScrollBar::staticMetaObject; break;
+        case 172: m = &QSequentialAnimationGroup::staticMetaObject; break;
+        case 173: m = &QSessionManager::staticMetaObject; break;
+        case 174: m = &QSettings::staticMetaObject; break;
+        case 175: m = &QShortcut::staticMetaObject; break;
+        case 176: m = &QSignalMapper::staticMetaObject; break;
+        case 177: m = &QSignalTransition::staticMetaObject; break;
+        case 178: m = &QSizeGrip::staticMetaObject; break;
+        case 179: m = &QSlider::staticMetaObject; break;
+        case 180: m = &QSortFilterProxyModel::staticMetaObject; break;
+        case 181: m = &QSpinBox::staticMetaObject; break;
+        case 182: m = &QSplashScreen::staticMetaObject; break;
+        case 183: m = &QSplitter::staticMetaObject; break;
+        case 184: m = &QSplitterHandle::staticMetaObject; break;
+        case 190: m = &QStackedLayout::staticMetaObject; break;
+        case 191: m = &QStackedWidget::staticMetaObject; break;
+        case 192: m = &QStandardItemModel::staticMetaObject; break;
+        case 193: m = &QState::staticMetaObject; break;
+        case 194: m = &QStateMachine::staticMetaObject; break;
+        case 195: m = &QStatusBar::staticMetaObject; break;
+        case 196: m = &QStringListModel::staticMetaObject; break;
+        case 197: m = &QStyle::staticMetaObject; break;
+        case 198: m = &QStyleHints::staticMetaObject; break;
+        case 199: m = &QStyledItemDelegate::staticMetaObject; break;
+        case 202: m = &QSwipeGesture::staticMetaObject; break;
+        case 203: m = &QSyntaxHighlighter::staticMetaObject; break;
+        case 204: m = &QSystemTrayIcon::staticMetaObject; break;
+        case 205: m = &QTabBar::staticMetaObject; break;
+        case 206: m = &QTabWidget::staticMetaObject; break;
+        case 207: m = &QTableView::staticMetaObject; break;
+        case 208: m = &QTableWidget::staticMetaObject; break;
+        case 209: m = &QTapAndHoldGesture::staticMetaObject; break;
+        case 210: m = &QTapGesture::staticMetaObject; break;
+        case 213: m = &QTextBlockGroup::staticMetaObject; break;
+        case 214: m = &QTextBrowser::staticMetaObject; break;
+        case 215: m = &QTextDocument::staticMetaObject; break;
+        case 216: m = &QTextEdit::staticMetaObject; break;
+        case 217: m = &QTextFrame::staticMetaObject; break;
+        case 218: m = &QTextList::staticMetaObject; break;
+        case 219: m = &QTextObject::staticMetaObject; break;
+        case 220: m = &QTextTable::staticMetaObject; break;
+        case 221: m = &QTimeEdit::staticMetaObject; break;
+        case 222: m = &QTimeLine::staticMetaObject; break;
+        case 223: m = &QTimer::staticMetaObject; break;
+        case 224: m = &QToolBar::staticMetaObject; break;
+        case 225: m = &QToolBox::staticMetaObject; break;
+        case 226: m = &QToolButton::staticMetaObject; break;
+        case 227: m = &QTranslator::staticMetaObject; break;
+        case 228: m = &QTreeView::staticMetaObject; break;
+        case 229: m = &QTreeWidget::staticMetaObject; break;
+        case 231: m = &QUndoGroup::staticMetaObject; break;
+        case 232: m = &QUndoStack::staticMetaObject; break;
+        case 233: m = &QUndoView::staticMetaObject; break;
+        case 234: m = &QVBoxLayout::staticMetaObject; break;
+        case 235: m = &QValidator::staticMetaObject; break;
+        case 236: m = &QVariantAnimation::staticMetaObject; break;
+        case 245: m = &QWidget::staticMetaObject; break;
+        case 246: m = &QWidgetAction::staticMetaObject; break;
+        case 247: m = &QWindow::staticMetaObject; break;
+        case 248: m = &QWizard::staticMetaObject; break;
+        case 249: m = &QWizardPage::staticMetaObject; break;
         case 95:
         case 96:
         case 97:
@@ -2563,6 +2691,7 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 99:
         case 100:
         case 101:
+        case 102:
             if(staticMetaObject_help) {
                 m = staticMetaObject_help(n); }
             break;
@@ -2575,53 +2704,53 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 32:
         case 33:
         case 34:
-        case 85:
-        case 122:
-        case 123:
+        case 86:
         case 124:
         case 125:
         case 126:
-        case 163:
-        case 232:
-        case 233:
+        case 127:
+        case 128:
+        case 166:
+        case 237:
+        case 238:
             if(staticMetaObject_multimedia) {
                 m = staticMetaObject_multimedia(n); }
             break;
         case 7:
         case 12:
-        case 117:
-        case 118:
-        case 133:
-        case 134:
+        case 119:
+        case 120:
         case 135:
         case 136:
-        case 206:
-        case 207:
-        case 225:
+        case 137:
+        case 138:
+        case 211:
+        case 212:
+        case 230:
             if(staticMetaObject_network) {
                 m = staticMetaObject_network(n); }
             break;
-        case 181:
-        case 182:
-        case 183:
-        case 184:
         case 185:
+        case 186:
+        case 187:
+        case 188:
+        case 189:
             if(staticMetaObject_sql) {
                 m = staticMetaObject_sql(n); }
             break;
-        case 82:
-        case 195:
-        case 196:
+        case 83:
+        case 200:
+        case 201:
             if(staticMetaObject_svg) {
                 m = staticMetaObject_svg(n); }
             break;
-        case 87:
-        case 234:
-        case 235:
-        case 236:
-        case 237:
-        case 238:
+        case 88:
         case 239:
+        case 240:
+        case 241:
+        case 242:
+        case 243:
+        case 244:
             if(staticMetaObject_webkit) {
                 m = staticMetaObject_webkit(n); }
             break; }
@@ -2631,233 +2760,256 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
     switch(n) {
         case 1: if(gc) delete (QAbstractGraphicsShapeItem*)p; else delete (LAbstractGraphicsShapeItem*)p; break;
         case 2: if(gc) delete (QAccessible*)p; else delete (LAccessible*)p; break;
-        case 3: if(gc) delete (QAccessibleEvent*)p; else delete (LAccessibleEvent*)p; break;
-        case 6: if(gc) /* nothing */; else delete (LAccessibleWidget*)p; break;
-        case 7: if(gc) delete (QActionEvent*)p; else delete (LActionEvent*)p; break;
-        case 12: if(gc) delete (QBasicTimer*)p; else delete (LBasicTimer*)p; break;
-        case 13: if(gc) delete (QBitArray*)p; else delete (LBitArray*)p; break;
-        case 14: if(gc) delete (QBitmap*)p; else delete (LBitmap*)p; break;
-        case 15: if(gc) delete (QBrush*)p; else delete (LBrush*)p; break;
-        case 18: if(gc) delete (QChildEvent*)p; else delete (LChildEvent*)p; break;
-        case 19: if(gc) delete (QCloseEvent*)p; else delete (LCloseEvent*)p; break;
-        case 20: if(gc) delete (QColor*)p; else delete (LColor*)p; break;
-        case 21: if(gc) delete (QConicalGradient*)p; else delete (LConicalGradient*)p; break;
-        case 22: if(gc) delete (QContextMenuEvent*)p; else delete (LContextMenuEvent*)p; break;
-        case 23: if(gc) delete (QCryptographicHash*)p; else delete (LCryptographicHash*)p; break;
-        case 24: if(gc) delete (QCursor*)p; else delete (LCursor*)p; break;
-        case 25: if(gc) delete (QDate*)p; else delete (LDate*)p; break;
-        case 26: if(gc) delete (QDateTime*)p; else delete (LDateTime*)p; break;
-        case 28: if(gc) delete (QDir*)p; else delete (LDir*)p; break;
-        case 29: if(gc) delete (QDirIterator*)p; else delete (LDirIterator*)p; break;
-        case 30: if(gc) delete (QDragEnterEvent*)p; else delete (LDragEnterEvent*)p; break;
-        case 31: if(gc) delete (QDragLeaveEvent*)p; else delete (LDragLeaveEvent*)p; break;
-        case 32: if(gc) delete (QDragMoveEvent*)p; else delete (LDragMoveEvent*)p; break;
-        case 33: if(gc) delete (QDropEvent*)p; else delete (LDropEvent*)p; break;
-        case 34: if(gc) delete (QDynamicPropertyChangeEvent*)p; else delete (LDynamicPropertyChangeEvent*)p; break;
-        case 35: if(gc) delete (QEasingCurve*)p; else delete (LEasingCurve*)p; break;
-        case 36: if(gc) delete (QEvent*)p; else delete (LEvent*)p; break;
-        case 37: if(gc) delete (QFileIconProvider*)p; else delete (LFileIconProvider*)p; break;
-        case 38: if(gc) delete (QFileInfo*)p; else delete (LFileInfo*)p; break;
-        case 39: if(gc) delete (QFileOpenEvent*)p; else delete (LFileOpenEvent*)p; break;
-        case 40: if(gc) delete (QFocusEvent*)p; else delete (LFocusEvent*)p; break;
-        case 41: if(gc) delete (QFont*)p; else delete (LFont*)p; break;
-        case 42: if(gc) delete (QFontDatabase*)p; else delete (LFontDatabase*)p; break;
-        case 43: if(gc) delete (QFontInfo*)p; else delete (LFontInfo*)p; break;
-        case 44: if(gc) delete (QFontMetrics*)p; else delete (LFontMetrics*)p; break;
-        case 45: if(gc) delete (QGestureEvent*)p; else delete (LGestureEvent*)p; break;
-        case 46: if(gc) delete (QGradient*)p; else delete (LGradient*)p; break;
-        case 47: if(gc) delete (QGraphicsAnchorLayout*)p; else delete (LGraphicsAnchorLayout*)p; break;
-        case 48: if(gc) delete (QGraphicsEllipseItem*)p; else delete (LGraphicsEllipseItem*)p; break;
-        case 49: if(gc) delete (QGraphicsGridLayout*)p; else delete (LGraphicsGridLayout*)p; break;
-        case 50: if(gc) delete (QGraphicsItem*)p; else delete (LGraphicsItem*)p; break;
-        case 51: if(gc) delete (QGraphicsItemGroup*)p; else delete (LGraphicsItemGroup*)p; break;
-        case 52: if(gc) delete (QGraphicsLayout*)p; else delete (LGraphicsLayout*)p; break;
-        case 53: if(gc) delete (QGraphicsLayoutItem*)p; else delete (LGraphicsLayoutItem*)p; break;
-        case 54: if(gc) delete (QGraphicsLineItem*)p; else delete (LGraphicsLineItem*)p; break;
-        case 55: if(gc) delete (QGraphicsLinearLayout*)p; else delete (LGraphicsLinearLayout*)p; break;
-        case 56: if(gc) delete (QGraphicsPathItem*)p; else delete (LGraphicsPathItem*)p; break;
-        case 57: if(gc) delete (QGraphicsPixmapItem*)p; else delete (LGraphicsPixmapItem*)p; break;
-        case 58: if(gc) delete (QGraphicsPolygonItem*)p; else delete (LGraphicsPolygonItem*)p; break;
-        case 59: if(gc) delete (QGraphicsRectItem*)p; else delete (LGraphicsRectItem*)p; break;
-        case 60: if(gc) delete (QGraphicsSceneContextMenuEvent*)p; else delete (LGraphicsSceneContextMenuEvent*)p; break;
-        case 61: if(gc) delete (QGraphicsSceneDragDropEvent*)p; else delete (LGraphicsSceneDragDropEvent*)p; break;
-        case 62: if(gc) delete (QGraphicsSceneEvent*)p; else delete (LGraphicsSceneEvent*)p; break;
-        case 63: if(gc) delete (QGraphicsSceneHelpEvent*)p; else delete (LGraphicsSceneHelpEvent*)p; break;
-        case 64: if(gc) delete (QGraphicsSceneHoverEvent*)p; else delete (LGraphicsSceneHoverEvent*)p; break;
-        case 65: if(gc) delete (QGraphicsSceneMouseEvent*)p; else delete (LGraphicsSceneMouseEvent*)p; break;
-        case 66: if(gc) delete (QGraphicsSceneMoveEvent*)p; else delete (LGraphicsSceneMoveEvent*)p; break;
-        case 67: if(gc) delete (QGraphicsSceneResizeEvent*)p; else delete (LGraphicsSceneResizeEvent*)p; break;
-        case 68: if(gc) delete (QGraphicsSceneWheelEvent*)p; else delete (LGraphicsSceneWheelEvent*)p; break;
-        case 69: if(gc) delete (QGraphicsSimpleTextItem*)p; else delete (LGraphicsSimpleTextItem*)p; break;
-        case 71: if(gc) delete (QHelpEvent*)p; else delete (LHelpEvent*)p; break;
-        case 73: if(gc) delete (QHideEvent*)p; else delete (LHideEvent*)p; break;
-        case 76: if(gc) delete (QHoverEvent*)p; else delete (LHoverEvent*)p; break;
-        case 77: if(gc) delete (QIcon*)p; else delete (LIcon*)p; break;
-        case 78: if(gc) delete (QIconDragEvent*)p; else delete (LIconDragEvent*)p; break;
-        case 79: if(gc) delete (QImage*)p; else delete (LImage*)p; break;
-        case 81: if(gc) delete (QInputEvent*)p; else delete (LInputEvent*)p; break;
-        case 82: if(gc) delete (QInputMethodEvent*)p; else delete (LInputMethodEvent*)p; break;
-        case 83: if(gc) delete (QItemEditorCreatorBase*)p; else delete (LItemEditorCreatorBase*)p; break;
-        case 84: if(gc) delete (QItemEditorFactory*)p; else delete (LItemEditorFactory*)p; break;
-        case 85: if(gc) delete (QItemSelectionRange*)p; else delete (LItemSelectionRange*)p; break;
-        case 86: if(gc) delete (QKeyEvent*)p; else delete (LKeyEvent*)p; break;
-        case 87: if(gc) delete (QKeySequence*)p; else delete (LKeySequence*)p; break;
-        case 88: if(gc) delete (QLayoutItem*)p; else delete (LLayoutItem*)p; break;
-        case 89: if(gc) delete (QLibraryInfo*)p; else delete (LLibraryInfo*)p; break;
-        case 90: if(gc) delete (QLinearGradient*)p; else delete (LLinearGradient*)p; break;
-        case 91: if(gc) delete (QListWidgetItem*)p; else delete (LListWidgetItem*)p; break;
-        case 92: if(gc) delete (QLocale*)p; else delete (LLocale*)p; break;
-        case 93: if(gc) delete (QMargins*)p; else delete (LMargins*)p; break;
-        case 94: if(gc) delete (QMarginsF*)p; else delete (LMarginsF*)p; break;
-        case 95: if(gc) delete (QMatrix*)p; else delete (LMatrix*)p; break;
-        case 96: if(gc) delete (QMatrix4x4*)p; else delete (LMatrix4x4*)p; break;
-        case 99: if(gc) delete (QMetaObject*)p; else delete (LMetaObject*)p; break;
-        case 100: if(gc) delete (QModelIndex*)p; else delete (LModelIndex*)p; break;
-        case 101: if(gc) delete (QMouseEvent*)p; else delete (LMouseEvent*)p; break;
-        case 102: if(gc) delete (QMoveEvent*)p; else delete (LMoveEvent*)p; break;
-        case 111: if(gc) delete (QOpenGLPaintDevice*)p; else delete (LOpenGLPaintDevice*)p; break;
-        case 112: if(gc) delete (QOpenGLTexture*)p; else delete (LOpenGLTexture*)p; break;
-        case 113: if(gc) delete (QPageLayout*)p; else delete (LPageLayout*)p; break;
-        case 114: if(gc) delete (QPageSize*)p; else delete (LPageSize*)p; break;
-        case 117: if(gc) delete (QPaintEvent*)p; else delete (LPaintEvent*)p; break;
-        case 118: if(gc) delete (QPainter*)p; else delete (LPainter*)p; break;
-        case 119: if(gc) delete (QPainterPath*)p; else delete (LPainterPath*)p; break;
-        case 120: if(gc) delete (QPainterPathStroker*)p; else delete (LPainterPathStroker*)p; break;
-        case 121: if(gc) delete (QPalette*)p; else delete (LPalette*)p; break;
-        case 122: if(gc) delete (QPen*)p; else delete (LPen*)p; break;
-        case 123: if(gc) delete (QPersistentModelIndex*)p; else delete (LPersistentModelIndex*)p; break;
-        case 124: if(gc) delete (QPicture*)p; else delete (LPicture*)p; break;
-        case 125: if(gc) delete (QPixmap*)p; else delete (LPixmap*)p; break;
-        case 126: if(gc) delete (QPixmapCache*)p; else delete (LPixmapCache*)p; break;
-        case 127: if(gc) delete (QPrinter*)p; else delete (LPrinter*)p; break;
-        case 128: if(gc) delete (QPrinterInfo*)p; else delete (LPrinterInfo*)p; break;
-        case 129: if(gc) delete (QProcessEnvironment*)p; else delete (LProcessEnvironment*)p; break;
-        case 130: if(gc) delete (QQuaternion*)p; else delete (LQuaternion*)p; break;
-        case 131: if(gc) delete (QRadialGradient*)p; else delete (LRadialGradient*)p; break;
-        case 132: if(gc) delete (QReadLocker*)p; else delete (LReadLocker*)p; break;
-        case 133: if(gc) delete (QReadWriteLock*)p; else delete (LReadWriteLock*)p; break;
-        case 134: if(gc) delete (QRegExp*)p; else delete (LRegExp*)p; break;
-        case 135: if(gc) delete (QRegion*)p; else delete (LRegion*)p; break;
-        case 136: if(gc) delete (QRegularExpression*)p; else delete (LRegularExpression*)p; break;
-        case 137: if(gc) delete (QResizeEvent*)p; else delete (LResizeEvent*)p; break;
-        case 138: if(gc) delete (QRunnable*)p; else delete (LRunnable*)p; break;
-        case 139: if(gc) delete (QSemaphore*)p; else delete (LSemaphore*)p; break;
-        case 140: if(gc) delete (QShortcutEvent*)p; else delete (LShortcutEvent*)p; break;
-        case 141: if(gc) delete (QShowEvent*)p; else delete (LShowEvent*)p; break;
-        case 142: if(gc) delete (QSizePolicy*)p; else delete (LSizePolicy*)p; break;
-        case 143: if(gc) delete (QSpacerItem*)p; else delete (LSpacerItem*)p; break;
-        case 157: if(gc) delete (QStandardItem*)p; else delete (LStandardItem*)p; break;
-        case 159: if(gc) delete (QStatusTipEvent*)p; else delete (LStatusTipEvent*)p; break;
-        case 160: if(gc) delete (QStyleOption*)p; else delete (LStyleOption*)p; break;
-        case 161: if(gc) delete (QStyleOptionGraphicsItem*)p; else delete (LStyleOptionGraphicsItem*)p; break;
-        case 165: if(gc) delete (QSystemSemaphore*)p; else delete (LSystemSemaphore*)p; break;
-        case 166: if(gc) delete (QTableWidgetItem*)p; else delete (LTableWidgetItem*)p; break;
-        case 167: if(gc) delete (QTableWidgetSelectionRange*)p; else delete (LTableWidgetSelectionRange*)p; break;
-        case 168: if(gc) delete (QTabletEvent*)p; else delete (LTabletEvent*)p; break;
-        case 169: if(gc) delete (QTextBlock*)p; else delete (LTextBlock*)p; break;
-        case 170: if(gc) delete (QTextBlockFormat*)p; else delete (LTextBlockFormat*)p; break;
-        case 171: if(gc) delete (QTextBlockUserData*)p; else delete (LTextBlockUserData*)p; break;
-        case 172: if(gc) delete (QTextBoundaryFinder*)p; else delete (LTextBoundaryFinder*)p; break;
-        case 173: if(gc) delete (QTextCharFormat*)p; else delete (LTextCharFormat*)p; break;
-        case 174: if(gc) /* nothing */; else delete (LTextCodec*)p; break;
-        case 175: if(gc) delete (QTextCursor*)p; else delete (LTextCursor*)p; break;
-        case 176: if(gc) delete (QTextDecoder*)p; else delete (LTextDecoder*)p; break;
-        case 177: if(gc) delete (QTextDocumentFragment*)p; else delete (LTextDocumentFragment*)p; break;
-        case 178: if(gc) delete (QTextDocumentWriter*)p; else delete (LTextDocumentWriter*)p; break;
-        case 179: if(gc) delete (QTextEncoder*)p; else delete (LTextEncoder*)p; break;
-        case 180: if(gc) delete (QTextFormat*)p; else delete (LTextFormat*)p; break;
-        case 181: if(gc) delete (QTextFragment*)p; else delete (LTextFragment*)p; break;
-        case 182: if(gc) delete (QTextFrameFormat*)p; else delete (LTextFrameFormat*)p; break;
-        case 183: if(gc) delete (QTextImageFormat*)p; else delete (LTextImageFormat*)p; break;
-        case 184: if(gc) delete (QTextLayout*)p; else delete (LTextLayout*)p; break;
-        case 185: if(gc) delete (QTextLength*)p; else delete (LTextLength*)p; break;
-        case 186: if(gc) delete (QTextLine*)p; else delete (LTextLine*)p; break;
-        case 187: if(gc) delete (QTextListFormat*)p; else delete (LTextListFormat*)p; break;
-        case 188: if(gc) delete (QTextOption*)p; else delete (LTextOption*)p; break;
-        case 189: if(gc) delete (QTextTableCell*)p; else delete (LTextTableCell*)p; break;
-        case 190: if(gc) delete (QTextTableCellFormat*)p; else delete (LTextTableCellFormat*)p; break;
-        case 191: if(gc) delete (QTextTableFormat*)p; else delete (LTextTableFormat*)p; break;
-        case 192: if(gc) delete (QTime*)p; else delete (LTime*)p; break;
-        case 193: if(gc) delete (QTimeZone*)p; else delete (LTimeZone*)p; break;
-        case 194: if(gc) delete (QTimerEvent*)p; else delete (LTimerEvent*)p; break;
-        case 195: if(gc) delete (QToolTip*)p; else delete (LToolTip*)p; break;
-        case 196: if(gc) delete (QTouchDevice*)p; else delete (LTouchDevice*)p; break;
-        case 197: if(gc) delete (QTouchEvent*)p; else delete (LTouchEvent*)p; break;
-        case 198: if(gc) delete (QTransform*)p; else delete (LTransform*)p; break;
-        case 199: if(gc) delete (QTreeWidgetItem*)p; else delete (LTreeWidgetItem*)p; break;
-        case 200: if(gc) delete (QUndoCommand*)p; else delete (LUndoCommand*)p; break;
-        case 201: if(gc) delete (QUrl*)p; else delete (LUrl*)p; break;
-        case 202: if(gc) delete (QVariant*)p; else delete (LVariant*)p; break;
-        case 203: if(gc) delete (QVector2D*)p; else delete (LVector2D*)p; break;
-        case 204: if(gc) delete (QVector3D*)p; else delete (LVector3D*)p; break;
-        case 205: if(gc) delete (QVector4D*)p; else delete (LVector4D*)p; break;
-        case 217: if(gc) delete (QWhatsThis*)p; else delete (LWhatsThis*)p; break;
-        case 218: if(gc) delete (QWhatsThisClickedEvent*)p; else delete (LWhatsThisClickedEvent*)p; break;
-        case 219: if(gc) delete (QWheelEvent*)p; else delete (LWheelEvent*)p; break;
-        case 220: if(gc) delete (QWidgetItem*)p; else delete (LWidgetItem*)p; break;
-        case 221: if(gc) delete (QWindowStateChangeEvent*)p; else delete (LWindowStateChangeEvent*)p; break;
-        case 222: if(gc) delete (QWriteLocker*)p; else delete (LWriteLocker*)p; break;
-        case 70:
-        case 72:
+        case 3: if(gc) delete (QAccessibleEditableTextInterface*)p; else delete (LAccessibleEditableTextInterface*)p; break;
+        case 4: if(gc) delete (QAccessibleEvent*)p; else delete (LAccessibleEvent*)p; break;
+        case 5: if(gc) /* nothing */; else delete (LAccessibleInterface*)p; break;
+        case 7: if(gc) delete (QAccessibleStateChangeEvent*)p; else delete (LAccessibleStateChangeEvent*)p; break;
+        case 8: if(gc) delete (QAccessibleTextCursorEvent*)p; else delete (LAccessibleTextCursorEvent*)p; break;
+        case 9: if(gc) delete (QAccessibleTextInsertEvent*)p; else delete (LAccessibleTextInsertEvent*)p; break;
+        case 10: if(gc) delete (QAccessibleTextInterface*)p; else delete (LAccessibleTextInterface*)p; break;
+        case 11: if(gc) delete (QAccessibleTextRemoveEvent*)p; else delete (LAccessibleTextRemoveEvent*)p; break;
+        case 12: if(gc) delete (QAccessibleTextSelectionEvent*)p; else delete (LAccessibleTextSelectionEvent*)p; break;
+        case 13: if(gc) delete (QAccessibleTextUpdateEvent*)p; else delete (LAccessibleTextUpdateEvent*)p; break;
+        case 14: if(gc) delete (QAccessibleValueChangeEvent*)p; else delete (LAccessibleValueChangeEvent*)p; break;
+        case 15: if(gc) delete (QAccessibleValueInterface*)p; else delete (LAccessibleValueInterface*)p; break;
+        case 16: if(gc) /* nothing */; else delete (LAccessibleWidget*)p; break;
+        case 17: if(gc) delete (QActionEvent*)p; else delete (LActionEvent*)p; break;
+        case 22: if(gc) delete (QBackingStore*)p; else delete (LBackingStore*)p; break;
+        case 23: if(gc) delete (QBasicTimer*)p; else delete (LBasicTimer*)p; break;
+        case 24: if(gc) delete (QBitArray*)p; else delete (LBitArray*)p; break;
+        case 25: if(gc) delete (QBitmap*)p; else delete (LBitmap*)p; break;
+        case 26: if(gc) delete (QBrush*)p; else delete (LBrush*)p; break;
+        case 29: if(gc) delete (QChildEvent*)p; else delete (LChildEvent*)p; break;
+        case 30: if(gc) delete (QCloseEvent*)p; else delete (LCloseEvent*)p; break;
+        case 31: if(gc) delete (QColor*)p; else delete (LColor*)p; break;
+        case 32: if(gc) delete (QConicalGradient*)p; else delete (LConicalGradient*)p; break;
+        case 33: if(gc) delete (QContextMenuEvent*)p; else delete (LContextMenuEvent*)p; break;
+        case 34: if(gc) delete (QCryptographicHash*)p; else delete (LCryptographicHash*)p; break;
+        case 35: if(gc) delete (QCursor*)p; else delete (LCursor*)p; break;
+        case 36: if(gc) delete (QDate*)p; else delete (LDate*)p; break;
+        case 37: if(gc) delete (QDateTime*)p; else delete (LDateTime*)p; break;
+        case 39: if(gc) delete (QDir*)p; else delete (LDir*)p; break;
+        case 40: if(gc) delete (QDirIterator*)p; else delete (LDirIterator*)p; break;
+        case 41: if(gc) delete (QDragEnterEvent*)p; else delete (LDragEnterEvent*)p; break;
+        case 42: if(gc) delete (QDragLeaveEvent*)p; else delete (LDragLeaveEvent*)p; break;
+        case 43: if(gc) delete (QDragMoveEvent*)p; else delete (LDragMoveEvent*)p; break;
+        case 44: if(gc) delete (QDropEvent*)p; else delete (LDropEvent*)p; break;
+        case 45: if(gc) delete (QDynamicPropertyChangeEvent*)p; else delete (LDynamicPropertyChangeEvent*)p; break;
+        case 46: if(gc) delete (QEasingCurve*)p; else delete (LEasingCurve*)p; break;
+        case 47: if(gc) delete (QElapsedTimer*)p; else delete (LElapsedTimer*)p; break;
+        case 48: if(gc) delete (QEnterEvent*)p; else delete (LEnterEvent*)p; break;
+        case 49: if(gc) delete (QEvent*)p; else delete (LEvent*)p; break;
+        case 50: if(gc) delete (QEventLoopLocker*)p; else delete (LEventLoopLocker*)p; break;
+        case 51: if(gc) delete (QExposeEvent*)p; else delete (LExposeEvent*)p; break;
+        case 52: if(gc) delete (QFileIconProvider*)p; else delete (LFileIconProvider*)p; break;
+        case 53: if(gc) delete (QFileInfo*)p; else delete (LFileInfo*)p; break;
+        case 54: if(gc) delete (QFileOpenEvent*)p; else delete (LFileOpenEvent*)p; break;
+        case 55: if(gc) delete (QFocusEvent*)p; else delete (LFocusEvent*)p; break;
+        case 56: if(gc) delete (QFont*)p; else delete (LFont*)p; break;
+        case 57: if(gc) delete (QFontDatabase*)p; else delete (LFontDatabase*)p; break;
+        case 58: if(gc) delete (QFontInfo*)p; else delete (LFontInfo*)p; break;
+        case 59: if(gc) delete (QFontMetrics*)p; else delete (LFontMetrics*)p; break;
+        case 60: if(gc) delete (QFontMetricsF*)p; else delete (LFontMetricsF*)p; break;
+        case 61: if(gc) delete (QGestureEvent*)p; else delete (LGestureEvent*)p; break;
+        case 62: if(gc) delete (QGradient*)p; else delete (LGradient*)p; break;
+        case 63: if(gc) delete (QGraphicsAnchorLayout*)p; else delete (LGraphicsAnchorLayout*)p; break;
+        case 64: if(gc) delete (QGraphicsEllipseItem*)p; else delete (LGraphicsEllipseItem*)p; break;
+        case 65: if(gc) delete (QGraphicsGridLayout*)p; else delete (LGraphicsGridLayout*)p; break;
+        case 66: if(gc) delete (QGraphicsItem*)p; else delete (LGraphicsItem*)p; break;
+        case 67: if(gc) delete (QGraphicsItemGroup*)p; else delete (LGraphicsItemGroup*)p; break;
+        case 68: if(gc) delete (QGraphicsLayout*)p; else delete (LGraphicsLayout*)p; break;
+        case 69: if(gc) delete (QGraphicsLayoutItem*)p; else delete (LGraphicsLayoutItem*)p; break;
+        case 70: if(gc) delete (QGraphicsLineItem*)p; else delete (LGraphicsLineItem*)p; break;
+        case 71: if(gc) delete (QGraphicsLinearLayout*)p; else delete (LGraphicsLinearLayout*)p; break;
+        case 72: if(gc) delete (QGraphicsPathItem*)p; else delete (LGraphicsPathItem*)p; break;
+        case 73: if(gc) delete (QGraphicsPixmapItem*)p; else delete (LGraphicsPixmapItem*)p; break;
+        case 74: if(gc) delete (QGraphicsPolygonItem*)p; else delete (LGraphicsPolygonItem*)p; break;
+        case 75: if(gc) delete (QGraphicsRectItem*)p; else delete (LGraphicsRectItem*)p; break;
+        case 76: if(gc) delete (QGraphicsSceneContextMenuEvent*)p; else delete (LGraphicsSceneContextMenuEvent*)p; break;
+        case 77: if(gc) delete (QGraphicsSceneDragDropEvent*)p; else delete (LGraphicsSceneDragDropEvent*)p; break;
+        case 78: if(gc) delete (QGraphicsSceneEvent*)p; else delete (LGraphicsSceneEvent*)p; break;
+        case 79: if(gc) delete (QGraphicsSceneHelpEvent*)p; else delete (LGraphicsSceneHelpEvent*)p; break;
+        case 80: if(gc) delete (QGraphicsSceneHoverEvent*)p; else delete (LGraphicsSceneHoverEvent*)p; break;
+        case 81: if(gc) delete (QGraphicsSceneMouseEvent*)p; else delete (LGraphicsSceneMouseEvent*)p; break;
+        case 82: if(gc) delete (QGraphicsSceneMoveEvent*)p; else delete (LGraphicsSceneMoveEvent*)p; break;
+        case 83: if(gc) delete (QGraphicsSceneResizeEvent*)p; else delete (LGraphicsSceneResizeEvent*)p; break;
+        case 84: if(gc) delete (QGraphicsSceneWheelEvent*)p; else delete (LGraphicsSceneWheelEvent*)p; break;
+        case 85: if(gc) delete (QGraphicsSimpleTextItem*)p; else delete (LGraphicsSimpleTextItem*)p; break;
+        case 87: if(gc) delete (QHelpEvent*)p; else delete (LHelpEvent*)p; break;
+        case 89: if(gc) delete (QHideEvent*)p; else delete (LHideEvent*)p; break;
+        case 92: if(gc) delete (QHoverEvent*)p; else delete (LHoverEvent*)p; break;
+        case 93: if(gc) delete (QIcon*)p; else delete (LIcon*)p; break;
+        case 94: if(gc) delete (QIconDragEvent*)p; else delete (LIconDragEvent*)p; break;
+        case 95: if(gc) delete (QImage*)p; else delete (LImage*)p; break;
+        case 97: if(gc) delete (QInputEvent*)p; else delete (LInputEvent*)p; break;
+        case 98: if(gc) delete (QInputMethodEvent*)p; else delete (LInputMethodEvent*)p; break;
+        case 99: if(gc) delete (QInputMethodQueryEvent*)p; else delete (LInputMethodQueryEvent*)p; break;
+        case 100: if(gc) delete (QItemEditorCreatorBase*)p; else delete (LItemEditorCreatorBase*)p; break;
+        case 101: if(gc) delete (QItemEditorFactory*)p; else delete (LItemEditorFactory*)p; break;
+        case 102: if(gc) delete (QItemSelectionRange*)p; else delete (LItemSelectionRange*)p; break;
+        case 103: if(gc) delete (QKeyEvent*)p; else delete (LKeyEvent*)p; break;
+        case 104: if(gc) delete (QKeySequence*)p; else delete (LKeySequence*)p; break;
+        case 105: if(gc) delete (QLayoutItem*)p; else delete (LLayoutItem*)p; break;
+        case 106: if(gc) delete (QLibraryInfo*)p; else delete (LLibraryInfo*)p; break;
+        case 107: if(gc) delete (QLinearGradient*)p; else delete (LLinearGradient*)p; break;
+        case 108: if(gc) delete (QListWidgetItem*)p; else delete (LListWidgetItem*)p; break;
+        case 109: if(gc) delete (QLocale*)p; else delete (LLocale*)p; break;
+        case 110: if(gc) delete (QMargins*)p; else delete (LMargins*)p; break;
+        case 111: if(gc) delete (QMarginsF*)p; else delete (LMarginsF*)p; break;
+        case 112: if(gc) delete (QMatrix*)p; else delete (LMatrix*)p; break;
+        case 113: if(gc) delete (QMatrix4x4*)p; else delete (LMatrix4x4*)p; break;
+        case 116: if(gc) delete (QMessageAuthenticationCode*)p; else delete (LMessageAuthenticationCode*)p; break;
+        case 117: if(gc) delete (QMetaObject*)p; else delete (LMetaObject*)p; break;
+        case 118: if(gc) delete (QModelIndex*)p; else delete (LModelIndex*)p; break;
+        case 119: if(gc) delete (QMouseEvent*)p; else delete (LMouseEvent*)p; break;
+        case 120: if(gc) delete (QMoveEvent*)p; else delete (LMoveEvent*)p; break;
+        case 129: if(gc) delete (QOpenGLFramebufferObject*)p; else delete (LOpenGLFramebufferObject*)p; break;
+        case 130: if(gc) delete (QOpenGLFramebufferObjectFormat*)p; else delete (LOpenGLFramebufferObjectFormat*)p; break;
+        case 131: if(gc) delete (QOpenGLPaintDevice*)p; else delete (LOpenGLPaintDevice*)p; break;
+        case 132: if(gc) delete (QOpenGLTexture*)p; else delete (LOpenGLTexture*)p; break;
+        case 133: if(gc) delete (QPageLayout*)p; else delete (LPageLayout*)p; break;
+        case 134: if(gc) delete (QPageSize*)p; else delete (LPageSize*)p; break;
+        case 137: if(gc) delete (QPaintEvent*)p; else delete (LPaintEvent*)p; break;
+        case 138: if(gc) delete (QPainter*)p; else delete (LPainter*)p; break;
+        case 139: if(gc) delete (QPainterPath*)p; else delete (LPainterPath*)p; break;
+        case 140: if(gc) delete (QPainterPathStroker*)p; else delete (LPainterPathStroker*)p; break;
+        case 141: if(gc) delete (QPalette*)p; else delete (LPalette*)p; break;
+        case 142: if(gc) delete (QPen*)p; else delete (LPen*)p; break;
+        case 143: if(gc) delete (QPersistentModelIndex*)p; else delete (LPersistentModelIndex*)p; break;
+        case 144: if(gc) delete (QPicture*)p; else delete (LPicture*)p; break;
+        case 145: if(gc) delete (QPixmap*)p; else delete (LPixmap*)p; break;
+        case 146: if(gc) delete (QPixmapCache*)p; else delete (LPixmapCache*)p; break;
+        case 147: if(gc) delete (QPrinter*)p; else delete (LPrinter*)p; break;
+        case 148: if(gc) delete (QPrinterInfo*)p; else delete (LPrinterInfo*)p; break;
+        case 149: if(gc) delete (QProcessEnvironment*)p; else delete (LProcessEnvironment*)p; break;
+        case 150: if(gc) delete (QQuaternion*)p; else delete (LQuaternion*)p; break;
+        case 151: if(gc) delete (QRadialGradient*)p; else delete (LRadialGradient*)p; break;
+        case 152: if(gc) delete (QRegExp*)p; else delete (LRegExp*)p; break;
+        case 153: if(gc) delete (QRegion*)p; else delete (LRegion*)p; break;
+        case 154: if(gc) delete (QRegularExpression*)p; else delete (LRegularExpression*)p; break;
+        case 155: if(gc) delete (QResizeEvent*)p; else delete (LResizeEvent*)p; break;
+        case 156: if(gc) delete (QRunnable*)p; else delete (LRunnable*)p; break;
+        case 157: if(gc) delete (QScrollEvent*)p; else delete (LScrollEvent*)p; break;
+        case 158: if(gc) delete (QScrollPrepareEvent*)p; else delete (LScrollPrepareEvent*)p; break;
+        case 159: if(gc) delete (QSemaphore*)p; else delete (LSemaphore*)p; break;
+        case 160: if(gc) delete (QShortcutEvent*)p; else delete (LShortcutEvent*)p; break;
+        case 161: if(gc) delete (QShowEvent*)p; else delete (LShowEvent*)p; break;
+        case 162: if(gc) delete (QSizePolicy*)p; else delete (LSizePolicy*)p; break;
+        case 163: if(gc) delete (QSpacerItem*)p; else delete (LSpacerItem*)p; break;
+        case 177: if(gc) delete (QStandardItem*)p; else delete (LStandardItem*)p; break;
+        case 179: if(gc) delete (QStatusTipEvent*)p; else delete (LStatusTipEvent*)p; break;
+        case 180: if(gc) delete (QStorageInfo*)p; else delete (LStorageInfo*)p; break;
+        case 181: if(gc) delete (QStyleOption*)p; else delete (LStyleOption*)p; break;
+        case 182: if(gc) delete (QStyleOptionGraphicsItem*)p; else delete (LStyleOptionGraphicsItem*)p; break;
+        case 184: if(gc) delete (QSurfaceFormat*)p; else delete (LSurfaceFormat*)p; break;
+        case 187: if(gc) delete (QSystemSemaphore*)p; else delete (LSystemSemaphore*)p; break;
+        case 188: if(gc) delete (QTableWidgetItem*)p; else delete (LTableWidgetItem*)p; break;
+        case 189: if(gc) delete (QTableWidgetSelectionRange*)p; else delete (LTableWidgetSelectionRange*)p; break;
+        case 190: if(gc) delete (QTabletEvent*)p; else delete (LTabletEvent*)p; break;
+        case 191: if(gc) delete (QTextBlock*)p; else delete (LTextBlock*)p; break;
+        case 192: if(gc) delete (QTextBlockFormat*)p; else delete (LTextBlockFormat*)p; break;
+        case 193: if(gc) delete (QTextBlockUserData*)p; else delete (LTextBlockUserData*)p; break;
+        case 194: if(gc) delete (QTextBoundaryFinder*)p; else delete (LTextBoundaryFinder*)p; break;
+        case 195: if(gc) delete (QTextCharFormat*)p; else delete (LTextCharFormat*)p; break;
+        case 196: if(gc) /* nothing */; else delete (LTextCodec*)p; break;
+        case 197: if(gc) delete (QTextCursor*)p; else delete (LTextCursor*)p; break;
+        case 198: if(gc) delete (QTextDecoder*)p; else delete (LTextDecoder*)p; break;
+        case 199: if(gc) delete (QTextDocumentFragment*)p; else delete (LTextDocumentFragment*)p; break;
+        case 200: if(gc) delete (QTextDocumentWriter*)p; else delete (LTextDocumentWriter*)p; break;
+        case 201: if(gc) delete (QTextEncoder*)p; else delete (LTextEncoder*)p; break;
+        case 202: if(gc) delete (QTextFormat*)p; else delete (LTextFormat*)p; break;
+        case 203: if(gc) delete (QTextFragment*)p; else delete (LTextFragment*)p; break;
+        case 204: if(gc) delete (QTextFrameFormat*)p; else delete (LTextFrameFormat*)p; break;
+        case 205: if(gc) delete (QTextImageFormat*)p; else delete (LTextImageFormat*)p; break;
+        case 206: if(gc) delete (QTextLayout*)p; else delete (LTextLayout*)p; break;
+        case 207: if(gc) delete (QTextLength*)p; else delete (LTextLength*)p; break;
+        case 208: if(gc) delete (QTextLine*)p; else delete (LTextLine*)p; break;
+        case 209: if(gc) delete (QTextListFormat*)p; else delete (LTextListFormat*)p; break;
+        case 210: if(gc) delete (QTextOption*)p; else delete (LTextOption*)p; break;
+        case 211: if(gc) delete (QTextTableCell*)p; else delete (LTextTableCell*)p; break;
+        case 212: if(gc) delete (QTextTableCellFormat*)p; else delete (LTextTableCellFormat*)p; break;
+        case 213: if(gc) delete (QTextTableFormat*)p; else delete (LTextTableFormat*)p; break;
+        case 214: if(gc) delete (QTime*)p; else delete (LTime*)p; break;
+        case 215: if(gc) delete (QTimeZone*)p; else delete (LTimeZone*)p; break;
+        case 216: if(gc) delete (QTimerEvent*)p; else delete (LTimerEvent*)p; break;
+        case 217: if(gc) delete (QToolTip*)p; else delete (LToolTip*)p; break;
+        case 218: if(gc) delete (QTouchDevice*)p; else delete (LTouchDevice*)p; break;
+        case 219: if(gc) delete (QTouchEvent*)p; else delete (LTouchEvent*)p; break;
+        case 220: if(gc) delete (QTransform*)p; else delete (LTransform*)p; break;
+        case 221: if(gc) delete (QTreeWidgetItem*)p; else delete (LTreeWidgetItem*)p; break;
+        case 222: if(gc) delete (QUndoCommand*)p; else delete (LUndoCommand*)p; break;
+        case 223: if(gc) delete (QUrl*)p; else delete (LUrl*)p; break;
+        case 224: if(gc) delete (QUuid*)p; else delete (LUuid*)p; break;
+        case 225: if(gc) delete (QVariant*)p; else delete (LVariant*)p; break;
+        case 226: if(gc) delete (QVector2D*)p; else delete (LVector2D*)p; break;
+        case 227: if(gc) delete (QVector3D*)p; else delete (LVector3D*)p; break;
+        case 228: if(gc) delete (QVector4D*)p; else delete (LVector4D*)p; break;
+        case 240: if(gc) delete (QWhatsThis*)p; else delete (LWhatsThis*)p; break;
+        case 241: if(gc) delete (QWhatsThisClickedEvent*)p; else delete (LWhatsThisClickedEvent*)p; break;
+        case 242: if(gc) delete (QWheelEvent*)p; else delete (LWheelEvent*)p; break;
+        case 243: if(gc) delete (QWidgetItem*)p; else delete (LWidgetItem*)p; break;
+        case 244: if(gc) delete (QWindowStateChangeEvent*)p; else delete (LWindowStateChangeEvent*)p; break;
+        case 86:
+        case 88:
             if(deleteNObject_help) {
                 deleteNObject_help(n, p, gc); }
             break;
-        case 8:
-        case 9:
-        case 10:
-        case 16:
-        case 17:
-        case 80:
-        case 97:
-        case 98:
-        case 206:
-        case 207:
-        case 208:
+        case 18:
+        case 19:
+        case 20:
+        case 27:
+        case 28:
+        case 96:
+        case 114:
+        case 115:
+        case 229:
+        case 230:
+        case 231:
             if(deleteNObject_multimedia) {
                 deleteNObject_multimedia(n, p, gc); }
             break;
-        case 11:
-        case 74:
-        case 75:
-        case 103:
-        case 104:
-        case 105:
-        case 106:
-        case 107:
-        case 108:
-        case 109:
-        case 110:
-        case 152:
-        case 153:
-        case 154:
-        case 155:
-        case 156:
+        case 21:
+        case 90:
+        case 91:
+        case 121:
+        case 122:
+        case 123:
+        case 124:
+        case 125:
+        case 126:
+        case 127:
+        case 128:
+        case 172:
+        case 173:
+        case 174:
+        case 175:
+        case 176:
             if(deleteNObject_network) {
                 deleteNObject_network(n, p, gc); }
             break;
-        case 144:
-        case 145:
-        case 146:
-        case 147:
-        case 148:
-        case 149:
-        case 150:
-        case 151:
+        case 164:
+        case 165:
+        case 166:
+        case 167:
+        case 168:
+        case 169:
+        case 170:
+        case 171:
             if(deleteNObject_sql) {
                 deleteNObject_sql(n, p, gc); }
             break;
-        case 163:
+        case 185:
             if(deleteNObject_svg) {
                 deleteNObject_svg(n, p, gc); }
             break;
-        case 209:
-        case 210:
-        case 211:
-        case 212:
-        case 213:
-        case 214:
-        case 215:
-        case 216:
+        case 232:
+        case 233:
+        case 234:
+        case 235:
+        case 236:
+        case 237:
+        case 238:
+        case 239:
             if(deleteNObject_webkit) {
                 deleteNObject_webkit(n, p, gc); }
             break; }}
@@ -2866,83 +3018,95 @@ const char* LObjects::nObjectSuperClass(const QByteArray& name) {
     const char* s = 0;
     switch(LObjects::n_names.value(name)) {
         case 1: s = "QGraphicsItem"; break;
-        case 5: s = "QAccessibleInterface"; break;
-        case 6: s = "QAccessibleObject"; break;
-        case 7: s = "QEvent"; break;
-        case 14: s = "QPixmap"; break;
-        case 18: s = "QEvent"; break;
-        case 19: s = "QEvent"; break;
-        case 21: s = "QGradient"; break;
-        case 22: s = "QInputEvent"; break;
-        case 30: s = "QDragMoveEvent"; break;
-        case 31: s = "QEvent"; break;
-        case 32: s = "QDropEvent"; break;
-        case 33: s = "QEvent"; break;
-        case 34: s = "QEvent"; break;
-        case 39: s = "QEvent"; break;
-        case 40: s = "QEvent"; break;
+        case 6: s = "QAccessibleInterface"; break;
+        case 7: s = "QAccessibleEvent"; break;
+        case 8: s = "QAccessibleEvent"; break;
+        case 9: s = "QAccessibleTextCursorEvent"; break;
+        case 11: s = "QAccessibleTextCursorEvent"; break;
+        case 12: s = "QAccessibleTextCursorEvent"; break;
+        case 13: s = "QAccessibleTextCursorEvent"; break;
+        case 14: s = "QAccessibleEvent"; break;
+        case 16: s = "QAccessibleObject"; break;
+        case 17: s = "QEvent"; break;
+        case 25: s = "QPixmap"; break;
+        case 29: s = "QEvent"; break;
+        case 30: s = "QEvent"; break;
+        case 32: s = "QGradient"; break;
+        case 33: s = "QInputEvent"; break;
+        case 41: s = "QDragMoveEvent"; break;
+        case 42: s = "QEvent"; break;
+        case 43: s = "QDropEvent"; break;
+        case 44: s = "QEvent"; break;
         case 45: s = "QEvent"; break;
-        case 47: s = "QGraphicsLayout"; break;
-        case 48: s = "QAbstractGraphicsShapeItem"; break;
-        case 49: s = "QGraphicsLayout"; break;
-        case 51: s = "QGraphicsItem"; break;
-        case 52: s = "QGraphicsLayoutItem"; break;
-        case 54: s = "QGraphicsItem"; break;
-        case 55: s = "QGraphicsLayout"; break;
-        case 56: s = "QAbstractGraphicsShapeItem"; break;
-        case 57: s = "QGraphicsItem"; break;
-        case 58: s = "QAbstractGraphicsShapeItem"; break;
-        case 59: s = "QAbstractGraphicsShapeItem"; break;
-        case 60: s = "QGraphicsSceneEvent"; break;
-        case 61: s = "QGraphicsSceneEvent"; break;
-        case 62: s = "QEvent"; break;
-        case 63: s = "QGraphicsSceneEvent"; break;
-        case 64: s = "QGraphicsSceneEvent"; break;
-        case 65: s = "QGraphicsSceneEvent"; break;
-        case 66: s = "QGraphicsSceneEvent"; break;
-        case 67: s = "QGraphicsSceneEvent"; break;
-        case 68: s = "QGraphicsSceneEvent"; break;
-        case 69: s = "QAbstractGraphicsShapeItem"; break;
-        case 71: s = "QEvent"; break;
-        case 73: s = "QEvent"; break;
-        case 76: s = "QInputEvent"; break;
+        case 48: s = "QEvent"; break;
+        case 51: s = "QEvent"; break;
+        case 54: s = "QEvent"; break;
+        case 55: s = "QEvent"; break;
+        case 61: s = "QEvent"; break;
+        case 63: s = "QGraphicsLayout"; break;
+        case 64: s = "QAbstractGraphicsShapeItem"; break;
+        case 65: s = "QGraphicsLayout"; break;
+        case 67: s = "QGraphicsItem"; break;
+        case 68: s = "QGraphicsLayoutItem"; break;
+        case 70: s = "QGraphicsItem"; break;
+        case 71: s = "QGraphicsLayout"; break;
+        case 72: s = "QAbstractGraphicsShapeItem"; break;
+        case 73: s = "QGraphicsItem"; break;
+        case 74: s = "QAbstractGraphicsShapeItem"; break;
+        case 75: s = "QAbstractGraphicsShapeItem"; break;
+        case 76: s = "QGraphicsSceneEvent"; break;
+        case 77: s = "QGraphicsSceneEvent"; break;
         case 78: s = "QEvent"; break;
-        case 79: s = "QPaintDevice"; break;
-        case 81: s = "QEvent"; break;
-        case 82: s = "QEvent"; break;
-        case 86: s = "QInputEvent"; break;
-        case 90: s = "QGradient"; break;
-        case 101: s = "QInputEvent"; break;
-        case 102: s = "QEvent"; break;
-        case 111: s = "QPaintDevice"; break;
-        case 115: s = "QPaintDevice"; break;
-        case 117: s = "QEvent"; break;
-        case 124: s = "QPaintDevice"; break;
-        case 125: s = "QPaintDevice"; break;
-        case 127: s = "QPagedPaintDevice"; break;
-        case 131: s = "QGradient"; break;
+        case 79: s = "QGraphicsSceneEvent"; break;
+        case 80: s = "QGraphicsSceneEvent"; break;
+        case 81: s = "QGraphicsSceneEvent"; break;
+        case 82: s = "QGraphicsSceneEvent"; break;
+        case 83: s = "QGraphicsSceneEvent"; break;
+        case 84: s = "QGraphicsSceneEvent"; break;
+        case 85: s = "QAbstractGraphicsShapeItem"; break;
+        case 87: s = "QEvent"; break;
+        case 89: s = "QEvent"; break;
+        case 92: s = "QInputEvent"; break;
+        case 94: s = "QEvent"; break;
+        case 95: s = "QPaintDevice"; break;
+        case 97: s = "QEvent"; break;
+        case 98: s = "QEvent"; break;
+        case 99: s = "QEvent"; break;
+        case 103: s = "QInputEvent"; break;
+        case 107: s = "QGradient"; break;
+        case 119: s = "QInputEvent"; break;
+        case 120: s = "QEvent"; break;
+        case 131: s = "QPaintDevice"; break;
+        case 135: s = "QPaintDevice"; break;
         case 137: s = "QEvent"; break;
-        case 140: s = "QEvent"; break;
-        case 141: s = "QEvent"; break;
-        case 143: s = "QLayoutItem"; break;
-        case 147: s = "QSqlRecord"; break;
-        case 159: s = "QEvent"; break;
-        case 161: s = "QStyleOption"; break;
-        case 163: s = "QPaintDevice"; break;
-        case 168: s = "QInputEvent"; break;
-        case 170: s = "QTextFormat"; break;
-        case 173: s = "QTextFormat"; break;
-        case 182: s = "QTextFormat"; break;
-        case 183: s = "QTextCharFormat"; break;
-        case 187: s = "QTextFormat"; break;
-        case 190: s = "QTextCharFormat"; break;
-        case 191: s = "QTextFrameFormat"; break;
-        case 194: s = "QEvent"; break;
-        case 197: s = "QInputEvent"; break;
-        case 218: s = "QEvent"; break;
+        case 144: s = "QPaintDevice"; break;
+        case 145: s = "QPaintDevice"; break;
+        case 147: s = "QPagedPaintDevice"; break;
+        case 151: s = "QGradient"; break;
+        case 155: s = "QEvent"; break;
+        case 157: s = "QEvent"; break;
+        case 158: s = "QEvent"; break;
+        case 160: s = "QEvent"; break;
+        case 161: s = "QEvent"; break;
+        case 163: s = "QLayoutItem"; break;
+        case 167: s = "QSqlRecord"; break;
+        case 179: s = "QEvent"; break;
+        case 182: s = "QStyleOption"; break;
+        case 185: s = "QPaintDevice"; break;
+        case 190: s = "QInputEvent"; break;
+        case 192: s = "QTextFormat"; break;
+        case 195: s = "QTextFormat"; break;
+        case 204: s = "QTextFormat"; break;
+        case 205: s = "QTextCharFormat"; break;
+        case 209: s = "QTextFormat"; break;
+        case 212: s = "QTextCharFormat"; break;
+        case 213: s = "QTextFrameFormat"; break;
+        case 216: s = "QEvent"; break;
         case 219: s = "QInputEvent"; break;
-        case 220: s = "QLayoutItem"; break;
-        case 221: s = "QEvent"; break; }
+        case 241: s = "QEvent"; break;
+        case 242: s = "QInputEvent"; break;
+        case 243: s = "QLayoutItem"; break;
+        case 244: s = "QEvent"; break; }
     return s; }
 
 StrList LObjects::overrideFunctions(const QByteArray& name) {
@@ -2997,143 +3161,146 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 58: ids = LEventTransition::overrideIds; break;
             case 59: ids = LFile::overrideIds; break;
             case 61: ids = LFileDialog::overrideIds; break;
-            case 62: ids = LFileSystemModel::overrideIds; break;
-            case 63: ids = LFileSystemWatcher::overrideIds; break;
-            case 64: ids = LFinalState::overrideIds; break;
-            case 65: ids = LFocusFrame::overrideIds; break;
-            case 66: ids = LFontComboBox::overrideIds; break;
-            case 67: ids = LFontDialog::overrideIds; break;
-            case 68: ids = LFormLayout::overrideIds; break;
-            case 69: ids = LFrame::overrideIds; break;
-            case 70: ids = LGesture::overrideIds; break;
-            case 71: ids = LGraphicsAnchor::overrideIds; break;
-            case 72: ids = LGraphicsBlurEffect::overrideIds; break;
-            case 73: ids = LGraphicsColorizeEffect::overrideIds; break;
-            case 74: ids = LGraphicsDropShadowEffect::overrideIds; break;
-            case 75: ids = LGraphicsEffect::overrideIds; break;
-            case 77: ids = LGraphicsOpacityEffect::overrideIds; break;
-            case 78: ids = LGraphicsProxyWidget::overrideIds; break;
-            case 79: ids = LGraphicsRotation::overrideIds; break;
-            case 80: ids = LGraphicsScale::overrideIds; break;
-            case 81: ids = LGraphicsScene::overrideIds; break;
-            case 83: ids = LGraphicsTextItem::overrideIds; break;
-            case 86: ids = LGraphicsView::overrideIds; break;
-            case 88: ids = LGraphicsWidget::overrideIds; break;
-            case 89: ids = LGridLayout::overrideIds; break;
-            case 90: ids = LGroupBox::overrideIds; break;
-            case 91: ids = LGuiApplication::overrideIds; break;
-            case 92: ids = LHBoxLayout::overrideIds; break;
-            case 93: ids = LHeaderView::overrideIds; break;
-            case 102: ids = LHistoryState::overrideIds; break;
-            case 103: ids = LIODevice::overrideIds; break;
-            case 104: ids = LIdentityProxyModel::overrideIds; break;
-            case 105: ids = LInputDialog::overrideIds; break;
-            case 106: ids = LIntValidator::overrideIds; break;
-            case 107: ids = LItemDelegate::overrideIds; break;
-            case 108: ids = LItemSelectionModel::overrideIds; break;
-            case 109: ids = LKeyEventTransition::overrideIds; break;
-            case 110: ids = LLCDNumber::overrideIds; break;
-            case 111: ids = LLabel::overrideIds; break;
-            case 113: ids = LLibrary::overrideIds; break;
-            case 114: ids = LLineEdit::overrideIds; break;
-            case 115: ids = LListView::overrideIds; break;
-            case 116: ids = LListWidget::overrideIds; break;
-            case 119: ids = LMainWindow::overrideIds; break;
-            case 120: ids = LMdiArea::overrideIds; break;
-            case 121: ids = LMdiSubWindow::overrideIds; break;
-            case 127: ids = LMenu::overrideIds; break;
-            case 128: ids = LMenuBar::overrideIds; break;
-            case 129: ids = LMessageBox::overrideIds; break;
-            case 130: ids = LMimeData::overrideIds; break;
-            case 131: ids = LMouseEventTransition::overrideIds; break;
-            case 132: ids = LMovie::overrideIds; break;
-            case 137: ids = LObject::overrideIds; break;
-            case 138: ids = LOpenGLContext::overrideIds; break;
-            case 139: ids = LOpenGLShader::overrideIds; break;
-            case 140: ids = LOpenGLShaderProgram::overrideIds; break;
-            case 141: ids = LOpenGLWidget::overrideIds; break;
-            case 142: ids = LOpenGLWindow::overrideIds; break;
-            case 143: ids = LPageSetupDialog::overrideIds; break;
-            case 144: ids = LPaintDeviceWindow::overrideIds; break;
-            case 145: ids = LPanGesture::overrideIds; break;
-            case 146: ids = LParallelAnimationGroup::overrideIds; break;
-            case 147: ids = LPauseAnimation::overrideIds; break;
-            case 148: ids = LPdfWriter::overrideIds; break;
-            case 149: ids = LPinchGesture::overrideIds; break;
-            case 150: ids = LPlainTextDocumentLayout::overrideIds; break;
-            case 151: ids = LPlainTextEdit::overrideIds; break;
-            case 152: ids = LPluginLoader::overrideIds; break;
-            case 153: ids = LPrintDialog::overrideIds; break;
-            case 154: ids = LPrintPreviewDialog::overrideIds; break;
-            case 155: ids = LPrintPreviewWidget::overrideIds; break;
-            case 156: ids = LProcess::overrideIds; break;
-            case 157: ids = LProgressBar::overrideIds; break;
-            case 158: ids = LProgressDialog::overrideIds; break;
-            case 159: ids = LPropertyAnimation::overrideIds; break;
-            case 160: ids = LProxyStyle::overrideIds; break;
-            case 161: ids = LPushButton::overrideIds; break;
-            case 162: ids = LRadioButton::overrideIds; break;
-            case 164: ids = LRegExpValidator::overrideIds; break;
-            case 165: ids = LRubberBand::overrideIds; break;
-            case 167: ids = LScrollArea::overrideIds; break;
-            case 168: ids = LScrollBar::overrideIds; break;
-            case 169: ids = LSequentialAnimationGroup::overrideIds; break;
-            case 171: ids = LSettings::overrideIds; break;
-            case 172: ids = LShortcut::overrideIds; break;
-            case 173: ids = LSignalTransition::overrideIds; break;
-            case 174: ids = LSizeGrip::overrideIds; break;
-            case 175: ids = LSlider::overrideIds; break;
-            case 176: ids = LSortFilterProxyModel::overrideIds; break;
-            case 177: ids = LSpinBox::overrideIds; break;
-            case 178: ids = LSplashScreen::overrideIds; break;
-            case 179: ids = LSplitter::overrideIds; break;
-            case 180: ids = LSplitterHandle::overrideIds; break;
-            case 186: ids = LStackedLayout::overrideIds; break;
-            case 187: ids = LStackedWidget::overrideIds; break;
-            case 188: ids = LStandardItemModel::overrideIds; break;
-            case 189: ids = LState::overrideIds; break;
-            case 190: ids = LStateMachine::overrideIds; break;
-            case 191: ids = LStatusBar::overrideIds; break;
-            case 192: ids = LStringListModel::overrideIds; break;
-            case 194: ids = LStyledItemDelegate::overrideIds; break;
-            case 197: ids = LSwipeGesture::overrideIds; break;
-            case 198: ids = LSyntaxHighlighter::overrideIds; break;
-            case 199: ids = LSystemTrayIcon::overrideIds; break;
-            case 200: ids = LTabBar::overrideIds; break;
-            case 201: ids = LTabWidget::overrideIds; break;
-            case 202: ids = LTableView::overrideIds; break;
-            case 203: ids = LTableWidget::overrideIds; break;
-            case 204: ids = LTapAndHoldGesture::overrideIds; break;
-            case 205: ids = LTapGesture::overrideIds; break;
-            case 208: ids = LTextBlockGroup::overrideIds; break;
-            case 209: ids = LTextBrowser::overrideIds; break;
-            case 210: ids = LTextDocument::overrideIds; break;
-            case 211: ids = LTextEdit::overrideIds; break;
-            case 212: ids = LTextFrame::overrideIds; break;
-            case 213: ids = LTextList::overrideIds; break;
-            case 214: ids = LTextObject::overrideIds; break;
-            case 215: ids = LTextTable::overrideIds; break;
-            case 216: ids = LTimeEdit::overrideIds; break;
-            case 217: ids = LTimeLine::overrideIds; break;
-            case 218: ids = LTimer::overrideIds; break;
-            case 219: ids = LToolBar::overrideIds; break;
-            case 220: ids = LToolBox::overrideIds; break;
-            case 221: ids = LToolButton::overrideIds; break;
-            case 222: ids = LTranslator::overrideIds; break;
-            case 223: ids = LTreeView::overrideIds; break;
-            case 224: ids = LTreeWidget::overrideIds; break;
-            case 226: ids = LUndoGroup::overrideIds; break;
-            case 227: ids = LUndoStack::overrideIds; break;
-            case 228: ids = LUndoView::overrideIds; break;
-            case 229: ids = LVBoxLayout::overrideIds; break;
-            case 230: ids = LValidator::overrideIds; break;
-            case 231: ids = LVariantAnimation::overrideIds; break;
-            case 240: ids = LWidget::overrideIds; break;
-            case 241: ids = LWidgetAction::overrideIds; break;
-            case 242: ids = LWindow::overrideIds; break;
-            case 243: ids = LWizard::overrideIds; break;
-            case 244: ids = LWizardPage::overrideIds; break;
-            case 94:
+            case 62: ids = LFileSelector::overrideIds; break;
+            case 63: ids = LFileSystemModel::overrideIds; break;
+            case 64: ids = LFileSystemWatcher::overrideIds; break;
+            case 65: ids = LFinalState::overrideIds; break;
+            case 66: ids = LFocusFrame::overrideIds; break;
+            case 67: ids = LFontComboBox::overrideIds; break;
+            case 68: ids = LFontDialog::overrideIds; break;
+            case 69: ids = LFormLayout::overrideIds; break;
+            case 70: ids = LFrame::overrideIds; break;
+            case 71: ids = LGesture::overrideIds; break;
+            case 72: ids = LGraphicsAnchor::overrideIds; break;
+            case 73: ids = LGraphicsBlurEffect::overrideIds; break;
+            case 74: ids = LGraphicsColorizeEffect::overrideIds; break;
+            case 75: ids = LGraphicsDropShadowEffect::overrideIds; break;
+            case 76: ids = LGraphicsEffect::overrideIds; break;
+            case 78: ids = LGraphicsOpacityEffect::overrideIds; break;
+            case 79: ids = LGraphicsProxyWidget::overrideIds; break;
+            case 80: ids = LGraphicsRotation::overrideIds; break;
+            case 81: ids = LGraphicsScale::overrideIds; break;
+            case 82: ids = LGraphicsScene::overrideIds; break;
+            case 84: ids = LGraphicsTextItem::overrideIds; break;
+            case 87: ids = LGraphicsView::overrideIds; break;
+            case 89: ids = LGraphicsWidget::overrideIds; break;
+            case 90: ids = LGridLayout::overrideIds; break;
+            case 91: ids = LGroupBox::overrideIds; break;
+            case 92: ids = LGuiApplication::overrideIds; break;
+            case 93: ids = LHBoxLayout::overrideIds; break;
+            case 94: ids = LHeaderView::overrideIds; break;
+            case 103: ids = LHistoryState::overrideIds; break;
+            case 104: ids = LIODevice::overrideIds; break;
+            case 105: ids = LIdentityProxyModel::overrideIds; break;
+            case 106: ids = LInputDialog::overrideIds; break;
+            case 108: ids = LIntValidator::overrideIds; break;
+            case 109: ids = LItemDelegate::overrideIds; break;
+            case 110: ids = LItemSelectionModel::overrideIds; break;
+            case 111: ids = LKeyEventTransition::overrideIds; break;
+            case 112: ids = LLCDNumber::overrideIds; break;
+            case 113: ids = LLabel::overrideIds; break;
+            case 115: ids = LLibrary::overrideIds; break;
+            case 116: ids = LLineEdit::overrideIds; break;
+            case 117: ids = LListView::overrideIds; break;
+            case 118: ids = LListWidget::overrideIds; break;
+            case 121: ids = LMainWindow::overrideIds; break;
+            case 122: ids = LMdiArea::overrideIds; break;
+            case 123: ids = LMdiSubWindow::overrideIds; break;
+            case 129: ids = LMenu::overrideIds; break;
+            case 130: ids = LMenuBar::overrideIds; break;
+            case 131: ids = LMessageBox::overrideIds; break;
+            case 132: ids = LMimeData::overrideIds; break;
+            case 133: ids = LMouseEventTransition::overrideIds; break;
+            case 134: ids = LMovie::overrideIds; break;
+            case 139: ids = LObject::overrideIds; break;
+            case 140: ids = LObjectCleanupHandler::overrideIds; break;
+            case 141: ids = LOpenGLContext::overrideIds; break;
+            case 142: ids = LOpenGLShader::overrideIds; break;
+            case 143: ids = LOpenGLShaderProgram::overrideIds; break;
+            case 144: ids = LOpenGLWidget::overrideIds; break;
+            case 145: ids = LOpenGLWindow::overrideIds; break;
+            case 146: ids = LPageSetupDialog::overrideIds; break;
+            case 147: ids = LPaintDeviceWindow::overrideIds; break;
+            case 148: ids = LPanGesture::overrideIds; break;
+            case 149: ids = LParallelAnimationGroup::overrideIds; break;
+            case 150: ids = LPauseAnimation::overrideIds; break;
+            case 151: ids = LPdfWriter::overrideIds; break;
+            case 152: ids = LPinchGesture::overrideIds; break;
+            case 153: ids = LPlainTextDocumentLayout::overrideIds; break;
+            case 154: ids = LPlainTextEdit::overrideIds; break;
+            case 155: ids = LPluginLoader::overrideIds; break;
+            case 156: ids = LPrintDialog::overrideIds; break;
+            case 157: ids = LPrintPreviewDialog::overrideIds; break;
+            case 158: ids = LPrintPreviewWidget::overrideIds; break;
+            case 159: ids = LProcess::overrideIds; break;
+            case 160: ids = LProgressBar::overrideIds; break;
+            case 161: ids = LProgressDialog::overrideIds; break;
+            case 162: ids = LPropertyAnimation::overrideIds; break;
+            case 163: ids = LProxyStyle::overrideIds; break;
+            case 164: ids = LPushButton::overrideIds; break;
+            case 165: ids = LRadioButton::overrideIds; break;
+            case 167: ids = LRegExpValidator::overrideIds; break;
+            case 168: ids = LRubberBand::overrideIds; break;
+            case 170: ids = LScrollArea::overrideIds; break;
+            case 171: ids = LScrollBar::overrideIds; break;
+            case 172: ids = LSequentialAnimationGroup::overrideIds; break;
+            case 174: ids = LSettings::overrideIds; break;
+            case 175: ids = LShortcut::overrideIds; break;
+            case 176: ids = LSignalMapper::overrideIds; break;
+            case 177: ids = LSignalTransition::overrideIds; break;
+            case 178: ids = LSizeGrip::overrideIds; break;
+            case 179: ids = LSlider::overrideIds; break;
+            case 180: ids = LSortFilterProxyModel::overrideIds; break;
+            case 181: ids = LSpinBox::overrideIds; break;
+            case 182: ids = LSplashScreen::overrideIds; break;
+            case 183: ids = LSplitter::overrideIds; break;
+            case 184: ids = LSplitterHandle::overrideIds; break;
+            case 190: ids = LStackedLayout::overrideIds; break;
+            case 191: ids = LStackedWidget::overrideIds; break;
+            case 192: ids = LStandardItemModel::overrideIds; break;
+            case 193: ids = LState::overrideIds; break;
+            case 194: ids = LStateMachine::overrideIds; break;
+            case 195: ids = LStatusBar::overrideIds; break;
+            case 196: ids = LStringListModel::overrideIds; break;
+            case 198: ids = LStyleHints::overrideIds; break;
+            case 199: ids = LStyledItemDelegate::overrideIds; break;
+            case 202: ids = LSwipeGesture::overrideIds; break;
+            case 203: ids = LSyntaxHighlighter::overrideIds; break;
+            case 204: ids = LSystemTrayIcon::overrideIds; break;
+            case 205: ids = LTabBar::overrideIds; break;
+            case 206: ids = LTabWidget::overrideIds; break;
+            case 207: ids = LTableView::overrideIds; break;
+            case 208: ids = LTableWidget::overrideIds; break;
+            case 209: ids = LTapAndHoldGesture::overrideIds; break;
+            case 210: ids = LTapGesture::overrideIds; break;
+            case 213: ids = LTextBlockGroup::overrideIds; break;
+            case 214: ids = LTextBrowser::overrideIds; break;
+            case 215: ids = LTextDocument::overrideIds; break;
+            case 216: ids = LTextEdit::overrideIds; break;
+            case 217: ids = LTextFrame::overrideIds; break;
+            case 218: ids = LTextList::overrideIds; break;
+            case 219: ids = LTextObject::overrideIds; break;
+            case 220: ids = LTextTable::overrideIds; break;
+            case 221: ids = LTimeEdit::overrideIds; break;
+            case 222: ids = LTimeLine::overrideIds; break;
+            case 223: ids = LTimer::overrideIds; break;
+            case 224: ids = LToolBar::overrideIds; break;
+            case 225: ids = LToolBox::overrideIds; break;
+            case 226: ids = LToolButton::overrideIds; break;
+            case 227: ids = LTranslator::overrideIds; break;
+            case 228: ids = LTreeView::overrideIds; break;
+            case 229: ids = LTreeWidget::overrideIds; break;
+            case 231: ids = LUndoGroup::overrideIds; break;
+            case 232: ids = LUndoStack::overrideIds; break;
+            case 233: ids = LUndoView::overrideIds; break;
+            case 234: ids = LVBoxLayout::overrideIds; break;
+            case 235: ids = LValidator::overrideIds; break;
+            case 236: ids = LVariantAnimation::overrideIds; break;
+            case 245: ids = LWidget::overrideIds; break;
+            case 246: ids = LWidgetAction::overrideIds; break;
+            case 247: ids = LWindow::overrideIds; break;
+            case 248: ids = LWizard::overrideIds; break;
+            case 249: ids = LWizardPage::overrideIds; break;
             case 95:
             case 96:
             case 97:
@@ -3141,6 +3308,7 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 99:
             case 100:
             case 101:
+            case 102:
                 if(override_help) {
                     NumList* _ids = override_help(name);
                     if(_ids) {
@@ -3155,15 +3323,15 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 32:
             case 33:
             case 34:
-            case 85:
-            case 122:
-            case 123:
+            case 86:
             case 124:
             case 125:
             case 126:
-            case 163:
-            case 232:
-            case 233:
+            case 127:
+            case 128:
+            case 166:
+            case 237:
+            case 238:
                 if(override_multimedia) {
                     NumList* _ids = override_multimedia(name);
                     if(_ids) {
@@ -3171,45 +3339,45 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
                 break;
             case 7:
             case 12:
-            case 117:
-            case 118:
-            case 133:
-            case 134:
+            case 119:
+            case 120:
             case 135:
             case 136:
-            case 206:
-            case 207:
-            case 225:
+            case 137:
+            case 138:
+            case 211:
+            case 212:
+            case 230:
                 if(override_network) {
                     NumList* _ids = override_network(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 181:
-            case 182:
-            case 183:
-            case 184:
             case 185:
+            case 186:
+            case 187:
+            case 188:
+            case 189:
                 if(override_sql) {
                     NumList* _ids = override_sql(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 82:
-            case 195:
-            case 196:
+            case 83:
+            case 200:
+            case 201:
                 if(override_svg) {
                     NumList* _ids = override_svg(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 87:
-            case 234:
-            case 235:
-            case 236:
-            case 237:
-            case 238:
+            case 88:
             case 239:
+            case 240:
+            case 241:
+            case 242:
+            case 243:
+            case 244:
                 if(override_webkit) {
                     NumList* _ids = override_webkit(name);
                     if(_ids) {
@@ -3220,243 +3388,266 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
         switch(n) {
             case 1: ids = LAbstractGraphicsShapeItem::overrideIds; break;
             case 2: ids = LAccessible::overrideIds; break;
-            case 3: ids = LAccessibleEvent::overrideIds; break;
-            case 6: ids = LAccessibleWidget::overrideIds; break;
-            case 7: ids = LActionEvent::overrideIds; break;
-            case 12: ids = LBasicTimer::overrideIds; break;
-            case 13: ids = LBitArray::overrideIds; break;
-            case 14: ids = LBitmap::overrideIds; break;
-            case 15: ids = LBrush::overrideIds; break;
-            case 18: ids = LChildEvent::overrideIds; break;
-            case 19: ids = LCloseEvent::overrideIds; break;
-            case 20: ids = LColor::overrideIds; break;
-            case 21: ids = LConicalGradient::overrideIds; break;
-            case 22: ids = LContextMenuEvent::overrideIds; break;
-            case 23: ids = LCryptographicHash::overrideIds; break;
-            case 24: ids = LCursor::overrideIds; break;
-            case 25: ids = LDate::overrideIds; break;
-            case 26: ids = LDateTime::overrideIds; break;
-            case 28: ids = LDir::overrideIds; break;
-            case 29: ids = LDirIterator::overrideIds; break;
-            case 30: ids = LDragEnterEvent::overrideIds; break;
-            case 31: ids = LDragLeaveEvent::overrideIds; break;
-            case 32: ids = LDragMoveEvent::overrideIds; break;
-            case 33: ids = LDropEvent::overrideIds; break;
-            case 34: ids = LDynamicPropertyChangeEvent::overrideIds; break;
-            case 35: ids = LEasingCurve::overrideIds; break;
-            case 36: ids = LEvent::overrideIds; break;
-            case 37: ids = LFileIconProvider::overrideIds; break;
-            case 38: ids = LFileInfo::overrideIds; break;
-            case 39: ids = LFileOpenEvent::overrideIds; break;
-            case 40: ids = LFocusEvent::overrideIds; break;
-            case 41: ids = LFont::overrideIds; break;
-            case 42: ids = LFontDatabase::overrideIds; break;
-            case 43: ids = LFontInfo::overrideIds; break;
-            case 44: ids = LFontMetrics::overrideIds; break;
-            case 45: ids = LGestureEvent::overrideIds; break;
-            case 46: ids = LGradient::overrideIds; break;
-            case 47: ids = LGraphicsAnchorLayout::overrideIds; break;
-            case 48: ids = LGraphicsEllipseItem::overrideIds; break;
-            case 49: ids = LGraphicsGridLayout::overrideIds; break;
-            case 50: ids = LGraphicsItem::overrideIds; break;
-            case 51: ids = LGraphicsItemGroup::overrideIds; break;
-            case 52: ids = LGraphicsLayout::overrideIds; break;
-            case 53: ids = LGraphicsLayoutItem::overrideIds; break;
-            case 54: ids = LGraphicsLineItem::overrideIds; break;
-            case 55: ids = LGraphicsLinearLayout::overrideIds; break;
-            case 56: ids = LGraphicsPathItem::overrideIds; break;
-            case 57: ids = LGraphicsPixmapItem::overrideIds; break;
-            case 58: ids = LGraphicsPolygonItem::overrideIds; break;
-            case 59: ids = LGraphicsRectItem::overrideIds; break;
-            case 60: ids = LGraphicsSceneContextMenuEvent::overrideIds; break;
-            case 61: ids = LGraphicsSceneDragDropEvent::overrideIds; break;
-            case 62: ids = LGraphicsSceneEvent::overrideIds; break;
-            case 63: ids = LGraphicsSceneHelpEvent::overrideIds; break;
-            case 64: ids = LGraphicsSceneHoverEvent::overrideIds; break;
-            case 65: ids = LGraphicsSceneMouseEvent::overrideIds; break;
-            case 66: ids = LGraphicsSceneMoveEvent::overrideIds; break;
-            case 67: ids = LGraphicsSceneResizeEvent::overrideIds; break;
-            case 68: ids = LGraphicsSceneWheelEvent::overrideIds; break;
-            case 69: ids = LGraphicsSimpleTextItem::overrideIds; break;
-            case 71: ids = LHelpEvent::overrideIds; break;
-            case 73: ids = LHideEvent::overrideIds; break;
-            case 76: ids = LHoverEvent::overrideIds; break;
-            case 77: ids = LIcon::overrideIds; break;
-            case 78: ids = LIconDragEvent::overrideIds; break;
-            case 79: ids = LImage::overrideIds; break;
-            case 81: ids = LInputEvent::overrideIds; break;
-            case 82: ids = LInputMethodEvent::overrideIds; break;
-            case 83: ids = LItemEditorCreatorBase::overrideIds; break;
-            case 84: ids = LItemEditorFactory::overrideIds; break;
-            case 85: ids = LItemSelectionRange::overrideIds; break;
-            case 86: ids = LKeyEvent::overrideIds; break;
-            case 87: ids = LKeySequence::overrideIds; break;
-            case 88: ids = LLayoutItem::overrideIds; break;
-            case 89: ids = LLibraryInfo::overrideIds; break;
-            case 90: ids = LLinearGradient::overrideIds; break;
-            case 91: ids = LListWidgetItem::overrideIds; break;
-            case 92: ids = LLocale::overrideIds; break;
-            case 93: ids = LMargins::overrideIds; break;
-            case 94: ids = LMarginsF::overrideIds; break;
-            case 95: ids = LMatrix::overrideIds; break;
-            case 96: ids = LMatrix4x4::overrideIds; break;
-            case 99: ids = LMetaObject::overrideIds; break;
-            case 100: ids = LModelIndex::overrideIds; break;
-            case 101: ids = LMouseEvent::overrideIds; break;
-            case 102: ids = LMoveEvent::overrideIds; break;
-            case 111: ids = LOpenGLPaintDevice::overrideIds; break;
-            case 112: ids = LOpenGLTexture::overrideIds; break;
-            case 113: ids = LPageLayout::overrideIds; break;
-            case 114: ids = LPageSize::overrideIds; break;
-            case 117: ids = LPaintEvent::overrideIds; break;
-            case 118: ids = LPainter::overrideIds; break;
-            case 119: ids = LPainterPath::overrideIds; break;
-            case 120: ids = LPainterPathStroker::overrideIds; break;
-            case 121: ids = LPalette::overrideIds; break;
-            case 122: ids = LPen::overrideIds; break;
-            case 123: ids = LPersistentModelIndex::overrideIds; break;
-            case 124: ids = LPicture::overrideIds; break;
-            case 125: ids = LPixmap::overrideIds; break;
-            case 126: ids = LPixmapCache::overrideIds; break;
-            case 127: ids = LPrinter::overrideIds; break;
-            case 128: ids = LPrinterInfo::overrideIds; break;
-            case 129: ids = LProcessEnvironment::overrideIds; break;
-            case 130: ids = LQuaternion::overrideIds; break;
-            case 131: ids = LRadialGradient::overrideIds; break;
-            case 132: ids = LReadLocker::overrideIds; break;
-            case 133: ids = LReadWriteLock::overrideIds; break;
-            case 134: ids = LRegExp::overrideIds; break;
-            case 135: ids = LRegion::overrideIds; break;
-            case 136: ids = LRegularExpression::overrideIds; break;
-            case 137: ids = LResizeEvent::overrideIds; break;
-            case 138: ids = LRunnable::overrideIds; break;
-            case 139: ids = LSemaphore::overrideIds; break;
-            case 140: ids = LShortcutEvent::overrideIds; break;
-            case 141: ids = LShowEvent::overrideIds; break;
-            case 142: ids = LSizePolicy::overrideIds; break;
-            case 143: ids = LSpacerItem::overrideIds; break;
-            case 157: ids = LStandardItem::overrideIds; break;
-            case 159: ids = LStatusTipEvent::overrideIds; break;
-            case 160: ids = LStyleOption::overrideIds; break;
-            case 161: ids = LStyleOptionGraphicsItem::overrideIds; break;
-            case 165: ids = LSystemSemaphore::overrideIds; break;
-            case 166: ids = LTableWidgetItem::overrideIds; break;
-            case 167: ids = LTableWidgetSelectionRange::overrideIds; break;
-            case 168: ids = LTabletEvent::overrideIds; break;
-            case 169: ids = LTextBlock::overrideIds; break;
-            case 170: ids = LTextBlockFormat::overrideIds; break;
-            case 171: ids = LTextBlockUserData::overrideIds; break;
-            case 172: ids = LTextBoundaryFinder::overrideIds; break;
-            case 173: ids = LTextCharFormat::overrideIds; break;
-            case 174: ids = LTextCodec::overrideIds; break;
-            case 175: ids = LTextCursor::overrideIds; break;
-            case 176: ids = LTextDecoder::overrideIds; break;
-            case 177: ids = LTextDocumentFragment::overrideIds; break;
-            case 178: ids = LTextDocumentWriter::overrideIds; break;
-            case 179: ids = LTextEncoder::overrideIds; break;
-            case 180: ids = LTextFormat::overrideIds; break;
-            case 181: ids = LTextFragment::overrideIds; break;
-            case 182: ids = LTextFrameFormat::overrideIds; break;
-            case 183: ids = LTextImageFormat::overrideIds; break;
-            case 184: ids = LTextLayout::overrideIds; break;
-            case 185: ids = LTextLength::overrideIds; break;
-            case 186: ids = LTextLine::overrideIds; break;
-            case 187: ids = LTextListFormat::overrideIds; break;
-            case 188: ids = LTextOption::overrideIds; break;
-            case 189: ids = LTextTableCell::overrideIds; break;
-            case 190: ids = LTextTableCellFormat::overrideIds; break;
-            case 191: ids = LTextTableFormat::overrideIds; break;
-            case 192: ids = LTime::overrideIds; break;
-            case 193: ids = LTimeZone::overrideIds; break;
-            case 194: ids = LTimerEvent::overrideIds; break;
-            case 195: ids = LToolTip::overrideIds; break;
-            case 196: ids = LTouchDevice::overrideIds; break;
-            case 197: ids = LTouchEvent::overrideIds; break;
-            case 198: ids = LTransform::overrideIds; break;
-            case 199: ids = LTreeWidgetItem::overrideIds; break;
-            case 200: ids = LUndoCommand::overrideIds; break;
-            case 201: ids = LUrl::overrideIds; break;
-            case 202: ids = LVariant::overrideIds; break;
-            case 203: ids = LVector2D::overrideIds; break;
-            case 204: ids = LVector3D::overrideIds; break;
-            case 205: ids = LVector4D::overrideIds; break;
-            case 217: ids = LWhatsThis::overrideIds; break;
-            case 218: ids = LWhatsThisClickedEvent::overrideIds; break;
-            case 219: ids = LWheelEvent::overrideIds; break;
-            case 220: ids = LWidgetItem::overrideIds; break;
-            case 221: ids = LWindowStateChangeEvent::overrideIds; break;
-            case 222: ids = LWriteLocker::overrideIds; break;
-            case 70:
-            case 72:
+            case 3: ids = LAccessibleEditableTextInterface::overrideIds; break;
+            case 4: ids = LAccessibleEvent::overrideIds; break;
+            case 5: ids = LAccessibleInterface::overrideIds; break;
+            case 7: ids = LAccessibleStateChangeEvent::overrideIds; break;
+            case 8: ids = LAccessibleTextCursorEvent::overrideIds; break;
+            case 9: ids = LAccessibleTextInsertEvent::overrideIds; break;
+            case 10: ids = LAccessibleTextInterface::overrideIds; break;
+            case 11: ids = LAccessibleTextRemoveEvent::overrideIds; break;
+            case 12: ids = LAccessibleTextSelectionEvent::overrideIds; break;
+            case 13: ids = LAccessibleTextUpdateEvent::overrideIds; break;
+            case 14: ids = LAccessibleValueChangeEvent::overrideIds; break;
+            case 15: ids = LAccessibleValueInterface::overrideIds; break;
+            case 16: ids = LAccessibleWidget::overrideIds; break;
+            case 17: ids = LActionEvent::overrideIds; break;
+            case 22: ids = LBackingStore::overrideIds; break;
+            case 23: ids = LBasicTimer::overrideIds; break;
+            case 24: ids = LBitArray::overrideIds; break;
+            case 25: ids = LBitmap::overrideIds; break;
+            case 26: ids = LBrush::overrideIds; break;
+            case 29: ids = LChildEvent::overrideIds; break;
+            case 30: ids = LCloseEvent::overrideIds; break;
+            case 31: ids = LColor::overrideIds; break;
+            case 32: ids = LConicalGradient::overrideIds; break;
+            case 33: ids = LContextMenuEvent::overrideIds; break;
+            case 34: ids = LCryptographicHash::overrideIds; break;
+            case 35: ids = LCursor::overrideIds; break;
+            case 36: ids = LDate::overrideIds; break;
+            case 37: ids = LDateTime::overrideIds; break;
+            case 39: ids = LDir::overrideIds; break;
+            case 40: ids = LDirIterator::overrideIds; break;
+            case 41: ids = LDragEnterEvent::overrideIds; break;
+            case 42: ids = LDragLeaveEvent::overrideIds; break;
+            case 43: ids = LDragMoveEvent::overrideIds; break;
+            case 44: ids = LDropEvent::overrideIds; break;
+            case 45: ids = LDynamicPropertyChangeEvent::overrideIds; break;
+            case 46: ids = LEasingCurve::overrideIds; break;
+            case 47: ids = LElapsedTimer::overrideIds; break;
+            case 48: ids = LEnterEvent::overrideIds; break;
+            case 49: ids = LEvent::overrideIds; break;
+            case 50: ids = LEventLoopLocker::overrideIds; break;
+            case 51: ids = LExposeEvent::overrideIds; break;
+            case 52: ids = LFileIconProvider::overrideIds; break;
+            case 53: ids = LFileInfo::overrideIds; break;
+            case 54: ids = LFileOpenEvent::overrideIds; break;
+            case 55: ids = LFocusEvent::overrideIds; break;
+            case 56: ids = LFont::overrideIds; break;
+            case 57: ids = LFontDatabase::overrideIds; break;
+            case 58: ids = LFontInfo::overrideIds; break;
+            case 59: ids = LFontMetrics::overrideIds; break;
+            case 60: ids = LFontMetricsF::overrideIds; break;
+            case 61: ids = LGestureEvent::overrideIds; break;
+            case 62: ids = LGradient::overrideIds; break;
+            case 63: ids = LGraphicsAnchorLayout::overrideIds; break;
+            case 64: ids = LGraphicsEllipseItem::overrideIds; break;
+            case 65: ids = LGraphicsGridLayout::overrideIds; break;
+            case 66: ids = LGraphicsItem::overrideIds; break;
+            case 67: ids = LGraphicsItemGroup::overrideIds; break;
+            case 68: ids = LGraphicsLayout::overrideIds; break;
+            case 69: ids = LGraphicsLayoutItem::overrideIds; break;
+            case 70: ids = LGraphicsLineItem::overrideIds; break;
+            case 71: ids = LGraphicsLinearLayout::overrideIds; break;
+            case 72: ids = LGraphicsPathItem::overrideIds; break;
+            case 73: ids = LGraphicsPixmapItem::overrideIds; break;
+            case 74: ids = LGraphicsPolygonItem::overrideIds; break;
+            case 75: ids = LGraphicsRectItem::overrideIds; break;
+            case 76: ids = LGraphicsSceneContextMenuEvent::overrideIds; break;
+            case 77: ids = LGraphicsSceneDragDropEvent::overrideIds; break;
+            case 78: ids = LGraphicsSceneEvent::overrideIds; break;
+            case 79: ids = LGraphicsSceneHelpEvent::overrideIds; break;
+            case 80: ids = LGraphicsSceneHoverEvent::overrideIds; break;
+            case 81: ids = LGraphicsSceneMouseEvent::overrideIds; break;
+            case 82: ids = LGraphicsSceneMoveEvent::overrideIds; break;
+            case 83: ids = LGraphicsSceneResizeEvent::overrideIds; break;
+            case 84: ids = LGraphicsSceneWheelEvent::overrideIds; break;
+            case 85: ids = LGraphicsSimpleTextItem::overrideIds; break;
+            case 87: ids = LHelpEvent::overrideIds; break;
+            case 89: ids = LHideEvent::overrideIds; break;
+            case 92: ids = LHoverEvent::overrideIds; break;
+            case 93: ids = LIcon::overrideIds; break;
+            case 94: ids = LIconDragEvent::overrideIds; break;
+            case 95: ids = LImage::overrideIds; break;
+            case 97: ids = LInputEvent::overrideIds; break;
+            case 98: ids = LInputMethodEvent::overrideIds; break;
+            case 99: ids = LInputMethodQueryEvent::overrideIds; break;
+            case 100: ids = LItemEditorCreatorBase::overrideIds; break;
+            case 101: ids = LItemEditorFactory::overrideIds; break;
+            case 102: ids = LItemSelectionRange::overrideIds; break;
+            case 103: ids = LKeyEvent::overrideIds; break;
+            case 104: ids = LKeySequence::overrideIds; break;
+            case 105: ids = LLayoutItem::overrideIds; break;
+            case 106: ids = LLibraryInfo::overrideIds; break;
+            case 107: ids = LLinearGradient::overrideIds; break;
+            case 108: ids = LListWidgetItem::overrideIds; break;
+            case 109: ids = LLocale::overrideIds; break;
+            case 110: ids = LMargins::overrideIds; break;
+            case 111: ids = LMarginsF::overrideIds; break;
+            case 112: ids = LMatrix::overrideIds; break;
+            case 113: ids = LMatrix4x4::overrideIds; break;
+            case 116: ids = LMessageAuthenticationCode::overrideIds; break;
+            case 117: ids = LMetaObject::overrideIds; break;
+            case 118: ids = LModelIndex::overrideIds; break;
+            case 119: ids = LMouseEvent::overrideIds; break;
+            case 120: ids = LMoveEvent::overrideIds; break;
+            case 129: ids = LOpenGLFramebufferObject::overrideIds; break;
+            case 130: ids = LOpenGLFramebufferObjectFormat::overrideIds; break;
+            case 131: ids = LOpenGLPaintDevice::overrideIds; break;
+            case 132: ids = LOpenGLTexture::overrideIds; break;
+            case 133: ids = LPageLayout::overrideIds; break;
+            case 134: ids = LPageSize::overrideIds; break;
+            case 137: ids = LPaintEvent::overrideIds; break;
+            case 138: ids = LPainter::overrideIds; break;
+            case 139: ids = LPainterPath::overrideIds; break;
+            case 140: ids = LPainterPathStroker::overrideIds; break;
+            case 141: ids = LPalette::overrideIds; break;
+            case 142: ids = LPen::overrideIds; break;
+            case 143: ids = LPersistentModelIndex::overrideIds; break;
+            case 144: ids = LPicture::overrideIds; break;
+            case 145: ids = LPixmap::overrideIds; break;
+            case 146: ids = LPixmapCache::overrideIds; break;
+            case 147: ids = LPrinter::overrideIds; break;
+            case 148: ids = LPrinterInfo::overrideIds; break;
+            case 149: ids = LProcessEnvironment::overrideIds; break;
+            case 150: ids = LQuaternion::overrideIds; break;
+            case 151: ids = LRadialGradient::overrideIds; break;
+            case 152: ids = LRegExp::overrideIds; break;
+            case 153: ids = LRegion::overrideIds; break;
+            case 154: ids = LRegularExpression::overrideIds; break;
+            case 155: ids = LResizeEvent::overrideIds; break;
+            case 156: ids = LRunnable::overrideIds; break;
+            case 157: ids = LScrollEvent::overrideIds; break;
+            case 158: ids = LScrollPrepareEvent::overrideIds; break;
+            case 159: ids = LSemaphore::overrideIds; break;
+            case 160: ids = LShortcutEvent::overrideIds; break;
+            case 161: ids = LShowEvent::overrideIds; break;
+            case 162: ids = LSizePolicy::overrideIds; break;
+            case 163: ids = LSpacerItem::overrideIds; break;
+            case 177: ids = LStandardItem::overrideIds; break;
+            case 179: ids = LStatusTipEvent::overrideIds; break;
+            case 180: ids = LStorageInfo::overrideIds; break;
+            case 181: ids = LStyleOption::overrideIds; break;
+            case 182: ids = LStyleOptionGraphicsItem::overrideIds; break;
+            case 184: ids = LSurfaceFormat::overrideIds; break;
+            case 187: ids = LSystemSemaphore::overrideIds; break;
+            case 188: ids = LTableWidgetItem::overrideIds; break;
+            case 189: ids = LTableWidgetSelectionRange::overrideIds; break;
+            case 190: ids = LTabletEvent::overrideIds; break;
+            case 191: ids = LTextBlock::overrideIds; break;
+            case 192: ids = LTextBlockFormat::overrideIds; break;
+            case 193: ids = LTextBlockUserData::overrideIds; break;
+            case 194: ids = LTextBoundaryFinder::overrideIds; break;
+            case 195: ids = LTextCharFormat::overrideIds; break;
+            case 196: ids = LTextCodec::overrideIds; break;
+            case 197: ids = LTextCursor::overrideIds; break;
+            case 198: ids = LTextDecoder::overrideIds; break;
+            case 199: ids = LTextDocumentFragment::overrideIds; break;
+            case 200: ids = LTextDocumentWriter::overrideIds; break;
+            case 201: ids = LTextEncoder::overrideIds; break;
+            case 202: ids = LTextFormat::overrideIds; break;
+            case 203: ids = LTextFragment::overrideIds; break;
+            case 204: ids = LTextFrameFormat::overrideIds; break;
+            case 205: ids = LTextImageFormat::overrideIds; break;
+            case 206: ids = LTextLayout::overrideIds; break;
+            case 207: ids = LTextLength::overrideIds; break;
+            case 208: ids = LTextLine::overrideIds; break;
+            case 209: ids = LTextListFormat::overrideIds; break;
+            case 210: ids = LTextOption::overrideIds; break;
+            case 211: ids = LTextTableCell::overrideIds; break;
+            case 212: ids = LTextTableCellFormat::overrideIds; break;
+            case 213: ids = LTextTableFormat::overrideIds; break;
+            case 214: ids = LTime::overrideIds; break;
+            case 215: ids = LTimeZone::overrideIds; break;
+            case 216: ids = LTimerEvent::overrideIds; break;
+            case 217: ids = LToolTip::overrideIds; break;
+            case 218: ids = LTouchDevice::overrideIds; break;
+            case 219: ids = LTouchEvent::overrideIds; break;
+            case 220: ids = LTransform::overrideIds; break;
+            case 221: ids = LTreeWidgetItem::overrideIds; break;
+            case 222: ids = LUndoCommand::overrideIds; break;
+            case 223: ids = LUrl::overrideIds; break;
+            case 224: ids = LUuid::overrideIds; break;
+            case 225: ids = LVariant::overrideIds; break;
+            case 226: ids = LVector2D::overrideIds; break;
+            case 227: ids = LVector3D::overrideIds; break;
+            case 228: ids = LVector4D::overrideIds; break;
+            case 240: ids = LWhatsThis::overrideIds; break;
+            case 241: ids = LWhatsThisClickedEvent::overrideIds; break;
+            case 242: ids = LWheelEvent::overrideIds; break;
+            case 243: ids = LWidgetItem::overrideIds; break;
+            case 244: ids = LWindowStateChangeEvent::overrideIds; break;
+            case 86:
+            case 88:
                 if(override_help) {
                     NumList* _ids = override_help(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 8:
-            case 9:
-            case 10:
-            case 16:
-            case 17:
-            case 80:
-            case 97:
-            case 98:
-            case 206:
-            case 207:
-            case 208:
+            case 18:
+            case 19:
+            case 20:
+            case 27:
+            case 28:
+            case 96:
+            case 114:
+            case 115:
+            case 229:
+            case 230:
+            case 231:
                 if(override_multimedia) {
                     NumList* _ids = override_multimedia(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 11:
-            case 74:
-            case 75:
-            case 103:
-            case 104:
-            case 105:
-            case 106:
-            case 107:
-            case 108:
-            case 109:
-            case 110:
-            case 152:
-            case 153:
-            case 154:
-            case 155:
-            case 156:
+            case 21:
+            case 90:
+            case 91:
+            case 121:
+            case 122:
+            case 123:
+            case 124:
+            case 125:
+            case 126:
+            case 127:
+            case 128:
+            case 172:
+            case 173:
+            case 174:
+            case 175:
+            case 176:
                 if(override_network) {
                     NumList* _ids = override_network(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 144:
-            case 145:
-            case 146:
-            case 147:
-            case 148:
-            case 149:
-            case 150:
-            case 151:
+            case 164:
+            case 165:
+            case 166:
+            case 167:
+            case 168:
+            case 169:
+            case 170:
+            case 171:
                 if(override_sql) {
                     NumList* _ids = override_sql(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 163:
+            case 185:
                 if(override_svg) {
                     NumList* _ids = override_svg(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
-            case 209:
-            case 210:
-            case 211:
-            case 212:
-            case 213:
-            case 214:
-            case 215:
-            case 216:
+            case 232:
+            case 233:
+            case 234:
+            case 235:
+            case 236:
+            case 237:
+            case 238:
+            case 239:
                 if(override_webkit) {
                     NumList* _ids = override_webkit(name);
                     if(_ids) {

@@ -57,6 +57,7 @@
         "GLfloat["
         "GLint *"
         "GLuint *"
+        "GUID"
         "Handle"
         "HANDLE"
         "HBITMAP"

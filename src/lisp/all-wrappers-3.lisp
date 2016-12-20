@@ -1,5 +1,55 @@
 (defpackage :eql
   (:export
+   #:|isWrapping|
+   #:|isWritable|
+   #:|isoSensitivityChanged|
+   #:|isoSensitivity|
+   #:|issuerInfo(QByteArray)|
+   #:|issuerInfo(QSslCertificate::SubjectInfo)|
+   #:|issuerInfoAttributes|
+   #:|issuerInfo|
+   #:|italic|
+   #:|itemAbove|
+   #:|itemActivated|
+   #:|itemAtPosition|
+   #:|itemAt|
+   #:|itemBelow|
+   #:|itemChanged|
+   #:|itemChange|
+   #:|itemClicked|
+   #:|itemCollapsed|
+   #:|itemData|
+   #:|itemDelegateForColumn|
+   #:|itemDelegateForRow|
+   #:|itemDelegate|
+   #:|itemDoubleClicked|
+   #:|itemEditorFactory|
+   #:|itemEntered|
+   #:|itemExpanded|
+   #:|itemFromIndex|
+   #:|itemIcon|
+   #:|itemIndexMethod|
+   #:|itemNumber|
+   #:|itemPixmapRect|
+   #:|itemPressed|
+   #:|itemPrototype|
+   #:|itemSelectionChanged|
+   #:|itemSpacing|
+   #:|itemTextRect|
+   #:|itemText|
+   #:|itemToolTip|
+   #:|itemTransform|
+   #:|itemWidget|
+   #:|items(QPainterPath)|
+   #:|items(QPainterPath...)|
+   #:|items(QPoint)|
+   #:|items(QPointF)|
+   #:|items(QPointF...)|
+   #:|items(QPolygon)|
+   #:|items(QPolygon...)|
+   #:|items(QPolygonF)|
+   #:|items(QPolygonF...)|
+   #:|items(QRect)|
    #:|items(QRect...)|
    #:|items(QRectF)|
    #:|items(QRectF...)|
@@ -25,11 +75,16 @@
    #:|keyExchangeMethod|
    #:|keyValueAt|
    #:|keyValues|
+   #:|keyboardAutoRepeatRate|
    #:|keyboardGrabber.QWidget|
    #:|keyboardInputInterval.QApplication|
+   #:|keyboardInputIntervalChanged|
+   #:|keyboardInputInterval|
    #:|keyboardModifiers.QGuiApplication|
    #:|keyboardModifiers|
    #:|keyboardPageStep|
+   #:|keyboardRectangleChanged|
+   #:|keyboardRectangle|
    #:|keyboardSearch|
    #:|keyboardSingleStep|
    #:|keyboardTracking|
@@ -160,14 +215,13 @@
    #:|localPos|
    #:|localSchemes.QWebSecurityOrigin|
    #:|localStoragePath|
+   #:|localeChanged|
    #:|locale|
    #:|locate.QStandardPaths|
    #:|locateAll.QStandardPaths|
    #:|location.QLibraryInfo|
    #:|location|
    #:|lockFailed|
-   #:|lockForRead|
-   #:|lockForWrite|
    #:|lockStatusChanged|
    #:|lockStatus|
    #:|locked|
@@ -205,6 +259,7 @@
    #:|magenta|
    #:|magnificationFilter|
    #:|mainFrame|
+   #:|majorVersion|
    #:|makeAbsolute|
    #:|makeAndModel|
    #:|makeCurrent|
@@ -277,10 +332,20 @@
    #:|mapToSource|
    #:|mapTo|
    #:|mapVector|
+   #:|mapped(QObject*)|
+   #:|mapped(QString)|
+   #:|mapped(QWidget*)|
+   #:|mapped(int)|
    #:|mappedBytes|
    #:|mappedPropertyName|
    #:|mappedSection|
    #:|mappedWidgetAt|
+   #:|mapped|
+   #:|mapping(QObject*)|
+   #:|mapping(QString)|
+   #:|mapping(QWidget*)|
+   #:|mapping(int)|
+   #:|mapping|
    #:|map|
    #:|margins|
    #:|margin|
@@ -328,6 +393,7 @@
    #:|maximumSize|
    #:|maximumTime|
    #:|maximumTouchPoints|
+   #:|maximumValue|
    #:|maximumViewportSize|
    #:|maximumWidthChanged|
    #:|maximumWidth|
@@ -399,14 +465,18 @@
    #:|minimumSectionSize|
    #:|minimumSizeHint|
    #:|minimumSize|
+   #:|minimumStepSize|
    #:|minimumTime|
+   #:|minimumValue|
    #:|minimumWidthChanged|
    #:|minimumWidth|
    #:|minimum|
+   #:|minorVersion|
    #:|minute|
    #:|mipBaseLevel|
    #:|mipLevels|
    #:|mipMaxLevel|
+   #:|mipmap|
    #:|mirrored|
    #:|miterLimit|
    #:|mkdir|
@@ -428,10 +498,14 @@
    #:|monthName|
    #:|monthShown|
    #:|month|
+   #:|mountedVolumes.QStorageInfo|
    #:|mouseButtons.QGuiApplication|
    #:|mouseButtons|
+   #:|mouseDoubleClickIntervalChanged|
+   #:|mouseDoubleClickInterval|
    #:|mouseGrabber.QWidget|
    #:|mouseGrabberItem|
+   #:|mousePressAndHoldInterval|
    #:|movableChanged|
    #:|moveBy|
    #:|moveColumns|
@@ -449,6 +523,7 @@
    #:|movement|
    #:|move|
    #:|movie|
+   #:|msecsSinceReference|
    #:|msecsSinceStartOfDay|
    #:|msecsTo|
    #:|msec|
@@ -519,12 +594,14 @@
    #:|notifyIntervalChanged|
    #:|notifyInterval|
    #:|notify|
+   #:|nsecsElapsed|
    #:|nullDevice.QProcess|
    #:|numRowsAffected|
    #:|numberOptions|
    #:|numberPrefix|
    #:|numberSuffix|
    #:|numericalPrecisionPolicy|
+   #:|objectDestroyed|
    #:|objectForFormat|
    #:|objectIndex|
    #:|objectNameChanged|
@@ -535,6 +612,7 @@
    #:|offlineStoragePath.QWebSettings|
    #:|offlineWebApplicationCachePath.QWebSettings|
    #:|offlineWebApplicationCacheQuota.QWebSettings|
+   #:|offsetAtPoint|
    #:|offsetChanged|
    #:|offsetFromUtc|
    #:|offset|
@@ -587,6 +665,7 @@
    #:|overline|
    #:|overrideCursor.QGuiApplication|
    #:|overrideWindowFlags|
+   #:|overshootDistance|
    #:|overshoot|
    #:|overwriteMode|
    #:|ownedByLayout|
@@ -642,6 +721,8 @@
    #:|parentWidget|
    #:|parent|
    #:|parseCookies.QNetworkCookie|
+   #:|passwordMaskCharacter|
+   #:|passwordMaskDelay|
    #:|password|
    #:|paste|
    #:|patchVertexCount|
@@ -802,6 +883,7 @@
    #:|processedUSecs|
    #:|productType.QSysInfo|
    #:|productVersion.QSysInfo|
+   #:|profile|
    #:|programId|
    #:|program|
    #:|project|
@@ -831,7 +913,9 @@
    #:|quadToSquare.QTransform|
    #:|quadTo|
    #:|quality|
+   #:|queries|
    #:|queryAccessibleInterface.QAccessible|
+   #:|queryFocusObject.QInputMethod|
    #:|queryKeyboardModifiers.QGuiApplication|
    #:|queryProxy|
    #:|queryType|
@@ -855,7 +939,6 @@
    #:|readChannel|
    #:|readDatagram|
    #:|readLine|
-   #:|readWriteLock|
    #:|readersAboutToBeInvalidated|
    #:|readyForCaptureChanged|
    #:|readyReadStandardError|
@@ -872,6 +955,7 @@
    #:|rectPoints|
    #:|rects|
    #:|rect|
+   #:|redBufferSize|
    #:|redF|
    #:|redoAvailable|
    #:|redoTextChanged|
@@ -911,7 +995,6 @@
    #:|released|
    #:|release|
    #:|reload|
-   #:|relock|
    #:|remainingTime|
    #:|remove.QFile|
    #:|remove.QPixmapCache|
@@ -947,6 +1030,7 @@
    #:|removeItem|
    #:|removeLibraryPath.QCoreApplication|
    #:|removeLocalScheme.QWebSecurityOrigin|
+   #:|removeMappings|
    #:|removeMapping|
    #:|removeMedia|
    #:|removeNativeEventFilter|
@@ -960,6 +1044,7 @@
    #:|removeRow|
    #:|removeSceneEventFilter|
    #:|removeSelectedText|
+   #:|removeSelection|
    #:|removeServer.QLocalServer|
    #:|removeShader|
    #:|removeStack|
@@ -981,6 +1066,7 @@
    #:|render(QPainter*,QString)|
    #:|render(QPainter*,QWebFrame::RenderLayers)|
    #:|renderHints|
+   #:|renderableType|
    #:|renderer|
    #:|render|
    #:|repaint(QRect)|
@@ -991,6 +1077,7 @@
    #:|repeatAction|
    #:|replace(QString)|
    #:|replace(QWebElement)|
+   #:|replaceText|
    #:|replaceWidget|
    #:|replacementLength|
    #:|replacementStart|
@@ -1079,6 +1166,7 @@
    #:|rollbackTransaction|
    #:|rollback|
    #:|root.QDir|
+   #:|root.QStorageInfo|
    #:|rootDirectory|
    #:|rootFrame|
    #:|rootIndex|
@@ -1111,92 +1199,4 @@
    #:|rowStart|
    #:|rowStretchFactor|
    #:|rowStretch|
-   #:|rowViewportPosition|
-   #:|rowWrapPolicy|
-   #:|rowsAboutToBeInserted|
-   #:|rowsAboutToBeMoved|
-   #:|rowsAboutToBeRemoved|
-   #:|rowsInserted|
-   #:|rowsMoved|
-   #:|rowsRemoved|
-   #:|rows|
-   #:|row|
-   #:|rubberBandChanged|
-   #:|rubberBandRect|
-   #:|rubberBandSelectionMode|
-   #:|runningChanged|
-   #:|run|
-   #:|sampleRate|
-   #:|sampleSize|
-   #:|sampleType|
-   #:|samples|
-   #:|saturationChanged|
-   #:|saturationF|
-   #:|saturation|
-   #:|saveFrameStateRequested|
-   #:|saveGeometry|
-   #:|saveStateRequest|
-   #:|saveState|
-   #:|saveToDisk|
-   #:|save|
-   #:|scalar|
-   #:|scale(QVector3D)|
-   #:|scale(float)|
-   #:|scaleChanged|
-   #:|scaleFactor|
-   #:|scaled(QSize...)|
-   #:|scaled(int...)|
-   #:|scaledSize|
-   #:|scaledToHeight|
-   #:|scaledToWidth|
-   #:|scaled|
-   #:|scale|
-   #:|scanLineDirection|
-   #:|sceneBoundingRect|
-   #:|scenePos|
-   #:|sceneRectChanged|
-   #:|sceneRect|
-   #:|sceneTransform|
-   #:|scene|
-   #:|scheduleDelayedItemsLayout|
-   #:|scheme|
-   #:|scopeId|
-   #:|scope|
-   #:|screenAdded|
-   #:|screenChanged|
-   #:|screenCountChanged|
-   #:|screenCount|
-   #:|screenGeometry(QPoint)|
-   #:|screenGeometry(const QWidget*)|
-   #:|screenGeometry(int)|
-   #:|screenGeometry|
-   #:|screenNumber(QPoint)|
-   #:|screenNumber(const QWidget*)|
-   #:|screenNumber|
-   #:|screenPos|
-   #:|screenRemoved|
-   #:|screens.QGuiApplication|
-   #:|screen|
-   #:|scriptToString.QLocale|
-   #:|script|
-   #:|scrollBarGeometry|
-   #:|scrollBarMaximum|
-   #:|scrollBarMinimum|
-   #:|scrollBarPolicy|
-   #:|scrollBarValue|
-   #:|scrollBarWidgets|
-   #:|scrollDirtyRegion|
-   #:|scrollPosition|
-   #:|scrollRequested|
-   #:|scrollToAnchor|
-   #:|scrollToBottom|
-   #:|scrollToItem|
-   #:|scrollToTop|
-   #:|scrollTo|
-   #:|scroll|
-   #:|searchAllStations|
-   #:|searchAndLock|
-   #:|searchBackward|
-   #:|searchForward|
-   #:|searchPaths.QDir|
-   #:|searchPaths|))
+   #:|rowViewportPosition|))

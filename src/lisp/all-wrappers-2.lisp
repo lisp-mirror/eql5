@@ -1,5 +1,35 @@
 (defpackage :eql
   (:export
+   #:|dragDropOverwriteMode|
+   #:|dragEnabled|
+   #:|dragMode|
+   #:|drawArc(QRect...)|
+   #:|drawArc(QRectF...)|
+   #:|drawArc|
+   #:|drawBackground|
+   #:|drawBase|
+   #:|drawChord(QRect...)|
+   #:|drawChord(QRectF...)|
+   #:|drawChord|
+   #:|drawComplexControl|
+   #:|drawContents|
+   #:|drawControl|
+   #:|drawConvexPolygon(QPolygon)|
+   #:|drawConvexPolygon(QPolygonF)|
+   #:|drawConvexPolygon|
+   #:|drawCursor|
+   #:|drawEllipse(QPoint...)|
+   #:|drawEllipse(QPointF...)|
+   #:|drawEllipse(QRect)|
+   #:|drawEllipse(QRectF)|
+   #:|drawEllipse|
+   #:|drawGlyphRun|
+   #:|drawImage(QPoint...)|
+   #:|drawImage(QPointF...)|
+   #:|drawImage(QRect...)|
+   #:|drawImage(QRectF...)|
+   #:|drawImage(int...)|
+   #:|drawImage|
    #:|drawItemPixmap|
    #:|drawItemText|
    #:|drawLine(QLine)|
@@ -149,6 +179,7 @@
    #:|endMoveColumns|
    #:|endMoveRows|
    #:|endNativePainting|
+   #:|endPaint|
    #:|endRemoveColumns|
    #:|endRemoveRows|
    #:|endResetModel|
@@ -235,6 +266,7 @@
    #:|extensions|
    #:|extension|
    #:|extraSelections|
+   #:|extraSelectors|
    #:|faces|
    #:|fallbacksEnabled|
    #:|families|
@@ -261,6 +293,7 @@
    #:|filePath|
    #:|fileRenamed|
    #:|fileSelected|
+   #:|fileSystemType|
    #:|filesSelected|
    #:|files|
    #:|file|
@@ -401,6 +434,7 @@
    #:|fontPointSize|
    #:|fontSelected|
    #:|fontSize|
+   #:|fontSmoothingGamma|
    #:|fontStretch|
    #:|fontStrikeOut|
    #:|fontStyleHint|
@@ -483,6 +517,7 @@
    #:|fromPath.QSslCertificate|
    #:|fromPercentEncoding.QUrl|
    #:|fromPlainText.QTextDocumentFragment|
+   #:|fromRfc4122.QUuid|
    #:|fromRgb.QColor|
    #:|fromRgbF.QColor|
    #:|fromRgba.QColor|
@@ -572,6 +607,7 @@
    #:|graphicsEffect|
    #:|graphicsItem|
    #:|graphicsProxyWidget|
+   #:|greenBufferSize|
    #:|greenF|
    #:|green|
    #:|gridSize|
@@ -596,6 +632,7 @@
    #:|hasComplexSelection|
    #:|hasCursor|
    #:|hasDaylightTime|
+   #:|hasExpired|
    #:|hasExtension|
    #:|hasFeature.QOpenGLTexture|
    #:|hasFeature|
@@ -610,6 +647,8 @@
    #:|hasIndex|
    #:|hasMouseTracking|
    #:|hasNext|
+   #:|hasOpenGLFramebufferBlit.QOpenGLFramebufferObject|
+   #:|hasOpenGLFramebufferObjects.QOpenGLFramebufferObject|
    #:|hasOpenGLShaderPrograms.QOpenGLShaderProgram|
    #:|hasOpenGLShaders.QOpenGLShader|
    #:|hasOutValues|
@@ -622,6 +661,7 @@
    #:|hasScaledContents|
    #:|hasSelectedText|
    #:|hasSelection|
+   #:|hasStaticContents|
    #:|hasSupport.QMediaPlayer|
    #:|hasText|
    #:|hasThemeIcon.QIcon|
@@ -631,6 +671,7 @@
    #:|hasVisitedPage|
    #:|hasWidthForHeight|
    #:|hash.QCryptographicHash|
+   #:|hash.QMessageAuthenticationCode|
    #:|headerDataChanged|
    #:|headerData|
    #:|headerItem|
@@ -797,6 +838,10 @@
    #:|initializeColumn|
    #:|initializePage|
    #:|inputChannelMode|
+   #:|inputDirectionChanged|
+   #:|inputDirection|
+   #:|inputItemRectangle|
+   #:|inputItemTransform|
    #:|inputMask|
    #:|inputMethod.QGuiApplication|
    #:|inputMethodHints|
@@ -892,6 +937,7 @@
    #:|interfaceFromIndex.QNetworkInterface|
    #:|interfaceFromName.QNetworkInterface|
    #:|internalDelayedPopup|
+   #:|internalTextureFormat|
    #:|interpretText|
    #:|intersected(QRect)|
    #:|intersected(QRegion)|
@@ -912,6 +958,7 @@
    #:|invertedControls|
    #:|inverted|
    #:|invisibleRootItem|
+   #:|invokeAction|
    #:|ip|
    #:|isAbsolutePath.QDir|
    #:|isAbsolute|
@@ -928,6 +975,7 @@
    #:|isAncestorOf|
    #:|isAnchor|
    #:|isAnimated|
+   #:|isAnimating|
    #:|isAntennaConnected|
    #:|isAreaAllowed|
    #:|isAtBoundary|
@@ -1052,6 +1100,7 @@
    #:|isMinimized|
    #:|isModal|
    #:|isModified|
+   #:|isMonotonic.QElapsedTimer|
    #:|isMovable|
    #:|isMuted|
    #:|isNativeMenuBar|
@@ -1076,6 +1125,7 @@
    #:|isReadOnly|
    #:|isReadable|
    #:|isReadyForCapture|
+   #:|isReady|
    #:|isRedoAvailable|
    #:|isRelativePath.QDir|
    #:|isRelative|
@@ -1149,54 +1199,4 @@
    #:|isWidget|
    #:|isWindowModified|
    #:|isWindowType|
-   #:|isWindow|
-   #:|isWrapping|
-   #:|isWritable|
-   #:|isoSensitivityChanged|
-   #:|isoSensitivity|
-   #:|issuerInfo(QByteArray)|
-   #:|issuerInfo(QSslCertificate::SubjectInfo)|
-   #:|issuerInfoAttributes|
-   #:|issuerInfo|
-   #:|italic|
-   #:|itemAbove|
-   #:|itemActivated|
-   #:|itemAtPosition|
-   #:|itemAt|
-   #:|itemBelow|
-   #:|itemChanged|
-   #:|itemChange|
-   #:|itemClicked|
-   #:|itemCollapsed|
-   #:|itemData|
-   #:|itemDelegateForColumn|
-   #:|itemDelegateForRow|
-   #:|itemDelegate|
-   #:|itemDoubleClicked|
-   #:|itemEditorFactory|
-   #:|itemEntered|
-   #:|itemExpanded|
-   #:|itemFromIndex|
-   #:|itemIcon|
-   #:|itemIndexMethod|
-   #:|itemNumber|
-   #:|itemPixmapRect|
-   #:|itemPressed|
-   #:|itemPrototype|
-   #:|itemSelectionChanged|
-   #:|itemSpacing|
-   #:|itemTextRect|
-   #:|itemText|
-   #:|itemToolTip|
-   #:|itemTransform|
-   #:|itemWidget|
-   #:|items(QPainterPath)|
-   #:|items(QPainterPath...)|
-   #:|items(QPoint)|
-   #:|items(QPointF)|
-   #:|items(QPointF...)|
-   #:|items(QPolygon)|
-   #:|items(QPolygon...)|
-   #:|items(QPolygonF)|
-   #:|items(QPolygonF...)|
-   #:|items(QRect)|))
+   #:|isWindow|))

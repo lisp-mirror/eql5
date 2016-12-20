@@ -1323,6 +1323,13 @@
    "static QList<QUrl> getOpenFileUrls ( QWidget * = 0 , const QString & = QString() , const QUrl & = QUrl() , const QString & = QString() , QString * = 0 , Options = 0 , const QStringList & = QStringList() )"
    "static QString getSaveFileName ( QWidget * = 0 , const QString & = QString() , const QString & = QString() , const QString & = QString() , QString * = 0 , Options = 0 )"
    "static QUrl getSaveFileUrl ( QWidget * = 0 , const QString & = QString() , const QUrl & = QUrl() , const QString & = QString() , QString * = 0 , Options = 0 , const QStringList & = QStringList() )")
+  (("QFileSelector" . "QObject")
+   "new QFileSelector ( QObject * = 0 )"
+   "QStringList allSelectors () const"
+   "QStringList extraSelectors () const"
+   "QString select ( const QString & ) const"
+   "QUrl select ( const QUrl & ) const"
+   "void setExtraSelectors ( const QStringList & )")
   (("QFileSystemModel" . "QAbstractItemModel")
    "new QFileSystemModel ( QObject * = 0 )"
    "QIcon fileIcon ( const QModelIndex & ) const"
@@ -2186,6 +2193,19 @@
    "static QString getItem ( QWidget * , const QString & , const QString & , const QStringList & , int = 0 , bool = true , bool * = 0 , Qt::WindowFlags = 0 , Qt::InputMethodHints = Qt::ImhNone )"
    "static QString getMultiLineText ( QWidget * , const QString & , const QString & , const QString & = QString() , bool * = 0 , Qt::WindowFlags = 0 , Qt::InputMethodHints = Qt::ImhNone )"
    "static QString getText ( QWidget * , const QString & , const QString & , QLineEdit::EchoMode = QLineEdit::Normal , const QString & = QString() , bool * = 0 , Qt::WindowFlags = 0 , Qt::InputMethodHints = Qt::ImhNone )")
+  (("QInputMethod" . "QObject")
+   "QRectF cursorRectangle () const"
+   "Qt::LayoutDirection inputDirection () const"
+   "QRectF inputItemRectangle () const"
+   "QTransform inputItemTransform () const"
+   "bool isAnimating () const"
+   "bool isVisible () const"
+   "QRectF keyboardRectangle () const"
+   "QLocale locale () const"
+   "void setInputItemRectangle ( const QRectF & )"
+   "void setInputItemTransform ( const QTransform & )"
+   "void setVisible ( bool )"
+   "static QVariant queryFocusObject ( Qt::InputMethodQuery , QVariant )")
   (("QIntValidator" . "QValidator")
    "new QIntValidator ( QObject * = 0 )"
    "new QIntValidator ( int , int , QObject * = 0 )"
@@ -2987,6 +3007,11 @@
    "protected QObject * sender () const"
    "protected int senderSignalIndex () const"
    "static QString tr ( const char * , const char * = 0 , int = -1 )")
+  (("QObjectCleanupHandler" . "QObject")
+   "QObject * add ( QObject * )"
+   "void clear ()"
+   "bool isEmpty () const"
+   "void remove ( QObject * )")
   (("QOpenGLContext" . "QObject")
    "new QOpenGLContext ( QObject * = 0 )"
    "bool create ()"
@@ -3623,6 +3648,17 @@
    "void setKey ( const QKeySequence & )"
    "void setWhatsThis ( const QString & )"
    "QString whatsThis () const")
+  (("QSignalMapper" . "QObject")
+   "new QSignalMapper ( QObject * = 0 )"
+   "QObject * mapping ( int ) const"
+   "QObject * mapping ( const QString & ) const"
+   "QObject * mapping ( QWidget * ) const"
+   "QObject * mapping ( QObject * ) const"
+   "void removeMappings ( QObject * )"
+   "void setMapping ( QObject * , int )"
+   "void setMapping ( QObject * , const QString & )"
+   "void setMapping ( QObject * , QWidget * )"
+   "void setMapping ( QObject * , QObject * )")
   (("QSignalTransition" . "QAbstractTransition")
    "new QSignalTransition ( QState * = 0 )"
    "new QSignalTransition ( const QObject * , const char * , QState * = 0 )"
@@ -4029,6 +4065,23 @@
    "static Qt::Alignment visualAlignment ( Qt::LayoutDirection , Qt::Alignment )"
    "static QPoint visualPos ( Qt::LayoutDirection , const QRect & , const QPoint & )"
    "static QRect visualRect ( Qt::LayoutDirection , const QRect & , const QRect & )")
+  (("QStyleHints" . "QObject")
+   "int cursorFlashTime () const"
+   "qreal fontSmoothingGamma () const"
+   "int keyboardAutoRepeatRate () const"
+   "int keyboardInputInterval () const"
+   "int mouseDoubleClickInterval () const"
+   "int mousePressAndHoldInterval () const"
+   "QChar passwordMaskCharacter () const"
+   "int passwordMaskDelay () const"
+   "bool setFocusOnTouchRelease () const"
+   "bool showIsFullScreen () const"
+   "bool singleClickActivation () const"
+   "int startDragDistance () const"
+   "int startDragTime () const"
+   "int startDragVelocity () const"
+   "Qt::TabFocusBehavior tabFocusBehavior () const"
+   "bool useRtlExtensions () const")
   (("QStyledItemDelegate" . "QAbstractItemDelegate")
    "new QStyledItemDelegate ( QObject * = 0 )"
    "virtual QString displayText ( const QVariant & , const QLocale & ) const"
