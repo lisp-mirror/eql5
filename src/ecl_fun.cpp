@@ -57,6 +57,7 @@ META_TYPE (T_QObjectList,                      QObjectList)
 META_TYPE (T_QList_QPolygonF,                  QList<QPolygonF>)
 META_TYPE (T_QList_QSize,                      QList<QSize>)
 META_TYPE (T_QList_QStandardItem,              QList<QStandardItem*>)
+META_TYPE (T_QList_QStorageInfo,               QList<QStorageInfo>)
 META_TYPE (T_QList_QTableWidgetItem,           QList<QTableWidgetItem*>)
 META_TYPE (T_QList_QTableWidgetSelectionRange, QList<QTableWidgetSelectionRange>)
 META_TYPE (T_QList_QTextBlock,                 QList<QTextBlock>)
@@ -78,6 +79,7 @@ META_TYPE (T_QPageSize,                        QPageSize)
 META_TYPE (T_QPainterPath,                     QPainterPath)
 META_TYPE (T_QPolygonF,                        QPolygonF)
 META_TYPE (T_QRgb,                             QRgb)
+META_TYPE (T_QStorageInfo,                     QStorageInfo)
 META_TYPE (T_QTableWidgetSelectionRange,       QTableWidgetSelectionRange)
 META_TYPE (T_QTextBlock,                       QTextBlock)
 META_TYPE (T_QTextBlockFormat,                 QTextBlockFormat)
@@ -791,6 +793,7 @@ TO_QT_TYPE_PTR  (QRegion, qregion)
 TO_QT_TYPE_PTR  (QRegExp, qregexp)
 TO_QT_TYPE_PTR  (QRegularExpression, qregularexpression)
 TO_QT_TYPE_PTR2 (QSizePolicy, qsizepolicy)
+TO_QT_TYPE_PTR  (QStorageInfo, qstorageinfo)
 TO_QT_TYPE_PTR2 (QTableWidgetSelectionRange, qtablewidgetselectionrange)
 TO_QT_TYPE_PTR2 (QTextBlock, qtextblock)
 TO_QT_TYPE_PTR  (QTextBlockFormat, qtextblockformat)
@@ -1053,6 +1056,7 @@ TO_CL_LIST_VAL (QKeySequence, qkeysequence)
 TO_CL_LIST_VAL (QModelIndex, qmodelindex)
 TO_CL_LIST_VAL (QPolygonF, qpolygonf)
 TO_CL_LIST_VAL (QSize, qsize)
+TO_CL_LIST_VAL (QStorageInfo, qstorageinfo)
 TO_CL_LIST_VAL (QTableWidgetSelectionRange, qtablewidgetselectionrange)
 TO_CL_LIST_VAL (QTextBlock, qtextblock)
 TO_CL_LIST_VAL (QUrl, qurl)
@@ -1239,6 +1243,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QPainterPath == n)                     p = new QPainterPath(*toQPainterPathPointer(l_arg));
         else if(T_QPolygonF == n)                        p = new QPolygonF(toQPolygonF(l_arg));
         else if(T_QRgb == n)                             p = new QRgb(toUInt(l_arg));
+        else if(T_QStorageInfo == n)                     p = new QStorageInfo(*toQStorageInfoPointer(l_arg));
         else if(T_QTableWidgetSelectionRange == n)       p = new QTableWidgetSelectionRange(*toQTableWidgetSelectionRangePointer(l_arg));
         else if(T_QTextBlock == n)                       p = new QTextBlock(*toQTextBlockPointer(l_arg));
         else if(T_QTextBlockFormat == n)                 p = new QTextBlockFormat(*toQTextBlockFormatPointer(l_arg));
@@ -1384,6 +1389,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QList_QPolygonF == n)                  l_ret = from_qpolygonflist(*(QList<QPolygonF>*)p);
             else if(T_QList_QSize == n)                      l_ret = from_qsizelist(*(QList<QSize>*)p);
             else if(T_QList_QStandardItem == n)              l_ret = from_qstandarditemlist(*(QList<QStandardItem*>*)p);
+            else if(T_QList_QStorageInfo == n)               l_ret = from_qstorageinfolist(*(QList<QStorageInfo>*)p);
             else if(T_QList_QTableWidgetItem == n)           l_ret = from_qtablewidgetitemlist(*(QList<QTableWidgetItem*>*)p);
             else if(T_QList_QTableWidgetSelectionRange == n) l_ret = from_qtablewidgetselectionrangelist(*(QList<QTableWidgetSelectionRange>*)p);
             else if(T_QList_QTextBlock == n)                 l_ret = from_qtextblocklist(*(QList<QTextBlock>*)p);
@@ -1405,6 +1411,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QPainterPath == n)                     l_ret = from_qpainterpath(*(QPainterPath*)p);
             else if(T_QPolygonF == n)                        l_ret = from_qpolygonf(*(QPolygonF*)p);
             else if(T_QRgb == n)                             l_ret = ecl_make_unsigned_integer(*(QRgb*)p);
+            else if(T_QStorageInfo == n)                     l_ret = from_qstorageinfo(*(QStorageInfo*)p);
             else if(T_QTableWidgetSelectionRange == n)       l_ret = from_qtablewidgetselectionrange(*(QTableWidgetSelectionRange*)p);
             else if(T_QTextBlock == n)                       l_ret = from_qtextblock(*(QTextBlock*)p);
             else if(T_QTextBlockFormat == n)                 l_ret = from_qtextblockformat(*(QTextBlockFormat*)p);

@@ -1,5 +1,35 @@
 (in-package :eql)
 
+(defun |updateMetaData| (object &rest arguments)
+  (%qinvoke-method object nil "updateMetaData" arguments))
+
+(defun |updateMicroFocus| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "updateMicroFocus" arguments))
+
+(defun |updatePositionDependentActions| (object &rest arguments)
+  (%qinvoke-method object nil "updatePositionDependentActions" arguments))
+
+(defun |updatePreviewWidget| (object &rest arguments)
+  (%qinvoke-method object nil "updatePreviewWidget" arguments))
+
+(defun |updatePreview| (object &rest arguments)
+  (%qinvoke-method object nil "updatePreview" arguments))
+
+(defun |updateRequest| (object &rest arguments)
+  (%qinvoke-method object nil "updateRequest" arguments))
+
+(defun |updateSceneRect| (object &rest arguments)
+  (%qinvoke-method object nil "updateSceneRect" arguments))
+
+(defun |updateScene| (object &rest arguments)
+  (%qinvoke-method object nil "updateScene" arguments))
+
+(defun |updateSection| (object &rest arguments)
+  (%qinvoke-method object nil "updateSection" arguments))
+
+(defun |updated| (object &rest arguments)
+  (%qinvoke-method object nil "updated" arguments))
+
 (defun |updatesEnabled| (object &rest arguments)
   (%qinvoke-method object nil "updatesEnabled" arguments))
 

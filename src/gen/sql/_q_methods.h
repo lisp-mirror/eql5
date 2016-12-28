@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q185 : public Q139 { // QSqlDriver
+class Q186 : public Q140 { // QSqlDriver
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSqlDriver(u, x1); }
@@ -42,7 +42,7 @@ public:
     Q_INVOKABLE bool MunsubscribeFromNotification(QSqlDriver* o, const QString& x1) { return o->unsubscribeFromNotification(x1); }
 };
 
-class Q186 : public Q15 { // QSqlQueryModel
+class Q187 : public Q15 { // QSqlQueryModel
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSqlQueryModel(u, x1); }
@@ -65,7 +65,7 @@ public:
     Q_INVOKABLE bool MsetHeaderData(QSqlQueryModel* o, int x1, Qt::Orientation x2, const QVariant& x3, int x4 = Qt::EditRole) { return o->setHeaderData(x1, x2, x3, x4); }
 };
 
-class Q187 : public Q109 { // QSqlRelationalDelegate
+class Q188 : public Q110 { // QSqlRelationalDelegate
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSqlRelationalDelegate(u, x1); }
@@ -73,7 +73,7 @@ public:
     Q_INVOKABLE void MsetModelData(QSqlRelationalDelegate* o, QWidget* x1, QAbstractItemModel* x2, const QModelIndex& x3) const { o->setModelData(x1, x2, x3); }
 };
 
-class Q189 : public Q186 { // QSqlTableModel
+class Q190 : public Q187 { // QSqlTableModel
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) { return new LSqlTableModel(u, x1, x2); }
@@ -109,7 +109,7 @@ public:
     Q_INVOKABLE void Msort(QSqlTableModel* o, int x1, Qt::SortOrder x2) { o->sort(x1, x2); }
 };
 
-class Q188 : public Q189 { // QSqlRelationalTableModel
+class Q189 : public Q190 { // QSqlRelationalTableModel
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0, QSqlDatabase x2 = QSqlDatabase()) { return new LSqlRelationalTableModel(u, x1, x2); }

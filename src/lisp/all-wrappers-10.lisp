@@ -1,5 +1,26 @@
 (in-package :eql)
 
+(defun |rowResized| (object &rest arguments)
+  (%qinvoke-method object nil "rowResized" arguments))
+
+(defun |rowSpacing| (object &rest arguments)
+  (%qinvoke-method object nil "rowSpacing" arguments))
+
+(defun |rowSpan| (object &rest arguments)
+  (%qinvoke-method object nil "rowSpan" arguments))
+
+(defun |rowStart| (object &rest arguments)
+  (%qinvoke-method object nil "rowStart" arguments))
+
+(defun |rowStretchFactor| (object &rest arguments)
+  (%qinvoke-method object nil "rowStretchFactor" arguments))
+
+(defun |rowStretch| (object &rest arguments)
+  (%qinvoke-method object nil "rowStretch" arguments))
+
+(defun |rowViewportPosition| (object &rest arguments)
+  (%qinvoke-method object nil "rowViewportPosition" arguments))
+
 (defun |rowWrapPolicy| (object &rest arguments)
   (%qinvoke-method object nil "rowWrapPolicy" arguments))
 
@@ -921,6 +942,9 @@
 (defun |setBlurRadius| (object &rest arguments)
   (%qinvoke-method object nil "setBlurRadius" arguments))
 
+(defun |setBody| (object &rest arguments)
+  (%qinvoke-method object nil "setBody" arguments))
+
 (defun |setBold| (object &rest arguments)
   (%qinvoke-method object nil "setBold" arguments))
 
@@ -953,6 +977,9 @@
 
 (defun |setBottom| (object &rest arguments)
   (%qinvoke-method object nil "setBottom" arguments))
+
+(defun |setBoundary| (object &rest arguments)
+  (%qinvoke-method object nil "setBoundary" arguments))
 
 (defun |setBoundingRect| (object &rest arguments)
   (%qinvoke-method object nil "setBoundingRect" arguments))
@@ -1319,6 +1346,9 @@
 
 (defun |setContentPos| (object &rest arguments)
   (%qinvoke-method object nil "setContentPos" arguments))
+
+(defun |setContentType| (object &rest arguments)
+  (%qinvoke-method object nil "setContentType" arguments))
 
 (defun |setContentsMargins| (object &rest arguments)
   (%qinvoke-method object nil "setContentsMargins" arguments))
@@ -3569,33 +3599,3 @@
 
 (defun |setRestartCommand| (object &rest arguments)
   (%qinvoke-method object nil "setRestartCommand" arguments))
-
-(defun |setRestartHint| (object &rest arguments)
-  (%qinvoke-method object nil "setRestartHint" arguments))
-
-(defun |setResult| (object &rest arguments)
-  (%qinvoke-method object nil "setResult" arguments))
-
-(defun |setRetainSizeWhenHidden| (object &rest arguments)
-  (%qinvoke-method object nil "setRetainSizeWhenHidden" arguments))
-
-(defun |setRevision| (object &rest arguments)
-  (%qinvoke-method object nil "setRevision" arguments))
-
-(defun |setRgbF| (object &rest arguments)
-  (%qinvoke-method object nil "setRgbF" arguments))
-
-(defun |setRgba| (object &rest arguments)
-  (%qinvoke-method object nil "setRgba" arguments))
-
-(defun |setRgb| (object &rest arguments)
-  (%qinvoke-method object nil "setRgb" arguments))
-
-(defun |setRightMargin| (object &rest arguments)
-  (%qinvoke-method object nil "setRightMargin" arguments))
-
-(defun |setRightPadding| (object &rest arguments)
-  (%qinvoke-method object nil "setRightPadding" arguments))
-
-(defun |setRight| (object &rest arguments)
-  (%qinvoke-method object nil "setRight" arguments))

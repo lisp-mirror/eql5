@@ -7,7 +7,7 @@
 #include <QTimer>
 #include <QStringList>
 
-const char EQL::version[] = "16.12.6"; // Dec 2016
+const char EQL::version[] = "16.12.7"; // Dec 2016
 
 extern "C" void ini_EQL(cl_object);
 
@@ -38,6 +38,12 @@ QString EQL::home() {
 #endif
         path.append('/'); }
     return path; }
+
+/*
+void EQL::ignoreIOStreams() {
+    // [Windows] print output would cause the executable to crash
+}
+*/
 
 void EQL::exec(const QStringList& args) {
     cl_object s_qtpl = cl_intern(1, make_constant_base_string("*QTPL*"));

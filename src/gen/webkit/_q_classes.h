@@ -73,7 +73,7 @@ public:
 
 class LWebHistoryInterface : public QWebHistoryInterface {
     Q_OBJECT
-    friend class Q240;
+    friend class Q241;
 public:
     LWebHistoryInterface(uint u, QObject* x1 = 0) : QWebHistoryInterface(x1), unique(u) {}
 
@@ -90,7 +90,7 @@ public:
 
 class LWebInspector : public QWebInspector {
     Q_OBJECT
-    friend class Q241;
+    friend class Q242;
 public:
     LWebInspector(uint u, QWidget* x1 = 0) : QWebInspector(x1), unique(u) {}
 
@@ -139,7 +139,7 @@ public:
 
 class LWebPage : public QWebPage {
     Q_OBJECT
-    friend class Q242;
+    friend class Q243;
 public:
     LWebPage(uint u, QObject* x1 = 0) : QWebPage(x1), unique(u) {}
 
@@ -167,7 +167,7 @@ public:
 
 class LWebPluginFactory : public QWebPluginFactory {
     Q_OBJECT
-    friend class Q243;
+    friend class Q244;
 public:
     LWebPluginFactory(uint u, QObject* x1 = 0) : QWebPluginFactory(x1), unique(u) {}
 
@@ -185,7 +185,7 @@ public:
 
 class LWebView : public QWebView {
     Q_OBJECT
-    friend class Q244;
+    friend class Q245;
 public:
     LWebView(uint u, QWidget* x1 = 0) : QWebView(x1), unique(u) {}
 

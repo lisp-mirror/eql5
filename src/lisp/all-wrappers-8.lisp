@@ -1,5 +1,17 @@
 (in-package :eql)
 
+(defun |downloadProgress| (object &rest arguments)
+  (%qinvoke-method object nil "downloadProgress" arguments))
+
+(defun |downloadRequested| (object &rest arguments)
+  (%qinvoke-method object nil "downloadRequested" arguments))
+
+(defun |dragCursor| (object &rest arguments)
+  (%qinvoke-method object nil "dragCursor" arguments))
+
+(defun |dragDropMode| (object &rest arguments)
+  (%qinvoke-method object nil "dragDropMode" arguments))
+
 (defun |dragDropOverwriteMode| (object &rest arguments)
   (%qinvoke-method object nil "dragDropOverwriteMode" arguments))
 
@@ -2319,6 +2331,9 @@
 (defun |idealWidth| (object &rest arguments)
   (%qinvoke-method object nil "idealWidth" arguments))
 
+(defun |identifier| (object &rest arguments)
+  (%qinvoke-method object nil "identifier" arguments))
+
 (defun |idnWhitelist.QUrl| (&rest arguments)
   (%qinvoke-method "QUrl" nil "idnWhitelist" arguments))
 
@@ -3393,6 +3408,9 @@
 (defun |isRightToLeft.QGuiApplication| (&rest arguments)
   (%qinvoke-method "QGuiApplication" nil "isRightToLeft" arguments))
 
+(defun |isRoamingAvailable| (object &rest arguments)
+  (%qinvoke-method object nil "isRoamingAvailable" arguments))
+
 (defun |isRoot| (object &rest arguments)
   (%qinvoke-method object nil "isRoot" arguments))
 
@@ -3581,21 +3599,3 @@
 
 (defun |isVisible| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "isVisible" arguments))
-
-(defun |isWhiteBalanceModeSupported| (object &rest arguments)
-  (%qinvoke-method object nil "isWhiteBalanceModeSupported" arguments))
-
-(defun |isWidgetType| (object &rest arguments)
-  (%qinvoke-method object nil "isWidgetType" arguments))
-
-(defun |isWidget| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "isWidget" arguments))
-
-(defun |isWindowModified| (object &rest arguments)
-  (%qinvoke-method object nil "isWindowModified" arguments))
-
-(defun |isWindowType| (object &rest arguments)
-  (%qinvoke-method object nil "isWindowType" arguments))
-
-(defun |isWindow| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "isWindow" arguments))

@@ -4,6 +4,7 @@
 (defparameter *network-q-names*
   (list "//QAbstractNetworkCache"
         "QAbstractSocket"
+        "QHttpMultiPart"
         "QLocalServer"
         "QLocalSocket"
         "QNetworkAccessManager"

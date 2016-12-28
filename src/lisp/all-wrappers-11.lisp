@@ -1,5 +1,35 @@
 (in-package :eql)
 
+(defun |setRestartHint| (object &rest arguments)
+  (%qinvoke-method object nil "setRestartHint" arguments))
+
+(defun |setResult| (object &rest arguments)
+  (%qinvoke-method object nil "setResult" arguments))
+
+(defun |setRetainSizeWhenHidden| (object &rest arguments)
+  (%qinvoke-method object nil "setRetainSizeWhenHidden" arguments))
+
+(defun |setRevision| (object &rest arguments)
+  (%qinvoke-method object nil "setRevision" arguments))
+
+(defun |setRgbF| (object &rest arguments)
+  (%qinvoke-method object nil "setRgbF" arguments))
+
+(defun |setRgba| (object &rest arguments)
+  (%qinvoke-method object nil "setRgba" arguments))
+
+(defun |setRgb| (object &rest arguments)
+  (%qinvoke-method object nil "setRgb" arguments))
+
+(defun |setRightMargin| (object &rest arguments)
+  (%qinvoke-method object nil "setRightMargin" arguments))
+
+(defun |setRightPadding| (object &rest arguments)
+  (%qinvoke-method object nil "setRightPadding" arguments))
+
+(defun |setRight| (object &rest arguments)
+  (%qinvoke-method object nil "setRight" arguments))
+
 (defun |setRootIndex| (object &rest arguments)
   (%qinvoke-method object nil "setRootIndex" arguments))
 
@@ -3569,33 +3599,3 @@
 
 (defun |updateInterval| (object &rest arguments)
   (%qinvoke-method object nil "updateInterval" arguments))
-
-(defun |updateMetaData| (object &rest arguments)
-  (%qinvoke-method object nil "updateMetaData" arguments))
-
-(defun |updateMicroFocus| (object &rest arguments)
-  (%qinvoke-method object (%auto-cast object) "updateMicroFocus" arguments))
-
-(defun |updatePositionDependentActions| (object &rest arguments)
-  (%qinvoke-method object nil "updatePositionDependentActions" arguments))
-
-(defun |updatePreviewWidget| (object &rest arguments)
-  (%qinvoke-method object nil "updatePreviewWidget" arguments))
-
-(defun |updatePreview| (object &rest arguments)
-  (%qinvoke-method object nil "updatePreview" arguments))
-
-(defun |updateRequest| (object &rest arguments)
-  (%qinvoke-method object nil "updateRequest" arguments))
-
-(defun |updateSceneRect| (object &rest arguments)
-  (%qinvoke-method object nil "updateSceneRect" arguments))
-
-(defun |updateScene| (object &rest arguments)
-  (%qinvoke-method object nil "updateScene" arguments))
-
-(defun |updateSection| (object &rest arguments)
-  (%qinvoke-method object nil "updateSection" arguments))
-
-(defun |updated| (object &rest arguments)
-  (%qinvoke-method object nil "updated" arguments))

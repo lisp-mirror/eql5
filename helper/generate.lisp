@@ -801,12 +801,21 @@
                ~%int LObjects::T_QList_QHelpSearchQuery = -1;~
                ~%int LObjects::T_QHostAddress = -1;~
                ~%int LObjects::T_QHostInfo = -1;~
+               ~%int LObjects::T_QHttpPart = -1;~
                ~%int LObjects::T_QImageEncoderSettings = -1;~
                ~%int LObjects::T_QMediaContent = -1;~
                ~%int LObjects::T_QList_QMediaContent = -1;~
+               ~%int LObjects::T_QNetworkAddressEntry = -1;~
+               ~%int LObjects::T_QList_QNetworkAddressEntry = -1;~
                ~%int LObjects::T_QNetworkCacheMetaData = -1;~
+               ~%int LObjects::T_QNetworkConfiguration = -1;~
+               ~%int LObjects::T_QNetworkCookie = -1;~
+               ~%int LObjects::T_QList_QNetworkCookie = -1;~
+               ~%int LObjects::T_QList_QNetworkConfiguration = -1;~
                ~%int LObjects::T_QNetworkInterface = -1;~
+               ~%int LObjects::T_QList_QNetworkInterface = -1;~
                ~%int LObjects::T_QNetworkProxy = -1;~
+               ~%int LObjects::T_QList_QNetworkProxy = -1;~
                ~%int LObjects::T_QNetworkRequest = -1;~
                ~%int LObjects::T_QSqlDatabase = -1;~
                ~%int LObjects::T_QSqlError = -1;~
@@ -822,6 +831,7 @@
                ~%int LObjects::T_QVideoEncoderSettings = -1;~
                ~%int LObjects::T_QVideoSurfaceFormat = -1;~
                ~%int LObjects::T_QWebElement = -1;~
+               ~%int LObjects::T_QList_QWebElement = -1;~
                ~%int LObjects::T_QWebElementCollection = -1;~
                ~%int LObjects::T_QWebHitTestResult = -1;~
                ~%~
@@ -1153,9 +1163,15 @@
                     "QList<QKeySequence>"
                     "QList<QListWidgetItem*>"
                     "QList<QMdiSubWindow*>"
+                    "QList<QNetworkAddressEntry>"
+                    "QList<QNetworkConfiguration>"
+                    "QList<QNetworkCookie>"
+                    "QList<QNetworkInterface>"
+                    "QList<QNetworkProxy>"
                     "QList<QPolygonF>"
                     "QList<QSize>"
                     "QList<QStandardItem*>"
+                    "QList<QStorageInfo>"
                     "QList<QTableWidgetItem*>"
                     "QList<QTableWidgetSelectionRange>"
                     "QList<QTextBlock>"
@@ -1163,6 +1179,7 @@
                     "QList<QTreeWidgetItem*>"
                     "QList<QUndoStack*>"
                     "QList<QUrl>"
+                    "QList<QWebElement>"
                     "QList<QWidget*>"
                     "QList<int>"
                     "QList<qreal>"

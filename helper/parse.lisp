@@ -128,10 +128,14 @@
         "XEvent"
         "**"
         "&&"
-        "QString nativeArguments () const"
-        "void setNativeArguments ( const QString & )"
+        "nativeArguments("
+        "setNativeArguments("
         "viewportAttributesForSize"
-        "const QGraphicsObject * toGraphicsObject () const"
+        "const QGraphicsObject *"
+        "swap(QDns"
+        "swap(QHttp"
+        "swap(QNetwork"
+        "swap(QStorage"
         ))
 
 (defparameter *check*      nil)
@@ -235,8 +239,7 @@
                     (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QMarginsF_DEFAULT)")))
                   (let* ((fun (tokenize x:it))
                          (new (and (not static)
-                                   (or (x:starts-with (format nil "Q_INVOKABLE ~A (" class) fun)
-                                       (x:starts-with (format nil "~A (" class) fun))))
+                                   (x:starts-with (format nil "~A (" class) fun)))
                          (virtual (x:starts-with "virtual" fun)))
                     (unless (or (and qpainter (search "QPaintDevice" fun :test 'string=))
                                 (and new no-new)
@@ -252,7 +255,7 @@
                                                         (protected "protected ")
                                                         (static "static ")
                                                         (t ""))
-                                (subseq fun (if (x:starts-with "Q_INVOKABLE" fun) 12 0)))))))))))))))
+                                fun)))))))))))))
 
 (defun parse-classes (classes s so non)
   (dolist (class classes)

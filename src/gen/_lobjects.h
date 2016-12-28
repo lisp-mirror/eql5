@@ -53,12 +53,21 @@ public:
     static int T_QList_QHelpSearchQuery;
     static int T_QHostAddress;
     static int T_QHostInfo;
+    static int T_QHttpPart;
     static int T_QImageEncoderSettings;
     static int T_QMediaContent;
     static int T_QList_QMediaContent;
+    static int T_QNetworkAddressEntry;
+    static int T_QList_QNetworkAddressEntry;
     static int T_QNetworkCacheMetaData;
+    static int T_QNetworkConfiguration;
+    static int T_QList_QNetworkConfiguration;
+    static int T_QNetworkCookie;
+    static int T_QList_QNetworkCookie;
     static int T_QNetworkInterface;
+    static int T_QList_QNetworkInterface;
     static int T_QNetworkProxy;
+    static int T_QList_QNetworkProxy;
     static int T_QNetworkRequest;
     static int T_QSqlDatabase;
     static int T_QSqlError;
@@ -74,6 +83,7 @@ public:
     static int T_QVideoEncoderSettings;
     static int T_QVideoSurfaceFormat;
     static int T_QWebElement;
+    static int T_QList_QWebElement;
     static int T_QWebElementCollection;
     static int T_QWebHitTestResult;
 

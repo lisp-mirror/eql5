@@ -1,5 +1,23 @@
 (in-package :eql)
 
+(defun |isWhiteBalanceModeSupported| (object &rest arguments)
+  (%qinvoke-method object nil "isWhiteBalanceModeSupported" arguments))
+
+(defun |isWidgetType| (object &rest arguments)
+  (%qinvoke-method object nil "isWidgetType" arguments))
+
+(defun |isWidget| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "isWidget" arguments))
+
+(defun |isWindowModified| (object &rest arguments)
+  (%qinvoke-method object nil "isWindowModified" arguments))
+
+(defun |isWindowType| (object &rest arguments)
+  (%qinvoke-method object nil "isWindowType" arguments))
+
+(defun |isWindow| (object &rest arguments)
+  (%qinvoke-method object (%auto-cast object) "isWindow" arguments))
+
 (defun |isWrapping| (object &rest arguments)
   (%qinvoke-method object nil "isWrapping" arguments))
 
@@ -2712,6 +2730,9 @@
 (defun |publicKey| (object &rest arguments)
   (%qinvoke-method object nil "publicKey" arguments))
 
+(defun |purpose| (object &rest arguments)
+  (%qinvoke-method object nil "purpose" arguments))
+
 (defun |push| (object &rest arguments)
   (%qinvoke-method object nil "push" arguments))
 
@@ -3578,24 +3599,3 @@
 
 (defun |rowPreferredHeight| (object &rest arguments)
   (%qinvoke-method object nil "rowPreferredHeight" arguments))
-
-(defun |rowResized| (object &rest arguments)
-  (%qinvoke-method object nil "rowResized" arguments))
-
-(defun |rowSpacing| (object &rest arguments)
-  (%qinvoke-method object nil "rowSpacing" arguments))
-
-(defun |rowSpan| (object &rest arguments)
-  (%qinvoke-method object nil "rowSpan" arguments))
-
-(defun |rowStart| (object &rest arguments)
-  (%qinvoke-method object nil "rowStart" arguments))
-
-(defun |rowStretchFactor| (object &rest arguments)
-  (%qinvoke-method object nil "rowStretchFactor" arguments))
-
-(defun |rowStretch| (object &rest arguments)
-  (%qinvoke-method object nil "rowStretch" arguments))
-
-(defun |rowViewportPosition| (object &rest arguments)
-  (%qinvoke-method object nil "rowViewportPosition" arguments))

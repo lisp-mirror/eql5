@@ -4,6 +4,7 @@
   (:use :common-lisp)
   (:export
    #:*break-on-errors*
+   #:*byte-array-as-string*
    #:*slime-mode*
    #:*qtpl*
    #:!

@@ -12,11 +12,14 @@ TO_QT_TYPE_PTR (QWebElement, qwebelement)
 TO_QT_TYPE_PTR (QWebElementCollection, qwebelementcollection)
 TO_QT_TYPE_PTR (QWebHitTestResult, qwebhittestresult)
 
+TO_CL_LIST_VAL (QWebElement, qwebelement)
+
 #define META_TYPE_(var, type) var = qRegisterMetaType< type >(#type);
 
 void ini2() {
     // note: QWebHistoryItem can't be registered as QMetaType, lacking a public default constructor
     META_TYPE_(LObjects::T_QWebElement,           QWebElement)
+    META_TYPE_(LObjects::T_QList_QWebElement,     QList<QWebElement>)
     META_TYPE_(LObjects::T_QWebElementCollection, QWebElementCollection)
     META_TYPE_(LObjects::T_QWebHitTestResult,     QWebHitTestResult) }
 
@@ -35,6 +38,7 @@ cl_object to_lisp_arg(int n, void* p, bool* found) {
     cl_object l_ret = Cnil;
     bool _found = true;
     if(LObjects::T_QWebElement == n)                { l_ret = from_qwebelement(*(QWebElement*)p); }
+    else if(LObjects::T_QList_QWebElement == n)     { l_ret = from_qwebelementlist(*(QList<QWebElement>*)p); }
     else if(LObjects::T_QWebElementCollection == n) { l_ret = from_qwebelementcollection(*(QWebElementCollection*)p); }
     else if(LObjects::T_QWebHitTestResult == n)     { l_ret = from_qwebhittestresult(*(QWebHitTestResult*)p); }
     else { _found = false; }

@@ -1158,6 +1158,15 @@
 (defun |bcp47Name| (object &rest arguments)
   (%qinvoke-method object nil "bcp47Name" arguments))
 
+(defun |bearerTypeFamily| (object &rest arguments)
+  (%qinvoke-method object nil "bearerTypeFamily" arguments))
+
+(defun |bearerTypeName| (object &rest arguments)
+  (%qinvoke-method object nil "bearerTypeName" arguments))
+
+(defun |bearerType| (object &rest arguments)
+  (%qinvoke-method object nil "bearerType" arguments))
+
 (defun |beep.QApplication| (&rest arguments)
   (%qinvoke-method "QApplication" nil "beep" arguments))
 
@@ -1430,6 +1439,9 @@
 
 (defun |boundaryReasons| (object &rest arguments)
   (%qinvoke-method object nil "boundaryReasons" arguments))
+
+(defun |boundary| (object &rest arguments)
+  (%qinvoke-method object nil "boundary" arguments))
 
 (defun |boundingRect(QChar)| (object &rest arguments)
   (%qinvoke-method object nil "boundingRect(QChar)" arguments))
@@ -3587,15 +3599,3 @@
 
 (defun |doubleValue| (object &rest arguments)
   (%qinvoke-method object nil "doubleValue" arguments))
-
-(defun |downloadProgress| (object &rest arguments)
-  (%qinvoke-method object nil "downloadProgress" arguments))
-
-(defun |downloadRequested| (object &rest arguments)
-  (%qinvoke-method object nil "downloadRequested" arguments))
-
-(defun |dragCursor| (object &rest arguments)
-  (%qinvoke-method object nil "dragCursor" arguments))
-
-(defun |dragDropMode| (object &rest arguments)
-  (%qinvoke-method object nil "dragDropMode" arguments))

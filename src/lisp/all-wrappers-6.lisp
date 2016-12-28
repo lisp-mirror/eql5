@@ -1,5 +1,15 @@
 (defpackage :eql
   (:export
+   #:|updateMetaData|
+   #:|updateMicroFocus|
+   #:|updatePositionDependentActions|
+   #:|updatePreviewWidget|
+   #:|updatePreview|
+   #:|updateRequest|
+   #:|updateSceneRect|
+   #:|updateScene|
+   #:|updateSection|
+   #:|updated|
    #:|updatesEnabled|
    #:|update|
    #:|uploadProgress|

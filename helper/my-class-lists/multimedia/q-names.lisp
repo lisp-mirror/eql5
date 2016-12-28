@@ -19,5 +19,4 @@
         "//QMediaService"
         "QRadioTuner"
         "QVideoWidget"
-        "QVideoWidget"
         "QVideoWidgetControl"))

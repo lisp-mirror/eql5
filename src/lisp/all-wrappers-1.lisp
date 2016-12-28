@@ -386,6 +386,9 @@
    #:|base|
    #:|batchSize|
    #:|bcp47Name|
+   #:|bearerTypeFamily|
+   #:|bearerTypeName|
+   #:|bearerType|
    #:|beep.QApplication|
    #:|beforeDelete|
    #:|beforeInsert|
@@ -477,6 +480,7 @@
    #:|boundValues|
    #:|boundValue|
    #:|boundaryReasons|
+   #:|boundary|
    #:|boundingRect(QChar)|
    #:|boundingRect(QRect...)|
    #:|boundingRect(QRectF,QString...)|
@@ -1195,11 +1199,7 @@
    #:|doubleProperty|
    #:|doubleValueChanged|
    #:|doubleValueSelected|
-   #:|doubleValue|
-   #:|downloadProgress|
-   #:|downloadRequested|
-   #:|dragCursor|
-   #:|dragDropMode|))
+   #:|doubleValue|))
 
 (in-package :eql)
 

@@ -27,7 +27,7 @@ public:
     Q_INVOKABLE int Mtype(QGraphicsSvgItem* o) const { return o->type(); }
 };
 
-class Q200 : public Q139 { // QSvgRenderer
+class Q201 : public Q140 { // QSvgRenderer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSvgRenderer(u, x1); }
@@ -47,7 +47,7 @@ public:
     Q_INVOKABLE QRectF MviewBoxF(QSvgRenderer* o) const { return o->viewBoxF(); }
 };
 
-class Q201 : public Q245 { // QSvgWidget
+class Q202 : public Q246 { // QSvgWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LSvgWidget(u, x1); }

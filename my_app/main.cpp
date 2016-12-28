@@ -36,6 +36,14 @@ int main(int argc, char** argv) {
             qapp.installTranslator(&trQt); }}
 
     EQL eql;
+
+/*
+#ifdef Q_OS_WINDOWS
+    // print output would crash program
+    eql.ignoreIOStreams(); // TODO
+#endif
+*/
+
     eql.exec(ini_app,    // see make.lisp
              "(start)",  // initial form to be evaluated (optional)
              "example"); // package name                 (optional)

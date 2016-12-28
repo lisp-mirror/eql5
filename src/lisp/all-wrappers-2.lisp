@@ -1,5 +1,9 @@
 (defpackage :eql
   (:export
+   #:|downloadProgress|
+   #:|downloadRequested|
+   #:|dragCursor|
+   #:|dragDropMode|
    #:|dragDropOverwriteMode|
    #:|dragEnabled|
    #:|dragMode|
@@ -773,6 +777,7 @@
    #:|id(int).QPageSize|
    #:|id.QPageSize|
    #:|idealWidth|
+   #:|identifier|
    #:|idnWhitelist.QUrl|
    #:|id|
    #:|ignore(QGesture*)|
@@ -1131,6 +1136,7 @@
    #:|isRelative|
    #:|isRemote|
    #:|isRightToLeft.QGuiApplication|
+   #:|isRoamingAvailable|
    #:|isRoot|
    #:|isRotating|
    #:|isRowHidden|
@@ -1193,10 +1199,4 @@
    #:|isVirtualDesktop|
    #:|isVisible.QToolTip|
    #:|isVisibleTo|
-   #:|isVisible|
-   #:|isWhiteBalanceModeSupported|
-   #:|isWidgetType|
-   #:|isWidget|
-   #:|isWindowModified|
-   #:|isWindowType|
-   #:|isWindow|))
+   #:|isVisible|))

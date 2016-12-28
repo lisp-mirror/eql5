@@ -1187,7 +1187,6 @@
    "void show ()"
    "void stackBefore ( const QGraphicsItem * )"
    "QGraphicsObject * toGraphicsObject ()"
-   "const QGraphicsObject * toGraphicsObject () const"
    "QString toolTip () const"
    "QGraphicsItem * topLevelItem () const"
    "QGraphicsWidget * topLevelWidget () const"
@@ -1503,6 +1502,12 @@
    "const QPointF & oldPosF () const"
    "QPoint pos () const"
    "const QPointF & posF () const")
+  (("QHttpPart" . NIL)
+   "new QHttpPart ()"
+   "new QHttpPart ( const QHttpPart & )"
+   "void setBody ( const QByteArray & )"
+   "void setHeader ( QNetworkRequest::KnownHeaders , const QVariant & )"
+   "void setRawHeader ( const QByteArray & , const QByteArray & )")
   (("QIcon" . NIL)
    "new QIcon ()"
    "new QIcon ( const QPixmap & )"
@@ -2075,8 +2080,7 @@
    "void setBroadcast ( const QHostAddress & )"
    "void setIp ( const QHostAddress & )"
    "void setNetmask ( const QHostAddress & )"
-   "void setPrefixLength ( int )"
-   "void swap ( QNetworkAddressEntry & )")
+   "void setPrefixLength ( int )")
   (("QNetworkCacheMetaData" . NIL)
    "new QNetworkCacheMetaData ()"
    "new QNetworkCacheMetaData ( const QNetworkCacheMetaData & )"
@@ -2092,8 +2096,21 @@
    "void setRawHeaders ( const RawHeaderList & )"
    "void setSaveToDisk ( bool )"
    "void setUrl ( const QUrl & )"
-   "void swap ( QNetworkCacheMetaData & )"
    "QUrl url () const")
+  (("QNetworkConfiguration" . NIL)
+   "new QNetworkConfiguration ()"
+   "new QNetworkConfiguration ( const QNetworkConfiguration & )"
+   "BearerType bearerType () const"
+   "BearerType bearerTypeFamily () const"
+   "QString bearerTypeName () const"
+   "QList<QNetworkConfiguration> children () const"
+   "QString identifier () const"
+   "bool isRoamingAvailable () const"
+   "bool isValid () const"
+   "QString name () const"
+   "Purpose purpose () const"
+   "StateFlags state () const"
+   "Type type () const")
   (("QNetworkCookie" . NIL)
    "new QNetworkCookie ( const QByteArray & = QByteArray() , const QByteArray & = QByteArray() )"
    "new QNetworkCookie ( const QNetworkCookie & )"
@@ -2113,7 +2130,6 @@
    "void setPath ( const QString & )"
    "void setSecure ( bool )"
    "void setValue ( const QByteArray & )"
-   "void swap ( QNetworkCookie & )"
    "QByteArray toRawForm ( RawForm = Full ) const"
    "QByteArray value () const"
    "static QList<QNetworkCookie> parseCookies ( const QByteArray & )")
@@ -2127,7 +2143,6 @@
    "int index () const"
    "bool isValid () const"
    "QString name () const"
-   "void swap ( QNetworkInterface & )"
    "static QList<QHostAddress> allAddresses ()"
    "static QList<QNetworkInterface> allInterfaces ()"
    "static QNetworkInterface interfaceFromIndex ( int )"
@@ -2154,7 +2169,6 @@
    "void setRawHeader ( const QByteArray & , const QByteArray & )"
    "void setType ( QNetworkProxy::ProxyType )"
    "void setUser ( const QString & )"
-   "void swap ( QNetworkProxy & )"
    "QNetworkProxy::ProxyType type () const"
    "QString user () const"
    "static QNetworkProxy applicationProxy ()"
@@ -2188,7 +2202,6 @@
    "void setProtocolTag ( const QString & )"
    "void setQueryType ( QueryType )"
    "void setUrl ( const QUrl & )"
-   "void swap ( QNetworkProxyQuery & )"
    "QUrl url () const")
   (("QNetworkRequest" . NIL)
    "new QNetworkRequest ( const QUrl & = QUrl() )"
@@ -2208,7 +2221,6 @@
    "void setSslConfiguration ( const QSslConfiguration & )"
    "void setUrl ( const QUrl & )"
    "QSslConfiguration sslConfiguration () const"
-   "void swap ( QNetworkRequest & )"
    "QUrl url () const")
   (("QOpenGLFramebufferObject" . NIL)
    "new QOpenGLFramebufferObject ( const QSize & , GLenum = GL_TEXTURE_2D )"
@@ -3566,7 +3578,6 @@
    "void refresh ()"
    "QString rootPath () const"
    "void setPath ( const QString & )"
-   "void swap ( QStorageInfo & )"
    "static QList<QStorageInfo> mountedVolumes ()"
    "static QStorageInfo root ()")
   (("QStyleOption" . NIL)

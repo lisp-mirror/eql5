@@ -1,5 +1,15 @@
 (defpackage :eql
   (:export
+   #:|setRestartHint|
+   #:|setResult|
+   #:|setRetainSizeWhenHidden|
+   #:|setRevision|
+   #:|setRgbF|
+   #:|setRgba|
+   #:|setRgb|
+   #:|setRightMargin|
+   #:|setRightPadding|
+   #:|setRight|
    #:|setRootIndex|
    #:|setRootIsDecorated|
    #:|setRootModelIndex|
@@ -1189,14 +1199,4 @@
    #:|updateEditorGeometry|
    #:|updateGeometries|
    #:|updateGeometry|
-   #:|updateInterval|
-   #:|updateMetaData|
-   #:|updateMicroFocus|
-   #:|updatePositionDependentActions|
-   #:|updatePreviewWidget|
-   #:|updatePreview|
-   #:|updateRequest|
-   #:|updateSceneRect|
-   #:|updateScene|
-   #:|updateSection|
-   #:|updated|))
+   #:|updateInterval|))

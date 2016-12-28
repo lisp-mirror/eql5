@@ -11,15 +11,13 @@ Examples:
 
   (|toString| (|currentTime.QTime|)) ; static function
 
-  (|begin(QWidget*)| painter)
-
 
 Notes
 =====
 
 If you want to add the wrappers permanently, build EQL as usual, then run
 
-  eql5 make-eql-lib-wrappers.lisp
+  eql5 make-eql-lib-wrappers.lisp ; (will take a little looong)
 
 Re-link EQL doing something like:
 

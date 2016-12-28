@@ -4,9 +4,10 @@
 
 (in-package :eql)
 
-(defvar *break-on-errors* nil "Unless NIL, causes a simple (BREAK) on any EQL error.")
-(defvar *slime-mode*      nil)
-(defvar *qtpl*            nil "To set in ~/.eclrc only; the same as command line option -qtpl.")
+(defvar *break-on-errors*      nil "Unless NIL, causes a simple (BREAK) on any EQL error.")
+(defvar *byte-array-as-string* nil "Indicates to print a byte array as string, not as vector. See e.g. QPROPERTIES.")
+(defvar *slime-mode*           nil)
+(defvar *qtpl*                 nil "To set in ~/.eclrc only; the same as command line option -qtpl.")
 
 (defmacro alias (s1 s2)
   `(setf (symbol-function ',s1) (function ,s2)))
@@ -213,8 +214,11 @@
     (when (qt-object-p object*)
       (labels ((null-qt-object (obj)
                  (qt-object 0 0 (qt-object-id obj)))
-               (readable (obj fun)
-                 (cond ((string= "dynamicPropertyNames" fun)
+               (readable (obj fun ret)
+                 (cond ((and *byte-array-as-string*
+                             (string= "QByteArray" ret))
+                        (x:bytes-to-string obj))
+                       ((string= "dynamicPropertyNames" fun)
                         (mapcar 'x:bytes-to-string obj))
                        ((qt-object-p obj)
                         (let ((name (qt-object-name obj)))
@@ -265,19 +269,25 @@
             (setf functions (mapcar (lambda (fun)
                                       (setf fun (x:string-substitute "" "const " fun)
                                             fun (x:string-substitute "" " const" fun))
-                                      (let ((p (position #\( fun)))
-                                        (subseq fun (1+ (position #\Space fun :from-end t :end p)) p)))
+                                      (let* ((p2 (position #\( fun))
+                                             (p1 (position #\Space fun :from-end t :end p2)))
+                                        (cons (subseq fun (1+ p1) p2) ; function name
+                                              (subseq fun 0 p1))))    ; return type
                                     functions))
-            (setf functions (sort (remove-duplicates functions :test 'string=) 'string<))
-            (let ((tab-stop (+ 2 (apply 'max (mapcar 'length functions)))))
-              (dolist (fun functions)
-                (let ((prop-p (find fun properties :test 'string=)))
+            (setf functions (sort (remove-duplicates functions :test 'string= :key 'first)
+                                  'string< :key 'first))
+            (let ((tab-stop (+ 2 (apply 'max (mapcar (lambda (x) (length (first x))) functions)))))
+              (dolist (fun-ret functions)
+                (let* ((fun (car fun-ret))
+                       (ret (cdr fun-ret))
+                       (prop-p (find fun properties :test 'string=)))
                   (princ (format nil "~%~A~C~VT~S" ; "~VT" doesn't work on all terminals
                                  fun
                                  (if prop-p #\Space #\*)
                                  tab-stop
                                  (readable (if prop-p (qget object* fun) (! fun object*))
-                                           fun))))))
+                                           fun
+                                           ret))))))
             (terpri)
             (terpri)
             (values)))))))

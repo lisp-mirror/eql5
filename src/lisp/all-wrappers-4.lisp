@@ -1,5 +1,12 @@
 (defpackage :eql
   (:export
+   #:|rowResized|
+   #:|rowSpacing|
+   #:|rowSpan|
+   #:|rowStart|
+   #:|rowStretchFactor|
+   #:|rowStretch|
+   #:|rowViewportPosition|
    #:|rowWrapPolicy|
    #:|rowsAboutToBeInserted|
    #:|rowsAboutToBeMoved|
@@ -307,6 +314,7 @@
    #:|setBlue|
    #:|setBlurHints|
    #:|setBlurRadius|
+   #:|setBody|
    #:|setBold|
    #:|setBorderBrush|
    #:|setBorderColor(float...)|
@@ -318,6 +326,7 @@
    #:|setBottomMargin|
    #:|setBottomPadding|
    #:|setBottom|
+   #:|setBoundary|
    #:|setBoundingRect|
    #:|setBoundingRegionGranularity|
    #:|setBrightness|
@@ -440,6 +449,7 @@
    #:|setContentEditable|
    #:|setContentPosRange|
    #:|setContentPos|
+   #:|setContentType|
    #:|setContentsMargins|
    #:|setContent|
    #:|setContextMenuPolicy|
@@ -1189,14 +1199,4 @@
    #:|setResizesToContents|
    #:|setResolution|
    #:|setResolveSymlinks|
-   #:|setRestartCommand|
-   #:|setRestartHint|
-   #:|setResult|
-   #:|setRetainSizeWhenHidden|
-   #:|setRevision|
-   #:|setRgbF|
-   #:|setRgba|
-   #:|setRgb|
-   #:|setRightMargin|
-   #:|setRightPadding|
-   #:|setRight|))
+   #:|setRestartCommand|))

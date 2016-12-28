@@ -2088,6 +2088,13 @@
    "HistoryType historyType () const"
    "void setDefaultState ( QAbstractState * )"
    "void setHistoryType ( HistoryType )")
+  (("QHttpMultiPart" . "QObject")
+   "new QHttpMultiPart ( QObject * = 0 )"
+   "new QHttpMultiPart ( ContentType , QObject * = 0 )"
+   "void append ( const QHttpPart & )"
+   "QByteArray boundary () const"
+   "void setBoundary ( const QByteArray & )"
+   "void setContentType ( ContentType )")
   (("QIODevice" . "QObject")
    "virtual bool atEnd () const"
    "virtual qint64 bytesAvailable () const"

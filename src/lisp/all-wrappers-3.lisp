@@ -1,5 +1,11 @@
 (defpackage :eql
   (:export
+   #:|isWhiteBalanceModeSupported|
+   #:|isWidgetType|
+   #:|isWidget|
+   #:|isWindowModified|
+   #:|isWindowType|
+   #:|isWindow|
    #:|isWrapping|
    #:|isWritable|
    #:|isoSensitivityChanged|
@@ -904,6 +910,7 @@
    #:|proxyModel|
    #:|proxy|
    #:|publicKey|
+   #:|purpose|
    #:|push|
    #:|put(QNetworkRequest,QByteArray)|
    #:|put(QNetworkRequest,QHttpMultiPart*)|
@@ -1192,11 +1199,4 @@
    #:|rowMaximumHeight|
    #:|rowMinimumHeight|
    #:|rowMoved|
-   #:|rowPreferredHeight|
-   #:|rowResized|
-   #:|rowSpacing|
-   #:|rowSpan|
-   #:|rowStart|
-   #:|rowStretchFactor|
-   #:|rowStretch|
-   #:|rowViewportPosition|))
+   #:|rowPreferredHeight|))

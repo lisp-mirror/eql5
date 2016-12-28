@@ -12,10 +12,10 @@
                            "windowTitle" "sqlite"))
 
 (defun populate-db ()
-  ;; dumb, just for this example; you normally want QSqlQuery
   (x:do-with (|exec| *database*)
     "CREATE TABLE friends   ( id INT PRIMARY KEY, name    VARCHAR(50), country INT )"
     "CREATE TABLE countries ( id INT PRIMARY KEY, country VARCHAR(50) )")
+  ;; dumb, just for this example; you normally want QSqlQuery
   (mapc (lambda (id name country)
           (|exec| *database*
              (format nil "INSERT INTO friends VALUES (~A, '~A', ~A)" id name country)))

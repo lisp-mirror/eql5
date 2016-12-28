@@ -801,6 +801,7 @@
    "virtual bool event ( QEvent * )"
    "virtual void onEntry ( QEvent * )"
    "virtual void onExit ( QEvent * )")
+  (("QHttpMultiPart" . "QObject"))
   (("QIODevice" . "QObject")
    "virtual bool atEnd () const"
    "virtual qint64 bytesAvailable () const"

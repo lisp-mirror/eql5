@@ -50,9 +50,25 @@ public:
     void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QAbstractSocket::timerEvent(x1); }}
 };
 
+class LHttpMultiPart : public QHttpMultiPart {
+    Q_OBJECT
+    friend class Q104;
+public:
+    LHttpMultiPart(uint u, QObject* x1 = 0) : QHttpMultiPart(x1), unique(u) {}
+    LHttpMultiPart(uint u, ContentType x1, QObject* x2 = 0) : QHttpMultiPart(x1, x2), unique(u) {}
+
+    static NumList overrideIds;
+    uint unique;
+
+    bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QHttpMultiPart::eventFilter(x1, x2); } return ret; }
+    void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QHttpMultiPart::childEvent(x1); }}
+    void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QHttpMultiPart::customEvent(x1); }}
+    void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QHttpMultiPart::timerEvent(x1); }}
+};
+
 class LLocalServer : public QLocalServer {
     Q_OBJECT
-    friend class Q119;
+    friend class Q120;
 public:
     LLocalServer(uint u, QObject* x1 = 0) : QLocalServer(x1), unique(u) {}
 
@@ -69,7 +85,7 @@ public:
 
 class LLocalSocket : public QLocalSocket {
     Q_OBJECT
-    friend class Q120;
+    friend class Q121;
 public:
     LLocalSocket(uint u, QObject* x1 = 0) : QLocalSocket(x1), unique(u) {}
 
@@ -100,7 +116,7 @@ public:
 
 class LNetworkAccessManager : public QNetworkAccessManager {
     Q_OBJECT
-    friend class Q135;
+    friend class Q136;
 public:
     LNetworkAccessManager(uint u, QObject* x1 = 0) : QNetworkAccessManager(x1), unique(u) {}
 
@@ -115,7 +131,7 @@ public:
 
 class LNetworkCookieJar : public QNetworkCookieJar {
     Q_OBJECT
-    friend class Q136;
+    friend class Q137;
 public:
     LNetworkCookieJar(uint u, QObject* x1 = 0) : QNetworkCookieJar(x1), unique(u) {}
 
@@ -136,7 +152,7 @@ public:
 
 class LNetworkDiskCache : public QNetworkDiskCache {
     Q_OBJECT
-    friend class Q137;
+    friend class Q138;
 public:
     LNetworkDiskCache(uint u, QObject* x1 = 0) : QNetworkDiskCache(x1), unique(u) {}
 
@@ -156,7 +172,7 @@ public:
 
 class LTcpServer : public QTcpServer {
     Q_OBJECT
-    friend class Q211;
+    friend class Q212;
 public:
     LTcpServer(uint u, QObject* x1 = 0) : QTcpServer(x1), unique(u) {}
 
@@ -173,7 +189,7 @@ public:
 
 class LTcpSocket : public QTcpSocket {
     Q_OBJECT
-    friend class Q212;
+    friend class Q213;
 public:
     LTcpSocket(uint u, QObject* x1 = 0) : QTcpSocket(x1), unique(u) {}
 
@@ -212,7 +228,7 @@ public:
 
 class LUdpSocket : public QUdpSocket {
     Q_OBJECT
-    friend class Q230;
+    friend class Q231;
 public:
     LUdpSocket(uint u, QObject* x1 = 0) : QUdpSocket(x1), unique(u) {}
 
