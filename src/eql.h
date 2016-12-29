@@ -37,7 +37,7 @@ public:
     void exec(const QStringList&);
     void exec(lisp_ini, const QByteArray& = "nil", const QByteArray& = "eql-user"); // see my_app example
     void exec(QWidget*, const QString&, const QString& = QString());                // see Qt_EQL example
-    // void ignoreIOStreams(); // TODO
+    void ignoreIOStreams();
     
     void printVersion() {
         eval("(multiple-value-bind (eql qt)"

@@ -37,12 +37,10 @@ int main(int argc, char** argv) {
 
     EQL eql;
 
-/*
-#ifdef Q_OS_WINDOWS
+#ifdef Q_OS_WIN
     // print output would crash program
-    eql.ignoreIOStreams(); // TODO
+    eql.ignoreIOStreams();
 #endif
-*/
 
     eql.exec(ini_app,    // see make.lisp
              "(start)",  // initial form to be evaluated (optional)

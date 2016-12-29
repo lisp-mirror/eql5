@@ -39,12 +39,13 @@ QString EQL::home() {
         path.append('/'); }
     return path; }
 
-/*
 void EQL::ignoreIOStreams() {
-    // [Windows] print output would cause the executable to crash
-    // TODO
-}
-*/
+    // [Windows] print output would cause a gui exe to crash (without console)
+    eval("(setf *standard-output* (make-broadcast-stream)"
+         "      *trace-output*    *standard-output*"
+         "      *error-output*    *standard-output*"
+         "      *terminal-io*     (make-two-way-stream (make-string-input-stream \"\")"
+         "                                             *standard-output*))"); }
 
 void EQL::exec(const QStringList& args) {
     cl_object s_qtpl = cl_intern(1, make_constant_base_string("*QTPL*"));
