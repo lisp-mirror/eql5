@@ -66,7 +66,7 @@
         (ini-streams)
         (set-debugger-hook)
         (setf si::*tpl-print-current-hook* 'send-file-position)
-        (qset (qapp) "quitOnLastWindowClosed" nil)
+        (! "setQuitOnLastWindowClosed" "QGuiApplication" nil)
         (qconnect *server* "newConnection()" 'new-client-connection)
         (multiple-value-bind (eql-version qt-version)
             (qversion)
@@ -318,11 +318,5 @@
                 (push block data)))
             (unless (zerop size)
               (values (read-from-string (qfrom-utf8 (apply 'concatenate 'vector (nreverse data))))))))))))
-  
-#|
-(defun %log (str)
-  (with-open-file (out "/tmp/log.txt" :direction :output :if-does-not-exist :create :if-exists :append)
-    (format out "### ~A~%" (subseq str 0 (min (length str) 80)))))
-|#
 
 (ini)

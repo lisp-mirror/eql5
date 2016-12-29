@@ -1,3 +1,4 @@
+QT          += widgets
 TEMPLATE     = app
 CONFIG      += no_keywords release
 CONFIG      += console

@@ -13,7 +13,7 @@
 (setf *lib-reloaded* 'show-current-apropos)
 
 (defun show-current-apropos (variable plugin)
-  (qset (qapp) "quitOnLastWindowClosed" nil) 
+  (! "setQuitOnLastWindowClosed" "QGuiApplication" nil) 
   (let ((obj (symbol-value variable)))
     (assert (qt-object-p obj))
     (qmsg (with-output-to-string (*standard-output*)

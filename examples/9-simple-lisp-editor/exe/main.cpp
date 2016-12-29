@@ -1,7 +1,7 @@
 #undef SLOT
 
 #include <ecl/ecl.h>
-#include <QCoreApplication>
+#include <QApplication>
 #include <QTextCodec>
 #include "eql.h"
 
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 
     EQL::ini(argv);
 
-    QCoreApplication qapp(argc, argv);
+    QApplication qapp(argc, argv);
 
     QTextCodec* utf8 = QTextCodec::codecForName("UTF-8");
     QTextCodec::setCodecForLocale(utf8);

@@ -42,6 +42,7 @@ QString EQL::home() {
 /*
 void EQL::ignoreIOStreams() {
     // [Windows] print output would cause the executable to crash
+    // TODO
 }
 */
 
