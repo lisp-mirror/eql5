@@ -292,6 +292,13 @@
             (terpri)
             (values)))))))
 
+(defun ignore-io-streams ()
+  (setf *standard-output* (make-broadcast-stream)
+        *trace-output*    *standard-output*
+        *error-output*    *standard-output*
+        *terminal-io*     (make-two-way-stream (make-string-input-stream "")
+                                               *standard-output*)))
+
 ;;; top-level / slime-mode processing Qt events (command line options "-qtpl" and "-slime")
 
 (defvar *slime-hook-file* nil)
@@ -411,7 +418,7 @@
 
 (defun qgui (&optional ev)
   "args: (&optional process-events)
-   Launches the EQL convenience GUI.<br>If you don't have an interactive environment, you can pass <code>T</code> to run a pseudo Qt event loop. A better option is to start the tool like so:<br><code>eql -qgui</code>, in order to run the Qt event loop natively."
+   Launches the EQL convenience GUI.<br>If you don't have an interactive environment, you can pass <code>T</code> to run a pseudo Qt event loop. A better option is to start the tool like so:<br><code>eql5 -qgui</code>, in order to run the Qt event loop natively."
   (let (found)
     (when (find-package :gui)
       (let ((gui (find-symbol "*GUI*" :gui)))

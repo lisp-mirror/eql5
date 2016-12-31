@@ -41,12 +41,8 @@ QString EQL::home() {
 
 void EQL::ignoreIOStreams() {
     // [Windows] print output would cause a gui exe to crash (without console)
-    eval("(setf *standard-output* (make-broadcast-stream)"
-         "      *trace-output*    *standard-output*"
-         "      *error-output*    *standard-output*"
-         "      *terminal-io*     (make-two-way-stream (make-string-input-stream \"\")"
-         "                                             *standard-output*))"); }
-
+    eval("(eql::ignore-io-streams)"); }
+    
 void EQL::exec(const QStringList& args) {
     cl_object s_qtpl = cl_intern(1, make_constant_base_string("*QTPL*"));
     bool exec_with_simple_restart = false;
