@@ -2,6 +2,8 @@
 ;;; Depends on plugin in "cpp/", needed for custom easing curve function.
 ;;;
 ;;; Exploring the features is left as an exercise...
+;;;
+;;; N.B: If you load this file in Slime, you need to use QLOAD instead of LOAD!
 
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))

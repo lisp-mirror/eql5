@@ -1,3 +1,7 @@
+;;; Palindrome "PATERNOSTER"
+;;;
+;;; N.B: If you load this file in Slime, you need to use QLOAD instead of LOAD!
+
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
 

@@ -9,7 +9,9 @@ http://en.wikipedia.org/wiki/Sator_Square
 RUN
 ===
 
-  eql palindrome 400 8/10 # optionally pass width / opacity
+  eql5 palindrome 400 8/10 # optionally pass width / opacity
+
+N.B: If you load this file in Slime, you need to use QLOAD instead of LOAD!
 
 
 HTML VERSION
