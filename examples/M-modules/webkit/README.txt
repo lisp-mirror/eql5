@@ -15,7 +15,7 @@ A list of features:
    a simple example:
 
        document.getElementById("x")        // JavaScript
-       (! "findFirstElement" (frame) "#x") ;  Lisp
+       (|findFirstElement| (frame) "#x") ;  Lisp
 
    (passing QWebElements between JavaScript and Lisp is just native)
 
@@ -29,5 +29,9 @@ A list of features:
    see QLOAD-C++)
 
 
-See directory "Tic-Tac-Toe/" for an example of a WebKit application.
+"Html Utils"
+============
 
+See directory "Tic-Tac-Toe/" for an example of a plain WebKit application,
+using only some simple convenience utility functions, defined in
+"Tic-Tac-Toe/h-utils.lisp".

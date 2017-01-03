@@ -390,9 +390,7 @@
         (element (ensure-web-element web-element)))
     (assert (string= "IMG" (tag-name element)) nil
             "Wanted <img>, got <~(~A~)>." (tag-name element))
-    ;; HACK: we call the same JS function using 2 different names (see your Qt version)
-    (js "Lisp.pixmap().assignTo(this)" element)                   ; new name      (latest Qt 4.8)
-    (js "Lisp.pixmap().assignToHTMLImageElement(this)" element))) ; original name (earlier versions)
+    (js "Lisp.pixmap().assignToHTMLImageElement(this)" element)))
 
 (defun to-pixmap (web-element &optional scale-factor)
   "Render web element into a pixmap, optionally scaling it."

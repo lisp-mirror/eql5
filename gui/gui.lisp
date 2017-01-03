@@ -46,6 +46,7 @@
   *q-slots*
   *q-super-classes*
   *qt-tab*
+  *search-class*
   *search-help*
   *select*
   *selected-widget*
@@ -75,10 +76,14 @@
   (set-tree *primitives* 2 (tr "Qt/C++ type") (tr "Lisp example / type"))
   ;; please see example 9: editor.lisp for better completer examples
   (let ((cpl (qnew "QCompleter")))
-    (dolist (w (list *display* *edit* *package-name* *selected-widget* (! "popup" cpl)))
+    (dolist (w (list *display* *edit* *package-name* *selected-widget* *search-class* (! "popup" cpl)))
       (qset w "font" *code-font*))
     (! "setModel" cpl *completer-list*)
     (! "setCompleter" *edit* cpl))
+  (let ((cpl (qnew "QCompleter(QStringList)" (qobject-names))))
+    (! "setCompletionMode" cpl |QCompleter.InlineCompletion|)
+    (! "setCaseSensitivity" cpl |Qt.CaseInsensitive|)
+    (! "setCompleter" *search-class* cpl))
   (! "addItems" *q-names* (qobject-names :q))
   (! "addItems" *n-names* (qobject-names :n))
   (qconnect *q-super-classes* "linkActivated(QString)" 'change-class-q-object)
@@ -88,6 +93,7 @@
   (qconnect *edit* "returnPressed()" 'eval-edit)
   (qconnect *select* "clicked()" (lambda () (qselect 'widget-selected)))
   (qconnect *properties* "clicked()" 'show-properties-dialog)
+  (qconnect *search-class* "returnPressed()" 'select-class)
   (qconnect *search-help* "textChanged(QString)" 'search-help)
   (qconnect *search-help* "returnPressed()" 'search-help)
   (qoverride *edit* "keyPressEvent(QKeyEvent*)" 'history-move)
@@ -165,6 +171,17 @@
   (defun select-mode ()
     (set-listen t)
     (! "setOverrideCursor" "QGuiApplication" cross-cursor)))
+
+(defun select-class ()
+  (flet ((set-tab-index (i)
+           (! "setCurrentIndex" *qt-tab* i)))
+    (let ((name (! "text" *search-class*)))
+      (cond ((find name (qobject-names :q) :test 'string=)
+             (set-tab-index 0)
+             (change-class-q-object name :super))
+            ((find name (qobject-names :n) :test 'string=)
+             (set-tab-index 1)
+             (change-class-n-object name :super))))))
 
 (defun change-class-q-object (s &optional super)
   (let ((i (! "findText" *q-names* s)))
