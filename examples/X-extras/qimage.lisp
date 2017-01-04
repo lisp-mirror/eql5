@@ -160,7 +160,7 @@
     (unless (x:empty-string name)
       (if (pathname-type name)
           (let ((*saving* t))
-            (|save| (|grabWidget.QPixmap| *display* (|rect| *image*))
+            (|save| (|grab| *display* (|rect| *image*))
                     name))
           (progn
             (qmsg "Please add a file ending.")

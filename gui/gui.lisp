@@ -173,15 +173,20 @@
     (! "setOverrideCursor" "QGuiApplication" cross-cursor)))
 
 (defun select-class ()
-  (flet ((set-tab-index (i)
+  (flet ((find-name (name q-n)
+           (find name (qobject-names q-n) :test 'string-equal))
+         (set-tab-index (i)
            (! "setCurrentIndex" *qt-tab* i)))
-    (let ((name (! "text" *search-class*)))
-      (cond ((find name (qobject-names :q) :test 'string=)
+    (let* ((name (! "text" *search-class*))
+           (q-name (find-name name :q))
+           (n-name (unless q-name
+                     (find-name name :n))))
+      (cond (q-name
              (set-tab-index 0)
-             (change-class-q-object name :super))
-            ((find name (qobject-names :n) :test 'string=)
+             (change-class-q-object q-name :super))
+            (n-name
              (set-tab-index 1)
-             (change-class-n-object name :super))))))
+             (change-class-n-object n-name :super))))))
 
 (defun change-class-q-object (s &optional super)
   (let ((i (! "findText" *q-names* s)))
