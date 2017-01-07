@@ -304,7 +304,7 @@
                                   (qset-color *main* |QPalette.Window| (if active *color-pause* *background*))))
                              (#.|Qt.Key_S|
                                 (let ((widget (|viewport| *view*)))
-                                  (|save| (|grabWidget(QWidget*,QRect).QPixmap| widget (|rect| widget))
+                                  (|save| (|grab| widget (|rect| widget))
                                           "screenshot.png")))
                              (#.|Qt.Key_Escape|
                                 (qquit))))))

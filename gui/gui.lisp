@@ -30,6 +30,8 @@
   *display*
   *edit*
   *help*
+  *hint-copy-1*
+  *hint-copy-2*
   *main-tab*
   *n-methods*
   *n-names*
@@ -64,6 +66,7 @@
   (qset *gui* "windowTitle" "EQL - Embedded Qt Lisp")
   (qset *select* "toolTip" (tr "Select any (child) widget (see qsel:*q*)"))
   (qset *help* "source" (! "fromLocalFile" "QUrl" (in-home "doc/auto-doc.htm")))
+  (qset *hint-copy-2* "text" (qget *hint-copy-1* "text"))
   (qset-color *help* |QPalette.Highlight|       "yellow")
   (qset-color *help* |QPalette.HighlightedText| "black")
   (set-tree *q-override*)
@@ -74,13 +77,14 @@
   (set-tree *n-methods* 3 nil (tr "Method") (tr "Static"))
   (set-tree *n-override*)
   (set-tree *primitives* 2 (tr "Qt/C++ type") (tr "Lisp example / type"))
-  ;; please see example 9: editor.lisp for better completer examples
+  (populate-primitives)
+  ;; please see example 9, "editor.lisp" for better completer examples
   (let ((cpl (qnew "QCompleter")))
     (dolist (w (list *display* *edit* *package-name* *selected-widget* *search-class* (! "popup" cpl)))
       (qset w "font" *code-font*))
     (! "setModel" cpl *completer-list*)
     (! "setCompleter" *edit* cpl))
-  (let ((cpl (qnew "QCompleter(QStringList)" (qobject-names))))
+  (let ((cpl (qnew "QCompleter(QStringList)" (append (qobject-names) (primitives)))))
     (! "setCompletionMode" cpl |QCompleter.InlineCompletion|)
     (! "setCaseSensitivity" cpl |Qt.CaseInsensitive|)
     (! "setCompleter" *search-class* cpl))
@@ -99,7 +103,6 @@
   (qoverride *edit* "keyPressEvent(QKeyEvent*)" 'history-move)
   (change-class-q-object "QWidget" :super)
   (change-class-n-object "QMetaObject" :super)
-  (populate-primitives)
   (qsingle-shot 500 'show-package-name)
   (x:do-with (qset *gui*)
     ("pos" (list 50 50))
@@ -173,20 +176,22 @@
     (! "setOverrideCursor" "QGuiApplication" cross-cursor)))
 
 (defun select-class ()
-  (flet ((find-name (name q-n)
-           (find name (qobject-names q-n) :test 'string-equal))
-         (set-tab-index (i)
-           (! "setCurrentIndex" *qt-tab* i)))
-    (let* ((name (! "text" *search-class*))
-           (q-name (find-name name :q))
-           (n-name (unless q-name
-                     (find-name name :n))))
-      (cond (q-name
+  (let ((name (! "text" *search-class*))
+        found)
+    (flet ((find-name (q-n)
+             (unless found
+               (setf found (find name (if q-n (qobject-names q-n) (primitives))
+                                 :test 'string-equal))))
+           (set-tab-index (i)
+             (! "setCurrentIndex" *qt-tab* i)))
+      (cond ((find-name :q)                        ; QObject
              (set-tab-index 0)
-             (change-class-q-object q-name :super))
-            (n-name
+             (change-class-q-object found :super))
+            ((find-name :n)                        ; non QObject
              (set-tab-index 1)
-             (change-class-n-object n-name :super))))))
+             (change-class-n-object found :super))
+            ((find-name nil)                       ; primitive
+             (set-tab-index 2))))))
 
 (defun change-class-q-object (s &optional super)
   (let ((i (! "findText" *q-names* s)))
@@ -284,6 +289,19 @@
   (x:do-with *primitives*
     ("resizeColumnToContents" 0)
     ("sortByColumn" 0 |Qt.AscendingOrder|)))
+
+(let (primitives)
+  (defun primitives ()
+    (or primitives
+        (setf primitives
+              (let (names)
+                (dotimes (i (! "topLevelItemCount" *primitives*))
+                  (let ((name (! "text" (! "topLevelItem" *primitives* i) 0)))
+                    (if (find #\/ name)
+                        (dolist (el (x:split name #\/))
+                          (push (string-trim " " el) names))
+                        (push name names))))
+                names)))))
 
 (defun show-super-classes (type)
   (qset (if (eql :q type) *q-super-classes* *n-super-classes*) "text"

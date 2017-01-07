@@ -135,7 +135,7 @@
   "args: (function)
    Convenience macro: a <code>qsingle-shot</code> with a <code>0</code> timeout.<br>This will call <code>function</code> as soon as the Qt event loop is idle.
        (qlater 'delayed-ini)"
-  `(%qsingle-shot 0 ,function))
+  `(qsingle-shot 0 ,function))
 
 (defun %ensure-persistent-function (fun)
   (typecase fun
