@@ -191,7 +191,13 @@
              (set-tab-index 1)
              (change-class-n-object found :super))
             ((find-name nil)                       ; primitive
-             (set-tab-index 2))))))
+             (set-tab-index 2)
+             (dotimes (i (! "topLevelItemCount" *primitives*))
+               (let ((item (! "topLevelItem" *primitives* i)))
+                 (when (search found (! "text" item 0))
+                   (! "setCurrentItem" *primitives* item)
+                   (! "setFocus" *primitives*)
+                   (return)))))))))
 
 (defun change-class-q-object (s &optional super)
   (let ((i (! "findText" *q-names* s)))
