@@ -184,20 +184,22 @@
                                  :test 'string-equal))))
            (set-tab-index (i)
              (! "setCurrentIndex" *qt-tab* i)))
-      (cond ((find-name :q)                        ; QObject
+      (cond ((find-name :q)                                    ; QObject
              (set-tab-index 0)
              (change-class-q-object found :super))
-            ((find-name :n)                        ; non QObject
+            ((find-name :n)                                    ; non QObject
              (set-tab-index 1)
              (change-class-n-object found :super))
-            ((find-name nil)                       ; primitive
+            ((find-name nil)                                   ; primitive
              (set-tab-index 2)
              (dotimes (i (! "topLevelItemCount" *primitives*))
                (let ((item (! "topLevelItem" *primitives* i)))
                  (when (search found (! "text" item 0))
                    (! "setCurrentItem" *primitives* item)
                    (! "setFocus" *primitives*)
-                   (return)))))))))
+                   (return)))))
+            (t
+             (! "selectAll" *search-class*))))))
 
 (defun change-class-q-object (s &optional super)
   (let ((i (! "findText" *q-names* s)))
