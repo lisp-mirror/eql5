@@ -432,8 +432,8 @@
 (defun module-include (module)
   (format nil "#include <Qt~A>"
           (case module
-            (:webkit "WebKitWidgets")
             (:multimedia "MultimediaWidgets")
+            (:webkit "WebKitWidgets")
             (t (string-capitalize (string module))))))
 
 (defmacro change-file-stream (module file &optional type)
