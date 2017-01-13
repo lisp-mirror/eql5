@@ -5,20 +5,28 @@
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
 
-;; every call will make a new QQuickWidget
-(defvar *quick-widget* (qload-c++ (in-home "Qt_EQL/quickwidget/quick_widget_cpp")))
+(defun make-quick-widget ()
+  (qload-c++ (in-home "Qt_EQL/quickwidget/quick_widget_cpp")))
 
-(define-qt-wrappers *quick-widget*)
+(defvar *mdi-area*       (qnew "QMdiArea"))
+(defvar *quick-widget-1* (make-quick-widget))
+(defvar *quick-widget-2* (make-quick-widget))
+
+(define-qt-wrappers *quick-widget-1*)
 
 (defun print-qml-errors (errors)
   (format *debug-io* "~&### QML errors: ~A~%" (x:join errors ", ")))
 
 (defun run ()
-  ;; please note (and keep) the order:
-  (qconnect *quick-widget* "qmlErrors(QStringList)" 'print-qml-errors)             ; 1
-  (set-qml *quick-widget* (|fromLocalFile.QUrl|
-                           (in-home "Qt_EQL/quickwidget/qml/rotatingsquare.qml"))) ; 2
-  (|resize| *quick-widget* '(300 300))                                             ; 3
-  (|show| *quick-widget*))                                                         ; 4
+  (mapc (lambda (widget file)
+          ;; please note (and keep) the order:
+          (qconnect widget "qmlErrors(QStringList)" 'print-qml-errors)                   ; 1
+          (set-qml widget (|fromLocalFile.QUrl|                                          ; 2
+                           (in-home (format nil "Qt_EQL/quickwidget/qml/~A.qml" file))))
+          (|setMinimumSize| widget '(300 300))                                           ; 3
+          (|addSubWindow| *mdi-area* widget))
+        (list *quick-widget-1* *quick-widget-2*)
+        (list "example-1" "example-2"))
+  (|show| *mdi-area*))
 
 (run)

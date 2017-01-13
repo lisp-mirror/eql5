@@ -1,5 +1,5 @@
-#ifndef LIB_H
-#define LIB_H
+#ifndef Q_QUICK_WIDGET_H
+#define Q_QUICK_WIDGET_H
 
 #include <QtWidgets>
 #include <QtQuickWidgets>
@@ -20,7 +20,7 @@ class MyQuickWidget : public QQuickWidget
 public:
     MyQuickWidget();
 
-    Q_INVOKABLE void setQml(const QUrl&);
+    Q_INVOKABLE void setQml(const QUrl& url) { setSource(url); }
 
 signals:
     void qmlErrors(const QStringList&);

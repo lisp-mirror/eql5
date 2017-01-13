@@ -7,7 +7,7 @@ QObject* ini()
 {
     MyQuickWidget* my = new MyQuickWidget;
     my->setObjectName("QQuickWidget");
-    return (QWidget*)my;
+    return my;
 }
 
 MyQuickWidget::MyQuickWidget()
@@ -19,18 +19,13 @@ MyQuickWidget::MyQuickWidget()
             this, SLOT(sceneGraphError(QQuickWindow::SceneGraphError,QString)));
 }
 
-void MyQuickWidget::setQml(const QUrl& url)
-{
-    setSource(url);
-}
-
 void MyQuickWidget::statusChanged(QQuickWidget::Status status)
 {
     if(status == QQuickWidget::Error) {
-        QStringList errorList;
+        QStringList list;
         foreach(const QQmlError& error, errors()) {
-            errorList.append(error.toString()); }
-        emit qmlErrors(errorList); }
+            list << error.toString(); }
+        emit qmlErrors(list); }
 }
 
 void MyQuickWidget::sceneGraphError(QQuickWindow::SceneGraphError, const QString& message)

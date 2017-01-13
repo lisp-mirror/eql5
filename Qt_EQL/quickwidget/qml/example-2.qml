@@ -4,13 +4,13 @@ Rectangle {
     id: root
 
     Rectangle {
-        property int d: 100
+        property int d: 120
         id: square
         width: d
         height: d
         anchors.centerIn: parent
-        color: "red"
-        NumberAnimation on rotation { from: 0; to: 360; duration: 2000; loops: Animation.Infinite; }
+        color: "cornflowerblue"
+        NumberAnimation on rotation { from: 180; to: -180; duration: 4000; loops: Animation.Infinite; }
     }
 
     Text {
