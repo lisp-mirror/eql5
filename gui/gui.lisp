@@ -1,7 +1,7 @@
 ;;; copyright (c) Polos Ruetz
 
 ;; load all available modules for documentation purposes
-(dolist (module (list :help :multimedia :network :sql :svg :webkit))
+(dolist (module (list :help :multimedia :network :quick :sql :svg :webkit))
   (eql:qrequire module :quiet))
 
 (defpackage :gui
