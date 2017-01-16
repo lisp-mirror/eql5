@@ -1,18 +1,15 @@
-QT          += webkitwidgets
+QT          += qml
 TEMPLATE    = lib
 CONFIG      += plugin release
 INCLUDEPATH += ../../../../../src
 LIBS        += -L../../../../.. -leql5
 DESTDIR     = ./
-TARGET      = webkit_bridge
+TARGET      = qml_lisp
 OBJECTS_DIR = ./tmp/
 MOC_DIR     = ./tmp/
 
-macx:QT     += network
-
 include(../../../../../src/windows.pri)
 
-HEADERS += _invokables.h \
-           webkit_bridge.h
-SOURCES += webkit_bridge.cpp
+HEADERS += qml_lisp.h
+SOURCES += qml_lisp.cpp
 

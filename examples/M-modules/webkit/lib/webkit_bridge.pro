@@ -8,7 +8,7 @@ TARGET      = webkit_bridge
 OBJECTS_DIR = ./tmp/
 MOC_DIR     = ./tmp/
 
-macx:QT     += network phonon
+macx:QT     += network
 
 include(../../../../src/windows.pri)
 
