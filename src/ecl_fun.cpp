@@ -1283,10 +1283,14 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         // module types
         else {
             bool found = false;
-            if(LObjects::toMetaArg_multimedia) {
+            if(LObjects::toMetaArg_help) {
+                p = LObjects::toMetaArg_help(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_multimedia) {
                 p = LObjects::toMetaArg_multimedia(n, l_arg, &found); }
             if(!found && LObjects::toMetaArg_network) {
                 p = LObjects::toMetaArg_network(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_quick) {
+                p = LObjects::toMetaArg_quick(n, l_arg, &found); }
             if(!found && LObjects::toMetaArg_sql) {
                 p = LObjects::toMetaArg_sql(n, l_arg, &found); }
             if(!found && LObjects::toMetaArg_webkit) {
@@ -1451,13 +1455,17 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             // module types
             else {
                 bool found = false;
-                if(LObjects::to_lisp_arg_multimedia) {
+                if(LObjects::to_lisp_arg_help) {
+                    l_ret = LObjects::to_lisp_arg_help(n, p, &found); }
+                if(!found && LObjects::to_lisp_arg_multimedia) {
                     l_ret = LObjects::to_lisp_arg_multimedia(n, p, &found); }
                 if(!found && LObjects::to_lisp_arg_network) {
                     l_ret = LObjects::to_lisp_arg_network(n, p, &found); }
+                if(!found && LObjects::to_lisp_arg_quick) {
+                    l_ret = LObjects::to_lisp_arg_quick(n, p, &found); }
                 if(!found && LObjects::to_lisp_arg_sql) {
                     l_ret = LObjects::to_lisp_arg_sql(n, p, &found); }
-                if(!found && LObjects::toMetaArg_webkit) {
+                if(!found && LObjects::to_lisp_arg_webkit) {
                     l_ret = LObjects::to_lisp_arg_webkit(n, p, &found); }
                 // enum
                 if(!found) {
