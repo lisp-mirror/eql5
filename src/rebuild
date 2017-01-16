@@ -22,6 +22,8 @@ qmake module_multimedia.pro &&
 make &&
 qmake module_network.pro &&
 make &&
+qmake module_quick.pro &&
+make &&
 qmake module_sql.pro &&
 make &&
 qmake module_svg.pro &&

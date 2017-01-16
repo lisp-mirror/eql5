@@ -10,7 +10,7 @@ Rectangle {
         height: d
         anchors.centerIn: parent
         color: "cornflowerblue"
-        NumberAnimation on rotation { from: 180; to: -180; duration: 4000; loops: Animation.Infinite; }
+        NumberAnimation on rotation { from: 0; to: -360; duration: 4000; loops: Animation.Infinite; }
     }
 
     Text {

@@ -803,6 +803,7 @@
                ~%int LObjects::T_QHostInfo = -1;~
                ~%int LObjects::T_QHttpPart = -1;~
                ~%int LObjects::T_QImageEncoderSettings = -1;~
+               ~%int LObjects::T_QJSValue = -1;~
                ~%int LObjects::T_QMediaContent = -1;~
                ~%int LObjects::T_QList_QMediaContent = -1;~
                ~%int LObjects::T_QNetworkAddressEntry = -1;~
@@ -817,6 +818,10 @@
                ~%int LObjects::T_QNetworkProxy = -1;~
                ~%int LObjects::T_QList_QNetworkProxy = -1;~
                ~%int LObjects::T_QNetworkRequest = -1;~
+               ~%int LObjects::T_QList_QQmlError = -1;~
+               ~%int LObjects::T_QQmlProperty = -1;~
+               ~%int LObjects::T_QQmlScriptString = -1;~
+               ~%int LObjects::T_QList_QQuickItem = -1;~
                ~%int LObjects::T_QSqlDatabase = -1;~
                ~%int LObjects::T_QSqlError = -1;~
                ~%int LObjects::T_QSqlField = -1;~
@@ -863,7 +868,7 @@
       (format s "~%DeleteNObject LObjects::deleteNObject_~(~A~) = 0;" module))
     (dolist (module *modules*)
       (format s "~%Override LObjects::override_~(~A~) = 0;" module))
-    (dolist (module (list :help :multimedia :network :sql :webkit))
+    (dolist (module (list :help :multimedia :network :quick :sql :webkit))
       (format s "~%ToMetaArg LObjects::toMetaArg_~(~A~) = 0;~
                  ~%To_lisp_arg LObjects::to_lisp_arg_~(~A~) = 0;"
               module module))
@@ -1169,6 +1174,8 @@
                     "QList<QNetworkInterface>"
                     "QList<QNetworkProxy>"
                     "QList<QPolygonF>"
+                    "QList<QQmlError>"
+                    "QList<QQuickItem*>"
                     "QList<QSize>"
                     "QList<QStandardItem*>"
                     "QList<QStorageInfo>"

@@ -2345,7 +2345,7 @@ cl_object qclear_event_filters() {
 
 cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    /// args: (module &optional quiet)
-   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :sql :svg :webkit</code>
+   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :quick :sql :svg :webkit</code>
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
@@ -2394,6 +2394,13 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
                         LObjects::override_network = over;
                         LObjects::toMetaArg_network = metaArg;
                         LObjects::to_lisp_arg_network = lispArg;
+                        return l_name; }
+                    else if("quick" == name) {
+                        LObjects::staticMetaObject_quick = meta;
+                        LObjects::deleteNObject_quick = del;
+                        LObjects::override_quick = over;
+                        LObjects::toMetaArg_quick = metaArg;
+                        LObjects::to_lisp_arg_quick = lispArg;
                         return l_name; }
                     else if("sql" == name) {
                         LObjects::staticMetaObject_sql = meta;

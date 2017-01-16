@@ -7,6 +7,7 @@ QFunctionPointer
 QGlyphRun
 QImageReader
 QItemSelection
+QJSValueList
 QJsonArray
 QJsonDocument
 QJsonObject
@@ -23,6 +24,7 @@ QList<QHelpSearchQuery>
 QList<QHostAddress>
 QList<QLocale>
 QList<QMediaContent>
+QList<QObject*>
 QList<QOpenGLShader*>
 QList<QPageSize>
 QList<QScreen*>
@@ -36,7 +38,6 @@ QList<QWebFrame*>
 QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
 QList<const QTouchDevice*>
-QMediaControl
 QMediaResourceList
 QMultiMap<QString,QString>
 QOpenGLContextGroup
@@ -48,6 +49,8 @@ QPlatformScreen
 QRadioData
 QRegularExpressionMatch
 QRegularExpressionMatchIterator
+QSGRootNode
+QSharedPointer<QQuickItemGrabResult>
 QStaticText
 QStringRef
 QStyleHintReturn

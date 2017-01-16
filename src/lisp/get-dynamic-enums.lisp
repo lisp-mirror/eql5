@@ -2,7 +2,7 @@
 
 (setf eql:*break-on-errors* nil)
 
-(dolist (module '(:help :multimedia :network :sql :svg :webkit))
+(dolist (module '(:help :multimedia :network :quick :sql :svg :webkit))
   (qrequire module))
 
 (defun run ()

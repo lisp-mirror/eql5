@@ -8,7 +8,9 @@
   (list "(preliminary)"
         "(deprecated)"
         "(obsolete)"
+        "(volatile "
         "connect("
+        "const * const *"
         "<Attribute>"
         "<FormatRange>"
         "<WizardButton>"
@@ -136,6 +138,18 @@
         "swap(QHttp"
         "swap(QNetwork"
         "swap(QStorage"
+        "::Attribute"
+        "::AttributeSet"
+        "::ColoredPoint2D"
+        "::Point2D"
+        "::Renderer"
+        "::TexturePoint2D"
+        "Attribute *"
+        "AttributeSet "
+        "ColoredPoint2D *"
+        "Point2D *"
+        "Renderer *"
+        "TexturePoint2D *"
         ))
 
 (defparameter *check*      nil)
@@ -193,12 +207,16 @@
           (progn
             (incf *not-found*)
             (x:d :not-found path)))))
-  (defun words-of (name)
-    (x:when-it (search* name text)
-      (let ((line (subseq text (+ x:it (length name)) (position #\Newline text :start x:it))))
-        (simplify line nil))))
+  (defun super-names (class &optional (word "Inherits:"))
+    (x:when-it (search* word text)
+      (let* ((line (subseq text (+ x:it (length word)) (position #\Newline text :start x:it)))
+             (names (simplify line nil)))
+        (unless names
+          (fresh-line)
+          (error "No super class found for: ~S" class))
+        names)))
   (defun super-class (class)
-    (let ((super (remove "and" (words-of "Inherits:") :test 'string=)))
+    (let ((super (remove "and" (super-names class) :test 'string=)))
       (when (and (second super)
                  (not (find #\< (first super)))) ; template
         (format *check* "~A: ~A and ~A~%"

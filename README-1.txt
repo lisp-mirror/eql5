@@ -141,7 +141,7 @@ In order to run (sort of) a top-level processing Qt events, do (requires ECL thr
 
 
 
-QT MODULES (help, multimedia, network, sql, svg, webkit)
+QT MODULES (help, multimedia, network, quick, sql, svg, webkit)
 ==========
 
 To build an EQL module (corresponding to a Qt module), do the following in src/:

@@ -5,7 +5,7 @@
 
 (in-package :eql-user)
 
-(defvar *pixmap* (qnew "QPixmap(QString)" (in-home "examples/data/camera.png")))
+(defvar *pixmap* (qnew "QPixmap(QString)" (in-home "examples/X-extras/screenshot/camera.png")))
 
 (defvar *splash* (qnew "QSplashScreen(QPixmap,Qt::WindowFlags)" *pixmap* |Qt.WindowStaysOnTopHint|
                        "font" (x:let-it (|font.QApplication|)

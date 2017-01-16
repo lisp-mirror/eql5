@@ -12,6 +12,7 @@
         "//QCameraImageProcessing"
         "QCameraViewfinder"
         "QGraphicsVideoItem"
+        "QMediaControl"
         "QMediaObject"
         "QMediaPlayer"
         "QMediaPlaylist"

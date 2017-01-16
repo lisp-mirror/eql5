@@ -1,5 +1,150 @@
 (defpackage :eql
   (:export
+   #:|isHeaderHidden|
+   #:|isHidden|
+   #:|isHttpOnly|
+   #:|isIconVisibleInMenu|
+   #:|isIdentifierEscaped|
+   #:|isIdentity|
+   #:|isImageFormat|
+   #:|isInSubnet|
+   #:|isInteractive|
+   #:|isInvertible|
+   #:|isItemEnabled|
+   #:|isLandscape|
+   #:|isLayout|
+   #:|isLeapYear.QDate|
+   #:|isLeftToRight.QGuiApplication|
+   #:|isLibrary.QLibrary|
+   #:|isLinked|
+   #:|isListFormat|
+   #:|isListening|
+   #:|isLoaded|
+   #:|isLoading|
+   #:|isLocalFile|
+   #:|isLoopback|
+   #:|isMapped|
+   #:|isMaximized|
+   #:|isMetaDataAvailable|
+   #:|isMetaDataWritable|
+   #:|isMeteringModeSupported|
+   #:|isMinimal|
+   #:|isMinimized|
+   #:|isModal|
+   #:|isModified|
+   #:|isMonotonic.QElapsedTimer|
+   #:|isMovable|
+   #:|isMuted|
+   #:|isNativeMenuBar|
+   #:|isNativePath|
+   #:|isNavigationBarVisible|
+   #:|isNull(QString)|
+   #:|isNull(int)|
+   #:|isNullLiteral|
+   #:|isNull|
+   #:|isNumber|
+   #:|isObject|
+   #:|isObscuredBy|
+   #:|isObscured|
+   #:|isOpaque|
+   #:|isOpenError|
+   #:|isOpenGLES|
+   #:|isOpen|
+   #:|isPanel|
+   #:|isParentOf|
+   #:|isPersistentOpenGLContext|
+   #:|isPersistentSceneGraph|
+   #:|isPhase2|
+   #:|isPortrait|
+   #:|isPrivateFamily|
+   #:|isProperty|
+   #:|isQBitmap|
+   #:|isQObject|
+   #:|isQuitLockEnabled.QCoreApplication|
+   #:|isReadOnly|
+   #:|isReadable|
+   #:|isReadyForCapture|
+   #:|isReady|
+   #:|isRectangular|
+   #:|isRedoAvailable|
+   #:|isRegExp|
+   #:|isRelativePath.QDir|
+   #:|isRelative|
+   #:|isRemote|
+   #:|isResettable|
+   #:|isRightToLeft.QGuiApplication|
+   #:|isRoamingAvailable|
+   #:|isRoot|
+   #:|isRotating|
+   #:|isRowHidden|
+   #:|isRowSelected|
+   #:|isRunning|
+   #:|isSavingSession|
+   #:|isScalable|
+   #:|isScaling|
+   #:|isSceneGraphInitialized|
+   #:|isSearching|
+   #:|isSectionHidden|
+   #:|isSecure|
+   #:|isSeekable|
+   #:|isSelectable|
+   #:|isSelected|
+   #:|isSelectionRectVisible|
+   #:|isSelect|
+   #:|isSelfSigned|
+   #:|isSeparator|
+   #:|isSequential|
+   #:|isSessionCookie|
+   #:|isSessionRestored|
+   #:|isSetuidAllowed.QCoreApplication|
+   #:|isShaded|
+   #:|isSignalProperty|
+   #:|isSingleShot|
+   #:|isSizeGripEnabled|
+   #:|isSliderDown|
+   #:|isSmoothlyScalable|
+   #:|isSolid|
+   #:|isSortIndicatorShown|
+   #:|isSortLocaleAware|
+   #:|isSortingEnabled|
+   #:|isStereo|
+   #:|isStorageAllocated|
+   #:|isString|
+   #:|isSubtreeBlocked|
+   #:|isSymLink|
+   #:|isSystemTrayAvailable.QSystemTrayIcon|
+   #:|isTabEnabled|
+   #:|isTableCellFormat|
+   #:|isTableFormat|
+   #:|isTearOffEnabled|
+   #:|isTearOffMenuVisible|
+   #:|isTextModeEnabled|
+   #:|isTextVisible|
+   #:|isTextureProvider|
+   #:|isTextureView|
+   #:|isTiledBackingStoreFrozen|
+   #:|isTimeZoneIdAvailable.QTimeZone|
+   #:|isTopLevel|
+   #:|isTransformed|
+   #:|isTranslating|
+   #:|isTransparentProxy|
+   #:|isTristate|
+   #:|isUndefinedLiteral|
+   #:|isUndefined|
+   #:|isUnderMouse|
+   #:|isUndoAvailable|
+   #:|isUndoRedoEnabled|
+   #:|isValid.QDate|
+   #:|isValid.QTime|
+   #:|isValidColor.QColor|
+   #:|isValidCursorPosition|
+   #:|isValid|
+   #:|isVariant|
+   #:|isVideoAvailable|
+   #:|isVirtualDesktop|
+   #:|isVisible.QToolTip|
+   #:|isVisibleTo|
+   #:|isVisible|
    #:|isWhiteBalanceModeSupported|
    #:|isWidgetType|
    #:|isWidget|
@@ -71,7 +216,9 @@
    #:|joinStyle|
    #:|jumpToFrame|
    #:|jumpToNextFrame|
+   #:|keepMouseGrab|
    #:|keepPositionOnInsert|
+   #:|keepTouchGrab|
    #:|kernelType.QSysInfo|
    #:|kernelVersion.QSysInfo|
    #:|kerning|
@@ -79,6 +226,8 @@
    #:|keyBindings.QKeySequence|
    #:|keyBindingsForAction|
    #:|keyExchangeMethod|
+   #:|keyPressEvent|
+   #:|keyReleaseEvent|
    #:|keyValueAt|
    #:|keyValues|
    #:|keyboardAutoRepeatRate|
@@ -202,6 +351,7 @@
    #:|load(QUrl)|
    #:|load(QUrl...)|
    #:|load(QXmlStreamReader*)|
+   #:|loadData|
    #:|loadFailed|
    #:|loadFinished|
    #:|loadFromData|
@@ -209,6 +359,7 @@
    #:|loadProgress|
    #:|loadResource|
    #:|loadStarted|
+   #:|loadUrl|
    #:|loaded|
    #:|load|
    #:|localAddress|
@@ -356,6 +507,9 @@
    #:|margins|
    #:|margin|
    #:|markContentsDirty|
+   #:|markDirty|
+   #:|markIndexDataDirty|
+   #:|markVertexDataDirty|
    #:|mask|
    #:|match(QString)|
    #:|match(QString...).QDir|
@@ -368,6 +522,7 @@
    #:|matches|
    #:|matchingLocales.QLocale|
    #:|match|
+   #:|material|
    #:|matrixForElement|
    #:|matrix|
    #:|maxCount|
@@ -404,6 +559,7 @@
    #:|maximumWidthChanged|
    #:|maximumWidth|
    #:|maximum|
+   #:|maybeUpdate|
    #:|mdiArea|
    #:|measurementSystem|
    #:|mediaAboutToBeInserted|
@@ -482,6 +638,7 @@
    #:|mipBaseLevel|
    #:|mipLevels|
    #:|mipMaxLevel|
+   #:|mipmapFiltering|
    #:|mipmap|
    #:|mirrored|
    #:|miterLimit|
@@ -507,11 +664,15 @@
    #:|mountedVolumes.QStorageInfo|
    #:|mouseButtons.QGuiApplication|
    #:|mouseButtons|
+   #:|mouseDoubleClickEvent|
    #:|mouseDoubleClickIntervalChanged|
    #:|mouseDoubleClickInterval|
    #:|mouseGrabber.QWidget|
    #:|mouseGrabberItem|
+   #:|mouseMoveEvent|
    #:|mousePressAndHoldInterval|
+   #:|mousePressEvent|
+   #:|mouseReleaseEvent|
    #:|movableChanged|
    #:|moveBy|
    #:|moveColumns|
@@ -539,6 +700,7 @@
    #:|name.QPageSize|
    #:|nameFilterDisables|
    #:|nameFilters|
+   #:|nameForObject|
    #:|nameToType.QVariant|
    #:|namedCaptureGroups|
    #:|namespaceName.QHelpEngineCore|
@@ -559,24 +721,30 @@
    #:|naturalTextRect|
    #:|naturalTextWidth|
    #:|nearestFormat|
+   #:|needsNotifySignal|
    #:|negativeSign|
    #:|netmask|
+   #:|networkAccessManagerFactory|
    #:|networkAccessManager|
    #:|networkAccessibleChanged|
    #:|networkAccessible|
    #:|networkConfigurationChanged|
    #:|networkConfiguration|
    #:|networkSessionConnected|
+   #:|newArray|
    #:|newConnection|
+   #:|newObject|
    #:|newPage|
    #:|newPos|
    #:|newProxyWidget|
+   #:|newQObject|
    #:|newSize|
    #:|nextCursorPosition|
    #:|nextFrameDelay|
    #:|nextId|
    #:|nextInFocusChain|
    #:|nextIndex|
+   #:|nextItemInFocusChain|
    #:|nextNegotiatedProtocol|
    #:|nextPendingConnection|
    #:|nextProtocolNegotiationStatus|
@@ -588,6 +756,7 @@
    #:|normal.QVector3D|
    #:|normalGeometry|
    #:|normalizedSignature.QMetaObject|
+   #:|normalizedTextureSubRect|
    #:|normalizedType.QMetaObject|
    #:|normalized|
    #:|normalize|
@@ -599,23 +768,28 @@
    #:|notification|
    #:|notifyIntervalChanged|
    #:|notifyInterval|
+   #:|notifyOnValueChanged|
    #:|notify|
    #:|nsecsElapsed|
    #:|nullDevice.QProcess|
    #:|numRowsAffected|
+   #:|numberLiteral|
    #:|numberOptions|
    #:|numberPrefix|
    #:|numberSuffix|
    #:|numericalPrecisionPolicy|
+   #:|objectCreated|
    #:|objectDestroyed|
    #:|objectForFormat|
    #:|objectIndex|
    #:|objectNameChanged|
    #:|objectName|
+   #:|objectOwnership.QQmlEngine|
    #:|objectType|
    #:|object|
    #:|offlineStorageDefaultQuota.QWebSettings|
    #:|offlineStoragePath.QWebSettings|
+   #:|offlineStoragePath|
    #:|offlineWebApplicationCachePath.QWebSettings|
    #:|offlineWebApplicationCacheQuota.QWebSettings|
    #:|offsetAtPoint|
@@ -632,6 +806,8 @@
    #:|opacityMask|
    #:|opacity|
    #:|opaqueArea|
+   #:|opaqueMaterial|
+   #:|opaquePainting|
    #:|opaqueResize|
    #:|openExternalLinks|
    #:|openGLModuleType.QOpenGLContext|
@@ -639,6 +815,8 @@
    #:|openMode|
    #:|openPersistentEditor|
    #:|openUrl.QDesktopServices|
+   #:|openglContextCreated|
+   #:|openglContext|
    #:|open|
    #:|operation|
    #:|opticalZoomChanged|
@@ -666,6 +844,7 @@
    #:|outputFileName|
    #:|outputFormat|
    #:|outputLocation|
+   #:|outputWarningsToStandardError|
    #:|overflow|
    #:|overlinePos|
    #:|overline|
@@ -680,6 +859,7 @@
    #:|ownsClipboard|
    #:|ownsFindBuffer|
    #:|ownsSelection|
+   #:|ownsTexture|
    #:|padding|
    #:|pageAction|
    #:|pageAdded|
@@ -719,6 +899,7 @@
    #:|paperRect|
    #:|paperSource|
    #:|parentChanged|
+   #:|parentContext|
    #:|parentFrame|
    #:|parentItem|
    #:|parentLayoutItem|
@@ -755,6 +936,7 @@
    #:|pen|
    #:|percentAtLength|
    #:|percent|
+   #:|performanceHints|
    #:|periodSize|
    #:|period|
    #:|permissions.QFile|
@@ -801,6 +983,7 @@
    #:|playlist|
    #:|play|
    #:|pluginFactory|
+   #:|pluginPathList|
    #:|plugins|
    #:|pmText|
    #:|pointAtPercent|
@@ -811,6 +994,7 @@
    #:|polish(QApplication*)|
    #:|polish(QPalette&)|
    #:|polish(QWidget*)|
+   #:|polishItems|
    #:|polished|
    #:|polish|
    #:|polygon|
@@ -844,13 +1028,16 @@
    #:|prefixLength|
    #:|prefix|
    #:|prepareGeometryChange|
+   #:|prepareThread|
    #:|prepare|
+   #:|prependChildNode|
    #:|prependInside(QString)|
    #:|prependInside(QWebElement)|
    #:|prependInside|
    #:|prependOutside(QString)|
    #:|prependOutside(QWebElement)|
    #:|prependOutside|
+   #:|preprocess|
    #:|present|
    #:|pressed|
    #:|pressure|
@@ -892,17 +1079,26 @@
    #:|profile|
    #:|programId|
    #:|program|
+   #:|progressChanged|
+   #:|progress|
+   #:|projectionMatrix|
    #:|project|
    #:|propertiesAssigned|
+   #:|property(QString)|
+   #:|property(uint)|
    #:|propertyCount|
    #:|propertyNames|
    #:|propertyName|
    #:|propertyOffset|
+   #:|propertyTypeCategory|
+   #:|propertyTypeName|
+   #:|propertyType|
    #:|property|
    #:|proposedAction|
    #:|protocolString|
    #:|protocolTag|
    #:|protocol|
+   #:|prototype|
    #:|provisionalLoad|
    #:|proxyAuthenticationRequired|
    #:|proxyFactory|
@@ -929,6 +1125,7 @@
    #:|queryWidget|
    #:|query|
    #:|question.QMessageBox|
+   #:|quickWindow|
    #:|quitOnLastWindowClosed.QGuiApplication|
    #:|quit|
    #:|radioData|
@@ -938,6 +1135,7 @@
    #:|rawHeaderList|
    #:|rawHeader|
    #:|rawValue|
+   #:|read.QQmlProperty|
    #:|readAllStandardError|
    #:|readAllStandardOutput|
    #:|readAll|
@@ -951,6 +1149,7 @@
    #:|readyReadStandardError|
    #:|readyReadStandardOutput|
    #:|readyRead|
+   #:|ready|
    #:|read|
    #:|realm|
    #:|reason|
@@ -985,6 +1184,7 @@
    #:|registerField|
    #:|registerFormat.QSettings|
    #:|registerSqlDriver.QSqlDatabase|
+   #:|registerTypes|
    #:|registeredDocumentations|
    #:|rehighlightBlock|
    #:|rehighlight|
@@ -997,206 +1197,6 @@
    #:|releaseControl|
    #:|releaseKeyboard|
    #:|releaseMouse|
+   #:|releaseResources|
    #:|releaseShortcut|
-   #:|releaseWidget|
-   #:|released|
-   #:|release|
-   #:|reload|
-   #:|remainingTime|
-   #:|remove.QFile|
-   #:|remove.QPixmapCache|
-   #:|removeAccessWhitelistEntry|
-   #:|removeAction|
-   #:|removeAllApplicationFonts.QFontDatabase|
-   #:|removeAllChildren|
-   #:|removeAllDatabases.QWebDatabase|
-   #:|removeAllShaders|
-   #:|removeAnimation|
-   #:|removeApplicationFont.QFontDatabase|
-   #:|removeAttributeNS|
-   #:|removeAttribute|
-   #:|removeAt|
-   #:|removeButton|
-   #:|removeCellWidget|
-   #:|removeChild|
-   #:|removeClass|
-   #:|removeColumns|
-   #:|removeColumn|
-   #:|removeCustomFilter|
-   #:|removeCustomValue|
-   #:|removeDatabase.QSqlDatabase|
-   #:|removeDatabase.QWebDatabase|
-   #:|removeDefaultAnimation|
-   #:|removeDockWidget|
-   #:|removeEventFilter|
-   #:|removeFactory.QAccessible|
-   #:|removeFormat|
-   #:|removeFromDocument|
-   #:|removeFromGroup|
-   #:|removeItemWidget|
-   #:|removeItem|
-   #:|removeLibraryPath.QCoreApplication|
-   #:|removeLocalScheme.QWebSecurityOrigin|
-   #:|removeMappings|
-   #:|removeMapping|
-   #:|removeMedia|
-   #:|removeNativeEventFilter|
-   #:|removePage|
-   #:|removePaths|
-   #:|removePath|
-   #:|removePostedEvents.QCoreApplication|
-   #:|removePropertyWatch|
-   #:|removeRecursively|
-   #:|removeRows|
-   #:|removeRow|
-   #:|removeSceneEventFilter|
-   #:|removeSelectedText|
-   #:|removeSelection|
-   #:|removeServer.QLocalServer|
-   #:|removeShader|
-   #:|removeStack|
-   #:|removeState|
-   #:|removeSubWindow|
-   #:|removeSubstitutions.QFont|
-   #:|removeTab|
-   #:|removeToolBarBreak|
-   #:|removeToolBar|
-   #:|removeTransition|
-   #:|removeTranslator.QCoreApplication|
-   #:|removeWidget|
-   #:|removed|
-   #:|remove|
-   #:|rename.QFile|
-   #:|rename|
-   #:|render(QPainter*,QRectF)|
-   #:|render(QPainter*,QRegion)|
-   #:|render(QPainter*,QString)|
-   #:|render(QPainter*,QWebFrame::RenderLayers)|
-   #:|renderHints|
-   #:|renderableType|
-   #:|renderer|
-   #:|render|
-   #:|repaint(QRect)|
-   #:|repaint(QRegion)|
-   #:|repaintNeeded|
-   #:|repaintRequested|
-   #:|repaint|
-   #:|repeatAction|
-   #:|replace(QString)|
-   #:|replace(QWebElement)|
-   #:|replaceText|
-   #:|replaceWidget|
-   #:|replacementLength|
-   #:|replacementStart|
-   #:|replace|
-   #:|reportContentOrientationChange|
-   #:|requestActivate|
-   #:|requestControl|
-   #:|requestPhase2|
-   #:|requestShowLink|
-   #:|requestUpdate|
-   #:|requestWidget|
-   #:|requestedAperture|
-   #:|requestedFormat|
-   #:|requestedIsoSensitivity|
-   #:|requestedLocks|
-   #:|requestedShutterSpeed|
-   #:|requestedUrl|
-   #:|request|
-   #:|requiredStatus|
-   #:|resetAttribute|
-   #:|resetBindCount|
-   #:|resetCachedContent|
-   #:|resetDefaultSectionSize|
-   #:|resetFontFamily|
-   #:|resetFontSize|
-   #:|resetFormat|
-   #:|resetIndentation|
-   #:|resetInternalData|
-   #:|resetMatrix|
-   #:|resetTransform|
-   #:|reset|
-   #:|resize.QFile|
-   #:|resizeAnchor|
-   #:|resizeColumnToContents|
-   #:|resizeColumnsToContents|
-   #:|resizeContentsPrecision|
-   #:|resizeGripsVisible|
-   #:|resizeMode|
-   #:|resizeRowToContents|
-   #:|resizeRowsToContents|
-   #:|resizeSections|
-   #:|resizeSection|
-   #:|resized|
-   #:|resizesToContents|
-   #:|resize|
-   #:|resolution|
-   #:|resolve(QString,QString...).QLibrary|
-   #:|resolve(QString,int...).QLibrary|
-   #:|resolve.QLibrary|
-   #:|resolveSymlinks|
-   #:|resolved|
-   #:|resolve|
-   #:|resources|
-   #:|resource|
-   #:|restartCommand|
-   #:|restartHint|
-   #:|restart|
-   #:|restoreDockWidget|
-   #:|restoreFrameStateRequested|
-   #:|restoreGeometry|
-   #:|restoreOverrideCursor.QGuiApplication|
-   #:|restoreState|
-   #:|restore|
-   #:|resultWidget|
-   #:|result|
-   #:|resumeAccepting|
-   #:|resume|
-   #:|retainSizeWhenHidden|
-   #:|returnPressed|
-   #:|revertAll|
-   #:|revertRow|
-   #:|revert|
-   #:|revision|
-   #:|rgbSwapped|
-   #:|rgba|
-   #:|rgb|
-   #:|rightBearing|
-   #:|rightColumn|
-   #:|rightCursorPosition|
-   #:|rightMargin|
-   #:|rightPadding|
-   #:|right|
-   #:|rmdir|
-   #:|rmpath|
-   #:|role|
-   #:|rollbackTransaction|
-   #:|rollback|
-   #:|root.QDir|
-   #:|root.QStorageInfo|
-   #:|rootDirectory|
-   #:|rootFrame|
-   #:|rootIndex|
-   #:|rootIsDecorated|
-   #:|rootModelIndex|
-   #:|rootPath.QDir|
-   #:|rootPathChanged|
-   #:|rootPath|
-   #:|rotateRadians|
-   #:|rotatedVector|
-   #:|rotate|
-   #:|rotationAngle|
-   #:|rotationChanged|
-   #:|rotationTo.QQuaternion|
-   #:|rotation|
-   #:|rowAlignment|
-   #:|rowAt|
-   #:|rowCountChanged|
-   #:|rowCount|
-   #:|rowEnd|
-   #:|rowHeight|
-   #:|rowIntersectsSelection|
-   #:|rowMaximumHeight|
-   #:|rowMinimumHeight|
-   #:|rowMoved|
-   #:|rowPreferredHeight|))
+   #:|releaseWidget|))

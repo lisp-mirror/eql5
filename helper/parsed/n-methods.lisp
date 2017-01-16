@@ -1672,6 +1672,57 @@
    "int top () const"
    "const QPersistentModelIndex & topLeft () const"
    "int width () const")
+  (("QJSValue" . NIL)
+   "new QJSValue ( SpecialValue = UndefinedValue )"
+   "new QJSValue ( const QJSValue & )"
+   "new QJSValue ( bool )"
+   "new QJSValue ( int )"
+   "new QJSValue ( uint )"
+   "new QJSValue ( double )"
+   "new QJSValue ( const QString & )"
+   "new QJSValue ( const QLatin1String & )"
+   "new QJSValue ( const char * )"
+   "QJSValue call ( const QJSValueList & = QJSValueList() )"
+   "QJSValue callAsConstructor ( const QJSValueList & = QJSValueList() )"
+   "QJSValue callWithInstance ( const QJSValue & , const QJSValueList & = QJSValueList() )"
+   "bool deleteProperty ( const QString & )"
+   "bool equals ( const QJSValue & ) const"
+   "bool hasOwnProperty ( const QString & ) const"
+   "bool hasProperty ( const QString & ) const"
+   "bool isArray () const"
+   "bool isBool () const"
+   "bool isCallable () const"
+   "bool isDate () const"
+   "bool isError () const"
+   "bool isNull () const"
+   "bool isNumber () const"
+   "bool isObject () const"
+   "bool isQObject () const"
+   "bool isRegExp () const"
+   "bool isString () const"
+   "bool isUndefined () const"
+   "bool isVariant () const"
+   "QJSValue property ( const QString & ) const"
+   "QJSValue property ( quint32 ) const"
+   "QJSValue prototype () const"
+   "void setProperty ( const QString & , const QJSValue & )"
+   "void setProperty ( quint32 , const QJSValue & )"
+   "void setPrototype ( const QJSValue & )"
+   "bool strictlyEquals ( const QJSValue & ) const"
+   "bool toBool () const"
+   "QDateTime toDateTime () const"
+   "qint32 toInt () const"
+   "double toNumber () const"
+   "QObject * toQObject () const"
+   "QString toString () const"
+   "quint32 toUInt () const"
+   "QVariant toVariant () const")
+  (("QJSValueIterator" . NIL)
+   "new QJSValueIterator ( const QJSValue & )"
+   "bool hasNext () const"
+   "QString name () const"
+   "bool next ()"
+   "QJSValue value () const")
   (("QKeyEvent" . "QInputEvent")
    "new QKeyEvent ( Type , int , Qt::KeyboardModifiers , const QString & = QString() , bool = false , ushort = 1 )"
    "new QKeyEvent ( Type , int , Qt::KeyboardModifiers , quint32 , quint32 , quint32 , const QString & = QString() , bool = false , ushort = 1 )"
@@ -2967,6 +3018,91 @@
    "QStringList toStringList () const"
    "QString value ( const QString & , const QString & = QString() ) const"
    "static QProcessEnvironment systemEnvironment ()")
+  (("QQmlAbstractUrlInterceptor" . NIL)
+   "new QQmlAbstractUrlInterceptor ()"
+   "virtual QUrl intercept ( const QUrl & , DataType ) = 0")
+  (("QQmlError" . NIL)
+   "new QQmlError ()"
+   "new QQmlError ( const QQmlError & )"
+   "int column () const"
+   "QString description () const"
+   "bool isValid () const"
+   "int line () const"
+   "QObject * object () const"
+   "void setColumn ( int )"
+   "void setDescription ( const QString & )"
+   "void setLine ( int )"
+   "void setObject ( QObject * )"
+   "void setUrl ( const QUrl & )"
+   "QString toString () const"
+   "QUrl url () const")
+  (("QQmlImageProviderBase" . NIL)
+   "virtual Flags flags () const = 0"
+   "virtual ImageType imageType () const = 0")
+  (("QQmlIncubationController" . NIL)
+   "new QQmlIncubationController ()"
+   "void incubateFor ( int )"
+   "int incubatingObjectCount () const")
+  (("QQmlIncubator" . NIL)
+   "new QQmlIncubator ( IncubationMode = Asynchronous )"
+   "void clear ()"
+   "QList<QQmlError> errors () const"
+   "void forceCompletion ()"
+   "IncubationMode incubationMode () const"
+   "bool isError () const"
+   "bool isLoading () const"
+   "bool isNull () const"
+   "bool isReady () const"
+   "QObject * object () const"
+   "Status status () const")
+  (("QQmlNetworkAccessManagerFactory" . NIL)
+   "virtual QNetworkAccessManager * create ( QObject * ) = 0")
+  (("QQmlParserStatus" . NIL)
+   "virtual void classBegin () = 0"
+   "virtual void componentComplete () = 0")
+  (("QQmlProperty" . NIL)
+   "new QQmlProperty ()"
+   "new QQmlProperty ( QObject * )"
+   "new QQmlProperty ( QObject * , QQmlContext * )"
+   "new QQmlProperty ( QObject * , const QString & )"
+   "new QQmlProperty ( QObject * , const QString & , QQmlContext * )"
+   "new QQmlProperty ( const QQmlProperty & )"
+   "bool connectNotifySignal ( QObject * , const char * ) const"
+   "bool connectNotifySignal ( QObject * , int ) const"
+   "bool hasNotifySignal () const"
+   "int index () const"
+   "bool isDesignable () const"
+   "bool isProperty () const"
+   "bool isResettable () const"
+   "bool isSignalProperty () const"
+   "bool isValid () const"
+   "bool isWritable () const"
+   "QString name () const"
+   "bool needsNotifySignal () const"
+   "QObject * object () const"
+   "int propertyType () const"
+   "PropertyTypeCategory propertyTypeCategory () const"
+   "const char * propertyTypeName () const"
+   "QVariant read () const"
+   "bool reset () const"
+   "Type type () const"
+   "bool write ( const QVariant & ) const"
+   "static QVariant read ( const QObject * , const QString & )"
+   "static QVariant read ( const QObject * , const QString & , QQmlContext * )"
+   "static bool write ( QObject * , const QString & , const QVariant & )"
+   "static bool write ( QObject * , const QString & , const QVariant & , QQmlContext * )")
+  (("QQmlPropertyValueSource" . NIL)
+   "new QQmlPropertyValueSource ()"
+   "virtual void setTarget ( const QQmlProperty & ) = 0")
+  (("QQmlScriptString" . NIL)
+   "new QQmlScriptString ()"
+   "new QQmlScriptString ( const QQmlScriptString & )"
+   "bool booleanLiteral ( bool * ) const"
+   "bool isEmpty () const"
+   "bool isNullLiteral () const"
+   "bool isUndefinedLiteral () const"
+   "qreal numberLiteral ( bool * ) const"
+   "QString stringLiteral () const")
   (("QQuaternion" . NIL)
    "new QQuaternion ()"
    "new QQuaternion ( float , float , float , float )"
@@ -3004,6 +3140,16 @@
    "static QQuaternion nlerp ( const QQuaternion & , const QQuaternion & , float )"
    "static QQuaternion rotationTo ( const QVector3D & , const QVector3D & )"
    "static QQuaternion slerp ( const QQuaternion & , const QQuaternion & , float )")
+  (("QQuickAsyncImageProvider" . "QQuickImageProvider")
+   "new QQuickAsyncImageProvider ()"
+   "virtual QQuickImageResponse * requestImageResponse ( const QString & , const QSize & ) = 0")
+  (("QQuickImageProvider" . "QQmlImageProviderBase")
+   "new QQuickImageProvider ( ImageType , Flags = 0 )"
+   "Flags flags () const"
+   "ImageType imageType () const"
+   "virtual QImage requestImage ( const QString & , QSize * , const QSize & )"
+   "virtual QPixmap requestPixmap ( const QString & , QSize * , const QSize & )"
+   "virtual QQuickTextureFactory * requestTexture ( const QString & , QSize * , const QSize & )")
   (("QRadialGradient" . "QGradient")
    "new QRadialGradient ()"
    "new QRadialGradient ( const QPointF & , qreal , const QPointF & )"
@@ -3106,6 +3252,131 @@
    "bool autoDelete () const"
    "virtual void run () = 0"
    "void setAutoDelete ( bool )")
+  (("QSGBasicGeometryNode" . "QSGNode")
+   "const QSGGeometry * geometry () const"
+   "QSGGeometry * geometry ()"
+   "void setGeometry ( QSGGeometry * )")
+  (("QSGClipNode" . "QSGBasicGeometryNode")
+   "new QSGClipNode ()"
+   "QRectF clipRect () const"
+   "bool isRectangular () const"
+   "void setClipRect ( const QRectF & )"
+   "void setIsRectangular ( bool )")
+  (("QSGFlatColorMaterial" . "QSGMaterial")
+   "new QSGFlatColorMaterial ()"
+   "const QColor & color () const"
+   "void setColor ( const QColor & )")
+  (("QSGGeometry" . NIL)
+   "void allocate ( int , int = 0 )"
+   "int attributeCount () const"
+   "GLenum drawingMode () const"
+   "int indexCount () const"
+   "quint16 * indexDataAsUShort ()"
+   "const quint16 * indexDataAsUShort () const"
+   "DataPattern indexDataPattern () const"
+   "int indexType () const"
+   "float lineWidth () const"
+   "void markIndexDataDirty ()"
+   "void markVertexDataDirty ()"
+   "void setDrawingMode ( GLenum )"
+   "void setIndexDataPattern ( DataPattern )"
+   "void setLineWidth ( float )"
+   "void setVertexDataPattern ( DataPattern )"
+   "int sizeOfIndex () const"
+   "int sizeOfVertex () const"
+   "int vertexCount () const"
+   "DataPattern vertexDataPattern () const"
+   "static void updateRectGeometry ( QSGGeometry * , const QRectF & )"
+   "static void updateTexturedRectGeometry ( QSGGeometry * , const QRectF & , const QRectF & )")
+  (("QSGGeometryNode" . "QSGBasicGeometryNode")
+   "new QSGGeometryNode ()"
+   "QSGMaterial * material () const"
+   "QSGMaterial * opaqueMaterial () const"
+   "void setMaterial ( QSGMaterial * )"
+   "void setOpaqueMaterial ( QSGMaterial * )")
+  (("QSGMaterial" . NIL)
+   "virtual int compare ( const QSGMaterial * ) const"
+   "virtual QSGMaterialShader * createShader () const = 0"
+   "QSGMaterial::Flags flags () const"
+   "void setFlag ( Flags , bool = true )"
+   "virtual QSGMaterialType * type () const = 0")
+  (("QSGMaterialShader" . NIL)
+   "virtual void activate ()"
+   "virtual void deactivate ()"
+   "QOpenGLShaderProgram * program ()"
+   "virtual void updateState ( const RenderState & , QSGMaterial * , QSGMaterial * )"
+   "protected void setShaderSourceFile ( QOpenGLShader::ShaderType , const QString & )"
+   "protected void setShaderSourceFiles ( QOpenGLShader::ShaderType , const QStringList & )")
+  (("QSGMaterialType" . NIL))
+  (("QSGNode" . NIL)
+   "new QSGNode ()"
+   "void appendChildNode ( QSGNode * )"
+   "QSGNode * childAtIndex ( int ) const"
+   "int childCount () const"
+   "QSGNode * firstChild () const"
+   "Flags flags () const"
+   "void insertChildNodeAfter ( QSGNode * , QSGNode * )"
+   "void insertChildNodeBefore ( QSGNode * , QSGNode * )"
+   "virtual bool isSubtreeBlocked () const"
+   "QSGNode * lastChild () const"
+   "void markDirty ( DirtyState )"
+   "QSGNode * nextSibling () const"
+   "QSGNode * parent () const"
+   "void prependChildNode ( QSGNode * )"
+   "virtual void preprocess ()"
+   "QSGNode * previousSibling () const"
+   "void removeAllChildNodes ()"
+   "void removeChildNode ( QSGNode * )"
+   "void setFlag ( Flag , bool = true )"
+   "void setFlags ( Flags , bool = true )"
+   "NodeType type () const")
+  (("QSGOpacityNode" . "QSGNode")
+   "new QSGOpacityNode ()"
+   "qreal opacity () const"
+   "void setOpacity ( qreal )")
+  (("QSGOpaqueTextureMaterial" . "QSGMaterial")
+   "new QSGOpaqueTextureMaterial ()"
+   "QSGTexture::Filtering filtering () const"
+   "QSGTexture::WrapMode horizontalWrapMode () const"
+   "QSGTexture::Filtering mipmapFiltering () const"
+   "void setFiltering ( QSGTexture::Filtering )"
+   "void setHorizontalWrapMode ( QSGTexture::WrapMode )"
+   "void setMipmapFiltering ( QSGTexture::Filtering )"
+   "void setTexture ( QSGTexture * )"
+   "void setVerticalWrapMode ( QSGTexture::WrapMode )"
+   "QSGTexture * texture () const"
+   "QSGTexture::WrapMode verticalWrapMode () const")
+  (("QSGSimpleRectNode" . "QSGGeometryNode")
+   "new QSGSimpleRectNode ( const QRectF & , const QColor & )"
+   "new QSGSimpleRectNode ()"
+   "QColor color () const"
+   "QRectF rect () const"
+   "void setColor ( const QColor & )"
+   "void setRect ( const QRectF & )"
+   "void setRect ( qreal , qreal , qreal , qreal )")
+  (("QSGSimpleTextureNode" . "QSGGeometryNode")
+   "new QSGSimpleTextureNode ()"
+   "QSGTexture::Filtering filtering () const"
+   "bool ownsTexture () const"
+   "QRectF rect () const"
+   "void setFiltering ( QSGTexture::Filtering )"
+   "void setOwnsTexture ( bool )"
+   "void setRect ( const QRectF & )"
+   "void setRect ( qreal , qreal , qreal , qreal )"
+   "void setSourceRect ( const QRectF & )"
+   "void setSourceRect ( qreal , qreal , qreal , qreal )"
+   "void setTexture ( QSGTexture * )"
+   "void setTextureCoordinatesTransform ( TextureCoordinatesTransformMode )"
+   "QRectF sourceRect () const"
+   "QSGTexture * texture () const"
+   "TextureCoordinatesTransformMode textureCoordinatesTransform () const")
+  (("QSGTextureMaterial" . "QSGOpaqueTextureMaterial"))
+  (("QSGTransformNode" . "QSGNode")
+   "new QSGTransformNode ()"
+   "const QMatrix4x4 & matrix () const"
+   "void setMatrix ( const QMatrix4x4 & )")
+  (("QSGVertexColorMaterial" . "QSGMaterial")
+   "new QSGVertexColorMaterial ()")
   (("QScrollEvent" . "QEvent")
    "new QScrollEvent ( const QPointF & , const QPointF & , ScrollState )"
    "QPointF contentPos () const"

@@ -20,7 +20,7 @@
 (require :settings     (probe-file "settings.lisp"))
 
 ;; load all available modules for code completions
-(dolist (module (list :help :multimedia :network :sql :svg :webkit))
+(dolist (module (list :help :multimedia :network :quick :sql :svg :webkit))
   (eql:qrequire module :quiet))
 
 (defpackage :editor

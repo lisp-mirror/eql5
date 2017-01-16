@@ -149,9 +149,23 @@ public:
     void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QGraphicsVideoItem::timerEvent(x1); }}
 };
 
+class LMediaControl : public QMediaControl {
+    Q_OBJECT
+    friend class Q126;
+public:
+
+    static NumList overrideIds;
+    uint unique;
+
+    bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QMediaControl::eventFilter(x1, x2); } return ret; }
+    void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QMediaControl::childEvent(x1); }}
+    void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QMediaControl::customEvent(x1); }}
+    void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QMediaControl::timerEvent(x1); }}
+};
+
 class LMediaObject : public QMediaObject {
     Q_OBJECT
-    friend class Q125;
+    friend class Q127;
 public:
 
     static NumList overrideIds;
@@ -170,7 +184,7 @@ public:
 
 class LMediaPlayer : public QMediaPlayer {
     Q_OBJECT
-    friend class Q126;
+    friend class Q128;
 public:
     LMediaPlayer(uint u, QObject* x1 = 0, Flags x2 = 0) : QMediaPlayer(x1, x2), unique(u) {}
 
@@ -190,7 +204,7 @@ public:
 
 class LMediaPlaylist : public QMediaPlaylist {
     Q_OBJECT
-    friend class Q127;
+    friend class Q129;
 public:
     LMediaPlaylist(uint u, QObject* x1 = 0) : QMediaPlaylist(x1), unique(u) {}
 
@@ -206,7 +220,7 @@ public:
 
 class LMediaRecorder : public QMediaRecorder {
     Q_OBJECT
-    friend class Q128;
+    friend class Q130;
 public:
     LMediaRecorder(uint u, QMediaObject* x1, QObject* x2 = 0) : QMediaRecorder(x1, x2), unique(u) {}
 
@@ -222,7 +236,7 @@ public:
 
 class LRadioTuner : public QRadioTuner {
     Q_OBJECT
-    friend class Q167;
+    friend class Q188;
 public:
     LRadioTuner(uint u, QObject* x1 = 0) : QRadioTuner(x1), unique(u) {}
 
@@ -242,7 +256,7 @@ public:
 
 class LVideoWidget : public QVideoWidget {
     Q_OBJECT
-    friend class Q238;
+    friend class Q264;
 public:
     LVideoWidget(uint u, QWidget* x1 = 0) : QVideoWidget(x1), unique(u) {}
 
@@ -291,25 +305,29 @@ public:
 
 class LVideoWidgetControl : public QVideoWidgetControl {
     Q_OBJECT
-    friend class Q239;
+    friend class Q265;
 public:
 
     static NumList overrideIds;
     uint unique;
 
-    Qt::AspectRatioMode aspectRatioMode() const { quint64 id = LObjects::override_id(unique, 384); void* fun = LObjects::overrideFun(id); Qt::AspectRatioMode ret = (Qt::AspectRatioMode)0; if(fun && (LObjects::calling != id)) { ret = (Qt::AspectRatioMode)callOverrideFun(fun, 384, 0, id).toInt(); } return ret; }
-    int brightness() const { quint64 id = LObjects::override_id(unique, 385); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 385, 0, id).toInt(); } return ret; }
-    int contrast() const { quint64 id = LObjects::override_id(unique, 386); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 386, 0, id).toInt(); } return ret; }
-    int hue() const { quint64 id = LObjects::override_id(unique, 387); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 387, 0, id).toInt(); } return ret; }
-    bool isFullScreen() const { quint64 id = LObjects::override_id(unique, 388); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 388, 0, id).toBool(); } return ret; }
-    int saturation() const { quint64 id = LObjects::override_id(unique, 389); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 389, 0, id).toInt(); } return ret; }
-    void setAspectRatioMode(Qt::AspectRatioMode x1) { quint64 id = LObjects::override_id(unique, 390); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 390, args, id); }}
-    void setBrightness(int x1) { quint64 id = LObjects::override_id(unique, 391); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 391, args, id); }}
-    void setContrast(int x1) { quint64 id = LObjects::override_id(unique, 392); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 392, args, id); }}
-    void setFullScreen(bool x1) { quint64 id = LObjects::override_id(unique, 393); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 393, args, id); }}
-    void setHue(int x1) { quint64 id = LObjects::override_id(unique, 394); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 394, args, id); }}
-    void setSaturation(int x1) { quint64 id = LObjects::override_id(unique, 395); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 395, args, id); }}
-    QWidget* videoWidget() { quint64 id = LObjects::override_id(unique, 396); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { ret = (QWidget*)callOverrideFun(fun, 396, 0, id).value<void*>(); } return ret; }
+    Qt::AspectRatioMode aspectRatioMode() const { quint64 id = LObjects::override_id(unique, 419); void* fun = LObjects::overrideFun(id); Qt::AspectRatioMode ret = (Qt::AspectRatioMode)0; if(fun && (LObjects::calling != id)) { ret = (Qt::AspectRatioMode)callOverrideFun(fun, 419, 0, id).toInt(); } return ret; }
+    int brightness() const { quint64 id = LObjects::override_id(unique, 420); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 420, 0, id).toInt(); } return ret; }
+    int contrast() const { quint64 id = LObjects::override_id(unique, 421); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 421, 0, id).toInt(); } return ret; }
+    int hue() const { quint64 id = LObjects::override_id(unique, 422); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 422, 0, id).toInt(); } return ret; }
+    bool isFullScreen() const { quint64 id = LObjects::override_id(unique, 423); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 423, 0, id).toBool(); } return ret; }
+    int saturation() const { quint64 id = LObjects::override_id(unique, 424); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 424, 0, id).toInt(); } return ret; }
+    void setAspectRatioMode(Qt::AspectRatioMode x1) { quint64 id = LObjects::override_id(unique, 425); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 425, args, id); }}
+    void setBrightness(int x1) { quint64 id = LObjects::override_id(unique, 426); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 426, args, id); }}
+    void setContrast(int x1) { quint64 id = LObjects::override_id(unique, 427); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 427, args, id); }}
+    void setFullScreen(bool x1) { quint64 id = LObjects::override_id(unique, 428); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 428, args, id); }}
+    void setHue(int x1) { quint64 id = LObjects::override_id(unique, 429); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 429, args, id); }}
+    void setSaturation(int x1) { quint64 id = LObjects::override_id(unique, 430); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 430, args, id); }}
+    QWidget* videoWidget() { quint64 id = LObjects::override_id(unique, 431); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { ret = (QWidget*)callOverrideFun(fun, 431, 0, id).value<void*>(); } return ret; }
+    bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QVideoWidgetControl::eventFilter(x1, x2); } return ret; }
+    void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QVideoWidgetControl::childEvent(x1); }}
+    void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QVideoWidgetControl::customEvent(x1); }}
+    void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QVideoWidgetControl::timerEvent(x1); }}
 };
 
 QT_END_NAMESPACE

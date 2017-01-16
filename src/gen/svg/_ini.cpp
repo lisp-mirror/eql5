@@ -9,27 +9,27 @@ QT_BEGIN_NAMESPACE
 NumList LGraphicsSvgItem::overrideIds = NumList() << 260 << 231 << 233;
 NumList LSvgRenderer::overrideIds = NumList();
 NumList LSvgWidget::overrideIds = NumList() << 25 << 20;
-NumList LSvgGenerator::overrideIds = NumList() << 483;
+NumList LSvgGenerator::overrideIds = NumList() << 518;
 
 void ini() {
     static bool _ = false; if(_) return; _ = true;
     ini2();
     LObjects::Q[82] = new Q83;
-    LObjects::Q[200] = new Q201;
-    LObjects::Q[201] = new Q202;
-    LObjects::N[186] = new N187; }
+    LObjects::Q[226] = new Q227;
+    LObjects::Q[227] = new Q228;
+    LObjects::N[216] = new N217; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 83: m = &QGraphicsSvgItem::staticMetaObject; break;
-        case 201: m = &QSvgRenderer::staticMetaObject; break;
-        case 202: m = &QSvgWidget::staticMetaObject; break; }
+        case 227: m = &QSvgRenderer::staticMetaObject; break;
+        case 228: m = &QSvgWidget::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 187: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
+        case 217: if(gc) delete (QSvgGenerator*)p; else delete (LSvgGenerator*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -37,12 +37,12 @@ NumList* overrideFunctions(const QByteArray& name) {
     if(n != -1) {
         switch(n) {
             case 83: ids = &LGraphicsSvgItem::overrideIds; break;
-            case 201: ids = &LSvgRenderer::overrideIds; break;
-            case 202: ids = &LSvgWidget::overrideIds; break; }}
+            case 227: ids = &LSvgRenderer::overrideIds; break;
+            case 228: ids = &LSvgWidget::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 187: ids = &LSvgGenerator::overrideIds; break; }}
+            case 217: ids = &LSvgGenerator::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

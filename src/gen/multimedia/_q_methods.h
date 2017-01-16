@@ -11,25 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q239 : public QObject { // QVideoWidgetControl
-    Q_OBJECT
-public:
-    Q_INVOKABLE int MaspectRatioMode(QVideoWidgetControl* o) const { return o->aspectRatioMode(); }
-    Q_INVOKABLE int Mbrightness(QVideoWidgetControl* o) const { return o->brightness(); }
-    Q_INVOKABLE int Mcontrast(QVideoWidgetControl* o) const { return o->contrast(); }
-    Q_INVOKABLE int Mhue(QVideoWidgetControl* o) const { return o->hue(); }
-    Q_INVOKABLE bool MisFullScreen(QVideoWidgetControl* o) const { return o->isFullScreen(); }
-    Q_INVOKABLE int Msaturation(QVideoWidgetControl* o) const { return o->saturation(); }
-    Q_INVOKABLE void MsetAspectRatioMode(QVideoWidgetControl* o, Qt::AspectRatioMode x1) { o->setAspectRatioMode(x1); }
-    Q_INVOKABLE void MsetBrightness(QVideoWidgetControl* o, int x1) { o->setBrightness(x1); }
-    Q_INVOKABLE void MsetContrast(QVideoWidgetControl* o, int x1) { o->setContrast(x1); }
-    Q_INVOKABLE void MsetFullScreen(QVideoWidgetControl* o, bool x1) { o->setFullScreen(x1); }
-    Q_INVOKABLE void MsetHue(QVideoWidgetControl* o, int x1) { o->setHue(x1); }
-    Q_INVOKABLE void MsetSaturation(QVideoWidgetControl* o, int x1) { o->setSaturation(x1); }
-    Q_INVOKABLE QWidget* MvideoWidget(QVideoWidgetControl* o) { return o->videoWidget(); }
-};
-
-class Q18 : public Q140 { // QAbstractVideoSurface
+class Q18 : public Q142 { // QAbstractVideoSurface
     Q_OBJECT
 public:
     Q_INVOKABLE int Merror(QAbstractVideoSurface* o) const { return o->error(); }
@@ -43,7 +25,7 @@ public:
     Q_INVOKABLE QVideoSurfaceFormat MsurfaceFormat(QAbstractVideoSurface* o) const { return o->surfaceFormat(); }
 };
 
-class Q23 : public Q140 { // QAudioOutput
+class Q23 : public Q142 { // QAudioOutput
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QAudioFormat& x1 = QAudioFormat(), QObject* x2 = 0) { return new LAudioOutput(u, x1, x2); }
@@ -69,7 +51,7 @@ public:
     Q_INVOKABLE qreal Mvolume(QAudioOutput* o) const { return o->volume(); }
 };
 
-class Q30 : public Q140 { // QCameraExposure
+class Q30 : public Q142 { // QCameraExposure
     Q_OBJECT
 public:
     Q_INVOKABLE qreal Maperture(QCameraExposure* o) const { return o->aperture(); }
@@ -94,7 +76,7 @@ public:
     Q_INVOKABLE QList<qreal> MsupportedShutterSpeeds(QCameraExposure* o, bool* x1 = 0) const { return o->supportedShutterSpeeds(x1); }
 };
 
-class Q31 : public Q140 { // QCameraFocus
+class Q31 : public Q142 { // QCameraFocus
     Q_OBJECT
 public:
     Q_INVOKABLE QPointF McustomFocusPoint(QCameraFocus* o) const { return o->customFocusPoint(); }
@@ -114,7 +96,7 @@ public:
     Q_INVOKABLE void MzoomTo(QCameraFocus* o, qreal x1, qreal x2) { o->zoomTo(x1, x2); }
 };
 
-class Q32 : public Q140 { // QCameraImageCapture
+class Q32 : public Q142 { // QCameraImageCapture
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QMediaObject* x1, QObject* x2 = 0) { return new LCameraImageCapture(u, x1, x2); }
@@ -137,7 +119,7 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QCameraImageCapture* o) const { return o->mediaObject(); }
 };
 
-class Q33 : public Q140 { // QCameraImageProcessing
+class Q33 : public Q142 { // QCameraImageProcessing
     Q_OBJECT
 public:
     Q_INVOKABLE int McolorFilter(QCameraImageProcessing* o) const { return o->colorFilter(); }
@@ -175,7 +157,12 @@ public:
     Q_INVOKABLE void Mpaint(QGraphicsVideoItem* o, QPainter* x1, const QStyleOptionGraphicsItem* x2, QWidget* x3 = 0) { o->paint(x1, x2, x3); }
 };
 
-class Q125 : public Q140 { // QMediaObject
+class Q126 : public Q142 { // QMediaControl
+    Q_OBJECT
+public:
+};
+
+class Q127 : public Q142 { // QMediaObject
     Q_OBJECT
 public:
     Q_INVOKABLE int Mavailability(QMediaObject* o) const { return o->availability(); }
@@ -192,7 +179,7 @@ public:
     Q_INVOKABLE void MremovePropertyWatch(QMediaObject* o, const QByteArray& x1) { ((LMediaObject*)o)->removePropertyWatch(x1); }
 };
 
-class Q126 : public Q125 { // QMediaPlayer
+class Q128 : public Q127 { // QMediaPlayer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0, QMediaPlayer::Flags x2 = 0) { return new LMediaPlayer(u, x1, x2); }
@@ -223,7 +210,7 @@ public:
     Q_INVOKABLE int ShasSupport(const QString& x1, const QStringList& x2 = QStringList(), QMediaPlayer::Flags x3 = 0) { return QMediaPlayer::hasSupport(x1, x2, x3); }
 };
 
-class Q127 : public Q140 { // QMediaPlaylist
+class Q129 : public Q142 { // QMediaPlaylist
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LMediaPlaylist(u, x1); }
@@ -253,7 +240,7 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QMediaPlaylist* o) const { return o->mediaObject(); }
 };
 
-class Q128 : public Q140 { // QMediaRecorder
+class Q130 : public Q142 { // QMediaRecorder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QMediaObject* x1, QObject* x2 = 0) { return new LMediaRecorder(u, x1, x2); }
@@ -293,14 +280,14 @@ public:
     Q_INVOKABLE QMediaObject* MmediaObject(QMediaRecorder* o) const { return o->mediaObject(); }
 };
 
-class Q129 : public Q140 { // QMediaService
+class Q131 : public Q142 { // QMediaService
     Q_OBJECT
 public:
     Q_INVOKABLE void MreleaseControl(QMediaService* o, QMediaControl* x1) { o->releaseControl(x1); }
     Q_INVOKABLE QMediaControl* MrequestControl(QMediaService* o, const char* x1) { return o->requestControl(x1); }
 };
 
-class Q167 : public Q125 { // QRadioTuner
+class Q188 : public Q127 { // QRadioTuner
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LRadioTuner(u, x1); }
@@ -323,7 +310,25 @@ public:
     Q_INVOKABLE int Mavailability(QRadioTuner* o) const { return o->availability(); }
 };
 
-class Q24 : public Q128 { // QAudioRecorder
+class Q265 : public Q126 { // QVideoWidgetControl
+    Q_OBJECT
+public:
+    Q_INVOKABLE int MaspectRatioMode(QVideoWidgetControl* o) const { return o->aspectRatioMode(); }
+    Q_INVOKABLE int Mbrightness(QVideoWidgetControl* o) const { return o->brightness(); }
+    Q_INVOKABLE int Mcontrast(QVideoWidgetControl* o) const { return o->contrast(); }
+    Q_INVOKABLE int Mhue(QVideoWidgetControl* o) const { return o->hue(); }
+    Q_INVOKABLE bool MisFullScreen(QVideoWidgetControl* o) const { return o->isFullScreen(); }
+    Q_INVOKABLE int Msaturation(QVideoWidgetControl* o) const { return o->saturation(); }
+    Q_INVOKABLE void MsetAspectRatioMode(QVideoWidgetControl* o, Qt::AspectRatioMode x1) { o->setAspectRatioMode(x1); }
+    Q_INVOKABLE void MsetBrightness(QVideoWidgetControl* o, int x1) { o->setBrightness(x1); }
+    Q_INVOKABLE void MsetContrast(QVideoWidgetControl* o, int x1) { o->setContrast(x1); }
+    Q_INVOKABLE void MsetFullScreen(QVideoWidgetControl* o, bool x1) { o->setFullScreen(x1); }
+    Q_INVOKABLE void MsetHue(QVideoWidgetControl* o, int x1) { o->setHue(x1); }
+    Q_INVOKABLE void MsetSaturation(QVideoWidgetControl* o, int x1) { o->setSaturation(x1); }
+    Q_INVOKABLE QWidget* MvideoWidget(QVideoWidgetControl* o) { return o->videoWidget(); }
+};
+
+class Q24 : public Q130 { // QAudioRecorder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LAudioRecorder(u, x1); }
@@ -333,7 +338,7 @@ public:
     Q_INVOKABLE QString MdefaultAudioInput(QAudioRecorder* o) const { return o->defaultAudioInput(); }
 };
 
-class Q29 : public Q125 { // QCamera
+class Q29 : public Q127 { // QCamera
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LCamera(u, x1); }
@@ -365,7 +370,7 @@ public:
     Q_INVOKABLE int Mavailability(QCamera* o) const { return o->availability(); }
 };
 
-class Q238 : public Q246 { // QVideoWidget
+class Q264 : public Q272 { // QVideoWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LVideoWidget(u, x1); }
@@ -379,7 +384,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QVideoWidget* o) const { return o->sizeHint(); }
 };
 
-class Q34 : public Q238 { // QCameraViewfinder
+class Q34 : public Q264 { // QCameraViewfinder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LCameraViewfinder(u, x1); }

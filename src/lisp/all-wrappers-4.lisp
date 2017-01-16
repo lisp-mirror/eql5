@@ -1,5 +1,230 @@
 (defpackage :eql
   (:export
+   #:|released|
+   #:|release|
+   #:|reload|
+   #:|remainingTime|
+   #:|remove.QFile|
+   #:|remove.QPixmapCache|
+   #:|removeAccessWhitelistEntry|
+   #:|removeAction|
+   #:|removeAllApplicationFonts.QFontDatabase|
+   #:|removeAllChildNodes|
+   #:|removeAllChildren|
+   #:|removeAllDatabases.QWebDatabase|
+   #:|removeAllShaders|
+   #:|removeAnimation|
+   #:|removeApplicationFont.QFontDatabase|
+   #:|removeAttributeNS|
+   #:|removeAttribute|
+   #:|removeAt|
+   #:|removeButton|
+   #:|removeCellWidget|
+   #:|removeChildNode|
+   #:|removeChild|
+   #:|removeClass|
+   #:|removeColumns|
+   #:|removeColumn|
+   #:|removeCustomFilter|
+   #:|removeCustomValue|
+   #:|removeDatabase.QSqlDatabase|
+   #:|removeDatabase.QWebDatabase|
+   #:|removeDefaultAnimation|
+   #:|removeDockWidget|
+   #:|removeEventFilter|
+   #:|removeFactory.QAccessible|
+   #:|removeFormat|
+   #:|removeFromDocument|
+   #:|removeFromGroup|
+   #:|removeImageProvider|
+   #:|removeItemWidget|
+   #:|removeItem|
+   #:|removeLibraryPath.QCoreApplication|
+   #:|removeLocalScheme.QWebSecurityOrigin|
+   #:|removeMappings|
+   #:|removeMapping|
+   #:|removeMedia|
+   #:|removeNativeEventFilter|
+   #:|removePage|
+   #:|removePaths|
+   #:|removePath|
+   #:|removePostedEvents.QCoreApplication|
+   #:|removePropertyWatch|
+   #:|removeRecursively|
+   #:|removeRows|
+   #:|removeRow|
+   #:|removeSceneEventFilter|
+   #:|removeSelectedText|
+   #:|removeSelection|
+   #:|removeServer.QLocalServer|
+   #:|removeShader|
+   #:|removeStack|
+   #:|removeState|
+   #:|removeSubWindow|
+   #:|removeSubstitutions.QFont|
+   #:|removeTab|
+   #:|removeToolBarBreak|
+   #:|removeToolBar|
+   #:|removeTransition|
+   #:|removeTranslator.QCoreApplication|
+   #:|removeWidget|
+   #:|removedFromAtlas|
+   #:|removed|
+   #:|remove|
+   #:|rename.QFile|
+   #:|rename|
+   #:|render(QPainter*,QRectF)|
+   #:|render(QPainter*,QRegion)|
+   #:|render(QPainter*,QString)|
+   #:|render(QPainter*,QWebFrame::RenderLayers)|
+   #:|renderHints|
+   #:|renderRequested|
+   #:|renderScene|
+   #:|renderTargetChanged|
+   #:|renderTargetId|
+   #:|renderTargetSize|
+   #:|renderTarget|
+   #:|renderableType|
+   #:|render|
+   #:|repaint(QRect)|
+   #:|repaint(QRegion)|
+   #:|repaintNeeded|
+   #:|repaintRequested|
+   #:|repaint|
+   #:|repeatAction|
+   #:|replace(QString)|
+   #:|replace(QWebElement)|
+   #:|replaceText|
+   #:|replaceWidget|
+   #:|replacementLength|
+   #:|replacementStart|
+   #:|replace|
+   #:|reportContentOrientationChange|
+   #:|requestActivate|
+   #:|requestControl|
+   #:|requestImageResponse|
+   #:|requestImage|
+   #:|requestPhase2|
+   #:|requestPixmap|
+   #:|requestShowLink|
+   #:|requestTexture|
+   #:|requestUpdate|
+   #:|requestWidget|
+   #:|requestedAperture|
+   #:|requestedFormat|
+   #:|requestedIsoSensitivity|
+   #:|requestedLocks|
+   #:|requestedShutterSpeed|
+   #:|requestedUrl|
+   #:|request|
+   #:|requiredStatus|
+   #:|resetAntialiasing|
+   #:|resetAttribute|
+   #:|resetBindCount|
+   #:|resetCachedContent|
+   #:|resetContentsSize|
+   #:|resetDefaultSectionSize|
+   #:|resetFontFamily|
+   #:|resetFontSize|
+   #:|resetFormat|
+   #:|resetHeight|
+   #:|resetIndentation|
+   #:|resetInternalData|
+   #:|resetMatrix|
+   #:|resetOpenGLState|
+   #:|resetTransform|
+   #:|resetWidth|
+   #:|reset|
+   #:|resize.QFile|
+   #:|resizeAnchor|
+   #:|resizeColumnToContents|
+   #:|resizeColumnsToContents|
+   #:|resizeContentsPrecision|
+   #:|resizeEvent|
+   #:|resizeGripsVisible|
+   #:|resizeMode|
+   #:|resizeRowToContents|
+   #:|resizeRowsToContents|
+   #:|resizeSections|
+   #:|resizeSection|
+   #:|resized|
+   #:|resizesToContents|
+   #:|resize|
+   #:|resolution|
+   #:|resolve(QString,QString...).QLibrary|
+   #:|resolve(QString,int...).QLibrary|
+   #:|resolve.QLibrary|
+   #:|resolveSymlinks|
+   #:|resolvedUrl|
+   #:|resolved|
+   #:|resolve|
+   #:|resources|
+   #:|resource|
+   #:|restartCommand|
+   #:|restartHint|
+   #:|restart|
+   #:|restoreDockWidget|
+   #:|restoreFrameStateRequested|
+   #:|restoreGeometry|
+   #:|restoreOverrideCursor.QGuiApplication|
+   #:|restoreState|
+   #:|restore|
+   #:|resultWidget|
+   #:|result|
+   #:|resumeAccepting|
+   #:|resume|
+   #:|retainSizeWhenHidden|
+   #:|returnPressed|
+   #:|revertAll|
+   #:|revertRow|
+   #:|revert|
+   #:|revision|
+   #:|rgbSwapped|
+   #:|rgba|
+   #:|rgb|
+   #:|rightBearing|
+   #:|rightColumn|
+   #:|rightCursorPosition|
+   #:|rightMargin|
+   #:|rightPadding|
+   #:|right|
+   #:|rmdir|
+   #:|rmpath|
+   #:|role|
+   #:|rollbackTransaction|
+   #:|rollback|
+   #:|root.QDir|
+   #:|root.QStorageInfo|
+   #:|rootContext|
+   #:|rootDirectory|
+   #:|rootFrame|
+   #:|rootIndex|
+   #:|rootIsDecorated|
+   #:|rootModelIndex|
+   #:|rootNode|
+   #:|rootObjects|
+   #:|rootObject|
+   #:|rootPath.QDir|
+   #:|rootPathChanged|
+   #:|rootPath|
+   #:|rotateRadians|
+   #:|rotatedVector|
+   #:|rotate|
+   #:|rotationAngle|
+   #:|rotationChanged|
+   #:|rotationTo.QQuaternion|
+   #:|rotation|
+   #:|rowAlignment|
+   #:|rowAt|
+   #:|rowCountChanged|
+   #:|rowCount|
+   #:|rowEnd|
+   #:|rowHeight|
+   #:|rowIntersectsSelection|
+   #:|rowMaximumHeight|
+   #:|rowMinimumHeight|
+   #:|rowMoved|
+   #:|rowPreferredHeight|
    #:|rowResized|
    #:|rowSpacing|
    #:|rowSpan|
@@ -19,6 +244,7 @@
    #:|rubberBandChanged|
    #:|rubberBandRect|
    #:|rubberBandSelectionMode|
+   #:|runJobsAfterSwap|
    #:|runningChanged|
    #:|run|
    #:|sampleRate|
@@ -33,6 +259,7 @@
    #:|saveStateRequest|
    #:|saveState|
    #:|saveToDisk|
+   #:|saveToFile|
    #:|save|
    #:|scalar|
    #:|scale(QVector3D)|
@@ -48,14 +275,23 @@
    #:|scale|
    #:|scanLineDirection|
    #:|sceneBoundingRect|
+   #:|sceneChanged|
+   #:|sceneGraphAboutToStop|
+   #:|sceneGraphChanged|
+   #:|sceneGraphError|
+   #:|sceneGraphInitialized|
+   #:|sceneGraphInvalidated|
    #:|scenePos|
    #:|sceneRectChanged|
    #:|sceneRect|
    #:|sceneTransform|
    #:|scene|
    #:|scheduleDelayedItemsLayout|
+   #:|scheduleRenderJob|
    #:|scheme|
    #:|scopeId|
+   #:|scopeObject|
+   #:|scopedFocusItem|
    #:|scope|
    #:|screenAdded|
    #:|screenChanged|
@@ -202,6 +438,7 @@
    #:|setActionGroup|
    #:|setActivationOrder|
    #:|setActiveAction|
+   #:|setActiveFocusOnTab|
    #:|setActivePanel|
    #:|setActiveStack|
    #:|setActiveSubWindow|
@@ -231,6 +468,7 @@
    #:|setAnchor|
    #:|setAngle|
    #:|setAnimated|
+   #:|setAntialiasing|
    #:|setApplicationCacheQuota|
    #:|setApplicationDisplayName.QGuiApplication|
    #:|setApplicationName.QCoreApplication|
@@ -303,6 +541,7 @@
    #:|setBaseSize|
    #:|setBaseStyle|
    #:|setBaseUrl|
+   #:|setBaselineOffset|
    #:|setBatchSize|
    #:|setBinMode|
    #:|setBitRate|
@@ -389,7 +628,10 @@
    #:|setCiphers|
    #:|setCleanIcon|
    #:|setClean|
+   #:|setClearBeforeRendering|
    #:|setClearButtonEnabled|
+   #:|setClearColor|
+   #:|setClearMode|
    #:|setClipPath|
    #:|setClipRect(QRect)|
    #:|setClipRect(QRect...)|
@@ -398,6 +640,7 @@
    #:|setClipRect|
    #:|setClipRegion|
    #:|setClipping|
+   #:|setClip|
    #:|setCmykF|
    #:|setCmyk|
    #:|setCodecForLocale.QTextCodec|
@@ -451,9 +694,15 @@
    #:|setContentPos|
    #:|setContentType|
    #:|setContentsMargins|
+   #:|setContentsScale|
+   #:|setContentsSize|
    #:|setContent|
+   #:|setContextForObject.QQmlEngine|
    #:|setContextMenuPolicy|
    #:|setContextMenu|
+   #:|setContextObject|
+   #:|setContextProperty(QString,QObject*)|
+   #:|setContextProperty(QString,QVariant)|
    #:|setContext|
    #:|setContrast|
    #:|setControlType|
@@ -518,6 +767,7 @@
    #:|setDefault.QLocale|
    #:|setDefaultAction|
    #:|setDefaultAlignment|
+   #:|setDefaultAlphaBuffer.QQuickWindow|
    #:|setDefaultButton(QMessageBox::StandardButton)|
    #:|setDefaultButton(QPushButton*)|
    #:|setDefaultButton|
@@ -551,6 +801,9 @@
    #:|setDesktopSettingsAware.QGuiApplication|
    #:|setDetailedText|
    #:|setDevicePixelRatio|
+   #:|setDeviceRect(QRect)|
+   #:|setDeviceRect(QSize)|
+   #:|setDeviceRect|
    #:|setDigitCount|
    #:|setDirection|
    #:|setDirectory(QDir)|
@@ -586,6 +839,7 @@
    #:|setDragEnabled|
    #:|setDragMode|
    #:|setDrawBase|
+   #:|setDrawingMode|
    #:|setDropAction|
    #:|setDropEnabled|
    #:|setDropIndicatorShown|
@@ -629,7 +883,10 @@
    #:|setExpirationDate|
    #:|setExposureCompensation|
    #:|setExposureMode|
+   #:|setExpression|
    #:|setExtraSelections|
+   #:|setExtraSelectors(QStringList&)|
+   #:|setExtraSelectors(QStringList)|
    #:|setExtraSelectors|
    #:|setFacingPagesViewMode|
    #:|setFallbacksEnabled|
@@ -648,6 +905,7 @@
    #:|setFileName|
    #:|setFilePath|
    #:|setFile|
+   #:|setFillColor|
    #:|setFillRule|
    #:|setFilterCaseSensitivity|
    #:|setFilterFixedString|
@@ -658,7 +916,9 @@
    #:|setFilterRegExp|
    #:|setFilterRole|
    #:|setFilterWildcard|
+   #:|setFiltering|
    #:|setFiltersChildEvents|
+   #:|setFiltersChildMouseEvents|
    #:|setFilter|
    #:|setFinalPage|
    #:|setFinalStop|
@@ -783,6 +1043,7 @@
    #:|setHorizontalScrollMode|
    #:|setHorizontalSpacing|
    #:|setHorizontalStretch|
+   #:|setHorizontalWrapMode|
    #:|setHostName|
    #:|setHost|
    #:|setHotSpot|
@@ -804,9 +1065,14 @@
    #:|setId|
    #:|setImageData|
    #:|setImage|
+   #:|setImplicitHeight|
+   #:|setImplicitWidth|
+   #:|setImportPathList|
+   #:|setIncubationController|
    #:|setIndentWidth|
    #:|setIndentation|
    #:|setIndent|
+   #:|setIndexDataPattern|
    #:|setIndexWidget|
    #:|setIndex|
    #:|setInformativeText|
@@ -833,6 +1099,7 @@
    #:|setInvertedAppearance|
    #:|setInvertedControls|
    #:|setIp|
+   #:|setIsRectangular|
    #:|setItalic|
    #:|setItemData|
    #:|setItemDelegateForColumn|
@@ -851,7 +1118,9 @@
    #:|setItem|
    #:|setJoinMode|
    #:|setJoinStyle|
+   #:|setKeepMouseGrab|
    #:|setKeepPositionOnInsert|
+   #:|setKeepTouchGrab|
    #:|setKerning|
    #:|setKeyboardGrabEnabled|
    #:|setKeyboardInputInterval.QApplication|
@@ -920,6 +1189,7 @@
    #:|setMask(QBitmap)|
    #:|setMask(QRegion)|
    #:|setMask|
+   #:|setMaterial|
    #:|setMatrix|
    #:|setMaxCount|
    #:|setMaxLength|
@@ -929,274 +1199,4 @@
    #:|setMaximumBlockCount|
    #:|setMaximumCacheSize|
    #:|setMaximumDateTime|
-   #:|setMaximumDate|
-   #:|setMaximumFrameRate|
-   #:|setMaximumHeight|
-   #:|setMaximumItemCount|
-   #:|setMaximumLevelOfDetail|
-   #:|setMaximumPagesInCache.QWebSettings|
-   #:|setMaximumSectionSize|
-   #:|setMaximumSize|
-   #:|setMaximumTime|
-   #:|setMaximumTouchPoints|
-   #:|setMaximumWidth|
-   #:|setMaximum|
-   #:|setMediaObject|
-   #:|setMedia|
-   #:|setMenuBar|
-   #:|setMenuRole|
-   #:|setMenuWidget|
-   #:|setMenu|
-   #:|setMetaData|
-   #:|setMetaInformation|
-   #:|setMeteringMode|
-   #:|setMidLineWidth|
-   #:|setMimeData|
-   #:|setMimeTypeFilters|
-   #:|setMinMagFilters|
-   #:|setMinMax|
-   #:|setMinificationFilter|
-   #:|setMinimal|
-   #:|setMinimumContentsLength|
-   #:|setMinimumDateTime|
-   #:|setMinimumDate|
-   #:|setMinimumDuration|
-   #:|setMinimumFrameRate|
-   #:|setMinimumHeight|
-   #:|setMinimumLevelOfDetail|
-   #:|setMinimumMargins|
-   #:|setMinimumRenderSize|
-   #:|setMinimumSectionSize|
-   #:|setMinimumSize|
-   #:|setMinimumTime|
-   #:|setMinimumWidth|
-   #:|setMinimum|
-   #:|setMinorVersion|
-   #:|setMipBaseLevel|
-   #:|setMipLevelRange|
-   #:|setMipLevels|
-   #:|setMipMaxLevel|
-   #:|setMipmap|
-   #:|setMiterLimit|
-   #:|setModality|
-   #:|setModal|
-   #:|setModelColumn|
-   #:|setModelData|
-   #:|setModelSorting|
-   #:|setModel|
-   #:|setMode|
-   #:|setModified|
-   #:|setModifierMask|
-   #:|setMouseGrabEnabled|
-   #:|setMouseTracking|
-   #:|setMovable|
-   #:|setMovement|
-   #:|setMovie|
-   #:|setMulticastInterface|
-   #:|setMuted|
-   #:|setNameFilterDisables|
-   #:|setNameFilters|
-   #:|setNameFilter|
-   #:|setNamedColor|
-   #:|setName|
-   #:|setNativeMenuBar|
-   #:|setNavigationBarVisible|
-   #:|setNetmask|
-   #:|setNetworkAccessManager|
-   #:|setNetworkAccessible|
-   #:|setNetworkConfigurations|
-   #:|setNetworkConfiguration|
-   #:|setNonBreakableLines|
-   #:|setNotation|
-   #:|setNotchTarget|
-   #:|setNotchesVisible|
-   #:|setNotifyInterval|
-   #:|setNull(QString)|
-   #:|setNull(int)|
-   #:|setNull|
-   #:|setNum(double)|
-   #:|setNum(int)|
-   #:|setNumColumns|
-   #:|setNumberOptions|
-   #:|setNumberPrefix|
-   #:|setNumberSuffix|
-   #:|setNumericalPrecisionPolicy|
-   #:|setNum|
-   #:|setObjectCacheCapacities.QWebSettings|
-   #:|setObjectIndex|
-   #:|setObjectName|
-   #:|setObjectType|
-   #:|setOctMode|
-   #:|setOfflineStorageDefaultQuota.QWebSettings|
-   #:|setOfflineStoragePath.QWebSettings|
-   #:|setOfflineWebApplicationCachePath.QWebSettings|
-   #:|setOfflineWebApplicationCacheQuota.QWebSettings|
-   #:|setOffset(QPointF)|
-   #:|setOffset(double)|
-   #:|setOffsetFromUtc|
-   #:|setOffsetToLastSection|
-   #:|setOffsetToSectionPosition|
-   #:|setOffset|
-   #:|setOkButtonText|
-   #:|setOpacityMask|
-   #:|setOpacity|
-   #:|setOpaqueResize|
-   #:|setOpenExternalLinks|
-   #:|setOpenLinks|
-   #:|setOpenMode|
-   #:|setOptimizationFlags|
-   #:|setOptimizationFlag|
-   #:|setOptionTabs|
-   #:|setOptions|
-   #:|setOption|
-   #:|setOrganizationDomain.QCoreApplication|
-   #:|setOrganizationName.QCoreApplication|
-   #:|setOrientationUpdateMask|
-   #:|setOrientation|
-   #:|setOriginCorner|
-   #:|setOriginatingObject|
-   #:|setOrigin|
-   #:|setOuterXml|
-   #:|setOutputFileName|
-   #:|setOutputFormat|
-   #:|setOutputLocation|
-   #:|setOverline|
-   #:|setOverrideCursor.QGuiApplication|
-   #:|setOvershoot|
-   #:|setOverwriteMode|
-   #:|setOwnedByLayout|
-   #:|setPadding|
-   #:|setPageBreakPolicy|
-   #:|setPageLayout|
-   #:|setPageMargins|
-   #:|setPageOrder|
-   #:|setPageOrientation|
-   #:|setPageSize(QPageSize)|
-   #:|setPageSize(QPagedPaintDevice::PageSize)|
-   #:|setPageSizeMM|
-   #:|setPageSize|
-   #:|setPageStep|
-   #:|setPage|
-   #:|setPaintDevice|
-   #:|setPaintFlipped|
-   #:|setPalette.QApplication|
-   #:|setPalette.QGuiApplication|
-   #:|setPalette.QToolTip|
-   #:|setPalette|
-   #:|setPanelModality|
-   #:|setPaperSource|
-   #:|setParentItem|
-   #:|setParentLayoutItem|
-   #:|setParent|
-   #:|setPassword|
-   #:|setPatchVertexCount|
-   #:|setPath.QSettings|
-   #:|setPath|
-   #:|setPatternOptions|
-   #:|setPatternSyntax|
-   #:|setPattern|
-   #:|setPauseMode|
-   #:|setPaused|
-   #:|setPeerAddress|
-   #:|setPeerHostName|
-   #:|setPeerName|
-   #:|setPeerPort|
-   #:|setPeerVerifyDepth|
-   #:|setPeerVerifyMode|
-   #:|setPen(QColor)|
-   #:|setPen(QPen)|
-   #:|setPen(Qt::PenStyle)|
-   #:|setPen|
-   #:|setPeriod|
-   #:|setPermissions.QFile|
-   #:|setPermissions|
-   #:|setPicture|
-   #:|setPixelAspectRatio|
-   #:|setPixelFormat|
-   #:|setPixelSize|
-   #:|setPixel|
-   #:|setPixmap|
-   #:|setPlainText|
-   #:|setPlaybackMode|
-   #:|setPlaybackRate|
-   #:|setPlaylist|
-   #:|setPluginFactory|
-   #:|setPointSizeF|
-   #:|setPointSize|
-   #:|setPolygon|
-   #:|setPopupMode|
-   #:|setPopup|
-   #:|setPortraitOrientation|
-   #:|setPort|
-   #:|setPos(QScreen*...).QCursor|
-   #:|setPos(int...).QCursor|
-   #:|setPos.QCursor|
-   #:|setPositionForIndex|
-   #:|setPosition|
-   #:|setPos|
-   #:|setPrecision|
-   #:|setPreeditArea|
-   #:|setPreferredContentsSize|
-   #:|setPreferredHeight|
-   #:|setPreferredSize|
-   #:|setPreferredWidth|
-   #:|setPrefixLength|
-   #:|setPrefix|
-   #:|setPreviewWidget|
-   #:|setPrimaryKey|
-   #:|setPrintProgram|
-   #:|setPrintRange|
-   #:|setPrinterName|
-   #:|setPriority|
-   #:|setPrivateKey|
-   #:|setProcessChannelMode|
-   #:|setProcessEnvironment|
-   #:|setProcessState|
-   #:|setProfile|
-   #:|setProgram|
-   #:|setProperty(int,QVariant)|
-   #:|setProperty(int,QVector<QTextLength>)|
-   #:|setPropertyName|
-   #:|setProperty|
-   #:|setProtocolTag|
-   #:|setProtocol|
-   #:|setProxyFactory|
-   #:|setProxyModel|
-   #:|setProxy|
-   #:|setQuality|
-   #:|setQuery(QSqlQuery)|
-   #:|setQuery(QString)|
-   #:|setQuery(QUrlQuery)|
-   #:|setQueryType|
-   #:|setQuery|
-   #:|setQuitLockEnabled.QCoreApplication|
-   #:|setQuitOnLastWindowClosed.QGuiApplication|
-   #:|setRadius|
-   #:|setRangeSelected|
-   #:|setRange|
-   #:|setRawHeader|
-   #:|setReadBufferSize|
-   #:|setReadChannel|
-   #:|setReadOnly|
-   #:|setRecord|
-   #:|setRects|
-   #:|setRect|
-   #:|setRedBufferSize|
-   #:|setRedF|
-   #:|setRed|
-   #:|setRegExp|
-   #:|setRelation|
-   #:|setRenderHints|
-   #:|setRenderHint|
-   #:|setRenderableType|
-   #:|setRepeatAction|
-   #:|setRequiredStatus|
-   #:|setRequired|
-   #:|setResizeAnchor|
-   #:|setResizeContentsPrecision|
-   #:|setResizeGripsVisible|
-   #:|setResizeMode|
-   #:|setResizesToContents|
-   #:|setResolution|
-   #:|setResolveSymlinks|
-   #:|setRestartCommand|))
+   #:|setMaximumDate|))

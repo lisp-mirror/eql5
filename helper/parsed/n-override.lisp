@@ -279,6 +279,8 @@
    "virtual QWidget * createEditor ( int , QWidget * ) const"
    "virtual QByteArray valuePropertyName ( int ) const")
   (("QItemSelectionRange" . NIL))
+  (("QJSValue" . NIL))
+  (("QJSValueIterator" . NIL))
   (("QKeyEvent" . "QInputEvent"))
   (("QKeySequence" . NIL))
   (("QLayoutItem" . NIL)
@@ -354,7 +356,33 @@
    "virtual bool newPage ()")
   (("QPrinterInfo" . NIL))
   (("QProcessEnvironment" . NIL))
+  (("QQmlAbstractUrlInterceptor" . NIL)
+   "virtual QUrl intercept ( const QUrl & , DataType ) = 0")
+  (("QQmlError" . NIL))
+  (("QQmlImageProviderBase" . NIL)
+   "virtual Flags flags () const = 0"
+   "virtual ImageType imageType () const = 0")
+  (("QQmlIncubationController" . NIL)
+   "virtual void incubatingObjectCountChanged ( int )")
+  (("QQmlIncubator" . NIL)
+   "virtual void setInitialState ( QObject * )"
+   "virtual void statusChanged ( Status )")
+  (("QQmlNetworkAccessManagerFactory" . NIL)
+   "virtual QNetworkAccessManager * create ( QObject * ) = 0")
+  (("QQmlParserStatus" . NIL)
+   "virtual void classBegin () = 0"
+   "virtual void componentComplete () = 0")
+  (("QQmlProperty" . NIL))
+  (("QQmlPropertyValueSource" . NIL)
+   "virtual void setTarget ( const QQmlProperty & ) = 0")
+  (("QQmlScriptString" . NIL))
   (("QQuaternion" . NIL))
+  (("QQuickAsyncImageProvider" . "QQuickImageProvider")
+   "virtual QQuickImageResponse * requestImageResponse ( const QString & , const QSize & ) = 0")
+  (("QQuickImageProvider" . "QQmlImageProviderBase")
+   "virtual QImage requestImage ( const QString & , QSize * , const QSize & )"
+   "virtual QPixmap requestPixmap ( const QString & , QSize * , const QSize & )"
+   "virtual QQuickTextureFactory * requestTexture ( const QString & , QSize * , const QSize & )")
   (("QRadialGradient" . "QGradient"))
   (("QRegExp" . NIL))
   (("QRegion" . NIL))
@@ -362,6 +390,34 @@
   (("QResizeEvent" . "QEvent"))
   (("QRunnable" . NIL)
    "virtual void run () = 0")
+  (("QSGBasicGeometryNode" . "QSGNode"))
+  (("QSGClipNode" . "QSGBasicGeometryNode"))
+  (("QSGFlatColorMaterial" . "QSGMaterial"))
+  (("QSGGeometry" . NIL))
+  (("QSGGeometryNode" . "QSGBasicGeometryNode"))
+  (("QSGMaterial" . NIL)
+   "virtual int compare ( const QSGMaterial * ) const"
+   "virtual QSGMaterialShader * createShader () const = 0"
+   "virtual QSGMaterialType * type () const = 0")
+  (("QSGMaterialShader" . NIL)
+   "virtual void activate ()"
+   "virtual void deactivate ()"
+   "virtual void updateState ( const RenderState & , QSGMaterial * , QSGMaterial * )"
+   "virtual void compile ()"
+   "virtual const char * fragmentShader () const"
+   "virtual void initialize ()"
+   "virtual const char * vertexShader () const")
+  (("QSGMaterialType" . NIL))
+  (("QSGNode" . NIL)
+   "virtual bool isSubtreeBlocked () const"
+   "virtual void preprocess ()")
+  (("QSGOpacityNode" . "QSGNode"))
+  (("QSGOpaqueTextureMaterial" . "QSGMaterial"))
+  (("QSGSimpleRectNode" . "QSGGeometryNode"))
+  (("QSGSimpleTextureNode" . "QSGGeometryNode"))
+  (("QSGTextureMaterial" . "QSGOpaqueTextureMaterial"))
+  (("QSGTransformNode" . "QSGNode"))
+  (("QSGVertexColorMaterial" . "QSGMaterial"))
   (("QScrollEvent" . "QEvent"))
   (("QScrollPrepareEvent" . "QEvent"))
   (("QSemaphore" . NIL))

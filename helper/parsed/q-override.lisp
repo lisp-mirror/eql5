@@ -861,6 +861,7 @@
    "virtual bool editorEvent ( QEvent * , QAbstractItemModel * , const QStyleOptionViewItem & , const QModelIndex & )"
    "virtual bool eventFilter ( QObject * , QEvent * )")
   (("QItemSelectionModel" . "QObject"))
+  (("QJSEngine" . "QObject"))
   (("QKeyEventTransition" . "QEventTransition")
    "virtual bool eventTest ( QEvent * )"
    "virtual void onTransition ( QEvent * )")
@@ -1009,6 +1010,7 @@
    "virtual void resizeEvent ( QResizeEvent * )"
    "virtual void showEvent ( QShowEvent * )"
    "virtual void timerEvent ( QTimerEvent * )")
+  (("QMediaControl" . "QObject"))
   (("QMediaObject" . "QObject")
    "virtual QMultimedia::AvailabilityStatus availability () const"
    "virtual bool bind ( QObject * )"
@@ -1248,6 +1250,90 @@
    "virtual bool hitButton ( const QPoint & ) const"
    "virtual void keyPressEvent ( QKeyEvent * )"
    "virtual void paintEvent ( QPaintEvent * )")
+  (("QQmlApplicationEngine" . "QQmlEngine"))
+  (("QQmlComponent" . "QObject")
+   "virtual QObject * beginCreate ( QQmlContext * )"
+   "virtual void completeCreate ()"
+   "virtual QObject * create ( QQmlContext * = 0 )")
+  (("QQmlContext" . "QObject"))
+  (("QQmlEngine" . "QJSEngine")
+   "virtual bool event ( QEvent * )")
+  (("QQmlExpression" . "QObject"))
+  (("QQmlExtensionPlugin" . "QObject")
+   "virtual void registerTypes ( const char * ) = 0")
+  (("QQmlFileSelector" . "QObject"))
+  (("QQmlPropertyMap" . "QObject")
+   "virtual QVariant updateValue ( const QString & , const QVariant & )")
+  (("QQuickFramebufferObject" . "QQuickItem")
+   "virtual bool isTextureProvider () const"
+   "virtual void releaseResources ()"
+   "virtual QSGTextureProvider * textureProvider () const")
+  (("QQuickImageResponse" . "QObject")
+   "virtual QString errorString () const"
+   "virtual QQuickTextureFactory * textureFactory () const = 0")
+  (("QQuickItem" . "QObject")
+   "virtual bool contains ( const QPointF & ) const"
+   "virtual QVariant inputMethodQuery ( Qt::InputMethodQuery ) const"
+   "virtual bool isTextureProvider () const"
+   "virtual QSGTextureProvider * textureProvider () const"
+   "virtual bool childMouseEventFilter ( QQuickItem * , QEvent * )"
+   "virtual void dragEnterEvent ( QDragEnterEvent * )"
+   "virtual void dragLeaveEvent ( QDragLeaveEvent * )"
+   "virtual void dragMoveEvent ( QDragMoveEvent * )"
+   "virtual void dropEvent ( QDropEvent * )"
+   "virtual void focusInEvent ( QFocusEvent * )"
+   "virtual void focusOutEvent ( QFocusEvent * )"
+   "virtual void geometryChanged ( const QRectF & , const QRectF & )"
+   "virtual void hoverEnterEvent ( QHoverEvent * )"
+   "virtual void hoverLeaveEvent ( QHoverEvent * )"
+   "virtual void hoverMoveEvent ( QHoverEvent * )"
+   "virtual void inputMethodEvent ( QInputMethodEvent * )"
+   "virtual void itemChange ( ItemChange , const ItemChangeData & )"
+   "virtual void keyPressEvent ( QKeyEvent * )"
+   "virtual void keyReleaseEvent ( QKeyEvent * )"
+   "virtual void mouseDoubleClickEvent ( QMouseEvent * )"
+   "virtual void mouseMoveEvent ( QMouseEvent * )"
+   "virtual void mousePressEvent ( QMouseEvent * )"
+   "virtual void mouseReleaseEvent ( QMouseEvent * )"
+   "virtual void mouseUngrabEvent ()"
+   "virtual void releaseResources ()"
+   "virtual void touchEvent ( QTouchEvent * )"
+   "virtual void touchUngrabEvent ()"
+   "virtual QSGNode * updatePaintNode ( QSGNode * , UpdatePaintNodeData * )"
+   "virtual void updatePolish ()"
+   "virtual void wheelEvent ( QWheelEvent * )")
+  (("QQuickItemGrabResult" . "QObject"))
+  (("QQuickPaintedItem" . "QQuickItem")
+   "virtual void paint ( QPainter * ) = 0"
+   "virtual bool isTextureProvider () const"
+   "virtual QSGTextureProvider * textureProvider () const"
+   "virtual void releaseResources ()"
+   "virtual QSGNode * updatePaintNode ( QSGNode * , UpdatePaintNodeData * )")
+  (("QQuickRenderControl" . "QObject"))
+  (("QQuickTextDocument" . "QObject"))
+  (("QQuickTextureFactory" . "QObject")
+   "virtual QSGTexture * createTexture ( QQuickWindow * ) const = 0"
+   "virtual QImage image () const"
+   "virtual int textureByteCount () const = 0"
+   "virtual QSize textureSize () const = 0")
+  (("QQuickView" . "QQuickWindow"))
+  (("QQuickWidget" . "QWidget")
+   "virtual void dragEnterEvent ( QDragEnterEvent * )"
+   "virtual void dragLeaveEvent ( QDragLeaveEvent * )"
+   "virtual void dragMoveEvent ( QDragMoveEvent * )"
+   "virtual void dropEvent ( QDropEvent * )"
+   "virtual void focusInEvent ( QFocusEvent * )"
+   "virtual void focusOutEvent ( QFocusEvent * )"
+   "virtual void hideEvent ( QHideEvent * )"
+   "virtual void keyPressEvent ( QKeyEvent * )"
+   "virtual void keyReleaseEvent ( QKeyEvent * )"
+   "virtual void mouseDoubleClickEvent ( QMouseEvent * )"
+   "virtual void mouseMoveEvent ( QMouseEvent * )"
+   "virtual void mousePressEvent ( QMouseEvent * )"
+   "virtual void mouseReleaseEvent ( QMouseEvent * )"
+   "virtual void showEvent ( QShowEvent * )"
+   "virtual void wheelEvent ( QWheelEvent * )")
+  (("QQuickWindow" . "QWindow"))
   (("QRadioButton" . "QAbstractButton")
    "virtual QSize minimumSizeHint () const"
    "virtual QSize sizeHint () const"
@@ -1266,6 +1352,22 @@
    "virtual void paintEvent ( QPaintEvent * )"
    "virtual void resizeEvent ( QResizeEvent * )"
    "virtual void showEvent ( QShowEvent * )")
+  (("QSGAbstractRenderer" . "QObject")
+   "virtual void renderScene ( GLuint = 0 ) = 0")
+  (("QSGDynamicTexture" . "QSGTexture")
+   "virtual bool updateTexture () = 0")
+  (("QSGEngine" . "QObject"))
+  (("QSGTexture" . "QObject")
+   "virtual void bind () = 0"
+   "virtual bool hasAlphaChannel () const = 0"
+   "virtual bool hasMipmaps () const = 0"
+   "virtual bool isAtlasTexture () const"
+   "virtual QRectF normalizedTextureSubRect () const"
+   "virtual QSGTexture * removedFromAtlas () const"
+   "virtual int textureId () const = 0"
+   "virtual QSize textureSize () const = 0")
+  (("QSGTextureProvider" . "QObject")
+   "virtual QSGTexture * texture () const = 0")
   (("QScreen" . "QObject"))
   (("QScrollArea" . "QAbstractScrollArea")
    "virtual bool focusNextPrevChild ( bool )"
@@ -1773,7 +1875,7 @@
    "virtual void paintEvent ( QPaintEvent * )"
    "virtual void resizeEvent ( QResizeEvent * )"
    "virtual void showEvent ( QShowEvent * )")
-  (("QVideoWidgetControl" . NIL)
+  (("QVideoWidgetControl" . "QMediaControl")
    "virtual Qt::AspectRatioMode aspectRatioMode () const = 0"
    "virtual int brightness () const = 0"
    "virtual int contrast () const = 0"

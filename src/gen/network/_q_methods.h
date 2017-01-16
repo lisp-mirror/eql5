@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q7 : public Q140 { // QAbstractNetworkCache
+class Q7 : public Q142 { // QAbstractNetworkCache
     Q_OBJECT
 public:
     Q_INVOKABLE qlonglong McacheSize(QAbstractNetworkCache* o) const { return o->cacheSize(); }
@@ -20,7 +20,7 @@ public:
     Q_INVOKABLE void MupdateMetaData(QAbstractNetworkCache* o, const QNetworkCacheMetaData& x1) { o->updateMetaData(x1); }
 };
 
-class Q104 : public Q140 { // QHttpMultiPart
+class Q104 : public Q142 { // QHttpMultiPart
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LHttpMultiPart(u, x1); }
@@ -31,7 +31,7 @@ public:
     Q_INVOKABLE void MsetContentType(QHttpMultiPart* o, QHttpMultiPart::ContentType x1) { o->setContentType(x1); }
 };
 
-class Q120 : public Q140 { // QLocalServer
+class Q121 : public Q142 { // QLocalServer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LLocalServer(u, x1); }
@@ -52,7 +52,7 @@ public:
     Q_INVOKABLE bool SremoveServer(const QString& x1) { return QLocalServer::removeServer(x1); }
 };
 
-class Q121 : public Q105 { // QLocalSocket
+class Q122 : public Q105 { // QLocalSocket
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LLocalSocket(u, x1); }
@@ -81,7 +81,7 @@ public:
     Q_INVOKABLE bool MwaitForReadyRead(QLocalSocket* o, int x1 = 30000) { return o->waitForReadyRead(x1); }
 };
 
-class Q136 : public Q140 { // QNetworkAccessManager
+class Q138 : public Q142 { // QNetworkAccessManager
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LNetworkAccessManager(u, x1); }
@@ -111,7 +111,7 @@ public:
     Q_INVOKABLE QStringList MsupportedSchemes(QNetworkAccessManager* o) const { return o->supportedSchemes(); }
 };
 
-class Q137 : public Q140 { // QNetworkCookieJar
+class Q139 : public Q142 { // QNetworkCookieJar
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LNetworkCookieJar(u, x1); }
@@ -124,7 +124,7 @@ public:
     Q_INVOKABLE void MsetAllCookies(QNetworkCookieJar* o, const QList<QNetworkCookie>& x1) { ((LNetworkCookieJar*)o)->setAllCookies(x1); }
 };
 
-class Q138 : public Q7 { // QNetworkDiskCache
+class Q140 : public Q7 { // QNetworkDiskCache
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LNetworkDiskCache(u, x1); }
@@ -139,10 +139,9 @@ public:
     Q_INVOKABLE void MupdateMetaData(QNetworkDiskCache* o, const QNetworkCacheMetaData& x1) { o->updateMetaData(x1); }
 };
 
-class Q139 : public Q105 { // QNetworkReply
+class Q141 : public Q105 { // QNetworkReply
     Q_OBJECT
 public:
-    Q_INVOKABLE QVariant Mattribute(QNetworkReply* o, QNetworkRequest::Attribute x1) const { return o->attribute(x1); }
     Q_INVOKABLE int Merror(QNetworkReply* o) const { return o->error(); }
     Q_INVOKABLE bool MhasRawHeader(QNetworkReply* o, const QByteArray& x1) const { return o->hasRawHeader(x1); }
     Q_INVOKABLE QVariant Mheader(QNetworkReply* o, QNetworkRequest::KnownHeaders x1) const { return o->header(x1); }
@@ -162,7 +161,7 @@ public:
     Q_INVOKABLE void Mclose(QNetworkReply* o) { o->close(); }
 };
 
-class Q212 : public Q140 { // QTcpServer
+class Q238 : public Q142 { // QTcpServer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LTcpServer(u, x1); }
@@ -233,13 +232,13 @@ public:
     Q_INVOKABLE bool MwaitForReadyRead(QAbstractSocket* o, int x1 = 30000) { return o->waitForReadyRead(x1); }
 };
 
-class Q213 : public Q12 { // QTcpSocket
+class Q239 : public Q12 { // QTcpSocket
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LTcpSocket(u, x1); }
 };
 
-class Q231 : public Q12 { // QUdpSocket
+class Q257 : public Q12 { // QUdpSocket
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LUdpSocket(u, x1); }
