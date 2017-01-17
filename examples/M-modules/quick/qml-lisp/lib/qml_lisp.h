@@ -26,13 +26,13 @@ public:
 
 static Lisp* lisp = 0;
 
-static QObject *lisp_provider(QQmlEngine*, QJSEngine*) { return lisp; }
+static QObject* lisp_provider(QQmlEngine*, QJSEngine*) { return lisp; }
 
 extern "C" {
     LIB_EXPORT QObject* ini() {
         if(!lisp) {
-            qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "Lisp", lisp_provider);
-            lisp = new Lisp; }
+            lisp = new Lisp;
+            qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "Lisp", lisp_provider); }
         return lisp; }
 }
 

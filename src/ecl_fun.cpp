@@ -1115,7 +1115,13 @@ static cl_object from_qvariant_value(const QVariant& var) {
         case QVariant::Time:        l_obj = from_qtime(var.toTime()); break;
         case QVariant::Url:         l_obj = from_qurl(var.toUrl()); break;
         case QVariant::UInt:        l_obj = ecl_make_unsigned_integer(var.toUInt()); break;
-        case QVariant::ULongLong:   l_obj = ecl_make_unsigned_integer(var.toULongLong()); break; }
+        case QVariant::ULongLong:   l_obj = ecl_make_unsigned_integer(var.toULongLong()); break;
+        // for nested QVariantLists:
+        case QMetaType::QVariantList:
+            Q_FOREACH(QVariant v, var.value<QVariantList>()) {
+                l_obj = CONS(from_qvariant_value(v), l_obj); }
+            l_obj = cl_nreverse(l_obj);
+            break; }
     return l_obj; }
 
 static cl_object from_qvariantlist(const QVariantList& l) {
