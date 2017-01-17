@@ -1117,7 +1117,7 @@ static cl_object from_qvariant_value(const QVariant& var) {
         case QVariant::UInt:        l_obj = ecl_make_unsigned_integer(var.toUInt()); break;
         case QVariant::ULongLong:   l_obj = ecl_make_unsigned_integer(var.toULongLong()); break;
         // for nested QVariantLists:
-        case QMetaType::QVariantList:
+        case QVariant::List:
             Q_FOREACH(QVariant v, var.value<QVariantList>()) {
                 l_obj = CONS(from_qvariant_value(v), l_obj); }
             l_obj = cl_nreverse(l_obj);

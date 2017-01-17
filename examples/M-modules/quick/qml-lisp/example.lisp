@@ -3,16 +3,14 @@
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
 
-(require :qml-lisp "qml-lisp")
-
 (qrequire :quick)
 
-(defun example-url (name)
-  (|fromLocalFile.QUrl| (in-home (x:cc "examples/M-modules/quick/qml-lisp/qml/" name))))
+(require :qml-lisp "qml-lisp")
 
 ;;; QQuickView
 
-(defvar *quick-view* (qnew "QQuickView(QUrl)" (example-url "example.qml")))
+(defvar *quick-view* (qnew "QQuickView(QUrl)"
+                           (|fromLocalFile.QUrl| "qml/example.qml")))
 
 (defun run ()
   (|setResizeMode| *quick-view* |QQuickView.SizeRootObjectToView|)

@@ -2,7 +2,6 @@
 #define LIB_H
 
 #include <QtQml>
-#include <eql_fun.h>
 
 #ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
@@ -12,29 +11,19 @@
 
 QT_BEGIN_NAMESPACE
 
+extern "C" { LIB_EXPORT QObject* ini(); }
+
 class Lisp : public QObject {
     Q_OBJECT
 
 public:
-    Q_INVOKABLE QString apply(const QString& function, const QVariantList& arguments = QVariantList()) {
-        QVariant ret =
-        eql_fun("eql::qml-apply", QVariant::String,
-                Q_ARG(QString, function),
-                Q_ARG(QVariantList, arguments));
-        return ret.toString(); }
+    Q_INVOKABLE QString fun(const QString&, // function name plus max. 9 arguments
+                            const QVariant& = QVariant(), const QVariant& = QVariant(), const QVariant& = QVariant(),
+                            const QVariant& = QVariant(), const QVariant& = QVariant(), const QVariant& = QVariant(),
+                            const QVariant& = QVariant(), const QVariant& = QVariant(), const QVariant& = QVariant());
+
+    Q_INVOKABLE QString apply(const QString&, const QVariantList& = QVariantList());
 };
-
-static Lisp* lisp = 0;
-
-static QObject* lisp_provider(QQmlEngine*, QJSEngine*) { return lisp; }
-
-extern "C" {
-    LIB_EXPORT QObject* ini() {
-        if(!lisp) {
-            lisp = new Lisp;
-            qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "Lisp", lisp_provider); }
-        return lisp; }
-}
 
 QT_END_NAMESPACE
 
