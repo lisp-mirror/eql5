@@ -7,14 +7,11 @@
 
 (require :qml-lisp "qml-lisp")
 
-;;; QQuickView
-
-(defvar *quick-view* (qnew "QQuickView(QUrl)"
-                           (|fromLocalFile.QUrl| "qml/example.qml")))
-
 (defun run ()
-  (|setResizeMode| *quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| *quick-view* '(200 100))
-  (|show| *quick-view*))
+  (setf qml:*quick-view* (qnew "QQuickView(QUrl)"
+                               (|fromLocalFile.QUrl| "qml/example.qml")))
+  (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
+  (|resize| qml:*quick-view* '(200 100))
+  (|show| qml:*quick-view*))
 
 (run)
