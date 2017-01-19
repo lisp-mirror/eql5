@@ -32,9 +32,6 @@
                 (subseq upper 0 p))
         (intern upper))))
 
-(defun qml-error (format-string &rest arguments)
-  (format *debug-io* "~&[QML] ~A~%" (apply 'format nil format-string arguments)))
-
 ;;; function calls from QML
 
 (defun qml-apply (function arguments)
@@ -52,12 +49,11 @@
     root-object))
 
 (defun find-qml-object (name &optional all)
-  (or (if (string= (|objectName| (root-object)) name)
-          (root-object)
-          (if all
-              (qfind-children (root-object) name)
-              (qfind-child (root-object) name)))
-      (qml-error "No object found with name: ~S." name)))
+  (if (string= (|objectName| (root-object)) name)
+      (root-object)
+      (if all
+          (qfind-children (root-object) name)
+          (qfind-child (root-object) name))))
 
 ;;; get/set QML object properties
 
