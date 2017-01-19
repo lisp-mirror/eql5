@@ -1,5 +1,20 @@
 (in-package :eql)
 
+(defun |toBitArray| (object &rest arguments)
+  (%qinvoke-method object nil "toBitArray" arguments))
+
+(defun |toBlockFormat| (object &rest arguments)
+  (%qinvoke-method object nil "toBlockFormat" arguments))
+
+(defun |toBool| (object &rest arguments)
+  (%qinvoke-method object nil "toBool" arguments))
+
+(defun |toByteArray| (object &rest arguments)
+  (%qinvoke-method object nil "toByteArray" arguments))
+
+(defun |toCharFormat| (object &rest arguments)
+  (%qinvoke-method object nil "toCharFormat" arguments))
+
 (defun |toChar| (object &rest arguments)
   (%qinvoke-method object nil "toChar" arguments))
 
@@ -1592,6 +1607,12 @@
 
 (defun |write(QByteArray)| (object &rest arguments)
   (%qinvoke-method object nil "write(QByteArray)" arguments))
+
+(defun |write(QObject*,QString,QVariant,QQmlContext*).QQmlProperty| (&rest arguments)
+  (%qinvoke-method "QQmlProperty" nil "write(QObject*,QString,QVariant,QQmlContext*)" arguments))
+
+(defun |write(QObject*,QString,QVariant,QQmlEngine*).QQmlProperty| (&rest arguments)
+  (%qinvoke-method "QQmlProperty" nil "write(QObject*,QString,QVariant,QQmlEngine*)" arguments))
 
 (defun |write(QTextDocumentFragment)| (object &rest arguments)
   (%qinvoke-method object nil "write(QTextDocumentFragment)" arguments))

@@ -3041,6 +3041,7 @@
    "virtual ImageType imageType () const = 0")
   (("QQmlIncubationController" . NIL)
    "new QQmlIncubationController ()"
+   "QQmlEngine * engine () const"
    "void incubateFor ( int )"
    "int incubatingObjectCount () const")
   (("QQmlIncubator" . NIL)
@@ -3064,8 +3065,10 @@
    "new QQmlProperty ()"
    "new QQmlProperty ( QObject * )"
    "new QQmlProperty ( QObject * , QQmlContext * )"
+   "new QQmlProperty ( QObject * , QQmlEngine * )"
    "new QQmlProperty ( QObject * , const QString & )"
    "new QQmlProperty ( QObject * , const QString & , QQmlContext * )"
+   "new QQmlProperty ( QObject * , const QString & , QQmlEngine * )"
    "new QQmlProperty ( const QQmlProperty & )"
    "bool connectNotifySignal ( QObject * , const char * ) const"
    "bool connectNotifySignal ( QObject * , int ) const"
@@ -3089,8 +3092,10 @@
    "bool write ( const QVariant & ) const"
    "static QVariant read ( const QObject * , const QString & )"
    "static QVariant read ( const QObject * , const QString & , QQmlContext * )"
+   "static QVariant read ( const QObject * , const QString & , QQmlEngine * )"
    "static bool write ( QObject * , const QString & , const QVariant & )"
-   "static bool write ( QObject * , const QString & , const QVariant & , QQmlContext * )")
+   "static bool write ( QObject * , const QString & , const QVariant & , QQmlContext * )"
+   "static bool write ( QObject * , const QString & , const QVariant & , QQmlEngine * )")
   (("QQmlPropertyValueSource" . NIL)
    "new QQmlPropertyValueSource ()"
    "virtual void setTarget ( const QQmlProperty & ) = 0")

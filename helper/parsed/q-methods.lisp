@@ -2033,6 +2033,7 @@
   (("QHelpContentWidget" . "QTreeView")
    "QModelIndex indexOf ( const QUrl & )")
   (("QHelpEngineCore" . "QObject")
+   "new QHelpEngineCore ( const QString & , QObject * = 0 )"
    "bool addCustomFilter ( const QString & , const QStringList & )"
    "bool autoSaveFilter () const"
    "QString collectionFile () const"
@@ -2066,6 +2067,7 @@
    "bool isCreatingIndex () const")
   (("QHelpIndexWidget" . "QListView"))
   (("QHelpSearchEngine" . "QObject")
+   "new QHelpSearchEngine ( QHelpEngineCore * , QObject * = 0 )"
    "int hitCount () const"
    "QList<QHelpSearchQuery> query () const"
    "QHelpSearchQueryWidget * queryWidget ()"
@@ -2253,6 +2255,8 @@
    "void setModel ( QAbstractItemModel * )"
    "protected void emitSelectionChanged ( const QItemSelection & , const QItemSelection & )")
   (("QJSEngine" . "QObject")
+   "new QJSEngine ()"
+   "new QJSEngine ( QObject * )"
    "void collectGarbage ()"
    "QJSValue evaluate ( const QString & , const QString & = QString() , int = 1 )"
    "QJSValue globalObject () const"
@@ -3492,8 +3496,16 @@
    "virtual QSize minimumSizeHint () const"
    "virtual QSize sizeHint () const")
   (("QQmlApplicationEngine" . "QQmlEngine")
+   "new QQmlApplicationEngine ( QObject * = 0 )"
+   "new QQmlApplicationEngine ( const QUrl & , QObject * = 0 )"
+   "new QQmlApplicationEngine ( const QString & , QObject * = 0 )"
    "QList<QObject *> rootObjects ()")
   (("QQmlComponent" . "QObject")
+   "new QQmlComponent ( QQmlEngine * , QObject * = 0 )"
+   "new QQmlComponent ( QQmlEngine * , const QString & , QObject * = 0 )"
+   "new QQmlComponent ( QQmlEngine * , const QString & , CompilationMode , QObject * = 0 )"
+   "new QQmlComponent ( QQmlEngine * , const QUrl & , QObject * = 0 )"
+   "new QQmlComponent ( QQmlEngine * , const QUrl & , CompilationMode , QObject * = 0 )"
    "virtual QObject * beginCreate ( QQmlContext * )"
    "virtual void completeCreate ()"
    "virtual QObject * create ( QQmlContext * = 0 )"
@@ -3508,10 +3520,12 @@
    "Status status () const"
    "QUrl url () const")
   (("QQmlContext" . "QObject")
+   "new QQmlContext ( QQmlEngine * , QObject * = 0 )"
    "new QQmlContext ( QQmlContext * , QObject * = 0 )"
    "QUrl baseUrl () const"
    "QObject * contextObject () const"
    "QVariant contextProperty ( const QString & ) const"
+   "QQmlEngine * engine () const"
    "bool isValid () const"
    "QString nameForObject ( QObject * ) const"
    "QQmlContext * parentContext () const"
@@ -3521,6 +3535,7 @@
    "void setContextProperty ( const QString & , QObject * )"
    "void setContextProperty ( const QString & , const QVariant & )")
   (("QQmlEngine" . "QJSEngine")
+   "new QQmlEngine ( QObject * = 0 )"
    "void addImageProvider ( const QString & , QQmlImageProviderBase * )"
    "void addImportPath ( const QString & )"
    "void addPluginPath ( const QString & )"
@@ -3556,6 +3571,7 @@
    "void clearError ()"
    "int columnNumber () const"
    "QQmlContext * context () const"
+   "QQmlEngine * engine () const"
    "QQmlError error () const"
    "QVariant evaluate ( bool * = 0 )"
    "QString expression () const"
@@ -3570,11 +3586,14 @@
   (("QQmlExtensionPlugin" . "QObject")
    "new QQmlExtensionPlugin ( QObject * = 0 )"
    "QUrl baseUrl () const"
+   "virtual void initializeEngine ( QQmlEngine * , const char * )"
    "virtual void registerTypes ( const char * ) = 0")
   (("QQmlFileSelector" . "QObject")
+   "new QQmlFileSelector ( QQmlEngine * , QObject * = 0 )"
    "void setExtraSelectors ( QStringList & )"
    "void setExtraSelectors ( const QStringList & )"
-   "void setSelector ( QFileSelector * )")
+   "void setSelector ( QFileSelector * )"
+   "static QQmlFileSelector * get ( QQmlEngine * )")
   (("QQmlPropertyMap" . "QObject")
    "new QQmlPropertyMap ( QObject * = 0 )"
    "void clear ( const QString & )"
@@ -3746,7 +3765,9 @@
    "static QQuickTextureFactory * textureFactoryForImage ( const QImage & )")
   (("QQuickView" . "QQuickWindow")
    "new QQuickView ( QWindow * = 0 )"
+   "new QQuickView ( QQmlEngine * , QWindow * )"
    "new QQuickView ( const QUrl & , QWindow * = 0 )"
+   "QQmlEngine * engine () const"
    "QList<QQmlError> errors () const"
    "QSize initialSize () const"
    "ResizeMode resizeMode () const"
@@ -3762,7 +3783,9 @@
    "protected void mouseReleaseEvent ( QMouseEvent * )")
   (("QQuickWidget" . "QWidget")
    "new QQuickWidget ( QWidget * = 0 )"
+   "new QQuickWidget ( QQmlEngine * , QWidget * )"
    "new QQuickWidget ( const QUrl & , QWidget * = 0 )"
+   "QQmlEngine * engine () const"
    "QList<QQmlError> errors () const"
    "QSurfaceFormat format () const"
    "QImage grabFramebuffer () const"
@@ -3884,6 +3907,7 @@
   (("QSGDynamicTexture" . "QSGTexture")
    "virtual bool updateTexture () = 0")
   (("QSGEngine" . "QObject")
+   "new QSGEngine ( QObject * = 0 )"
    "QSGTexture * createTextureFromId ( uint , const QSize & , CreateTextureOptions = 0 ) const"
    "QSGTexture * createTextureFromImage ( const QImage & , CreateTextureOptions = 0 ) const"
    "void initialize ( QOpenGLContext * )"

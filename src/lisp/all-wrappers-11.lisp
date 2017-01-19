@@ -1,5 +1,20 @@
 (in-package :eql)
 
+(defun |setMaximumAnisotropy| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumAnisotropy" arguments))
+
+(defun |setMaximumBlockCount| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumBlockCount" arguments))
+
+(defun |setMaximumCacheSize| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumCacheSize" arguments))
+
+(defun |setMaximumDateTime| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumDateTime" arguments))
+
+(defun |setMaximumDate| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumDate" arguments))
+
 (defun |setMaximumFrameRate| (object &rest arguments)
   (%qinvoke-method object nil "setMaximumFrameRate" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |toAffine| (object &rest arguments)
   (%qinvoke-method object nil "toAffine" arguments))
-
-(defun |toBitArray| (object &rest arguments)
-  (%qinvoke-method object nil "toBitArray" arguments))
-
-(defun |toBlockFormat| (object &rest arguments)
-  (%qinvoke-method object nil "toBlockFormat" arguments))
-
-(defun |toBool| (object &rest arguments)
-  (%qinvoke-method object nil "toBool" arguments))
-
-(defun |toByteArray| (object &rest arguments)
-  (%qinvoke-method object nil "toByteArray" arguments))
-
-(defun |toCharFormat| (object &rest arguments)
-  (%qinvoke-method object nil "toCharFormat" arguments))

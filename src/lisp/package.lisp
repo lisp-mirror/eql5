@@ -104,6 +104,7 @@
    #:qui-names
    #:qutf8
    #:qversion
+   #:qvariant-value
    #:the-qt-object
    #:tr))
 

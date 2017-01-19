@@ -1,5 +1,10 @@
 (defpackage :eql
   (:export
+   #:|toBitArray|
+   #:|toBlockFormat|
+   #:|toBool|
+   #:|toByteArray|
+   #:|toCharFormat|
    #:|toChar|
    #:|toCmyk|
    #:|toCubicSpline|
@@ -531,6 +536,8 @@
    #:|wrapping|
    #:|writableLocation.QStandardPaths|
    #:|write(QByteArray)|
+   #:|write(QObject*,QString,QVariant,QQmlContext*).QQmlProperty|
+   #:|write(QObject*,QString,QVariant,QQmlEngine*).QQmlProperty|
    #:|write(QTextDocumentFragment)|
    #:|write(const QTextDocument*)|
    #:|write(const char*)|

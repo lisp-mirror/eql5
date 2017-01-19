@@ -140,6 +140,7 @@ class LHelpEngineCore : public QHelpEngineCore {
     Q_OBJECT
     friend class Q97;
 public:
+    LHelpEngineCore(uint u, const QString& x1, QObject* x2 = 0) : QHelpEngineCore(x1, x2), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
@@ -231,6 +232,7 @@ class LHelpSearchEngine : public QHelpSearchEngine {
     Q_OBJECT
     friend class Q100;
 public:
+    LHelpSearchEngine(uint u, QHelpEngineCore* x1, QObject* x2 = 0) : QHelpSearchEngine(x1, x2), unique(u) {}
 
     static NumList overrideIds;
     uint unique;

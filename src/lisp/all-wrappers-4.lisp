@@ -1,5 +1,10 @@
 (defpackage :eql
   (:export
+   #:|releaseKeyboard|
+   #:|releaseMouse|
+   #:|releaseResources|
+   #:|releaseShortcut|
+   #:|releaseWidget|
    #:|released|
    #:|release|
    #:|reload|
@@ -1194,9 +1199,4 @@
    #:|setMaxCount|
    #:|setMaxLength|
    #:|setMaxPendingConnections|
-   #:|setMaxVisibleItems|
-   #:|setMaximumAnisotropy|
-   #:|setMaximumBlockCount|
-   #:|setMaximumCacheSize|
-   #:|setMaximumDateTime|
-   #:|setMaximumDate|))
+   #:|setMaxVisibleItems|))

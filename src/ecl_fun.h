@@ -284,6 +284,7 @@ cl_object qui_class2            (cl_object, cl_object);
 cl_object qui_names             (cl_object);
 cl_object qutf8                 (cl_object);
 cl_object qvariant_equal2       (cl_object, cl_object);
+cl_object qvariant_value        (cl_object);
 cl_object qversion              ();
 
 struct EQL_EXPORT QtObject {

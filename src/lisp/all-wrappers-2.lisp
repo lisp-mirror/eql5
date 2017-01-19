@@ -258,6 +258,7 @@
    #:|endTime|
    #:|endValue|
    #:|end|
+   #:|engine|
    #:|ensureActiveTarget|
    #:|ensureBlockLayout|
    #:|ensureCursorVisible|
@@ -646,6 +647,7 @@
    #:|gestureType|
    #:|gestures|
    #:|gesture|
+   #:|get.QQmlFileSelector|
    #:|getChar|
    #:|getColor.QColorDialog|
    #:|getDouble.QInputDialog|
@@ -952,6 +954,7 @@
    #:|initialStateChanged|
    #:|initialState|
    #:|initializeColumn|
+   #:|initializeEngine|
    #:|initializePage|
    #:|initialize|
    #:|inputChannelMode|
@@ -1196,7 +1199,4 @@
    #:|isFullScreen|
    #:|isGenerated(QString)|
    #:|isGenerated(int)|
-   #:|isGenerated|
-   #:|isGrayscale|
-   #:|isGridVisible|
-   #:|isGroupSeparatorShown|))
+   #:|isGenerated|))

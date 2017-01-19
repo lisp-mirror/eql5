@@ -1260,6 +1260,7 @@
    "virtual bool event ( QEvent * )")
   (("QQmlExpression" . "QObject"))
   (("QQmlExtensionPlugin" . "QObject")
+   "virtual void initializeEngine ( QQmlEngine * , const char * )"
    "virtual void registerTypes ( const char * ) = 0")
   (("QQmlFileSelector" . "QObject"))
   (("QQmlPropertyMap" . "QObject")

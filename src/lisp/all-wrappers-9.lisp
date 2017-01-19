@@ -1,5 +1,14 @@
 (in-package :eql)
 
+(defun |isGrayscale| (object &rest arguments)
+  (%qinvoke-method object nil "isGrayscale" arguments))
+
+(defun |isGridVisible| (object &rest arguments)
+  (%qinvoke-method object nil "isGridVisible" arguments))
+
+(defun |isGroupSeparatorShown| (object &rest arguments)
+  (%qinvoke-method object nil "isGroupSeparatorShown" arguments))
+
 (defun |isHeaderHidden| (object &rest arguments)
   (%qinvoke-method object nil "isHeaderHidden" arguments))
 
@@ -3405,6 +3414,12 @@
 (defun |rawValue| (object &rest arguments)
   (%qinvoke-method object nil "rawValue" arguments))
 
+(defun |read(const QObject*,QString,QQmlContext*).QQmlProperty| (&rest arguments)
+  (%qinvoke-method "QQmlProperty" nil "read(const QObject*,QString,QQmlContext*)" arguments))
+
+(defun |read(const QObject*,QString,QQmlEngine*).QQmlProperty| (&rest arguments)
+  (%qinvoke-method "QQmlProperty" nil "read(const QObject*,QString,QQmlEngine*)" arguments))
+
 (defun |read.QQmlProperty| (&rest arguments)
   (%qinvoke-method "QQmlProperty" nil "read" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |releaseControl| (object &rest arguments)
   (%qinvoke-method object nil "releaseControl" arguments))
-
-(defun |releaseKeyboard| (object &rest arguments)
-  (%qinvoke-method object nil "releaseKeyboard" arguments))
-
-(defun |releaseMouse| (object &rest arguments)
-  (%qinvoke-method object nil "releaseMouse" arguments))
-
-(defun |releaseResources| (object &rest arguments)
-  (%qinvoke-method object nil "releaseResources" arguments))
-
-(defun |releaseShortcut| (object &rest arguments)
-  (%qinvoke-method object nil "releaseShortcut" arguments))
-
-(defun |releaseWidget| (object &rest arguments)
-  (%qinvoke-method object nil "releaseWidget" arguments))

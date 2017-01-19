@@ -107,6 +107,7 @@ class N157 : public QObject { // QQmlIncubationController
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LQmlIncubationController(u); }
+    Q_INVOKABLE QQmlEngine* Mengine(QQmlIncubationController* o) const { return o->engine(); }
     Q_INVOKABLE void MincubateFor(QQmlIncubationController* o, int x1) { o->incubateFor(x1); }
     Q_INVOKABLE int MincubatingObjectCount(QQmlIncubationController* o) const { return o->incubatingObjectCount(); }
 };
@@ -146,8 +147,10 @@ public:
     Q_INVOKABLE void* C(uint u) { return new LQmlProperty(u); }
     Q_INVOKABLE void* C(uint u, QObject* x1) { return new LQmlProperty(u, x1); }
     Q_INVOKABLE void* C(uint u, QObject* x1, QQmlContext* x2) { return new LQmlProperty(u, x1, x2); }
+    Q_INVOKABLE void* C(uint u, QObject* x1, QQmlEngine* x2) { return new LQmlProperty(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, QObject* x1, const QString& x2) { return new LQmlProperty(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, QObject* x1, const QString& x2, QQmlContext* x3) { return new LQmlProperty(u, x1, x2, x3); }
+    Q_INVOKABLE void* C(uint u, QObject* x1, const QString& x2, QQmlEngine* x3) { return new LQmlProperty(u, x1, x2, x3); }
     Q_INVOKABLE void* C(uint u, const QQmlProperty& x1) { return new LQmlProperty(u, x1); }
     Q_INVOKABLE bool MconnectNotifySignal(QQmlProperty* o, QObject* x1, const char* x2) const { return o->connectNotifySignal(x1, x2); }
     Q_INVOKABLE bool MconnectNotifySignal(QQmlProperty* o, QObject* x1, int x2) const { return o->connectNotifySignal(x1, x2); }
@@ -171,8 +174,10 @@ public:
     Q_INVOKABLE bool Mwrite(QQmlProperty* o, const QVariant& x1) const { return o->write(x1); }
     Q_INVOKABLE QVariant Sread(const QObject* x1, const QString& x2) { return QQmlProperty::read(x1, x2); }
     Q_INVOKABLE QVariant Sread(const QObject* x1, const QString& x2, QQmlContext* x3) { return QQmlProperty::read(x1, x2, x3); }
+    Q_INVOKABLE QVariant Sread(const QObject* x1, const QString& x2, QQmlEngine* x3) { return QQmlProperty::read(x1, x2, x3); }
     Q_INVOKABLE bool Swrite(QObject* x1, const QString& x2, const QVariant& x3) { return QQmlProperty::write(x1, x2, x3); }
     Q_INVOKABLE bool Swrite(QObject* x1, const QString& x2, const QVariant& x3, QQmlContext* x4) { return QQmlProperty::write(x1, x2, x3, x4); }
+    Q_INVOKABLE bool Swrite(QObject* x1, const QString& x2, const QVariant& x3, QQmlEngine* x4) { return QQmlProperty::write(x1, x2, x3, x4); }
 };
 
 class N162 : public QObject { // QQmlPropertyValueSource

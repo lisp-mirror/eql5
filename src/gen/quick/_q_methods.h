@@ -14,6 +14,8 @@ QT_BEGIN_NAMESPACE
 class Q112 : public Q142 { // QJSEngine
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u) { return new LJSEngine(u); }
+    Q_INVOKABLE void* C(uint u, QObject* x1) { return new LJSEngine(u, x1); }
     Q_INVOKABLE void McollectGarbage(QJSEngine* o) { o->collectGarbage(); }
     Q_INVOKABLE QJSValue Mevaluate(QJSEngine* o, const QString& x1, const QString& x2 = QString(), int x3 = 1) { return o->evaluate(x1, x2, x3); }
     Q_INVOKABLE QJSValue MglobalObject(QJSEngine* o) const { return o->globalObject(); }
@@ -26,6 +28,11 @@ public:
 class Q169 : public Q142 { // QQmlComponent
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, QObject* x2 = 0) { return new LQmlComponent(u, x1, x2); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, const QString& x2, QObject* x3 = 0) { return new LQmlComponent(u, x1, x2, x3); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, const QString& x2, QQmlComponent::CompilationMode x3, QObject* x4 = 0) { return new LQmlComponent(u, x1, x2, x3, x4); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, const QUrl& x2, QObject* x3 = 0) { return new LQmlComponent(u, x1, x2, x3); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, const QUrl& x2, QQmlComponent::CompilationMode x3, QObject* x4 = 0) { return new LQmlComponent(u, x1, x2, x3, x4); }
     Q_INVOKABLE QObject* MbeginCreate(QQmlComponent* o, QQmlContext* x1) { return o->beginCreate(x1); }
     Q_INVOKABLE void McompleteCreate(QQmlComponent* o) { o->completeCreate(); }
     Q_INVOKABLE QObject* Mcreate(QQmlComponent* o, QQmlContext* x1 = 0) { return o->create(x1); }
@@ -44,10 +51,12 @@ public:
 class Q170 : public Q142 { // QQmlContext
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, QObject* x2 = 0) { return new LQmlContext(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, QQmlContext* x1, QObject* x2 = 0) { return new LQmlContext(u, x1, x2); }
     Q_INVOKABLE QUrl MbaseUrl(QQmlContext* o) const { return o->baseUrl(); }
     Q_INVOKABLE QObject* McontextObject(QQmlContext* o) const { return o->contextObject(); }
     Q_INVOKABLE QVariant McontextProperty(QQmlContext* o, const QString& x1) const { return o->contextProperty(x1); }
+    Q_INVOKABLE QQmlEngine* Mengine(QQmlContext* o) const { return o->engine(); }
     Q_INVOKABLE bool MisValid(QQmlContext* o) const { return o->isValid(); }
     Q_INVOKABLE QString MnameForObject(QQmlContext* o, QObject* x1) const { return o->nameForObject(x1); }
     Q_INVOKABLE QQmlContext* MparentContext(QQmlContext* o) const { return o->parentContext(); }
@@ -61,6 +70,7 @@ public:
 class Q171 : public Q112 { // QQmlEngine
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LQmlEngine(u, x1); }
     Q_INVOKABLE void MaddImageProvider(QQmlEngine* o, const QString& x1, QQmlImageProviderBase* x2) { o->addImageProvider(x1, x2); }
     Q_INVOKABLE void MaddImportPath(QQmlEngine* o, const QString& x1) { o->addImportPath(x1); }
     Q_INVOKABLE void MaddPluginPath(QQmlEngine* o, const QString& x1) { o->addPluginPath(x1); }
@@ -100,6 +110,7 @@ public:
     Q_INVOKABLE void MclearError(QQmlExpression* o) { o->clearError(); }
     Q_INVOKABLE int McolumnNumber(QQmlExpression* o) const { return o->columnNumber(); }
     Q_INVOKABLE QQmlContext* Mcontext(QQmlExpression* o) const { return o->context(); }
+    Q_INVOKABLE QQmlEngine* Mengine(QQmlExpression* o) const { return o->engine(); }
     Q_INVOKABLE QQmlError Merror(QQmlExpression* o) const { return o->error(); }
     Q_INVOKABLE QVariant Mevaluate(QQmlExpression* o, bool* x1 = 0) { return o->evaluate(x1); }
     Q_INVOKABLE QString Mexpression(QQmlExpression* o) const { return o->expression(); }
@@ -118,15 +129,18 @@ class Q173 : public Q142 { // QQmlExtensionPlugin
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LQmlExtensionPlugin(u, x1); }
     Q_INVOKABLE QUrl MbaseUrl(QQmlExtensionPlugin* o) const { return o->baseUrl(); }
+    Q_INVOKABLE void MinitializeEngine(QQmlExtensionPlugin* o, QQmlEngine* x1, const char* x2) { o->initializeEngine(x1, x2); }
     Q_INVOKABLE void MregisterTypes(QQmlExtensionPlugin* o, const char* x1) { o->registerTypes(x1); }
 };
 
 class Q174 : public Q142 { // QQmlFileSelector
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, QObject* x2 = 0) { return new LQmlFileSelector(u, x1, x2); }
     Q_INVOKABLE void MsetExtraSelectors(QQmlFileSelector* o, QStringList& x1) { o->setExtraSelectors(x1); }
     Q_INVOKABLE void MsetExtraSelectors(QQmlFileSelector* o, const QStringList& x1) { o->setExtraSelectors(x1); }
     Q_INVOKABLE void MsetSelector(QQmlFileSelector* o, QFileSelector* x1) { o->setSelector(x1); }
+    Q_INVOKABLE QQmlFileSelector* Sget(QQmlEngine* x1) { return QQmlFileSelector::get(x1); }
 };
 
 class Q175 : public Q142 { // QQmlPropertyMap
@@ -348,6 +362,7 @@ public:
 class Q193 : public Q142 { // QSGEngine
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSGEngine(u, x1); }
     Q_INVOKABLE QSGTexture* McreateTextureFromId(QSGEngine* o, uint x1, const QSize& x2, QSGEngine::CreateTextureOptions x3 = 0) const { return o->createTextureFromId(x1, x2, x3); }
     Q_INVOKABLE QSGTexture* McreateTextureFromImage(QSGEngine* o, const QImage& x1, QSGEngine::CreateTextureOptions x2 = 0) const { return o->createTextureFromImage(x1, x2); }
     Q_INVOKABLE void Minitialize(QSGEngine* o, QOpenGLContext* x1) { o->initialize(x1); }
@@ -387,6 +402,9 @@ public:
 class Q168 : public Q171 { // QQmlApplicationEngine
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LQmlApplicationEngine(u, x1); }
+    Q_INVOKABLE void* C(uint u, const QUrl& x1, QObject* x2 = 0) { return new LQmlApplicationEngine(u, x1, x2); }
+    Q_INVOKABLE void* C(uint u, const QString& x1, QObject* x2 = 0) { return new LQmlApplicationEngine(u, x1, x2); }
     Q_INVOKABLE QList<QObject*> MrootObjects(QQmlApplicationEngine* o) { return o->rootObjects(); }
 };
 
@@ -404,7 +422,9 @@ class Q185 : public Q272 { // QQuickWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LQuickWidget(u, x1); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, QWidget* x2) { return new LQuickWidget(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, const QUrl& x1, QWidget* x2 = 0) { return new LQuickWidget(u, x1, x2); }
+    Q_INVOKABLE QQmlEngine* Mengine(QQuickWidget* o) const { return o->engine(); }
     Q_INVOKABLE QList<QQmlError> Merrors(QQuickWidget* o) const { return o->errors(); }
     Q_INVOKABLE QSurfaceFormat Mformat(QQuickWidget* o) const { return o->format(); }
     Q_INVOKABLE QImage MgrabFramebuffer(QQuickWidget* o) const { return o->grabFramebuffer(); }
@@ -481,7 +501,9 @@ class Q184 : public Q186 { // QQuickView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWindow* x1 = 0) { return new LQuickView(u, x1); }
+    Q_INVOKABLE void* C(uint u, QQmlEngine* x1, QWindow* x2) { return new LQuickView(u, x1, x2); }
     Q_INVOKABLE void* C(uint u, const QUrl& x1, QWindow* x2 = 0) { return new LQuickView(u, x1, x2); }
+    Q_INVOKABLE QQmlEngine* Mengine(QQuickView* o) const { return o->engine(); }
     Q_INVOKABLE QList<QQmlError> Merrors(QQuickView* o) const { return o->errors(); }
     Q_INVOKABLE QSize MinitialSize(QQuickView* o) const { return o->initialSize(); }
     Q_INVOKABLE int MresizeMode(QQuickView* o) const { return o->resizeMode(); }

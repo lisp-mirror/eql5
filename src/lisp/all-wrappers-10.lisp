@@ -1,5 +1,20 @@
 (in-package :eql)
 
+(defun |releaseKeyboard| (object &rest arguments)
+  (%qinvoke-method object nil "releaseKeyboard" arguments))
+
+(defun |releaseMouse| (object &rest arguments)
+  (%qinvoke-method object nil "releaseMouse" arguments))
+
+(defun |releaseResources| (object &rest arguments)
+  (%qinvoke-method object nil "releaseResources" arguments))
+
+(defun |releaseShortcut| (object &rest arguments)
+  (%qinvoke-method object nil "releaseShortcut" arguments))
+
+(defun |releaseWidget| (object &rest arguments)
+  (%qinvoke-method object nil "releaseWidget" arguments))
+
 (defun |released| (object &rest arguments)
   (%qinvoke-method object nil "released" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |setMaxVisibleItems| (object &rest arguments)
   (%qinvoke-method object nil "setMaxVisibleItems" arguments))
-
-(defun |setMaximumAnisotropy| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumAnisotropy" arguments))
-
-(defun |setMaximumBlockCount| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumBlockCount" arguments))
-
-(defun |setMaximumCacheSize| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumCacheSize" arguments))
-
-(defun |setMaximumDateTime| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumDateTime" arguments))
-
-(defun |setMaximumDate| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumDate" arguments))

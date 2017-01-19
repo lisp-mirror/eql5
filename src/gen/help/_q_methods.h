@@ -27,6 +27,7 @@ public:
 class Q97 : public Q142 { // QHelpEngineCore
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, const QString& x1, QObject* x2 = 0) { return new LHelpEngineCore(u, x1, x2); }
     Q_INVOKABLE bool MaddCustomFilter(QHelpEngineCore* o, const QString& x1, const QStringList& x2) { return o->addCustomFilter(x1, x2); }
     Q_INVOKABLE bool MautoSaveFilter(QHelpEngineCore* o) const { return o->autoSaveFilter(); }
     Q_INVOKABLE QString McollectionFile(QHelpEngineCore* o) const { return o->collectionFile(); }
@@ -59,6 +60,7 @@ public:
 class Q100 : public Q142 { // QHelpSearchEngine
     Q_OBJECT
 public:
+    Q_INVOKABLE void* C(uint u, QHelpEngineCore* x1, QObject* x2 = 0) { return new LHelpSearchEngine(u, x1, x2); }
     Q_INVOKABLE int MhitCount(QHelpSearchEngine* o) const { return o->hitCount(); }
     Q_INVOKABLE QList<QHelpSearchQuery> Mquery(QHelpSearchEngine* o) const { return o->query(); }
     Q_INVOKABLE QHelpSearchQueryWidget* MqueryWidget(QHelpSearchEngine* o) { return o->queryWidget(); }

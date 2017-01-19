@@ -1,5 +1,8 @@
 (defpackage :eql
   (:export
+   #:|isGrayscale|
+   #:|isGridVisible|
+   #:|isGroupSeparatorShown|
    #:|isHeaderHidden|
    #:|isHidden|
    #:|isHttpOnly|
@@ -1135,6 +1138,8 @@
    #:|rawHeaderList|
    #:|rawHeader|
    #:|rawValue|
+   #:|read(const QObject*,QString,QQmlContext*).QQmlProperty|
+   #:|read(const QObject*,QString,QQmlEngine*).QQmlProperty|
    #:|read.QQmlProperty|
    #:|readAllStandardError|
    #:|readAllStandardOutput|
@@ -1194,9 +1199,4 @@
    #:|relationModel|
    #:|relation|
    #:|relativeFilePath|
-   #:|releaseControl|
-   #:|releaseKeyboard|
-   #:|releaseMouse|
-   #:|releaseResources|
-   #:|releaseShortcut|
-   #:|releaseWidget|))
+   #:|releaseControl|))

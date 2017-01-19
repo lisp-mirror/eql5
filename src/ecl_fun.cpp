@@ -156,6 +156,7 @@ void iniCLFunctions() {
     DEFUN ("qui-names",              qui_names,             1)
     DEFUN ("qutf8",                  qutf8,                 1)
     DEFUN ("%qvariant-equal",        qvariant_equal2,       2)
+    DEFUN ("qvariant-value",         qvariant_value,        1)
     DEFUN ("qversion",               qversion,              0) }
 
 // QtObject methods
@@ -1116,7 +1117,7 @@ static cl_object from_qvariant_value(const QVariant& var) {
         case QVariant::Url:         l_obj = from_qurl(var.toUrl()); break;
         case QVariant::UInt:        l_obj = ecl_make_unsigned_integer(var.toUInt()); break;
         case QVariant::ULongLong:   l_obj = ecl_make_unsigned_integer(var.toULongLong()); break;
-        // for nested QVariantLists:
+        // special case: QVariantList (can be nested)
         case QVariant::List:
             Q_FOREACH(QVariant v, var.value<QVariantList>()) {
                 l_obj = CONS(from_qvariant_value(v), l_obj); }
@@ -1875,6 +1876,20 @@ cl_object qset_property(cl_object l_obj, cl_object l_name, cl_object l_val) {
                     l_env->values[1] = Ct;
                     return l_env->values[0]; }}}}
     error_msg("QSET-PROPERTY", LIST3(l_obj, l_name, l_val));
+    return Cnil; }
+
+cl_object qvariant_value(cl_object l_obj) {
+    /// args: (object)
+    /// Returns the Lisp value of the <code>QVariant</code> object.
+    const cl_env_ptr l_env = ecl_process_env();
+    l_env->nvalues = 1;
+    QtObject o = toQtObject(l_obj);
+    if("QVariant" == o.className() && o.pointer) {
+        QVariant* p = (QVariant*)o.pointer;
+        cl_object l_ret = from_qvariant_value(*p);
+        l_env->values[0] = l_ret;
+        return l_ret; }
+    error_msg("QVARIANT-VALUE", LIST1(l_obj));
     return Cnil; }
 
 cl_object qinvoke_method2(cl_object l_obj, cl_object l_cast, cl_object l_name, cl_object l_args) {

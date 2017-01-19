@@ -1,5 +1,10 @@
 (defpackage :eql
   (:export
+   #:|setMaximumAnisotropy|
+   #:|setMaximumBlockCount|
+   #:|setMaximumCacheSize|
+   #:|setMaximumDateTime|
+   #:|setMaximumDate|
    #:|setMaximumFrameRate|
    #:|setMaximumHeight|
    #:|setMaximumItemCount|
@@ -1194,9 +1199,4 @@
    #:|titleFormat|
    #:|title|
    #:|toAce.QUrl|
-   #:|toAffine|
-   #:|toBitArray|
-   #:|toBlockFormat|
-   #:|toBool|
-   #:|toByteArray|
-   #:|toCharFormat|))
+   #:|toAffine|))

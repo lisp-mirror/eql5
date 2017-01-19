@@ -774,6 +774,9 @@
 (defun |end| (object &rest arguments)
   (%qinvoke-method object nil "end" arguments))
 
+(defun |engine| (object &rest arguments)
+  (%qinvoke-method object nil "engine" arguments))
+
 (defun |ensureActiveTarget| (object &rest arguments)
   (%qinvoke-method object nil "ensureActiveTarget" arguments))
 
@@ -1938,6 +1941,9 @@
 (defun |gesture| (object &rest arguments)
   (%qinvoke-method object nil "gesture" arguments))
 
+(defun |get.QQmlFileSelector| (&rest arguments)
+  (%qinvoke-method "QQmlFileSelector" nil "get" arguments))
+
 (defun |getChar| (object &rest arguments)
   (%qinvoke-method object nil "getChar" arguments))
 
@@ -2856,6 +2862,9 @@
 (defun |initializeColumn| (object &rest arguments)
   (%qinvoke-method object nil "initializeColumn" arguments))
 
+(defun |initializeEngine| (object &rest arguments)
+  (%qinvoke-method object nil "initializeEngine" arguments))
+
 (defun |initializePage| (object &rest arguments)
   (%qinvoke-method object nil "initializePage" arguments))
 
@@ -3590,12 +3599,3 @@
 
 (defun |isGenerated| (object &rest arguments)
   (%qinvoke-method object nil "isGenerated" arguments))
-
-(defun |isGrayscale| (object &rest arguments)
-  (%qinvoke-method object nil "isGrayscale" arguments))
-
-(defun |isGridVisible| (object &rest arguments)
-  (%qinvoke-method object nil "isGridVisible" arguments))
-
-(defun |isGroupSeparatorShown| (object &rest arguments)
-  (%qinvoke-method object nil "isGroupSeparatorShown" arguments))
