@@ -16,6 +16,7 @@
 (require :game-logic "game-logic")
 
 (defun run ()
+  ;; *quick-view* can be either a QQuickView or a QQuickWidget
   (setf qml:*quick-view* (qnew "QQuickView(QUrl)"
                                (|fromLocalFile.QUrl| "qml/tic-tac-toe.qml")))
   (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
