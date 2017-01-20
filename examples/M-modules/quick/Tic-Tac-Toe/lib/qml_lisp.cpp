@@ -18,8 +18,6 @@ QVariant Lisp::apply(const QString& function, const QVariantList& arguments) {
     eql_fun("qml:qml-apply", QVariant::String,
             Q_ARG(QString, function),
             Q_ARG(QVariantList, arguments));
-    if(ret.toString() == "NIL") {
-        ret = QVariant(); }
     return ret; }
 
 QT_END_NAMESPACE

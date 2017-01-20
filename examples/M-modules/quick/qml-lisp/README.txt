@@ -18,22 +18,30 @@ You can access any QML property from Lisp (needs 'objectName' to be set).
 
 Examples:
 
+    (in-package :qml)
+
     ;; single object
-    (qml:qml-get "label" "text")
-    (qml:qml-set "label" "text" "hi!")
-    (qml:qml-set "label" "color" "red")
+    (qml-get "label" "text")
+    (qml-set "label" "text" "hi!")
+    (qml-set "label" "color" "red")
 
     ;; all objects matching 'objectName'
-    (qml:qml-get* "label" "text")
-    (qml:qml-set* "label" "text" "")
+    (qml-get* "label" "text")
+    (qml-set* "label" "text" "")
+
+
+NOTES
+=====
+
+Please see also the documentation in "qml/example.qml".
 
 
 TIP
 ===
 
 In order to have uniform access to QML objects from both JS and Lisp
-functions, it's convenient to set both 'id:' and 'objectName:' to the same
-name.
+functions, it is convenient to set both 'id:' and 'objectName:' to the
+same name.
 
 QML Example:
 

@@ -34,13 +34,44 @@
 
 ;;; function calls from QML
 
+(defun print-js-readably (object)
+  "Prints lists, vectors, T, NIL, floats in JS notation, which will be passed to JS 'eval()'."
+  (if (and (not (stringp object))
+           (vectorp object))
+      (print-js-readably (coerce object 'list))
+      (typecase object
+        (cons
+         (write-char #\[)
+         (do ((list object (rest list)))
+             ((null list) (write-char #\]))
+           (print-js-readably (first list))
+           (when (rest list)
+             (write-char #\,))))
+        (float
+         ;; cut off Lisp specific notations
+         (princ (string-right-trim "dl0" (princ-to-string object))))
+        (t
+         (cond ((eql 't object)
+                (princ "true"))
+               ((eql 'nil object)
+                (princ "false"))
+               (t
+                (prin1 object)))))))
+
+(defun print-to-js-string (object)
+  (with-output-to-string (*standard-output*)
+    (princ "#<>") ; mark for passing to JS "eval()"
+    (print-js-readably object)))
+
 (defun qml-apply (function arguments)
   "Every 'Lisp.fun()' or 'Lisp.apply()' function call in QML will call this function."
-  (let ((value (apply (string-to-symbol function)
+  (let ((object (apply (string-to-symbol function)
                       arguments)))
-    (if (stringp value)
-        value
-        (princ-to-string value))))
+    (if (stringp object)
+        object
+        (print-to-js-string object))))
+
+;;; utils
 
 (let (root-object)
   (defun root-object ()

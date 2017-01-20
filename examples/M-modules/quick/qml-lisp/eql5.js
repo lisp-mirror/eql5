@@ -1,5 +1,11 @@
 // helper functions for convenient QML/EQL5 integration
 
+function checkEval(arg) {
+  // prepared in Lisp for JS evaluation
+  if((typeof(arg) == "string") && (arg.substr(0, 3) == "#<>")) {
+    return eval(arg.substr(3)); }
+  return arg; }
+
 function fun(name, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
   var args = [];
   if(undefined != arg1) args.push(arg1); {
@@ -11,8 +17,8 @@ function fun(name, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
               if(undefined != arg7) args.push(arg7); {
                 if(undefined != arg8) args.push(arg8); {
                   if(undefined != arg9) args.push(arg9); }}}}}}}}
-  return EQL5.apply(name, args); }
+  return checkEval(EQL5.apply(name, args)); }
 
 function apply(name, args) {
-  return EQL5.apply(name, args); }
+  return checkEval(EQL5.apply(name, args)); }
 

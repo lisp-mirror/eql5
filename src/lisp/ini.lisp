@@ -226,7 +226,7 @@
                                  (! "name" obj))
                                 ((search name "QDate QTime QDateTime QFont QUrl QKeySequence")
                                  (! "toString" obj))
-                                ((search name "QPixmap QImage QPicture QIcon QTextCursor QVariant QMargins QWebElement")
+                                ((search name "QPixmap QImage QPicture QIcon QBitmap QDate QDateTime QTime QTextCursor QVariant QMargins QSqlQuery QWebElement")
                                  (if (and (not (zerop (qt-object-pointer obj)))
                                           (! "isNull" obj))
                                      (null-qt-object obj)
