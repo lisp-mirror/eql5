@@ -11,7 +11,7 @@
   (setf qml:*quick-view* (qnew "QQuickView(QUrl)"
                                (|fromLocalFile.QUrl| "qml/example.qml")))
   (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| qml:*quick-view* '(200 100))
+  (|resize| qml:*quick-view* '(300 200))
   (|show| qml:*quick-view*))
 
 (run)

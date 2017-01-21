@@ -10,12 +10,11 @@
   (:nicknames :qml)
   (:export
    #:*quick-view*
+   #:find-qml-object
    #:js
-   #:root-object
    #:qml-get
    #:qml-set
-   #:qml-get*
-   #:qml-set*))
+   #:root-object))
 
 (provide :qml-lisp)
 
@@ -79,40 +78,37 @@
       (setf root-object (|rootObject| *quick-view*)))
     root-object))
 
-(defun find-qml-object (name &optional all)
-  (if (string= (|objectName| (root-object)) name)
+(defun find-qml-object (&optional object-name)
+  "Finds the first QML item matching OBJECT-NAME."
+  (if (string= (|objectName| (root-object)) object-name)
       (root-object)
-      (if all
-          (qfind-children (root-object) name)
-          (qfind-child (root-object) name))))
+      (qfind-child (root-object) object-name)))
 
-;;; get/set QML object properties
+;;; get/set QQmlProperty
 
 (defun qml-get (object-name property-name)
-  "Gets QML property for first object matching 'objectName'."
-  (qget (find-qml-object object-name) property-name))
+  "Gets QQmlProperty for first object matching 'objectName'."
+  (qlet ((property "QQmlProperty(QObject*,QString)"
+                   (find-qml-object object-name)
+                   property-name)
+         (variant (|read| property)))
+    (qvariant-value variant)))
 
 (defun qml-set (object-name property-name value)
-  "Sets QML property for first object matching 'objectName'."
-  (qset (find-qml-object object-name) property-name value))
-
-(defun qml-get* (object-name property-name)
-  "Collects QML properties for all objects matching 'objectName'."
-  (mapcar (lambda (object)
-            (qget object property-name))
-          (find-qml-object object-name t)))
-
-(defun qml-set* (object-name property-name value)
-  "Sets QML property for all objects matching 'objectName'."
-  (dolist (object (find-qml-object object-name t))
-    (qset object property-name value)))
+  "Sets QQmlProperty for first object matching 'objectName'. Returns T on success."
+  (qlet ((property "QQmlProperty(QObject*,QString)"
+                   (find-qml-object object-name)
+                   property-name))
+    (x:when-it (|propertyTypeName| property)
+      (qlet ((variant (qnew (format nil "QVariant(~A)" x:it) value)))
+        (|write| property variant)))))
 
 ;;; JS 
 
 (defun js (object-name js-format-string &rest arguments)
   "Evaluates a JS string with the element bound to OBJECT-NAME as 'this'."
   (qlet ((qml-exp "QQmlExpression(QQmlContext*,QObject*,QString)"
-                  (|rootContext| (|engine| *quick-view*))
+                  (|rootContext| *quick-view*)
                   (find-qml-object object-name)
                   (apply 'format nil js-format-string arguments))
          (variant (|evaluate| qml-exp)))

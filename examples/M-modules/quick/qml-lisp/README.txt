@@ -20,14 +20,9 @@ Examples:
 
     (in-package :qml)
 
-    ;; single object
     (qml-get "label" "text")
-    (qml-set "label" "text" "hi!")
     (qml-set "label" "color" "red")
-
-    ;; all objects matching 'objectName'
-    (qml-get* "label" "text")
-    (qml-set* "label" "text" "")
+    (qml-set "label" "font.pixelSize" 24)
 
 
 NOTES
