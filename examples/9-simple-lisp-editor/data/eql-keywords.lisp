@@ -93,6 +93,7 @@
   "qui-class"
   "qui-names"
   "qutf8"
+  "qvariant-from-value"
   "qvariant-value"
   "qversion"
   "tr")

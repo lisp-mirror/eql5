@@ -156,6 +156,7 @@ void iniCLFunctions() {
     DEFUN ("qui-names",              qui_names,             1)
     DEFUN ("qutf8",                  qutf8,                 1)
     DEFUN ("%qvariant-equal",        qvariant_equal2,       2)
+    DEFUN ("qvariant-from-value",    qvariant_from_value,   2)
     DEFUN ("qvariant-value",         qvariant_value,        1)
     DEFUN ("qversion",               qversion,              0) }
 
@@ -1881,15 +1882,26 @@ cl_object qset_property(cl_object l_obj, cl_object l_name, cl_object l_val) {
 cl_object qvariant_value(cl_object l_obj) {
     /// args: (object)
     /// Returns the Lisp value of the <code>QVariant</code> object.
-    const cl_env_ptr l_env = ecl_process_env();
-    l_env->nvalues = 1;
+    ecl_process_env()->nvalues = 1;
     QtObject o = toQtObject(l_obj);
     if("QVariant" == o.className() && o.pointer) {
         QVariant* p = (QVariant*)o.pointer;
         cl_object l_ret = from_qvariant_value(*p);
-        l_env->values[0] = l_ret;
         return l_ret; }
     error_msg("QVARIANT-VALUE", LIST1(l_obj));
+    return Cnil; }
+
+cl_object qvariant_from_value(cl_object l_val, cl_object l_type) {
+    /// args: (value type-name)
+    /// Constructs a new <code>QVariant</code>. This is needed for types that don't have a direct constructor, like <code>QPixmap</code>, or primitive types, like <code>QSize</code>.
+    ///     (qvariant-from-value "red" "QColor")
+    ecl_process_env()->nvalues = 1;
+    QByteArray typeName(toCString(l_type));
+    if(!typeName.isEmpty()) {
+        QVariant* v = new QVariant(toQVariant(l_val, typeName));
+        cl_object l_ret = qt_object_from_name("QVariant", v);
+        return l_ret; }
+    error_msg("QVARIANT-FROM-VALUE", LIST2(l_val, l_type));
     return Cnil; }
 
 cl_object qinvoke_method2(cl_object l_obj, cl_object l_cast, cl_object l_name, cl_object l_args) {

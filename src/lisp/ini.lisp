@@ -837,6 +837,7 @@
                   (cons 'qui-class            '(file-name &optional object-name))
                   (cons 'qui-names            '(file-name))
                   (cons 'qutf8                '(string))
+                  (cons 'qvariant-from-value  '(value type-name))
                   (cons 'qvariant-value       '(object))
                   (cons 'tr                   '(source &optional context plural-number))))
   (setf (get (car el) :function-lambda-list) (cdr el)))

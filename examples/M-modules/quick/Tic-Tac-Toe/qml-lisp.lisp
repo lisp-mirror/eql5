@@ -100,7 +100,7 @@
                    (find-qml-object object-name)
                    property-name))
     (x:when-it (|propertyTypeName| property)
-      (qlet ((variant (qnew (format nil "QVariant(~A)" x:it) value)))
+      (qlet ((variant (qvariant-from-value value x:it)))
         (|write| property variant)))))
 
 ;;; JS 
