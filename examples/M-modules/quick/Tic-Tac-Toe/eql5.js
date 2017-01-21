@@ -6,19 +6,13 @@ function checkEval(arg) {
     return eval(arg.substr(3)); }
   return arg; }
 
-function fun(name, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9) {
-  var args = [];
-  if(undefined != arg1) args.push(arg1); {
-    if(undefined != arg2) args.push(arg2); {
-      if(undefined != arg3) args.push(arg3); {
-        if(undefined != arg4) args.push(arg4); {
-          if(undefined != arg5) args.push(arg5); {
-            if(undefined != arg6) args.push(arg6); {
-              if(undefined != arg7) args.push(arg7); {
-                if(undefined != arg8) args.push(arg8); {
-                  if(undefined != arg9) args.push(arg9); }}}}}}}}
+function fun() {
+  var name = arguments[0];
+  var len = arguments.length - 1;
+  var args = new Array(len);
+  for(var i = 0; i < len; i++) {
+    args[i] = arguments[i + 1]; }
   return checkEval(EQL5.apply(name, args)); }
 
 function apply(name, args) {
   return checkEval(EQL5.apply(name, args)); }
-
