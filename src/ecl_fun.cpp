@@ -864,10 +864,13 @@ TO_QT_VECTOR_VAL2 (float, Float)
 TO_QT_VECTOR_VAL2 (int, Int)
 TO_QT_VECTOR_VAL2 (qreal, Real)
 
-QVariant toQVariant(cl_object l_obj, const char* s_type, int type) {
+QVariant toQVariant(cl_object l_obj, const char* s_type, int type, bool* ok) {
     QVariant var;
     if(type == -1) {
         type = QVariant::nameToType(s_type); }
+    if(type == QVariant::Invalid) {
+        *ok = false;
+        return var; }
     switch(type) {
         case QVariant::Bool:        var = (l_obj != Cnil); break;
         case QVariant::Brush:       var = toQBrush(l_obj); break;
@@ -1898,9 +1901,12 @@ cl_object qvariant_from_value(cl_object l_val, cl_object l_type) {
     ecl_process_env()->nvalues = 1;
     QByteArray typeName(toCString(l_type));
     if(!typeName.isEmpty()) {
-        QVariant* v = new QVariant(toQVariant(l_val, typeName));
-        cl_object l_ret = qt_object_from_name("QVariant", v);
-        return l_ret; }
+        bool ok = true;
+        QVariant var(toQVariant(l_val, typeName, -1, &ok));
+        if(ok) {
+            QVariant* p = new QVariant(var);
+            cl_object l_ret = qt_object_from_name("QVariant", p);
+            return l_ret; }}
     error_msg("QVARIANT-FROM-VALUE", LIST2(l_val, l_type));
     return Cnil; }
 

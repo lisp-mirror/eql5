@@ -316,7 +316,7 @@ void iniCLFunctions();
 void callConnectFun(void*, const QList<QByteArray>&, void**);
 bool callEventFun(void*, QObject*, QEvent*);
 void error_msg(const char*, cl_object);
-QVariant toQVariant(cl_object, const char*, int = -1);
+QVariant toQVariant(cl_object, const char*, int = -1, bool* = 0);
 cl_object to_lisp_arg(const MetaArg&);
 
 EQL_EXPORT QVariant callOverrideFun(void*, int, const void**, quint64);
