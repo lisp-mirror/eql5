@@ -100,8 +100,6 @@ static cl_object from_##name(const cap_name& x) { \
     cl_object l_ret = Cnil; \
     if(EQL::return_value_p) { \
         l_ret = qt_object_from_name(#cap_name, new cap_name(x), 0, true); } \
-    else { \
-        l_ret = qt_object_from_name(#cap_name, (void*)&x); } \
     return l_ret; }
 
 #define FROM_QT_TYPE_ONLY(cap_name, name) \
@@ -109,8 +107,6 @@ static cl_object from_##name(const cap_name& x) { \
     cl_object l_ret = Cnil; \
     if(EQL::return_value_p) { \
         l_ret = qt_object_from_name(#cap_name, new cap_name(x), 0, true); } \
-    else { \
-        l_ret = qt_object_from_name(#cap_name, (void*)&x); } \
     return l_ret; }
 
 #define TO_QT_TYPE_PTR2(cap_name, name) \

@@ -973,9 +973,7 @@ static cl_object from_qcolor(const QColor& col) {
     cl_object l_ret = Cnil;
     if(col.isValid()) { // return NIL for invalid QColors
         if(EQL::return_value_p) {
-            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); }
-        else {
-            l_ret = qt_object_from_name("QColor", (void*)&col); }}
+            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); }}
     return l_ret; }
 
 static cl_object from_qpolygon(const QPolygon& p) {
@@ -1886,7 +1884,9 @@ cl_object qvariant_value(cl_object l_obj) {
     QtObject o = toQtObject(l_obj);
     if("QVariant" == o.className() && o.pointer) {
         QVariant* p = (QVariant*)o.pointer;
+        EQL::return_value_p = true;
         cl_object l_ret = from_qvariant_value(*p);
+        EQL::return_value_p = false;
         return l_ret; }
     error_msg("QVARIANT-VALUE", LIST1(l_obj));
     return Cnil; }
