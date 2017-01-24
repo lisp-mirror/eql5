@@ -102,7 +102,6 @@ void ini() {
     LObjects::N[162] = new N163;
     LObjects::N[164] = new N165;
     LObjects::N[165] = new N166;
-    LObjects::N[172] = new N173;
     LObjects::N[173] = new N174;
     LObjects::N[174] = new N175;
     LObjects::N[175] = new N176;
@@ -117,7 +116,8 @@ void ini() {
     LObjects::N[184] = new N185;
     LObjects::N[185] = new N186;
     LObjects::N[186] = new N187;
-    LObjects::N[187] = new N188; }
+    LObjects::N[187] = new N188;
+    LObjects::N[188] = new N189; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -165,21 +165,21 @@ void deleteNObject(int n, void* p, int gc) {
         case 163: if(gc) delete (QQmlScriptString*)p; else delete (LQmlScriptString*)p; break;
         case 165: if(gc) delete (QQuickAsyncImageProvider*)p; else delete (LQuickAsyncImageProvider*)p; break;
         case 166: if(gc) delete (QQuickImageProvider*)p; else delete (LQuickImageProvider*)p; break;
-        case 173: if(gc) delete (QSGBasicGeometryNode*)p; else delete (LSGBasicGeometryNode*)p; break;
-        case 174: if(gc) delete (QSGClipNode*)p; else delete (LSGClipNode*)p; break;
-        case 175: if(gc) delete (QSGFlatColorMaterial*)p; else delete (LSGFlatColorMaterial*)p; break;
-        case 176: if(gc) delete (QSGGeometry*)p; else delete (LSGGeometry*)p; break;
-        case 177: if(gc) delete (QSGGeometryNode*)p; else delete (LSGGeometryNode*)p; break;
-        case 178: if(gc) delete (QSGMaterial*)p; else delete (LSGMaterial*)p; break;
-        case 180: if(gc) delete (QSGMaterialType*)p; else delete (LSGMaterialType*)p; break;
-        case 181: if(gc) delete (QSGNode*)p; else delete (LSGNode*)p; break;
-        case 182: if(gc) delete (QSGOpacityNode*)p; else delete (LSGOpacityNode*)p; break;
-        case 183: if(gc) delete (QSGOpaqueTextureMaterial*)p; else delete (LSGOpaqueTextureMaterial*)p; break;
-        case 184: if(gc) delete (QSGSimpleRectNode*)p; else delete (LSGSimpleRectNode*)p; break;
-        case 185: if(gc) delete (QSGSimpleTextureNode*)p; else delete (LSGSimpleTextureNode*)p; break;
-        case 186: if(gc) delete (QSGTextureMaterial*)p; else delete (LSGTextureMaterial*)p; break;
-        case 187: if(gc) delete (QSGTransformNode*)p; else delete (LSGTransformNode*)p; break;
-        case 188: if(gc) delete (QSGVertexColorMaterial*)p; else delete (LSGVertexColorMaterial*)p; break; }}
+        case 174: if(gc) delete (QSGBasicGeometryNode*)p; else delete (LSGBasicGeometryNode*)p; break;
+        case 175: if(gc) delete (QSGClipNode*)p; else delete (LSGClipNode*)p; break;
+        case 176: if(gc) delete (QSGFlatColorMaterial*)p; else delete (LSGFlatColorMaterial*)p; break;
+        case 177: if(gc) delete (QSGGeometry*)p; else delete (LSGGeometry*)p; break;
+        case 178: if(gc) delete (QSGGeometryNode*)p; else delete (LSGGeometryNode*)p; break;
+        case 179: if(gc) delete (QSGMaterial*)p; else delete (LSGMaterial*)p; break;
+        case 181: if(gc) delete (QSGMaterialType*)p; else delete (LSGMaterialType*)p; break;
+        case 182: if(gc) delete (QSGNode*)p; else delete (LSGNode*)p; break;
+        case 183: if(gc) delete (QSGOpacityNode*)p; else delete (LSGOpacityNode*)p; break;
+        case 184: if(gc) delete (QSGOpaqueTextureMaterial*)p; else delete (LSGOpaqueTextureMaterial*)p; break;
+        case 185: if(gc) delete (QSGSimpleRectNode*)p; else delete (LSGSimpleRectNode*)p; break;
+        case 186: if(gc) delete (QSGSimpleTextureNode*)p; else delete (LSGSimpleTextureNode*)p; break;
+        case 187: if(gc) delete (QSGTextureMaterial*)p; else delete (LSGTextureMaterial*)p; break;
+        case 188: if(gc) delete (QSGTransformNode*)p; else delete (LSGTransformNode*)p; break;
+        case 189: if(gc) delete (QSGVertexColorMaterial*)p; else delete (LSGVertexColorMaterial*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -227,21 +227,21 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 163: ids = &LQmlScriptString::overrideIds; break;
             case 165: ids = &LQuickAsyncImageProvider::overrideIds; break;
             case 166: ids = &LQuickImageProvider::overrideIds; break;
-            case 173: ids = &LSGBasicGeometryNode::overrideIds; break;
-            case 174: ids = &LSGClipNode::overrideIds; break;
-            case 175: ids = &LSGFlatColorMaterial::overrideIds; break;
-            case 176: ids = &LSGGeometry::overrideIds; break;
-            case 177: ids = &LSGGeometryNode::overrideIds; break;
-            case 178: ids = &LSGMaterial::overrideIds; break;
-            case 180: ids = &LSGMaterialType::overrideIds; break;
-            case 181: ids = &LSGNode::overrideIds; break;
-            case 182: ids = &LSGOpacityNode::overrideIds; break;
-            case 183: ids = &LSGOpaqueTextureMaterial::overrideIds; break;
-            case 184: ids = &LSGSimpleRectNode::overrideIds; break;
-            case 185: ids = &LSGSimpleTextureNode::overrideIds; break;
-            case 186: ids = &LSGTextureMaterial::overrideIds; break;
-            case 187: ids = &LSGTransformNode::overrideIds; break;
-            case 188: ids = &LSGVertexColorMaterial::overrideIds; break; }}
+            case 174: ids = &LSGBasicGeometryNode::overrideIds; break;
+            case 175: ids = &LSGClipNode::overrideIds; break;
+            case 176: ids = &LSGFlatColorMaterial::overrideIds; break;
+            case 177: ids = &LSGGeometry::overrideIds; break;
+            case 178: ids = &LSGGeometryNode::overrideIds; break;
+            case 179: ids = &LSGMaterial::overrideIds; break;
+            case 181: ids = &LSGMaterialType::overrideIds; break;
+            case 182: ids = &LSGNode::overrideIds; break;
+            case 183: ids = &LSGOpacityNode::overrideIds; break;
+            case 184: ids = &LSGOpaqueTextureMaterial::overrideIds; break;
+            case 185: ids = &LSGSimpleRectNode::overrideIds; break;
+            case 186: ids = &LSGSimpleTextureNode::overrideIds; break;
+            case 187: ids = &LSGTextureMaterial::overrideIds; break;
+            case 188: ids = &LSGTransformNode::overrideIds; break;
+            case 189: ids = &LSGVertexColorMaterial::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

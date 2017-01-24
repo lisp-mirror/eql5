@@ -133,6 +133,7 @@
         "QQuaternion"
         "QRadialGradient"
         "QResizeEvent"
+        "QResource"
         "QRegExp"
         "QRegion"
         "QRegularExpression"

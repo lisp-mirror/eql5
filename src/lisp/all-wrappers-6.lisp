@@ -1,5 +1,7 @@
 (defpackage :eql
   (:export
+   #:|toAce.QUrl|
+   #:|toAffine|
    #:|toBitArray|
    #:|toBlockFormat|
    #:|toBool|
@@ -314,6 +316,7 @@
    #:|unpolish|
    #:|unproject|
    #:|unregisterDocumentation|
+   #:|unregisterResource.QResource|
    #:|unsetCursor|
    #:|unsetError|
    #:|unsetHotSpot|

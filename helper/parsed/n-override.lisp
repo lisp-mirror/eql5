@@ -388,6 +388,7 @@
   (("QRegion" . NIL))
   (("QRegularExpression" . NIL))
   (("QResizeEvent" . "QEvent"))
+  (("QResource" . NIL))
   (("QRunnable" . NIL)
    "virtual void run () = 0")
   (("QSGBasicGeometryNode" . "QSGNode"))

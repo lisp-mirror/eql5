@@ -1,5 +1,11 @@
 (in-package :eql)
 
+(defun |relativeFilePath| (object &rest arguments)
+  (%qinvoke-method object nil "relativeFilePath" arguments))
+
+(defun |releaseControl| (object &rest arguments)
+  (%qinvoke-method object nil "releaseControl" arguments))
+
 (defun |releaseKeyboard| (object &rest arguments)
   (%qinvoke-method object nil "releaseKeyboard" arguments))
 
@@ -3593,9 +3599,3 @@
 
 (defun |setMaxLength| (object &rest arguments)
   (%qinvoke-method object nil "setMaxLength" arguments))
-
-(defun |setMaxPendingConnections| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxPendingConnections" arguments))
-
-(defun |setMaxVisibleItems| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxVisibleItems" arguments))

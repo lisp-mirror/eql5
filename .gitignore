@@ -37,3 +37,4 @@ cache
 tmp*
 palindrome.htm
 positions.js
+qrc_*.cpp

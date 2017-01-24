@@ -1140,6 +1140,7 @@
    #:|isCompiled|
    #:|isComplete|
    #:|isComponentComplete|
+   #:|isCompressed|
    #:|isContentEditable|
    #:|isContentSelected|
    #:|isCopyOf|
@@ -1198,5 +1199,4 @@
    #:|isFrameFormat|
    #:|isFullScreen|
    #:|isGenerated(QString)|
-   #:|isGenerated(int)|
-   #:|isGenerated|))
+   #:|isGenerated(int)|))

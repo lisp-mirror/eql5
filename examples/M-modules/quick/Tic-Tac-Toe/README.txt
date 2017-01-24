@@ -13,6 +13,18 @@ For Emacs/Slime, this would be:
     eql5 ~/slime/eql-start-swank.lisp tic-tac-toe
 
 
+QML FILES
+=========
+
+Always add these 2 "import" lines for Lisp access:
+
+    import EQL5 1.0
+    import "qrc:///eql5.js" as Lisp
+
+The "eql5.js" file is compiled as a resource into the eql5 shared library,
+see "eql5/src/eql5.js" and "eql5/src/eql5.qrc".
+
+
 NOTES
 =====
 
@@ -22,3 +34,19 @@ Try the following:
 
 Since the logic of the buttons is defined in the QML file, changes to
 properties will be reflected immediately by the UI.
+
+
+TIP
+===
+
+In order to have uniform access to QML objects from both JS and Lisp
+functions, it is convenient to set both 'id:' and 'objectName:' to the
+same name.
+
+QML Example:
+
+    Item {
+        id: myItem
+        objectName: "myItem"
+    }
+

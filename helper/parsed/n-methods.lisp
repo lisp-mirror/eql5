@@ -3252,6 +3252,21 @@
    "new QResizeEvent ( const QSize & , const QSize & )"
    "const QSize & oldSize () const"
    "const QSize & size () const")
+  (("QResource" . NIL)
+   "new QResource ( const QString & = QString() , const QLocale & = QLocale() )"
+   "QString absoluteFilePath () const"
+   "QString fileName () const"
+   "bool isCompressed () const"
+   "bool isValid () const"
+   "QLocale locale () const"
+   "void setFileName ( const QString & )"
+   "void setLocale ( const QLocale & )"
+   "qint64 size () const"
+   "protected QStringList children () const"
+   "protected bool isDir () const"
+   "protected bool isFile () const"
+   "static bool registerResource ( const QString & , const QString & = QString() )"
+   "static bool unregisterResource ( const QString & , const QString & = QString() )")
   (("QRunnable" . NIL)
    "new QRunnable ()"
    "bool autoDelete () const"

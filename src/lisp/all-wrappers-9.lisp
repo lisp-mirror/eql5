@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |isGenerated| (object &rest arguments)
+  (%qinvoke-method object nil "isGenerated" arguments))
+
 (defun |isGrayscale| (object &rest arguments)
   (%qinvoke-method object nil "isGrayscale" arguments))
 
@@ -3564,6 +3567,9 @@
 (defun |registerFormat.QSettings| (&rest arguments)
   (%qinvoke-method "QSettings" nil "registerFormat" arguments))
 
+(defun |registerResource.QResource| (&rest arguments)
+  (%qinvoke-method "QResource" nil "registerResource" arguments))
+
 (defun |registerSqlDriver.QSqlDatabase| (&rest arguments)
   (%qinvoke-method "QSqlDatabase" nil "registerSqlDriver" arguments))
 
@@ -3593,9 +3599,3 @@
 
 (defun |relation| (object &rest arguments)
   (%qinvoke-method object nil "relation" arguments))
-
-(defun |relativeFilePath| (object &rest arguments)
-  (%qinvoke-method object nil "relativeFilePath" arguments))
-
-(defun |releaseControl| (object &rest arguments)
-  (%qinvoke-method object nil "releaseControl" arguments))

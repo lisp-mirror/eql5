@@ -29,14 +29,14 @@ void ini() {
     LObjects::Q[268] = new Q269;
     LObjects::Q[269] = new Q270;
     LObjects::Q[270] = new Q271;
-    LObjects::N[263] = new N264;
     LObjects::N[264] = new N265;
     LObjects::N[265] = new N266;
     LObjects::N[266] = new N267;
     LObjects::N[267] = new N268;
     LObjects::N[268] = new N269;
     LObjects::N[269] = new N270;
-    LObjects::N[270] = new N271; }
+    LObjects::N[270] = new N271;
+    LObjects::N[271] = new N272; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -52,12 +52,12 @@ const QMetaObject* staticMetaObject(int n) {
 
 void deleteNObject(int n, void* p, int gc) {
     switch(n) {
-        case 264: if(gc) delete (QWebDatabase*)p; else delete (LWebDatabase*)p; break;
-        case 265: if(gc) delete (QWebElement*)p; else delete (LWebElement*)p; break;
-        case 266: if(gc) delete (QWebElementCollection*)p; else delete (LWebElementCollection*)p; break;
-        case 268: if(gc) delete (QWebHistoryItem*)p; else delete (LWebHistoryItem*)p; break;
-        case 269: if(gc) delete (QWebHitTestResult*)p; else delete (LWebHitTestResult*)p; break;
-        case 270: if(gc) delete (QWebSecurityOrigin*)p; else delete (LWebSecurityOrigin*)p; break; }}
+        case 265: if(gc) delete (QWebDatabase*)p; else delete (LWebDatabase*)p; break;
+        case 266: if(gc) delete (QWebElement*)p; else delete (LWebElement*)p; break;
+        case 267: if(gc) delete (QWebElementCollection*)p; else delete (LWebElementCollection*)p; break;
+        case 269: if(gc) delete (QWebHistoryItem*)p; else delete (LWebHistoryItem*)p; break;
+        case 270: if(gc) delete (QWebHitTestResult*)p; else delete (LWebHitTestResult*)p; break;
+        case 271: if(gc) delete (QWebSecurityOrigin*)p; else delete (LWebSecurityOrigin*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -73,12 +73,12 @@ NumList* overrideFunctions(const QByteArray& name) {
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
-            case 264: ids = &LWebDatabase::overrideIds; break;
-            case 265: ids = &LWebElement::overrideIds; break;
-            case 266: ids = &LWebElementCollection::overrideIds; break;
-            case 268: ids = &LWebHistoryItem::overrideIds; break;
-            case 269: ids = &LWebHitTestResult::overrideIds; break;
-            case 270: ids = &LWebSecurityOrigin::overrideIds; break; }}
+            case 265: ids = &LWebDatabase::overrideIds; break;
+            case 266: ids = &LWebElement::overrideIds; break;
+            case 267: ids = &LWebElementCollection::overrideIds; break;
+            case 269: ids = &LWebHistoryItem::overrideIds; break;
+            case 270: ids = &LWebHitTestResult::overrideIds; break;
+            case 271: ids = &LWebSecurityOrigin::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

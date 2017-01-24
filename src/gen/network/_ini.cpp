@@ -63,11 +63,11 @@ void ini() {
     LObjects::N[129] = new N130;
     LObjects::N[130] = new N131;
     LObjects::N[131] = new N132;
-    LObjects::N[203] = new N204;
     LObjects::N[204] = new N205;
     LObjects::N[205] = new N206;
     LObjects::N[206] = new N207;
-    LObjects::N[207] = new N208; }
+    LObjects::N[207] = new N208;
+    LObjects::N[208] = new N209; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -101,11 +101,11 @@ void deleteNObject(int n, void* p, int gc) {
         case 130: if(gc) delete (QNetworkProxyFactory*)p; else delete (LNetworkProxyFactory*)p; break;
         case 131: if(gc) delete (QNetworkProxyQuery*)p; else delete (LNetworkProxyQuery*)p; break;
         case 132: if(gc) delete (QNetworkRequest*)p; else delete (LNetworkRequest*)p; break;
-        case 204: if(gc) delete (QSslCertificate*)p; else delete (LSslCertificate*)p; break;
-        case 205: if(gc) delete (QSslCipher*)p; else delete (LSslCipher*)p; break;
-        case 206: if(gc) delete (QSslConfiguration*)p; else delete (LSslConfiguration*)p; break;
-        case 207: if(gc) delete (QSslError*)p; else delete (LSslError*)p; break;
-        case 208: if(gc) delete (QSslKey*)p; else delete (LSslKey*)p; break; }}
+        case 205: if(gc) delete (QSslCertificate*)p; else delete (LSslCertificate*)p; break;
+        case 206: if(gc) delete (QSslCipher*)p; else delete (LSslCipher*)p; break;
+        case 207: if(gc) delete (QSslConfiguration*)p; else delete (LSslConfiguration*)p; break;
+        case 208: if(gc) delete (QSslError*)p; else delete (LSslError*)p; break;
+        case 209: if(gc) delete (QSslKey*)p; else delete (LSslKey*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -138,11 +138,11 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 130: ids = &LNetworkProxyFactory::overrideIds; break;
             case 131: ids = &LNetworkProxyQuery::overrideIds; break;
             case 132: ids = &LNetworkRequest::overrideIds; break;
-            case 204: ids = &LSslCertificate::overrideIds; break;
-            case 205: ids = &LSslCipher::overrideIds; break;
-            case 206: ids = &LSslConfiguration::overrideIds; break;
-            case 207: ids = &LSslError::overrideIds; break;
-            case 208: ids = &LSslKey::overrideIds; break; }}
+            case 205: ids = &LSslCertificate::overrideIds; break;
+            case 206: ids = &LSslCipher::overrideIds; break;
+            case 207: ids = &LSslConfiguration::overrideIds; break;
+            case 208: ids = &LSslError::overrideIds; break;
+            case 209: ids = &LSslKey::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

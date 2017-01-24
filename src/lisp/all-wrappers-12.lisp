@@ -1,5 +1,11 @@
 (in-package :eql)
 
+(defun |toAce.QUrl| (&rest arguments)
+  (%qinvoke-method "QUrl" nil "toAce" arguments))
+
+(defun |toAffine| (object &rest arguments)
+  (%qinvoke-method object nil "toAffine" arguments))
+
 (defun |toBitArray| (object &rest arguments)
   (%qinvoke-method object nil "toBitArray" arguments))
 
@@ -941,6 +947,9 @@
 
 (defun |unregisterDocumentation| (object &rest arguments)
   (%qinvoke-method object nil "unregisterDocumentation" arguments))
+
+(defun |unregisterResource.QResource| (&rest arguments)
+  (%qinvoke-method "QResource" nil "unregisterResource" arguments))
 
 (defun |unsetCursor| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "unsetCursor" arguments))

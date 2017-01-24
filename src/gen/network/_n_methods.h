@@ -265,7 +265,7 @@ public:
     Q_INVOKABLE QUrl Murl(QNetworkRequest* o) const { return o->url(); }
 };
 
-class N204 : public QObject { // QSslCertificate
+class N205 : public QObject { // QSslCertificate
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QByteArray& x1 = QByteArray(), QSsl::EncodingFormat x2 = QSsl::Pem) { return new LSslCertificate(u, x1, x2); }
@@ -297,7 +297,7 @@ public:
     Q_INVOKABLE QList<QSslError> Sverify(const QList<QSslCertificate>& x1, const QString& x2 = QString()) { return QSslCertificate::verify(x1, x2); }
 };
 
-class N205 : public QObject { // QSslCipher
+class N206 : public QObject { // QSslCipher
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSslCipher(u); }
@@ -316,7 +316,7 @@ public:
     Q_INVOKABLE int MusedBits(QSslCipher* o) const { return o->usedBits(); }
 };
 
-class N206 : public QObject { // QSslConfiguration
+class N207 : public QObject { // QSslConfiguration
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSslConfiguration(u); }
@@ -361,7 +361,7 @@ public:
     Q_INVOKABLE QList<QSslCertificate> SsystemCaCertificates() { return QSslConfiguration::systemCaCertificates(); }
 };
 
-class N207 : public QObject { // QSslError
+class N208 : public QObject { // QSslError
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSslError(u); }
@@ -374,7 +374,7 @@ public:
     Q_INVOKABLE void Mswap(QSslError* o, QSslError& x1) { o->swap(x1); }
 };
 
-class N208 : public QObject { // QSslKey
+class N209 : public QObject { // QSslKey
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSslKey(u); }

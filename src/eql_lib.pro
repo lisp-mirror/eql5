@@ -32,6 +32,8 @@ SOURCES += gen/_lobjects.cpp \
            extras.cpp \
            eql.cpp
 
+RESOURCES = eql5.qrc
+
 gcc {
     QMAKE_CXXFLAGS_WARN_ON += -Wno-clobbered
 }

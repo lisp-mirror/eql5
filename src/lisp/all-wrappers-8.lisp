@@ -3420,6 +3420,9 @@
 (defun |isComponentComplete| (object &rest arguments)
   (%qinvoke-method object nil "isComponentComplete" arguments))
 
+(defun |isCompressed| (object &rest arguments)
+  (%qinvoke-method object nil "isCompressed" arguments))
+
 (defun |isContentEditable| (object &rest arguments)
   (%qinvoke-method object nil "isContentEditable" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |isGenerated(int)| (object &rest arguments)
   (%qinvoke-method object nil "isGenerated(int)" arguments))
-
-(defun |isGenerated| (object &rest arguments)
-  (%qinvoke-method object nil "isGenerated" arguments))

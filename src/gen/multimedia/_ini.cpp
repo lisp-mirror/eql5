@@ -62,9 +62,9 @@ void ini() {
     LObjects::N[96] = new N97;
     LObjects::N[116] = new N117;
     LObjects::N[117] = new N118;
-    LObjects::N[260] = new N261;
     LObjects::N[261] = new N262;
-    LObjects::N[262] = new N263; }
+    LObjects::N[262] = new N263;
+    LObjects::N[263] = new N264; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -100,9 +100,9 @@ void deleteNObject(int n, void* p, int gc) {
         case 97: if(gc) delete (QImageEncoderSettings*)p; else delete (LImageEncoderSettings*)p; break;
         case 117: if(gc) delete (QMediaContent*)p; else delete (LMediaContent*)p; break;
         case 118: if(gc) delete (QMediaResource*)p; else delete (LMediaResource*)p; break;
-        case 261: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
-        case 262: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
-        case 263: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
+        case 262: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
+        case 263: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
+        case 264: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -134,9 +134,9 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 97: ids = &LImageEncoderSettings::overrideIds; break;
             case 117: ids = &LMediaContent::overrideIds; break;
             case 118: ids = &LMediaResource::overrideIds; break;
-            case 261: ids = &LVideoEncoderSettings::overrideIds; break;
-            case 262: ids = &LVideoFrame::overrideIds; break;
-            case 263: ids = &LVideoSurfaceFormat::overrideIds; break; }}
+            case 262: ids = &LVideoEncoderSettings::overrideIds; break;
+            case 263: ids = &LVideoFrame::overrideIds; break;
+            case 264: ids = &LVideoSurfaceFormat::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

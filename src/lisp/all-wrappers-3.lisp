@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|isGenerated|
    #:|isGrayscale|
    #:|isGridVisible|
    #:|isGroupSeparatorShown|
@@ -1188,6 +1189,7 @@
    #:|registerEventType.QEvent|
    #:|registerField|
    #:|registerFormat.QSettings|
+   #:|registerResource.QResource|
    #:|registerSqlDriver.QSqlDatabase|
    #:|registerTypes|
    #:|registeredDocumentations|
@@ -1197,6 +1199,4 @@
    #:|rejected|
    #:|reject|
    #:|relationModel|
-   #:|relation|
-   #:|relativeFilePath|
-   #:|releaseControl|))
+   #:|relation|))

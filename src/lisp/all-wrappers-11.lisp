@@ -1,5 +1,11 @@
 (in-package :eql)
 
+(defun |setMaxPendingConnections| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxPendingConnections" arguments))
+
+(defun |setMaxVisibleItems| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxVisibleItems" arguments))
+
 (defun |setMaximumAnisotropy| (object &rest arguments)
   (%qinvoke-method object nil "setMaximumAnisotropy" arguments))
 
@@ -3593,9 +3599,3 @@
 
 (defun |title| (object &rest arguments)
   (%qinvoke-method object nil "title" arguments))
-
-(defun |toAce.QUrl| (&rest arguments)
-  (%qinvoke-method "QUrl" nil "toAce" arguments))
-
-(defun |toAffine| (object &rest arguments)
-  (%qinvoke-method object nil "toAffine" arguments))

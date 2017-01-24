@@ -1,5 +1,7 @@
 (defpackage :eql
   (:export
+   #:|relativeFilePath|
+   #:|releaseControl|
    #:|releaseKeyboard|
    #:|releaseMouse|
    #:|releaseResources|
@@ -1197,6 +1199,4 @@
    #:|setMaterial|
    #:|setMatrix|
    #:|setMaxCount|
-   #:|setMaxLength|
-   #:|setMaxPendingConnections|
-   #:|setMaxVisibleItems|))
+   #:|setMaxLength|))

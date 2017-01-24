@@ -1,5 +1,7 @@
 (defpackage :eql
   (:export
+   #:|setMaxPendingConnections|
+   #:|setMaxVisibleItems|
    #:|setMaximumAnisotropy|
    #:|setMaximumBlockCount|
    #:|setMaximumCacheSize|
@@ -1197,6 +1199,4 @@
    #:|titleBarWidget|
    #:|titleChanged|
    #:|titleFormat|
-   #:|title|
-   #:|toAce.QUrl|
-   #:|toAffine|))
+   #:|title|))

@@ -132,6 +132,7 @@
   "QRegExp" 
   "QRegion" 
   "QRegularExpression" 
+  "QResource" 
   "QRunnable" 
   "QSemaphore" 
   "QSGVertexColorMaterial"

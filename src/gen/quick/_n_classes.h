@@ -180,7 +180,7 @@ public:
 };
 
 class LSGBasicGeometryNode : public QSGBasicGeometryNode {
-    friend class N173;
+    friend class N174;
 public:
 
     static NumList overrideIds;
@@ -191,7 +191,7 @@ public:
 };
 
 class LSGClipNode : public QSGClipNode {
-    friend class N174;
+    friend class N175;
 public:
     LSGClipNode(uint u) : unique(u) {}
 
@@ -200,7 +200,7 @@ public:
 };
 
 class LSGFlatColorMaterial : public QSGFlatColorMaterial {
-    friend class N175;
+    friend class N176;
 public:
     LSGFlatColorMaterial(uint u) : unique(u) {}
 
@@ -213,7 +213,7 @@ public:
 };
 
 class LSGGeometry : public QSGGeometry {
-    friend class N176;
+    friend class N177;
 public:
 
     static NumList overrideIds;
@@ -221,7 +221,7 @@ public:
 };
 
 class LSGGeometryNode : public QSGGeometryNode {
-    friend class N177;
+    friend class N178;
 public:
     LSGGeometryNode(uint u) : unique(u) {}
 
@@ -230,7 +230,7 @@ public:
 };
 
 class LSGMaterial : public QSGMaterial {
-    friend class N178;
+    friend class N179;
 public:
 
     static NumList overrideIds;
@@ -242,7 +242,7 @@ public:
 };
 
 class LSGMaterialType : public QSGMaterialType {
-    friend class N180;
+    friend class N181;
 public:
 
     static NumList overrideIds;
@@ -250,7 +250,7 @@ public:
 };
 
 class LSGNode : public QSGNode {
-    friend class N181;
+    friend class N182;
 public:
     LSGNode(uint u) : unique(u) {}
 
@@ -262,7 +262,7 @@ public:
 };
 
 class LSGOpacityNode : public QSGOpacityNode {
-    friend class N182;
+    friend class N183;
 public:
     LSGOpacityNode(uint u) : unique(u) {}
 
@@ -274,7 +274,7 @@ public:
 };
 
 class LSGOpaqueTextureMaterial : public QSGOpaqueTextureMaterial {
-    friend class N183;
+    friend class N184;
 public:
     LSGOpaqueTextureMaterial(uint u) : unique(u) {}
 
@@ -287,7 +287,7 @@ public:
 };
 
 class LSGSimpleRectNode : public QSGSimpleRectNode {
-    friend class N184;
+    friend class N185;
 public:
     LSGSimpleRectNode(uint u, const QRectF& x1, const QColor& x2) : QSGSimpleRectNode(x1, x2), unique(u) {}
     LSGSimpleRectNode(uint u) : unique(u) {}
@@ -297,7 +297,7 @@ public:
 };
 
 class LSGSimpleTextureNode : public QSGSimpleTextureNode {
-    friend class N185;
+    friend class N186;
 public:
     LSGSimpleTextureNode(uint u) : unique(u) {}
 
@@ -306,7 +306,7 @@ public:
 };
 
 class LSGTextureMaterial : public QSGTextureMaterial {
-    friend class N186;
+    friend class N187;
 public:
 
     static NumList overrideIds;
@@ -314,7 +314,7 @@ public:
 };
 
 class LSGTransformNode : public QSGTransformNode {
-    friend class N187;
+    friend class N188;
 public:
     LSGTransformNode(uint u) : unique(u) {}
 
@@ -326,7 +326,7 @@ public:
 };
 
 class LSGVertexColorMaterial : public QSGVertexColorMaterial {
-    friend class N188;
+    friend class N189;
 public:
     LSGVertexColorMaterial(uint u) : unique(u) {}
 

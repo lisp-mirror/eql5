@@ -7,7 +7,7 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/webkit/
 MOC_DIR     = ./tmp/webkit/
 
-macx:QT     += network phonon
+macx:QT     += network
 
 include(windows.pri)
 

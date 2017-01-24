@@ -25,6 +25,18 @@ Examples:
     (qml-set "label" "font.pixelSize" 24)
 
 
+QML FILES
+=========
+
+Always add these 2 "import" lines for Lisp access:
+
+    import EQL5 1.0
+    import "qrc:///eql5.js" as Lisp
+
+The "eql5.js" file is compiled as a resource into the eql5 shared library,
+see "eql5/src/eql5.js" and "eql5/src/eql5.qrc".
+
+
 NOTES
 =====
 
