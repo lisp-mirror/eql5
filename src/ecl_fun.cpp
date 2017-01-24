@@ -2903,7 +2903,7 @@ cl_object qvariant_equal2(cl_object l_var1, cl_object l_var2) {
 
 cl_object qversion() {
     /// args: ()
-    /// Returns the EQL version number as "&lt;year&gt;.&lt;month&gt;.&lt;counter&gt;", analogous to the ECL version number.<br>The second return value is the Qt version as returned by <code>qVersion()</code>.
+    /// Returns the EQL version number as "&lt;year&gt;.&lt;month&gt;.&lt;counter&gt;".<br>The second return value is the Qt version as returned by <code>qVersion()</code>.
     const cl_env_ptr l_env = ecl_process_env();
     l_env->nvalues = 2;
     l_env->values[0] = from_cstring(EQL::version);

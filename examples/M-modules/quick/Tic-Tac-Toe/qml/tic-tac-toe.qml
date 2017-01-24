@@ -38,12 +38,7 @@ Rectangle {
                     width: board.width / 3
                     height: board.height / 3
 
-                    onClicked: {
-                        if (game.running && Lisp.fun("can-play-at-pos", index)) {
-                            if (!Lisp.fun("make-move", index, "X"))
-                                Lisp.fun("computer-turn");
-                        }
-                    }
+                    onClicked: { Lisp.fun("tic-tac-clicked", index) }
                 }
             }
         }
@@ -81,10 +76,7 @@ Rectangle {
 
         Timer {
             running: messageDisplay.visible
-            onTriggered: {
-                messageDisplay.visible = false;
-                Lisp.fun("restart-game");
-            }
+            onTriggered: { Lisp.fun("restart-game") }
         }
     }
 }

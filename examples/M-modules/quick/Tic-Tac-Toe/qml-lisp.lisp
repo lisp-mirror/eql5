@@ -34,7 +34,7 @@
 ;;; function calls from QML
 
 (defun print-js-readably (object)
-  "Prints lists, vectors, T, NIL, floats in JS notation, which will be passed to JS 'eval()'."
+  "Prints (nested) lists, vectors, T, NIL, floats in JS notation, which will be passed to JS 'eval()'."
   (if (and (not (stringp object))
            (vectorp object))
       (print-js-readably (coerce object 'list))

@@ -23,6 +23,12 @@
 
 ;;; game
 
+(defun tic-tac-clicked (index)
+  (when (and (qml-get "game" "running")
+             (can-play-at-pos index))
+    (unless (make-move index "X")
+      (computer-turn))))
+
 (defun winner ()
   (dotimes (i 3)
     (when (or (and (not (empty-cell i))
@@ -41,6 +47,7 @@
     (return-from winner t)))
 
 (defun restart-game ()
+  (qml-set "messageDisplay" "visible" nil)
   (qml-set "game" "running" t)
   (dotimes (i 9)
     (set-cell-state i "")))
@@ -57,6 +64,7 @@
     (empty-cell pos)))
 
 (defun computer-turn ()
+  (qsleep 1/7)
   (let ((r (random 10)))
     (if (< r (qml-get "game" "difficulty"))
         (smart-ai)
