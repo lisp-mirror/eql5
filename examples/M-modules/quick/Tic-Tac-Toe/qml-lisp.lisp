@@ -10,11 +10,12 @@
   (:nicknames :qml)
   (:export
    #:*quick-view*
-   #:find-qml-object
+   #:children
+   #:find-quick-item
    #:js
    #:qml-get
    #:qml-set
-   #:root-object))
+   #:root-item))
 
 (provide :qml-lisp)
 
@@ -72,48 +73,53 @@
 
 ;;; utils
 
-(let (root-object)
-  (defun root-object ()
-    (unless root-object
-      (setf root-object (|rootObject| *quick-view*)))
-    root-object))
+(defun root-item ()
+  (|rootObject| *quick-view*))
 
-(defun find-qml-object (&optional object-name)
-  "Finds the first QML item matching OBJECT-NAME."
-  (if (string= (|objectName| (root-object)) object-name)
-      (root-object)
-      (qfind-child (root-object) object-name)))
+(defun find-quick-item (object-name)
+  "Finds the first QQuickItem matching OBJECT-NAME."
+  (if (string= (|objectName| (root-item)) object-name)
+      (root-item)
+      (qfind-child (root-item) object-name)))
+
+(defun quick-item (item/name)
+  (if (stringp item/name)
+      (find-quick-item item/name)
+      item/name))
+
+(defun children (item/name)
+  (|childItems| (quick-item item/name)))
 
 ;;; get/set QQmlProperty
 
-(defun qml-get (object-name property-name)
-  "Gets QQmlProperty for first object matching 'objectName'."
+(defun qml-get (item/name property-name)
+  "Gets QQmlProperty of either ITEM or first object matching NAME."
   (qlet ((property "QQmlProperty(QObject*,QString)"
-                   (find-qml-object object-name)
+                   (quick-item item/name)
                    property-name))
     (if (|isValid| property)
         (qlet ((variant (|read| property)))
           (values (qvariant-value variant)
                   t))
-        (eql::%error-msg "QML-GET" (list object-name property-name)))))
+        (eql::%error-msg "QML-GET" (list item/name property-name)))))
 
-(defun qml-set (object-name property-name value)
-  "Sets QQmlProperty for first object matching 'objectName'. Returns T on success."
+(defun qml-set (item/name property-name value)
+  "Sets QQmlProperty of either ITEM, or first object matching NAME. Returns T on success."
   (qlet ((property "QQmlProperty(QObject*,QString)"
-                   (find-qml-object object-name)
+                   (quick-item item/name)
                    property-name))
     (if (|isValid| property)
         (qlet ((variant (qvariant-from-value value (|propertyTypeName| property))))
           (|write| property variant))
-        (eql::%error-msg "QML-SET" (list object-name property-name value)))))
+        (eql::%error-msg "QML-SET" (list item/name property-name value)))))
 
 ;;; JS 
 
-(defun js (object-name js-format-string &rest arguments)
-  "Evaluates a JS string with the element bound to OBJECT-NAME as 'this'."
+(defun js (item/name js-format-string &rest arguments)
+  "Evaluates a JS string, with 'this' bound to either ITEM, or first object matching NAME."
   (qlet ((qml-exp "QQmlExpression(QQmlContext*,QObject*,QString)"
                   (|rootContext| *quick-view*)
-                  (find-qml-object object-name)
+                  (quick-item item/name)
                   (apply 'format nil js-format-string arguments))
          (variant (|evaluate| qml-exp)))
     (qvariant-value variant)))

@@ -10,12 +10,12 @@
 
 (defun cell-state (i)
   (if (stringp *board*)
-      (js *board* "children[~D].state" i)
+      (qml-get (nth i (children *board*)) "state")
       (svref *board* i)))
 
 (defun set-cell-state (i state)
   (if (stringp *board*)
-      (js *board* "children[~D].state = ~S" i state)
+      (qml-set (nth i (children *board*)) "state" state)
       (setf (svref *board* i) state)))
 
 (defun empty-cell (i)
