@@ -976,7 +976,9 @@ static cl_object from_qcolor(const QColor& col) {
     cl_object l_ret = Cnil;
     if(col.isValid()) { // return NIL for invalid QColors
         if(EQL::return_value_p) {
-            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); }}
+            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); }
+        else {
+            l_ret = qt_object_from_name("QColor", (void*)&col); }}
     return l_ret; }
 
 static cl_object from_qpolygon(const QPolygon& p) {
