@@ -90,18 +90,22 @@
   "Gets QQmlProperty for first object matching 'objectName'."
   (qlet ((property "QQmlProperty(QObject*,QString)"
                    (find-qml-object object-name)
-                   property-name)
-         (variant (|read| property)))
-    (qvariant-value variant)))
+                   property-name))
+    (if (|isValid| property)
+        (qlet ((variant (|read| property)))
+          (values (qvariant-value variant)
+                  t))
+        (eql::%error-msg "QML-GET" (list object-name property-name)))))
 
 (defun qml-set (object-name property-name value)
   "Sets QQmlProperty for first object matching 'objectName'. Returns T on success."
   (qlet ((property "QQmlProperty(QObject*,QString)"
                    (find-qml-object object-name)
                    property-name))
-    (x:when-it (|propertyTypeName| property)
-      (qlet ((variant (qvariant-from-value value x:it)))
-        (|write| property variant)))))
+    (if (|isValid| property)
+        (qlet ((variant (qvariant-from-value value (|propertyTypeName| property))))
+          (|write| property variant))
+        (eql::%error-msg "QML-SET" (list object-name property-name value)))))
 
 ;;; JS 
 
