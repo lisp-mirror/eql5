@@ -13,9 +13,10 @@ QObject* ini() {
         qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "EQL5", lisp_provider); }
     return lisp; }
 
-QVariant Lisp::apply(const QString& function, const QVariantList& arguments) {
+QVariant Lisp::apply(QObject* caller, const QString& function, const QVariantList& arguments) {
     QVariant ret =
     eql_fun("qml:qml-apply", QVariant::String,
+            Q_ARG(QObject*, caller),
             Q_ARG(QString, function),
             Q_ARG(QVariantList, arguments));
     return ret; }

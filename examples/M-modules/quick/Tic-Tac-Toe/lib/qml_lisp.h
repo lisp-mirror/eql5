@@ -17,7 +17,7 @@ class Lisp : public QObject {
     Q_OBJECT
 
 public:
-    Q_INVOKABLE QVariant apply(const QString&, const QVariantList& = QVariantList());
+    Q_INVOKABLE QVariant apply(QObject*, const QString&, const QVariantList& = QVariantList());
 };
 
 QT_END_NAMESPACE

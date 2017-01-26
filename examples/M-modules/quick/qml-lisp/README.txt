@@ -46,7 +46,7 @@ Please see also the documentation in "qml/example.qml".
 TIP
 ===
 
-In order to have uniform access to QML objects from both JS and Lisp
+In order to have uniform access to QQuickItems from both QML and Lisp
 functions, it is convenient to set both 'id:' and 'objectName:' to the
 same name.
 

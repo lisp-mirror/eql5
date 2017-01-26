@@ -35,11 +35,14 @@ Try the following:
 Since the logic of the buttons is defined in the QML file, changes to
 properties will be reflected immediately by the UI.
 
+Please see also "../qml-lisp/qml/example.lisp" for documentation on calling
+Lisp functions from QML.
+
 
 TIP
 ===
 
-In order to have uniform access to QML objects from both JS and Lisp
+In order to have uniform access to QQuickItems from both QML and Lisp
 functions, it is convenient to set both 'id:' and 'objectName:' to the
 same name.
 

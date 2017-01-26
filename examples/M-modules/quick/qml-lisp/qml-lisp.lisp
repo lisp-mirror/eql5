@@ -10,11 +10,13 @@
   (:nicknames :qml)
   (:export
    #:*quick-view*
+   #:*caller*
    #:children
    #:find-quick-item
    #:js
    #:qml-get
    #:qml-set
+   #:properties
    #:root-item))
 
 (provide :qml-lisp)
@@ -22,11 +24,12 @@
 (in-package :qml-lisp)
 
 (defvar *qml-lisp*   (qload-c++ "lib/qml_lisp"))
+(defvar *caller*     nil)
 (defvar *quick-view* nil)
 
 (defun string-to-symbol (name)
-  (let* ((upper (string-upcase name))
-         (p (position #\: name)))
+  (let ((upper (string-upcase name))
+        (p (position #\: name)))
     (if p
         (intern (subseq upper (1+ (position #\: name :from-end t)))
                 (subseq upper 0 p))
@@ -63,10 +66,11 @@
     (princ "#<>") ; mark for passing to JS "eval()"
     (print-js-readably object)))
 
-(defun qml-apply (function arguments)
-  "Every 'Lisp.fun()' or 'Lisp.apply()' function call in QML will call this function."
-  (let ((object (apply (string-to-symbol function)
-                      arguments)))
+(defun qml-apply (caller function arguments)
+  "Every 'Lisp.call()' or 'Lisp.apply()' function call in QML will call this function. The variable *CALLER* will be bound to the calling QQuickItem, if passed with 'this' as first argument to 'Lisp.call' / 'Lisp.apply()'."
+  (let* ((*caller* (if (qnull caller) nil (qt-object-? caller)))
+         (object (apply (string-to-symbol function)
+                        arguments)))
     (if (stringp object)
         object
         (print-to-js-string object))))
@@ -74,13 +78,14 @@
 ;;; utils
 
 (defun root-item ()
-  (|rootObject| *quick-view*))
+  (when *quick-view*
+    (|rootObject| *quick-view*)))
 
 (defun find-quick-item (object-name)
   "Finds the first QQuickItem matching OBJECT-NAME."
   (if (string= (|objectName| (root-item)) object-name)
       (root-item)
-      (qfind-child (root-item) object-name)))
+      (qt-object-? (qfind-child (root-item) object-name))))
 
 (defun quick-item (item/name)
   (if (stringp item/name)
@@ -116,7 +121,7 @@
 ;;; JS 
 
 (defun js (item/name js-format-string &rest arguments)
-  "Evaluates a JS string, with 'this' bound to either ITEM, or first object matching NAME."
+  "Evaluates a JS string, with 'this' bound to either ITEM, or first object matching NAME. Arguments are passed through FORMAT."
   (qlet ((qml-exp "QQmlExpression(QQmlContext*,QObject*,QString)"
                   (|rootContext| *quick-view*)
                   (quick-item item/name)

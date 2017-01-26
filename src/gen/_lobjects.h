@@ -120,7 +120,12 @@ public:
 
     static QByteArray vanillaQtSuperClassName(const QMetaObject* mo) {
         QByteArray className(mo->className());
-        while(!q_names.contains(className)) {
+        Q_FOREVER {
+            int p = className.indexOf('_');
+            if(p != -1) {
+                className.truncate(p); }
+            if(q_names.contains(className)) {
+                break; }
             mo = mo->superClass();
             if(!mo) {
                 break; }
