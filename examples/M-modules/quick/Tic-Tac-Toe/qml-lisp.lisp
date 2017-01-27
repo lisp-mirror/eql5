@@ -16,6 +16,7 @@
    #:js
    #:qml-get
    #:qml-set
+   #:reload
    #:root-item))
 
 (provide :qml-lisp)
@@ -30,9 +31,9 @@
   (let ((upper (string-upcase name))
         (p (position #\: name)))
     (if p
-        (intern (subseq upper (1+ (position #\: name :from-end t)))
-                (subseq upper 0 p))
-        (intern upper))))
+        (find-symbol (subseq upper (1+ (position #\: name :from-end t)))
+                     (subseq upper 0 p))
+        (find-symbol upper))))
 
 ;;; function calls from QML
 
@@ -93,6 +94,11 @@
 
 (defun children (item/name)
   (|childItems| (quick-item item/name)))
+
+(defun reload ()
+  "Force reloading of QML file after changes made to it."
+  (|clearComponentCache| (|engine| *quick-view*))
+  (|setSource| *quick-view* (|source| *quick-view*)))
 
 ;;; get/set QQmlProperty
 
