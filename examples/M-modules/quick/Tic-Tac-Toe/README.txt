@@ -13,6 +13,20 @@ For Emacs/Slime, this would be:
     eql5 ~/slime/eql-start-swank.lisp tic-tac-toe
 
 
+CALL LISP
+=========
+
+Examples:
+
+    Lisp.call("cl:foo", x, y)
+    Lisp.call(this, "cl:foo", x, y)    ; optionally pass 'this'
+
+    Lisp.apply("cl:foo", [x, y])
+    Lisp.apply(this, "cl:foo", [x, y]) ; see above
+
+'this' can be accessed in Lisp through qml:*caller*
+
+
 QML FILES
 =========
 
