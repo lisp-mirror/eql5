@@ -88,9 +88,12 @@
       (qt-object-? (qfind-child (root-item) object-name))))
 
 (defun quick-item (item/name)
-  (if (stringp item/name)
-      (find-quick-item item/name)
-      item/name))
+  (cond ((stringp item/name)
+         (find-quick-item item/name))
+        ((qt-object-p item/name)
+         item/name)
+        ((not item/name)
+         (root-item))))
 
 (defun children (item/name)
   (|childItems| (quick-item item/name)))

@@ -5,8 +5,6 @@
 #include <QtMultimedia>
 #include <QtMultimediaWidgets>
 
-// Q_DECLARE_METATYPE(...)
-
 #ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
 #else

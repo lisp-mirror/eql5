@@ -10,6 +10,7 @@
 *.so*
 *.DS_Store
 *.qm
+*.qmlc
 *.ts
 *~
 *.~
