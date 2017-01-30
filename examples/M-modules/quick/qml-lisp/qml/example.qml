@@ -31,7 +31,7 @@ Item {
 
         // (4) nested list arguments
         //     N.B: don't get fooled by the printed representation of the return value:
-        //          it's a nested JS array internally
+        //          it's a nested JS array internally (".length" will give 3)
         console.log(Lisp.call("list", [[1, 2, 3], ["a", "b", "c"], 4, 5], 6, [[7, 8], 9]))
 
         // (5) pass 'this' as first argument (can be accessed in Lisp via qml:*caller*)

@@ -14,11 +14,9 @@ QObject* ini() {
     return lisp; }
 
 QVariant Lisp::apply(QObject* caller, const QString& function, const QVariantList& arguments) {
-    QVariant ret =
-    eql_fun("qml:qml-apply", QVariant::String,
-            Q_ARG(QObject*, caller),
-            Q_ARG(QString, function),
-            Q_ARG(QVariantList, arguments));
-    return ret; }
+    return eql_fun("qml:qml-apply", QVariant::String,
+                   Q_ARG(QObject*, caller),
+                   Q_ARG(QString, function),
+                   Q_ARG(QVariantList, arguments)); }
 
 QT_END_NAMESPACE

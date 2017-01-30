@@ -54,6 +54,9 @@ see "eql5/src/eql5.js" and "eql5/src/eql5.qrc".
 NOTES
 =====
 
+Anywhere an 'objectName' is expected, you can optionally pass a QQuickItem
+directly, or NIL if you want to use the root item.
+
 Please see also the documentation in "qml/example.qml".
 
 

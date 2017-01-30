@@ -2476,7 +2476,7 @@ cl_object qload_cpp(cl_object l_lib_name, cl_object l_unload) { /// qload-c++
     ///     
     ///     (qapropos nil *c++*)                       ; documentation
     ///     
-    ///     (! "mySpeedyQtFunction" (:qt *c++*))       ; call library function (note :qt)
+    ///     (! "mySpeedyQtFunction" (:qt *c++*))       ; call library function (see also DEFINE-QT-WRAPPERS)
     static QHash<QString, QLibrary*> libraries;
     QString libName = toQString(l_lib_name);
     bool unload = (l_unload != Cnil);

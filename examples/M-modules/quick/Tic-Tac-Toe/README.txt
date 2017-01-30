@@ -49,6 +49,9 @@ Try the following:
 Since the logic of the buttons is defined in the QML file, changes to
 properties will be reflected immediately by the UI.
 
+Anywhere an 'objectName' is expected, you can optionally pass a QQuickItem
+directly, or NIL if you want to use the root item.
+
 Please see also "../qml-lisp/qml/example.lisp" for documentation on calling
 Lisp functions from QML.
 
