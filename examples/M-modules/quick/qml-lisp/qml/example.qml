@@ -36,6 +36,9 @@ Item {
 
         // (5) pass 'this' as first argument (can be accessed in Lisp via qml:*caller*)
         Lisp.call(this, "eql-user:show-properties-dialog")
+
+        // (6) i18n
+        console.log(Lisp.tr("internationalization"))
     }
 
     Text {
