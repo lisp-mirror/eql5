@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|relation|
    #:|relativeFilePath|
    #:|releaseControl|
    #:|releaseKeyboard|
@@ -197,6 +198,7 @@
    #:|right|
    #:|rmdir|
    #:|rmpath|
+   #:|roleNames|
    #:|role|
    #:|rollbackTransaction|
    #:|rollback|
@@ -710,6 +712,7 @@
    #:|setContextObject|
    #:|setContextProperty(QString,QObject*)|
    #:|setContextProperty(QString,QVariant)|
+   #:|setContextProperty|
    #:|setContext|
    #:|setContrast|
    #:|setControlType|
@@ -1183,6 +1186,7 @@
    #:|setMajorVersion|
    #:|setManagerProperty(QString,QString)|
    #:|setManagerProperty(QString,QStringList)|
+   #:|setManagerProperty|
    #:|setManualAperture|
    #:|setManualIsoSensitivity|
    #:|setManualShutterSpeed|
@@ -1191,12 +1195,8 @@
    #:|setMapping(QObject*,QString)|
    #:|setMapping(QObject*,QWidget*)|
    #:|setMapping(QObject*,int)|
+   #:|setMapping|
    #:|setMargins|
    #:|setMargin|
    #:|setMask(QBitmap)|
-   #:|setMask(QRegion)|
-   #:|setMask|
-   #:|setMaterial|
-   #:|setMatrix|
-   #:|setMaxCount|
-   #:|setMaxLength|))
+   #:|setMask(QRegion)|))

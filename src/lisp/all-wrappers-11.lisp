@@ -1,5 +1,20 @@
 (in-package :eql)
 
+(defun |setMask| (object &rest arguments)
+  (%qinvoke-method object nil "setMask" arguments))
+
+(defun |setMaterial| (object &rest arguments)
+  (%qinvoke-method object nil "setMaterial" arguments))
+
+(defun |setMatrix| (object &rest arguments)
+  (%qinvoke-method object nil "setMatrix" arguments))
+
+(defun |setMaxCount| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxCount" arguments))
+
+(defun |setMaxLength| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxLength" arguments))
+
 (defun |setMaxPendingConnections| (object &rest arguments)
   (%qinvoke-method object nil "setMaxPendingConnections" arguments))
 
@@ -2022,6 +2037,9 @@
 (defun |setViewportRect(QSize)| (object &rest arguments)
   (%qinvoke-method object nil "setViewportRect(QSize)" arguments))
 
+(defun |setViewportRect| (object &rest arguments)
+  (%qinvoke-method object nil "setViewportRect" arguments))
+
 (defun |setViewportSize| (object &rest arguments)
   (%qinvoke-method object nil "setViewportSize" arguments))
 
@@ -3581,21 +3599,3 @@
 
 (defun |timestamp| (object &rest arguments)
   (%qinvoke-method object nil "timestamp" arguments))
-
-(defun |time| (object &rest arguments)
-  (%qinvoke-method object nil "time" arguments))
-
-(defun |tip| (object &rest arguments)
-  (%qinvoke-method object nil "tip" arguments))
-
-(defun |titleBarWidget| (object &rest arguments)
-  (%qinvoke-method object nil "titleBarWidget" arguments))
-
-(defun |titleChanged| (object &rest arguments)
-  (%qinvoke-method object nil "titleChanged" arguments))
-
-(defun |titleFormat| (object &rest arguments)
-  (%qinvoke-method object nil "titleFormat" arguments))
-
-(defun |title| (object &rest arguments)
-  (%qinvoke-method object nil "title" arguments))

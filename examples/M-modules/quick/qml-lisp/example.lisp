@@ -9,12 +9,17 @@
 
 (use-package :qml)
 
+;; utils
+
+(defun sym (name package)
+  (find-symbol (symbol-name name) package))
+
 ;; for example (5) in "qml/example.qml"
 
 (defun show-properties-dialog ()
   (unless (find-package :properties)
     (load (in-home "gui/properties")))
-  (funcall (find-symbol "SHOW" :properties) qml:*caller*))
+  (funcall (sym :show :properties) qml:*caller*))
 
 (defun run ()
   ;; *quick-view* can be either a QQuickView or a QQuickWidget

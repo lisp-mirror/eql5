@@ -29,6 +29,7 @@
         "printerSelectionOption"
         "qreal *"
         "setAsDockMenu"
+        "setItemRoleNames"
         "setPrinterSelectionOption"
         "setupUi"
         "singleShot"
@@ -94,7 +95,6 @@
         "QGenericArgument"
         "QGenericMatrix"
         "QGraphicsTransform *"
-        "QHash"
         "QIODevice"
         "QList<Country>"
         "QList<T>"
@@ -247,11 +247,15 @@
                  (b (search *2-newlines* text :start2 a))
                  (in (make-string-input-stream (subseq text a b))))
             (x:while-it (read-line in nil nil)
-              (unless (dolist (skip *skip*)
-                        (when (search skip x:it)
-                          (return t)))
+              (unless (or (dolist (skip *skip*)
+                            (when (search skip x:it)
+                              (return t)))
+                          (and (search "QHash<" x:it)
+                               (not (search "QHash<int, QByteArray>" x:it)))) ; needed in QAbstractItemModel
                 (when (search "QByteArray const" x:it)
                   (setf x:it (x:string-substitute "const QByteArray" "QByteArray const" x:it)))
+                (when (search "QHash<int, QByteArray>" x:it)
+                  (setf x:it (x:string-substitute "QHashIntQByteArray" "QHash<int, QByteArray>" x:it)))
                 (when (find #\( x:it)
                   ;; special default values
                   (x:when-it* (search " = QRect( QPoint( 0, 0 ), QSize( -1, -1 ) )" x:it)

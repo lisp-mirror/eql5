@@ -76,6 +76,7 @@
    "virtual bool removeColumns ( int , int , const QModelIndex & = QModelIndex() )"
    "bool removeRow ( int , const QModelIndex & = QModelIndex() )"
    "virtual bool removeRows ( int , int , const QModelIndex & = QModelIndex() )"
+   "virtual QHashIntQByteArray roleNames () const"
    "virtual int rowCount ( const QModelIndex & = QModelIndex() ) const = 0"
    "virtual bool setData ( const QModelIndex & , const QVariant & , int = Qt::EditRole )"
    "virtual bool setHeaderData ( int , Qt::Orientation , const QVariant & , int = Qt::EditRole )"

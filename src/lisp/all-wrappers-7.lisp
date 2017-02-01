@@ -2919,6 +2919,9 @@
 (defun |createUuidV5(QUuid,QString).QUuid| (&rest arguments)
   (%qinvoke-method "QUuid" nil "createUuidV5(QUuid,QString)" arguments))
 
+(defun |createUuidV5.QUuid| (&rest arguments)
+  (%qinvoke-method "QUuid" nil "createUuidV5" arguments))
+
 (defun |createWidget| (object &rest arguments)
   (%qinvoke-method object nil "createWidget" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |directories| (object &rest arguments)
   (%qinvoke-method object nil "directories" arguments))
-
-(defun |directoryChanged| (object &rest arguments)
-  (%qinvoke-method object nil "directoryChanged" arguments))

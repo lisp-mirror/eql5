@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |directoryChanged| (object &rest arguments)
+  (%qinvoke-method object nil "directoryChanged" arguments))
+
 (defun |directoryEntered| (object &rest arguments)
   (%qinvoke-method object nil "directoryEntered" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |isGenerated(QString)| (object &rest arguments)
   (%qinvoke-method object nil "isGenerated(QString)" arguments))
-
-(defun |isGenerated(int)| (object &rest arguments)
-  (%qinvoke-method object nil "isGenerated(int)" arguments))

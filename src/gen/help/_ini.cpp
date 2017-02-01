@@ -6,7 +6,7 @@
 
 QT_BEGIN_NAMESPACE
 
-NumList LHelpContentModel::overrideIds = NumList() << 58 << 59 << 65 << 73 << 76;
+NumList LHelpContentModel::overrideIds = NumList() << 58 << 59 << 65 << 73 << 77;
 NumList LHelpContentWidget::overrideIds = NumList();
 NumList LHelpEngineCore::overrideIds = NumList();
 NumList LHelpIndexWidget::overrideIds = NumList();

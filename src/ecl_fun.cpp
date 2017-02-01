@@ -37,6 +37,7 @@ META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
 META_TYPE (T_QGradientStop,                    QGradientStop)
+META_TYPE (T_QHash_int_QByteArray,             QHashIntQByteArray);
 META_TYPE (T_QList_QAbstractAnimation,         QList<QAbstractAnimation*>)
 META_TYPE (T_QList_QAbstractButton,            QList<QAbstractButton*>)
 META_TYPE (T_QList_QAbstractState,             QList<QAbstractState*>)
@@ -768,6 +769,18 @@ static QList<QTextEdit::ExtraSelection> toQTextEditExtraSelectionList(cl_object 
             l_el = cl_rest(l_el); }}
     return l; }
 
+static QHashIntQByteArray toQHashIntQByteArray(cl_object l_alist) {
+    QHash<int, QByteArray> hash;
+    if(LISTP(l_alist)) {
+        cl_object l_el = l_alist;
+        while(l_el != Cnil) {
+            cl_object l_curr = cl_first(l_el);
+            int i = toInt(cl_car(l_curr));
+            QByteArray ba(toCString(cl_cdr(l_curr)));
+            hash.insert(i, ba);
+            l_el = cl_rest(l_el); }}
+    return hash; }
+
 // implicit pointer types
 TO_QT_TYPE_PTR  (QBitmap, qbitmap)
 TO_QT_TYPE_PTR2 (QBrush, qbrush)
@@ -1214,6 +1227,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_QFileInfoList == n)                    p = new QFileInfoList(toQFileInfoList(l_arg));
         else if(T_QGradient == n)                        p = new QGradient(toQGradient(l_arg));
         else if(T_QGradientStop == n)                    p = new QGradientStop(toQGradientStop(l_arg));
+        else if(T_QHash_int_QByteArray == n)             p = new QHash<int, QByteArray>(toQHashIntQByteArray(l_arg));
         else if(T_QList_QAbstractAnimation == n)         p = new QList<QAbstractAnimation*>(toQAbstractAnimationList(l_arg));
         else if(T_QList_QAbstractButton == n)            p = new QList<QAbstractButton*>(toQAbstractButtonList(l_arg));
         else if(T_QList_QAbstractState == n)             p = new QList<QAbstractState*>(toQAbstractStateList(l_arg));
@@ -2298,54 +2312,36 @@ QVariant callOverrideFun(void* fun, int id, const void** args, quint64 override_
     STATIC_SYMBOL_PKG (s_qt_object_pointer, "QT-OBJECT-POINTER", "EQL")
     int n = id - 1;
     int i = 0;
-    const char* type = 0;
+    const char* arg_type = 0;
     cl_object l_args = Cnil;
-    while((type = LObjects::override_arg_types[n][i + 1])) {
-        l_args = CONS(to_lisp_arg(MetaArg(type, (void*)args[i])), l_args);
+    while((arg_type = LObjects::override_arg_types[n][i + 1])) {
+        l_args = CONS(to_lisp_arg(MetaArg(arg_type, (void*)args[i])), l_args);
         ++i; }
     LObjects::call_default = false; // see qcall_default()
     cl_object l_ret = call_lisp_fun((cl_object)fun, cl_nreverse(l_args), override_id);
     QVariant ret;
     const char* ret_type = LObjects::override_arg_types[n][0];
     if(ret_type) {
-        QByteArray type(ret_type);
+        QByteArray retType(ret_type);
         void* pointer = 0;
         if(cl_funcall(2, s_qt_object_p, l_ret) == Ct) {
             pointer = (void*)fixnnint(cl_funcall(2, s_qt_object_pointer, l_ret)); }
-        if(type.startsWith('Q') && type.endsWith('*')) {
-            ret = qVariantFromValue(pointer); }
+        if(retType.startsWith('Q') && retType.endsWith('*')) {
+            ret.setValue(pointer); }
         else {
             const int type = QMetaType::type(ret_type);
-            switch(type) {
-                // implicit pointer types
-                case QMetaType::QBrush:       ret = qVariantFromValue(*(QBrush*)pointer); break;
-                case QMetaType::QCursor:      ret = qVariantFromValue(*(QCursor*)pointer); break;
-                case QMetaType::QDate:        ret = qVariantFromValue(*(QDate*)pointer); break;
-                case QMetaType::QDateTime:    ret = qVariantFromValue(*(QDateTime*)pointer); break;
-                case QMetaType::QFont:        ret = qVariantFromValue(*(QFont*)pointer); break;
-                case QMetaType::QIcon:        ret = qVariantFromValue(*(QIcon*)pointer); break;
-                case QMetaType::QImage:       ret = qVariantFromValue(*(QImage*)pointer); break;
-                case QMetaType::QKeySequence: ret = qVariantFromValue(*(QKeySequence*)pointer); break;
-                case QMetaType::QLocale:      ret = qVariantFromValue(*(QLocale*)pointer); break;
-                case QMetaType::QPalette:     ret = qVariantFromValue(*(QPalette*)pointer); break;
-                case QMetaType::QPen:         ret = qVariantFromValue(*(QPen*)pointer); break;
-                case QMetaType::QPixmap:      ret = qVariantFromValue(*(QPixmap*)pointer); break;
-                case QMetaType::QTextFormat:  ret = qVariantFromValue(*(QTextFormat*)pointer); break;
-                case QMetaType::QTextLength:  ret = qVariantFromValue(*(QTextLength*)pointer); break;
-                case QMetaType::QTime:        ret = qVariantFromValue(*(QTime*)pointer); break;
-                case QMetaType::QUrl:         ret = qVariantFromValue(*(QUrl*)pointer); break;
-                case QMetaType::QVariant:     ret = qVariantFromValue(*(QVariant*)pointer); break;
-            default:
-                if(type == T_QFileInfo)                       ret = qVariantFromValue(*(QFileInfo*)pointer);
-                else if(type == T_QModelIndex)                ret = qVariantFromValue(*(QModelIndex*)pointer);
-                else if(type == T_QPainterPath)               ret = qVariantFromValue(*(QPainterPath*)pointer);
-                else if(type == T_QTableWidgetSelectionRange) ret = qVariantFromValue(*(QTableWidgetSelectionRange*)pointer);
-                else if(type == T_QTextBlock)                 ret = qVariantFromValue(*(QTextBlock*)pointer);
-                else if(type == T_QTextCharFormat)            ret = qVariantFromValue(*(QTextCharFormat*)pointer);
-                else if(type == T_QTextCursor)                ret = qVariantFromValue(*(QTextCursor*)pointer);
-                else if(type == T_QTextDocumentFragment)      ret = qVariantFromValue(*(QTextDocumentFragment*)pointer);
-                else if(type == T_QTextOption)                ret = qVariantFromValue(*(QTextOption*)pointer);
-                else                                          ret = toQVariant(l_ret, ret_type); }}}
+            if(type == QMetaType::QVariant)               ret = *(QVariant*)pointer;
+            else if(type == T_QFileInfo)                  ret.setValue(*(QFileInfo*)pointer);
+            else if(type == T_QHash_int_QByteArray)       ret.setValue(toQHashIntQByteArray(l_ret));
+            else if(type == T_QModelIndex)                ret.setValue(*(QModelIndex*)pointer);
+            else if(type == T_QPainterPath)               ret.setValue(*(QPainterPath*)pointer);
+            else if(type == T_QTableWidgetSelectionRange) ret.setValue(*(QTableWidgetSelectionRange*)pointer);
+            else if(type == T_QTextBlock)                 ret.setValue(*(QTextBlock*)pointer);
+            else if(type == T_QTextCharFormat)            ret.setValue(*(QTextCharFormat*)pointer);
+            else if(type == T_QTextCursor)                ret.setValue(*(QTextCursor*)pointer);
+            else if(type == T_QTextDocumentFragment)      ret.setValue(*(QTextDocumentFragment*)pointer);
+            else if(type == T_QTextOption)                ret.setValue(*(QTextOption*)pointer);
+            else                                          ret = toQVariant(l_ret, 0, type); }}
     return ret; }
 
 cl_object qadd_event_filter(cl_object l_obj, cl_object l_ev, cl_object l_fun) {

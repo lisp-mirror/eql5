@@ -233,7 +233,8 @@ typedef QListIterator<MetaArg>   MetaArgIterator;
 typedef QList<QByteArray>        StrList;
 typedef QList<int>               IntList;
 
-class QByteArray;
+typedef QHash<int, QByteArray>   QHashIntQByteArray;
+
 class QObject;
 class QEvent;
 

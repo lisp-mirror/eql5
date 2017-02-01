@@ -1,5 +1,10 @@
 (defpackage :eql
   (:export
+   #:|setMask|
+   #:|setMaterial|
+   #:|setMatrix|
+   #:|setMaxCount|
+   #:|setMaxLength|
    #:|setMaxPendingConnections|
    #:|setMaxVisibleItems|
    #:|setMaximumAnisotropy|
@@ -674,6 +679,7 @@
    #:|setViewportMargins|
    #:|setViewportRect(QRect)|
    #:|setViewportRect(QSize)|
+   #:|setViewportRect|
    #:|setViewportSize|
    #:|setViewportUpdateMode|
    #:|setViewport|
@@ -1193,10 +1199,4 @@
    #:|timeout|
    #:|timerId|
    #:|timerType|
-   #:|timestamp|
-   #:|time|
-   #:|tip|
-   #:|titleBarWidget|
-   #:|titleChanged|
-   #:|titleFormat|
-   #:|title|))
+   #:|timestamp|))

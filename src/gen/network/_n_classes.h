@@ -123,7 +123,7 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery& x1 = QNetworkProxyQuery()) { quint64 id = LObjects::override_id(unique, 517); void* fun = LObjects::overrideFun(id); QList<QNetworkProxy> ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 517, args, id).value<QList<QNetworkProxy> >(); } return ret; }
+    QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery& x1 = QNetworkProxyQuery()) { quint64 id = LObjects::override_id(unique, 518); void* fun = LObjects::overrideFun(id); QList<QNetworkProxy> ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 518, args, id).value<QList<QNetworkProxy> >(); } return ret; }
 };
 
 class LNetworkProxyQuery : public QNetworkProxyQuery {

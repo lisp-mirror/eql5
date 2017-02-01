@@ -1154,6 +1154,7 @@
                     "QChar"
                     "QFileInfoList"
                     "QGradientStop"
+                    "QHashIntQByteArray"
                     "QLine"
                     "QLineF"
                     "QList<QAction*>"

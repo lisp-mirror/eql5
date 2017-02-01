@@ -6,14 +6,14 @@
 
 QT_BEGIN_NAMESPACE
 
-NumList LAbstractSocket::overrideIds = NumList() << 117 << 118 << 119 << 120 << 121 << 122 << 123 << 124 << 125 << 126 << 127 << 128 << 129 << 130 << 131 << 132 << 133 << 134 << 135 << 136;
+NumList LAbstractSocket::overrideIds = NumList() << 118 << 119 << 120 << 121 << 122 << 123 << 124 << 125 << 126 << 127 << 128 << 129 << 130 << 131 << 132 << 133 << 134 << 135 << 136 << 137;
 NumList LHttpMultiPart::overrideIds = NumList();
-NumList LLocalServer::overrideIds = NumList() << 285 << 286;
-NumList LLocalSocket::overrideIds = NumList() << 127 << 128 << 129 << 130 << 131 << 137 << 132 << 133 << 134 << 136;
+NumList LLocalServer::overrideIds = NumList() << 286 << 287;
+NumList LLocalSocket::overrideIds = NumList() << 128 << 129 << 130 << 131 << 132 << 138 << 133 << 134 << 135 << 137;
 NumList LNetworkAccessManager::overrideIds = NumList();
-NumList LNetworkCookieJar::overrideIds = NumList() << 291 << 292 << 293 << 294 << 295 << 296;
-NumList LNetworkDiskCache::overrideIds = NumList() << 297 << 298 << 299 << 300 << 301;
-NumList LTcpServer::overrideIds = NumList() << 285 << 286;
+NumList LNetworkCookieJar::overrideIds = NumList() << 292 << 293 << 294 << 295 << 296 << 297;
+NumList LNetworkDiskCache::overrideIds = NumList() << 298 << 299 << 300 << 301 << 302;
+NumList LTcpServer::overrideIds = NumList() << 286 << 287;
 NumList LTcpSocket::overrideIds = NumList();
 NumList LUdpSocket::overrideIds = NumList();
 NumList LAuthenticator::overrideIds = NumList();
@@ -26,7 +26,7 @@ NumList LNetworkConfiguration::overrideIds = NumList();
 NumList LNetworkCookie::overrideIds = NumList();
 NumList LNetworkInterface::overrideIds = NumList();
 NumList LNetworkProxy::overrideIds = NumList();
-NumList LNetworkProxyFactory::overrideIds = NumList() << 517;
+NumList LNetworkProxyFactory::overrideIds = NumList() << 518;
 NumList LNetworkProxyQuery::overrideIds = NumList();
 NumList LNetworkRequest::overrideIds = NumList();
 NumList LSslCertificate::overrideIds = NumList();

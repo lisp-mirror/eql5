@@ -973,6 +973,7 @@
    #:|createUuidV3.QUuid|
    #:|createUuidV5(QUuid,QByteArray).QUuid|
    #:|createUuidV5(QUuid,QString).QUuid|
+   #:|createUuidV5.QUuid|
    #:|createWidget|
    #:|createWindowContainer.QWidget|
    #:|createdWidgets|
@@ -1198,8 +1199,7 @@
    #:|dirName|
    #:|directionChanged|
    #:|direction|
-   #:|directories|
-   #:|directoryChanged|))
+   #:|directories|))
 
 (in-package :eql)
 

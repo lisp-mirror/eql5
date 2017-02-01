@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |relation| (object &rest arguments)
+  (%qinvoke-method object nil "relation" arguments))
+
 (defun |relativeFilePath| (object &rest arguments)
   (%qinvoke-method object nil "relativeFilePath" arguments))
 
@@ -590,6 +593,9 @@
 
 (defun |rmpath| (object &rest arguments)
   (%qinvoke-method object nil "rmpath" arguments))
+
+(defun |roleNames| (object &rest arguments)
+  (%qinvoke-method object nil "roleNames" arguments))
 
 (defun |role| (object &rest arguments)
   (%qinvoke-method object nil "role" arguments))
@@ -2130,6 +2136,9 @@
 (defun |setContextProperty(QString,QVariant)| (object &rest arguments)
   (%qinvoke-method object nil "setContextProperty(QString,QVariant)" arguments))
 
+(defun |setContextProperty| (object &rest arguments)
+  (%qinvoke-method object nil "setContextProperty" arguments))
+
 (defun |setContext| (object &rest arguments)
   (%qinvoke-method object nil "setContext" arguments))
 
@@ -3549,6 +3558,9 @@
 (defun |setManagerProperty(QString,QStringList)| (object &rest arguments)
   (%qinvoke-method object nil "setManagerProperty(QString,QStringList)" arguments))
 
+(defun |setManagerProperty| (object &rest arguments)
+  (%qinvoke-method object nil "setManagerProperty" arguments))
+
 (defun |setManualAperture| (object &rest arguments)
   (%qinvoke-method object nil "setManualAperture" arguments))
 
@@ -3573,6 +3585,9 @@
 (defun |setMapping(QObject*,int)| (object &rest arguments)
   (%qinvoke-method object nil "setMapping(QObject*,int)" arguments))
 
+(defun |setMapping| (object &rest arguments)
+  (%qinvoke-method object nil "setMapping" arguments))
+
 (defun |setMargins| (object &rest arguments)
   (%qinvoke-method object nil "setMargins" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |setMask(QRegion)| (object &rest arguments)
   (%qinvoke-method object nil "setMask(QRegion)" arguments))
-
-(defun |setMask| (object &rest arguments)
-  (%qinvoke-method object nil "setMask" arguments))
-
-(defun |setMaterial| (object &rest arguments)
-  (%qinvoke-method object nil "setMaterial" arguments))
-
-(defun |setMatrix| (object &rest arguments)
-  (%qinvoke-method object nil "setMatrix" arguments))
-
-(defun |setMaxCount| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxCount" arguments))
-
-(defun |setMaxLength| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxLength" arguments))

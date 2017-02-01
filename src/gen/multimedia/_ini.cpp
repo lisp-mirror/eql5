@@ -8,18 +8,18 @@ QT_BEGIN_NAMESPACE
 
 NumList LAudioOutput::overrideIds = NumList();
 NumList LAudioRecorder::overrideIds = NumList();
-NumList LCamera::overrideIds = NumList() << 178;
-NumList LCameraImageCapture::overrideIds = NumList() << 161 << 183;
+NumList LCamera::overrideIds = NumList() << 179;
+NumList LCameraImageCapture::overrideIds = NumList() << 162 << 184;
 NumList LCameraViewfinder::overrideIds = NumList();
-NumList LGraphicsVideoItem::overrideIds = NumList() << 260 << 231;
+NumList LGraphicsVideoItem::overrideIds = NumList() << 261 << 232;
 NumList LMediaControl::overrideIds = NumList();
-NumList LMediaObject::overrideIds = NumList() << 178 << 179 << 180 << 181 << 182;
-NumList LMediaPlayer::overrideIds = NumList() << 178;
-NumList LMediaPlaylist::overrideIds = NumList() << 161;
-NumList LMediaRecorder::overrideIds = NumList() << 161;
-NumList LRadioTuner::overrideIds = NumList() << 178;
+NumList LMediaObject::overrideIds = NumList() << 179 << 180 << 181 << 182 << 183;
+NumList LMediaPlayer::overrideIds = NumList() << 179;
+NumList LMediaPlaylist::overrideIds = NumList() << 162;
+NumList LMediaRecorder::overrideIds = NumList() << 162;
+NumList LRadioTuner::overrideIds = NumList() << 179;
 NumList LVideoWidget::overrideIds = NumList() << 25 << 35 << 39 << 20 << 40 << 41;
-NumList LVideoWidgetControl::overrideIds = NumList() << 420 << 421 << 422 << 423 << 424 << 425 << 426 << 427 << 428 << 429 << 430 << 431 << 432;
+NumList LVideoWidgetControl::overrideIds = NumList() << 421 << 422 << 423 << 424 << 425 << 426 << 427 << 428 << 429 << 430 << 431 << 432 << 433;
 NumList LAudioDeviceInfo::overrideIds = NumList();
 NumList LAudioEncoderSettings::overrideIds = NumList();
 NumList LAudioFormat::overrideIds = NumList();

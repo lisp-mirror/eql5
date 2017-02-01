@@ -1,5 +1,11 @@
 (defpackage :eql
   (:export
+   #:|time|
+   #:|tip|
+   #:|titleBarWidget|
+   #:|titleChanged|
+   #:|titleFormat|
+   #:|title|
    #:|toAce.QUrl|
    #:|toAffine|
    #:|toBitArray|

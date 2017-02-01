@@ -1,5 +1,8 @@
 (in-package :eql)
 
+(defun |isGenerated(int)| (object &rest arguments)
+  (%qinvoke-method object nil "isGenerated(int)" arguments))
+
 (defun |isGenerated| (object &rest arguments)
   (%qinvoke-method object nil "isGenerated" arguments))
 
@@ -3596,6 +3599,3 @@
 
 (defun |relationModel| (object &rest arguments)
   (%qinvoke-method object nil "relationModel" arguments))
-
-(defun |relation| (object &rest arguments)
-  (%qinvoke-method object nil "relation" arguments))

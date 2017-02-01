@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|isGenerated(int)|
    #:|isGenerated|
    #:|isGrayscale|
    #:|isGridVisible|
@@ -1198,5 +1199,4 @@
    #:|reindexDocumentation|
    #:|rejected|
    #:|reject|
-   #:|relationModel|
-   #:|relation|))
+   #:|relationModel|))

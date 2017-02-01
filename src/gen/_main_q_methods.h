@@ -109,6 +109,7 @@ public:
     Q_INVOKABLE bool MremoveColumns(QAbstractItemModel* o, int x1, int x2, const QModelIndex& x3 = QModelIndex()) { return o->removeColumns(x1, x2, x3); }
     Q_INVOKABLE bool MremoveRow(QAbstractItemModel* o, int x1, const QModelIndex& x2 = QModelIndex()) { return o->removeRow(x1, x2); }
     Q_INVOKABLE bool MremoveRows(QAbstractItemModel* o, int x1, int x2, const QModelIndex& x3 = QModelIndex()) { return o->removeRows(x1, x2, x3); }
+    Q_INVOKABLE QHashIntQByteArray MroleNames(QAbstractItemModel* o) const { return o->roleNames(); }
     Q_INVOKABLE int MrowCount(QAbstractItemModel* o, const QModelIndex& x1 = QModelIndex()) const { return o->rowCount(x1); }
     Q_INVOKABLE bool MsetData(QAbstractItemModel* o, const QModelIndex& x1, const QVariant& x2, int x3 = Qt::EditRole) { return o->setData(x1, x2, x3); }
     Q_INVOKABLE bool MsetHeaderData(QAbstractItemModel* o, int x1, Qt::Orientation x2, const QVariant& x3, int x4 = Qt::EditRole) { return o->setHeaderData(x1, x2, x3, x4); }

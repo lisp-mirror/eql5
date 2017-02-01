@@ -1,5 +1,23 @@
 (in-package :eql)
 
+(defun |time| (object &rest arguments)
+  (%qinvoke-method object nil "time" arguments))
+
+(defun |tip| (object &rest arguments)
+  (%qinvoke-method object nil "tip" arguments))
+
+(defun |titleBarWidget| (object &rest arguments)
+  (%qinvoke-method object nil "titleBarWidget" arguments))
+
+(defun |titleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "titleChanged" arguments))
+
+(defun |titleFormat| (object &rest arguments)
+  (%qinvoke-method object nil "titleFormat" arguments))
+
+(defun |title| (object &rest arguments)
+  (%qinvoke-method object nil "title" arguments))
+
 (defun |toAce.QUrl| (&rest arguments)
   (%qinvoke-method "QUrl" nil "toAce" arguments))
 

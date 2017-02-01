@@ -1,5 +1,6 @@
 (defpackage :eql
   (:export
+   #:|directoryChanged|
    #:|directoryEntered|
    #:|directoryLoaded|
    #:|directoryUrlEntered|
@@ -1198,5 +1199,4 @@
    #:|isForwardOnly|
    #:|isFrameFormat|
    #:|isFullScreen|
-   #:|isGenerated(QString)|
-   #:|isGenerated(int)|))
+   #:|isGenerated(QString)|))
