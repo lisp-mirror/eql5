@@ -2524,12 +2524,12 @@ cl_object qtranslate(cl_object l_con, cl_object l_src, cl_object l_n) {
     ecl_process_env()->nvalues = 1;
     QByteArray context(toQString(l_con).toUtf8());
     QByteArray source(toQString(l_src).toUtf8());
-    int n = toInt(l_n);
+    int n = (int)toFloat(l_n); // for QML (value comes from JS)
     cl_object l_ret;
-    if(n > 0) {
-        l_ret = from_qstring(QCoreApplication::translate(context, source, 0, n)); }
-    else {
+    if(n == -1) {
         l_ret = from_qstring(QCoreApplication::translate(context, source)); }
+    else {
+        l_ret = from_qstring(QCoreApplication::translate(context, source, 0, n)); }
     return l_ret; }
 
 cl_object qlocal8bit(cl_object l_str) {
