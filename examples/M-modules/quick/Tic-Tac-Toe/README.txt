@@ -38,6 +38,10 @@ Always add these 2 "import" lines for Lisp access:
 The "eql5.js" file is compiled as a resource into the eql5 shared library,
 see "eql5/src/eql5.js" and "eql5/src/eql5.qrc".
 
+To reload the QML file after changes, do:
+
+    (qml:reload)
+
 
 NOTES
 =====
