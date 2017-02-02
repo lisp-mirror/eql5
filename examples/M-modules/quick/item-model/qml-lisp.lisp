@@ -68,7 +68,7 @@
 
 (defun qml-apply (caller function arguments)
   "Every 'Lisp.call()' or 'Lisp.apply()' function call in QML will call this function. The variable *CALLER* will be bound to the calling QQuickItem, if passed with 'this' as first argument to 'Lisp.call()' / 'Lisp.apply()'."
-  (let* ((*caller* (if (qnull caller) nil (qt-object-? caller)))
+  (let* ((*caller* (if (qnull caller) *caller* (qt-object-? caller)))
          (object (apply (string-to-symbol function)
                         arguments)))
     (if (stringp object)

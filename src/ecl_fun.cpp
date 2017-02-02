@@ -2526,10 +2526,10 @@ cl_object qtranslate(cl_object l_con, cl_object l_src, cl_object l_n) {
     QByteArray source(toQString(l_src).toUtf8());
     int n = toInt(l_n);
     cl_object l_ret;
-    if(n == -1) {
-        l_ret = from_qstring(QCoreApplication::translate(context, source)); }
-    else {
+    if(n > 0) {
         l_ret = from_qstring(QCoreApplication::translate(context, source, 0, n)); }
+    else {
+        l_ret = from_qstring(QCoreApplication::translate(context, source)); }
     return l_ret; }
 
 cl_object qlocal8bit(cl_object l_str) {

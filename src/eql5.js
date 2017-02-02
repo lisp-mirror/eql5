@@ -54,4 +54,4 @@ function apply(arg1, arg2, arg3) {
 
 function tr(source, context, pluralNumber) {
   // for i18n
-  return EQL5.apply(null, "eql:qtranslate", [context, source, (typeof(pluralNumber) == "number") ? pluralNumber : 0]); }
+  return EQL5.apply(null, "eql:qtranslate", [context, source, pluralNumber]); }
