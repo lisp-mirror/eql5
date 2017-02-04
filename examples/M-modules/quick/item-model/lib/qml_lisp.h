@@ -2,6 +2,7 @@
 #define LIB_H
 
 #include <QtQml>
+#include <QQuickPaintedItem>
 
 #ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
@@ -19,6 +20,17 @@ class Lisp : public QObject {
 public:
     Q_INVOKABLE QVariant apply(QObject*, const QString&, const QVariantList& = QVariantList());
 };
+
+class PaintedItem : public QQuickPaintedItem {
+    Q_OBJECT
+
+public:
+    PaintedItem(QQuickItem* parent = 0) : QQuickPaintedItem(parent) {}
+
+    void paint(QPainter*);
+};
+
+
 
 QT_END_NAMESPACE
 

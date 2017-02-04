@@ -16,7 +16,7 @@
 (defun set-my-model ()
   ;; this function needs to be called after every change to *items*
   (qlet ((data (qvariant-from-value *items* "QStringList")))
-    (|setContextProperty| (|rootContext| qml:*quick-view*) "myModel" data)))
+    (|setContextProperty| (|rootContext| qml:*quick-view*) "myModel" data))) ; see 'myModel' in QML
 
 (defun change-items (items)
   (setf *items* items)

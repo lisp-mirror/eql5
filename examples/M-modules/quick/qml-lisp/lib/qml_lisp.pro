@@ -1,4 +1,4 @@
-QT          += qml
+QT          += qml quick
 TEMPLATE    = lib
 CONFIG      += plugin release
 INCLUDEPATH += ../../../../../src

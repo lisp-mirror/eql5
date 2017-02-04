@@ -55,8 +55,8 @@
                  (or data *empty-variant*))))
   (qoverride *animal-model* "roleNames()"
              (lambda ()
-               (list (cons +kind-role+ "kind")
-                     (cons +size-role+ "size")))))
+               (list (cons +kind-role+ "kind")     ; see 'kind' in QML
+                     (cons +size-role+ "size"))))) ; see 'size' in QML
 
 (defun run ()
   ;; data
@@ -66,7 +66,7 @@
   (add-animal "mouse" "small")
   ;; view
   (setf qml:*quick-view* (qnew "QQuickView"))
-  (|setContextProperty| (|rootContext| qml:*quick-view*) "myModel" *animal-model*)
+  (|setContextProperty| (|rootContext| qml:*quick-view*) "myModel" *animal-model*) ; see 'myModel' in QML
   (|setSource| qml:*quick-view* (|fromLocalFile.QUrl| "qml/abstract-model.qml"))
   (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
   (|resize| qml:*quick-view* '(200 250))
