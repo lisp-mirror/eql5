@@ -51,7 +51,3 @@ function apply(arg1, arg2, arg3) {
     name = arg1;
     args = arg2; }
   return checkEval(EQL5.apply(caller, name, args)); }
-
-function tr(source, context, pluralN) {
-  // for i18n
-  return EQL5.apply(null, "qtranslate", [context, source, (undefined != pluralN) ? pluralN : -1]); }

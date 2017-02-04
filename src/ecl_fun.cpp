@@ -2524,7 +2524,7 @@ cl_object qtranslate(cl_object l_con, cl_object l_src, cl_object l_n) {
     ecl_process_env()->nvalues = 1;
     QByteArray context(toQString(l_con).toUtf8());
     QByteArray source(toQString(l_src).toUtf8());
-    int n = (int)toFloat(l_n); // for QML (value comes from JS)
+    int n = toInt(l_n);
     cl_object l_ret;
     if(n == -1) {
         l_ret = from_qstring(QCoreApplication::translate(context, source)); }
