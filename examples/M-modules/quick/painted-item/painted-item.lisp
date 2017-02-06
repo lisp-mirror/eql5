@@ -18,10 +18,11 @@
 
 (defun run ()
   ;; *quick-view* can be either a QQuickView or a QQuickWidget
-  (setf qml:*quick-view* (qnew "QQuickView(QUrl)"
-                               (|fromLocalFile.QUrl| "qml/painted-item.qml")))
-  (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| qml:*quick-view* '(350 350))
-  (|show| qml:*quick-view*))
+  (setf qml:*quick-view* (qnew "QQuickView"))
+  (x:do-with qml:*quick-view*
+    (|setSource| (|fromLocalFile.QUrl| "qml/painted-item.qml"))
+    (|setResizeMode| |QQuickView.SizeRootObjectToView|)
+    (|resize| '(350 350))
+    (|show|)))
 
 (run)

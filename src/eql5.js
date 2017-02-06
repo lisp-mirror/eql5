@@ -1,20 +1,3 @@
-//
-// Helper functions for convenient QML/EQL5 integration.
-//
-// Both 'Lisp.call()' and 'Lisp.apply()' can be called passing optionally
-// 'this' as first argument.
-//
-// The 'this' argument (a QQuickItem) can be accessed in Lisp via qml:*caller*.
-//
-// Examples:
-//
-//   Lisp.call("cl:foo", x, y)
-//   Lisp.call(this, "cl:foo", x, y)
-//
-//   Lisp.apply("cl:foo", [x, y])
-//   Lisp.apply(this, "cl:foo", [x, y])
-//
-
 function checkEval(arg) {
   // prepared in Lisp for JS evaluation
   if((typeof(arg) == "string") && (arg.substr(0, 3) == "#<>")) {
@@ -30,7 +13,7 @@ function call() {
     caller = arg1;
     name = arguments[1];
     start++; }
-  else {
+  else if(typeof(arg1) == "string") {
     name = arg1; }
   if(arguments.length > start) {
     var len = arguments.length - start;
@@ -47,7 +30,7 @@ function apply(arg1, arg2, arg3) {
     caller = arg1;
     name = arg2;
     args = arg3; }
-  else {
+  else if(typeof(arg1) == "string") {
     name = arg1;
     args = arg2; }
   return checkEval(EQL5.apply(caller, name, args)); }

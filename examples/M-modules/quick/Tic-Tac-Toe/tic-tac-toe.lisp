@@ -17,10 +17,11 @@
 
 (defun run ()
   ;; *quick-view* can be either a QQuickView or a QQuickWidget
-  (setf qml:*quick-view* (qnew "QQuickView(QUrl)"
-                               (|fromLocalFile.QUrl| "qml/tic-tac-toe.qml")))
-  (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| qml:*quick-view* '(420 480))
-  (|show| qml:*quick-view*))
+  (setf qml:*quick-view* (qnew "QQuickView"))
+  (x:do-with qml:*quick-view*
+    (|setSource| (|fromLocalFile.QUrl| "qml/tic-tac-toe.qml"))
+    (|setResizeMode| |QQuickView.SizeRootObjectToView|)
+    (|resize| '(420 480))
+    (|show|)))
 
 (run)

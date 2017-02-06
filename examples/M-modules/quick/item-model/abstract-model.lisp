@@ -66,10 +66,12 @@
   (add-animal "mouse" "small")
   ;; view
   (setf qml:*quick-view* (qnew "QQuickView"))
-  (|setContextProperty| (|rootContext| qml:*quick-view*) "myModel" *animal-model*) ; see 'myModel' in QML
-  (|setSource| qml:*quick-view* (|fromLocalFile.QUrl| "qml/abstract-model.qml"))
-  (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| qml:*quick-view* '(200 250))
-  (|show| qml:*quick-view*))
+  (|setContextProperty| (|rootContext| qml:*quick-view*)
+                        "myModel" *animal-model*) ; see 'myModel' in QML
+  (x:do-with qml:*quick-view*
+    (|setSource| (|fromLocalFile.QUrl| "qml/abstract-model.qml"))
+    (|setResizeMode| |QQuickView.SizeRootObjectToView|)
+    (|resize| '(200 250))
+    (|show|)))
 
 (run)

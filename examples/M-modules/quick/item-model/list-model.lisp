@@ -25,9 +25,10 @@
 (defun run ()
   (setf qml:*quick-view* (qnew "QQuickView"))
   (set-my-model) ; add before setting the QML source file
-  (|setSource| qml:*quick-view* (|fromLocalFile.QUrl| "qml/list-model.qml"))
-  (|setResizeMode| qml:*quick-view* |QQuickView.SizeRootObjectToView|)
-  (|resize| qml:*quick-view* '(150 250))
-  (|show| qml:*quick-view*))
+  (x:do-with qml:*quick-view*
+    (|setSource| (|fromLocalFile.QUrl| "qml/list-model.qml"))
+    (|setResizeMode| |QQuickView.SizeRootObjectToView|)
+    (|resize| '(150 250))
+    (|show|)))
 
 (run)
