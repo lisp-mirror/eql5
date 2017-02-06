@@ -12,7 +12,7 @@
         "QQmlFileSelector"
         "QQmlPropertyMap"
         "//QQuickFramebufferObject"
-        "QQuickImageResponse"
+        ;;"QQuickImageResponse" Qt >= 5.6
         "QQuickItem"
         "QQuickItemGrabResult"
         "QQuickPaintedItem"

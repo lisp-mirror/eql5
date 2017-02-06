@@ -2662,7 +2662,6 @@
    "protected void removePropertyWatch ( const QByteArray & )")
   (("QMediaPlayer" . "QMediaObject")
    "new QMediaPlayer ( QObject * = 0 , Flags = 0 )"
-   "QAudio::Role audioRole () const"
    "int bufferStatus () const"
    "QMediaContent currentMedia () const"
    "QNetworkConfiguration currentNetworkConfiguration () const"
@@ -2678,12 +2677,10 @@
    "qreal playbackRate () const"
    "QMediaPlaylist * playlist () const"
    "qint64 position () const"
-   "void setAudioRole ( QAudio::Role )"
    "void setVideoOutput ( QVideoWidget * )"
    "void setVideoOutput ( QGraphicsVideoItem * )"
    "void setVideoOutput ( QAbstractVideoSurface * )"
    "State state () const"
-   "QList<QAudio::Role> supportedAudioRoles () const"
    "int volume () const"
    "virtual QMultimedia::AvailabilityStatus availability () const"
    "static QMultimedia::SupportEstimate hasSupport ( const QString & , const QStringList & = QStringList() , Flags = 0 )")
@@ -2704,7 +2701,6 @@
    "void load ( const QUrl & , const char * = 0 )"
    "QMediaContent media ( int ) const"
    "int mediaCount () const"
-   "bool moveMedia ( int , int )"
    "int nextIndex ( int = 1 ) const"
    "PlaybackMode playbackMode () const"
    "int previousIndex ( int = 1 ) const"
@@ -3611,10 +3607,6 @@
    "virtual bool isTextureProvider () const"
    "virtual void releaseResources ()"
    "virtual QSGTextureProvider * textureProvider () const")
-  (("QQuickImageResponse" . "QObject")
-   "new QQuickImageResponse ()"
-   "virtual QString errorString () const"
-   "virtual QQuickTextureFactory * textureFactory () const = 0")
   (("QQuickItem" . "QObject")
    "new QQuickItem ( QQuickItem * = 0 )"
    "bool acceptHoverEvents () const"
@@ -3762,8 +3754,7 @@
    "virtual QSGTexture * createTexture ( QQuickWindow * ) const = 0"
    "virtual QImage image () const"
    "virtual int textureByteCount () const = 0"
-   "virtual QSize textureSize () const = 0"
-   "static QQuickTextureFactory * textureFactoryForImage ( const QImage & )")
+   "virtual QSize textureSize () const = 0")
   (("QQuickView" . "QQuickWindow")
    "new QQuickView ( QWindow * = 0 )"
    "new QQuickView ( QQmlEngine * , QWindow * )"

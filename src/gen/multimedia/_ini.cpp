@@ -19,7 +19,7 @@ NumList LMediaPlaylist::overrideIds = NumList() << 162;
 NumList LMediaRecorder::overrideIds = NumList() << 162;
 NumList LRadioTuner::overrideIds = NumList() << 179;
 NumList LVideoWidget::overrideIds = NumList() << 25 << 35 << 39 << 20 << 40 << 41;
-NumList LVideoWidgetControl::overrideIds = NumList() << 421 << 422 << 423 << 424 << 425 << 426 << 427 << 428 << 429 << 430 << 431 << 432 << 433;
+NumList LVideoWidgetControl::overrideIds = NumList() << 419 << 420 << 421 << 422 << 423 << 424 << 425 << 426 << 427 << 428 << 429 << 430 << 431;
 NumList LAudioDeviceInfo::overrideIds = NumList();
 NumList LAudioEncoderSettings::overrideIds = NumList();
 NumList LAudioFormat::overrideIds = NumList();
@@ -51,9 +51,9 @@ void ini() {
     LObjects::Q[128] = new Q129;
     LObjects::Q[129] = new Q130;
     LObjects::Q[130] = new Q131;
-    LObjects::Q[187] = new Q188;
+    LObjects::Q[186] = new Q187;
+    LObjects::Q[262] = new Q263;
     LObjects::Q[263] = new Q264;
-    LObjects::Q[264] = new Q265;
     LObjects::N[17] = new N18;
     LObjects::N[18] = new N19;
     LObjects::N[19] = new N20;
@@ -62,9 +62,9 @@ void ini() {
     LObjects::N[96] = new N97;
     LObjects::N[116] = new N117;
     LObjects::N[117] = new N118;
+    LObjects::N[260] = new N261;
     LObjects::N[261] = new N262;
-    LObjects::N[262] = new N263;
-    LObjects::N[263] = new N264; }
+    LObjects::N[262] = new N263; }
 
 const QMetaObject* staticMetaObject(int n) {
     const QMetaObject* m = 0;
@@ -85,9 +85,9 @@ const QMetaObject* staticMetaObject(int n) {
         case 129: m = &QMediaPlaylist::staticMetaObject; break;
         case 130: m = &QMediaRecorder::staticMetaObject; break;
         case 131: m = &QMediaService::staticMetaObject; break;
-        case 188: m = &QRadioTuner::staticMetaObject; break;
-        case 264: m = &QVideoWidget::staticMetaObject; break;
-        case 265: m = &QVideoWidgetControl::staticMetaObject; break; }
+        case 187: m = &QRadioTuner::staticMetaObject; break;
+        case 263: m = &QVideoWidget::staticMetaObject; break;
+        case 264: m = &QVideoWidgetControl::staticMetaObject; break; }
     return m; }
 
 void deleteNObject(int n, void* p, int gc) {
@@ -100,9 +100,9 @@ void deleteNObject(int n, void* p, int gc) {
         case 97: if(gc) delete (QImageEncoderSettings*)p; else delete (LImageEncoderSettings*)p; break;
         case 117: if(gc) delete (QMediaContent*)p; else delete (LMediaContent*)p; break;
         case 118: if(gc) delete (QMediaResource*)p; else delete (LMediaResource*)p; break;
-        case 262: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
-        case 263: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
-        case 264: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
+        case 261: if(gc) delete (QVideoEncoderSettings*)p; else delete (LVideoEncoderSettings*)p; break;
+        case 262: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
+        case 263: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
 
 NumList* overrideFunctions(const QByteArray& name) {
     NumList* ids = 0;
@@ -120,9 +120,9 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 128: ids = &LMediaPlayer::overrideIds; break;
             case 129: ids = &LMediaPlaylist::overrideIds; break;
             case 130: ids = &LMediaRecorder::overrideIds; break;
-            case 188: ids = &LRadioTuner::overrideIds; break;
-            case 264: ids = &LVideoWidget::overrideIds; break;
-            case 265: ids = &LVideoWidgetControl::overrideIds; break; }}
+            case 187: ids = &LRadioTuner::overrideIds; break;
+            case 263: ids = &LVideoWidget::overrideIds; break;
+            case 264: ids = &LVideoWidgetControl::overrideIds; break; }}
     else {
         n = LObjects::n_names.value(name);
         switch(n) {
@@ -134,9 +134,9 @@ NumList* overrideFunctions(const QByteArray& name) {
             case 97: ids = &LImageEncoderSettings::overrideIds; break;
             case 117: ids = &LMediaContent::overrideIds; break;
             case 118: ids = &LMediaResource::overrideIds; break;
-            case 262: ids = &LVideoEncoderSettings::overrideIds; break;
-            case 263: ids = &LVideoFrame::overrideIds; break;
-            case 264: ids = &LVideoSurfaceFormat::overrideIds; break; }}
+            case 261: ids = &LVideoEncoderSettings::overrideIds; break;
+            case 262: ids = &LVideoFrame::overrideIds; break;
+            case 263: ids = &LVideoSurfaceFormat::overrideIds; break; }}
     return ids; }
 
 QT_END_NAMESPACE

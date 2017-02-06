@@ -1270,9 +1270,6 @@
    "virtual bool isTextureProvider () const"
    "virtual void releaseResources ()"
    "virtual QSGTextureProvider * textureProvider () const")
-  (("QQuickImageResponse" . "QObject")
-   "virtual QString errorString () const"
-   "virtual QQuickTextureFactory * textureFactory () const = 0")
   (("QQuickItem" . "QObject")
    "virtual bool contains ( const QPointF & ) const"
    "virtual QVariant inputMethodQuery ( Qt::InputMethodQuery ) const"

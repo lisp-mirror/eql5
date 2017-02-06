@@ -157,15 +157,7 @@ public:
     Q_INVOKABLE QVariant Mvalue(QQmlPropertyMap* o, const QString& x1) const { return o->value(x1); }
 };
 
-class Q177 : public Q142 { // QQuickImageResponse
-    Q_OBJECT
-public:
-    Q_INVOKABLE void* C(uint u) { return new LQuickImageResponse(u); }
-    Q_INVOKABLE QString MerrorString(QQuickImageResponse* o) const { return o->errorString(); }
-    Q_INVOKABLE QQuickTextureFactory* MtextureFactory(QQuickImageResponse* o) const { return o->textureFactory(); }
-};
-
-class Q178 : public Q142 { // QQuickItem
+class Q177 : public Q142 { // QQuickItem
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QQuickItem* x1 = 0) { return new LQuickItem(u, x1); }
@@ -270,7 +262,7 @@ public:
     Q_INVOKABLE bool MwidthValid(QQuickItem* o) const { return ((LQuickItem*)o)->widthValid(); }
 };
 
-class Q179 : public Q142 { // QQuickItemGrabResult
+class Q178 : public Q142 { // QQuickItemGrabResult
     Q_OBJECT
 public:
     Q_INVOKABLE QImage Mimage(QQuickItemGrabResult* o) const { return o->image(); }
@@ -278,7 +270,7 @@ public:
     Q_INVOKABLE QUrl Murl(QQuickItemGrabResult* o) const { return o->url(); }
 };
 
-class Q180 : public Q178 { // QQuickPaintedItem
+class Q179 : public Q177 { // QQuickPaintedItem
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QQuickItem* x1 = 0) { return new LQuickPaintedItem(u, x1); }
@@ -307,7 +299,7 @@ public:
     Q_INVOKABLE QSGTextureProvider* MtextureProvider(QQuickPaintedItem* o) const { return o->textureProvider(); }
 };
 
-class Q181 : public Q142 { // QQuickRenderControl
+class Q180 : public Q142 { // QQuickRenderControl
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LQuickRenderControl(u, x1); }
@@ -320,14 +312,14 @@ public:
     Q_INVOKABLE bool Msync(QQuickRenderControl* o) { return o->sync(); }
 };
 
-class Q182 : public Q142 { // QQuickTextDocument
+class Q181 : public Q142 { // QQuickTextDocument
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QQuickItem* x1) { return new LQuickTextDocument(u, x1); }
     Q_INVOKABLE QTextDocument* MtextDocument(QQuickTextDocument* o) const { return o->textDocument(); }
 };
 
-class Q183 : public Q142 { // QQuickTextureFactory
+class Q182 : public Q142 { // QQuickTextureFactory
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LQuickTextureFactory(u); }
@@ -335,10 +327,9 @@ public:
     Q_INVOKABLE QImage Mimage(QQuickTextureFactory* o) const { return o->image(); }
     Q_INVOKABLE int MtextureByteCount(QQuickTextureFactory* o) const { return o->textureByteCount(); }
     Q_INVOKABLE QSize MtextureSize(QQuickTextureFactory* o) const { return o->textureSize(); }
-    Q_INVOKABLE QQuickTextureFactory* StextureFactoryForImage(const QImage& x1) { return QQuickTextureFactory::textureFactoryForImage(x1); }
 };
 
-class Q191 : public Q142 { // QSGAbstractRenderer
+class Q190 : public Q142 { // QSGAbstractRenderer
     Q_OBJECT
 public:
     Q_INVOKABLE QColor MclearColor(QSGAbstractRenderer* o) const { return o->clearColor(); }
@@ -359,7 +350,7 @@ public:
     Q_INVOKABLE QRect MviewportRect(QSGAbstractRenderer* o) const { return o->viewportRect(); }
 };
 
-class Q193 : public Q142 { // QSGEngine
+class Q192 : public Q142 { // QSGEngine
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LSGEngine(u, x1); }
@@ -369,7 +360,7 @@ public:
     Q_INVOKABLE void Minvalidate(QSGEngine* o) { o->invalidate(); }
 };
 
-class Q194 : public Q142 { // QSGTexture
+class Q193 : public Q142 { // QSGTexture
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LSGTexture(u); }
@@ -393,7 +384,7 @@ public:
     Q_INVOKABLE int MverticalWrapMode(QSGTexture* o) const { return o->verticalWrapMode(); }
 };
 
-class Q195 : public Q142 { // QSGTextureProvider
+class Q194 : public Q142 { // QSGTextureProvider
     Q_OBJECT
 public:
     Q_INVOKABLE QSGTexture* Mtexture(QSGTextureProvider* o) const { return o->texture(); }
@@ -408,7 +399,7 @@ public:
     Q_INVOKABLE QList<QObject*> MrootObjects(QQmlApplicationEngine* o) { return o->rootObjects(); }
 };
 
-class Q176 : public Q178 { // QQuickFramebufferObject
+class Q176 : public Q177 { // QQuickFramebufferObject
     Q_OBJECT
 public:
     Q_INVOKABLE void MsetTextureFollowsItemSize(QQuickFramebufferObject* o, bool x1) { o->setTextureFollowsItemSize(x1); }
@@ -418,7 +409,7 @@ public:
     Q_INVOKABLE QSGTextureProvider* MtextureProvider(QQuickFramebufferObject* o) const { return o->textureProvider(); }
 };
 
-class Q185 : public Q272 { // QQuickWidget
+class Q184 : public Q271 { // QQuickWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LQuickWidget(u, x1); }
@@ -441,7 +432,7 @@ public:
     Q_INVOKABLE bool Mevent(QQuickWidget* o, QEvent* x1) { return ((LQuickWidget*)o)->event(x1); }
 };
 
-class Q186 : public Q274 { // QQuickWindow
+class Q185 : public Q273 { // QQuickWindow
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWindow* x1 = 0) { return new LQuickWindow(u, x1); }
@@ -491,13 +482,13 @@ public:
     Q_INVOKABLE void SsetDefaultAlphaBuffer(bool x1) { QQuickWindow::setDefaultAlphaBuffer(x1); }
 };
 
-class Q192 : public Q194 { // QSGDynamicTexture
+class Q191 : public Q193 { // QSGDynamicTexture
     Q_OBJECT
 public:
     Q_INVOKABLE bool MupdateTexture(QSGDynamicTexture* o) { return o->updateTexture(); }
 };
 
-class Q184 : public Q186 { // QQuickView
+class Q183 : public Q185 { // QQuickView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWindow* x1 = 0) { return new LQuickView(u, x1); }

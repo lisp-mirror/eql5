@@ -73,15 +73,15 @@ public:
 
 class LWebHistoryInterface : public QWebHistoryInterface {
     Q_OBJECT
-    friend class Q267;
+    friend class Q266;
 public:
     LWebHistoryInterface(uint u, QObject* x1 = 0) : QWebHistoryInterface(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    void addHistoryEntry(const QString& x1) { quint64 id = LObjects::override_id(unique, 434); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 434, args, id); }}
-    bool historyContains(const QString& x1) const { quint64 id = LObjects::override_id(unique, 435); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 435, args, id).toBool(); } return ret; }
+    void addHistoryEntry(const QString& x1) { quint64 id = LObjects::override_id(unique, 432); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 432, args, id); }}
+    bool historyContains(const QString& x1) const { quint64 id = LObjects::override_id(unique, 433); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 433, args, id).toBool(); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebHistoryInterface::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebHistoryInterface::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebHistoryInterface::customEvent(x1); }}
@@ -90,7 +90,7 @@ public:
 
 class LWebInspector : public QWebInspector {
     Q_OBJECT
-    friend class Q268;
+    friend class Q267;
 public:
     LWebInspector(uint u, QWidget* x1 = 0) : QWebInspector(x1), unique(u) {}
 
@@ -139,26 +139,26 @@ public:
 
 class LWebPage : public QWebPage {
     Q_OBJECT
-    friend class Q269;
+    friend class Q268;
 public:
     LWebPage(uint u, QObject* x1 = 0) : QWebPage(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    bool extension(Extension x1, const ExtensionOption* x2 = 0, ExtensionReturn* x3 = 0) { quint64 id = LObjects::override_id(unique, 436); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 436, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::extension(x1, x2, x3); } return ret; }
-    bool shouldInterruptJavaScript() { quint64 id = LObjects::override_id(unique, 437); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 437, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::shouldInterruptJavaScript(); } return ret; }
-    bool supportsExtension(Extension x1) const { quint64 id = LObjects::override_id(unique, 438); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 438, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::supportsExtension(x1); } return ret; }
-    void triggerAction(WebAction x1, bool x2 = false) { quint64 id = LObjects::override_id(unique, 439); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 439, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::triggerAction(x1, x2); }}
-    bool acceptNavigationRequest(QWebFrame* x1, const QNetworkRequest& x2, NavigationType x3) { quint64 id = LObjects::override_id(unique, 440); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 440, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::acceptNavigationRequest(x1, x2, x3); } return ret; }
-    QString chooseFile(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 441); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 441, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::chooseFile(x1, x2); } return ret; }
-    QObject* createPlugin(const QString& x1, const QUrl& x2, const QStringList& x3, const QStringList& x4) { quint64 id = LObjects::override_id(unique, 442); void* fun = LObjects::overrideFun(id); QObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = (QObject*)callOverrideFun(fun, 442, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::createPlugin(x1, x2, x3, x4); } return ret; }
-    QWebPage* createWindow(WebWindowType x1) { quint64 id = LObjects::override_id(unique, 443); void* fun = LObjects::overrideFun(id); QWebPage* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWebPage*)callOverrideFun(fun, 443, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::createWindow(x1); } return ret; }
-    void javaScriptAlert(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 444); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 444, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::javaScriptAlert(x1, x2); }}
-    bool javaScriptConfirm(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 445); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 445, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::javaScriptConfirm(x1, x2); } return ret; }
-    void javaScriptConsoleMessage(const QString& x1, int x2, const QString& x3) { quint64 id = LObjects::override_id(unique, 446); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 446, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::javaScriptConsoleMessage(x1, x2, x3); }}
-    bool javaScriptPrompt(QWebFrame* x1, const QString& x2, const QString& x3, QString* x4) { quint64 id = LObjects::override_id(unique, 447); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 447, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::javaScriptPrompt(x1, x2, x3, x4); } return ret; }
-    QString userAgentForUrl(const QUrl& x1) const { quint64 id = LObjects::override_id(unique, 448); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 448, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::userAgentForUrl(x1); } return ret; }
+    bool extension(Extension x1, const ExtensionOption* x2 = 0, ExtensionReturn* x3 = 0) { quint64 id = LObjects::override_id(unique, 434); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 434, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::extension(x1, x2, x3); } return ret; }
+    bool shouldInterruptJavaScript() { quint64 id = LObjects::override_id(unique, 435); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 435, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::shouldInterruptJavaScript(); } return ret; }
+    bool supportsExtension(Extension x1) const { quint64 id = LObjects::override_id(unique, 436); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 436, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::supportsExtension(x1); } return ret; }
+    void triggerAction(WebAction x1, bool x2 = false) { quint64 id = LObjects::override_id(unique, 437); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 437, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::triggerAction(x1, x2); }}
+    bool acceptNavigationRequest(QWebFrame* x1, const QNetworkRequest& x2, NavigationType x3) { quint64 id = LObjects::override_id(unique, 438); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = callOverrideFun(fun, 438, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::acceptNavigationRequest(x1, x2, x3); } return ret; }
+    QString chooseFile(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 439); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 439, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::chooseFile(x1, x2); } return ret; }
+    QObject* createPlugin(const QString& x1, const QUrl& x2, const QStringList& x3, const QStringList& x4) { quint64 id = LObjects::override_id(unique, 440); void* fun = LObjects::overrideFun(id); QObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = (QObject*)callOverrideFun(fun, 440, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::createPlugin(x1, x2, x3, x4); } return ret; }
+    QWebPage* createWindow(WebWindowType x1) { quint64 id = LObjects::override_id(unique, 441); void* fun = LObjects::overrideFun(id); QWebPage* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWebPage*)callOverrideFun(fun, 441, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::createWindow(x1); } return ret; }
+    void javaScriptAlert(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 442); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 442, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::javaScriptAlert(x1, x2); }}
+    bool javaScriptConfirm(QWebFrame* x1, const QString& x2) { quint64 id = LObjects::override_id(unique, 443); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 443, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::javaScriptConfirm(x1, x2); } return ret; }
+    void javaScriptConsoleMessage(const QString& x1, int x2, const QString& x3) { quint64 id = LObjects::override_id(unique, 444); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 444, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::javaScriptConsoleMessage(x1, x2, x3); }}
+    bool javaScriptPrompt(QWebFrame* x1, const QString& x2, const QString& x3, QString* x4) { quint64 id = LObjects::override_id(unique, 445); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 445, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::javaScriptPrompt(x1, x2, x3, x4); } return ret; }
+    QString userAgentForUrl(const QUrl& x1) const { quint64 id = LObjects::override_id(unique, 446); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 446, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::userAgentForUrl(x1); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPage::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPage::customEvent(x1); }}
@@ -167,16 +167,16 @@ public:
 
 class LWebPluginFactory : public QWebPluginFactory {
     Q_OBJECT
-    friend class Q270;
+    friend class Q269;
 public:
     LWebPluginFactory(uint u, QObject* x1 = 0) : QWebPluginFactory(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QObject* create(const QString& x1, const QUrl& x2, const QStringList& x3, const QStringList& x4) const { quint64 id = LObjects::override_id(unique, 449); void* fun = LObjects::overrideFun(id); QObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = (QObject*)callOverrideFun(fun, 449, args, id).value<void*>(); } return ret; }
-    QList<Plugin> plugins() const { quint64 id = LObjects::override_id(unique, 450); void* fun = LObjects::overrideFun(id); QList<Plugin> ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 450, 0, id).value<QList<Plugin> >(); } return ret; }
-    void refreshPlugins() { quint64 id = LObjects::override_id(unique, 451); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 451, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPluginFactory::refreshPlugins(); }}
+    QObject* create(const QString& x1, const QUrl& x2, const QStringList& x3, const QStringList& x4) const { quint64 id = LObjects::override_id(unique, 447); void* fun = LObjects::overrideFun(id); QObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = (QObject*)callOverrideFun(fun, 447, args, id).value<void*>(); } return ret; }
+    QList<Plugin> plugins() const { quint64 id = LObjects::override_id(unique, 448); void* fun = LObjects::overrideFun(id); QList<Plugin> ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 448, 0, id).value<QList<Plugin> >(); } return ret; }
+    void refreshPlugins() { quint64 id = LObjects::override_id(unique, 449); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 449, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPluginFactory::refreshPlugins(); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebPluginFactory::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPluginFactory::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebPluginFactory::customEvent(x1); }}
@@ -185,14 +185,14 @@ public:
 
 class LWebView : public QWebView {
     Q_OBJECT
-    friend class Q271;
+    friend class Q270;
 public:
     LWebView(uint u, QWidget* x1 = 0) : QWebView(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QWebView* createWindow(QWebPage::WebWindowType x1) { quint64 id = LObjects::override_id(unique, 452); void* fun = LObjects::overrideFun(id); QWebView* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWebView*)callOverrideFun(fun, 452, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebView::createWindow(x1); } return ret; }
+    QWebView* createWindow(QWebPage::WebWindowType x1) { quint64 id = LObjects::override_id(unique, 450); void* fun = LObjects::overrideFun(id); QWebView* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWebView*)callOverrideFun(fun, 450, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebView::createWindow(x1); } return ret; }
     QVariant inputMethodQuery(Qt::InputMethodQuery x1) const { quint64 id = LObjects::override_id(unique, 23); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 23, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebView::inputMethodQuery(x1); } return ret; }
     QSize sizeHint() const { quint64 id = LObjects::override_id(unique, 25); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 25, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWebView::sizeHint(); } return ret; }
     void changeEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 12); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 12, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWebView::changeEvent(x1); }}

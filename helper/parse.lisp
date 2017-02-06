@@ -153,6 +153,10 @@
         "Point2D *"
         "Renderer *"
         "TexturePoint2D *"
+        ;; exclude what won't compile with Qt 5.5.1:
+        "QAudio::Role"                    ; 5.6
+        "textureFactoryForImage("         ; 5.6
+        (format nil "~CmoveMedia(" #\Tab) ; 5.7
         ))
 
 (defparameter *check*      nil)

@@ -14,7 +14,7 @@
         "QQmlProperty"
         "QQmlPropertyValueSource"
         "QQmlScriptString"
-        "QQuickAsyncImageProvider"
+        ;;"QQuickAsyncImageProvider" Qt >= 5.6
         "QQuickImageProvider"
         "QSGBasicGeometryNode"
         "QSGClipNode"

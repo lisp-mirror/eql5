@@ -161,7 +161,7 @@ public:
     Q_INVOKABLE void Mclose(QNetworkReply* o) { o->close(); }
 };
 
-class Q238 : public Q142 { // QTcpServer
+class Q237 : public Q142 { // QTcpServer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LTcpServer(u, x1); }
@@ -232,13 +232,13 @@ public:
     Q_INVOKABLE bool MwaitForReadyRead(QAbstractSocket* o, int x1 = 30000) { return o->waitForReadyRead(x1); }
 };
 
-class Q239 : public Q12 { // QTcpSocket
+class Q238 : public Q12 { // QTcpSocket
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LTcpSocket(u, x1); }
 };
 
-class Q257 : public Q12 { // QUdpSocket
+class Q256 : public Q12 { // QUdpSocket
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LUdpSocket(u, x1); }

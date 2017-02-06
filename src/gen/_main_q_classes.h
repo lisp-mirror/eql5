@@ -4498,7 +4498,7 @@ public:
 
 class LRadioButton : public QRadioButton {
     Q_OBJECT
-    friend class Q187;
+    friend class Q186;
 public:
     LRadioButton(uint u, QWidget* x1 = 0) : QRadioButton(x1), unique(u) {}
     LRadioButton(uint u, const QString& x1, QWidget* x2 = 0) : QRadioButton(x1, x2), unique(u) {}
@@ -4551,7 +4551,7 @@ public:
 
 class LRegExpValidator : public QRegExpValidator {
     Q_OBJECT
-    friend class Q189;
+    friend class Q188;
 public:
     LRegExpValidator(uint u, QObject* x1 = 0) : QRegExpValidator(x1), unique(u) {}
     LRegExpValidator(uint u, const QRegExp& x1, QObject* x2 = 0) : QRegExpValidator(x1, x2), unique(u) {}
@@ -4569,7 +4569,7 @@ public:
 
 class LRubberBand : public QRubberBand {
     Q_OBJECT
-    friend class Q190;
+    friend class Q189;
 public:
     LRubberBand(uint u, Shape x1, QWidget* x2 = 0) : QRubberBand(x1, x2), unique(u) {}
 
@@ -4618,7 +4618,7 @@ public:
 
 class LScrollArea : public QScrollArea {
     Q_OBJECT
-    friend class Q197;
+    friend class Q196;
 public:
     LScrollArea(uint u, QWidget* x1 = 0) : QScrollArea(x1), unique(u) {}
 
@@ -4671,7 +4671,7 @@ public:
 
 class LScrollBar : public QScrollBar {
     Q_OBJECT
-    friend class Q198;
+    friend class Q197;
 public:
     LScrollBar(uint u, QWidget* x1 = 0) : QScrollBar(x1), unique(u) {}
     LScrollBar(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QScrollBar(x1, x2), unique(u) {}
@@ -4722,7 +4722,7 @@ public:
 
 class LSequentialAnimationGroup : public QSequentialAnimationGroup {
     Q_OBJECT
-    friend class Q199;
+    friend class Q198;
 public:
     LSequentialAnimationGroup(uint u, QObject* x1 = 0) : QSequentialAnimationGroup(x1), unique(u) {}
 
@@ -4741,7 +4741,7 @@ public:
 
 class LSettings : public QSettings {
     Q_OBJECT
-    friend class Q201;
+    friend class Q200;
 public:
     LSettings(uint u, const QString& x1, const QString& x2 = QString(), QObject* x3 = 0) : QSettings(x1, x2, x3), unique(u) {}
     LSettings(uint u, Scope x1, const QString& x2, const QString& x3 = QString(), QObject* x4 = 0) : QSettings(x1, x2, x3, x4), unique(u) {}
@@ -4760,7 +4760,7 @@ public:
 
 class LShortcut : public QShortcut {
     Q_OBJECT
-    friend class Q202;
+    friend class Q201;
 public:
     LShortcut(uint u, QWidget* x1) : QShortcut(x1), unique(u) {}
     LShortcut(uint u, const QKeySequence& x1, QWidget* x2, const char* x3 = 0, const char* x4 = 0, Qt::ShortcutContext x5 = Qt::WindowShortcut) : QShortcut(x1, x2, x3, x4, x5), unique(u) {}
@@ -4776,7 +4776,7 @@ public:
 
 class LSignalMapper : public QSignalMapper {
     Q_OBJECT
-    friend class Q203;
+    friend class Q202;
 public:
     LSignalMapper(uint u, QObject* x1 = 0) : QSignalMapper(x1), unique(u) {}
 
@@ -4791,7 +4791,7 @@ public:
 
 class LSignalTransition : public QSignalTransition {
     Q_OBJECT
-    friend class Q204;
+    friend class Q203;
 public:
     LSignalTransition(uint u, QState* x1 = 0) : QSignalTransition(x1), unique(u) {}
     LSignalTransition(uint u, const QObject* x1, const char* x2, QState* x3 = 0) : QSignalTransition(x1, x2, x3), unique(u) {}
@@ -4809,7 +4809,7 @@ public:
 
 class LSizeGrip : public QSizeGrip {
     Q_OBJECT
-    friend class Q205;
+    friend class Q204;
 public:
     LSizeGrip(uint u, QWidget* x1) : QSizeGrip(x1), unique(u) {}
 
@@ -4859,7 +4859,7 @@ public:
 
 class LSlider : public QSlider {
     Q_OBJECT
-    friend class Q206;
+    friend class Q205;
 public:
     LSlider(uint u, QWidget* x1 = 0) : QSlider(x1), unique(u) {}
     LSlider(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QSlider(x1, x2), unique(u) {}
@@ -4910,16 +4910,16 @@ public:
 
 class LSortFilterProxyModel : public QSortFilterProxyModel {
     Q_OBJECT
-    friend class Q207;
+    friend class Q206;
 public:
     LSortFilterProxyModel(uint u, QObject* x1 = 0) : QSortFilterProxyModel(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    bool filterAcceptsColumn(int x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 359); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 359, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::filterAcceptsColumn(x1, x2); } return ret; }
-    bool filterAcceptsRow(int x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 360); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 360, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::filterAcceptsRow(x1, x2); } return ret; }
-    bool lessThan(const QModelIndex& x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 361); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 361, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::lessThan(x1, x2); } return ret; }
+    bool filterAcceptsColumn(int x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 357); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 357, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::filterAcceptsColumn(x1, x2); } return ret; }
+    bool filterAcceptsRow(int x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 358); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 358, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::filterAcceptsRow(x1, x2); } return ret; }
+    bool lessThan(const QModelIndex& x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 359); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 359, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::lessThan(x1, x2); } return ret; }
     QModelIndex buddy(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 55); void* fun = LObjects::overrideFun(id); QModelIndex ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 55, args, id).value<QModelIndex>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::buddy(x1); } return ret; }
     bool canFetchMore(const QModelIndex& x1) const { quint64 id = LObjects::override_id(unique, 57); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 57, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::canFetchMore(x1); } return ret; }
     int columnCount(const QModelIndex& x1 = QModelIndex()) const { quint64 id = LObjects::override_id(unique, 58); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 58, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSortFilterProxyModel::columnCount(x1); } return ret; }
@@ -4965,14 +4965,14 @@ public:
 
 class LSpinBox : public QSpinBox {
     Q_OBJECT
-    friend class Q208;
+    friend class Q207;
 public:
     LSpinBox(uint u, QWidget* x1 = 0) : QSpinBox(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QString textFromValue(int x1) const { quint64 id = LObjects::override_id(unique, 362); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 362, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSpinBox::textFromValue(x1); } return ret; }
+    QString textFromValue(int x1) const { quint64 id = LObjects::override_id(unique, 360); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 360, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSpinBox::textFromValue(x1); } return ret; }
     int valueFromText(const QString& x1) const { quint64 id = LObjects::override_id(unique, 222); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 222, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSpinBox::valueFromText(x1); } return ret; }
     void fixup(QString& x1) const { quint64 id = LObjects::override_id(unique, 143); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 143, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSpinBox::fixup(x1); }}
     QValidator::State validate(QString& x1, int& x2) const { quint64 id = LObjects::override_id(unique, 145); void* fun = LObjects::overrideFun(id); QValidator::State ret = (QValidator::State)0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = (QValidator::State)callOverrideFun(fun, 145, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSpinBox::validate(x1, x2); } return ret; }
@@ -5020,7 +5020,7 @@ public:
 
 class LSplashScreen : public QSplashScreen {
     Q_OBJECT
-    friend class Q209;
+    friend class Q208;
 public:
     LSplashScreen(uint u, const QPixmap& x1 = QPixmap(), Qt::WindowFlags x2 = 0) : QSplashScreen(x1, x2), unique(u) {}
     LSplashScreen(uint u, QWidget* x1, const QPixmap& x2 = QPixmap(), Qt::WindowFlags x3 = 0) : QSplashScreen(x1, x2, x3), unique(u) {}
@@ -5028,7 +5028,7 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    void drawContents(QPainter* x1) { quint64 id = LObjects::override_id(unique, 363); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 363, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSplashScreen::drawContents(x1); }}
+    void drawContents(QPainter* x1) { quint64 id = LObjects::override_id(unique, 361); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 361, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSplashScreen::drawContents(x1); }}
     void mousePressEvent(QMouseEvent* x1) { quint64 id = LObjects::override_id(unique, 18); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 18, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSplashScreen::mousePressEvent(x1); }}
     bool hasHeightForWidth() const { quint64 id = LObjects::override_id(unique, 21); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 21, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSplashScreen::hasHeightForWidth(); } return ret; }
     int heightForWidth(int x1) const { quint64 id = LObjects::override_id(unique, 22); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 22, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSplashScreen::heightForWidth(x1); } return ret; }
@@ -5071,7 +5071,7 @@ public:
 
 class LSplitter : public QSplitter {
     Q_OBJECT
-    friend class Q210;
+    friend class Q209;
 public:
     LSplitter(uint u, QWidget* x1 = 0) : QSplitter(x1), unique(u) {}
     LSplitter(uint u, Qt::Orientation x1, QWidget* x2 = 0) : QSplitter(x1, x2), unique(u) {}
@@ -5121,7 +5121,7 @@ public:
 
 class LSplitterHandle : public QSplitterHandle {
     Q_OBJECT
-    friend class Q211;
+    friend class Q210;
 public:
 
     static NumList overrideIds;
@@ -5169,7 +5169,7 @@ public:
 
 class LStackedLayout : public QStackedLayout {
     Q_OBJECT
-    friend class Q217;
+    friend class Q216;
 public:
     LStackedLayout(uint u) : unique(u) {}
     LStackedLayout(uint u, QWidget* x1) : QStackedLayout(x1), unique(u) {}
@@ -5203,7 +5203,7 @@ public:
 
 class LStackedWidget : public QStackedWidget {
     Q_OBJECT
-    friend class Q218;
+    friend class Q217;
 public:
     LStackedWidget(uint u, QWidget* x1 = 0) : QStackedWidget(x1), unique(u) {}
 
@@ -5252,7 +5252,7 @@ public:
 
 class LStandardItemModel : public QStandardItemModel {
     Q_OBJECT
-    friend class Q219;
+    friend class Q218;
 public:
     LStandardItemModel(uint u, QObject* x1 = 0) : QStandardItemModel(x1), unique(u) {}
     LStandardItemModel(uint u, int x1, int x2, QObject* x3 = 0) : QStandardItemModel(x1, x2, x3), unique(u) {}
@@ -5298,7 +5298,7 @@ public:
 
 class LState : public QState {
     Q_OBJECT
-    friend class Q220;
+    friend class Q219;
 public:
     LState(uint u, QState* x1 = 0) : QState(x1), unique(u) {}
     LState(uint u, ChildMode x1, QState* x2 = 0) : QState(x1, x2), unique(u) {}
@@ -5316,7 +5316,7 @@ public:
 
 class LStateMachine : public QStateMachine {
     Q_OBJECT
-    friend class Q221;
+    friend class Q220;
 public:
     LStateMachine(uint u, QObject* x1 = 0) : QStateMachine(x1), unique(u) {}
     LStateMachine(uint u, QState::ChildMode x1, QObject* x2 = 0) : QStateMachine(x1, x2), unique(u) {}
@@ -5334,7 +5334,7 @@ public:
 
 class LStatusBar : public QStatusBar {
     Q_OBJECT
-    friend class Q222;
+    friend class Q221;
 public:
     LStatusBar(uint u, QWidget* x1 = 0) : QStatusBar(x1), unique(u) {}
 
@@ -5383,7 +5383,7 @@ public:
 
 class LStringListModel : public QStringListModel {
     Q_OBJECT
-    friend class Q223;
+    friend class Q222;
 public:
     LStringListModel(uint u, QObject* x1 = 0) : QStringListModel(x1), unique(u) {}
     LStringListModel(uint u, const QStringList& x1, QObject* x2 = 0) : QStringListModel(x1, x2), unique(u) {}
@@ -5426,7 +5426,7 @@ public:
 
 class LStyleHints : public QStyleHints {
     Q_OBJECT
-    friend class Q225;
+    friend class Q224;
 public:
 
     static NumList overrideIds;
@@ -5440,15 +5440,15 @@ public:
 
 class LStyledItemDelegate : public QStyledItemDelegate {
     Q_OBJECT
-    friend class Q226;
+    friend class Q225;
 public:
     LStyledItemDelegate(uint u, QObject* x1 = 0) : QStyledItemDelegate(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QString displayText(const QVariant& x1, const QLocale& x2) const { quint64 id = LObjects::override_id(unique, 401); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 401, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStyledItemDelegate::displayText(x1, x2); } return ret; }
-    void initStyleOption(QStyleOptionViewItem* x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 402); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 402, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStyledItemDelegate::initStyleOption(x1, x2); }}
+    QString displayText(const QVariant& x1, const QLocale& x2) const { quint64 id = LObjects::override_id(unique, 399); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 399, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStyledItemDelegate::displayText(x1, x2); } return ret; }
+    void initStyleOption(QStyleOptionViewItem* x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 400); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 400, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStyledItemDelegate::initStyleOption(x1, x2); }}
     QWidget* createEditor(QWidget* x1, const QStyleOptionViewItem& x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 46); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; ret = (QWidget*)callOverrideFun(fun, 46, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QStyledItemDelegate::createEditor(x1, x2, x3); } return ret; }
     void paint(QPainter* x1, const QStyleOptionViewItem& x2, const QModelIndex& x3) const { quint64 id = LObjects::override_id(unique, 50); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3 }; callOverrideFun(fun, 50, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStyledItemDelegate::paint(x1, x2, x3); }}
     void setEditorData(QWidget* x1, const QModelIndex& x2) const { quint64 id = LObjects::override_id(unique, 51); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; callOverrideFun(fun, 51, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QStyledItemDelegate::setEditorData(x1, x2); }}
@@ -5466,7 +5466,7 @@ public:
 
 class LSwipeGesture : public QSwipeGesture {
     Q_OBJECT
-    friend class Q229;
+    friend class Q228;
 public:
 
     static NumList overrideIds;
@@ -5480,7 +5480,7 @@ public:
 
 class LSyntaxHighlighter : public QSyntaxHighlighter {
     Q_OBJECT
-    friend class Q230;
+    friend class Q229;
 public:
     LSyntaxHighlighter(uint u, QObject* x1) : QSyntaxHighlighter(x1), unique(u) {}
     LSyntaxHighlighter(uint u, QTextDocument* x1) : QSyntaxHighlighter(x1), unique(u) {}
@@ -5488,7 +5488,7 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    void highlightBlock(const QString& x1) { quint64 id = LObjects::override_id(unique, 403); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 403, args, id); }}
+    void highlightBlock(const QString& x1) { quint64 id = LObjects::override_id(unique, 401); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 401, args, id); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QSyntaxHighlighter::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSyntaxHighlighter::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QSyntaxHighlighter::customEvent(x1); }}
@@ -5497,7 +5497,7 @@ public:
 
 class LSystemTrayIcon : public QSystemTrayIcon {
     Q_OBJECT
-    friend class Q231;
+    friend class Q230;
 public:
     LSystemTrayIcon(uint u, QObject* x1 = 0) : QSystemTrayIcon(x1), unique(u) {}
     LSystemTrayIcon(uint u, const QIcon& x1, QObject* x2 = 0) : QSystemTrayIcon(x1, x2), unique(u) {}
@@ -5513,18 +5513,18 @@ public:
 
 class LTabBar : public QTabBar {
     Q_OBJECT
-    friend class Q232;
+    friend class Q231;
 public:
     LTabBar(uint u, QWidget* x1 = 0) : QTabBar(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QSize minimumTabSizeHint(int x1) const { quint64 id = LObjects::override_id(unique, 404); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 404, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::minimumTabSizeHint(x1); } return ret; }
-    void tabInserted(int x1) { quint64 id = LObjects::override_id(unique, 405); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 405, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabInserted(x1); }}
-    void tabLayoutChange() { quint64 id = LObjects::override_id(unique, 406); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 406, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabLayoutChange(); }}
-    void tabRemoved(int x1) { quint64 id = LObjects::override_id(unique, 407); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 407, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabRemoved(x1); }}
-    QSize tabSizeHint(int x1) const { quint64 id = LObjects::override_id(unique, 408); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 408, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::tabSizeHint(x1); } return ret; }
+    QSize minimumTabSizeHint(int x1) const { quint64 id = LObjects::override_id(unique, 402); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 402, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::minimumTabSizeHint(x1); } return ret; }
+    void tabInserted(int x1) { quint64 id = LObjects::override_id(unique, 403); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 403, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabInserted(x1); }}
+    void tabLayoutChange() { quint64 id = LObjects::override_id(unique, 404); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 404, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabLayoutChange(); }}
+    void tabRemoved(int x1) { quint64 id = LObjects::override_id(unique, 405); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 405, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::tabRemoved(x1); }}
+    QSize tabSizeHint(int x1) const { quint64 id = LObjects::override_id(unique, 406); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 406, args, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::tabSizeHint(x1); } return ret; }
     QSize minimumSizeHint() const { quint64 id = LObjects::override_id(unique, 24); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 24, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::minimumSizeHint(); } return ret; }
     QSize sizeHint() const { quint64 id = LObjects::override_id(unique, 25); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 25, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabBar::sizeHint(); } return ret; }
     void changeEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 12); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 12, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabBar::changeEvent(x1); }}
@@ -5567,15 +5567,15 @@ public:
 
 class LTabWidget : public QTabWidget {
     Q_OBJECT
-    friend class Q233;
+    friend class Q232;
 public:
     LTabWidget(uint u, QWidget* x1 = 0) : QTabWidget(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    void tabInserted(int x1) { quint64 id = LObjects::override_id(unique, 405); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 405, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabWidget::tabInserted(x1); }}
-    void tabRemoved(int x1) { quint64 id = LObjects::override_id(unique, 407); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 407, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabWidget::tabRemoved(x1); }}
+    void tabInserted(int x1) { quint64 id = LObjects::override_id(unique, 403); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 403, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabWidget::tabInserted(x1); }}
+    void tabRemoved(int x1) { quint64 id = LObjects::override_id(unique, 405); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 405, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTabWidget::tabRemoved(x1); }}
     bool hasHeightForWidth() const { quint64 id = LObjects::override_id(unique, 21); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 21, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabWidget::hasHeightForWidth(); } return ret; }
     int heightForWidth(int x1) const { quint64 id = LObjects::override_id(unique, 22); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 22, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabWidget::heightForWidth(x1); } return ret; }
     QSize minimumSizeHint() const { quint64 id = LObjects::override_id(unique, 24); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 24, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTabWidget::minimumSizeHint(); } return ret; }
@@ -5618,7 +5618,7 @@ public:
 
 class LTableView : public QTableView {
     Q_OBJECT
-    friend class Q234;
+    friend class Q233;
 public:
     LTableView(uint u, QWidget* x1 = 0) : QTableView(x1), unique(u) {}
 
@@ -5694,7 +5694,7 @@ public:
 
 class LTableWidget : public QTableWidget {
     Q_OBJECT
-    friend class Q235;
+    friend class Q234;
 public:
     LTableWidget(uint u, QWidget* x1 = 0) : QTableWidget(x1), unique(u) {}
     LTableWidget(uint u, int x1, int x2, QWidget* x3 = 0) : QTableWidget(x1, x2, x3), unique(u) {}
@@ -5702,8 +5702,8 @@ public:
     static NumList overrideIds;
     uint unique;
 
-    bool dropMimeData(int x1, int x2, const QMimeData* x3, Qt::DropAction x4) { quint64 id = LObjects::override_id(unique, 409); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 409, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::dropMimeData(x1, x2, x3, x4); } return ret; }
-    QMimeData* mimeData(const QList<QTableWidgetItem*>& x1) const { quint64 id = LObjects::override_id(unique, 410); void* fun = LObjects::overrideFun(id); QMimeData* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QMimeData*)callOverrideFun(fun, 410, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::mimeData(x1); } return ret; }
+    bool dropMimeData(int x1, int x2, const QMimeData* x3, Qt::DropAction x4) { quint64 id = LObjects::override_id(unique, 407); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 407, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::dropMimeData(x1, x2, x3, x4); } return ret; }
+    QMimeData* mimeData(const QList<QTableWidgetItem*>& x1) const { quint64 id = LObjects::override_id(unique, 408); void* fun = LObjects::overrideFun(id); QMimeData* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QMimeData*)callOverrideFun(fun, 408, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::mimeData(x1); } return ret; }
     QStringList mimeTypes() const { quint64 id = LObjects::override_id(unique, 70); void* fun = LObjects::overrideFun(id); QStringList ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 70, 0, id).value<QStringList>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::mimeTypes(); } return ret; }
     Qt::DropActions supportedDropActions() const { quint64 id = LObjects::override_id(unique, 84); void* fun = LObjects::overrideFun(id); Qt::DropActions ret = (Qt::DropActions)0; if(fun && (LObjects::calling != id)) { ret = (Qt::DropActions)callOverrideFun(fun, 84, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTableWidget::supportedDropActions(); } return ret; }
     void dropEvent(QDropEvent* x1) { quint64 id = LObjects::override_id(unique, 32); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 32, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTableWidget::dropEvent(x1); }}
@@ -5774,7 +5774,7 @@ public:
 
 class LTapAndHoldGesture : public QTapAndHoldGesture {
     Q_OBJECT
-    friend class Q236;
+    friend class Q235;
 public:
 
     static NumList overrideIds;
@@ -5788,7 +5788,7 @@ public:
 
 class LTapGesture : public QTapGesture {
     Q_OBJECT
-    friend class Q237;
+    friend class Q236;
 public:
 
     static NumList overrideIds;
@@ -5802,15 +5802,15 @@ public:
 
 class LTextBlockGroup : public QTextBlockGroup {
     Q_OBJECT
-    friend class Q240;
+    friend class Q239;
 public:
 
     static NumList overrideIds;
     uint unique;
 
-    void blockFormatChanged(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 411); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 411, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockFormatChanged(x1); }}
-    void blockInserted(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 412); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 412, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockInserted(x1); }}
-    void blockRemoved(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 413); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 413, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockRemoved(x1); }}
+    void blockFormatChanged(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 409); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 409, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockFormatChanged(x1); }}
+    void blockInserted(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 410); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 410, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockInserted(x1); }}
+    void blockRemoved(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 411); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 411, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::blockRemoved(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextBlockGroup::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextBlockGroup::customEvent(x1); }}
@@ -5819,7 +5819,7 @@ public:
 
 class LTextBrowser : public QTextBrowser {
     Q_OBJECT
-    friend class Q241;
+    friend class Q240;
 public:
     LTextBrowser(uint u, QWidget* x1 = 0) : QTextBrowser(x1), unique(u) {}
 
@@ -5876,7 +5876,7 @@ public:
 
 class LTextDocument : public QTextDocument {
     Q_OBJECT
-    friend class Q242;
+    friend class Q241;
 public:
     LTextDocument(uint u, QObject* x1 = 0) : QTextDocument(x1), unique(u) {}
     LTextDocument(uint u, const QString& x1, QObject* x2 = 0) : QTextDocument(x1, x2), unique(u) {}
@@ -5885,7 +5885,7 @@ public:
     uint unique;
 
     void clear() { quint64 id = LObjects::override_id(unique, 220); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 220, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextDocument::clear(); }}
-    QTextObject* createObject(const QTextFormat& x1) { quint64 id = LObjects::override_id(unique, 414); void* fun = LObjects::overrideFun(id); QTextObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QTextObject*)callOverrideFun(fun, 414, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextDocument::createObject(x1); } return ret; }
+    QTextObject* createObject(const QTextFormat& x1) { quint64 id = LObjects::override_id(unique, 412); void* fun = LObjects::overrideFun(id); QTextObject* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QTextObject*)callOverrideFun(fun, 412, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextDocument::createObject(x1); } return ret; }
     QVariant loadResource(int x1, const QUrl& x2) { quint64 id = LObjects::override_id(unique, 315); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 315, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextDocument::loadResource(x1, x2); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextDocument::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextDocument::childEvent(x1); }}
@@ -5895,7 +5895,7 @@ public:
 
 class LTextEdit : public QTextEdit {
     Q_OBJECT
-    friend class Q243;
+    friend class Q242;
 public:
     LTextEdit(uint u, QWidget* x1 = 0) : QTextEdit(x1), unique(u) {}
     LTextEdit(uint u, const QString& x1, QWidget* x2 = 0) : QTextEdit(x1, x2), unique(u) {}
@@ -5953,7 +5953,7 @@ public:
 
 class LTextFrame : public QTextFrame {
     Q_OBJECT
-    friend class Q244;
+    friend class Q243;
 public:
     LTextFrame(uint u, QTextDocument* x1) : QTextFrame(x1), unique(u) {}
 
@@ -5968,15 +5968,15 @@ public:
 
 class LTextList : public QTextList {
     Q_OBJECT
-    friend class Q245;
+    friend class Q244;
 public:
 
     static NumList overrideIds;
     uint unique;
 
-    void blockFormatChanged(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 411); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 411, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockFormatChanged(x1); }}
-    void blockInserted(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 412); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 412, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockInserted(x1); }}
-    void blockRemoved(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 413); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 413, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockRemoved(x1); }}
+    void blockFormatChanged(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 409); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 409, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockFormatChanged(x1); }}
+    void blockInserted(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 410); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 410, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockInserted(x1); }}
+    void blockRemoved(const QTextBlock& x1) { quint64 id = LObjects::override_id(unique, 411); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 411, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::blockRemoved(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTextList::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTextList::customEvent(x1); }}
@@ -5985,7 +5985,7 @@ public:
 
 class LTextObject : public QTextObject {
     Q_OBJECT
-    friend class Q246;
+    friend class Q245;
 public:
 
     static NumList overrideIds;
@@ -5999,7 +5999,7 @@ public:
 
 class LTextTable : public QTextTable {
     Q_OBJECT
-    friend class Q247;
+    friend class Q246;
 public:
 
     static NumList overrideIds;
@@ -6013,7 +6013,7 @@ public:
 
 class LTimeEdit : public QTimeEdit {
     Q_OBJECT
-    friend class Q248;
+    friend class Q247;
 public:
     LTimeEdit(uint u, QWidget* x1 = 0) : QTimeEdit(x1), unique(u) {}
     LTimeEdit(uint u, const QTime& x1, QWidget* x2 = 0) : QTimeEdit(x1, x2), unique(u) {}
@@ -6070,14 +6070,14 @@ public:
 
 class LTimeLine : public QTimeLine {
     Q_OBJECT
-    friend class Q249;
+    friend class Q248;
 public:
     LTimeLine(uint u, int x1 = 1000, QObject* x2 = 0) : QTimeLine(x1, x2), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    qreal valueForTime(int x1) const { quint64 id = LObjects::override_id(unique, 415); void* fun = LObjects::overrideFun(id); qreal ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 415, args, id).toReal(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTimeLine::valueForTime(x1); } return ret; }
+    qreal valueForTime(int x1) const { quint64 id = LObjects::override_id(unique, 413); void* fun = LObjects::overrideFun(id); qreal ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 413, args, id).toReal(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTimeLine::valueForTime(x1); } return ret; }
     void timerEvent(QTimerEvent* x1) { quint64 id = LObjects::override_id(unique, 8); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 8, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTimeLine::timerEvent(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTimeLine::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTimeLine::childEvent(x1); }}
@@ -6086,7 +6086,7 @@ public:
 
 class LTimer : public QTimer {
     Q_OBJECT
-    friend class Q250;
+    friend class Q249;
 public:
     LTimer(uint u, QObject* x1 = 0) : QTimer(x1), unique(u) {}
 
@@ -6101,7 +6101,7 @@ public:
 
 class LToolBar : public QToolBar {
     Q_OBJECT
-    friend class Q251;
+    friend class Q250;
 public:
     LToolBar(uint u, const QString& x1, QWidget* x2 = 0) : QToolBar(x1, x2), unique(u) {}
     LToolBar(uint u, QWidget* x1 = 0) : QToolBar(x1), unique(u) {}
@@ -6151,15 +6151,15 @@ public:
 
 class LToolBox : public QToolBox {
     Q_OBJECT
-    friend class Q252;
+    friend class Q251;
 public:
     LToolBox(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QToolBox(x1, x2), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    void itemInserted(int x1) { quint64 id = LObjects::override_id(unique, 416); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 416, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::itemInserted(x1); }}
-    void itemRemoved(int x1) { quint64 id = LObjects::override_id(unique, 417); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 417, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::itemRemoved(x1); }}
+    void itemInserted(int x1) { quint64 id = LObjects::override_id(unique, 414); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 414, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::itemInserted(x1); }}
+    void itemRemoved(int x1) { quint64 id = LObjects::override_id(unique, 415); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 415, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::itemRemoved(x1); }}
     void changeEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 12); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 12, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::changeEvent(x1); }}
     void showEvent(QShowEvent* x1) { quint64 id = LObjects::override_id(unique, 41); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 41, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QToolBox::showEvent(x1); }}
     QSize sizeHint() const { quint64 id = LObjects::override_id(unique, 25); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 25, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QToolBox::sizeHint(); } return ret; }
@@ -6202,7 +6202,7 @@ public:
 
 class LToolButton : public QToolButton {
     Q_OBJECT
-    friend class Q253;
+    friend class Q252;
 public:
     LToolButton(uint u, QWidget* x1 = 0) : QToolButton(x1), unique(u) {}
 
@@ -6254,7 +6254,7 @@ public:
 
 class LTranslator : public QTranslator {
     Q_OBJECT
-    friend class Q254;
+    friend class Q253;
 public:
     LTranslator(uint u, QObject* x1 = 0) : QTranslator(x1), unique(u) {}
 
@@ -6262,7 +6262,7 @@ public:
     uint unique;
 
     bool isEmpty() const { quint64 id = LObjects::override_id(unique, 176); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 176, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTranslator::isEmpty(); } return ret; }
-    QString translate(const char* x1, const char* x2, const char* x3 = 0, int x4 = -1) const { quint64 id = LObjects::override_id(unique, 418); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 418, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTranslator::translate(x1, x2, x3, x4); } return ret; }
+    QString translate(const char* x1, const char* x2, const char* x3 = 0, int x4 = -1) const { quint64 id = LObjects::override_id(unique, 416); void* fun = LObjects::overrideFun(id); QString ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 416, args, id).value<QString>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTranslator::translate(x1, x2, x3, x4); } return ret; }
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTranslator::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTranslator::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTranslator::customEvent(x1); }}
@@ -6271,7 +6271,7 @@ public:
 
 class LTreeView : public QTreeView {
     Q_OBJECT
-    friend class Q255;
+    friend class Q254;
 public:
     LTreeView(uint u, QWidget* x1 = 0) : QTreeView(x1), unique(u) {}
 
@@ -6354,15 +6354,15 @@ public:
 
 class LTreeWidget : public QTreeWidget {
     Q_OBJECT
-    friend class Q256;
+    friend class Q255;
 public:
     LTreeWidget(uint u, QWidget* x1 = 0) : QTreeWidget(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    bool dropMimeData(QTreeWidgetItem* x1, int x2, const QMimeData* x3, Qt::DropAction x4) { quint64 id = LObjects::override_id(unique, 419); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 419, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::dropMimeData(x1, x2, x3, x4); } return ret; }
-    QMimeData* mimeData(const QList<QTreeWidgetItem*>& x1) const { quint64 id = LObjects::override_id(unique, 420); void* fun = LObjects::overrideFun(id); QMimeData* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QMimeData*)callOverrideFun(fun, 420, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::mimeData(x1); } return ret; }
+    bool dropMimeData(QTreeWidgetItem* x1, int x2, const QMimeData* x3, Qt::DropAction x4) { quint64 id = LObjects::override_id(unique, 417); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2, &x3, &x4 }; ret = callOverrideFun(fun, 417, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::dropMimeData(x1, x2, x3, x4); } return ret; }
+    QMimeData* mimeData(const QList<QTreeWidgetItem*>& x1) const { quint64 id = LObjects::override_id(unique, 418); void* fun = LObjects::overrideFun(id); QMimeData* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QMimeData*)callOverrideFun(fun, 418, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::mimeData(x1); } return ret; }
     QStringList mimeTypes() const { quint64 id = LObjects::override_id(unique, 70); void* fun = LObjects::overrideFun(id); QStringList ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 70, 0, id).value<QStringList>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::mimeTypes(); } return ret; }
     Qt::DropActions supportedDropActions() const { quint64 id = LObjects::override_id(unique, 84); void* fun = LObjects::overrideFun(id); Qt::DropActions ret = (Qt::DropActions)0; if(fun && (LObjects::calling != id)) { ret = (Qt::DropActions)callOverrideFun(fun, 84, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QTreeWidget::supportedDropActions(); } return ret; }
     void setSelectionModel(QItemSelectionModel* x1) { quint64 id = LObjects::override_id(unique, 89); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 89, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QTreeWidget::setSelectionModel(x1); }}
@@ -6440,7 +6440,7 @@ public:
 
 class LUndoGroup : public QUndoGroup {
     Q_OBJECT
-    friend class Q258;
+    friend class Q257;
 public:
     LUndoGroup(uint u, QObject* x1 = 0) : QUndoGroup(x1), unique(u) {}
 
@@ -6455,7 +6455,7 @@ public:
 
 class LUndoStack : public QUndoStack {
     Q_OBJECT
-    friend class Q259;
+    friend class Q258;
 public:
     LUndoStack(uint u, QObject* x1 = 0) : QUndoStack(x1), unique(u) {}
 
@@ -6470,7 +6470,7 @@ public:
 
 class LUndoView : public QUndoView {
     Q_OBJECT
-    friend class Q260;
+    friend class Q259;
 public:
     LUndoView(uint u, QWidget* x1 = 0) : QUndoView(x1), unique(u) {}
     LUndoView(uint u, QUndoStack* x1, QWidget* x2 = 0) : QUndoView(x1, x2), unique(u) {}
@@ -6550,7 +6550,7 @@ public:
 
 class LVBoxLayout : public QVBoxLayout {
     Q_OBJECT
-    friend class Q261;
+    friend class Q260;
 public:
     LVBoxLayout(uint u) : unique(u) {}
     LVBoxLayout(uint u, QWidget* x1) : QVBoxLayout(x1), unique(u) {}
@@ -6584,7 +6584,7 @@ public:
 
 class LValidator : public QValidator {
     Q_OBJECT
-    friend class Q262;
+    friend class Q261;
 public:
     LValidator(uint u, QObject* x1 = 0) : QValidator(x1), unique(u) {}
 
@@ -6601,7 +6601,7 @@ public:
 
 class LVariantAnimation : public QVariantAnimation {
     Q_OBJECT
-    friend class Q263;
+    friend class Q262;
 public:
     LVariantAnimation(uint u, QObject* x1 = 0) : QVariantAnimation(x1), unique(u) {}
 
@@ -6622,7 +6622,7 @@ public:
 
 class LWidget : public QWidget {
     Q_OBJECT
-    friend class Q272;
+    friend class Q271;
 public:
     LWidget(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QWidget(x1, x2), unique(u) {}
 
@@ -6671,15 +6671,15 @@ public:
 
 class LWidgetAction : public QWidgetAction {
     Q_OBJECT
-    friend class Q273;
+    friend class Q272;
 public:
     LWidgetAction(uint u, QObject* x1) : QWidgetAction(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    QWidget* createWidget(QWidget* x1) { quint64 id = LObjects::override_id(unique, 453); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWidget*)callOverrideFun(fun, 453, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWidgetAction::createWidget(x1); } return ret; }
-    void deleteWidget(QWidget* x1) { quint64 id = LObjects::override_id(unique, 454); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 454, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWidgetAction::deleteWidget(x1); }}
+    QWidget* createWidget(QWidget* x1) { quint64 id = LObjects::override_id(unique, 451); void* fun = LObjects::overrideFun(id); QWidget* ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = (QWidget*)callOverrideFun(fun, 451, args, id).value<void*>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWidgetAction::createWidget(x1); } return ret; }
+    void deleteWidget(QWidget* x1) { quint64 id = LObjects::override_id(unique, 452); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 452, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWidgetAction::deleteWidget(x1); }}
     bool eventFilter(QObject* x1, QEvent* x2) { quint64 id = LObjects::override_id(unique, 5); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1, &x2 }; ret = callOverrideFun(fun, 5, args, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWidgetAction::eventFilter(x1, x2); } return ret; }
     void childEvent(QChildEvent* x1) { quint64 id = LObjects::override_id(unique, 6); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 6, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWidgetAction::childEvent(x1); }}
     void customEvent(QEvent* x1) { quint64 id = LObjects::override_id(unique, 7); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 7, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWidgetAction::customEvent(x1); }}
@@ -6688,7 +6688,7 @@ public:
 
 class LWindow : public QWindow {
     Q_OBJECT
-    friend class Q274;
+    friend class Q273;
 public:
     LWindow(uint u, QScreen* x1 = 0) : QWindow(x1), unique(u) {}
     LWindow(uint u, QWindow* x1) : QWindow(x1), unique(u) {}
@@ -6724,17 +6724,17 @@ public:
 
 class LWizard : public QWizard {
     Q_OBJECT
-    friend class Q275;
+    friend class Q274;
 public:
     LWizard(uint u, QWidget* x1 = 0, Qt::WindowFlags x2 = 0) : QWizard(x1, x2), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    int nextId() const { quint64 id = LObjects::override_id(unique, 455); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 455, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizard::nextId(); } return ret; }
-    bool validateCurrentPage() { quint64 id = LObjects::override_id(unique, 456); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 456, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizard::validateCurrentPage(); } return ret; }
-    void cleanupPage(int x1) { quint64 id = LObjects::override_id(unique, 457); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 457, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::cleanupPage(x1); }}
-    void initializePage(int x1) { quint64 id = LObjects::override_id(unique, 458); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 458, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::initializePage(x1); }}
+    int nextId() const { quint64 id = LObjects::override_id(unique, 453); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 453, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizard::nextId(); } return ret; }
+    bool validateCurrentPage() { quint64 id = LObjects::override_id(unique, 454); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 454, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizard::validateCurrentPage(); } return ret; }
+    void cleanupPage(int x1) { quint64 id = LObjects::override_id(unique, 455); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 455, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::cleanupPage(x1); }}
+    void initializePage(int x1) { quint64 id = LObjects::override_id(unique, 456); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 456, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::initializePage(x1); }}
     void setVisible(bool x1) { quint64 id = LObjects::override_id(unique, 109); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 109, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::setVisible(x1); }}
     QSize sizeHint() const { quint64 id = LObjects::override_id(unique, 25); void* fun = LObjects::overrideFun(id); QSize ret; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 25, 0, id).value<QSize>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizard::sizeHint(); } return ret; }
     void done(int x1) { quint64 id = LObjects::override_id(unique, 185); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; callOverrideFun(fun, 185, args, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizard::done(x1); }}
@@ -6779,18 +6779,18 @@ public:
 
 class LWizardPage : public QWizardPage {
     Q_OBJECT
-    friend class Q276;
+    friend class Q275;
 public:
     LWizardPage(uint u, QWidget* x1 = 0) : QWizardPage(x1), unique(u) {}
 
     static NumList overrideIds;
     uint unique;
 
-    void cleanupPage() { quint64 id = LObjects::override_id(unique, 459); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 459, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizardPage::cleanupPage(); }}
-    void initializePage() { quint64 id = LObjects::override_id(unique, 460); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 460, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizardPage::initializePage(); }}
-    bool isComplete() const { quint64 id = LObjects::override_id(unique, 461); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 461, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::isComplete(); } return ret; }
-    int nextId() const { quint64 id = LObjects::override_id(unique, 455); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 455, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::nextId(); } return ret; }
-    bool validatePage() { quint64 id = LObjects::override_id(unique, 462); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 462, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::validatePage(); } return ret; }
+    void cleanupPage() { quint64 id = LObjects::override_id(unique, 457); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 457, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizardPage::cleanupPage(); }}
+    void initializePage() { quint64 id = LObjects::override_id(unique, 458); void* fun = LObjects::overrideFun(id); if(fun && (LObjects::calling != id)) { callOverrideFun(fun, 458, 0, id); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { QWizardPage::initializePage(); }}
+    bool isComplete() const { quint64 id = LObjects::override_id(unique, 459); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 459, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::isComplete(); } return ret; }
+    int nextId() const { quint64 id = LObjects::override_id(unique, 453); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 453, 0, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::nextId(); } return ret; }
+    bool validatePage() { quint64 id = LObjects::override_id(unique, 460); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 460, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::validatePage(); } return ret; }
     bool hasHeightForWidth() const { quint64 id = LObjects::override_id(unique, 21); void* fun = LObjects::overrideFun(id); bool ret = false; if(fun && (LObjects::calling != id)) { ret = callOverrideFun(fun, 21, 0, id).toBool(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::hasHeightForWidth(); } return ret; }
     int heightForWidth(int x1) const { quint64 id = LObjects::override_id(unique, 22); void* fun = LObjects::overrideFun(id); int ret = 0; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 22, args, id).toInt(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::heightForWidth(x1); } return ret; }
     QVariant inputMethodQuery(Qt::InputMethodQuery x1) const { quint64 id = LObjects::override_id(unique, 23); void* fun = LObjects::overrideFun(id); QVariant ret; if(fun && (LObjects::calling != id)) { const void* args[] = { &x1 }; ret = callOverrideFun(fun, 23, args, id).value<QVariant>(); } if(!fun || LObjects::call_default || (LObjects::calling == id)) { ret = QWizardPage::inputMethodQuery(x1); } return ret; }

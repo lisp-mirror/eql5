@@ -377,8 +377,6 @@
    "virtual void setTarget ( const QQmlProperty & ) = 0")
   (("QQmlScriptString" . NIL))
   (("QQuaternion" . NIL))
-  (("QQuickAsyncImageProvider" . "QQuickImageProvider")
-   "virtual QQuickImageResponse * requestImageResponse ( const QString & , const QSize & ) = 0")
   (("QQuickImageProvider" . "QQmlImageProviderBase")
    "virtual QImage requestImage ( const QString & , QSize * , const QSize & )"
    "virtual QPixmap requestPixmap ( const QString & , QSize * , const QSize & )"

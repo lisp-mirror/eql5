@@ -183,7 +183,6 @@ class Q128 : public Q127 { // QMediaPlayer
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0, QMediaPlayer::Flags x2 = 0) { return new LMediaPlayer(u, x1, x2); }
-    Q_INVOKABLE int MaudioRole(QMediaPlayer* o) const { return o->audioRole(); }
     Q_INVOKABLE int MbufferStatus(QMediaPlayer* o) const { return o->bufferStatus(); }
     Q_INVOKABLE QMediaContent McurrentMedia(QMediaPlayer* o) const { return o->currentMedia(); }
     Q_INVOKABLE QNetworkConfiguration McurrentNetworkConfiguration(QMediaPlayer* o) const { return o->currentNetworkConfiguration(); }
@@ -199,12 +198,10 @@ public:
     Q_INVOKABLE qreal MplaybackRate(QMediaPlayer* o) const { return o->playbackRate(); }
     Q_INVOKABLE QMediaPlaylist* Mplaylist(QMediaPlayer* o) const { return o->playlist(); }
     Q_INVOKABLE qlonglong Mposition(QMediaPlayer* o) const { return o->position(); }
-    Q_INVOKABLE void MsetAudioRole(QMediaPlayer* o, QAudio::Role x1) { o->setAudioRole(x1); }
     Q_INVOKABLE void MsetVideoOutput(QMediaPlayer* o, QVideoWidget* x1) { o->setVideoOutput(x1); }
     Q_INVOKABLE void MsetVideoOutput(QMediaPlayer* o, QGraphicsVideoItem* x1) { o->setVideoOutput(x1); }
     Q_INVOKABLE void MsetVideoOutput(QMediaPlayer* o, QAbstractVideoSurface* x1) { o->setVideoOutput(x1); }
     Q_INVOKABLE int Mstate(QMediaPlayer* o) const { return o->state(); }
-    Q_INVOKABLE QList<QAudio::Role> MsupportedAudioRoles(QMediaPlayer* o) const { return o->supportedAudioRoles(); }
     Q_INVOKABLE int Mvolume(QMediaPlayer* o) const { return o->volume(); }
     Q_INVOKABLE int Mavailability(QMediaPlayer* o) const { return o->availability(); }
     Q_INVOKABLE int ShasSupport(const QString& x1, const QStringList& x2 = QStringList(), QMediaPlayer::Flags x3 = 0) { return QMediaPlayer::hasSupport(x1, x2, x3); }
@@ -229,7 +226,6 @@ public:
     Q_INVOKABLE void Mload(QMediaPlaylist* o, const QUrl& x1, const char* x2 = 0) { o->load(x1, x2); }
     Q_INVOKABLE QMediaContent Mmedia(QMediaPlaylist* o, int x1) const { return o->media(x1); }
     Q_INVOKABLE int MmediaCount(QMediaPlaylist* o) const { return o->mediaCount(); }
-    Q_INVOKABLE bool MmoveMedia(QMediaPlaylist* o, int x1, int x2) { return o->moveMedia(x1, x2); }
     Q_INVOKABLE int MnextIndex(QMediaPlaylist* o, int x1 = 1) const { return o->nextIndex(x1); }
     Q_INVOKABLE int MplaybackMode(QMediaPlaylist* o) const { return o->playbackMode(); }
     Q_INVOKABLE int MpreviousIndex(QMediaPlaylist* o, int x1 = 1) const { return o->previousIndex(x1); }
@@ -287,7 +283,7 @@ public:
     Q_INVOKABLE QMediaControl* MrequestControl(QMediaService* o, const char* x1) { return o->requestControl(x1); }
 };
 
-class Q188 : public Q127 { // QRadioTuner
+class Q187 : public Q127 { // QRadioTuner
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LRadioTuner(u, x1); }
@@ -310,7 +306,7 @@ public:
     Q_INVOKABLE int Mavailability(QRadioTuner* o) const { return o->availability(); }
 };
 
-class Q265 : public Q126 { // QVideoWidgetControl
+class Q264 : public Q126 { // QVideoWidgetControl
     Q_OBJECT
 public:
     Q_INVOKABLE int MaspectRatioMode(QVideoWidgetControl* o) const { return o->aspectRatioMode(); }
@@ -370,7 +366,7 @@ public:
     Q_INVOKABLE int Mavailability(QCamera* o) const { return o->availability(); }
 };
 
-class Q264 : public Q272 { // QVideoWidget
+class Q263 : public Q271 { // QVideoWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LVideoWidget(u, x1); }
@@ -384,7 +380,7 @@ public:
     Q_INVOKABLE QSize MsizeHint(QVideoWidget* o) const { return o->sizeHint(); }
 };
 
-class Q34 : public Q264 { // QCameraViewfinder
+class Q34 : public Q263 { // QCameraViewfinder
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LCameraViewfinder(u, x1); }

@@ -3145,9 +3145,6 @@
    "static QQuaternion nlerp ( const QQuaternion & , const QQuaternion & , float )"
    "static QQuaternion rotationTo ( const QVector3D & , const QVector3D & )"
    "static QQuaternion slerp ( const QQuaternion & , const QQuaternion & , float )")
-  (("QQuickAsyncImageProvider" . "QQuickImageProvider")
-   "new QQuickAsyncImageProvider ()"
-   "virtual QQuickImageResponse * requestImageResponse ( const QString & , const QSize & ) = 0")
   (("QQuickImageProvider" . "QQmlImageProviderBase")
    "new QQuickImageProvider ( ImageType , Flags = 0 )"
    "Flags flags () const"
