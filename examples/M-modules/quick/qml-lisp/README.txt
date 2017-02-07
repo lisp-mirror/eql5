@@ -42,15 +42,17 @@ Examples:
 QML FILES
 =========
 
-Always add these 2 "import" lines for Lisp access:
+The only "import" needed is:
 
     import EQL5 1.0
-    import "qrc:///eql5.js" as Lisp
 
-The "eql5.js" file is compiled as a resource into the eql5 shared library,
-see "eql5/src/eql5.js" and "eql5/src/eql5.qrc".
+which provides all of:
 
-To reload the QML file after changes, do:
+    Lisp.call()
+    Lisp.apply()
+    PaintedItem
+
+To reload the QML source file after changes, do:
 
     (qml:reload)
 

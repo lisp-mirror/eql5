@@ -2,9 +2,7 @@
 
 import QtQuick 2.0
 import "ext"
-
 import EQL5 1.0
-import "qrc:eql5.js" as Lisp
 
 Rectangle {
     id: game

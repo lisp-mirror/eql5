@@ -14,10 +14,11 @@
    #:children
    #:find-quick-item
    #:js
-   #:paint
    #:qml-get
    #:qml-set
+   #:paint
    #:reload
+   #:root-context
    #:root-item))
 
 (provide :qml-lisp)
@@ -82,6 +83,10 @@
   (when *quick-view*
     (|rootObject| *quick-view*)))
 
+(defun root-context ()
+  (when *quick-view*
+    (|rootContext| *quick-view*)))
+
 (defun find-quick-item (object-name)
   "Finds the first QQuickItem matching OBJECT-NAME."
   (if (string= (|objectName| (root-item)) object-name)
@@ -132,7 +137,7 @@
 (defun js (item/name js-format-string &rest arguments)
   "Evaluates a JS string, with 'this' bound to either ITEM, or first object matching NAME. Arguments are passed through FORMAT."
   (qlet ((qml-exp "QQmlExpression(QQmlContext*,QObject*,QString)"
-                  (|rootContext| *quick-view*)
+                  (root-context)
                   (quick-item item/name)
                   (apply 'format nil js-format-string arguments))
          (variant (|evaluate| qml-exp)))
