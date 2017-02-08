@@ -12,16 +12,27 @@
 TESTED WITH
 ===========
 
-  Linux:
+  Linux (development platform):
     ECL 16.1.2
-    Qt 5.5
+    Qt 5.5.1
 
-  Windows: (MSVC 2015, free version)
+  Windows:
+    MSVC 2010, MinGW 4.9*:
+    ECL git 2017-02 / 32 bit
+    Qt 5.5.1 / 32 bit (precompiled from qt.io archives; contains WebKit)
+
+    MSVC 2015
     ECL git 2016-11 / 64 bit (see flag in Makefile)
-    Qt 5.7 / 64 bit
+    Qt 5.7 / 64 bit (precompiled from qt.io archives; WebKit is not included)
 
   (currently not tested on OSX)
 
+  ---
+
+  *) to successfully build with MinGW, I needed to:
+     - change a typedef in "ecl.h" (after building ECL); see compile error;
+     - comment out all offending lines of module :quick; see SGTexture related
+       linker errors; the source files are in "eql5/src/gen/quick/";
 
 
 REQUIREMENTS
