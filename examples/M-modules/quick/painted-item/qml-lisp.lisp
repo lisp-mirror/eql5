@@ -102,7 +102,8 @@
          (root-item))))
 
 (defun children (item/name)
-  (|childItems| (quick-item item/name)))
+  "Like QML function 'children'."
+  (mapcar 'qt-object-? (|childItems| (quick-item item/name))))
 
 (defun reload ()
   "Force reloading of QML file after changes made to it."
