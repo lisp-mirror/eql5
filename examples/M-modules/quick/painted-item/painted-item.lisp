@@ -17,8 +17,7 @@
               (qml-get item "fillColor"))) ; QML property
 
 (defun run ()
-  ;; *quick-view* can be either a QQuickView or a QQuickWidget
-  (setf qml:*quick-view* (qnew "QQuickView"))
+  (setf qml:*quick-view* (qnew "QQuickWidget")) ; QQuickView would crash on Windows
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/painted-item.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
