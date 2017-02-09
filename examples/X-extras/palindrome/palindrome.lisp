@@ -11,7 +11,7 @@
 
 (defvar *generate-html/js-version* nil) ; command line option :html
 
-(dolist (arg (mapcar 'read-from-string (|arguments.QCoreApplication|)))
+(dolist (arg (mapcar 'read-from-string (rest (|arguments.QCoreApplication|))))
   (if (numberp arg)
       (if (integerp arg)
           (setf *window-width* arg)
