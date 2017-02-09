@@ -15,3 +15,14 @@ NOTE
 ====
 
 Use QQuickWidget here, because QQuickView would crash (e.g. on Windows).
+
+You need to explicitly call 'update' after any change to paint dependent data.
+In this case, that is, doing the painting directly, there is no way to detect
+it automatically.
+
+Example:
+
+  (defparameter *item* (first (children (root-item))))
+  (qml-set *item* "fillColor" "yellow")
+  (|update| *item*)
+
