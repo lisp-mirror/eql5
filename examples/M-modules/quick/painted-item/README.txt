@@ -8,4 +8,10 @@ which means using QPainter from Lisp (instead of JS in QML).
 RUN
 ===
 
-Please run it from this directory.
+Run "painted-item.lisp" from this directory.
+
+
+NOTE
+====
+
+Use QQuickWidget here, because QQuickView would crash (e.g. on Windows).

@@ -37,7 +37,9 @@ public:
                               const QJSValue& = QJSValue(),
                               const QJSValue& = QJSValue());
 
-    Q_INVOKABLE QVariant apply(const QJSValue&, const QJSValue& = QJSValue(), const QJSValue& = QJSValue());
+    Q_INVOKABLE QVariant apply(const QJSValue&,
+                               const QJSValue& = QJSValue(),
+                               const QJSValue& = QJSValue());
 };
 
 class PaintedItem : public QQuickPaintedItem {
