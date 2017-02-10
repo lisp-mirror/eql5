@@ -14,14 +14,17 @@
 
 (use-package :qml)
 
-(defvar *clock* nil)
+(defun clock ()
+  ;; will keep working even after reloading the QML file (see QML:RELOAD);
+  ;; if stored in a variable, this won't be true;
+  (find-quick-item "clock"))
 
 ;; paint
 
 (defun qml:paint (item painter)
   "This function is called on every 'paint' request of QML type 'PaintedItem'."
   (|setRenderHint| painter |QPainter.Antialiasing|)
-  (cond ((qeql *clock* item)
+  (cond ((qeql (clock) item)
          (clock:paint item painter))
         (t
          (|fillRect| painter (|contentsBoundingRect| item)
@@ -33,9 +36,8 @@
     (|setSource| (|fromLocalFile.QUrl| "qml/painted-item.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
     (|resize| '(340 340)))
-  (setf *clock* (find-quick-item "clock"))
   (let ((timer (qnew "QTimer")))
-    (qconnect timer "timeout()" (lambda () (|update| *clock*))) ; repaint
+    (qconnect timer "timeout()" (lambda () (|update| (clock)))) ; repaint
     (|start| timer (* 60 1000)))                                ; once a minute
   (|show| qml:*quick-view*))
 

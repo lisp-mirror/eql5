@@ -22,7 +22,7 @@ it automatically.
 
 Example:
 
-  (defparameter *item* (first (children (root-item))))
-  (qml-set *item* "fillColor" "yellow")
-  (|update| *item*)
+  (let ((item (first (children (root-item)))))
+    (qml-set item "fillColor" "yellow")
+    (|update| item))
 
