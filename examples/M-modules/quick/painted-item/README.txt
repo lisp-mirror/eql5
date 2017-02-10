@@ -16,13 +16,11 @@ NOTE
 
 Use QQuickWidget here, because QQuickView would crash (e.g. on Windows).
 
-You need to explicitly call 'update' after any change to paint dependent data.
-In this case, that is, doing the painting directly, there is no way to detect
-it automatically.
+You need to tell QML-SET to call |update| after any change to data which
+QML:PAINT depends on.
+Only in this exceptional case there is no way to do it implicitly using QML.
 
 Example:
 
-  (let ((item (first (children (root-item)))))
-    (qml-set item "fillColor" "yellow")
-    (|update| item))
-
+    (qml-set (first (children (root-item)))
+             "fillColor" "yellow" t)        ; pass T for repainting

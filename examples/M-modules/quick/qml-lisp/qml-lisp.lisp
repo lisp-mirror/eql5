@@ -123,15 +123,17 @@
                   t))
         (eql::%error-msg "QML-GET" (list item/name property-name)))))
 
-(defun qml-set (item/name property-name value)
-  "Sets QQmlProperty of either ITEM, or first object matching NAME. Returns T on success."
-  (qlet ((property "QQmlProperty(QObject*,QString)"
-                   (quick-item item/name)
-                   property-name))
-    (if (|isValid| property)
-        (qlet ((variant (qvariant-from-value value (|propertyTypeName| property))))
-          (|write| property variant))
-        (eql::%error-msg "QML-SET" (list item/name property-name value)))))
+(defun qml-set (item/name property-name value &optional update)
+  "Sets QQmlProperty of either ITEM, or first object matching NAME. Returns T on success. If UPDATE is not NIL and ITEM is a QQuickPaintedItem, |update| will be called on it."
+  (let ((item (quick-item item/name)))
+    (qlet ((property "QQmlProperty(QObject*,QString)" item property-name))
+      (if (|isValid| property)
+          (qlet ((variant (qvariant-from-value value (|propertyTypeName| property))))
+            (prog1
+                (|write| property variant)
+              (when (and update (= (qt-object-id item) #.(qid "QQuickPaintedItem")))
+                (|update| item))))
+          (eql::%error-msg "QML-SET" (list item/name property-name value))))))
 
 ;;; JS 
 
