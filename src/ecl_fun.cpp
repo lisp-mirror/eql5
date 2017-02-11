@@ -904,6 +904,7 @@ QVariant toQVariant(cl_object l_obj, const char* s_type, int type, bool* ok) {
         case QVariant::Locale:      var = toQLocale(l_obj); break;
         case QVariant::LongLong:    var = toInt<qlonglong>(l_obj); break;
         case QVariant::Matrix:      var = toQMatrix(l_obj); break;
+        case QVariant::ModelIndex:  var = toQModelIndex(l_obj); break;
         case QVariant::Palette:     var = toQPalette(l_obj); break;
         case QVariant::Pen:         var = toQPen(l_obj); break;
         case QVariant::Pixmap:      var = toQPixmap(l_obj); break;
@@ -1115,6 +1116,7 @@ static cl_object from_qvariant_value(const QVariant& var) {
         case QVariant::LineF:       l_obj = from_qlinef(var.toLineF()); break;
         case QVariant::Locale:      l_obj = from_qlocale(var.toLocale()); break;
         case QVariant::LongLong:    l_obj = ecl_make_integer(var.toLongLong()); break;
+        case QVariant::ModelIndex:  l_obj = from_qmodelindex(var.value<QModelIndex>()); break;
         case QVariant::Palette:     l_obj = from_qpalette(var.value<QPalette>()); break;
         case QVariant::Pen:         l_obj = from_qpen(var.value<QPen>()); break;
         case QVariant::Pixmap:      l_obj = from_qpixmap(var.value<QPixmap>()); break;

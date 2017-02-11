@@ -6,7 +6,8 @@ Rectangle {
 
     PaintedItem {
         x: 10; y: 10; width: 100; height: 100
-        property string fillColor: "red"
+        objectName: "left"
+        property string fillColor: "coral"
     }
 
     PaintedItem {
@@ -36,6 +37,7 @@ Rectangle {
 
     PaintedItem {
         x: 230; y: 10; width: 100; height: 100
-        property string fillColor: "blue"
+        objectName: "right"
+        property string fillColor: "cornflowerblue"
     }
 }
