@@ -37,6 +37,12 @@
 
 (defvar *empty-variant* (qnew "QVariant"))
 
+;; advanced note on QOVERRIDE:
+;;
+;; in overridden function "data(QModelIndex,int)", new QVariants are constructed,
+;; (here: using QVARIANT-FROM-VALUE); they will be garbage collected (like return
+;; values from any Qt function, and from QGET)
+
 (defun make-animal-model ()
   (setf *animal-model* (qnew "QAbstractListModel"))
   (qoverride *animal-model* "rowCount(QModelIndex)"
@@ -55,8 +61,8 @@
                  (or data *empty-variant*))))
   (qoverride *animal-model* "roleNames()"
              (lambda ()
-               (list (cons +kind-role+ "kind")     ; see 'kind' in QML
-                     (cons +size-role+ "size"))))) ; see 'size' in QML
+               (list (cons +kind-role+ "kind")           ; see 'kind' in QML
+                     (cons +size-role+ "size")))))       ; see 'size' in QML
 
 (defun run ()
   ;; data
@@ -67,7 +73,7 @@
   ;; view
   (setf qml:*quick-view* (qnew "QQuickView"))
   (|setContextProperty| (|rootContext| qml:*quick-view*)
-                        "myModel" *animal-model*) ; see 'myModel' in QML
+                        "myModel" *animal-model*)        ; see 'myModel' in QML
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/abstract-model.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)

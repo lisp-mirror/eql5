@@ -989,7 +989,7 @@ static cl_object from_qcolor(const QColor& col) {
     cl_object l_ret = Cnil;
     if(col.isValid()) { // return NIL for invalid QColors
         if(EQL::return_value_p) {
-            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); }
+            l_ret = qt_object_from_name("QColor", new QColor(col), 0, true); } // GC
         else {
             l_ret = qt_object_from_name("QColor", (void*)&col); }}
     return l_ret; }
@@ -1860,9 +1860,10 @@ cl_object qproperty(cl_object l_obj, cl_object l_name) {
                 QVariant var(mp.read((QObject*)o.pointer));
                 const cl_env_ptr l_env = ecl_process_env();
                 l_env->nvalues = 2;
+                bool return_value_p = EQL::return_value_p;
                 EQL::return_value_p = true;
                 l_env->values[0] = from_qvariant_value(var);
-                EQL::return_value_p = false;
+                EQL::return_value_p = return_value_p;
                 l_env->values[1] = Ct;
                 return l_env->values[0]; }}}
     ecl_process_env()->nvalues = 1;
@@ -1903,9 +1904,10 @@ cl_object qvariant_value(cl_object l_obj) {
     QtObject o = toQtObject(l_obj);
     if("QVariant" == o.className() && o.pointer) {
         QVariant* p = (QVariant*)o.pointer;
+        bool return_value_p = EQL::return_value_p;
         EQL::return_value_p = true;
         cl_object l_ret = from_qvariant_value(*p);
-        EQL::return_value_p = false;
+        EQL::return_value_p = return_value_p;
         return l_ret; }
     error_msg("QVARIANT-VALUE", LIST1(l_obj));
     return Cnil; }
@@ -1921,7 +1923,11 @@ cl_object qvariant_from_value(cl_object l_val, cl_object l_type) {
         QVariant var(toQVariant(l_val, typeName, -1, &ok));
         if(ok) {
             QVariant* p = new QVariant(var);
-            cl_object l_ret = qt_object_from_name("QVariant", p);
+            cl_object l_ret = Cnil;
+            if(EQL::return_value_p) {
+                l_ret = qt_object_from_name("QVariant", p, 0, true); } // GC
+            else {
+                l_ret = qt_object_from_name("QVariant", p); }
             return l_ret; }}
     error_msg("QVARIANT-FROM-VALUE", LIST2(l_val, l_type));
     return Cnil; }
@@ -2161,9 +2167,10 @@ ok3:
                             clearMetaArgList(mArgs);
                             cl_object l_ret = Cnil;
                             if(ret.second) {
+                                bool return_value_p = EQL::return_value_p;
                                 EQL::return_value_p = true;
                                 l_ret = to_lisp_arg(ret);
-                                EQL::return_value_p = false;
+                                EQL::return_value_p = return_value_p;
                                 clearMetaArg(ret, true); }
                             const cl_env_ptr l_env = ecl_process_env();
                             l_env->nvalues = 2;
@@ -2318,7 +2325,10 @@ QVariant callOverrideFun(void* fun, int id, const void** args, quint64 override_
         l_args = CONS(to_lisp_arg(MetaArg(arg_type, (void*)args[i])), l_args);
         ++i; }
     LObjects::call_default = false; // see qcall_default()
+    bool return_value_p = EQL::return_value_p;
+    EQL::return_value_p = true;
     cl_object l_ret = call_lisp_fun((cl_object)fun, cl_nreverse(l_args), override_id);
+    EQL::return_value_p = return_value_p;
     QVariant ret;
     const char* ret_type = LObjects::override_arg_types[n][0];
     if(ret_type) {
