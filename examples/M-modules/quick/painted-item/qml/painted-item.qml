@@ -7,7 +7,9 @@ Rectangle {
     PaintedItem {
         x: 10; y: 10; width: 100; height: 100
         objectName: "left"
-        property string fillColor: "coral"
+
+        property rect ellipse: Qt.rect(10, 10, 80, 80)
+        property string color: "coral"
     }
 
     PaintedItem {
@@ -21,14 +23,14 @@ Rectangle {
 
             ScaleAnimator {
                 target: clock
-                from: 0.95; to: 1.0
+                from: 0.9; to: 1.0
                 duration: 500
                 easing.type: Easing.InOutSine
             }
 
             ScaleAnimator {
                 target: clock
-                from: 1.0; to: 0.95
+                from: 1.0; to: 0.9
                 duration: 500
                 easing.type: Easing.InOutSine
             }
@@ -38,6 +40,8 @@ Rectangle {
     PaintedItem {
         x: 230; y: 10; width: 100; height: 100
         objectName: "right"
-        property string fillColor: "cornflowerblue"
+
+        property rect ellipse: Qt.rect(10, 10, 80, 80)
+        property string color: "cornflowerblue"
     }
 }

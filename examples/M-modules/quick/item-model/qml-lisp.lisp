@@ -81,7 +81,7 @@
 
 (defun root-item ()
   (when *quick-view*
-    (|rootObject| *quick-view*)))
+    (qt-object-? (|rootObject| *quick-view*))))
 
 (defun root-context ()
   (when *quick-view*

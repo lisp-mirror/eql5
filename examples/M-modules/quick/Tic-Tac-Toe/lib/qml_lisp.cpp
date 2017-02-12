@@ -24,11 +24,10 @@ static QVariant qmlApply(QObject* caller, const QString& function, const QVarian
             Q_ARG(QObject*, caller),
             Q_ARG(QString, function),
             Q_ARG(QVariantList, arguments));
-    if(var.type() == QVariant::String) {
-        QString str(var.toString());
-        if(str.startsWith("#<>")) { // prepared in Lisp for JS eval
-            QQmlExpression exp(rootContext(), caller, str.mid(3));
-            return exp.evaluate(); }}
+    QString str(var.toString());
+    if(str.startsWith("#<>")) { // prepared in Lisp for JS eval
+        QQmlExpression exp(rootContext(), caller, str.mid(3));
+        return exp.evaluate(); }
     return var; }
 
 QVariant Lisp::call(const QJSValue& caller_or_function, const QJSValue& function_or_arg0,

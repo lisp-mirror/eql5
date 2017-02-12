@@ -39,7 +39,7 @@
 
 ;; advanced note on QOVERRIDE:
 ;;
-;; in overridden function "data(QModelIndex,int)", new QVariants are constructed,
+;; in overridden function "data(QModelIndex,int)", new QVariants are constructed
 ;; (here: using QVARIANT-FROM-VALUE); they will be garbage collected (like return
 ;; values from any Qt function, and from QGET)
 

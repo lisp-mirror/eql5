@@ -22,4 +22,4 @@ Only in this exceptional case there is no way to do it implicitly using QML.
 
 Example:
 
-    (qml-set "left" "fillColor" "orange" t) ; pass T for repainting
+    (qml-set "left" "color" "orange" t) ; pass T for repainting
