@@ -47,7 +47,9 @@
     (|setEnabled| w (not checked)))
   (show))
 
-(defun show (&optional object)
+(defun show (&optional object qml)
+  (when qml
+    (! "setChecked" *instance-properties* t))
   (when object
     (setf *object* object)
     (let ((depth 1)

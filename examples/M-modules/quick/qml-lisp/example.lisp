@@ -17,7 +17,7 @@
 (defun show-properties-dialog ()
   (unless (find-package :properties)
     (load (in-home "gui/properties")))
-  (funcall (sym :show :properties) qml:*caller*))
+  (funcall (sym :show :properties) qml:*caller* t))
 
 ;; ini
 

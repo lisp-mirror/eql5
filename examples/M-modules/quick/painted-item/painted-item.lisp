@@ -20,10 +20,10 @@
 (defun sym (name package)
   (find-symbol (symbol-name name) package))
 
-(defun show-properties-dialog (&optional (item (qml:root-item)))
+(defun show-properties-dialog (item)
   (unless (find-package :properties)
     (load (in-home "gui/properties")))
-  (funcall (sym :show :properties) item))
+  (funcall (sym :show :properties) item t))
 
 ;; clock
 
