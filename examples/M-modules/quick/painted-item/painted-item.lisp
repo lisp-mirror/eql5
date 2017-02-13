@@ -15,6 +15,18 @@
 
 (use-package :qml)
 
+;; properties
+
+(defun sym (name package)
+  (find-symbol (symbol-name name) package))
+
+(defun show-properties-dialog (&optional (item (qml:root-item)))
+  (unless (find-package :properties)
+    (load (in-home "gui/properties")))
+  (funcall (sym :show :properties) item))
+
+;; clock
+
 (defun clock ()
   ;; will keep working even after reloading the QML file (see QML:RELOAD);
   ;; if stored in a variable, this won't be true;

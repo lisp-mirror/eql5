@@ -44,6 +44,13 @@
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="QCheckBox" name="instance_properties">
+     <property name="text">
+      <string>all instance properties (for QML)</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

@@ -419,7 +419,7 @@ Prints all current properties of <code>object</code>, searching both all Qt prop
 <br><br>
 <b>QPROPERTIES* (object)</b>
 <br><br>
-Similar to <code>qproperties</code>, but listing the custom properties of the passed <code>object</code> instance only.<br>This is only useful for e.g. <code>QQuickItem</code>, in order to list all QML user defined properties of the passed item.
+Similar to <code>qproperties</code>, but listing all properties (including user defined ones) of the passed <code>object</code> instance.<br>This is only useful for e.g. <code>QQuickItem</code> derived classes, which don't have a corresponding C++ class, in order to list all QML properties.
 <br>
 <pre>
   (qproperties* (qml:find-quick-item "myItem"))

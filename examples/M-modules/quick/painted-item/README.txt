@@ -32,8 +32,11 @@ Examples:
 HELP
 ====
 
-Use function QPROPERTIES* to list all user defined QML properties of an item.
+Use function QPROPERTIES* to list all QML properties of an item instance,
+including user defined ones.
 
-Example:
+Examples:
 
     (qproperties* (qml:find-quick-item "left"))
+
+    (show-properties-dialog (qml:find-quick-item "left"))

@@ -115,7 +115,7 @@ void iniCLFunctions() {
     DEFUN ("%make-qimage/dangerous", make_qimage_dangerous, 5)
     DEFUN ("no-qexec",               no_qexec,              0)
     DEFUN ("qadd-event-filter",      qadd_event_filter,     3)
-    DEFUN ("%qapropos",              qapropos2,             3)
+    DEFUN ("%qapropos",              qapropos2,             4)
     DEFUN ("qapp",                   qapp,                  0)
     DEFUN ("qcall-default",          qcall_default,         0)
     DEFUN ("qclear-event-filters",   qclear_event_filters,  0)
@@ -1546,7 +1546,7 @@ static MetaArg retArg(const QByteArray& name) {
 // *** meta info ***
 
 static StrList metaInfo(const QByteArray& type, const QByteArray& qclass, const QByteArray& search,
-                        bool non, const QMetaObject* mo) {
+                        bool non, const QMetaObject* mo, bool no_offset = false) {
     StrList info;
     if("methods" == type) {
         if(!mo) {
@@ -1590,7 +1590,8 @@ static StrList metaInfo(const QByteArray& type, const QByteArray& qclass, const 
             mo = LObjects::staticMetaObject(qclass); }
         if(mo) {
             if("properties" == type) {
-                for(int i = mo->propertyOffset(); i < mo->propertyCount(); ++i) {
+                // 'no_offset' is for properties only (QML)
+                for(int i = (no_offset ? 0 : mo->propertyOffset()); i < mo->propertyCount(); ++i) {
                     QMetaProperty mp(mo->property(i));
                     QString name = QString("%1 %2%3")
                                    .arg(mp.typeName())
@@ -1613,7 +1614,7 @@ static StrList metaInfo(const QByteArray& type, const QByteArray& qclass, const 
                                 info << name.toLatin1(); }}}}}}}
     return info; }
 
-static bool metaInfoLessThan(const QByteArray& s1, const QString& s2) {
+static bool metaInfoLessThan(const QByteArray& s1, const QByteArray& s2) {
     if(s1.contains('(')) {
         return s1.mid(1 + s1.lastIndexOf(' ', s1.indexOf('('))) <
                s2.mid(1 + s2.lastIndexOf(' ', s2.indexOf('('))); }
@@ -1621,9 +1622,9 @@ static bool metaInfoLessThan(const QByteArray& s1, const QString& s2) {
            s2.mid(1 + s2.indexOf(' ')); }
 
 static cl_object collect_info(const QByteArray& type, const QByteArray& qclass, const QByteArray& qsearch,
-                              bool non, bool* found, const QMetaObject* mo) {
+                              bool non, bool* found, const QMetaObject* mo, bool no_offset = false) {
     cl_object l_info = Cnil;
-    StrList info = metaInfo(type, qclass, qsearch, non, mo);
+    StrList info = metaInfo(type, qclass, qsearch, non, mo, no_offset);
     qSort(info.begin(), info.end(), metaInfoLessThan);
     if(info.size()) {
         *found = true;
@@ -1632,7 +1633,7 @@ static cl_object collect_info(const QByteArray& type, const QByteArray& qclass, 
     l_info = cl_nreverse(l_info);
     return l_info; }
 
-cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type) {
+cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type, cl_object l_no_offset) {
     /// args: (&optional search-string class-name)
     /// Finds all occurrencies of the given search string in the given object's meta information.<br>Constructors are listed under "Methods".<br>To list the user defined functions of external C++ classes (see Qt_EQL), pass the object instead of the class name.
     ///     (qapropos "html" "QTextEdit")
@@ -1646,6 +1647,7 @@ cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type) {
         search = toCString(l_search); }
     bool all = (Cnil == l_type);
     bool q = all ? false : (Ct == cl_eql(q_keyword(), l_type));
+    bool no_offset = (Ct == l_no_offset);
     StrList classes;
     bool qt_eql = false;
     const QMetaObject* mo = 0;
@@ -1681,7 +1683,7 @@ cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type) {
             cl_object l_doc_sig = Cnil;
             cl_object l_doc_ovr = Cnil;
             if(!non) {
-                l_doc_pro = collect_info("properties", cl, search, non, &found, mo); }
+                l_doc_pro = collect_info("properties", cl, search, non, &found, mo, no_offset); }
             cl_object l_doc_met = collect_info("methods", cl, search, non, &found, mo);
             if(!non) {
                 l_doc_slo = collect_info("slots", cl, search, non, &found, mo);

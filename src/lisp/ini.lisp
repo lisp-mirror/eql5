@@ -204,7 +204,7 @@
                            'string< :key 'cdr)
                      'string< :key 'car))))
 
-(defun qproperties (object &optional (depth 1) of-instance)
+(defun qproperties (object &optional (depth 1) qml)
   "args: (object &optional (depth 1))
    Prints all current properties of <code>object</code>, searching both all Qt properties and all Qt methods which don't require arguments (marked with '<b>*</b>').<br>Optionally pass a <code>depth</code> indicating how many super-classes to include. Pass <code>T</code> to include all super-classes.
        (qproperties (|font.QApplication|))
@@ -246,13 +246,13 @@
         (let ((name (qt-object-name object*))
               documentations functions properties)
           (x:while (and name (not (eql 0 depth)))
-            (push (first (qapropos* nil (if of-instance object* name)))
+            (push (first (qapropos* nil (if qml object* name) nil qml))
                   documentations)
             (setf name (qsuper-class-name name))
             (when (numberp depth)
               (decf depth)))
           (dolist (docu documentations)
-            (dolist (type '("Properties:" "Methods:"))
+            (dolist (type (if qml '("Properties:") '("Properties:" "Methods:")))
               (dolist (fun (rest (find type (rest docu) :key 'first :test 'string=)))
                 (when (and (not (x:starts-with "void " fun))
                            (not (x:starts-with "constructor " fun))
@@ -295,7 +295,7 @@
 
 (defun qproperties* (object)
   "args: (object)
-   Similar to <code>qproperties</code>, but listing the custom properties of the passed <code>object</code> instance only.<br>This is only useful for e.g. <code>QQuickItem</code>, in order to list all QML user defined properties of the passed item.
+   Similar to <code>qproperties</code>, but listing all properties (including user defined ones) of the passed <code>object</code> instance.<br>This is only useful for e.g. <code>QQuickItem</code> derived classes, which don't have a corresponding C++ class, in order to list all QML properties.
        (qproperties* (qml:find-quick-item \"myItem\"))"
   (qproperties object 1 t))
 
@@ -481,13 +481,13 @@
       (unless (member x '(t nil))
         (symbol-name x)))))
 
-(defun qapropos (&optional name class type)
+(defun qapropos (&optional name class type offset)
   (let ((name* (%string-or-nil name)))
     (when (and (not name*)
                (not class)
                (not (y-or-n-p "Print documentation of all Qt classes?")))
       (return-from qapropos))
-    (let ((main (%qapropos name* class type)))
+    (let ((main (%qapropos name* class type offset)))
       (dolist (sub1 main)
         (format t "~%~%~A~%" (first sub1))
         (dolist (sub2 (rest sub1))
@@ -501,10 +501,10 @@
   (terpri)
   nil)
 
-(defun qapropos* (&optional name class type)
+(defun qapropos* (&optional name class type offset)
   "args: (&optional search-string class-name)
    Similar to <code>qapropos</code>, returning the results as nested list."
-  (%qapropos (%string-or-nil name) class type))
+  (%qapropos (%string-or-nil name) class type offset))
 
 (defun qnew-instance (name &rest arguments)
   (%qnew-instance name arguments))

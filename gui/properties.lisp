@@ -13,7 +13,8 @@
 (defvar-ui *main*
   *view*
   *depth*
-  *label*)
+  *label*
+  *instance-properties*)
 
 (defvar *font*   (format nil "font-family: ~A; font-size: ~Apt;"
                          #+darwin  "Monaco"      #+darwin  12
@@ -27,7 +28,8 @@
   (! "setMinimum" *depth* 1)
   (! "resize" *main* '(650 500))
   (qset-color *view* |QPalette.Base| "lightyellow")
-  (qconnect *depth* "valueChanged(int)" 'update))
+  (qconnect *depth* "valueChanged(int)" 'update)
+  (qconnect *instance-properties* "toggled(bool)" 'all-instance-properties))
   
 (defun update (depth)
   (! "setText" *label*
@@ -38,6 +40,11 @@
                      (setf name (qsuper-class-name name))
                      (princ " - " s)
                      (princ name s)))))
+  (show))
+
+(defun all-instance-properties (checked)
+  (dolist (w (list *depth* *label*))
+    (|setEnabled| w (not checked)))
   (show))
 
 (defun show (&optional object)
@@ -55,7 +62,9 @@
                               "<pre style='~A'>~A</pre>"
                               *font*
                               (qescape (with-output-to-string (*standard-output*)
-                                         (qproperties *object* (! "value" *depth*))))))
+                                         (if (! "isChecked" *instance-properties*)
+                                             (qproperties* *object*)
+                                             (qproperties *object* (! "value" *depth*)))))))
   (unless (! "isVisible" *main*)
     (! "show" *main*)))
 

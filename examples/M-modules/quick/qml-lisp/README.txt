@@ -66,6 +66,19 @@ directly, or NIL if you want to use the root item.
 Please see also the documentation in "qml/example.qml".
 
 
+HELP (properties)
+====
+
+Since many QML types have no corresponding C++ class, the specific properties
+can't be inspected using QPROPERTIES (only the generic ones).
+
+To list all properties (including user defined ones), use QPROPERTIES* instead.
+
+Example:
+
+    (qproperties* (qml:find-quick-item "label"))
+
+
 TIP
 ===
 
