@@ -3625,7 +3625,6 @@
    "void forceActiveFocus ()"
    "void forceActiveFocus ( Qt::FocusReason )"
    "void grabMouse ()"
-   "QSharedPointer<QQuickItemGrabResult> grabToImage ( const QSize & = QSize() )"
    "void grabTouchPoints ( const QVector<int> & )"
    "bool hasActiveFocus () const"
    "bool hasFocus () const"

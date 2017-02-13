@@ -204,7 +204,7 @@
                            'string< :key 'cdr)
                      'string< :key 'car))))
 
-(defun qproperties (object &optional (depth 1))
+(defun qproperties (object &optional (depth 1) of-instance)
   "args: (object &optional (depth 1))
    Prints all current properties of <code>object</code>, searching both all Qt properties and all Qt methods which don't require arguments (marked with '<b>*</b>').<br>Optionally pass a <code>depth</code> indicating how many super-classes to include. Pass <code>T</code> to include all super-classes.
        (qproperties (|font.QApplication|))
@@ -246,7 +246,8 @@
         (let ((name (qt-object-name object*))
               documentations functions properties)
           (x:while (and name (not (eql 0 depth)))
-            (push (first (qapropos* nil name)) documentations)
+            (push (first (qapropos* nil (if of-instance object* name)))
+                  documentations)
             (setf name (qsuper-class-name name))
             (when (numberp depth)
               (decf depth)))
@@ -291,6 +292,12 @@
             (terpri)
             (terpri)
             (values)))))))
+
+(defun qproperties* (object)
+  "args: (object)
+   Similar to <code>qproperties</code>, but listing the custom properties of the passed <code>object</code> instance only.<br>This is only useful for e.g. <code>QQuickItem</code>, in order to list all QML user defined properties of the passed item.
+       (qproperties* (qml:find-quick-item \"myItem\"))"
+  (qproperties object 1 t))
 
 (defun ignore-io-streams ()
   (setf *standard-output* (make-broadcast-stream)
@@ -808,6 +815,7 @@
                   (cons 'qobject-names        '(&optional type))
                   (cons 'qoverride            '(object name function))
                   (cons 'qproperties          '(object &optional (depth 1)))
+                  (cons 'qproperties*         '(object))
                   (cons 'qproperty            '(object name))
                   (cons 'qquit                '(&optional (exit-status 0) (kill-all-threads t)))
                   (cons 'qremove-event-filter '(handle))

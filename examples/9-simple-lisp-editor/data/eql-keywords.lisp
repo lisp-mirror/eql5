@@ -57,6 +57,7 @@
   "qoverride"
   "qprocess-events"
   "qproperties"
+  "qproperties*"
   "qproperty"
   "qq"
   "qquit"

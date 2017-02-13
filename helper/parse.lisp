@@ -57,6 +57,7 @@
         "QIconEngine"
         "QPaintEngine"
         "QPrintEngine"
+        "QSharedPointer"
         "FILE"
         "FT_Face"
         "GLfloat *"

@@ -691,7 +691,6 @@
    #:|grabKeyboard|
    #:|grabMouse|
    #:|grabShortcut|
-   #:|grabToImage|
    #:|grabTouchPoints|
    #:|grabWindow|
    #:|grab|

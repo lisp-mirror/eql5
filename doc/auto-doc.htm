@@ -417,6 +417,14 @@ Prints all current properties of <code>object</code>, searching both all Qt prop
   (qproperties *tool-button* 2)                 ; depth 2: both QToolButton and QAbstractButton
 </pre>
 <br><br>
+<b>QPROPERTIES* (object)</b>
+<br><br>
+Similar to <code>qproperties</code>, but listing the custom properties of the passed <code>object</code> instance only.<br>This is only useful for e.g. <code>QQuickItem</code>, in order to list all QML user defined properties of the passed item.
+<br>
+<pre>
+  (qproperties* (qml:find-quick-item "myItem"))
+</pre>
+<br><br>
 <b>QPROPERTY (object name)</b>
 <br>
 <b>QGET</b>

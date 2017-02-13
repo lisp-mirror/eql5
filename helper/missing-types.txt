@@ -50,7 +50,6 @@ QRadioData
 QRegularExpressionMatch
 QRegularExpressionMatchIterator
 QSGRootNode
-QSharedPointer<QQuickItemGrabResult>
 QStaticText
 QStringRef
 QStyleHintReturn

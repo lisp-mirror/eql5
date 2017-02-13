@@ -20,6 +20,20 @@ You need to tell QML-SET to call |update| after any change to data which
 QML:PAINT depends on.
 Only in this exceptional case there is no way to do it implicitly using QML.
 
+Examples:
+
+    ;; pass T as last argument for repainting
+
+    (qml-set "left" "color" "transparent" t)
+    
+    (qml-set "right" "ellipse" '(40 40 20 20) t)
+
+
+HELP
+====
+
+Use function QPROPERTIES* to list all user defined QML properties of an item.
+
 Example:
 
-    (qml-set "left" "color" "orange" t) ; pass T for repainting
+    (qproperties* (qml:find-quick-item "left"))

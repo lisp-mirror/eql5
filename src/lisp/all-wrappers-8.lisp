@@ -2073,9 +2073,6 @@
 (defun |grabShortcut| (object &rest arguments)
   (%qinvoke-method object nil "grabShortcut" arguments))
 
-(defun |grabToImage| (object &rest arguments)
-  (%qinvoke-method object nil "grabToImage" arguments))
-
 (defun |grabTouchPoints| (object &rest arguments)
   (%qinvoke-method object nil "grabTouchPoints" arguments))
 

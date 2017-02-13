@@ -177,7 +177,6 @@ public:
     Q_INVOKABLE void MforceActiveFocus(QQuickItem* o) { o->forceActiveFocus(); }
     Q_INVOKABLE void MforceActiveFocus(QQuickItem* o, Qt::FocusReason x1) { o->forceActiveFocus(x1); }
     Q_INVOKABLE void MgrabMouse(QQuickItem* o) { o->grabMouse(); }
-    Q_INVOKABLE QSharedPointer<QQuickItemGrabResult> MgrabToImage(QQuickItem* o, const QSize& x1 = QSize()) { return o->grabToImage(x1); }
     Q_INVOKABLE void MgrabTouchPoints(QQuickItem* o, const QVector<int>& x1) { o->grabTouchPoints(x1); }
     Q_INVOKABLE bool MhasActiveFocus(QQuickItem* o) const { return o->hasActiveFocus(); }
     Q_INVOKABLE bool MhasFocus(QQuickItem* o) const { return o->hasFocus(); }
