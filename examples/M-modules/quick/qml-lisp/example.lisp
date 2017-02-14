@@ -5,21 +5,10 @@
 
 (qrequire :quick)
 
-(require :qml-lisp "qml-lisp")
+(require :qml-lisp   "qml-lisp")
+(require :properties "properties")
 
 (use-package :qml)
-
-;; for example (5) in "qml/example.qml"
-
-(defun sym (name package)
-  (find-symbol (symbol-name name) package))
-
-(defun show-properties-dialog ()
-  (unless (find-package :properties)
-    (load (in-home "gui/properties")))
-  (funcall (sym :show :properties) qml:*caller* t))
-
-;; ini
 
 (defun run ()
   ;; *quick-view* can be either a QQuickView or a QQuickWidget

@@ -15,6 +15,9 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
+    <widget class="QLabel" name="class_name"/>
+   </item>
+   <item>
     <widget class="QTextEdit" name="view"/>
    </item>
    <item>

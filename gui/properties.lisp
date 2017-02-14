@@ -11,6 +11,7 @@
 (defvar *main* (qload-ui (in-home "gui/properties")))
 
 (defvar-ui *main*
+  *class-name*
   *view*
   *depth*
   *label*
@@ -24,6 +25,9 @@
 (defvar *object* nil)
 
 (defun ini ()
+  (let ((font (|font.QApplication|)))
+    (! "setBold" font t)
+    (! "setFont" *class-name* font))
   (! "setReadOnly" *view* t)
   (! "setMinimum" *depth* 1)
   (! "resize" *main* '(650 500))
@@ -53,9 +57,11 @@
   (when object
     (setf *object* object)
     (let ((depth 1)
-          (name (qt-object-name object)))
+          (name (qt-object-name *object*)))
       (! "setText" *label* name)
       (! "setWindowTitle" *main* name)
+      (let ((name (! "className" (! "metaObject" *object*))))
+        (! "setText" *class-name* (subseq name 0 (position #\_ name))))
       (x:while (setf name (qsuper-class-name name))
         (incf depth))
       (! "setMaximum" *depth* depth)

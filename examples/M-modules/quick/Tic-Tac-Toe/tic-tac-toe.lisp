@@ -14,6 +14,7 @@
 
 (require :qml-lisp   "qml-lisp")
 (require :game-logic "game-logic")
+(require :properties "properties")
 
 (defun run ()
   ;; *quick-view* can be either a QQuickView or a QQuickWidget

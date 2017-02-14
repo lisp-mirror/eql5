@@ -10,20 +10,11 @@
 
 (qrequire :quick)
 
-(require :qml-lisp "qml-lisp")
-(require :clock    "clock")
+(require :qml-lisp   "qml-lisp")
+(require :clock      "clock")
+(require :properties "properties")
 
 (use-package :qml)
-
-;; properties
-
-(defun sym (name package)
-  (find-symbol (symbol-name name) package))
-
-(defun show-properties-dialog (item)
-  (unless (find-package :properties)
-    (load (in-home "gui/properties")))
-  (funcall (sym :show :properties) item t))
 
 ;; clock
 

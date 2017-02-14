@@ -1647,7 +1647,7 @@ cl_object qapropos2(cl_object l_search, cl_object l_class, cl_object l_type, cl_
         search = toCString(l_search); }
     bool all = (Cnil == l_type);
     bool q = all ? false : (Ct == cl_eql(q_keyword(), l_type));
-    bool no_offset = (Ct == l_no_offset);
+    bool no_offset = (l_no_offset != Cnil);
     StrList classes;
     bool qt_eql = false;
     const QMetaObject* mo = 0;

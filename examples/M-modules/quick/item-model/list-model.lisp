@@ -5,7 +5,8 @@
 
 (qrequire :quick)
 
-(require :qml-lisp "qml-lisp")
+(require :qml-lisp   "qml-lisp")
+(require :properties "properties")
 
 (use-package :qml)
 

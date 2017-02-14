@@ -1,4 +1,8 @@
+INFO
+====
+
 This is a port of a QtQuick1/Qt4 example.
+Please note that this is _old_ QML code (QtQuick 1).
 
 The JS game logic has (obviously) been ported to Lisp, see "game-logic.lisp".
 
