@@ -60,7 +60,7 @@
   qadd-event-filter object event function)
 
 (wrap-in-qrun*
-  %qapropos search class type)
+  %qapropos search class type no-offset)
 
 (wrap-in-qrun*
   qcall-default)
