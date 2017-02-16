@@ -9,7 +9,7 @@ Item {
 
         // Please note:
         //
-        // * to call lisp functions, use either Lisp.call() or Lisp.apply();
+        // * to call Lisp functions, use either Lisp.call() or Lisp.apply();
         //   use JS arrays for lists (can be nested);
         //
         // * the only limit to Lisp.call() is the number of arguments (max. 16);
@@ -22,7 +22,7 @@ Item {
         //   Lisp.call() or Lisp.apply(); it can then be accessed in Lisp via qml:*caller*;
 
         // (1) call CL function
-        console.log(Lisp.call("format", false, "~R", 123))
+        console.log(Lisp.call("format", null, "~R", 123))
 
         // (2) call EQL function
         Lisp.call("qmsg", "hello from QML")

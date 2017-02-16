@@ -1,5 +1,4 @@
 #include "qml_lisp.h"
-#include <eql_fun.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -105,10 +104,5 @@ QVariant Lisp::apply(const QJSValue& caller_or_function,
         function = caller_or_function.toString();
         arguments = function_or_arguments.toVariant().value<QVariantList>(); }
     return qmlApply(caller, function, arguments); }
-
-void PaintedItem::paint(QPainter* painter) {
-    eql_fun("qml:paint",
-            Q_ARG(QQuickPaintedItem*, this),
-            Q_ARG(QPainter*, painter)); }
 
 QT_END_NAMESPACE

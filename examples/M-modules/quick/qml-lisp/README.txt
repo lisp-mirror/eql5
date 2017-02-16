@@ -74,9 +74,11 @@ can't be inspected using QPROPERTIES (only the generic ones).
 
 To list all properties (including user defined ones), use QPROPERTIES* instead.
 
-Example:
+Examples:
 
     (qproperties* (qml:find-quick-item "label"))
+
+    (show-properties-dialog "label") ; see "properties.lisp
 
 
 TIP

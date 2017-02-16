@@ -10,5 +10,4 @@
   (when (stringp item)
     (setf item (qml:find-quick-item item)))
   (funcall (sym :show :properties)
-           (or item qml:*caller*)
-           t)) ; all instance properties (for QML)
+           (or item qml:*caller*)))

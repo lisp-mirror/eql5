@@ -1,7 +1,8 @@
 ;;; copyright (c) Polos Ruetz
 ;;;
-;;; Allows to visually select (mouse click) any (child) widget.
-;;; On selecting, the widget will be highlighted, and qsel:*q* will be set to the latest selected widget. 
+;;; Allows to visually select (mouse click) any child widget or QML item.
+;;; On selecting, the widget/item will be highlighted, and qsel:*q* will be set
+;;; to the latest selected widget/item. 
 
 (defpackage :qselect
   (:nicknames :qsel)
@@ -21,27 +22,33 @@
 
 (in-package :qselect)
 
+(defvar *listen*      nil)
 (defvar *q*           nil)
 (defvar *on-selected* nil)
+(defvar *pos*         nil)
 
-(let ((cross-cursor (qnew "QCursor(Qt::CursorShape)" |Qt.CrossCursor|))
-      listen)
+(let ((cross-cursor (qnew "QCursor(Qt::CursorShape)" |Qt.CrossCursor|)))
   (defun object-selected (object event)
-    (when listen
-      (setf listen nil)
-      (setf *q* object)
-      (setf (qt-object-unique object) (! ("toUInt" ("property" "EQL.unique") *q*)))
-      (indicate)
-      (! "restoreOverrideCursor" "QGuiApplication")
-      (when *on-selected*
-        (funcall *on-selected* object))
-      t)) ; event filter
+    (unless (zerop (qt-object-id object)) ; exclude unknown to EQL
+      (when *listen*
+        (setf *listen* nil
+              *q*      object
+              *pos*    (! "pos" event))
+        (setf (qt-object-unique object)
+              (! ("toUInt" ("property" "EQL.unique") *q*)))
+        (if  (find (! "className" (! "metaObject" *q*))
+                   '("LQuickView" "LQuickWidget") :test 'string=)
+             (indicate*) ; QML items
+             (indicate)) ; QWidgets
+        (! "restoreOverrideCursor" "QGuiApplication")
+        (when *on-selected*
+          (funcall *on-selected* object))
+        t))) ; event filter
   (defun select-mode ()
-    (if (! "topLevelWidgets" "QApplication")
-        (progn
-          (setf listen t)
-          (! "setOverrideCursor" "QGuiApplication" cross-cursor))
-        (qmsg (tr "Please create widgets first.")))))
+    (setf *listen* t)
+    (! "setOverrideCursor" "QGuiApplication" cross-cursor)))
+
+;; for QWidgets
 
 (defun indicate ()
   (let ((object *q*))
@@ -90,6 +97,42 @@
 
 (defun set-highlight (indicate pixmap dark child)
   (let ((rect (highlight indicate child)))
+    (qlet ((painter "QPainter(QPixmap*)" dark))
+      (! "drawPixmap" painter rect pixmap rect))
+    dark))
+
+;; for QML
+
+(defun child (item)
+  (let* ((pos (! "mapFromScene" item *pos*))
+         (child* (! "childAt" item (first pos) (second pos))))
+    (if (qnull child*)
+        item
+        (child child*))))
+
+(defun indicate* ()
+  (let ((root (! "rootObject" *q*)))
+    (indicate-start* *q* (child root))))
+
+(defun indicate-start* (parent child)
+  (setf *q* child)
+  (let ((indicate (qnew "QLabel(QWidget*,Qt::WindowFlags)" nil |Qt.WindowStaysOnTopHint|)))
+    (! "move" indicate (nbutlast (! "frameGeometry" parent) 2))
+    (! "resize" indicate (list (! "width" parent)
+                               (! "height" parent)))
+    (let* ((pix (if (! "isWidgetType" parent)
+                    (! "grab" parent)                                   ; QQuickWidget
+                    (! "fromImage" "QPixmap" (! "grabWindow" parent)))) ; QQuickView
+           (dark (to-dark pix)))
+      (! "setPixmap" indicate (set-highlight* indicate pix dark child)))
+    (qlater (lambda () (! "show" indicate)))
+    (qsingle-shot 500 (lambda () (qdel indicate)))))
+
+(defun highlight* (child)
+  (! "mapRectToScene" child (list 0 0 (! "width" child) (! "height" child))))
+
+(defun set-highlight* (indicate pixmap dark child)
+  (let ((rect (highlight* child)))
     (qlet ((painter "QPainter(QPixmap*)" dark))
       (! "drawPixmap" painter rect pixmap rect))
     dark))

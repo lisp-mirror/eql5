@@ -10,3 +10,11 @@ RUN
 ===
 
 Please run it from this directory.
+
+
+HELP
+====
+
+To list all properties of the 'ListView', do:
+
+    (show-properties-dialog (root-item)) ; see "properties.lisp"

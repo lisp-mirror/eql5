@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>466</width>
-    <height>336</height>
+    <width>417</width>
+    <height>357</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,11 +48,31 @@
     </layout>
    </item>
    <item>
-    <widget class="QCheckBox" name="instance_properties">
-     <property name="text">
-      <string>all instance properties (for QML)</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QCheckBox" name="instance_properties">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>all instance properties (for QML)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="select">
+       <property name="toolTip">
+        <string>Select QWidget or QQuickItem</string>
+       </property>
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

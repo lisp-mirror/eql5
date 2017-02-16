@@ -3,6 +3,7 @@
 
 #include <QtQml>
 #include <QQuickPaintedItem>
+#include <eql_fun.h>
 
 #ifdef Q_OS_WIN
 #define LIB_EXPORT __declspec(dllexport)
@@ -48,7 +49,10 @@ class PaintedItem : public QQuickPaintedItem {
 public:
     PaintedItem(QQuickItem* parent = 0) : QQuickPaintedItem(parent) {}
 
-    void paint(QPainter*);
+    void paint(QPainter* painter) {
+        eql_fun("qml:paint",
+                Q_ARG(QQuickPaintedItem*, this),
+                Q_ARG(QPainter*, painter)); }
 };
 
 QT_END_NAMESPACE

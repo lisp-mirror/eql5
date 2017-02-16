@@ -39,4 +39,4 @@ Examples:
 
     (qproperties* (qml:find-quick-item "left"))
 
-    (show-properties-dialog (qml:find-quick-item "left"))
+    (show-properties-dialog "left") ; see "properties.lisp"

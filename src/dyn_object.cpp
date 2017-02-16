@@ -88,7 +88,7 @@ void DynObject::clearEventFilters() {
     event_objects.clear(); }
 
 bool DynObject::eventFilter(QObject* object, QEvent* event) {
-    if(event_filters && object->isWidgetType()) {
+    if(event_filters && (object->isWidgetType() || object->isWindowType())) {
         for(int i = 0; i < event_objects.size(); ++i) {
             if(!event_objects.at(i) || (object == event_objects.at(i))) {
                 if(event->type() == event_types.at(i)) {

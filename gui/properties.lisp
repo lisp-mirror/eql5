@@ -15,7 +15,8 @@
   *view*
   *depth*
   *label*
-  *instance-properties*)
+  *instance-properties*
+  *select*)
 
 (defvar *font*   (format nil "font-family: ~A; font-size: ~Apt;"
                          #+darwin  "Monaco"      #+darwin  12
@@ -33,7 +34,8 @@
   (! "resize" *main* '(650 500))
   (qset-color *view* |QPalette.Base| "lightyellow")
   (qconnect *depth* "valueChanged(int)" 'update)
-  (qconnect *instance-properties* "toggled(bool)" 'all-instance-properties))
+  (qconnect *instance-properties* "toggled(bool)" 'all-instance-properties)
+  (qconnect *select* "clicked()" 'selected))
   
 (defun update (depth)
   (! "setText" *label*
@@ -51,11 +53,13 @@
     (|setEnabled| w (not checked)))
   (show))
 
-(defun show (&optional object qml)
-  (when qml
-    (! "setChecked" *instance-properties* t))
+(defun selected ()
+  (qselect (lambda (object) (show (symbol-value (find-symbol (symbol-name :*q*) :qsel))))))
+
+(defun show (&optional object)
   (when object
     (setf *object* object)
+    (! "setChecked" *instance-properties* (! "inherits" *object* "QQuickItem")) ; for QML items
     (let ((depth 1)
           (name (qt-object-name *object*)))
       (! "setText" *label* name)
