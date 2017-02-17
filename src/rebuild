@@ -1,7 +1,6 @@
 rm -fr tmp
 rm *.a
 rm lisp/*.o
-rm ../slime/thread-safe.fas*
 
 cd lisp
 ecl -compile ecl-readline.lisp

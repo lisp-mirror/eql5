@@ -316,7 +316,7 @@
                (find-symbol "*SLIME-REPL-EVAL-HOOKS*" :swank))
           (load (or *slime-hook-file* (in-home "slime/repl-hook"))) ; Slime mode "REPL hook"
           (qsingle-shot 500 'load-slime-auxiliary-file))            ; we need to wait for Emacs "slime-connect"
-      (load (x:ensure-compiled (in-home "slime/thread-safe")))))    ; Slime mode "thread safe" (default)
+      (load (x:check-recompile (in-home "slime/thread-safe")))))    ; Slime mode "thread safe" (default)
 
 #+threads
 (defun %read-thread ()

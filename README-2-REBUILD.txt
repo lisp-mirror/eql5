@@ -2,7 +2,6 @@ REBUILD STEPS (on every upgrade of: ECL, Qt, EQL)
 =============
 
 1) remove directory src/tmp/
-   remove file slime/thread-safe.fas*
    remove file src/lisp/ecl-readline.fas*
 
 2) ecl -shell make-eql-lib.lisp

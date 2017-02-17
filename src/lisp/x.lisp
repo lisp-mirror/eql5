@@ -4,12 +4,12 @@
   (:use :common-lisp)
   (:export
    #:cc
+   #:check-recompile
    #:bytes-to-string
    #:d
    #:do-string
    #:do-with
    #:empty-string
-   #:ensure-compiled
    #:ensure-list
    #:ends-with
    #:it
@@ -148,18 +148,6 @@
 (defun string-to-bytes (s)
   (map 'vector 'char-code s))
 
-(defun ensure-compiled (file-name)
-  "Expects file name without file ending, and returns (re-)compiled file name."
-  (let ((lisp (concatenate 'string file-name ".lisp"))
-        (fasl (concatenate 'string file-name ".fas*"))) ; for *.fas, *.fasb, *.fasc (Unix, Windows)
-    (flet ((compiled ()
-             (first (directory fasl))))
-      (unless (and (compiled)
-                   (>= (file-write-date (compiled))
-                       (file-write-date lisp)))
-        (compile-file lisp))
-      (compiled))))
-
 (defun path (name)
   "Needed because ECL uses base strings (not Unicode) for pathnames internally."
   #+(or darwin linux)
@@ -169,3 +157,22 @@
       (funcall (intern "QLOCAL8BIT" :eql) name)           ; Windows 7 and lower
       name))                                              ; Windows 8 and higher
 
+(defun check-recompile (file-name)
+  "Given a global file name without file ending, ensures re-compiling on every EQL5 or Qt5 version change."
+  (labels ((ver-name ()
+             (format nil "~A.ver" file-name))
+           (version ()
+             (multiple-value-bind (eql5 qt5)
+                 (funcall (find-symbol "QVERSION" :eql))
+               (format nil "EQL5 ~A (ECL ~A, Qt ~A)" eql5 (lisp-implementation-version) qt5)))
+           (write-version ()
+             (with-open-file (s (ver-name) :direction :output :if-exists :supersede)
+               (princ (version) s)))
+           (read-version ()
+             (x:when-it (probe-file (ver-name))
+               (with-open-file (s x:it :direction :input)
+                 (read-line s)))))
+    (unless (equal (version) (read-version))
+      (compile-file file-name)
+      (write-version)))
+  file-name)

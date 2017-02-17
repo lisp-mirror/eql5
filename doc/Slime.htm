@@ -46,7 +46,6 @@
   <p>To kill the swank process (Slime), use function <code>qquit</code> / <code>qq</code> (since quitting Emacs will not kill it).</p>
   <br>
   <h3>Notes</h3>
-  <p>Please note that you need to manually <b>delete</b> the file <code>eql5/slime/thread-safe.fas*</code> after every upgrade of either ECL or EQL (it will then be compiled automatically next time you use Slime).</p> 
   <p>All EQL functions are wrapped in <code>qrun*</code> (see <code>eql5/slime/thread-safe.lisp</code>), so it's safe to call them either directly from the REPL or using 'eval region' (or from any other ECL thread).</p>
   <p>If the Slime REPL hangs, you can simply try to connect again (losing the old connection): no need to restart Lisp.</p>
   <p>This Slime mode is both convenient and simple to use, but conses a little more for every EQL function call.

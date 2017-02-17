@@ -3,6 +3,7 @@
 *.dylib
 *.exe
 *.fas*
+*.ver
 *.*history
 *.lib
 *.o
