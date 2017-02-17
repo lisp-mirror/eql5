@@ -163,7 +163,7 @@ To build an EQL module (corresponding to a Qt module), do the following in src/:
   [Linux,OSX]
     You need to create links to the modules, see EQL library above.
 
-In Lisp, use the function QREQUIRE to load a module:
+In Lisp, use function QREQUIRE to load a module:
     (qrequire :network)
 
 

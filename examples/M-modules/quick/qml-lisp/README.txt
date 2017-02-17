@@ -78,7 +78,9 @@ Examples:
 
     (qproperties* (qml:find-quick-item "label"))
 
-    (show-properties-dialog "label") ; see "properties.lisp
+Using a dialog, where you can use button [Select] to visually select items:
+
+    (show-properties-dialog "label") ; see "properties.lisp"
 
 
 TIP

@@ -15,6 +15,8 @@ Please run it from this directory.
 HELP
 ====
 
-To list all properties of the 'ListView', do:
+To display the output of QPROPERTIES*, run
 
-    (show-properties-dialog (root-item)) ; see "properties.lisp"
+    (show-properties-dialog) ; see "properties.lisp"
+
+and use [Select] to explore the single QML items.

@@ -11,8 +11,8 @@ RUN
 Run "painted-item.lisp" from this directory.
 
 
-NOTE
-====
+NOTES
+=====
 
 Use QQuickWidget here, because QQuickView would crash (e.g. on Windows).
 
@@ -32,11 +32,8 @@ Examples:
 HELP
 ====
 
-Use function QPROPERTIES* to list all QML properties of an item instance,
-including user defined ones.
+To display the output of QPROPERTIES*, run
 
-Examples:
+    (show-properties-dialog) ; see "properties.lisp"
 
-    (qproperties* (qml:find-quick-item "left"))
-
-    (show-properties-dialog "left") ; see "properties.lisp"
+and use [Select] to explore the single QML items.

@@ -66,6 +66,19 @@ Please see also "../qml-lisp/qml/example.lisp" for documentation on calling
 Lisp functions from QML.
 
 
+HELP
+====
+
+To display the output of QPROPERTIES*, run
+
+    (show-properties-dialog) ; see "properties.lisp"
+
+and use [Select] to explore the single QML items;
+hint: click exactly inside a button text, and do
+
+    (qml-set qsel:*q* "text" "<b>ciao</b>")
+
+
 TIP
 ===
 
@@ -79,4 +92,3 @@ QML Example:
         id: myItem
         objectName: "myItem"
     }
-
