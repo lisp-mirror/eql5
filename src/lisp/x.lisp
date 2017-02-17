@@ -158,7 +158,7 @@
       name))                                              ; Windows 8 and higher
 
 (defun check-recompile (file-name)
-  "Given a global file name without file ending, ensures re-compiling on every EQL5 or Qt5 version change."
+  "Given a global file name without file ending, ensures re-compiling on every ECL/Qt5/EQL5 version change."
   (labels ((ver-name ()
              (format nil "~A.ver" file-name))
            (version ()

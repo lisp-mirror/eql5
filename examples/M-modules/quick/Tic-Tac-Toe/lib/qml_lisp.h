@@ -43,11 +43,11 @@ public:
                                const QJSValue& = QJSValue());
 };
 
-class PaintedItem : public QQuickPaintedItem {
+class EQLPaintedItem : public QQuickPaintedItem {
     Q_OBJECT
 
 public:
-    PaintedItem(QQuickItem* parent = 0) : QQuickPaintedItem(parent) {}
+    EQLPaintedItem(QQuickItem* parent = 0) : QQuickPaintedItem(parent) {}
 
     void paint(QPainter* painter) {
         eql_fun("qml:paint",

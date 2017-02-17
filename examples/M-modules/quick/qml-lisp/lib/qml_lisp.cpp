@@ -10,7 +10,7 @@ QObject* ini() {
     if(!lisp) {
         lisp = new Lisp;
         qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "Lisp", lisp_provider);
-        qmlRegisterType<PaintedItem>("EQL5", 1, 0, "PaintedItem"); }
+        qmlRegisterType<EQLPaintedItem>("EQL5", 1, 0, "PaintedItem"); }
     return lisp; }
 
 static QQmlContext* rootContext() {
