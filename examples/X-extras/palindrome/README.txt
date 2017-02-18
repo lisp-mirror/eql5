@@ -27,3 +27,10 @@ Use command line option :html to have it generated:
 
 (optionally pass the width, which defaults to 450)
 
+
+QML VERSION
+===========
+
+Using QML + Lisp means reducing the complexity to a minimum!
+
+Please see "examples/M-modules/quick/palindrome/".
