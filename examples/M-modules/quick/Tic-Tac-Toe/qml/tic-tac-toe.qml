@@ -7,11 +7,10 @@ import EQL5 1.0
 Rectangle {
     id: game
     objectName: "game"
+    width: 420; height: 480
 
     property bool running: true
     property int difficulty: 10 // chance it will actually think
-
-    width: display.width; height: display.height + 10
 
     Image {
         id: boardImage

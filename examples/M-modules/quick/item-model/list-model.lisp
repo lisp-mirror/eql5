@@ -29,7 +29,6 @@
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/list-model.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
-    (|resize| '(150 250))
     (|show|)))
 
 (run)

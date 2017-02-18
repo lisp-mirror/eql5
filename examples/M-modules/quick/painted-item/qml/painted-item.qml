@@ -3,6 +3,7 @@ import EQL5 1.0
 
 Rectangle {
     color: "gray"
+    width: 340; height: 340
 
     PaintedItem {
         x: 10; y: 10; width: 100; height: 100

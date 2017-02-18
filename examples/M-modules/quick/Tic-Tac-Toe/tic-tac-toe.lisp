@@ -22,7 +22,6 @@
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/tic-tac-toe.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
-    (|resize| '(420 480))
     (|show|)))
 
 (run)

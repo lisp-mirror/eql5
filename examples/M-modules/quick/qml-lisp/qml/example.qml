@@ -4,6 +4,7 @@ import EQL5 1.0
 Item {
     id: root
     objectName: "root"
+    width: 400; height: 400
 
     Component.onCompleted: {
 

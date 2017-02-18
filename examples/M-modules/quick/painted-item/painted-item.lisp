@@ -42,8 +42,7 @@
   (setf qml:*quick-view* (qnew "QQuickWidget"))                  ; QQuickView would crash on Windows
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/painted-item.qml"))
-    (|setResizeMode| |QQuickView.SizeRootObjectToView|)
-    (|resize| '(340 340)))
+    (|setResizeMode| |QQuickView.SizeRootObjectToView|))
   (let ((timer (qnew "QTimer")))
     (qconnect timer "timeout()" (lambda () (|update| (clock))))  ; repaint
     (|start| timer (* 60 1000)))                                 ; once a minute

@@ -78,7 +78,6 @@
   (x:do-with qml:*quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/abstract-model.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
-    (|resize| '(200 250))
     (|show|)))
 
 (run)

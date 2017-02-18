@@ -37,6 +37,7 @@ eql_profile*
 eql_local_server
 cache
 tmp*
+palindrome.qml
 palindrome.htm
 positions.js
 qrc_*.cpp
