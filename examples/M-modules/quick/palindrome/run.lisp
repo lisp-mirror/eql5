@@ -5,6 +5,8 @@
 
 (qrequire :quick)
 
+(require :properties "properties")
+
 (defvar *quick-view* (qnew "QQuickView")) ; either a QQuickView or a QQuickWidget
 
 (defun run ()
