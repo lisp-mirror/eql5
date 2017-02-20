@@ -13,8 +13,8 @@
 
 (defvar *timer* (qnew "QTimer"))
 
-(defun run-animation ()
-  (dolist (move-to (rest *move-to-positions*))
+(defun run-animation (&optional first)
+  (dolist (move-to (nthcdr (if first 1 0) *move-to-positions*))
     (let ((target 0))
       (dolist (xy move-to)
         (incf target)
@@ -31,6 +31,6 @@
     (|setSource| (|fromLocalFile.QUrl| "qml/palindrome.qml"))
     (|setResizeMode| |QQuickView.SizeRootObjectToView|)
     (|show|))
-  (qlater 'run-animation)) ; don't block REPL (for eql5 -qtpl)
+  (qlater (lambda () (run-animation t)))) ; QLATER: don't block REPL (for eql5 -qtpl)
 
 (run)

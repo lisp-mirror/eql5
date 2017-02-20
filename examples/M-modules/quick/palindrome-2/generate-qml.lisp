@@ -52,7 +52,7 @@
          (mapc (lambda (char xy)
                  (incf num)
                  (qml "PalindromeImage"
-                      (format s "objectName: 'img~A'; source: 'img/~A.png'; x: ~D; y: ~D~%"
+                      (format s "objectName: 'img~A'~% source: 'img/~A.png'~% x: ~D; y: ~D~%"
                               num
                               (image-of-char char)
                               (* 31 (first xy))
