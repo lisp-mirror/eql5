@@ -10,6 +10,7 @@
                     ,@(mapcar (lambda (x) (if (stringp x) `(write-line ,x s) x))
                               body))))
        (with-open-file (s ,file :direction :output :if-exists :supersede)
+         (format s "// THIS FILE IS GENERATED~%~%")
          (write-string (indent ,text) s)
          (qlater (lambda () (format t "~%QML file generated, see ~S~%~%" ,file)))))))
 
@@ -73,8 +74,6 @@
 ;; qml file
 
 (with-qml-file ("qml/palindrome.qml")
-  "// THIS FILE IS GENERATED"
-  ""
   "import QtQuick 2.0"
   "import 'ext/'"
   (qml "Rectangle"

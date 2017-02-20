@@ -72,7 +72,8 @@ HELP (properties)
 Since many QML types have no corresponding C++ class, the specific properties
 can't be inspected using QPROPERTIES (only the generic ones).
 
-To list all properties (including user defined ones), use QPROPERTIES* instead.
+To list all _instance_ properties (including user defined ones), use
+QPROPERTIES* instead.
 
 Examples:
 

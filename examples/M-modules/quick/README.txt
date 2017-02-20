@@ -1,3 +1,6 @@
+Please note that you will need to build a small C++ plugin for most of the
+examples (see "lib/").
+
 If you are new to QML/EQL5, you probably want to go through the examples
 (and READMEs) in this order:
 
@@ -8,3 +11,8 @@ If you are new to QML/EQL5, you probably want to go through the examples
 
 The trivial "quickwidget" example just demonstrates that you can integrate
 a QML widget in any Qt application, combining both traditional Qt and QML.
+
+* "palindrome-1" is a demo of generating QML code from Lisp (static QML);
+
+* "palindrome-2" is the same using a 'Behavior' in QML, and a QTimer from Lisp
+  (dynamic QML);
