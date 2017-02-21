@@ -6,7 +6,7 @@
 
 Q_DECLARE_METATYPE(QList<QWebPluginFactory::Plugin>)
 
-#ifdef Q_OS_WIN
+#ifdef Q_CC_MSVC
 #define LIB_EXPORT __declspec(dllexport)
 #else
 #define LIB_EXPORT
