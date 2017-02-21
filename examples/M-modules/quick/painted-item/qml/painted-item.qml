@@ -9,8 +9,8 @@ Rectangle {
         x: 10; y: 10; width: 100; height: 100
         objectName: "left"
 
-        property rect ellipse: Qt.rect(10, 10, 80, 80)
-        property string color: "coral"
+        property rect ellipse: Qt.rect(10, 10, 80, 80); onEllipseChanged: update()
+        property string color: "coral"; onColorChanged: update()
     }
 
     PaintedItem {
@@ -42,7 +42,7 @@ Rectangle {
         x: 230; y: 10; width: 100; height: 100
         objectName: "right"
 
-        property rect ellipse: Qt.rect(10, 10, 80, 80)
-        property string color: "cornflowerblue"
+        property rect ellipse: Qt.rect(10, 10, 80, 80); onEllipseChanged: update()
+        property string color: "cornflowerblue"; onColorChanged: update()
     }
 }

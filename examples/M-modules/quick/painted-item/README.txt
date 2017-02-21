@@ -16,17 +16,20 @@ NOTES
 
 Use QQuickWidget here, because QQuickView would crash (e.g. on Windows).
 
-You need to tell QML-SET to call |update| after any change to data which
-QML:PAINT depends on.
-Only in this exceptional case there is no way to do it implicitly using QML.
+Always set an "on<Property>Changed: update()" handler in QML for properties
+which QML:PAINT depends on:
+
+in QML:
+
+    property string color: "coral"; onColorChanged: update()
+
+Now changing the QML properties from Lisp will repaint the item:
 
 Examples:
 
-    ;; pass T as last argument for repainting
-
-    (qml-set "left" "color" "transparent" t)
+    (qml-set "left" "color" "transparent")
     
-    (qml-set "right" "ellipse" '(40 40 20 20) t)
+    (qml-set "right" "ellipse" '(40 40 20 20))
 
 
 HELP
