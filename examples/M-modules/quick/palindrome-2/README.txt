@@ -25,3 +25,7 @@ and use button [Select] to select an item.
 You can use QML-GET and QML-SET on a selected item:
 
     (qml-set qsel:*q* "opacity" 2/3)
+
+    (qml-set qsel:*q* "scale" 2)
+
+For global settings, pass '(root-item)' instead of 'qsel:*q*'.

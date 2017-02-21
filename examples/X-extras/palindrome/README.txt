@@ -33,4 +33,10 @@ QML VERSION
 
 Using QML + Lisp means reducing the complexity to a minimum!
 
-Please see "examples/M-modules/quick/palindrome/".
+Please see:
+
+  "examples/M-modules/quick/palindrome-1" (static QML)
+  "examples/M-modules/quick/palindrome-2" (dynamic QML)
+
+In the examples above, even the QML code is Lisp generated, so it's
+basically as simple as you can get!
