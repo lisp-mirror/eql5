@@ -124,14 +124,14 @@
                     (! "grab" parent)                                   ; QQuickWidget
                     (! "fromImage" "QPixmap" (! "grabWindow" parent)))) ; QQuickView
            (dark (to-dark pix)))
-      (! "setPixmap" indicate (set-highlight* indicate pix dark child)))
+      (! "setPixmap" indicate (set-highlight* pix dark child)))
     (qlater (lambda () (! "show" indicate)))
     (qsingle-shot 800 (lambda () (qdel indicate)))))
 
 (defun highlight* (child)
   (! "mapRectToScene" child (list 0 0 (! "width" child) (! "height" child))))
 
-(defun set-highlight* (indicate pixmap dark child)
+(defun set-highlight* (pixmap dark child)
   (let ((rect (highlight* child)))
     (qlet ((painter "QPainter(QPixmap*)" dark)
            (pen "QPen(QColor)" "white"))
