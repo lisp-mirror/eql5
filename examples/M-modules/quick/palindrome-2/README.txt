@@ -28,4 +28,6 @@ You can use QML-GET and QML-SET on a selected item:
 
     (qml-set qsel:*q* "scale" 2)
 
-For global settings, pass '(root-item)' instead of 'qsel:*q*'.
+For global settings (root item), pass 'nil' instead of 'qsel:*q*':
+
+    (qml-set nil "scale" 1.5)
