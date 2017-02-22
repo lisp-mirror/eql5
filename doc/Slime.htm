@@ -32,6 +32,8 @@
   <ul>
     <li>Run the swank server (the command line option <code>-slime</code> can be omitted if the file name contains "start-swank"), optionally passing a Lisp file:
     <pre>eql5 &lt;path-to-slime&gt;/eql-start-swank.lisp [file.lisp]</pre>
+    <li><b>Please note</b> (e.g. for MinGW): if you can't connect from Emacs to Slime, try to start swank detached from the console (final <b>&amp;</b>):
+    <pre>eql5 &lt;path-to-slime&gt;/eql-start-swank.lisp [file.lisp] <b>&amp;</b></pre>
     <li>Run Emacs and do:
     <code>Meta-X slime-connect</code> (please note: use <code>slime-connect</code>) and hit <code>Return</code> 2 times (confirming the default values).
     <p>Please note: if <code>:dont-close</code> is set to <code>T</code> in <code>eql-start-swank.lisp</code>, quitting/restarting Emacs will not affect a running EQL program, that is: if you quit/restart Emacs, you can connect to the same swank/EQL you left when quitting Emacs.</p>
