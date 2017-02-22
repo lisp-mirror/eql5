@@ -26,9 +26,6 @@
 (defvar *object* nil)
 
 (defun ini ()
-  (let ((font (|font.QApplication|)))
-    (! "setBold" font t)
-    (! "setFont" *class-name* font))
   (! "setReadOnly" *view* t)
   (! "setMinimum" *depth* 1)
   (! "resize" *main* '(650 500))
@@ -56,16 +53,30 @@
 (defun selected ()
   (qselect (lambda (object) (show (symbol-value (find-symbol (symbol-name :*q*) :qsel))))))
 
+(defun super-class-names (object)
+  (flet ((name (name)
+           (subseq name 0 (position #\_ name))))
+    (let ((mo (|metaObject| object))
+          names)
+      (x:while (not (qnull mo))
+        (pushnew (name (|className| mo))
+                 names :test 'string=)
+        (setf mo (|superClass| mo)))
+      (nreverse names))))
+
 (defun show (&optional object)
   (when object
     (setf *object* object)
+    (let ((classes (super-class-names *object*)))
+      (! "setText" *class-name* (format nil "<b>~A</b>~A~A"
+                                        (first classes)
+                                        (if (rest classes) "<br>" "")
+                                        (x:join (rest classes) " - "))))
     (! "setChecked" *instance-properties* (! "inherits" *object* "QQuickItem")) ; for QML items
     (let ((depth 1)
           (name (qt-object-name *object*)))
       (! "setText" *label* name)
       (! "setWindowTitle" *main* name)
-      (let ((name (! "className" (! "metaObject" *object*))))
-        (! "setText" *class-name* (subseq name 0 (position #\_ name))))
       (x:while (setf name (qsuper-class-name name))
         (incf depth))
       (! "setMaximum" *depth* depth)
