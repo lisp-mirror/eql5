@@ -71,7 +71,10 @@ BUILD
 (N.B. for rebuilding, please see README-REBUILD.txt)
 
   [Windows]
-    You first need to adapt the file src/windows.pri (include & library paths).
+    You first need to adapt the file 'src/windows.pri' (include & library paths).
+    Since EQL requires the C compiler anyway (not the bytecode compiler), you
+    should put this line in your '~/.eclrc':
+        (require :cmp)
     
   [MSVC]
     substitute make with nmake
