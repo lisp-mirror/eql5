@@ -105,11 +105,13 @@
 
 (defun paint-highlight (dark pixmap rect)
   (qlet ((painter "QPainter(QPixmap*)" dark)
-         (pen "QPen(QColor)" "white"))
+         (pen-w "QPen(QColor)" "white")
+         (pen-b "QPen"))
     (! "drawPixmap" painter rect pixmap rect)
-    (! "setWidth" pen 2)
-    (! "setPen" painter pen)
-    (! "drawRect" painter (mapcar '+ rect '(1 1 -2 -2))))
+    (! "setPen" painter pen-w)
+    (! "drawRect" painter (mapcar '+ rect '(0 0 -1 -1)))
+    (! "setPen" painter pen-b)
+    (! "drawRect" painter (mapcar '+ rect '(1 1 -3 -3))))
   dark)
 
 ;; for QML
