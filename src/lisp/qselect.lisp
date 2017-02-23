@@ -59,16 +59,21 @@
             (setf object p))))
     (indicate-start object *q*)))
 
-(defun indicate-start (parent child)
+(defun indicate-start (parent child &optional qml)
   (let ((indicate (qnew "QLabel"
                         "size" (nthcdr 2 (qget parent "geometry")))))
     (! "setParent" indicate parent)
     (! "move" indicate '(0 0))
     (let* ((pix (! "grab" parent))
            (dark (to-dark pix)))
-      (! "setPixmap" indicate (set-highlight indicate pix dark child)))
+      (! "setPixmap" indicate (if qml
+                                  (set-highlight* pix dark child)
+                                  (set-highlight indicate pix dark child))))
     (! "show" indicate)
-    (qsingle-shot 500 (lambda () (qdel indicate)))))
+    (qsingle-shot 700 (lambda ()
+                        (when qml
+                          (! "setParent" indicate nil))
+                        (qdel indicate))))) 
 
 (defun to-dark (pixmap)
   (let ((dark (qcopy pixmap)))
@@ -96,10 +101,16 @@
                           (qget child "height"))))))
 
 (defun set-highlight (indicate pixmap dark child)
-  (let ((rect (highlight indicate child)))
-    (qlet ((painter "QPainter(QPixmap*)" dark))
-      (! "drawPixmap" painter rect pixmap rect))
-    dark))
+  (paint-highlight dark pixmap (highlight indicate child)))
+
+(defun paint-highlight (dark pixmap rect)
+  (qlet ((painter "QPainter(QPixmap*)" dark)
+         (pen "QPen(QColor)" "white"))
+    (! "drawPixmap" painter rect pixmap rect)
+    (! "setWidth" pen 2)
+    (! "setPen" painter pen)
+    (! "drawRect" painter (mapcar '+ rect '(1 1 -2 -2))))
+  dark)
 
 ;; for QML
 
@@ -116,27 +127,21 @@
 
 (defun indicate-start* (parent child)
   (setf *q* child)
-  (let ((indicate (qnew "QLabel(QWidget*,Qt::WindowFlags)" nil |Qt.WindowStaysOnTopHint|)))
-    (! "move" indicate (nbutlast (! "frameGeometry" parent) 2))
-    (! "resize" indicate (list (! "width" parent)
-                               (! "height" parent)))
-    (let* ((pix (if (! "isWidgetType" parent)
-                    (! "grab" parent)                                   ; QQuickWidget
-                    (! "fromImage" "QPixmap" (! "grabWindow" parent)))) ; QQuickView
-           (dark (to-dark pix)))
-      (! "setPixmap" indicate (set-highlight* pix dark child)))
-    (qlater (lambda () (! "show" indicate)))
-    (qsingle-shot 800 (lambda () (qdel indicate)))))
+  (if (! "isWidgetType" parent)
+      (indicate-start parent child t)
+      (let ((indicate (qnew "QLabel(QWidget*,Qt::WindowFlags)" nil |Qt.WindowStaysOnTopHint|)))
+        (! "move" indicate (nbutlast (! "frameGeometry" parent) 2))
+        (! "resize" indicate (list (! "width" parent)
+                                   (! "height" parent)))
+        (let* ((pix (! "fromImage" "QPixmap" (! "grabWindow" parent))) ; QQuickView
+               (dark (to-dark pix)))
+          (! "setPixmap" indicate (set-highlight* pix dark child)))
+        (qlater (lambda () (! "show" indicate)))
+        (qsingle-shot 700 (lambda () (qdel indicate))))))
 
 (defun highlight* (child)
   (! "mapRectToScene" child (list 0 0 (! "width" child) (! "height" child))))
 
 (defun set-highlight* (pixmap dark child)
-  (let ((rect (highlight* child)))
-    (qlet ((painter "QPainter(QPixmap*)" dark)
-           (pen "QPen(QColor)" "white"))
-      (! "drawPixmap" painter rect pixmap rect)
-      (! "setWidth" pen 2)
-      (! "setPen" painter pen)
-      (! "drawRect" painter (mapcar '+ rect '(1 1 -2 -2))))
-    dark))
+  (paint-highlight dark pixmap (highlight* child)))
+
