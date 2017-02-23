@@ -1,5 +1,5 @@
 Please note that you will need to build a small C++ plugin for most of the
-examples (see "lib/").
+examples (see "lib/"); this is just for providing the "import EQL5" in QML.
 
 If you are new to QML/EQL5, you probably want to go through the examples
 (and READMEs) in this order:
