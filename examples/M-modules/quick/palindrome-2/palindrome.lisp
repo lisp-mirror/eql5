@@ -11,8 +11,6 @@
 
 (use-package :qml)
 
-(defvar *timer* (qnew "QTimer"))
-
 (defun run-animation (&optional first)
   (dolist (move-to (nthcdr (if first 1 0) *move-to-positions*))
     (let ((target 0))

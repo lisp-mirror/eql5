@@ -25,7 +25,7 @@
 
 (in-package :qml-lisp)
 
-(defvar *qml-lisp*   (qload-c++ "lib/qml_lisp"))
+;;(defvar *qml-lisp*   (qload-c++ "lib/qml_lisp")) ; not needed for this example
 (defvar *caller*     nil)
 (defvar *quick-view* nil)
 

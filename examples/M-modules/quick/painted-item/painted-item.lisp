@@ -45,7 +45,7 @@
     (|setResizeMode| |QQuickView.SizeRootObjectToView|))
   (let ((timer (qnew "QTimer")))
     (qconnect timer "timeout()" (lambda () (|update| (clock))))  ; repaint
-    (|start| timer (* 60 1000)))                                 ; once a minute
+    (|start| timer (* 30 1000)))                                 ; every half a minute
   (|show| qml:*quick-view*))
 
 (run)

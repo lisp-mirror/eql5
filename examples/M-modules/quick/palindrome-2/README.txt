@@ -3,8 +3,9 @@ INFO
 
 This is a QML port of "examples/X-extras/palindrome/".
 
-Instead of generating static QML (see "palinfrome-1"), it uses a QTimer from
-Lisp to change the item positions, and a 'Behavior' in QML for the animations.
+Instead of generating static QML (see "palinfrome-1"), it uses a timer
+from Lisp (through QSLEEP, QSINGLE-SHOT) to change the item positions, and
+a 'Behavior' in QML for the animations.
 
 
 RUN

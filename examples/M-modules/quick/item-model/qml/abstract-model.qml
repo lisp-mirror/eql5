@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import EQL5 1.0
 
 ListView {
     width: 200; height: 250
