@@ -14,5 +14,5 @@ a QML widget in any Qt application, combining both traditional Qt and QML.
 
 * "palindrome-1" is a demo of generating QML code from Lisp (static QML);
 
-* "palindrome-2" is the same using a 'Behavior' in QML, and a QTimer from Lisp
+* "palindrome-2" is the same using a 'Behavior' in QML, and a timer from Lisp
   (dynamic QML);

@@ -11,6 +11,9 @@
 
 (use-package :qml)
 
+;;; QSLEEP note: it's the same as SLEEP in CL, but continuing
+;;; to process Qt events (using a temporary event loop)
+
 (defun run-animation (&optional first)
   (dolist (move-to (nthcdr (if first 1 0) *move-to-positions*))
     (let ((target 0))
