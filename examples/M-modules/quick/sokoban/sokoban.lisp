@@ -27,12 +27,11 @@
                              (#\@ . :player)
                              (#\& . :player2)))
 
-(defvar *items*           nil)
-(defvar *item-size*       nil)
-(defvar *level*           0)
-(defvar *maze*            nil)
-(defvar *my-mazes*        (mapcar 'sokoban:copy-maze sokoban:*mazes*))
-(defvar *print-text-maze* nil)
+(defvar *items*     nil)
+(defvar *item-size* nil)
+(defvar *level*     0)
+(defvar *maze*      nil)
+(defvar *my-mazes*  (mapcar 'sokoban:copy-maze sokoban:*mazes*))
 
 (setf qml:*quick-view* (qnew "QQuickView"))
 
@@ -97,25 +96,33 @@
       (qdel item)))
   (setf *items* (mapcar (lambda (x) (list (cdr x))) *item-types*)))
 
-(defparameter *running-animations* 0)
+(defvar *running-animations* 0)
+(defvar *function-queue*     nil)
 
 (defun animation-change (running) ; called from QML
-  (incf *running-animations* (if running 1 -1)))
+  (incf *running-animations* (if running 1 -1))
+  (when (and (zerop *running-animations*)
+             *function-queue*)
+    (funcall (pop *function-queue*))
+    (run-queued)))
 
-(defmacro define-after-animations (function arguments &body body)
-  `(defun ,function ,arguments
-     (if (zerop *running-animations*)
-         (progn ,@body)
-         (qsingle-shot 50 (lambda () (apply ',function ,arguments))))))
+(defun run-or-enqueue (function)
+  (if (zerop *running-animations*)
+      (funcall function)
+      (setf *function-queue* (nconc *function-queue* (list function)))))
 
-(define-after-animations zoom-out ()
-  (qml-set "zoomOut" "running" t))
+(defun run-queued ()
+  "If there is no currently running animation, run all functions in the queue."
+  (when (and (zerop *running-animations*)
+             *function-queue*)
+    (funcall (pop *function-queue*))
+    (qlater 'run-queued)))
 
-(define-after-animations set-maze* ()
-  (set-maze))
-
-(define-after-animations zoom-in ()
-  (qml-set "zoomIn" "running" t))
+(defmacro queued (&rest functions)
+  "Run passed functions in order, waiting for currently running (or newly triggered) animations to finish first."
+  `(progn
+     ,@(mapcar (lambda (fun) `(run-or-enqueue (lambda () ,fun)))
+               functions)))
 
 (defun key-pressed (object event)
   (when (zerop *running-animations*)
@@ -124,9 +131,9 @@
                (setf *level* (min (1- (length *my-mazes*))
                                   (max 0 (+ x *level*))))
                (when (/= *level* ex)
-                 (zoom-out)
-                 (set-maze*)
-                 (zoom-in)))))
+                 (queued (qml-set "zoomOut" "running" t)
+                         (set-maze)
+                         (qml-set "zoomIn" "running" t))))))
       (case (|key| event)
         (#.|Qt.Key_Up|
            (sokoban:move :north *maze*))
@@ -169,7 +176,7 @@
   (dolist (type '(:player :player2 :object :object2 :goal :wall))
     (place-items type)))
 
-(define-after-animations update-placed-items ()
+(defun update-placed-items ()
   (dolist (type '(:player :player2 :object :object2 :goal))
     (place-items type)))
 
@@ -192,10 +199,8 @@
         (let ((update-types '(:player2  :object2 :goal)))
           (when (or (find type update-types)
                     (find ex-type update-types))
-            (update-placed-items)))
-        (setf ex-type type)))
-    (when *print-text-maze*
-      (format t "~{~&~A~%~}" (sokoban:maze-text *maze*)))))
+            (queued (update-placed-items))))
+        (setf ex-type type)))))
 
 (defun run ()
   (x:do-with *quick-view*
