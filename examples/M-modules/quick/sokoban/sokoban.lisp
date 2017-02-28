@@ -185,14 +185,15 @@
            (dx (case direction (:east w) (:west (- w)) (t 0)))
            (dy (case direction (:south h) (:north (- h)) (t 0)))
            (item (|childAt| (qml:root-item) (+ pos-x (/ w 2)) (+ pos-y (/ h 2)))))
-      (if (zerop dy)
-          (qml-set item "x" (+ pos-x dx))  ; use QML-SET to trigger QML defined animation
-          (qml-set item "y" (+ pos-y dy)))
-      (let ((update-types '(:player2  :object2 :goal)))
-        (when (or (find type update-types)
-                  (find ex-type update-types))
-          (update-placed-items)))
-      (setf ex-type type))
+      (unless (qnull item)
+        (if (zerop dy)
+            (qml-set item "x" (+ pos-x dx))  ; use QML-SET to trigger QML defined animation
+            (qml-set item "y" (+ pos-y dy)))
+        (let ((update-types '(:player2  :object2 :goal)))
+          (when (or (find type update-types)
+                    (find ex-type update-types))
+            (update-placed-items)))
+        (setf ex-type type)))
     (when *print-text-maze*
       (format t "~{~&~A~%~}" (sokoban:maze-text *maze*)))))
 
