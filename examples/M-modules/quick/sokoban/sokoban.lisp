@@ -59,12 +59,6 @@
   (create-items)
   (place-all-items))
 
-(defun clear-items ()
-  (dolist (items *items*)
-    (dolist (item (rest items))
-      (qdel item)))
-  (setf *items* (mapcar (lambda (x) (list (cdr x))) *item-types*)))
-
 (defun create-item (type)
   (let ((item (qt-object-? (|create| (case type
                                        ((:player :player2) *player-item*)
@@ -95,10 +89,15 @@
                   ((eql :wall type)
                    (add :wall)))))))))
 
+(defun clear-items ()
+  (dolist (items *items*)
+    (dolist (item (rest items))
+      (qdel item)))
+  (setf *items* (mapcar (lambda (x) (list (cdr x))) *item-types*)))
+
 (defparameter *running-animations* 0)
 
-(defun animation-change (running)
-  "This function gets called from QML only."
+(defun animation-change (running) ; called from QML
   (incf *running-animations* (if running 1 -1)))
 
 (defun key-pressed (object event)

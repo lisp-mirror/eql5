@@ -6,6 +6,14 @@ This is a QML port of example "examples/7-Sokoban/".
 The main difference is the use of simple animations when moving items.
 
 
+RUN
+===
+
+Please run it from this directory. For Emacs/Slime, this would be:
+
+    eql5 ~/slime/eql-start-swank.lisp sokoban.lisp
+
+
 NOTES
 =====
 
