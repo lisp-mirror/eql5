@@ -41,13 +41,14 @@
   <br>
   <h3>Loading files</h3>
   <p>You should <b>always</b> use <code>qload</code> instead of <code>load</code>, if the file contains any EQL code.</p>
-  <p>It's not strictly necessary in every case, but not doing so may result in slow loading (many thread switches, one for every EQL function call), or may not even work (e.g. if the loaded code uses Qt threads internally).</p>
+  <p>It's not strictly necessary in every case, but not doing so may result in slow loading (many thread switches, for each EQL function call), or may not even work (e.g. if the loaded code uses Qt threads internally).</p>
   <br>
   <h3>Help</h3>
   <p>For help see the <code>qapropos</code>, <code>qfind-bound</code>, <code>qproperties</code> and <code>qgui</code> functions.</p>
   <p>To kill the swank process (Slime), use function <code>qquit</code> / <code>qq</code> (since quitting Emacs will not kill it).</p>
   <br>
   <h3>Notes</h3>
+  <p>If you notice slow execution of a function called from the REPL, try to wrap it in <code>qrun</code>/<code>qrun*</code>, as this will reduce eventual, multiple thread switches (for each EQL function call) to a single one.</p> 
   <p>All EQL functions are wrapped in <code>qrun*</code> (see <code>eql5/slime/thread-safe.lisp</code>), so it's safe to call them either directly from the REPL or using 'eval region' (or from any other ECL thread).</p>
   <p>If the Slime REPL hangs, you can simply try to connect again (losing the old connection): no need to restart Lisp.</p>
   <p>This Slime mode is both convenient and simple to use, but conses a little more for every EQL function call.
