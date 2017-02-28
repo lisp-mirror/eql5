@@ -1,6 +1,8 @@
 ;;;
 ;;; This is a QML GUI for CL-Sokoban, see http://www.cliki.net/CL-Sokoban 
 ;;;
+;;; Use CHANGE-LEVEL to directly change the level index.
+;;;
 
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
@@ -14,6 +16,7 @@
 (defpackage :qsoko
   (:use :common-lisp :eql :qml)
   (:export
+   #:change-level
    #:start))
 
 (in-package :qsoko)
@@ -124,33 +127,39 @@
      ,@(mapcar (lambda (fun) `(run-or-enqueue (lambda () ,fun)))
                functions)))
 
+(defun change-level (level)
+  "Changes *LEVEL* to given index."
+  (let ((ex *level*))
+    (setf *level* (min (1- (length *my-mazes*))
+                       (max 0 (if (numberp level)
+                                  level
+                                  (+ (if (eql :next level) 1 -1)
+                                     *level*)))))
+    (when (/= *level* ex)
+      (queued (qml-set "zoomOut" "running" t)
+              (set-maze)
+              (qml-set "zoomIn" "running" t))))
+  *level*)
+
 (defun key-pressed (object event)
   (when (zerop *running-animations*)
-    (flet ((change-level (x)
-             (let ((ex *level*))
-               (setf *level* (min (1- (length *my-mazes*))
-                                  (max 0 (+ x *level*))))
-               (when (/= *level* ex)
-                 (queued (qml-set "zoomOut" "running" t)
-                         (set-maze)
-                         (qml-set "zoomIn" "running" t))))))
-      (case (|key| event)
-        (#.|Qt.Key_Up|
-           (sokoban:move :north *maze*))
-        (#.|Qt.Key_Down|
-           (sokoban:move :south *maze*))
-        (#.|Qt.Key_Left|
-           (sokoban:move :west *maze*))
-        (#.|Qt.Key_Right|
-           (sokoban:move :east *maze*))
-        (#.|Qt.Key_N|
-           (change-level 1))
-        (#.|Qt.Key_P|
-           (change-level -1))
-        (#.|Qt.Key_R|
-           (setf (nth *level* *my-mazes*)
-                 (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
-           (set-maze)))))
+    (case (|key| event)
+      (#.|Qt.Key_Up|
+         (sokoban:move :north *maze*))
+      (#.|Qt.Key_Down|
+         (sokoban:move :south *maze*))
+      (#.|Qt.Key_Left|
+         (sokoban:move :west *maze*))
+      (#.|Qt.Key_Right|
+         (sokoban:move :east *maze*))
+      (#.|Qt.Key_N|
+         (change-level :next))
+      (#.|Qt.Key_P|
+         (change-level :previous))
+      (#.|Qt.Key_R|
+         (setf (nth *level* *my-mazes*)
+               (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
+         (set-maze))))
   t) ; event filter
 
 (defun place-items (type)
