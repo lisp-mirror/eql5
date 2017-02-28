@@ -126,8 +126,7 @@
 
 (let (pixmaps)
   (defun create-item (type)
-    (let* ((char (type-char type))
-           (file (in-home (format nil "examples/7-Sokoban/pics/~(~A~).png" type)))
+    (let* ((file (in-home (format nil "examples/7-Sokoban/pics/~(~A~).png" type)))
            (pixmap (cdr (or (assoc file pixmaps :test 'string=)
                             (first (push (cons file (qnew "QPixmap(QString)" file))
                                          pixmaps)))))

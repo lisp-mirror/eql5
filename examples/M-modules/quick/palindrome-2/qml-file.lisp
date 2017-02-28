@@ -24,7 +24,7 @@
            ,(if open-close
                 `(write-line ,(format nil "~%~A {" first) s)
                 (if (find #\{ first)
-                    `(format s "~%~A~%" ,first)
+                    `(write-line ,(format nil "~%~A" first))
                     `(write-line ,first s)))
            ,@(mapcar (lambda (x)
                        (if (stringp x)

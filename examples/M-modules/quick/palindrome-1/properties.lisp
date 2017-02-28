@@ -54,14 +54,14 @@
 
 ;; properties dialog
 
-(defun sym (name package)
+(defun %sym (name package)
   (find-symbol (symbol-name name) package))
 
 (defun show-properties-dialog (&optional item)
   "Lists all instance properties of a QML item (either a QQuickItem or an 'objectName')."
   (unless (find-package :properties)
     (load (in-home "gui/properties")))
-  (funcall (sym :show :properties)
+  (funcall (%sym :show :properties)
            (if (stringp item)
                (find-quick-item item)
                item)))
