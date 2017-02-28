@@ -60,6 +60,8 @@
   (place-all-items))
 
 (defun create-item (type)
+  ;; QT-OBJECT-?: auto cast to the most specific class
+  ;; here: from <QObject> to <QQuickItem>
   (let ((item (qt-object-? (|create| (case type
                                        ((:player :player2) *player-item*)
                                        ((:object :object2) *box-item*)
@@ -100,12 +102,31 @@
 (defun animation-change (running) ; called from QML
   (incf *running-animations* (if running 1 -1)))
 
+(defmacro define-after-animations (function arguments &body body)
+  `(defun ,function ,arguments
+     (if (zerop *running-animations*)
+         (progn ,@body)
+         (qsingle-shot 50 (lambda () (apply ',function ,arguments))))))
+
+(define-after-animations zoom-out ()
+  (qml-set "zoomOut" "running" t))
+
+(define-after-animations set-maze* ()
+  (set-maze))
+
+(define-after-animations zoom-in ()
+  (qml-set "zoomIn" "running" t))
+
 (defun key-pressed (object event)
   (when (zerop *running-animations*)
     (flet ((change-level (x)
-             (setf *level* (min (1- (length *my-mazes*))
-                                (max 0 (+ x *level*))))
-             (set-maze)))
+             (let ((ex *level*))
+               (setf *level* (min (1- (length *my-mazes*))
+                                  (max 0 (+ x *level*))))
+               (when (/= *level* ex)
+                 (zoom-out)
+                 (set-maze*)
+                 (zoom-in)))))
       (case (|key| event)
         (#.|Qt.Key_Up|
            (sokoban:move :north *maze*))
@@ -123,7 +144,7 @@
            (setf (nth *level* *my-mazes*)
                  (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
            (set-maze)))))
-  nil) ; event filter
+  t) ; event filter
 
 (defun place-items (type)
   (let ((char (type-char type))
@@ -148,11 +169,9 @@
   (dolist (type '(:player :player2 :object :object2 :goal :wall))
     (place-items type)))
 
-(defun update-placed-items ()
-  (if (zerop *running-animations*)
-      (dolist (type '(:player :player2 :object :object2 :goal))
-        (place-items type))
-      (qsingle-shot 50 'update-placed-items)))
+(define-after-animations update-placed-items ()
+  (dolist (type '(:player :player2 :object :object2 :goal))
+    (place-items type)))
 
 (let (ex-type)
   (defun move-item (char pos direction) ; see sokoban:*move-hook*
@@ -181,6 +200,7 @@
   (x:do-with *quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/sokoban.qml"))
     (|resize| '(500 444))
+    (|setColor| "#404040")
     (|show|))
   (qadd-event-filter nil |QEvent.KeyPress| 'key-pressed)
   (setf sokoban:*move-hook* 'move-item)
