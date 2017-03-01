@@ -45,6 +45,7 @@
 
 (defvar *player-item* (qml-component "player.qml")) ; :player
 (defvar *box-item*    (qml-component "box.qml"))    ; :object
+(defvar *box-item-2*  (qml-component "box2.qml"))   ; :object2
 (defvar *static-item* (qml-component "static.qml")) ; :wall :goal
 
 (defun assoc* (item alist)
@@ -61,15 +62,17 @@
   (create-items)
   (place-all-items))
 
+(defun create-item-type (type)
+  (qt-object-? (|create| (case type
+                           (:object *box-item*)
+                           (:object2 *box-item-2*)
+                           ((:player :player2) *player-item*)
+                           ((:wall :goal) *static-item*)))))
+
 (defun create-item (type)
-  ;; QT-OBJECT-?: auto cast to the most specific class
-  ;; here: from <QObject> to <QQuickItem>
-  (let ((item (qt-object-? (|create| (case type
-                                       ((:player :player2) *player-item*)
-                                       ((:object :object2) *box-item*)
-                                       ((:wall :goal)      *static-item*))))))
+  (let ((item (create-item-type type)))
     (qml-set item "source" (|fromLocalFile.QUrl| (format nil "qml/img/~(~A~).png" type)))
-    (|setObjectName| item (symbol-name type))
+    (|setObjectName| item (string-downcase type))
     (unless *item-size*
       (setf *item-size* (qml-get item "sourceSize")))
     item))
@@ -160,7 +163,7 @@
          (setf (nth *level* *my-mazes*)
                (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
          (set-maze))))
-  t) ; event filter
+  nil) ; event filter
 
 (defun place-items (type)
   (let ((char (type-char type))
@@ -209,7 +212,19 @@
           (when (or (find type update-types)
                     (find ex-type update-types))
             (queued (update-placed-items))))
-        (setf ex-type type)))))
+        (setf ex-type type)
+        (qlater (lambda () (when (game-finished)
+                             (final-animation))))))))
+
+(defun game-finished ()
+  (let ((ch (type-char :object)))
+    (dolist (str (sokoban:maze-text *maze*))
+      (when (find ch str) (return-from game-finished))))
+  t)
+
+(defun final-animation ()
+  (queued (qml-set-all "wiggle" "running" t)
+          (qml-set-all "object2" "rotation" 0)))
 
 (defun run ()
   (x:do-with *quick-view*

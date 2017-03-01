@@ -16,6 +16,7 @@
    #:js
    #:qml-get
    #:qml-set
+   #:qml-set-all
    #:paint
    #:reload
    #:root-context
@@ -134,6 +135,12 @@
               (when (and update (= (qt-object-id item) #.(qid "QQuickPaintedItem")))
                 (|update| item))))
           (eql::%error-msg "QML-SET" (list item/name property-name value))))))
+
+(defun qml-set-all (name property-name value &optional update)
+  "Sets QQmlProperty of all objects matching NAME."
+  (assert (stringp name))
+  (dolist (item (qfind-children (root-item) name))
+    (qml-set item property-name value update)))
 
 ;;; JS 
 
