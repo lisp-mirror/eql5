@@ -213,8 +213,9 @@
                     (find ex-type update-types))
             (queued (update-placed-items))))
         (setf ex-type type)
-        (qlater (lambda () (when (game-finished)
-                             (final-animation))))))))
+        (when (eql :player type)
+          (qlater (lambda () (when (game-finished)
+                               (final-animation)))))))))
 
 (defun game-finished ()
   (let ((ch (type-char :object)))
