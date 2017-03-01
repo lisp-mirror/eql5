@@ -9,6 +9,7 @@ Image {
             onRunningChanged: { Lisp.call("qsoko:animation-change", running) }
         }
     }
+
     Behavior on y {
         NumberAnimation {
             duration: 150

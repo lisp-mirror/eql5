@@ -20,6 +20,8 @@ Image {
         }
     }
 
+    // final animation
+
     SequentialAnimation {
         objectName: "wiggle"
         loops: 5

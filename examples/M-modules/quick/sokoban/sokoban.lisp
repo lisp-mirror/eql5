@@ -218,9 +218,11 @@
                                (final-animation)))))))))
 
 (defun game-finished ()
+  ;; finished: no more :object, only :object2
   (let ((ch (type-char :object)))
     (dolist (str (sokoban:maze-text *maze*))
-      (when (find ch str) (return-from game-finished))))
+      (when (find ch str)
+        (return-from game-finished))))
   t)
 
 (defun final-animation ()
