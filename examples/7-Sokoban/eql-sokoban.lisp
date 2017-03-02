@@ -131,6 +131,7 @@
                             (first (push (cons file (qnew "QPixmap(QString)" file))
                                          pixmaps)))))
            (item (qnew "QGraphicsPixmapItem(QPixmap)" pixmap)))
+      (|setTransformationMode| item |Qt.SmoothTransformation|)
       (unless *item-size*
         (setf *item-size* (cddr (|boundingRect| item))))
       item)))

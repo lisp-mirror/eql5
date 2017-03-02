@@ -16,7 +16,7 @@ Rectangle {
         text: "<b>N</b> ext | <b>P</b> revious | <b>R</b> estart"
     }
 
-    // level change animations:
+    // level change animations
 
     ScaleAnimator {
 	objectName: "zoomOut"

@@ -130,18 +130,18 @@
      ,@(mapcar (lambda (fun) `(run-or-enqueue (lambda () ,fun)))
                functions)))
 
-(defun change-level (level)
-  "Changes *LEVEL* to given index."
-  (let ((ex *level*))
-    (setf *level* (min (1- (length *my-mazes*))
-                       (max 0 (if (numberp level)
-                                  level
-                                  (+ (if (eql :next level) 1 -1)
-                                     *level*)))))
-    (when (/= *level* ex)
-      (queued (qml-set "zoomOut" "running" t)
+(defun change-level (direction/index)
+  "Changes *LEVEL* in given direction or to index."
+  (let ((level (min (1- (length *my-mazes*))
+                    (max 0 (if (numberp direction/index)
+                               direction/index
+                               (+ (if (eql :next direction/index) 1 -1)
+                                  *level*))))))
+    (when (/= level *level*)
+      (setf *level* level)
+      (queued (qml-set "zoomOut" "running" t)   ; start animation
               (set-maze)
-              (qml-set "zoomIn" "running" t))))
+              (qml-set "zoomIn" "running" t)))) ; start animation
   *level*)
 
 (defun key-pressed (object event)
@@ -195,19 +195,19 @@
 (let (ex-type)
   (defun move-item (char pos direction) ; see sokoban:*move-hook*
     (let* ((type (char-type char))
-           (x (car pos))
-           (y (cdr pos))
+           (pos-x (car pos))
+           (pos-y (cdr pos))
            (w (first *item-size*))
            (h (second *item-size*))
-           (pos-x (* w x))
-           (pos-y (* h y))
+           (x (* w pos-x))
+           (y (* h pos-y))
            (dx (case direction (:east w) (:west (- w)) (t 0)))
            (dy (case direction (:south h) (:north (- h)) (t 0)))
-           (item (|childAt| (qml:root-item) (+ pos-x (/ w 2)) (+ pos-y (/ h 2)))))
+           (item (|childAt| (qml:root-item) (+ x (/ w 2)) (+ y (/ h 2)))))
       (unless (qnull item)
         (if (zerop dy)
-            (qml-set item "x" (+ pos-x dx))  ; use QML-SET to trigger QML defined animation
-            (qml-set item "y" (+ pos-y dy)))
+            (qml-set item "x" (+ x dx))  ; use QML-SET to trigger QML defined animation
+            (qml-set item "y" (+ y dy)))
         (let ((update-types '(:player2  :object2 :goal)))
           (when (or (find type update-types)
                     (find ex-type update-types))
@@ -226,7 +226,7 @@
   t)
 
 (defun final-animation ()
-  (queued (qml-set-all "wiggle" "running" t)
+  (queued (qml-set-all "wiggle" "running" t)     ; start animation
           (qml-set-all "object2" "rotation" 0)))
 
 (defun run ()
