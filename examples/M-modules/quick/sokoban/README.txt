@@ -26,3 +26,16 @@ See:
 
     "qml/items/player.qml"
     "qml/items/box.qml"
+
+
+TIP
+===
+
+See also function QML-SET-ALL, which is convenient for dynamically created
+QML items, since many of them may have the same 'objectName'.
+
+Examples:
+
+    (qml-set-all "wall" "opacity" 1/2)
+
+    (qml-set-all "object" "scale" 2/3)
