@@ -107,10 +107,7 @@
 
 (defun animation-change (running) ; called from QML
   (incf *running-animations* (if running 1 -1))
-  (when (and (zerop *running-animations*)
-             *function-queue*)
-    (funcall (pop *function-queue*))
-    (run-queued)))
+  (run-queued))
 
 (defun run-or-enqueue (function)
   (if (zerop *running-animations*)

@@ -11,34 +11,37 @@
     `(let ((,text (with-output-to-string (s)
                     ,@(mapcar (lambda (x) (if (stringp x) `(write-line ,x s) x))
                               body))))
+       ;; stream S is intentionally not a gensym
        (with-open-file (s ,file :direction :output :if-exists :supersede)
          (format s "// THIS FILE IS GENERATED~%~%")
          (write-string (%indent-qml ,text) s)
          (qlater (lambda () (format t "~%QML file generated, see ~S~%~%" ,file)))))))
 
 (defmacro qml (first &body body)
-  (let ((open-close (and (upper-case-p (char first 0))
-                         (not (find #\{ first)))))
-    (if body
-        `(progn
-           ,(if open-close
-                `(write-line ,(format nil "~%~A {" first) s)
-                (if (find #\{ first)
-                    `(write-line ,(format nil "~%~A" first))
-                    `(write-line ,first s)))
-           ,@(mapcar (lambda (x)
-                       (if (stringp x)
-                           (if (x:starts-with "id:" x)
-                               `(progn
-                                  (write-line ,x s)
-                                  (write-line ,(format nil "objectName: ~S" (string-trim " " (subseq x 3))) s))
-                               `(write-line ,x s))
-                           x))
-                     body)
-           ,(when open-close `(write-line "}" s)))
-        (if (find #\{ first)
-            `(write-line ,(format nil "~%~A" first) s)
-            `(write-line ,first s)))))
+  (if (find #\~ first)
+      `(format s ,first ,@body)
+      (let ((open-close (and (upper-case-p (char first 0))
+                             (not (find #\{ first)))))
+        (if body
+            `(progn
+               ,(if open-close
+                    `(write-line ,(format nil "~%~A {" first) s)
+                    (if (find #\{ first)
+                        `(write-line ,(format nil "~%~A" first))
+                        `(write-line ,first s)))
+               ,@(mapcar (lambda (x)
+                           (if (stringp x)
+                               (if (x:starts-with "id:" x)
+                                   `(progn
+                                      (write-line ,x s)
+                                      (write-line ,(format nil "objectName: ~S" (string-trim " " (subseq x 3))) s))
+                                   `(write-line ,x s))
+                               x))
+                         body)
+               ,(when open-close `(write-line "}" s)))
+            (if (find #\{ first)
+                `(write-line ,(format nil "~%~A" first) s)
+                `(write-line ,first s))))))
 
 (defun %indent-qml (text)
   (with-output-to-string (out)

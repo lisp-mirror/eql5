@@ -42,8 +42,9 @@
        "color: 'black'"
        (let ((n 0))
          (dolist (char *chars*)
-           (format s "Image { id: img~A; source: 'img/~A.png' }~%"
-                   (incf n) (image-of-char char))))
+           (qml "Image { id: img~A; source: 'img/~A.png' }~%"
+                (incf n)
+                (image-of-char char))))
        (qml "SequentialAnimation"
             "id: seq"
             "loops: Animation.Infinite"
@@ -58,13 +59,13 @@
                        (let ((target 0))
                          (mapc (lambda (from-xy to-xy)
                                  (incf target)
-                                 (format s "PalindromeAnimation { target: img~A; property: 'x'; from: ~A; to: ~A } "
-                                         target
-                                         (* 31 (first from-xy))
-                                         (* 31 (first to-xy)))
-                                 (format s "PalindromeAnimation { target: img~A; property: 'y'; from: ~A; to: ~A }~%"
-                                         target
-                                         (* 31 (second from-xy))
-                                         (* 31 (second to-xy))))
+                                 (qml "PalindromeAnimation { target: img~A; property: 'x'; from: ~A; to: ~A } "
+                                      target
+                                      (* 31 (first from-xy))
+                                      (* 31 (first to-xy)))
+                                 (qml "PalindromeAnimation { target: img~A; property: 'y'; from: ~A; to: ~A }~%"
+                                      target
+                                      (* 31 (second from-xy))
+                                      (* 31 (second to-xy))))
                                from to)))
                   (qml "PauseAnimation { duration: 500 }")))))))
