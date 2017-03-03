@@ -107,19 +107,14 @@
 
 (defun animation-change (running) ; called from QML
   (incf *running-animations* (if running 1 -1))
-  (run-queued))
+  (x:while (and (zerop *running-animations*)
+                *function-queue*)
+    (funcall (pop *function-queue*))))
 
 (defun run-or-enqueue (function)
   (if (zerop *running-animations*)
       (funcall function)
       (setf *function-queue* (nconc *function-queue* (list function)))))
-
-(defun run-queued ()
-  "If there is no currently running animation, run all functions in the queue."
-  (when (and (zerop *running-animations*)
-             *function-queue*)
-    (funcall (pop *function-queue*))
-    (qlater 'run-queued)))
 
 (defmacro queued (&rest functions)
   "Run passed functions in order, waiting for currently running (or newly triggered) animations to finish first."

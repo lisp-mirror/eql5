@@ -14,10 +14,9 @@
        (let ((num 0))
          (mapc (lambda (char xy)
                  (incf num)
-                 (qml "PalindromeImage"
-                      (format s "objectName: 'img~A'~% source: 'img/~A.png'~% x: ~D; y: ~D~%"
-                              num
-                              (image-of-char char)
-                              (* 31 (first xy))
-                              (* 31 (second xy)))))
+                 (qml "PalindromeImage { objectName: 'img~A'; source: 'img/~A.png'; x: ~D; y: ~D }~%"
+                      num
+                      (image-of-char char)
+                      (* 31 (first xy))
+                      (* 31 (second xy))))
                *chars* (first *move-to-positions*)))))
