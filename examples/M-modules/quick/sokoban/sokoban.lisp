@@ -57,10 +57,10 @@
 (defun type-char (type)
   (car (find type *item-types* :key 'cdr)))
 
-(defun set-maze ()
+(defun set-maze (&optional reset)
   (setf *maze* (nth *level* *my-mazes*))
   (create-items)
-  (place-all-items))
+  (place-all-items reset))
 
 (defun create-item-type (type)
   (qt-object-? (|create| (case type
@@ -154,10 +154,10 @@
       (#.|Qt.Key_R|
          (setf (nth *level* *my-mazes*)
                (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
-         (set-maze))))
+         (set-maze t))))
   nil) ; event filter
 
-(defun place-items (type)
+(defun place-items (type &optional reset)
   (let ((char (type-char type))
         (items (assoc* type *items*))
         (y 0))
@@ -169,16 +169,18 @@
         (x:do-string (curr-char row)
           (when (char= char curr-char)
             (let ((item (first items)))
-              (|setX| item x) ; don't use QML-SET to _not_ trigger QML defined animation
-              (|setY| item y)
+              (|setX| item x)          ; no QML animation
+              (if reset
+                  (qml-set item "y" y) ; QML animation ("rain" from above)
+                  (|setY| item y))     ; no QML animation
               (|setVisible| item t))
             (setf items (rest items)))
           (incf x (first *item-size*))))
       (incf y (second *item-size*)))))
 
-(defun place-all-items ()
+(defun place-all-items (&optional reset)
   (dolist (type '(:player :player2 :object :object2 :goal :wall))
-    (place-items type)))
+    (place-items type reset)))
 
 (defun update-placed-items ()
   (dolist (type '(:player :player2 :object :object2 :goal))
@@ -198,7 +200,7 @@
            (item (|childAt| (qml:root-item) (+ x (/ w 2)) (+ y (/ h 2)))))
       (unless (qnull item)
         (if (zerop dy)
-            (qml-set item "x" (+ x dx))  ; use QML-SET to trigger QML defined animation
+            (qml-set item "x" (+ x dx))
             (qml-set item "y" (+ y dy)))
         (let ((update-types '(:player2  :object2 :goal)))
           (when (or (find type update-types)
