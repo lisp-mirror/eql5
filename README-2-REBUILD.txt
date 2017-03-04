@@ -16,7 +16,7 @@ REBUILD STEPS (on every upgrade of: ECL, Qt, EQL)
 
   for readline (Unix):
 
-    ecl --compile src/lisp/ecl-readline.lisp
+    ecl -compile src/lisp/ecl-readline.lisp
 
 Optionally (integrate wrapper functions):
 

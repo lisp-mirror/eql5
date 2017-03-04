@@ -90,7 +90,7 @@ BUILD
 
 1) In src/ run:
 
-    ecl --shell make-eql-lib.lisp
+    ecl -shell make-eql-lib.lisp
 
 2) Do:
 
