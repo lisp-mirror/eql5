@@ -57,11 +57,16 @@
 (defun type-char (type)
   (car (find type *item-types* :key 'cdr)))
 
-(defun set-maze (&optional reset)
+(defun set-maze ()
   (setf *maze* (nth *level* *my-mazes*))
   (create-items)
-  (place-all-items reset))
+  (place-all-items))
 
+(defun reset-maze ()
+  (setf *maze* (setf (nth *level* *my-mazes*)
+                     (sokoban:copy-maze (nth *level* sokoban:*mazes*))))
+  (update-placed-items t))
+  
 (defun create-item-type (type)
   (qt-object-? (|create| (case type
                            (:object *box-item*)
@@ -152,9 +157,7 @@
       (#.|Qt.Key_P|
          (change-level :previous))
       (#.|Qt.Key_R|
-         (setf (nth *level* *my-mazes*)
-               (sokoban:copy-maze (nth *level* sokoban:*mazes*)))
-         (set-maze t))))
+         (reset-maze))))
   nil) ; event filter
 
 (defun place-items (type &optional reset)
@@ -169,22 +172,26 @@
         (x:do-string (curr-char row)
           (when (char= char curr-char)
             (let ((item (first items)))
-              (|setX| item x)          ; no QML animation
-              (if reset
-                  (qml-set item "y" y) ; QML animation ("rain" from above)
-                  (|setY| item y))     ; no QML animation
+              (if (and reset (find type '(:object :player)))
+                  (progn
+                    (qsleep 0.05)
+                    (qml-set item "x" x)  ; animate "reset"
+                    (qml-set item "y" y))
+                  (progn
+                    (|setX| item x)
+                    (|setY| item y)))
               (|setVisible| item t))
             (setf items (rest items)))
           (incf x (first *item-size*))))
       (incf y (second *item-size*)))))
 
-(defun place-all-items (&optional reset)
-  (dolist (type '(:player :player2 :object :object2 :goal :wall))
-    (place-items type reset)))
-
-(defun update-placed-items ()
-  (dolist (type '(:player :player2 :object :object2 :goal))
+(defun place-all-items ()
+  (dolist (type '(:wall :goal :object2 :player2 :player :object))
     (place-items type)))
+
+(defun update-placed-items (&optional reset)
+  (dolist (type '(:goal :object2 :player2 :player :object))
+    (place-items type reset)))
 
 (let (ex-type)
   (defun move-item (char pos direction) ; see sokoban:*move-hook*
