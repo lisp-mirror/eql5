@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/sql/
 MOC_DIR     = ./tmp/sql/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/sql/_ini.h \
            gen/sql/_ini2.h \

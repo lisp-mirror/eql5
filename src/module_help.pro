@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/help/
 MOC_DIR     = ./tmp/help/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/help/_ini.h \
            gen/help/_ini2.h \

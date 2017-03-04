@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/multimedia/
 MOC_DIR     = ./tmp/multimedia/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/multimedia/_ini.h \
            gen/multimedia/_ini2.h \

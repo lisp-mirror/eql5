@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/quick/
 MOC_DIR     = ./tmp/quick/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/quick/_ini.h \
            gen/quick/_ini2.h \

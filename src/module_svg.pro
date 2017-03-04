@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/svg/
 MOC_DIR     = ./tmp/svg/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/svg/_ini.h \
            gen/svg/_ini2.h \

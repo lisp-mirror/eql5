@@ -8,7 +8,9 @@ DESTDIR      = ./
 OBJECTS_DIR  = ./tmp/
 MOC_DIR      = ./tmp/
 
-include(../../../../src/windows.pri)
+win32 {
+    include(../../../../src/windows.pri)
+}
 
 HEADERS += main.h
 SOURCES += main.cpp

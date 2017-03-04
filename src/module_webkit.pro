@@ -9,7 +9,9 @@ MOC_DIR     = ./tmp/webkit/
 
 macx:QT     += network
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/webkit/_ini.h \
            gen/webkit/_ini2.h \

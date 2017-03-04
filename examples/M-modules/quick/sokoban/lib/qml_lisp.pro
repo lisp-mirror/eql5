@@ -8,7 +8,9 @@ TARGET      = qml_lisp
 OBJECTS_DIR = ./tmp/
 MOC_DIR     = ./tmp/
 
-include(../../../../../src/windows.pri)
+win32 {
+    include(../../../../../src/windows.pri)
+}
 
 HEADERS += qml_lisp.h
 SOURCES += qml_lisp.cpp

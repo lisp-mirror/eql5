@@ -10,7 +10,9 @@ MOC_DIR     = ./tmp/
 
 macx:QT     += network
 
-include(../../../../../src/windows.pri)
+win32 {
+    include(../../../../../src/windows.pri)
+}
 
 HEADERS += _invokables.h \
            webkit_bridge.h

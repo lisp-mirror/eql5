@@ -7,7 +7,9 @@ DESTDIR     = ../
 OBJECTS_DIR = ./tmp/network/
 MOC_DIR     = ./tmp/network/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 HEADERS += gen/network/_ini.h \
            gen/network/_ini2.h \

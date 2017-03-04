@@ -8,7 +8,9 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/
 MOC_DIR      = ./tmp/
 
-include(windows.pri)
+win32 {
+    include(windows.pri)
+}
 
 win32 {
     CONFIG += console
