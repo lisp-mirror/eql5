@@ -77,7 +77,12 @@ BUILD
         (require :cmp)
     
   [MSVC]
-    substitute make with nmake
+    Substitute make with nmake.
+
+  [MinGW]
+    If 'make' is stuck in an infinite loop of creating the 'Makefile', just remove
+    the line 'include(windows.pri)' from your '*.pro' file, setting eventual needed
+    paths in your '~/.profile' instead.
 
   [OSX]
     To force creation of a Makefile (instead of an Xcode project), use this flag:
