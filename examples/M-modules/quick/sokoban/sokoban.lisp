@@ -172,7 +172,10 @@
         (x:do-string (curr-char row)
           (when (char= char curr-char)
             (let ((item (first items)))
-              (if (and reset (find type '(:object :player)))
+              (if (and reset
+                       (find type '(:object :player))
+                       (or (/= (|x| item) x)
+                           (/= (|y| item) y)))
                   (progn
                     (qsleep 0.05)
                     (qml-set item "x" x)  ; animate "reset"
