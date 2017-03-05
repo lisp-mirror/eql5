@@ -19,7 +19,9 @@
 
 (defmacro qml (first &body body)
   (if (find #\~ first)
-      `(format s ,first ,@body)
+      `(progn
+         (format s ,first ,@body)
+         (terpri s))
       (let ((open-close (and (upper-case-p (char first 0))
                              (not (find #\{ first)))))
         (if body
