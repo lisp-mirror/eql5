@@ -1,5 +1,5 @@
 import QtQuick 2.2
-import EQL5 1.0
+import "ext/"
 
 Rectangle {
     id: root
@@ -18,21 +18,19 @@ Rectangle {
 
     // level change animations
 
-    ScaleAnimator {
+    ScaleAnimator_notify {
 	objectName: "zoomOut"
         target: root
         from: 0.8
         to: 0
         duration: 250
-        onRunningChanged: { Lisp.call("qsoko:animation-change", running) }
     }
 
-    ScaleAnimator {
+    ScaleAnimator_notify {
 	objectName: "zoomIn"
         target: root
         from: 0
         to: 0.8
         duration: 250
-        onRunningChanged: { Lisp.call("qsoko:animation-change", running) }
     }
 }

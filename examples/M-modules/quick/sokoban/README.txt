@@ -22,10 +22,9 @@ This example shows how to dynamically create QML items from Lisp.
 The ability to call Lisp from QML comes in handy for the Lisp functions
 which need to wait for eventual running animations to finish.
 
-See:
+See e.g. class:
 
-    "qml/items/player.qml"
-    "qml/items/box.qml"
+    "qml/ext/NumberAnimation_notify.qml"
 
 
 TIP

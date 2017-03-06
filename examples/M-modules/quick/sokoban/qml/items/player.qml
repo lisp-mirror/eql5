@@ -1,20 +1,18 @@
 import QtQuick 2.0
-import EQL5 1.0
+import "../ext/"
 
 Image {
     Behavior on x {
-        NumberAnimation {
+        NumberAnimation_notify {
             duration: 120
             easing.type: Easing.InOutSine
-            onRunningChanged: { Lisp.call("qsoko:animation-change", running) }
         }
     }
 
     Behavior on y {
-        NumberAnimation {
+        NumberAnimation_notify {
             duration: 120
             easing.type: Easing.InOutSine
-            onRunningChanged: { Lisp.call("qsoko:animation-change", running) }
         }
     }
 }
