@@ -47,7 +47,7 @@
     (return-from winner t)))
 
 (defun restart-game ()
-  (qml-set "messageDisplay" "visible" nil)
+  (qml-set "message_display" "visible" nil)
   (qml-set "game" "running" t)
   (dotimes (i 9)
     (set-cell-state i "")))
@@ -129,6 +129,6 @@
           (make-move choice "O")))))
 
 (defun game-finished (message)
-  (qml-set "messageDisplay" "text" message)
-  (qml-set "messageDisplay" "visible" t)
+  (qml-set "message_display" "text" message)
+  (qml-set "message_display" "visible" t)
   (qml-set "game" "running" nil))

@@ -136,9 +136,9 @@
                                   *level*))))))
     (when (/= level *level*)
       (setf *level* level)
-      (queued (qml-set "zoomOut" "running" t)   ; start animation
+      (queued (qml-set "zoom_board_out" "running" t)
               (set-maze)
-              (qml-set "zoomIn" "running" t)))) ; start animation
+              (qml-set "zoom_board_in" "running" t))))
   *level*)
 
 (defun key-pressed (object event)
@@ -229,7 +229,8 @@
   t)
 
 (defun final-animation ()
-  (queued (qml-set-all "wiggle" "running" t)     ; start animation
+  (qml-set "rotate_player" "running" t)
+  (queued (qml-set-all "wiggle_box" "running" t)
           (qml-set-all "object2" "rotation" 0)))
 
 (defun run ()

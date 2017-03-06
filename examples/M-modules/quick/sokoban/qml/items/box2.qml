@@ -21,7 +21,7 @@ Image {
     // final animation
 
     SequentialAnimationExt {
-        objectName: "wiggle"
+        objectName: "wiggle_box"
         loops: 5
 
         RotationAnimation {

@@ -42,7 +42,7 @@
        "color: 'black'"
        (let ((n 0))
          (dolist (char *chars*)
-           (qml "Image { id: img~A; source: 'img/~A.png' }"
+           (qml "Image { id: img~D; source: 'img/~A.png' }"
                 (incf n)
                 (image-of-char char))))
        (qml "SequentialAnimation"
@@ -59,11 +59,11 @@
                        (let ((target 0))
                          (mapc (lambda (from-xy to-xy)
                                  (incf target)
-                                 (qml "PalindromeAnimation { target: img~A; property: 'x'; from: ~A; to: ~A }"
+                                 (qml "PalindromeAnimation { target: img~D; property: 'x'; from: ~D; to: ~D }"
                                       target
                                       (* 31 (first from-xy))
                                       (* 31 (first to-xy)))
-                                 (qml "PalindromeAnimation { target: img~A; property: 'y'; from: ~A; to: ~A }"
+                                 (qml "PalindromeAnimation { target: img~D; property: 'y'; from: ~D; to: ~D }"
                                       target
                                       (* 31 (second from-xy))
                                       (* 31 (second to-xy))))

@@ -11,7 +11,7 @@ Rectangle {
 
     signal clicked
 
-    width: buttonLabel.width + 20; height: buttonLabel.height + 6
+    width: button_label.width + 20; height: button_label.height + 6
     border { width: 1; color: Qt.darker(container.color) }
     radius: 8
     color: "lightgray"
@@ -34,8 +34,8 @@ Rectangle {
     }
 
     Text {
-        id: buttonLabel
-        objectName: "buttonLabel"
+        id: button_label
+        objectName: "button_label"
         anchors.centerIn: container
         text: container.text
         font.pixelSize: 14

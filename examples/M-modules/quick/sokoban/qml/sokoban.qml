@@ -19,7 +19,7 @@ Rectangle {
     // level change animations
 
     ScaleAnimatorExt {
-	objectName: "zoomOut"
+	objectName: "zoom_board_out"
         target: root
         from: 0.8
         to: 0
@@ -27,7 +27,7 @@ Rectangle {
     }
 
     ScaleAnimatorExt {
-	objectName: "zoomIn"
+	objectName: "zoom_board_in"
         target: root
         from: 0
         to: 0.8

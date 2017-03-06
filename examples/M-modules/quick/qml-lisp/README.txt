@@ -94,7 +94,7 @@ same name.
 QML Example:
 
     Item {
-        id: myItem
-        objectName: "myItem"
+        id: my_item
+        objectName: "my_item"
     }
 

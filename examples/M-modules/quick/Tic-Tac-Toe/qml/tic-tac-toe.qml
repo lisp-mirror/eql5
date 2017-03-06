@@ -13,8 +13,8 @@ Rectangle {
     property int difficulty: 10 // chance it will actually think
 
     Image {
-        id: boardImage
-        objectName: "boardImage"
+        id: board_image
+        objectName: "board_image"
         source: "../pics/board.png"
     }
 
@@ -25,7 +25,7 @@ Rectangle {
         Grid {
             id: board
             objectName: "board"
-            width: boardImage.width; height: boardImage.height
+            width: board_image.width; height: board_image.height
             columns: 3
 
             Repeater {
@@ -63,8 +63,8 @@ Rectangle {
     }
 
     Text {
-        id: messageDisplay
-        objectName: "messageDisplay"
+        id: message_display
+        objectName: "message_display"
         anchors.centerIn: parent
         color: "blue"
         style: Text.Outline; styleColor: "white"
@@ -72,7 +72,7 @@ Rectangle {
         visible: false
 
         Timer {
-            running: messageDisplay.visible
+            running: message_display.visible
             onTriggered: { Lisp.call("restart-game") }
         }
     }
