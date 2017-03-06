@@ -24,7 +24,7 @@ which need to wait for eventual running animations to finish.
 
 See e.g. class:
 
-    "qml/ext/NumberAnimation_notify.qml"
+    "qml/ext/NumberAnimationExt.qml"
 
 
 TIP

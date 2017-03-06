@@ -5,14 +5,14 @@ Image {
     id: box2
 
     Behavior on x {
-        NumberAnimation_notify {
+        NumberAnimationExt {
             duration: 150
             easing.type: Easing.InQuart
         }
     }
 
     Behavior on y {
-        NumberAnimation_notify {
+        NumberAnimationExt {
             duration: 150
             easing.type: Easing.InQuart
         }
@@ -20,7 +20,7 @@ Image {
 
     // final animation
 
-    SequentialAnimation_notify {
+    SequentialAnimationExt {
         objectName: "wiggle"
         loops: 5
 

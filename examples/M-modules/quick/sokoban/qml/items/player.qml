@@ -3,14 +3,14 @@ import "../ext/"
 
 Image {
     Behavior on x {
-        NumberAnimation_notify {
+        NumberAnimationExt {
             duration: 120
             easing.type: Easing.InOutSine
         }
     }
 
     Behavior on y {
-        NumberAnimation_notify {
+        NumberAnimationExt {
             duration: 120
             easing.type: Easing.InOutSine
         }

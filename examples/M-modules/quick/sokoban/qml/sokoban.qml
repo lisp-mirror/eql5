@@ -18,7 +18,7 @@ Rectangle {
 
     // level change animations
 
-    ScaleAnimator_notify {
+    ScaleAnimatorExt {
 	objectName: "zoomOut"
         target: root
         from: 0.8
@@ -26,7 +26,7 @@ Rectangle {
         duration: 250
     }
 
-    ScaleAnimator_notify {
+    ScaleAnimatorExt {
 	objectName: "zoomIn"
         target: root
         from: 0

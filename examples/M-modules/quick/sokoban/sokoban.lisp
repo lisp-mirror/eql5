@@ -172,18 +172,17 @@
         (x:do-string (curr-char row)
           (when (char= char curr-char)
             (let ((item (first items)))
+              (|setVisible| item t)
               (if (and reset
                        (find type '(:object :player))
                        (or (/= (|x| item) x)
                            (/= (|y| item) y)))
                   (progn
-                    (qsleep 0.05)
                     (qml-set item "x" x)  ; animate "reset"
                     (qml-set item "y" y))
                   (progn
                     (|setX| item x)
-                    (|setY| item y)))
-              (|setVisible| item t))
+                    (|setY| item y))))
             (setf items (rest items)))
           (incf x (first *item-size*))))
       (incf y (second *item-size*)))))
