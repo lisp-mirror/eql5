@@ -4,6 +4,8 @@
   (:nicknames prop)
   (:use :common-lisp :eql)
   (:export
+   #:*object*
+   #:*qml-stack*
    #:show))
 
 (in-package :properties)
@@ -11,6 +13,7 @@
 (defvar *main* (qload-ui (in-home "gui/properties")))
 
 (defvar-ui *main*
+  *meta-class-name*
   *meta-class-names*
   *property-view*
   *class-depth*
@@ -23,15 +26,19 @@
                          #+linux   "Monospace"   #+linux   9
                          #+windows "Courier New" #+windows 10))
 
-(defvar *object* nil)
+(defvar *object*        nil)
+(defvar *qml-stack*     nil)
+(defvar *ignore-update* nil)
 
 (defun ini ()
+  (! "setSizeAdjustPolicy" *meta-class-name* |QComboBox.AdjustToContents|)
   (! "setReadOnly" *property-view* t)
   (! "setMinimum" *class-depth* 1)
   (! "resize" *main* '(650 500))
   (dolist (w (list *meta-class-names* *class-names*))
     (! "setWordWrap" w t))
   (qset-color *property-view* |QPalette.Base| "lightyellow")
+  (qconnect *meta-class-name* "currentIndexChanged(int)" 'update-meta-class-names)
   (qconnect *class-depth* "valueChanged(int)" 'update)
   (qconnect *instance-properties* "toggled(bool)" 'all-instance-properties)
   (qconnect *select* "clicked()" 'selected))
@@ -49,7 +56,7 @@
 
 (defun all-instance-properties (checked)
   (dolist (w (list *class-depth* *class-names*))
-    (|setEnabled| w (not checked)))
+    (! "setEnabled" w (not checked)))
   (show))
 
 (defun selected ()
@@ -58,22 +65,44 @@
 (defun super-class-names (object)
   (flet ((name (name)
            (subseq name 0 (position #\_ name))))
-    (let ((mo (|metaObject| object))
+    (let ((mo (! "metaObject" object))
           names)
       (x:while (not (qnull mo))
-        (pushnew (name (|className| mo))
+        (pushnew (name (! "className" mo))
                  names :test 'string=)
-        (setf mo (|superClass| mo)))
+        (setf mo (! "superClass" mo)))
       (nreverse names))))
 
-(defun show (&optional object)
+(defun class-names (objects)
+  (flet ((name (name)
+           (subseq name 0 (position #\_ name))))
+    (let (names)
+      (dolist (object objects)
+        (pushnew (name (! "className" (! "metaObject" object)))
+                 names :test 'string=))
+      (nreverse names))))
+
+(defun update-meta-class-names (index)
+  (unless (or *ignore-update*
+              (eql -1 index))
+    (let ((object (nth index *qml-stack*)))
+      (! "setText" *meta-class-names* (x:join (rest (super-class-names object)) " - "))
+      (show object t))))
+
+(defun show (&optional object update)
   (when object
-    (setf *object* object)
-    (let ((classes (super-class-names *object*)))
-      (! "setText" *meta-class-names* (format nil "<b>~A</b>~A~A"
-                                              (first classes)
-                                              (if (rest classes) "<br>" "")
-                                              (x:join (rest classes) " - "))))
+    (setf *object* object
+          *qml-stack* (symbol-value (find-symbol (symbol-name :*qml-stack*) :qsel)))
+    (let ((classes (super-class-names *object*))
+          (*ignore-update* t))
+      (if *qml-stack*
+          (unless update
+            (! "clear" *meta-class-name*)
+            (! "addItems" *meta-class-name* (class-names *qml-stack*)))
+          (progn
+            (! "clear" *meta-class-name*)
+            (! "addItem" *meta-class-name* (first classes))))
+      (! "setText" *meta-class-names* (x:join (rest classes) " - ")))
     (! "setChecked" *instance-properties* (! "inherits" *object* "QQuickItem")) ; for QML items
     (let ((depth 1)
           (name (qt-object-name *object*)))

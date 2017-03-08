@@ -8,7 +8,8 @@
   (:nicknames :qsel)
   (:use :common-lisp :eql)
   (:export
-   #:*q*))
+   #:*q*
+   #:*qml-stack*))
 
 (in-package :eql)
 
@@ -24,6 +25,7 @@
 
 (defvar *listen*      nil)
 (defvar *q*           nil)
+(defvar *qml-stack*   nil)
 (defvar *on-selected* nil)
 (defvar *pos*         nil)
 
@@ -31,9 +33,10 @@
   (defun object-selected (object event)
     (unless (zerop (qt-object-id object)) ; exclude unknown to EQL
       (when *listen*
-        (setf *listen* nil
-              *q*      object
-              *pos*    (! "pos" event))
+        (setf *listen*    nil
+              *q*         object
+              *qml-stack* nil
+              *pos*       (! "pos" event))
         (setf (qt-object-unique object)
               (! ("toUInt" ("property" "EQL.unique") *q*)))
         (if  (find (! "className" (! "metaObject" *q*))
@@ -121,7 +124,9 @@
          (child* (! "childAt" item (first pos) (second pos))))
     (if (qnull child*)
         item
-        (child child*))))
+        (progn
+          (push child* *qml-stack*)
+          (child child*)))))
 
 (defun indicate* ()
   (let ((root (! "rootObject" *q*)))
@@ -146,4 +151,3 @@
 
 (defun set-highlight* (pixmap dark child)
   (paint-highlight dark pixmap (highlight* child)))
-
