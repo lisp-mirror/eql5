@@ -84,15 +84,16 @@
 
 (defun update-meta-class-names (index)
   (unless (or *ignore-update*
-              (eql -1 index))
+              (= -1 index))
     (let ((object (nth index *qml-stack*)))
       (! "setText" *meta-class-names* (x:join (rest (super-class-names object)) " - "))
       (show object t))))
 
 (defun show (&optional object update)
   (when object
-    (setf *object* object
-          *qml-stack* (symbol-value (find-symbol (symbol-name :*qml-stack*) :qsel)))
+    (setf *object* object)
+    (when (find-package :qsel)
+      (setf *qml-stack* (symbol-value (find-symbol (symbol-name :*qml-stack*) :qsel))))
     (let ((classes (super-class-names *object*))
           (*ignore-update* t))
       (if *qml-stack*
