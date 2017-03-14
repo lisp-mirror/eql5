@@ -246,9 +246,8 @@
   t)
 
 (defun final-animation ()
-  (qml-set "rotate_player" "running" t)
-  (queued (qml-set-all "wiggle_box" "running" t)
-          (qml-set-all "object2" "rotation" 0)))
+  (queued (qml-set "rotate_player" "running" t)
+          (qml-set-all "wiggle_box" "running" t)))
 
 (defun run ()
   (x:do-with *quick-view*

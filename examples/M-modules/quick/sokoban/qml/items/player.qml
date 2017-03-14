@@ -20,7 +20,7 @@ Image {
 
     // final animation
 
-    RotationAnimation {
+    RotationAnimationExt {
         objectName: "rotate_player"
         target: player
         property: "rotation"

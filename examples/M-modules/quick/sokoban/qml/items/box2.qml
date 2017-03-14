@@ -27,8 +27,8 @@ Image {
         RotationAnimation {
             target: box2
             property: "rotation"
-            from: -30; to: 30
-            duration: 300
+            from: 0; to: 30
+            duration: 150
         }
 
         RotationAnimation {
@@ -36,6 +36,13 @@ Image {
             property: "rotation"
             from: 30; to: -30
             duration: 300
+        }
+
+        RotationAnimation {
+            target: box2
+            property: "rotation"
+            from: -30; to: 0
+            duration: 150
         }
     }
 }
