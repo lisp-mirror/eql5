@@ -3,8 +3,8 @@ import "ext/"
 
 Rectangle {
     id: root
-    x: -54; y: -44
-    width: 608; height: 512
+    x: -77; y: -44
+    width: 864; height: 512
     color: "lightsteelblue"
 
     scale: 0.8
@@ -13,7 +13,7 @@ Rectangle {
         y: 516
         font.pixelSize: 15
         color: "white"
-        text: "<b>N</b> ext | <b>P</b> revious | <b>R</b> estart"
+        text: "<b>N</b> ext | <b>P</b> revious | <b>R</b> estart | <b>S</b> olve"
     }
 
     // level change animations

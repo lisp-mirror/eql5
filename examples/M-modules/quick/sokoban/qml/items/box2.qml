@@ -22,7 +22,7 @@ Image {
 
     SequentialAnimationExt {
         objectName: "wiggle_box"
-        loops: 5
+        loops: 3
 
         RotationAnimation {
             target: box2

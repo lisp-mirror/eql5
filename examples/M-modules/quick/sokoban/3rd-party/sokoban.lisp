@@ -1,21 +1,27 @@
 (defpackage :cl-sokoban
   (:nicknames :sokoban)
   (:use :cl)
-  (:export #:*mazes*
-           #:*rules*
-           #:*move-hook*
-           #:maze #:maze-player #:maze-dimensions #:maze-text
-           #:copy-maze
-           #:simple-ui
-           #:move
-           #:defmaze))
+  (:export
+   #:*mazes*
+   #:*rules*
+   #:*move-hook*
+   #:*solutions*
+   #:maze
+   #:maze-player
+   #:maze-dimensions
+   #:maze-text
+   #:copy-maze
+   #:simple-ui
+   #:move
+   #:defmaze))
 
 (in-package :cl-sokoban)
 
-(defvar *move-hook* nil)
-
 (defvar *mazes* nil
   "A list of two-dimensional character arrays, describing Sokoban puzzles.")
+
+(defvar *move-hook* nil)
+(defvar *solutions* nil)
 
 (defvar *rules*
   '(("@ " " @")

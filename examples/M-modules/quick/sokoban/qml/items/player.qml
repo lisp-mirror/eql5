@@ -26,6 +26,5 @@ Image {
         property: "rotation"
         from: 0; to: 360
         duration: 600
-        loops: 5
     }
 }

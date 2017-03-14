@@ -10,7 +10,7 @@
 (qrequire :quick)
 
 (require :sokoban  "3rd-party/sokoban")
-(require :levels   "3rd-party/levels")
+(require :levels   "3rd-party/my-levels")
 (require :qml-lisp "qml-lisp")
 
 (defpackage :qsoko
@@ -35,6 +35,7 @@
 (defvar *level*     0)
 (defvar *maze*      nil)
 (defvar *my-mazes*  (mapcar 'sokoban:copy-maze sokoban:*mazes*))
+(defvar *solving*   nil)
 
 (setf qml:*quick-view* (qnew "QQuickView"))
 
@@ -142,7 +143,8 @@
   *level*)
 
 (defun key-pressed (object event)
-  (when (zerop *running-animations*)
+  (when (and (zerop *running-animations*)
+             (not *solving*))
     (case (|key| event)
       (#.|Qt.Key_Up|
          (sokoban:move :north *maze*))
@@ -157,8 +159,23 @@
       (#.|Qt.Key_P|
          (change-level :previous))
       (#.|Qt.Key_R|
-         (reset-maze))))
+         (reset-maze))
+      (#.|Qt.Key_S|
+         (solve))))
   nil) ; event filter
+
+(defun solve ()
+  (let ((*solving* t))
+    (reset-maze)
+    (x:do-string (ch (nth *level* sokoban:*solutions*))
+      (sokoban:move (case (char-downcase ch)
+                      (#\u :north)
+                      (#\d :south)
+                      (#\l :west)
+                      (#\r :east))
+                    *maze*)
+      (x:while (plusp *running-animations*)
+        (qsleep 0.05)))))
 
 (defun place-items (type &optional reset)
   (let ((char (type-char type))
@@ -236,7 +253,8 @@
 (defun run ()
   (x:do-with *quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/sokoban.qml"))
-    (|resize| '(500 444))
+    (|setMinimumSize| '(710 444))
+    (|resize| (|minimumSize| *quick-view*))
     (|setColor| "#404040")
     (|show|))
   (qadd-event-filter nil |QEvent.KeyPress| 'key-pressed)
@@ -246,3 +264,4 @@
 (progn
   (run)
   (qlater (lambda () (in-package :qsoko))))
+
