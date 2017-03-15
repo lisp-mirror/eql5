@@ -68,6 +68,7 @@
 
 (defun set-maze ()
   (setf *maze* (nth (level) *my-mazes*))
+  (update-translate-xy)
   (create-items)
   (place-all-items))
 
@@ -75,6 +76,17 @@
   (setf *maze* (setf (nth (level) *my-mazes*)
                      (sokoban:copy-maze (nth (level) sokoban:*mazes*))))
   (update-placed-items t))
+
+(defvar *translate-x* 0)
+(defvar *translate-y* 0)
+
+(defun update-translate-xy ()
+  "Set x and y translation for maze centering."
+  (let ((dim (sokoban:maze-dimensions *maze*))
+        (img-px 32)
+        (board-size 16))
+    (setf *translate-x* (floor (/ (* img-px (- board-size (car dim))) 2))
+          *translate-y* (floor (/ (* img-px (- board-size (cdr dim))) 2)))))
   
 (defun create-item-type (type)
   (qt-object-? (|create| (case type
@@ -184,6 +196,21 @@
       (x:while (plusp *running-animations*)
         (qsleep 0.05)))))
 
+(defun set-x (item x &optional animate)
+  (let ((x* (+ x *translate-x*)))
+    (if animate
+        (qml-set item "x" x*)
+        (|setX| item x*))))
+
+(defun set-y (item y &optional animate)
+  (let ((y* (+ y *translate-y*)))
+    (if animate
+        (qml-set item "y" y*)
+        (|setY| item y*))))
+
+(defun child-at (x y)
+  (|childAt| (board) (+ x *translate-x*) (+ y *translate-y*)))
+
 (defun place-items (type &optional reset)
   (let ((char (type-char type))
         (items (assoc* type *items*))
@@ -195,18 +222,14 @@
       (let ((x 0))
         (x:do-string (curr-char row)
           (when (char= char curr-char)
-            (let ((item (first items)))
+            (let* ((item (first items))
+                   (animate (and reset
+                                 (find type '(:object :player))
+                                 (or (/= (|x| item) x)
+                                     (/= (|y| item) y)))))
               (|setVisible| item t)
-              (if (and reset
-                       (find type '(:object :player))
-                       (or (/= (|x| item) x)
-                           (/= (|y| item) y)))
-                  (progn
-                    (qml-set item "x" x)  ; animate "reset"
-                    (qml-set item "y" y))
-                  (progn
-                    (|setX| item x)
-                    (|setY| item y))))
+              (set-x item x animate)
+              (set-y item y animate))
             (setf items (rest items)))
           (incf x (first *item-size*))))
       (incf y (second *item-size*)))))
@@ -230,11 +253,11 @@
            (y (* h pos-y))
            (dx (case direction (:east w) (:west (- w)) (t 0)))
            (dy (case direction (:south h) (:north (- h)) (t 0)))
-           (item (|childAt| (board) (+ x (/ w 2)) (+ y (/ h 2)))))
+           (item (child-at (+ x (/ w 2)) (+ y (/ h 2)))))
       (unless (qnull item)
         (if (zerop dy)
-            (qml-set item "x" (+ x dx))
-            (qml-set item "y" (+ y dy)))
+            (set-x item (+ x dx) t)
+            (set-y item (+ y dy) t))
         (dolist (tp (list type ex ex-ex))
           (when (find tp '(:player2  :object2 :goal))
             (queued (update-placed-items))
