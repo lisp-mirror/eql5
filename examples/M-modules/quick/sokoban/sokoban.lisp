@@ -32,7 +32,6 @@
 
 (defvar *items*     nil)
 (defvar *item-size* nil)
-(defvar *level*     0)
 (defvar *maze*      nil)
 (defvar *my-mazes*  (mapcar 'sokoban:copy-maze sokoban:*mazes*))
 (defvar *solving*   nil)
@@ -49,6 +48,15 @@
 (defvar *box-item-2*  (qml-component "box2.qml"))   ; :object2
 (defvar *static-item* (qml-component "static.qml")) ; :wall :goal
 
+(defun board ()
+  (qml:find-quick-item "board"))
+
+(defun level ()
+  (floor (qml-get "level" "value")))
+
+(defun set-level (index)
+  (qml-set "level" "value" index))
+
 (defun assoc* (item alist)
   (cdr (assoc item alist)))
 
@@ -59,13 +67,13 @@
   (car (find type *item-types* :key 'cdr)))
 
 (defun set-maze ()
-  (setf *maze* (nth *level* *my-mazes*))
+  (setf *maze* (nth (level) *my-mazes*))
   (create-items)
   (place-all-items))
 
 (defun reset-maze ()
-  (setf *maze* (setf (nth *level* *my-mazes*)
-                     (sokoban:copy-maze (nth *level* sokoban:*mazes*))))
+  (setf *maze* (setf (nth (level) *my-mazes*)
+                     (sokoban:copy-maze (nth (level) sokoban:*mazes*))))
   (update-placed-items t))
   
 (defun create-item-type (type)
@@ -89,8 +97,8 @@
            (dolist (type (x:ensure-list types))
              (let ((item (create-item type)))
                (push item (cdr (assoc type *items*)))
-               (|setParent| item (qml:root-item))
-               (|setParentItem| item (qml:root-item))))))
+               (|setParent| item (board))
+               (|setParentItem| item (board))))))
     (dolist (row (sokoban:maze-text *maze*))
       (x:do-string (char row)
         (unless (char= #\Space char)
@@ -134,13 +142,12 @@
                     (max 0 (if (numberp direction/index)
                                direction/index
                                (+ (if (eql :next direction/index) 1 -1)
-                                  *level*))))))
-    (when (/= level *level*)
-      (setf *level* level)
+                                  (level)))))))
+    (when (/= level (level))
       (queued (qml-set "zoom_board_out" "running" t)
-              (set-maze)
+              (set-level level) ; will call SET-MAZE from QML
               (qml-set "zoom_board_in" "running" t))))
-  *level*)
+  (level))
 
 (defun key-pressed (object event)
   (when (and (zerop *running-animations*)
@@ -167,7 +174,7 @@
 (defun solve ()
   (let ((*solving* t))
     (reset-maze)
-    (x:do-string (ch (nth *level* sokoban:*solutions*))
+    (x:do-string (ch (nth (level) sokoban:*solutions*))
       (sokoban:move (case (char-downcase ch)
                       (#\u :north)
                       (#\d :south)
@@ -223,7 +230,7 @@
            (y (* h pos-y))
            (dx (case direction (:east w) (:west (- w)) (t 0)))
            (dy (case direction (:south h) (:north (- h)) (t 0)))
-           (item (|childAt| (qml:root-item) (+ x (/ w 2)) (+ y (/ h 2)))))
+           (item (|childAt| (board) (+ x (/ w 2)) (+ y (/ h 2)))))
       (unless (qnull item)
         (if (zerop dy)
             (qml-set item "x" (+ x dx))
@@ -252,12 +259,12 @@
 (defun run ()
   (x:do-with *quick-view*
     (|setSource| (|fromLocalFile.QUrl| "qml/sokoban.qml"))
-    (|setMinimumSize| '(424 444))
+    (|setMinimumSize| '(444 444))
     (|resize| (|minimumSize| *quick-view*))
-    (|setColor| "#404040")
     (|show|))
   (qadd-event-filter nil |QEvent.KeyPress| 'key-pressed)
   (setf sokoban:*move-hook* 'move-item)
+  (qml-set "level" "maximumValue" (1- (length *my-mazes*)))
   (set-maze))
 
 (progn
