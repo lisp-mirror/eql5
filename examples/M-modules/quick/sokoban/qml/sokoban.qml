@@ -3,8 +3,8 @@ import "ext/"
 
 Rectangle {
     id: root
-    x: -77; y: -44
-    width: 864; height: 512
+    x: -44; y: -44
+    width: 512; height: 512
     color: "lightsteelblue"
 
     scale: 0.8

@@ -3026,43 +3026,6 @@
   "urDDDuuurrDDD")
 
 (defmaze
-  "#################"
-  "#.... ...     $ #"
-  "##$*.*.$ $ $ $$ #"
-  "#  $##########  #"
-  "#  $ ######### @#"
-  "#    ############"
-  "#################")
-
-(add-solution
-  "uuuLDuLLdRluLLdRluLLdRluLLdRluLLdRluLLDDlddrUUddrruLdlluurURDuurrdLulD"
-  "rrurrdLrurrdLrurrdLrurrdLrurrdLrddlUUruLLLdRluLLdRRurrrddlUruLLLdRlllu"
-  "LLdRRRRuLLdlluLLdRRRRuLLdlluLLdRRRRuLLLrrrrrrrrrrddlUruLLLLLLLLrrrrrdR"
-  "urrddlUruLLLLLdRRRurrddlUruLLLdlluLLdRRRRRurDlluLLLdllllllldlddrUdrruL"
-  "UddlluuRuRRRRRRRRRRRllllllllllldlddrruUluRRRRRRRRRlllllllldlldRdrUUluR"
-  "RRRRRRurrdLLLLLLLrrrrrrrurrdLLLLLLLLrrrrrrrrurrdLLLLLLLLLrrrrrrrrrddlU"
-  "ruLLLLLLLL")
-
-(defmaze
-  "#################"
-  "#########       #"
-  "####   # $  $ $ #"
-  "# $ $ $  $   ####"
-  "#...#  $$# ######"
-  "# ...*.# #$######"
-  "## *.*.. #@######"
-  "#################")
-
-(add-solution
-  "UUULLrrruullDldRRllDLLdLLLuuRurrDulldRllddrrURdllluururDurDRRururrdLdL"
-  "LLLulldlddrrrdrrUUddllullluururrdrRllulldRRlllddrrrUdllluurrDrdLuuurDl"
-  "ddrdrruuuLLulDrrrdddlluUddrruuulLulldlddRdRRllululldRdRRuLdlUruururrdd"
-  "dLLdlUrrruuulldRDrddLLullluuRRRurrDrrdddLLuLrdrruuullDldLdRuuruulldlll"
-  "ddrRlluurrDLddRUluurrurrddldLLdlUrrrdLruururrdddlLLuuruulDDrDLLLrrdRuu"
-  "urrdLruuRurrdLdLLLLulDDDuurrrrrururrdLdLLLLLLulDDurDDLLrrurrurruulDrdL"
-  "LLLulDDrrrurruurDrrurrdLLLdLLLLLdldLuuurDDrrurruurDrdLLLLLLulDD")
-
-(defmaze
   "###########"
   "## .*.#####"
   "## .$.$ ###"
@@ -3083,63 +3046,6 @@
   "UUUUrrrrdrrdLrddlllUUUruLLLLUUUluRdddlldRurDDDrddlUUUUrrrddddrrULdlUUU"
   "ruLLLLUUUddlldRurDDDrddlUUUUrrrdddrrULdlUUruLLLLUUdlldRurDDDrddlUUUUrr"
   "rrddrruLLdlUruLLLLUlldRurDDDrddlUUUU")
-
-(defmaze
-  "#################"
-  "#############   #"
-  "#   ######## $#@#"
-  "#    $ ### $$ $ #"
-  "##*#$         $ #"
-  "# ...# #######  #"
-  "#.. .#$#######  #"
-  "#.##.  ##########"
-  "#################")
-
-(add-solution
-  "ullDDuurrddLDLLLLLLLLuLLLulldRDDrdLulDruuuRRDRRuLLLulDDDrdrUUrrRRRRRRR"
-  "UrruullDlDRdLLLLLLLLuLLulldRddrrddrrUUddllululuuRRDrRuLLLulDrrrrddddll"
-  "uUllldRRurUruLLulldRDuRRddldlluRuurrdrruLLLulDDDuurrrrddddllUlLrrUUruL"
-  "LulDDDuurrrrdRRRRuRRdLLLLLLLrdddlluuUruLLulDDurrrrdrrrrrruururrdddLLLL"
-  "LLLLLLrdddlluuUrrrrrrrruurDuurrddLdLLLLLLLLLuLDDDuurrrrrrrruurDrdLLLLL"
-  "LLLLulDDurrrrrrrrrrrddlUruLLLLLLLLLLulDuLulD")
-
-(defmaze
-  "#################"
-  "########     ####"
-  "########$$ $ ####"
-  "######## ### ####"
-  "##    #  ## ..###"
-  "# $  $$      .###"
-  "# $# $   ###*..##"
-  "#   $####### .. #"
-  "####@######## ..#"
-  "#################")
-
-(add-solution
-  "UURRlldllluuRurrrDRRRRRRRlllllllulDulldRRRllllddrrrUdllluurrurrdRdLruR"
-  "RdLLululldRRllllddrrrUdllluurrurrdRdLuLulldlddrrrUrrrruLLrrRRRurrDLLLL"
-  "LLrrrrrrDrddlUlUdrruLuLLrrddlUruulldRurDDldRurDldRluluuuuuullllDDDlddr"
-  "UrRRRurDDldRurDlluulllldlllldllluururrDurDRRRRRRRurDDldRluullllllllull"
-  "dRRRRRRRRRRurDDlulllllllllllddrUluRRRRRRRRRRRurDldRlullllllllllddrrUdl"
-  "luurRRRRRRRRRurDllllldllLulllddrrUruulldRRRRRRRRRuuuulldRurDDullullddD"
-  "ldRRRRuRDlllluuuRRRurDD")
-
-(defmaze
-  "#################"
-  "#       # .###  #"
-  "#  $ $  #$.# *..#"
-  "# $  #$$  .... .#"
-  "# $## $  # $*$#.#"
-  "#  #@ #  ###    #"
-  "#################")
-
-(add-solution
-  "ruRRlURuullldLrurrDLrrddlUrRRRRRuRRdLrrddllUUruurDDllLLLLLLddrUluuulld"
-  "RurDDRRRRRRRllllllddlUlURuulldRurDDldRuRRRRRuRRdLLLLLLLdlUrrrrrrrddlUr"
-  "uLLLdRRdrUUluRdlllLLLddrUluuulldRurDDRRRRlllddlUlURRRRuulDrddrrruulDLr"
-  "rddlUllUUdLLdlluRRRRdrrruulDLdlUrrrdLullllluulldRurDldRRRRRRdrUlllllll"
-  "ululldRRRurDldRRRRRRlldRlullllulllulldRRRRRurDldRRRRRlllllullllldRlddr"
-  "UUluRRRRRurDldRRRRllllulldLullddrUluRRRRRurDldRRR")
 
 (defmaze
   "################"
@@ -3232,93 +3138,6 @@
   "uurrurrdLLLulDDDldRRRRRRRRdrUUdllllllllluuluRurDDDldRRRRRRRRdrU")
 
 (defmaze
-  "##################"
-  "#####   # *..#####"
-  "#       #  *.#####"
-  "# $$ ## ...$*##  #"
-  "# $ ### *#..*.#  #"
-  "# $$ ###*# *# $  #"
-  "# $  $@$ .... # ##"
-  "##   ####  #$ $$##"
-  "############    ##"
-  "##################")
-
-(add-solution
-  "RRRdrUrrruuLUdrddlllUUURllllullllllddddRdrruRRRRRdrUUUddrrruulLDldRuuu"
-  "LDrddllllllldlluluuuurrrrrrdrRuuRRDLrDDlUlllullllllddddrdrrurrrrrrUUru"
-  "LLrdddlllllldlluRRRRRRRdrUUUrrrddddrrUUULrdddlluuLLLuurrrDDllUluRuuull"
-  "DRurDDDlUruulldRurDDldddLLLLLLdlluRRRRRRRdrUUUUruulldRddddrrrurrdddllU"
-  "dlUrdrruLLrruullDLLLLLLLLLdlluRRRRRRRdrUUUUUluRdddddrrrurrruulDrdLLrdd"
-  "dlllUdrruLuLLLLLLLLLdlluRRRRRRRdrUUUUUddddrrrUdddlUruLLLLLLLLLdlluRRRR"
-  "RRRRRlllllllllluuRDldRRRRRRRRdrUUUddllllllllluuuurDDDldRRRRRRRRdrUUdll"
-  "lllluLdlluurDldRRRRRRRRRlllllllluuuurrdLDDldRRRRRRRlllllluuuulDDDldRRR"
-  "RRRR")
-
-(defmaze
-  "##################"
-  "##@###############"
-  "# $####   ####   #"
-  "#        $####$  #"
-  "## $#####  ### $ #"
-  "##  #   $ $ $   ##"
-  "#####   #  $  ####"
-  "#########  *. ####"
-  "###########..#####"
-  "###########......#"
-  "##################")
-
-(add-solution
-  "DldRRRRRRurrDDrDDRDrddlUruruuLDDDldRRRRllluuulDulldRRluuulDLLdlluRRRRu"
-  "rDRddllUdrrurrdLLuulLdRRdrddlUruruuLLrDDDldRRRlluuullluurDldRRurDDDldR"
-  "RluuruurrUruullDDrdLLLLdlluurDldRRurDDDldRuuulDDuulldRluuLLdlluRRRRurD"
-  "ldRRurDDDuruurruruLulDDrdLLLLdDlluuuuulldRurDDrDDldRRurDlluuLLLdlluRRR"
-  "RuulllllllddrUluRRRRRRurDDrDDldRRluuLLLdlluRRRRurDDldR")
-
-(defmaze
-  "#################"
-  "#####...........#"
-  "###   $* ####.$ #"
-  "#  $$   #####  ##"
-  "#   $######## ###"
-  "# $   ####### ###"
-  "# $$$ #@$   $$###"
-  "#     ###     ###"
-  "#################")
-
-(add-solution
-  "RRdrrrrUUUUrUruLLLLLLLLLDlllDldldRlddrUUddrrruulLrrddlULdlluuuurrDDuul"
-  "lddRUdlddrURlluurDurDllddrrrruuLLuuurrdLDllldddrrUUddrruuLuLDruurururr"
-  "rrrrrrddlUruLLLLLLdLdLLuRuRRRRRRRRddlddddlluRdrUUUUUdddddlllluRRRdrUUU"
-  "UruuLLLLLLdLdlluRuRRRRRRRlllllllddrUluRRRRRRlllldlllllDRddrddlUUUUluRR"
-  "RdrUluRRRRRllldlllldddddllluuuuRRllddRRUrUdldlluurRuRRRdrUluRRRRlldlll"
-  "llddrUluRRRdrUluRRRldldlLullddrUluRRRdrUluRRdldllldldllddrrUrUUUluRRRd"
-  "rUluRddlllllldRdldRRdrUUUUluRRdrUdllllddRdrUUUluRRRdrUdllllldRdrUUluRR"
-  "R")
-
-(defmaze
-  "#################"
-  "###    ##########"
-  "#  *. $ #########"
-  "#.*.#  $ ########"
-  "# $. # $ ####   #"
-  "##...#$$        #"
-  "###*.# @### $ $ #"
-  "## * #### $ ##  #"
-  "## ..###  $ ##  #"
-  "########   ######"
-  "#################")
-
-(add-solution
-  "lURRuuLuLLdRDRddlUUrdrRRRRRurrdLDuLLLLLLLulUluurDrDrDululldRdRdRRRRRRl"
-  "ldRRllulllldlUUUluurDrDrDulullullDRRdRlullllddRdrruLULuRdddlUrrddddllu"
-  "RUruLdddrUUluuuuurrdLulDDDDDrddlluRdrUluuuuurrdrddrRRRRdrruLLLLLuuLuLL"
-  "LulDDDDDDldRuuuuuurrrrdrddLUlUdrruLuLLLulDDDDDDuuuuurrrrddlUruLLLulDDD"
-  "DDuuuurrrrddddlUUUruLLLulDDDDuuurrrrdrddrrrrrurrdLLLLLLLLdlUUUruLLLulD"
-  "DDuurrrrdrddrrrrrrrdLrddlUUruLLLLLLLLdlUUUruLLLulDDurrrrdrddrrrrdRurrd"
-  "dlUruLLLLLLLLdlUUUruLLLulDrrrrdrddrrrdddLdlluRuRlddrUrUUruLLLLLdlUUUru"
-  "LLLrrrdrddrrrdddlluRdrUUruLLLLLdlUUUruLL")
-
-(defmaze
   "#############"
   "#   #### ...#"
   "#  ..*.*..$ #"
@@ -3337,25 +3156,6 @@
   "lllddrUluRRRRddrruuLLLLrrrrdLdddrUdrruLLdlUUUruLLLrrdddrrrdddlUUruLLdl"
   "UUUruLLrddddLLLLddlluuRRRRRRRurrddlUruLLdlUUUruLddddllllddlUluRRRRRRRu"
   "rrddlUruLLUUdddlUUU")
-
-(defmaze
-  "####################"
-  "##########  #   ####"
-  "#@ #######$ $$  ####"
-  "#.**    $     $   ##"
-  "#.$.*..*.* #   # $ #"
-  "#  # .  #  #####   #"
-  "####################")
-
-(add-solution
-  "ddRluurDRRRdrRuRRRddlULLrrruRuulDDrRdrrULrruullDLLrrurrddldlUdlUllLdll"
-  "uRRdlldlluuRRllllllddrUluRRRRddlULullddrUrrruLdllluurDldRRRuLrddrrruuL"
-  "LLrrrdrruLLddllluurDRRuLdllllluurDldRRRuLrdRRuLLdllluurDldRRRuLrrrrrrR"
-  "RRdrruLLLLLLLLddrUluLLdRlllluurDldRRRuLrrrRRRRRuulDrdLLddrUUlLLdRluLLL"
-  "ddRURRdLullllluurDldRRRuLrdRRuLdlllluurDldRRRRuLLdlluurDldRRRurrrrrrrR"
-  "drruLLLLLLLLLLLdlluurDldRRurrrrrrrruulDrdLLLLLLLLdlluurDldRurrrrrrrrrr"
-  "rrruulDrdLLLLLLLLLLLLLulDrrrrrrrrrrrrrrrddrruLdlUruLLLLLLLLLLLLLLLrrrr"
-  "rrrrrrrruulDLrrdLLLLLLLLLLLrrrrrrruurDrdLLLLLLLL")
 
 (defmaze
   "#########"
@@ -3378,72 +3178,6 @@
   "lddrruruRDllddRUllldRluuuruuurrrrrddddLdLLLLdlUUdrrrrruruulDlDurrdLdLL"
   "LLdlUrrrdLLrrurrdLLLrrruuulDrdLLLLrrrruruuuulDulldRDDDDrdLLrruuruuuLul"
   "DDDDDuuuululldRRurDDDDrdLLLrrruruuLulDDDrdLLruulDD")
-
-(defmaze
-  "####################"
-  "####..##############"
-  "#.##.*...   $ ######"
-  "#.....$$# $ #     ##"
-  "# $$##  ##$ # ###  #"
-  "#   ##  ##    #### #"
-  "#  ########$$#     #"
-  "###########@$ $ $  #"
-  "############    ####"
-  "####################")
-
-(add-solution
-  "UUrruurrrrdrddllldRldlluRurrrruulullllddllddRluurruuuLLdDDuuuLLdRurDll"
-  "uLLDLLLLLDlUrrruurDRRRRdrruLLLLLLrdddrUUlLLLLdlddrUrUdlluRuRRRurDlllld"
-  "drUluRRRuulDrdLLrrurRRRdrruLLLLLLulDrrrrrrrrrdddllUUddrruuulLLLLLLLdLU"
-  "rrrrrrrrrdrrrrdrddllllddllulUUUUddrruuulLLLLLLrdLLUrrdddlUruLrurrrrddd"
-  "ddrUlulUUruLLLLLLrrrrrrrrdddLdlUUUddrruuulLLLLLLrrrrrdddrdddrruLdlUUlu"
-  "uuurrdddLdlUUUddrruuulLLLLLrrrrdddrddrrurrdLLLdlUUluuuurrdddLdlUUUddrr"
-  "uuulLLLLrrrrrdrrrrdrdddLLLLLdlUUluuuurrdddLdlUUUddrruuulLLL")
-
-(defmaze
-  "####################"
-  "## . ###  ###  #   #"
-  "#.$.$###      $#$$ #"
-  "#.*.....$ $#$  $ #@#"
-  "# #.*####  #   $ ###"
-  "#    ##########    #"
-  "###  ##########    #"
-  "####################")
-
-(add-solution
-  "uullDDLLdllUdrrurrDLdRluulLdRurDlluuurDlLLLLddrUluRRRRllldlLLLLLDldllu"
-  "uuRurrDulldRlldddrruULrddlluUrrRRRRRRuulDrdLLLLLrrrrrurrrrddlUruLLLLrr"
-  "rrddrruLdlluururDllddrURuulDllllddrUluRRldlllllldldlluuruurrDLDRlllddr"
-  "rdrUUUluulDrdDruRRRRRuulDrrrRddrruuLLLLLddrUlLLLLLdlUrdddlUlluuRRDrdLu"
-  "uluurDDDuRRRRRRuulDrRRRddrruuLLLLLddrUlLLLLLdlUluurrDullddrUdRRRRRRuul"
-  "DrdLLLLLdlUrdddlUruulllddRRdrUllluurrrrrrrruRRRddrruuLLLLLulDrdLLLLLLL"
-  "rrrrrrrurrrddrUrdrruLLuLLLLLulDrdLLLLLLrrrrrrurrrddrUrrrdddlUUruLLuLLL"
-  "LLulDrdLLLLLrrrrrurrrddrUrrrdddrruLLdlUUruLLuLLLLLulDrdLLLLrrrrurrrddr"
-  "UruLLLLLulDrdLLLrrrdrUluRRRdrrrruurrdLulDDDlddrruLdlUUruLLuLLLLLulDrdL"
-  "LrrrurrddrUruLLLLLulDrdL")
-
-(defmaze
-  "######################"
-  "##########  ##  #   ##"
-  "######   #$ ##$.#$ $@#"
-  "######$   ........$###"
-  "#### $  ######$ ##   #"
-  "###     ######  ## $ #"
-  "#     ##########    ##"
-  "#     ##########    ##"
-  "######################")
-
-(add-solution
-  "LullDurrdLDDDurrdLuluLLLLLLLLLLullDDrdLuuurDrrrrrrrrrrruulDrddrdddlluR"
-  "drUUdlUUULuurDDDDrdLuuulLLLLLLLLLulldRRRRRRRRRRRurDDDrddlUUUUlllllllll"
-  "lllddrUluRRRRRRRRRRRuurrdLDDDuulllllllllllddlLdlluRuRDrruulDrdLLulDldd"
-  "rrULLruurDrruurrrrrrrrrrruulDrdddrddlUUUULLLLLLLLLLLulDDrdLLulDrrruurr"
-  "rrrrrrrruurrdLulDrdddrruLdlUULLLLLLLLLLLulDrdLrurrrrrrrrrruurrdLulDrdd"
-  "dddlluRdrUUUULLLLLLLLLLulDrrrrrrrrrruurrdLulDrdLLLLLLLLLLulldRRRRRRRRR"
-  "RluulDrdLLLLLLLulldRRRRRRRRRddlUruLLLLLLLulldRRRRRRRRdrUlllluulDrdLLLu"
-  "lldRRRRRRRRllllllllddrUluRRRRRRRllllllddllluRRdrUluRRRRRRlllllddlllldd"
-  "rrUUluRRdrUluRRRRRllllddlllldRdrUUluRRdrUluRRRRlllddllddlllluRRRdrUUlu"
-  "RRdrUluRRR")
 
 (defmaze
   "############"
@@ -3623,90 +3357,6 @@
   "UruLLLdlUUUluR")
 
 (defmaze
-  "###################"
-  "######  #...   ####"
-  "##  ## $#.* #  ####"
-  "#@$ ## ..*.## #####"
-  "### ### .*  $ #   #"
-  "#     #$*..## $ $ #"
-  "#   $$$  .###   ###"
-  "###  $  ### $ #####"
-  "####  #####   #####"
-  "####  #############"
-  "###################")
-
-(add-solution
-  "RurDDDrDLrDRddlUUluurrDDuRRURRdLuuuRDlulluurDldRDrddLUUdddLLuRdrUllull"
-  "ddRRlddrUUlluurDDuRRRRuulDrdLLLrruuUluurDDDDrdLruuruuurrrrdddLLLLuLDlU"
-  "luurDldRRdrrrrruuulllldDuurrdLrurrdddlllLrUdrrruuullllDDllddddLLuRdrUU"
-  "UUluurDldRRRuurrdLrurrdddddrruLdlUUUUruLLLLrrrddddrrurrdLLLdlUUUUruLLL"
-  "rrdddddddlluRdrUUUUUUruLLrdddlllUllldddllulldRRRdrUUUUluurDldRRRlldddl"
-  "lllulldRRRRRdrUUUUluurDldRRldddlllldRRddlUUrurrdLululldRRRdrUUUUluurDl"
-  "dRdddlllddrUluRRdrUUU")
-
-(defmaze
-  "####################"
-  "#   ################"
-  "#  $$ ##  ##########"
-  "#      $  ##########"
-  "#   ### $$##########"
-  "### $ #     * ###  #"
-  "###   ## $.#.* ##$@#"
-  "#########...**...$ #"
-  "############. .$ ###"
-  "####################")
-
-(add-solution
-  "dLLdLLLruuLuLLLLULuLLLLLdlUrrrrrrdrdrddlUlUlUdrdrruLuLuurDDDrddlUlUUrD"
-  "ldRuuuulDLLLLLdlluRRRRRRRDrddlUlUdrrrrrrdrddlULUdrruLuLLLLddrRRUrrddlU"
-  "ruLrddrruLdlluurDldRurrrruulDrdLLLLdlUrrrdLulllllluurDldRRRRRRlllllluu"
-  "uLuurDDDrddlUlUUrDldRurDldRRRRRllllluuuuulDLLLLLdlluRRRRRRRurDDDldRurD"
-  "ldRRRRlllluuuulllllllluurDldRRRRRRRurDDDldRurDldRRRllluuuullllllluurDl"
-  "dRRRRRRurDDDldRurDldRRlluuuulllluLdlluurDldRRRRRRurDDDldRurDldRluuuull"
-  "lllldddrruLdlUUluRRRRRRurDDDDlulURurDDldRurDlluuuLLLulldRRRRRurDDDldR")
-
-(defmaze
-  "#####################"
-  "#   # @# *  # .  ####"
-  "# $ #$$# *..*..#$####"
-  "# $ # $   .**..*    #"
-  "# $$$  $# . #.  #   #"
-  "#       #############"
-  "#####################")
-
-(add-solution
-  "lDDRRRRdrrURRdrURlllldlluRRluurDldlluuRDrruLdddrUlulldRurDrRRdrruLLLLL"
-  "uurDldRlulldRluuRdrrdRRdrruLLrrRRdrruLLLLdlluuurrrDullldddrruRldlluuLL"
-  "LLrrdRururrrddldllUdrruLrruullDLrurrddldlUdlUllulldRRRRdrruruulllDLLrr"
-  "urrrddldllUdrruLrruullDLrurrddldlUdlUlllllllddrUluluurDDRddllUUrrRRuul"
-  "DrdRRuLrdRRdrruruulllDLLuLrdrrurrrddldllUdrruLrruullDLLrrurrddldllUdrr"
-  "uLuLrddlUllllLLddlluuRRRRRRRRdrruruulldDlllllllddlUdlllURRuRRRRRRRRRuu"
-  "rrddLdLUUdrrRdrruLLLLdlUlllllllddlUdllllluRRRRuRuulDDrRRRRRRRRllllllld"
-  "dlUdlluRuRRRRRRRRllllllddlUllllluuurrdDuulldddrRRRuRRRRRRRlllllddlUlll"
-  "lluuRDldRRRRuRRRRRRllllddlUlllluuurDDldRRRuRRRRRlllddlUluRRRR")
-
-(defmaze
-  "######################"
-  "#####     #   ###  ###"
-  "# $ $ $ $ # *.#@$  ###"
-  "#     # # # ..####  ##"
-  "####### # $****..* $##"
-  "#######$        $..  #"
-  "#######   ########.. #"
-  "######################")
-
-(add-solution
-  "RRurDDDLdLLuRdlLLLLLLdllUdrrurrUUrrDullddrUruuullDRlDRddlUUrdrRdrruLLL"
-  "LdRRurrdrRuLLLLdRRllllllldlluRRRRRuulDruuulDDrddRRuLdlLLLdlluRRRRRUUlD"
-  "rdLLLuRRdrUrrdLLLrrrurrdLLLrrrurrdLLLrrrdrruLLuurDlddrruLdlULulldRRRdr"
-  "ruLuLLrrddlUlllulldRRRRuLLdllulldRRRRuLLdllulldRRRRuLrrrrrdRdrruLuLLLL"
-  "dRluLLdRurrrrrddlUruLLLdRluLLdRRurrrddlUruLLLLrdRurrddlUruLLLdllllllld"
-  "lluRRRRRRRRRRurrddlUruLLdlllllllluuuulldRurDDDrdLdlluRRRRRRRRRRurrddlU"
-  "llllllllluuullulldRRRurDDDrdLdlluUUddRRRRRRRRRRRdrruLuLDllllllllluuulu"
-  "lldRRurDDDuulldddrRRRRRRRRRRurDlllllllllllluuulldlluRRRRRurDDDuulldddr"
-  "RRRRRRRRRlllllllllluuulldlllluRRRRRRRurDDDuulldddrRRRRRRRR")
-
-(defmaze
   "###########"
   "####  . ###"
   "####$$. $@#"
@@ -3726,28 +3376,6 @@
   "dlddrUddrrruuLLrrddlUdlluRlluuurrDDLUluuurrDDLdlUrdddlUruulllddRRULrru"
   "ruulllDDuurrrddlLdddrUddrrruuLLrrddlUdlluRlluuurrDDLUluUluRdddrddlUlll"
   "lddrUluRRRRdrdrrruuuLLdLLLLrrrrurrdLLLLLrrddrrUruLLLddrUruL")
-
-(defmaze
-  "#####################"
-  "#        ## .*  #   #"
-  "# $$$ $ $#..$. ## $ #"
-  "# $ $ #    .#**.   ##"
-  "#   #####$ *....*. ##"
-  "#####@$   $#*$.##. ##"
-  "########     ########"
-  "#####################")
-
-(add-solution
-  "RRRdrrUURRRURRdRRdrUluuurrdLulDDDrUdlllulldRuuuLDrddllluuuRldddrrruulL"
-  "ulDrrruLrdddlUUrdrRdrruLLLLdRRllllllddrrUdlluurRRRdLulllddrrUrruurrdLu"
-  "lullllDDrRdrrUdlluRllluurrrDRlulllddrrdrUdrUrrurrdLLLLdllulluurrrrDRRl"
-  "lullllddrrdrrUdlluRllluurrrDRlulllddrrdrrUdllulluurrrdDlddllUdlluRdrrr"
-  "uuruullldlDRuurrrddlddllUUddrruuLUdrddlllluRuuRldddrrruulLulDrrrddllUd"
-  "rruulLrrrrdLuuurDDrruLLrrdrruLLLdllllluuRDldRRRRRRuruurrdLulDrdLLdllll"
-  "llullluurDldRRRurDldRRRRRlllllullluulldRRurDldRRRurDldRRRRllllulllullu"
-  "llDRRRRurDldRRRurDldRRRlllulllullllulldRRRRRRurDldRRRurRlDldRRllulllul"
-  "lllllddrUluRRRRRRurDldRRRurDldddlluRdrUUUlllulllllddrUluRRRRRurDldRRRd"
-  "RUllllulldLullddrUluRRRRRurDldRRRlDrddlluRdrUluR")
 
 (defmaze
   "##############"
@@ -3889,29 +3517,6 @@
   "uRRRllluuuuR")
 
 (defmaze
-  "#################"
-  "########  ##  ###"
-  "#######  $   $###"
-  "#    #    ##  ###"
-  "# $ .$*#  ## $  #"
-  "## ..*.* ### $$ #"
-  "#####$ * #     ##"
-  "####@*..   ######"
-  "#######..########"
-  "#################")
-
-(add-solution
-  "RRRdrUrrurruuuullLdlluRurDrrrddddlldllUUUUluRRldllDDRDrUUrULuurDlddddd"
-  "rrurruuuulLLulDDDDlluuRurrrrrddddlldlldlUlUUrrDullddrUruuUllDDuLLdRluu"
-  "lDulldRRurDrrurrdddldllUUddrruLrruuulldDuurrddLddllURdrdrUrrurruuuulll"
-  "ulDldldDrrurULuurDrrrddddlldlllUdrrrurrrrUdlluuuulllldddDldlluRuuLruRu"
-  "rrrrrddddlldlLuLrddlUlUUddrrrrurruuuullllDDDDLruLruuurrrrddddrruLdllld"
-  "lLdlUUruuuurrrrdrDluuurDDlulllldddddrrurrUUUruLLLLulDDDDDuuuurrrrddddl"
-  "ldlLulDlluRdrrrrurrrruLdlUUUruLLLLulDDDrUdlDDDrrurruuuullLulDDDDDuuruu"
-  "rrrrdDlddrruLdllldlLLLrrrrurrUUUruLLLLulDDDDDuuruurrrddddlldlLLrrrurrr"
-  "ruruLLdlUUruLLLLulDDDDDuuruurrrddddlldlL")
-
-(defmaze
   "#############"
   "### @ #######"
   "### $$#######"
@@ -3933,55 +3538,6 @@
   "rurrrdRdrruLuLLLLLuurrDullddrUdRRdRdrruLuLuLLuurDlddlluRllllluurDldRRR"
   "RddlUruuuRluulldRurDDDDLddrUrrRdRdrruLuLLLLLdddrruLUluRdddlUUlllddrUlu"
   "RdRRdrruLLruuRRdRdrruLuLLLUdrrrddlUruLLruL")
-
-(defmaze
-  "#################"
-  "#   ###.....#   #"
-  "# # $  $## .*...#"
-  "#  $#     $*#.$ #"
-  "##  $$##$$   $###"
-  "##  # @  #    ###"
-  "#################")
-
-(add-solution
-  "rrURuLrdRRULuurDDldlluRdldlllULLUlluurrDRRDrRRdrrUruullllDurrrrddlddrU"
-  "UdllluLuurrrDDrdLuuurDRRurrdLLLLDlddrrrUUddllluururRurrddLruulldRllldl"
-  "ddrrruUddllluuruulDDrurRdddllUUluRRldddlUrRdrUlluululllddrdRRRuulDrdLu"
-  "uulllddrRRdrUluRdlllddlllUllUlluurrDrrRlDRRRRRdrUluulllDldRRRlluurrrdD"
-  "llddlllUUdllUlluurrDrRddlldlUrrruullDuullddRdRRlluluurrdrrRdrrddlllUdr"
-  "rruurruulllDurrrddrddlULulLuurrrdDrdLulllullllullddrdrrrURRRRlluurrrdD"
-  "llllldllluluurrdrRRdrrrruulllDurrrddrddlUUllLuurrrrDullllddrrrUruLLrdd"
-  "drdrruLLdlUUUruLdddrUUdllllulldddrrrUdllluuullDldRRluurrrrdRRldRRdrUUd"
-  "lUdlldlllUUdlluurRRldRRUdRRRU")
-
-(defmaze
-  "#################"
-  "##@#####   ######"
-  "# $#### $  ######"
-  "#        ########"
-  "### $##   #######"
-  "###  ## $$  #####"
-  "####### $ $$$ $ #"
-  "#######   # ... #"
-  "###########.* ###"
-  "###########.$####"
-  "###########..####"
-  "####    ..#..####"
-  "## $ $#  *.* ####"
-  "##     #$..$ ####"
-  "######   #. #####"
-  "#################")
-
-(add-solution
-  "DldRRRRRRdrrDrrDDDDDrdddLLuLulldRlulllddrrdrrURldllulluurrrrDurDrDrruL"
-  "LrruulDuuuurrdLulDDDrUUluuullulldddrrURldlluuurrDrrDDDrruuLLrrdrruLLdd"
-  "lluRRdldddddlluRdrUUUlDruUUlDDuuuuullulldddrrURldlluuurrDrrDDDrruuLLdR"
-  "ddddddlluRdrUUUlDruUUlDrddddlluRdrUUUUlDDrddlluRdrUUdllLulldRRllullldd"
-  "rrdrrUdllulluurrrrrdRRdrUdllLuulllllddrUluRRRRldRRllullddrdrrUdllullll"
-  "uRRdrUluRRRdRdrrruuuuuuuullulldddrrURurDDDDDDDrdLLruuuuuuulldlluRRRurD"
-  "DDDDDDrdLuuuuuuulllluurDldRRRurDDDDDDuuuuulllluuuuRDDDldRRRurDDDDDuuuu"
-  "llluuuuurrdLulDDDDldRRRurDDDDuuulllluuullllddrUluRRRRurDDDldRRRurDDDuu"
-  "llluurDldRRurDD")
 
 (defmaze
   "###########"
@@ -4009,43 +3565,6 @@
   "RRRllluurDldRRluuurrdLulDDldR")
 
 (defmaze
-  "##################"
-  "##  ###      #####"
-  "##    #$***..##@##"
-  "#  $#$$  .#.. $$ #"
-  "#  $   $ ##****. #"
-  "##     ###. .   ##"
-  "##################")
-
-(add-solution
-  "DLDurrdLdLLLLUUrRRlllddrrUdlluurDuuulDullDRlullDRddLUdLdlluLrdrruLdllu"
-  "UluurDrrDRddllluUddrrruululLdddrrULrrrruLruulDDrdLruuurrdLulDrrurrdLLL"
-  "rrrddlUruLrddrdrruLuLrddlUlluurDlddRRuruLrdrruLLdldlluRRlluurDlddrruRu"
-  "LddlluRUrrdLrurrdLdLLuRlulldRRlluuurDDldRluuulldRurDDullulldRRRRurDDlu"
-  "llllddrUluRRRurDlllddlLdlluRdlllURuurrDRRdrUluRRRRurDlllldlllulldddrrr"
-  "UdlUdlluRRlluurrDRRdrUluRRRRllldlllullddlluRdrrdrrUdlluRuRRdrUluRRRlld"
-  "lllddrUluRRdrUluRRldlllullulDDldRRRRdrUluRRdrUluRdlllullDldRRRdrUluRRd"
-  "rU")
-
-(defmaze
-  "###################"
-  "###### $  .#  #   #"
-  "# $     $..# $    #"
-  "#  $ ##..*$. ######"
-  "#  $## ..*.*  #####"
-  "##$ ## $ *$.  #####"
-  "##@#####  #########"
-  "###################")
-
-(add-solution
-  "UUluuRRRRRuRDuRRdLddRUdlddrUUluuulldRurDDDlUrdrdRRULULLdRluuurDDluulld"
-  "RRddlUrrrDrruLLLLuurDlddRddlUUrRurrdLdLruulDllddrUluURRdrdLrurrdLLulul"
-  "ldRRllddrUlulldRRuuruulDulldRDDuuurrddLruulldRddlUrrrdRdrruLuLLrrddlUl"
-  "uLLdRlddrUURRdLullddrUluRllldRRdrUrrrruLuuRRRurrdLLLLulDDDrdLLLLLulldR"
-  "RRRlluuuulldRurDDDldRuuulllllllddrUluRRRRRRurDDulllldLullddrUluRRRRRRD"
-  "ullldllddrUUluRRRRurDurD")
-
-(defmaze
   "############"
   "####  ######"
   "#### $$  $ #"
@@ -4070,161 +3589,6 @@
   "dRRurDrrruLLLLdlluurDldRurDD")
 
 (defmaze
-  "###################"
-  "#    ###.##  ###@##"
-  "# $$ ###..$    $$ #"
-  "# $  ###*..$ # $  #"
-  "#  $ # ..**$####  #"
-  "# $$## ##.. #######"
-  "##   $$*..#  ######"
-  "####  .. .   ######"
-  "###################")
-
-(add-solution
-  "DLLLLdLDDllUlUUddrdrruLruruulDLDLrurrdLddllURdrUUruulDlDDuurrdLdlldddl"
-  "llURRdlllluRRRdrrrrUUUlllllDurrrrrdddllUUddlluLuurrRdddrruuuUruulDlLDD"
-  "lllddrdrrrruuuUruLdddddllllluuurrrRlllldddllullUluuRlddrdrrRdrrrruUddr"
-  "ruuUlLLrdddlluRdrUUddrruuuUruulDDDlLuuRDrruulDrdLulldddddlllluRRRdrUUU"
-  "UdddllllllluluurDluuurrrdddLDuruuullDldddRdRRRRRRdrUUUddllllllluluuuru"
-  "rrdddlDldRRRRRRdrUUdlllllluuruuLDDDldRRRRRRdrUllllllluluuuRurDDDDldRRR"
-  "RRRlllllluluuRurDDDldRRRRRllllluluRurDDldRRRRdrrrrruUUUruulDDDDDrdLLLL"
-  "LrrrruuuururrrrrddlUruLLLLLulDDDDDrdLLLLrrruuuururrdRurrddlUruLLLLLulD"
-  "DDDDrdLL")
-
-(defmaze
-  "##################"
-  "####     #########"
-  "#  #  $*$#########"
-  "#@$$ ##. #########"
-  "# $    *   $ #####"
-  "#####$*.##....$  #"
-  "#####  *..*$ #   #"
-  "#####     . ######"
-  "##################")
-
-(add-solution
-  "dRRRuururrrDDlDRuuulDLrrddlUdlDDRUUdddrrrrUrurRlldldlluLdlUlldRRluuurD"
-  "uruuulldRurDllulldddRDrruUddlluRdrUdlddrUrrdrruLuuLLLDlddrRRluLuurrrdd"
-  "rruLdlLdlluuurrrDrrrrdrruLLLLdldLLuRuRRllddrUluullldlluluuurrrrdDuulld"
-  "RlulldddrdrruUddddRRuruulLulDDlluluuurrrrDulllldddrRdrUrrrddrruuLLLLrr"
-  "ddldllllUdrrURRRuurrddLruulldRddLLrUllldlluRuulDrdRRRdrruLruulllLDlddr"
-  "RRluLuurrrrddlLdlluulluluuurrrrdDuulldRlulldddrdrruUddddrrurruullLulDD"
-  "lluluuurrrrDulllldddrRdrUrrrrddlldllURRdllllURuurrrrrdddLLulLdlUrrrdrr"
-  "uuullllDurrrrdddllulLdlluRRuurrrrdddllLLuuullluuurrrrdDuulllldddrrrddl"
-  "lUdrruulDruRuuulldRlulldddRdrruUddddrrrruuulLLulDDlluluuurrrrDullllddd"
-  "rRdrUdllddRUluurrrrrrdddlllLUlluuluuurrrrdDuulllldddrddrrdrrrruuullLrr"
-  "rdddlluRdrUdlllluRRlllluurDldRRRllluuluuurrdLulDrrurrdddLDldldRRRRluLu"
-  "uruuLDDDllddrURlluuRDrUruulDDDllulllluurDldRRRRRdrUUruullldlDLdRRRlluu"
-  "rurrrddlDruuulDulldRllddllluurDldRRRRRdlddrU")
-
-(defmaze
-  "####################"
-  "##########  #    ###"
-  "##       # **$.#   #"
-  "## $$$$# .....*.#$ #"
-  "#   # $ $ #*.*.*@$ #"
-  "#         #  $.#####"
-  "####################")
-
-(add-solution
-  "LuLLLddRluuLLLddllllllluuurDurrDLulldddrrrUdrruLrdrruLdlllllluuurrdLul"
-  "DrrurrrrDrddllllllUdrrrrrruululllldLrurrDLulldddrrrUdrrULdlllluuurrrrr"
-  "DrrrrrruulDrdLLddrUUrrdLLulLLuurDldRRRdrruLLruulDrddldllURlUluurDRDRlu"
-  "lldRddrrULdlUUluurDrRurrrdrrddLLLLLdlluUlLddlluRdllllluuurrrrrDrrrddrr"
-  "uLrrrrrruullullldDuurrrdrrddllllLdllURRuulLrDrdRRuLLddlluRRuulDulDlllu"
-  "llllldddrrrrrrUdlllllluuurrrrrdRRRuulDrrrdddllUUddrruLUrrrdLLullLLddll"
-  "uRdrUdlllllluuurrdLrurrrDRRRRRuurrrdrrddlLLuLrdrrruulDrdLLruulullldDll"
-  "llddlluRdrUluRRRRRRlllllddlllllllluRdrrrURRRdrUluRRRRRlllllullDulldRdR"
-  "RRdrUluRRRRllllullDllullDRRRdRRRdrUluRRRlllullDlddllUdlluRuRRRdRRRdrUl"
-  "uRRllullDlddllUluRRRdRRRdrUluRlullDldRRRdrU")
-
-(defmaze
-  "####################"
-  "#          #####  @#"
-  "#  $ $$$##. * ##$$ #"
-  "###### . #. ..    ##"
-  "##### **..*.**$ ####"
-  "## $     $ #. ######"
-  "##     #####  ######"
-  "####################")
-
-(add-solution
-  "llDurrdLdLLLLDuLLululllllldLrurrDLrurrrrdrddLdLLLUdLdlluRuRUdlddrUrruu"
-  "LDrdrruLdlLLruurDldRurrruulDrdLrurruLrddLddrUUlulldRluuulllDDrdRRurruL"
-  "dldlluluurrrDrrdDrddlUULuurrDLddrUluullulllddrdrRRllluluurrrdDurrdDrdd"
-  "lUUlLuurrrDDurrdLLuulllddrURRdLddrUUlulldRluuulllddrdRRurruLdldlluluur"
-  "rrDrrdDrddlUULuurrDLddrUluullulllddrdrRRllluluurrrdrrdDrddlUUlllluluur"
-  "rrdrrrDDlUrdrruLLdlddrUluRuuLDDllURdllluluurrrDRddrrurrrruulDrdLLLrdLL"
-  "LLuululllddrdrRRRlllldlUdldlluRuRRRRRRuulullldDrddlLuRRRRUddLulldldllu"
-  "RdrUluRRRRdrUdlLLullddrUluRRRRlluuulldRurDDrddlluRRdlldlllluRRRdrUluRR"
-  "uullulldRRRurDDullllulldRRRRRurDlD")
-
-(defmaze
-  "####################"
-  "#  #########@#     #"
-  "# $#### .. #** $ $ #"
-  "#        ***.. $ $ #"
-  "####  $ # ..* ##$  #"
-  "#######$ #. .##  ###"
-  "#######    #    ####"
-  "####################")
-
-(add-solution
-  "DRddLddrrrurUULLrrdrruuullllDllDDrURuurrrrdddlldldlllUlldlllUULuRurrrD"
-  "RRuRldllullldddrdrrurrUrUdldlldllluuuurrrdrDulullldddrdrruUlUdrruLuLrd"
-  "rdrruLLrdddrrruruuLLLrrrdrruuullllDurrrrdddlldldllluuruRuurrDDuurrdLDu"
-  "ulllddRRlluurDRlldldlluRuRRdLulDldllURRdlddllluululldRRurRRdrddllluUdr"
-  "drruuruRurrdLdLdLruruulDlDlluRRRurrdLdLddrrrurUULLuurrrrddLLddldllluur"
-  "UdlLuRuRlddrUdlddrrruruurrdLulLLLdlddrrrurUdldllluululldRlulLddrdrrURl"
-  "dllluuurrrDurDrruLLrrrrRdrruuullllDurrrrdddllulLuurDldLdlluRuRRdLulDld"
-  "lluRRRurrdLdLLulldRlullddrdrrUdllluuurrrrRurrurrrrdddlldldlllULrdrrrur"
-  "urruuulllldlldDuurrdLulDrruurrDLLLrrrurrdLLLLrrrrddllUdrruulLddrUluull"
-  "ddRRllllllllldlluRRRRRRRRRRlllllllllllllluurDldRRRRRRRRRRRRRuurrrrdddl"
-  "lULLLLLLrrrrrrdrruLLLLLLLrrruurrrDrdLLLLLLrruurrDrdLLLLruurDrdLL")
-
-(defmaze
-  "##################"
-  "#  ### ..$@###   #"
-  "# $    $*$### $  #"
-  "#    #$*.*. *   ##"
-  "#  ###    *..$####"
-  "#  #####  #.  ####"
-  "##################")
-
-(add-solution
-  "LLDLLLLdllluurDDrruLrrrrrDRddlUlUdrruLuurDlLLLLrruRdrddllURuulDrrruLdl"
-  "ddrrUdlluurDrdRRuLLrrRRuRurrdLdLLLLddrrULuRllDlluRRllLuurDllluRdrdRddl"
-  "UUdllURuulDrddrruuuLrdddrruLrdrruLdllllluuRDldRRRuLrdRRuLLdllluurDldRR"
-  "RuLrrrruRurrdLdLLLddrUluLLdRlllluurDldRRRuLLuurDDldRluulllldllluurDRRR"
-  "RRRurDDlullllllldRlddrUUluRRRdLulDrruRRRRddlUruLLLLLrrrrddlUrrrrrrRuRu"
-  "rrdLdLLLLLLLulDrrrrrrrruulDrdLLLLLLLddrUluRRRllluurDllLLLdllluurDRRRRd"
-  "RluuRDrDRlullllllldRlddrUUluRRRRRdRUrrdLrddlUruullllldLullddrUluRRRRRR"
-  "lddRRdrU")
-
-(defmaze
-  "##################"
-  "##     ###########"
-  "# $$@$$#   #######"
-  "#  ##*.*. *#######"
-  "#  ## .***..######"
-  "# $###  *..$    ##"
-  "#  #### .#### $  #"
-  "# $####  #####   #"
-  "#  ###############"
-  "#  ###############"
-  "#  ###############"
-  "##################")
-
-(add-solution
-  "ullDlddddrDDluuuurDDluuuurDDuuurrdLrurrDLLrrDRDDlUlUdrruLrddRddlUUluur"
-  "RDDuRRdLLuuurDlddrruLulllddRRUruLddlddrUUUrrdLulDruuulDrddllluuRRllddr"
-  "URdrrRRRdRdrruLuLLLLLLLuuurrDDuulldddrRllulldRRuuurrddLLdlddrUUUrrdLul"
-  "DrruuulDulDrrddlllluuRRurrdddRRRdRdrruLuLLLLLLrrrrrrddlUruLLLLLuuulldR"
-  "urDDullllddrUluuulldRurDDRRRurDlllddlUlURRRRllluulldRurDDldRluulullDRR"
-  "RurDDlullllddrUluRRRRurDldRRllulllddlddrUUUluRRRRurDldRlulllddddlddrUU"
-  "UUUluRRRurDlllddddddlddrUUUUUUUluRRRRurD")
-
-(defmaze
   "##############"
   "####   ###  ##"
   "# $ $  ##   ##"
@@ -4245,30 +3609,6 @@
   "rdrruUruLdddrUdllluRRllluurDldRdrruuuuullDDDuuurrurrdLulDDDDuLruulllDD"
   "DuurDrrrrrrdLrurrUruulDlDurrdLdLLLLLLLLulDrrrrrrrrruulDrdddrruLdlUULLL"
   "LLLLLrrrrrrruurrdLulDrdLLLLLLLruLL")
-
-(defmaze
-  "####################"
-  "#  ###   ###########"
-  "# $## $  $ ##    ###"
-  "#  ## # ...#.. $ ###"
-  "#   # $ #.*.*** ####"
-  "# $$#  $##.....#   #"
-  "##@$   $ $ ###.$ $ #"
-  "#####    #####   ###"
-  "####################")
-
-(add-solution
-  "UdRRRuuuuRRlldddddrUdrruLUUUrrdRdrrrrUdllUdlldLLdllluuuuururrDulldRlld"
-  "ddddrrUUUURlddddlluuuRluururrDLdDllddRdrrurruuuuLLulDrrrddddlldlluRRll"
-  "luurrDullddrdrruLuulluuRurrdLDDlluuRurDrrrddlUruLLrrdddrruLrdrruLuurDu"
-  "rrdLdLruulldDLdlldLruURRRuurrddLdLLrruruulldDrdddrruLdlUULuuurrddLruul"
-  "ldDuRdddrrurrdLLLdlUUUluurDDDullllluurDldRRRRurDllllluululldRllddrrURR"
-  "lldlldddrruUUllddRUdlllluluurDrDulldRdRRRuuuururrDrddrrrrruurrdLLdllll"
-  "luurDldRRRRlllluululldRlldddrruURRurDldRRRlllullddlluRluururrDulldRdRR"
-  "urDllluurDllldddddrUUdlllluurDlluuuurDDDldRdRRRurrUURRdRRlluurDlluulld"
-  "RurDldddllddrUlllluurDldRRRdrrUUUURRluulldRurDrddRddlLdlUUUURurDurDDul"
-  "luulldRurDlllddddRdrUUUURRurDlluulldRurDllldddRdrUUURRluulldRurDlllddR"
-  "drUURuulldRurD")
 
 (defmaze
   "###########"
@@ -4317,83 +3657,6 @@
   "rddllUlUUluurrrrrurrdLLrruuruulDlDDuurrdLulDrddLdddLLuRdrUUddllddrUUdd"
   "llluRRuulDrddlluluRRRdLulluluurrrDDuulllddrdrRdrUllluURurDDullluRluurD"
   "DldRddrRuuuuLrddddddlUluuuuRurDDDDuuulldRurDDullluuurDldRRdldddrdrruL")
-
-(defmaze
-  "#################"
-  "##@### $ .    ###"
-  "# $$    #**..$###"
-  "#  ## $$ *...   #"
-  "#  ## $  . *.$  #"
-  "#################")
-
-(add-solution
-  "DRRRddRRRuRRlldllluuRuRRRDRddLLuRurRurrDLddLLURlluuRRDrruLdlLddrUdrRUL"
-  "uurDlddlluuuRldddrruuLulDrrruLdddrUrrdLLuluurDldRlulluRllllldlddrURRdR"
-  "RULLrrRuullDurrdrruLLddldlluRuRRllddrUruurrddLLLdlluRuuRRddLruulldRddl"
-  "UruullllDlddrURRdrruuullllDlddrRurRdrUrrrdrruLLuuLLDuLLDRddlUlldlluRRR"
-  "RdrUlllluurRlDldRRRllllullllddrUluRRRRRurDldRRldR")
-
-(defmaze
-  "###########################"
-  "#########....       ##    #"
-  "#  ###  #$$**..# $$ $  ## #"
-  "#  ### $ *..*$$ ##  # $ # #"
-  "#        $ $..  $@###     #"
-  "##  #  ###..* #############"
-  "###########################")
-
-(add-solution
-  "LLLLdLruULDrrruLuullDRulllDRlDDLLuRdlLLuRdlLLLdlUluurDldRRRRdrUrrrrRRR"
-  "UrrdLLLLLLLLLLLLdlUluurDldRRRRRRuulDrdRRuLdrRRURRdLulLuurDurrDLddrUluu"
-  "lldddRluuurrddLruulldRddlUdlluRdllLuRdlLLLdlUluurDldRRRRdrUrrrrrurrdrr"
-  "uLLdLLuuurrrDullldddrruLdrrruLLdllLLLLLLLLdlUluurDldRRRRRRuulDrdRRuLdr"
-  "RRULdrRRuLrruullDRddlUdlluRdllluRdllLuRdlLLLdlUluurDldRRRRdrUrrrrrrrur"
-  "rdLLLLuRRdllLLuRRdllLLuRRRdrrruuullllDurrrrrrrrrrddlUruLLLLLLLLLDurrrr"
-  "rrrrrdRRddrruLdlUdrrrruuulllDLLLdlUruLLLLLLLLrrrrrrrrdrrddrruLdlUruLLL"
-  "dlUruLLLLLLLrrrrdRurrddlUruLLLLLLdddrruLdlUdllllllLLLLdlUluurDldRRRRRR"
-  "RRRRRllllluulDrdLLLLdlUluurDldRRRRRRRRRR")
-
-(defmaze
-  "######################"
-  "#     ##########     #"
-  "# $ $ #   ###### ..* #"
-  "#   $##   ####  ..$ ##"
-  "### $    #####**.$####"
-  "# $$# #$$$  ......####"
-  "# @ #    ## $.#  #####"
-  "######################")
-
-(add-solution
-  "rUURRddrrrUUdRRRRRRRdrUrUUllDRdrUlddlUllllllldllluuRRuurrdLDlllddrrURu"
-  "LruulDDrddllluuRRllddrrUrRRRRRRRRuullDurruurrdLulDDDrUluurrdLurrrdLdLL"
-  "uRlddlLuRdrUruullDRddlluRdrUlldddrUlLLLLLLLUddllluurRuurrdLDlllddrrURu"
-  "LruulDDrddllluuRRllddrrUrRRRRRRRuulDrdLuurrrdLullddrdrUUdllLLLLLLUddll"
-  "luurRuurrdLDlllddrrURRRRRRRuurRdLrddlUllllllluLruulDDrddllluuRRurDllld"
-  "drrURRRRRRRRdrUUdllllllllldlluurRurDldRRRRRRRRdrUlllllllllullllUlluurr"
-  "DurrdLDuulllddrRdRRRRurDldRRRRRRRRllllllllullllulluurrrdDldRRRRurDldRR"
-  "RRRRRlllllllullluuullDRurDDldRRRRurDldRRRRRRllllllulllluulldRRurDldddl"
-  "luRdrUURRRRurDldRRRRRlllllullluulldRurDldRRRRurDldRRRRdR")
-
-(defmaze
-  "###################"
-  "##### $. ##  ###  #"
-  "###   #.$## $  $$ #"
-  "###$#.*. #   #    #"
-  "# $ .....*. #  ####"
-  "#  $ ##.*.$ # #####"
-  "# $##### $  $ #####"
-  "##@#######    #####"
-  "###################")
-
-(add-solution
-  "UluuRRRRRRdRdRRUruuuRldddlddrUUUUlDrddllluluurDRRDrddlUlUdrruLuurDDldl"
-  "lURlluurDldRdrrUruulDLLddrrdrUUdllluuuluurDDDrrDrddlUlUdrruLuurDDldllU"
-  "RllUUrDlllllllddrUluRRRdLurRuullDDrrRRuLrruulDrdLddRUddrrUruulDLLddrrd"
-  "rUUdllluuUluurDDDrrDrddlUllUlUUrDrrDrddlUlUdrruLuLLrrurDDldllUlURRlddr"
-  "ruLLrrruulDrdLullllllluurruRldllddllddrUluRRRRRRRRllllldLullddrUluRRRR"
-  "RRRddrruruulDLLLLLrrrddrrUruLLLLLrrrrdLrddrUdrruLLdlUllUruLLrrrrDLddrr"
-  "uLdlUUruuruulDDDDuLLLddrUrddrruLdlUrrruuruuLLulDDDDLLdlUrrddrruLdlUrrr"
-  "uururrruulDrdLLruLLLLulDDDDLLrddrruLdlUrrruurUruLLLulDDDDLddrruLdlUU")
 
 (defmaze
   "##############"
