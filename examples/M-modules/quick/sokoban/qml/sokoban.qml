@@ -10,7 +10,7 @@ Rectangle {
 
     Slider {
         objectName: "level"
-        x: 6; y: 6; height: 410
+        x: 6; y: 7; height: 410
         orientation: Qt.Vertical
         stepSize: 1.0
         updateValueWhileDragging: false
@@ -46,7 +46,7 @@ Rectangle {
         x: 8; y: 424
         font.pixelSize: 12
         color: "white"
-        text: "<b>N</b> ext | <b>P</b> revious | <b>R</b> estart | <b>S</b> olve"
+        text: "<b>N</b> ext | <b>P</b> revious | <b>U</b> ndo | <b>R</b> estart | <b>S</b> olve"
     }
 
     // level change animations

@@ -3,17 +3,19 @@
   (:use :cl)
   (:export
    #:*mazes*
-   #:*rules*
    #:*move-hook*
+   #:*rules*
    #:*solutions*
-   #:maze
-   #:maze-player
-   #:maze-dimensions
-   #:maze-text
+   #:*undo-hook*
    #:copy-maze
-   #:simple-ui
+   #:defmaze
+   #:maze
+   #:maze-dimensions
+   #:maze-player
+   #:maze-text
    #:move
-   #:defmaze))
+   #:simple-ui
+   #:undo))
 
 (in-package :cl-sokoban)
 
@@ -59,17 +61,17 @@ the maze, \" to \" replaces it in the maze.")
     (format t "~{~&~A~%~}" (maze-text (first *mazes*)))))
 
 (defun find-player (rows)
-  (loop for y from 0
-       for row in rows
-       for x? = (or (position #\@ row)
-                    (position #\& row))
-       when x? return (cons x? y)
-       finally (error "Maze lacks a player (@): ~S" rows)))
+  (loop :for y :from 0
+        :for row :in rows
+        :for x? = (or (position #\@ row)
+                      (position #\& row))
+        :when x? return (cons x? y)
+        :finally (error "Maze lacks a player (@): ~S" rows)))
 
 (defun move (direction maze)
-  (loop for (from to) in *rules*
-     when (string= from (lookahead (length from) direction maze))
-     do (return (setahead to direction maze))))
+  (loop :for (from to) :in *rules*
+        :when (string= from (lookahead (length from) direction maze))
+        :do (return (setahead to direction maze))))
 
 (defun move-point (location direction)
   (case direction
@@ -95,15 +97,29 @@ the maze, \" to \" replaces it in the maze.")
            (off-maze-p location maze))
        (coerce (reverse chars) 'string))))
 
+(defun undo (maze steps)
+  (dolist (step steps)
+    (let* ((location (first step))
+           (char (second step))
+           (row (elt (maze-text maze) (cdr location))))
+      (setf (elt row (car location)) char)))
+  (setf (maze-player maze) (find-player (maze-text maze))))
+
 (defun setahead (string direction maze)
-  (loop for char across string
-     for location = (maze-player maze)
-     then (prog1
-              (move-point location direction)
-            (when *move-hook*
-              (funcall *move-hook* char location direction)))
-     do (let ((row (elt (maze-text maze) (cdr location))))
-          (setf (elt row (car location)) char)))
+  (let (undo-steps)
+    (loop :for char :across string
+          :for location = (maze-player maze)
+          :then (prog1
+                    (move-point location direction)
+                  (when *move-hook*
+                    (funcall *move-hook* char location direction)))
+          :do (let ((row (elt (maze-text maze) (cdr location))))
+                (when *undo-hook*
+                  (push (list location (elt row (car location)))
+                        undo-steps))
+                (setf (elt row (car location)) char)))
+    (when *undo-hook*
+      (funcall *undo-hook* undo-steps)))
   (setf (maze-player maze) (find-player (maze-text maze))))
 
 (defun defmaze (&rest rows)

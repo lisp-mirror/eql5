@@ -23,18 +23,20 @@
 
 (require :properties "properties")
 
-(defparameter *item-types* '((#\# . :wall)
-                             (#\$ . :object)
-                             (#\* . :object2)
-                             (#\. . :goal)
-                             (#\@ . :player)
-                             (#\& . :player2)))
+(defvar *item-types*
+  '((#\# . :wall)
+    (#\$ . :object)
+    (#\* . :object2)
+    (#\. . :goal)
+    (#\@ . :player)
+    (#\& . :player2)))
 
-(defvar *items*     nil)
-(defvar *item-size* nil)
-(defvar *maze*      nil)
-(defvar *my-mazes*  (mapcar 'sokoban:copy-maze sokoban:*mazes*))
-(defvar *solving*   nil)
+(defvar *items*      nil)
+(defvar *item-size*  nil)
+(defvar *maze*       nil)
+(defvar *my-mazes*   (mapcar 'sokoban:copy-maze sokoban:*mazes*))
+(defvar *solving*    nil)
+(defvar *undo-stack* nil)
 
 (setf qml:*quick-view* (qnew "QQuickView"))
 
@@ -70,12 +72,14 @@
   (setf *maze* (nth (level) *my-mazes*))
   (update-translate-xy)
   (create-items)
-  (place-all-items))
+  (place-all-items)
+  (setf *undo-stack* nil))
 
 (defun reset-maze ()
   (setf *maze* (setf (nth (level) *my-mazes*)
                      (sokoban:copy-maze (nth (level) sokoban:*mazes*))))
-  (update-placed-items t))
+  (update-placed-items t)
+  (setf *undo-stack* nil))
 
 (defvar *translate-x* 0)
 (defvar *translate-y* 0)
@@ -177,6 +181,8 @@
          (change-level :next))
       (#.|Qt.Key_P|
          (change-level :previous))
+      (#.|Qt.Key_U|
+         (undo))
       (#.|Qt.Key_R|
          (reset-maze))
       (#.|Qt.Key_S|
@@ -222,14 +228,10 @@
       (let ((x 0))
         (x:do-string (curr-char row)
           (when (char= char curr-char)
-            (let* ((item (first items))
-                   (animate (and reset
-                                 (find type '(:object :player))
-                                 (or (/= (|x| item) x)
-                                     (/= (|y| item) y)))))
+            (let ((item (first items)))
               (|setVisible| item t)
-              (set-x item x animate)
-              (set-y item y animate))
+              (set-x item x)
+              (set-y item y))
             (setf items (rest items)))
           (incf x (first *item-size*))))
       (incf y (second *item-size*)))))
@@ -256,8 +258,8 @@
            (item (child-at (+ x (/ w 2)) (+ y (/ h 2)))))
       (unless (qnull item)
         (if (zerop dy)
-            (set-x item (+ x dx) t)
-            (set-y item (+ y dy) t))
+            (set-x item (+ x dx) 'animate)
+            (set-y item (+ y dy) 'animate))
         (dolist (tp (list type ex ex-ex))
           (when (find tp '(:player2  :object2 :goal))
             (queued (update-placed-items))
@@ -266,6 +268,14 @@
         (when (eql :player type)
           (qlater (lambda () (when (game-finished)
                                (final-animation)))))))))
+
+(defun add-undo-step (step)
+  (push step *undo-stack*))
+
+(defun undo ()
+  (when *undo-stack*
+    (sokoban:undo *maze* (pop *undo-stack*))
+    (update-placed-items)))
 
 (defun game-finished ()
   ;; finished: no more :object, only :object2
@@ -286,7 +296,8 @@
     (|resize| (|minimumSize| *quick-view*))
     (|show|))
   (qadd-event-filter nil |QEvent.KeyPress| 'key-pressed)
-  (setf sokoban:*move-hook* 'move-item)
+  (setf sokoban:*move-hook* 'move-item
+        sokoban:*undo-hook* 'add-undo-step)
   (qml-set "level" "maximumValue" (1- (length *my-mazes*)))
   (set-maze))
 
