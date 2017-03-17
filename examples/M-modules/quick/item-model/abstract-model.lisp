@@ -15,13 +15,15 @@
 (defvar *animals*      (make-array 0 :fill-pointer t :adjustable t))
 (defvar *animal-model* nil)
 
-(defmacro define-roles (start &rest roles)
-  (let ((n (symbol-value start)))
+(defmacro define-roles (start docu &rest roles)
+  (let ((n start))
     `(progn
        ,@(mapcar (lambda (role) `(defconstant ,role ,(incf n))) roles))))
 
-(define-roles |Qt.UserRole|
-  +kind-role+ +size-role+)
+(define-roles #.|Qt.UserRole|
+    "animal model roles"
+  +kind-role+
+  +size-role+)
 
 (defstruct animal
   kind
@@ -36,30 +38,27 @@
                       *animals*)
   (|endInsertRows| *animal-model*))
 
-(defvar *empty-variant* (qnew "QVariant"))
-
-;; advanced note on QOVERRIDE:
-;;
-;; in overridden function "data(QModelIndex,int)", new QVariants are constructed
-;; (here: using QVARIANT-FROM-VALUE); they will be garbage collected (like return
-;; values from any Qt function, and from QGET)
+(defun variant (value)
+  (cond ((stringp value)
+         (qvariant-from-value value "QString"))))
 
 (defun make-animal-model ()
   (setf *animal-model* (qnew "QAbstractListModel"))
   (qoverride *animal-model* "rowCount(QModelIndex)"
              (lambda (index)
                (length *animals*)))
-  (qoverride *animal-model* "data(QModelIndex,int)"
+  (qoverride *animal-model* "data(QModelIndex,int)" ; QOVERRIDE return value is GC'd
              (lambda (index role)
                (let* ((row (|row| index))
                       (data (when (< -1 row (length *animals*))
                               (let ((animal (aref *animals* row)))
                                 (case role
                                   (#.+kind-role+
-                                   (qvariant-from-value (animal-kind animal) "QString"))
+                                   (variant (animal-kind animal)))
                                   (#.+size-role+
-                                   (qvariant-from-value (animal-size animal) "QString")))))))
-                 (or data *empty-variant*))))
+                                   (variant (animal-size animal))))))))
+                 (or data
+                     (qcall-default)))))
   (qoverride *animal-model* "roleNames()"
              (lambda ()
                (list (cons +kind-role+ "kind")           ; see 'kind' in QML
