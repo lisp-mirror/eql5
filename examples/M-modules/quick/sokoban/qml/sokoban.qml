@@ -15,7 +15,7 @@ Rectangle {
         stepSize: 1.0
         updateValueWhileDragging: false
 
-        onValueChanged: { Lisp.call("qsoko:set-maze") }
+        onValueChanged: Lisp.call("qsoko:set-maze")
 
         style: SliderStyle {
             groove: Rectangle {

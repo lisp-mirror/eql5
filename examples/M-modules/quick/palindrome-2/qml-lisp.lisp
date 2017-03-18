@@ -82,7 +82,11 @@
 
 (defun root-item ()
   (when *quick-view*
-    (qt-object-? (|rootObject| *quick-view*))))
+    (if (= (qt-object-id *quick-view*) #.(qid "QQmlApplicationEngine"))
+        (let ((object (first (|rootObjects| *quick-view*))))
+          (setf (qt-object-id object) #.(qid "QObject")) ; unknown to EQL, so resort to QObject
+          object)
+        (qt-object-? (|rootObject| *quick-view*)))))
 
 (defun root-context ()
   (when *quick-view*

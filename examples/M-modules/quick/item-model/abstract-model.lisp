@@ -15,13 +15,12 @@
 (defvar *animals*      (make-array 0 :fill-pointer t :adjustable t))
 (defvar *animal-model* nil)
 
-(defmacro define-roles (start docu &rest roles)
+(defmacro define-roles (start &rest roles)
   (let ((n start))
     `(progn
        ,@(mapcar (lambda (role) `(defconstant ,role ,(incf n))) roles))))
 
 (define-roles #.|Qt.UserRole|
-    "animal model roles"
   +kind-role+
   +size-role+)
 
@@ -42,6 +41,8 @@
   (cond ((stringp value)
          (qvariant-from-value value "QString"))))
 
+(defvar *empty-variant* (qnew "QVariant"))
+
 (defun make-animal-model ()
   (setf *animal-model* (qnew "QAbstractListModel"))
   (qoverride *animal-model* "rowCount(QModelIndex)"
@@ -58,7 +59,7 @@
                                   (#.+size-role+
                                    (variant (animal-size animal))))))))
                  (or data
-                     (qcall-default)))))
+                     *empty-variant*))))
   (qoverride *animal-model* "roleNames()"
              (lambda ()
                (list (cons +kind-role+ "kind")           ; see 'kind' in QML

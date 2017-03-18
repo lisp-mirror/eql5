@@ -17,4 +17,7 @@ a QML widget in any Qt application, combining both traditional Qt and QML.
 * "palindrome-2" is the same using a 'Behavior' in QML, and a timer from Lisp
   (dynamic QML);
 
-* "sokoban" shows how to dynamically create QML items from Lisp.
+* "sokoban" shows how to dynamically create QML items from Lisp;
+
+* "table-view" shows how to use an ApplicationWindow as the root item, which
+    is like a QML version of a QMainWindow;

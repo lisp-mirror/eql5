@@ -35,7 +35,7 @@ Rectangle {
                     width: board.width / 3
                     height: board.height / 3
 
-                    onClicked: { Lisp.call("tic-tac-clicked", index) }
+                    onClicked: Lisp.call("tic-tac-clicked", index)
                 }
             }
         }
@@ -73,7 +73,7 @@ Rectangle {
 
         Timer {
             running: message_display.visible
-            onTriggered: { Lisp.call("restart-game") }
+            onTriggered: Lisp.call("restart-game")
         }
     }
 }

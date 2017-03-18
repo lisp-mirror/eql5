@@ -1036,11 +1036,22 @@ static cl_object from_qobjectlist(const QObjectList& ol) {
     l_list = cl_nreverse(l_list);
     return l_list; }
 
-static cl_object from_qtexteditextraselectionlist(const QList<QTextEdit::ExtraSelection>& l) {
+static cl_object from_qtexteditextraselectionlist(const QList<QTextEdit::ExtraSelection>& list) {
     cl_object l_list = Cnil;
-    Q_FOREACH(QTextEdit::ExtraSelection sel, l) {
+    Q_FOREACH(QTextEdit::ExtraSelection sel, list) {
         l_list = CONS(LIST2(qt_object_from_name("QTextCursor", new QTextCursor(sel.cursor)),
                             qt_object_from_name("QTextCharFormat", new QTextCharFormat(sel.format))),
+                      l_list); }
+    l_list = cl_nreverse(l_list);
+    return l_list; }
+
+static cl_object from_qhashintbytearray(const QHashIntQByteArray& hash) {
+    cl_object l_list = Cnil;
+    QHashIterator<int, QByteArray> it(hash);
+    while(it.hasNext()) {
+        it.next();
+        l_list = CONS(CONS(ecl_make_integer(it.key()),
+                           from_cstring(it.value())),
                       l_list); }
     l_list = cl_nreverse(l_list);
     return l_list; }
@@ -1400,6 +1411,7 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             else if(T_QFileInfo == n)                        l_ret = from_qfileinfo(*(QFileInfo*)p);
             else if(T_QFileInfoList == n)                    l_ret = from_qfileinfolist(*(QFileInfoList*)p);
             else if(T_QGradientStop == n)                    l_ret = from_qgradientstop(*(QGradientStop*)p);
+            else if(T_QHash_int_QByteArray == n)             l_ret = from_qhashintbytearray(*(QHashIntQByteArray*)p);
             else if(T_QList_QAbstractAnimation == n)         l_ret = from_qabstractanimationlist(*(QList<QAbstractAnimation*>*)p);
             else if(T_QList_QAbstractButton == n)            l_ret = from_qabstractbuttonlist(*(QList<QAbstractButton*>*)p);
             else if(T_QList_QAbstractState == n)             l_ret = from_qabstractstatelist(*(QList<QAbstractState*>*)p);
