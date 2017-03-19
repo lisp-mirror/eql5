@@ -31,22 +31,25 @@
 
 (let ((cross-cursor (qnew "QCursor(Qt::CursorShape)" |Qt.CrossCursor|)))
   (defun object-selected (object event)
-    (unless (zerop (qt-object-id object)) ; exclude unknown to EQL
-      (when *listen*
-        (setf *listen*    nil
-              *q*         object
-              *qml-stack* nil
-              *pos*       (! "pos" event))
-        (setf (qt-object-unique object)
-              (! ("toUInt" ("property" "EQL.unique") *q*)))
-        (if  (find (! "className" (! "metaObject" *q*))
-                   '("LQuickView" "LQuickWidget") :test 'string=)
-             (indicate*) ; QML items
-             (indicate)) ; QWidgets
-        (! "restoreOverrideCursor" "QGuiApplication")
-        (when *on-selected*
-          (funcall *on-selected* object))
-        t))) ; event filter
+    (when (zerop (qt-object-id object)) ; unknown to EQL, so resort to QObject
+      (setf (qt-object-id object) #.(qid "QObject")))
+    (let ((qml (or (! "inherits" object "QQuickWidget")
+                   (! "inherits" object "QQuickWindow"))))
+      (when (or qml (! "isWidgetType" object))
+        (when *listen*
+          (setf *listen*    nil
+                *q*         (qt-object-? object)
+                *qml-stack* nil
+                *pos*       (! "pos" event))
+          (setf (qt-object-unique object)
+                (! ("toUInt" ("property" "EQL.unique") *q*)))
+          (if qml
+              (indicate*)
+              (indicate))
+          (! "restoreOverrideCursor" "QGuiApplication")
+          (when *on-selected*
+            (funcall *on-selected* object))
+          t)))) ; event filter
   (defun select-mode ()
     (setf *listen* t)
     (! "setOverrideCursor" "QGuiApplication" cross-cursor)))
@@ -129,7 +132,9 @@
           (child child*)))))
 
 (defun indicate* ()
-  (let ((root (! "rootObject" *q*)))
+  (let ((root (if (= (qt-object-id *q*) #.(qid "QQuickWindow"))
+                  (! "contentItem"*q*)
+                  (! "rootObject" *q*))))
     (indicate-start* *q* (child root))))
 
 (defun indicate-start* (parent child)

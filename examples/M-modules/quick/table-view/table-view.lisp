@@ -6,7 +6,8 @@
 
 (qrequire :quick)
 
-(require :qml-lisp "qml-lisp")
+(require :qml-lisp   "qml-lisp")
+(require :properties "properties")
 
 (defpackage :table-view
   (:nicknames :table)
@@ -56,7 +57,7 @@
   (|setFilterCaseSensitivity| *sort-filter-model* |Qt.CaseInsensitive|)
   (|setSourceModel| *sort-filter-model* *book-model*)
   ;; view
-  (setf qml:*quick-view* (qnew "QQmlApplicationEngine"))
+  (setf qml:*quick-view* (qnew "QQmlApplicationEngine")) ; because of QML ApplicationWindow
   (|setContextProperty| (|rootContext| qml:*quick-view*) "sortFilterModel" *sort-filter-model*)
   (|load| qml:*quick-view* "qml/table-view.qml"))
 
