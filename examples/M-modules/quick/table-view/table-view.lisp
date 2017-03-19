@@ -55,7 +55,6 @@
   (add-books)
   (|setFilterCaseSensitivity| *sort-filter-model* |Qt.CaseInsensitive|)
   (|setSourceModel| *sort-filter-model* *book-model*)
-  (sort-column "title") ; initial sort
   ;; view
   (setf qml:*quick-view* (qnew "QQmlApplicationEngine"))
   (|setContextProperty| (|rootContext| qml:*quick-view*) "sortFilterModel" *sort-filter-model*)

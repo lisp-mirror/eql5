@@ -36,6 +36,7 @@ ApplicationWindow {
 
         function sort() { Lisp.call("table:sort-column", getColumn(sortIndicatorColumn).role, sortIndicatorOrder) }
 
+        Component.onCompleted: sort()
         onSortIndicatorOrderChanged: sort()
         onSortIndicatorColumnChanged: sort()
 
