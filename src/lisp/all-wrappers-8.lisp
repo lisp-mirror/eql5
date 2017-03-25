@@ -1,26 +1,5 @@
 (in-package :eql)
 
-(defun |directoryChanged| (object &rest arguments)
-  (%qinvoke-method object nil "directoryChanged" arguments))
-
-(defun |directoryEntered| (object &rest arguments)
-  (%qinvoke-method object nil "directoryEntered" arguments))
-
-(defun |directoryLoaded| (object &rest arguments)
-  (%qinvoke-method object nil "directoryLoaded" arguments))
-
-(defun |directoryUrlEntered| (object &rest arguments)
-  (%qinvoke-method object nil "directoryUrlEntered" arguments))
-
-(defun |directoryUrl| (object &rest arguments)
-  (%qinvoke-method object nil "directoryUrl" arguments))
-
-(defun |directory| (object &rest arguments)
-  (%qinvoke-method object nil "directory" arguments))
-
-(defun |dirtyRegionOffset| (object &rest arguments)
-  (%qinvoke-method object nil "dirtyRegionOffset" arguments))
-
 (defun |dir| (object &rest arguments)
   (%qinvoke-method object nil "dir" arguments))
 
@@ -1629,12 +1608,6 @@
 (defun |forwardHistoryCount| (object &rest arguments)
   (%qinvoke-method object nil "forwardHistoryCount" arguments))
 
-(defun |forwardItems| (object &rest arguments)
-  (%qinvoke-method object nil "forwardItems" arguments))
-
-(defun |forwardItem| (object &rest arguments)
-  (%qinvoke-method object nil "forwardItem" arguments))
-
 (defun |forwardUnsupportedContent| (object &rest arguments)
   (%qinvoke-method object nil "forwardUnsupportedContent" arguments))
 
@@ -2051,9 +2024,6 @@
 
 (defun |glyphRuns| (object &rest arguments)
   (%qinvoke-method object nil "glyphRuns" arguments))
-
-(defun |goToItem| (object &rest arguments)
-  (%qinvoke-method object nil "goToItem" arguments))
 
 (defun |gotFocus| (object &rest arguments)
   (%qinvoke-method object nil "gotFocus" arguments))
@@ -3596,3 +3566,36 @@
 
 (defun |isGenerated(QString)| (object &rest arguments)
   (%qinvoke-method object nil "isGenerated(QString)" arguments))
+
+(defun |isGenerated(int)| (object &rest arguments)
+  (%qinvoke-method object nil "isGenerated(int)" arguments))
+
+(defun |isGenerated| (object &rest arguments)
+  (%qinvoke-method object nil "isGenerated" arguments))
+
+(defun |isGrayscale| (object &rest arguments)
+  (%qinvoke-method object nil "isGrayscale" arguments))
+
+(defun |isGridVisible| (object &rest arguments)
+  (%qinvoke-method object nil "isGridVisible" arguments))
+
+(defun |isGroupSeparatorShown| (object &rest arguments)
+  (%qinvoke-method object nil "isGroupSeparatorShown" arguments))
+
+(defun |isHeaderHidden| (object &rest arguments)
+  (%qinvoke-method object nil "isHeaderHidden" arguments))
+
+(defun |isHidden| (object &rest arguments)
+  (%qinvoke-method object nil "isHidden" arguments))
+
+(defun |isHttpOnly| (object &rest arguments)
+  (%qinvoke-method object nil "isHttpOnly" arguments))
+
+(defun |isIconVisibleInMenu| (object &rest arguments)
+  (%qinvoke-method object nil "isIconVisibleInMenu" arguments))
+
+(defun |isIdentifierEscaped| (object &rest arguments)
+  (%qinvoke-method object nil "isIdentifierEscaped" arguments))
+
+(defun |isIdentity| (object &rest arguments)
+  (%qinvoke-method object nil "isIdentity" arguments))

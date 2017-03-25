@@ -1,20 +1,5 @@
 (defpackage :eql
   (:export
-   #:|relation|
-   #:|relativeFilePath|
-   #:|releaseControl|
-   #:|releaseKeyboard|
-   #:|releaseMouse|
-   #:|releaseResources|
-   #:|releaseShortcut|
-   #:|releaseWidget|
-   #:|released|
-   #:|release|
-   #:|reload|
-   #:|remainingTime|
-   #:|remove.QFile|
-   #:|remove.QPixmapCache|
-   #:|removeAccessWhitelistEntry|
    #:|removeAction|
    #:|removeAllApplicationFonts.QFontDatabase|
    #:|removeAllChildNodes|
@@ -110,7 +95,6 @@
    #:|reportContentOrientationChange|
    #:|requestActivate|
    #:|requestControl|
-   #:|requestImageResponse|
    #:|requestImage|
    #:|requestPhase2|
    #:|requestPixmap|
@@ -511,7 +495,6 @@
    #:|setAudioBitRate|
    #:|setAudioCodec|
    #:|setAudioInput|
-   #:|setAudioRole|
    #:|setAudioSettings|
    #:|setAuthority|
    #:|setAutoAperture|
@@ -789,7 +772,6 @@
    #:|setDefaultFormat.QSettings|
    #:|setDefaultFormat.QSurfaceFormat|
    #:|setDefaultInnerTessellationLevels|
-   #:|setDefaultInterface.QWebHistoryInterface|
    #:|setDefaultOuterTessellationLevels|
    #:|setDefaultProperty|
    #:|setDefaultSectionSize|
@@ -1199,4 +1181,22 @@
    #:|setMargins|
    #:|setMargin|
    #:|setMask(QBitmap)|
-   #:|setMask(QRegion)|))
+   #:|setMask(QRegion)|
+   #:|setMask|
+   #:|setMaterial|
+   #:|setMatrix|
+   #:|setMaxCount|
+   #:|setMaxLength|
+   #:|setMaxPendingConnections|
+   #:|setMaxVisibleItems|
+   #:|setMaximumAnisotropy|
+   #:|setMaximumBlockCount|
+   #:|setMaximumCacheSize|
+   #:|setMaximumDateTime|
+   #:|setMaximumDate|
+   #:|setMaximumFrameRate|
+   #:|setMaximumHeight|
+   #:|setMaximumLevelOfDetail|
+   #:|setMaximumPagesInCache.QWebSettings|
+   #:|setMaximumSectionSize|
+   #:|setMaximumSize|))

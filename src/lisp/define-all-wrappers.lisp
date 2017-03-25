@@ -1,6 +1,4 @@
-;;; Define wrapper functions for all Qt methods/signals/slots using case
-;;; preserving symbol names, and resolving type ambiguous argument lists
-;;; current count: 6007
+;;; Define wrapper functions for all Qt methods/signals/slots using case preserving symbol names.
 
 (dolist (module '(:help :multimedia :network :quick :sql :svg :webkit))
   (eql:qrequire module))

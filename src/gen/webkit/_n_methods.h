@@ -107,43 +107,7 @@ public:
     Q_INVOKABLE QList<QWebElement> MtoList(QWebElementCollection* o) const { return o->toList(); }
 };
 
-class N267 : public QObject { // QWebHistory
-    Q_OBJECT
-public:
-    Q_INVOKABLE void Mback(QWebHistory* o) { o->back(); }
-    Q_INVOKABLE QWebHistoryItem MbackItem(QWebHistory* o) const { return o->backItem(); }
-    Q_INVOKABLE QList<QWebHistoryItem> MbackItems(QWebHistory* o, int x1) const { return o->backItems(x1); }
-    Q_INVOKABLE bool McanGoBack(QWebHistory* o) const { return o->canGoBack(); }
-    Q_INVOKABLE bool McanGoForward(QWebHistory* o) const { return o->canGoForward(); }
-    Q_INVOKABLE void Mclear(QWebHistory* o) { o->clear(); }
-    Q_INVOKABLE int Mcount(QWebHistory* o) const { return o->count(); }
-    Q_INVOKABLE QWebHistoryItem McurrentItem(QWebHistory* o) const { return o->currentItem(); }
-    Q_INVOKABLE int McurrentItemIndex(QWebHistory* o) const { return o->currentItemIndex(); }
-    Q_INVOKABLE void Mforward(QWebHistory* o) { o->forward(); }
-    Q_INVOKABLE QWebHistoryItem MforwardItem(QWebHistory* o) const { return o->forwardItem(); }
-    Q_INVOKABLE QList<QWebHistoryItem> MforwardItems(QWebHistory* o, int x1) const { return o->forwardItems(x1); }
-    Q_INVOKABLE void MgoToItem(QWebHistory* o, const QWebHistoryItem& x1) { o->goToItem(x1); }
-    Q_INVOKABLE QWebHistoryItem MitemAt(QWebHistory* o, int x1) const { return o->itemAt(x1); }
-    Q_INVOKABLE QList<QWebHistoryItem> Mitems(QWebHistory* o) const { return o->items(); }
-    Q_INVOKABLE int MmaximumItemCount(QWebHistory* o) const { return o->maximumItemCount(); }
-    Q_INVOKABLE void MsetMaximumItemCount(QWebHistory* o, int x1) { o->setMaximumItemCount(x1); }
-};
-
-class N268 : public QObject { // QWebHistoryItem
-    Q_OBJECT
-public:
-    Q_INVOKABLE void* C(uint u, const QWebHistoryItem& x1) { return new LWebHistoryItem(u, x1); }
-    Q_INVOKABLE QIcon Micon(QWebHistoryItem* o) const { return o->icon(); }
-    Q_INVOKABLE bool MisValid(QWebHistoryItem* o) const { return o->isValid(); }
-    Q_INVOKABLE QDateTime MlastVisited(QWebHistoryItem* o) const { return o->lastVisited(); }
-    Q_INVOKABLE QUrl MoriginalUrl(QWebHistoryItem* o) const { return o->originalUrl(); }
-    Q_INVOKABLE void MsetUserData(QWebHistoryItem* o, const QVariant& x1) { o->setUserData(x1); }
-    Q_INVOKABLE QString Mtitle(QWebHistoryItem* o) const { return o->title(); }
-    Q_INVOKABLE QUrl Murl(QWebHistoryItem* o) const { return o->url(); }
-    Q_INVOKABLE QVariant MuserData(QWebHistoryItem* o) const { return o->userData(); }
-};
-
-class N269 : public QObject { // QWebHitTestResult
+class N273 : public QObject { // QWebHitTestResult
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u) { return new LWebHitTestResult(u); }
@@ -168,7 +132,7 @@ public:
     Q_INVOKABLE QString Mtitle(QWebHitTestResult* o) const { return o->title(); }
 };
 
-class N270 : public QObject { // QWebSecurityOrigin
+class N274 : public QObject { // QWebSecurityOrigin
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, const QUrl& x1) { return new LWebSecurityOrigin(u, x1); }
@@ -189,7 +153,7 @@ public:
     Q_INVOKABLE void SremoveLocalScheme(const QString& x1) { QWebSecurityOrigin::removeLocalScheme(x1); }
 };
 
-class N271 : public QObject { // QWebSettings
+class N275 : public QObject { // QWebSettings
     Q_OBJECT
 public:
     Q_INVOKABLE QString McssMediaType(QWebSettings* o) const { return o->cssMediaType(); }

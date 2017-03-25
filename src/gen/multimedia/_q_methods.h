@@ -366,7 +366,7 @@ public:
     Q_INVOKABLE int Mavailability(QCamera* o) const { return o->availability(); }
 };
 
-class Q263 : public Q271 { // QVideoWidget
+class Q263 : public Q279 { // QVideoWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LVideoWidget(u, x1); }

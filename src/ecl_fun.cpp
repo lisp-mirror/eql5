@@ -1331,6 +1331,8 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
                 p = LObjects::toMetaArg_quick(n, l_arg, &found); }
             if(!found && LObjects::toMetaArg_sql) {
                 p = LObjects::toMetaArg_sql(n, l_arg, &found); }
+            if(!found && LObjects::toMetaArg_webengine) {
+                p = LObjects::toMetaArg_webengine(n, l_arg, &found); }
             if(!found && LObjects::toMetaArg_webkit) {
                 p = LObjects::toMetaArg_webkit(n, l_arg, &found); }
             if(!found) {
@@ -1504,6 +1506,8 @@ cl_object to_lisp_arg(const MetaArg& arg) {
                     l_ret = LObjects::to_lisp_arg_quick(n, p, &found); }
                 if(!found && LObjects::to_lisp_arg_sql) {
                     l_ret = LObjects::to_lisp_arg_sql(n, p, &found); }
+                if(!found && LObjects::to_lisp_arg_webengine) {
+                    l_ret = LObjects::to_lisp_arg_webengine(n, p, &found); }
                 if(!found && LObjects::to_lisp_arg_webkit) {
                     l_ret = LObjects::to_lisp_arg_webkit(n, p, &found); }
                 // enum
@@ -2416,7 +2420,7 @@ cl_object qclear_event_filters() {
 
 cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    /// args: (module &optional quiet)
-   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :quick :sql :svg :webkit</code>
+   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :quick :sql :svg :webengine :webkit</code>
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
@@ -2479,6 +2483,13 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
                         LObjects::override_sql = over;
                         LObjects::toMetaArg_sql = metaArg;
                         LObjects::to_lisp_arg_sql = lispArg;
+                        return l_name; }
+                    else if("webengine" == name) {
+                        LObjects::staticMetaObject_webengine = meta;
+                        LObjects::deleteNObject_webengine = del;
+                        LObjects::override_webengine = over;
+                        LObjects::toMetaArg_webengine = metaArg;
+                        LObjects::to_lisp_arg_webengine = lispArg;
                         return l_name; }
                     else if("webkit" == name) {
                         LObjects::staticMetaObject_webkit = meta;

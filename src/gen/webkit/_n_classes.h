@@ -43,17 +43,8 @@ public:
     uint unique;
 };
 
-class LWebHistoryItem : public QWebHistoryItem {
-    friend class N268;
-public:
-    LWebHistoryItem(uint u, const QWebHistoryItem& x1) : QWebHistoryItem(x1), unique(u) {}
-
-    static NumList overrideIds;
-    uint unique;
-};
-
 class LWebHitTestResult : public QWebHitTestResult {
-    friend class N269;
+    friend class N273;
 public:
     LWebHitTestResult(uint u) : unique(u) {}
     LWebHitTestResult(uint u, const QWebHitTestResult& x1) : QWebHitTestResult(x1), unique(u) {}
@@ -63,7 +54,7 @@ public:
 };
 
 class LWebSecurityOrigin : public QWebSecurityOrigin {
-    friend class N270;
+    friend class N274;
 public:
     LWebSecurityOrigin(uint u, const QUrl& x1) : QWebSecurityOrigin(x1), unique(u) {}
     LWebSecurityOrigin(uint u, const QWebSecurityOrigin& x1) : QWebSecurityOrigin(x1), unique(u) {}

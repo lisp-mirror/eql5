@@ -75,7 +75,7 @@ public:
     Q_INVOKABLE bool MisCreatingIndex(QHelpIndexModel* o) const { return o->isCreatingIndex(); }
 };
 
-class Q101 : public Q271 { // QHelpSearchQueryWidget
+class Q101 : public Q279 { // QHelpSearchQueryWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LHelpSearchQueryWidget(u, x1); }
@@ -86,7 +86,7 @@ public:
     Q_INVOKABLE void MsetQuery(QHelpSearchQueryWidget* o, const QList<QHelpSearchQuery>& x1) { o->setQuery(x1); }
 };
 
-class Q102 : public Q271 { // QHelpSearchResultWidget
+class Q102 : public Q279 { // QHelpSearchResultWidget
     Q_OBJECT
 public:
     Q_INVOKABLE QUrl MlinkAt(QHelpSearchResultWidget* o, const QPoint& x1) { return o->linkAt(x1); }

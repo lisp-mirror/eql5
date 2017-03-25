@@ -12,6 +12,7 @@
 *.DS_Store
 *.qm
 *.qmlc
+*.stash
 *.ts
 *~
 *.~

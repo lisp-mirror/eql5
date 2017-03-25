@@ -1,16 +1,5 @@
 (defpackage :eql
   (:export
-   #:|isGenerated(int)|
-   #:|isGenerated|
-   #:|isGrayscale|
-   #:|isGridVisible|
-   #:|isGroupSeparatorShown|
-   #:|isHeaderHidden|
-   #:|isHidden|
-   #:|isHttpOnly|
-   #:|isIconVisibleInMenu|
-   #:|isIdentifierEscaped|
-   #:|isIdentity|
    #:|isImageFormat|
    #:|isInSubnet|
    #:|isInteractive|
@@ -278,7 +267,6 @@
    #:|lastScaleFactor|
    #:|lastScenePos|
    #:|lastScreenPos|
-   #:|lastVisited|
    #:|lastWindowClosed|
    #:|last|
    #:|layers|
@@ -547,7 +535,6 @@
    #:|maximumFrameRate|
    #:|maximumHeightChanged|
    #:|maximumHeight|
-   #:|maximumItemCount|
    #:|maximumLevelOfDetail|
    #:|maximumMargins|
    #:|maximumMipLevels|
@@ -683,7 +670,6 @@
    #:|moveColumns|
    #:|moveColumn|
    #:|moveCursor|
-   #:|moveMedia|
    #:|movePosition|
    #:|moveRows|
    #:|moveRow|
@@ -840,7 +826,6 @@
    #:|orientation|
    #:|originChanged|
    #:|originCorner|
-   #:|originalUrl|
    #:|originatingObject|
    #:|origin|
    #:|ortho(QRect)|
@@ -1199,4 +1184,19 @@
    #:|reindexDocumentation|
    #:|rejected|
    #:|reject|
-   #:|relationModel|))
+   #:|relationModel|
+   #:|relation|
+   #:|relativeFilePath|
+   #:|releaseControl|
+   #:|releaseKeyboard|
+   #:|releaseMouse|
+   #:|releaseResources|
+   #:|releaseShortcut|
+   #:|releaseWidget|
+   #:|released|
+   #:|release|
+   #:|reload|
+   #:|remainingTime|
+   #:|remove.QFile|
+   #:|remove.QPixmapCache|
+   #:|removeAccessWhitelistEntry|))

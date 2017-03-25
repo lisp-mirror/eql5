@@ -35,7 +35,6 @@ QList<QSslError>
 QList<QStringList>
 QList<QWebDatabase>
 QList<QWebFrame*>
-QList<QWebHistoryItem>
 QList<QWebSecurityOrigin>
 QList<const QTouchDevice*>
 QMediaResourceList
@@ -75,4 +74,6 @@ QVariantHash
 QVector<QSslEllipticCurve>
 QVector<QStaticPlugin>
 QVector<QVariant>
+QWebChannel
+QWebEngineContextMenuData
 QWindowList

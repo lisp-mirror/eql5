@@ -1,1 +1,1 @@
-(defparameter *modules* (list :help :multimedia :network :quick :sql :svg :webkit))
+(defparameter *modules* (list :help :multimedia :network :quick :sql :svg :webengine :webkit))

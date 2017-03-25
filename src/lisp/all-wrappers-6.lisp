@@ -1,27 +1,5 @@
 (defpackage :eql
   (:export
-   #:|time|
-   #:|tip|
-   #:|titleBarWidget|
-   #:|titleChanged|
-   #:|titleFormat|
-   #:|title|
-   #:|toAce.QUrl|
-   #:|toAffine|
-   #:|toBitArray|
-   #:|toBlockFormat|
-   #:|toBool|
-   #:|toByteArray|
-   #:|toCharFormat|
-   #:|toChar|
-   #:|toCmyk|
-   #:|toCubicSpline|
-   #:|toCurrencyString(double)|
-   #:|toCurrencyString(double...)|
-   #:|toCurrencyString(float)|
-   #:|toCurrencyString(float...)|
-   #:|toCurrencyString(int)|
-   #:|toCurrencyString(int...)|
    #:|toCurrencyString(qlonglong)|
    #:|toCurrencyString(qlonglong...)|
    #:|toCurrencyString(qulonglong)|

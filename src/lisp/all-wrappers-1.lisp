@@ -329,7 +329,6 @@
    #:|audioInputs|
    #:|audioInput|
    #:|audioRoleChanged|
-   #:|audioRole|
    #:|audioSettings|
    #:|authenticationMethod|
    #:|authenticationRequired|
@@ -379,8 +378,6 @@
    #:|averageCharWidth|
    #:|axisChanged|
    #:|axis|
-   #:|backItems|
-   #:|backItem|
    #:|backgroundBrush|
    #:|backgroundColor|
    #:|backgroundMode|
@@ -586,8 +583,6 @@
    #:|canEncode(QString)|
    #:|canEncode|
    #:|canFetchMore|
-   #:|canGoBack|
-   #:|canGoForward|
    #:|canPaste|
    #:|canReadLine|
    #:|canRedoChanged|
@@ -1022,7 +1017,6 @@
    #:|currentIndexChanged|
    #:|currentIndex|
    #:|currentItemChanged|
-   #:|currentItemIndex|
    #:|currentItem|
    #:|currentList|
    #:|currentLoopChanged|
@@ -1139,7 +1133,6 @@
    #:|defaultFramebufferObject|
    #:|defaultInnerTessellationLevels|
    #:|defaultInputDevice.QAudioDeviceInfo|
-   #:|defaultInterface.QWebHistoryInterface|
    #:|defaultOuterTessellationLevels|
    #:|defaultOutputDevice.QAudioDeviceInfo|
    #:|defaultPageSize|
@@ -1199,7 +1192,14 @@
    #:|dirName|
    #:|directionChanged|
    #:|direction|
-   #:|directories|))
+   #:|directories|
+   #:|directoryChanged|
+   #:|directoryEntered|
+   #:|directoryLoaded|
+   #:|directoryUrlEntered|
+   #:|directoryUrl|
+   #:|directory|
+   #:|dirtyRegionOffset|))
 
 (in-package :eql)
 

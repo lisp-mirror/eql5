@@ -11,7 +11,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Q265 : public Q142 { // QWebFrame
+class Q273 : public Q142 { // QWebFrame
     Q_OBJECT
 public:
     Q_INVOKABLE void MaddToJavaScriptWindowObject(QWebFrame* o, const QString& x1, QObject* x2, QWebFrame::ValueOwnership x3 = QWebFrame::QtOwnership) { o->addToJavaScriptWindowObject(x1, x2, x3); }
@@ -62,17 +62,14 @@ public:
     Q_INVOKABLE bool Mevent(QWebFrame* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q266 : public Q142 { // QWebHistoryInterface
+class Q274 : public Q142 { // QWebHistoryInterface
     Q_OBJECT
 public:
-    Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebHistoryInterface(u, x1); }
     Q_INVOKABLE void MaddHistoryEntry(QWebHistoryInterface* o, const QString& x1) { o->addHistoryEntry(x1); }
     Q_INVOKABLE bool MhistoryContains(QWebHistoryInterface* o, const QString& x1) const { return o->historyContains(x1); }
-    Q_INVOKABLE QWebHistoryInterface* SdefaultInterface() { return QWebHistoryInterface::defaultInterface(); }
-    Q_INVOKABLE void SsetDefaultInterface(QWebHistoryInterface* x1) { QWebHistoryInterface::setDefaultInterface(x1); }
 };
 
-class Q268 : public Q142 { // QWebPage
+class Q276 : public Q142 { // QWebPage
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPage(u, x1); }
@@ -86,7 +83,6 @@ public:
     Q_INVOKABLE bool MforwardUnsupportedContent(QWebPage* o) const { return o->forwardUnsupportedContent(); }
     Q_INVOKABLE QWebFrame* MframeAt(QWebPage* o, const QPoint& x1) const { return o->frameAt(x1); }
     Q_INVOKABLE bool MhasSelection(QWebPage* o) const { return o->hasSelection(); }
-    Q_INVOKABLE QWebHistory* Mhistory(QWebPage* o) const { return o->history(); }
     Q_INVOKABLE QVariant MinputMethodQuery(QWebPage* o, Qt::InputMethodQuery x1) const { return o->inputMethodQuery(x1); }
     Q_INVOKABLE bool MisContentEditable(QWebPage* o) const { return o->isContentEditable(); }
     Q_INVOKABLE bool MisModified(QWebPage* o) const { return o->isModified(); }
@@ -126,7 +122,7 @@ public:
     Q_INVOKABLE bool Mevent(QWebPage* o, QEvent* x1) { return o->event(x1); }
 };
 
-class Q269 : public Q142 { // QWebPluginFactory
+class Q277 : public Q142 { // QWebPluginFactory
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QObject* x1 = 0) { return new LWebPluginFactory(u, x1); }
@@ -140,7 +136,6 @@ class Q88 : public Q89 { // QGraphicsWebView
 public:
     Q_INVOKABLE void* C(uint u, QGraphicsItem* x1 = 0) { return new LGraphicsWebView(u, x1); }
     Q_INVOKABLE bool MfindText(QGraphicsWebView* o, const QString& x1, QWebPage::FindFlags x2 = 0) { return o->findText(x1, x2); }
-    Q_INVOKABLE QWebHistory* Mhistory(QGraphicsWebView* o) const { return o->history(); }
     Q_INVOKABLE QIcon Micon(QGraphicsWebView* o) const { return o->icon(); }
     Q_INVOKABLE bool MisModified(QGraphicsWebView* o) const { return o->isModified(); }
     Q_INVOKABLE bool MisTiledBackingStoreFrozen(QGraphicsWebView* o) const { return o->isTiledBackingStoreFrozen(); }
@@ -173,7 +168,7 @@ public:
     Q_INVOKABLE void MupdateGeometry(QGraphicsWebView* o) { o->updateGeometry(); }
 };
 
-class Q267 : public Q271 { // QWebInspector
+class Q275 : public Q279 { // QWebInspector
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebInspector(u, x1); }
@@ -183,13 +178,12 @@ public:
     Q_INVOKABLE QSize MsizeHint(QWebInspector* o) const { return o->sizeHint(); }
 };
 
-class Q270 : public Q271 { // QWebView
+class Q278 : public Q279 { // QWebView
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebView(u, x1); }
     Q_INVOKABLE bool MfindText(QWebView* o, const QString& x1, QWebPage::FindFlags x2 = 0) { return o->findText(x1, x2); }
     Q_INVOKABLE bool MhasSelection(QWebView* o) const { return o->hasSelection(); }
-    Q_INVOKABLE QWebHistory* Mhistory(QWebView* o) const { return o->history(); }
     Q_INVOKABLE QIcon Micon(QWebView* o) const { return o->icon(); }
     Q_INVOKABLE bool MisModified(QWebView* o) const { return o->isModified(); }
     Q_INVOKABLE void Mload(QWebView* o, const QUrl& x1) { o->load(x1); }

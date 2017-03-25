@@ -16,6 +16,7 @@ int main(int argc, char** argv) {
 
     EQL::ini(argv); // best initialized here
 
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // for Qt WebEngine
     QApplication qapp(argc, argv);
     QStringList args(QCoreApplication::arguments());
     if(args.contains("-h") || (args.contains("--help"))) {

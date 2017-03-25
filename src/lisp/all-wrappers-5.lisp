@@ -1,24 +1,5 @@
 (defpackage :eql
   (:export
-   #:|setMask|
-   #:|setMaterial|
-   #:|setMatrix|
-   #:|setMaxCount|
-   #:|setMaxLength|
-   #:|setMaxPendingConnections|
-   #:|setMaxVisibleItems|
-   #:|setMaximumAnisotropy|
-   #:|setMaximumBlockCount|
-   #:|setMaximumCacheSize|
-   #:|setMaximumDateTime|
-   #:|setMaximumDate|
-   #:|setMaximumFrameRate|
-   #:|setMaximumHeight|
-   #:|setMaximumItemCount|
-   #:|setMaximumLevelOfDetail|
-   #:|setMaximumPagesInCache.QWebSettings|
-   #:|setMaximumSectionSize|
-   #:|setMaximumSize|
    #:|setMaximumTime|
    #:|setMaximumTouchPoints|
    #:|setMaximumWidth|
@@ -999,7 +980,6 @@
    #:|supportedActions|
    #:|supportedApertures|
    #:|supportedAudioCodecs|
-   #:|supportedAudioRoles|
    #:|supportedAudioSampleRates|
    #:|supportedBits|
    #:|supportedBufferFormats|
@@ -1171,8 +1151,6 @@
    #:|textureByteCount|
    #:|textureChanged|
    #:|textureCoordinatesTransform|
-   #:|textureFactoryForImage.QQuickTextureFactory|
-   #:|textureFactory|
    #:|textureFollowsItemSizeChanged|
    #:|textureFollowsItemSize|
    #:|textureId|
@@ -1199,4 +1177,26 @@
    #:|timeout|
    #:|timerId|
    #:|timerType|
-   #:|timestamp|))
+   #:|timestamp|
+   #:|time|
+   #:|tip|
+   #:|titleBarWidget|
+   #:|titleChanged|
+   #:|titleFormat|
+   #:|title|
+   #:|toAce.QUrl|
+   #:|toAffine|
+   #:|toBitArray|
+   #:|toBlockFormat|
+   #:|toBool|
+   #:|toByteArray|
+   #:|toCharFormat|
+   #:|toChar|
+   #:|toCmyk|
+   #:|toCubicSpline|
+   #:|toCurrencyString(double)|
+   #:|toCurrencyString(double...)|
+   #:|toCurrencyString(float)|
+   #:|toCurrencyString(float...)|
+   #:|toCurrencyString(int)|
+   #:|toCurrencyString(int...)|))

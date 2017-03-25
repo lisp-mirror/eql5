@@ -27,7 +27,7 @@
        ,@set-nil)))
 
 (defun load-ui-related-qt-modules ()
-  (dolist (module (list :help :multimedia :svg :webkit))
+  (dolist (module (list :help :multimedia :svg :webengine :webkit))
     (eql:qrequire module :quiet)))
 
 (defun run (&optional (ui.h "ui.h") (ui.lisp "ui.lisp") (ui-package :ui) properties)

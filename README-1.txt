@@ -14,7 +14,8 @@ TESTED WITH
 
   Linux (development platform):
     ECL 16.1.2
-    Qt 5.5.1
+    Qt 5.5.1 (with module 'webkit')
+    Qt 5.8   (with module 'webengine')
 
   Windows:
     MSVC 2010, MinGW 4.9*:
@@ -47,9 +48,8 @@ REQUIREMENTS
     you need to choose Qt 5.5, and not later versions!
     QtWebKit will continue to work with versions > 5.5, but it has to be compiled
     manually (which is not fun).
-    Since QtWebKit has a better, more native integration with Qt than QtWebEngine,
-    there is currently no plan to switch to QtWebEngine in EQL5 (we would very much
-    miss QWebElement).
+    QtWebKit has a better, more native integration with Qt than QtWebEngine, see
+    for example QWebElement, which doesn't exist in QtWebEngine.
 
 
 
@@ -81,8 +81,8 @@ BUILD
 
   [MinGW]
     If 'make' is stuck in an infinite loop of creating the 'Makefile', just remove
-    the line 'include(windows.pri)' from your '*.pro' file, setting eventual needed
-    paths in your '~/.profile' instead.
+    the line 'include(windows.pri)' from your '*.pro' file, setting eventually
+    needed paths in your '~/.profile' instead.
 
   [OSX]
     To force creation of a Makefile (instead of an Xcode project), use this flag:
@@ -160,7 +160,7 @@ In order to run (sort of) a top-level processing Qt events, do (requires ECL thr
 
 
 
-QT MODULES (help, multimedia, network, quick, sql, svg, webkit)
+QT MODULES (help, multimedia, network, quick, sql, svg, webengine, webkit)
 ==========
 
 To build an EQL module (corresponding to a Qt module), do the following in src/:

@@ -408,7 +408,7 @@ public:
     Q_INVOKABLE QSGTextureProvider* MtextureProvider(QQuickFramebufferObject* o) const { return o->textureProvider(); }
 };
 
-class Q184 : public Q271 { // QQuickWidget
+class Q184 : public Q279 { // QQuickWidget
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LQuickWidget(u, x1); }
@@ -431,7 +431,7 @@ public:
     Q_INVOKABLE bool Mevent(QQuickWidget* o, QEvent* x1) { return ((LQuickWidget*)o)->event(x1); }
 };
 
-class Q185 : public Q273 { // QQuickWindow
+class Q185 : public Q281 { // QQuickWindow
     Q_OBJECT
 public:
     Q_INVOKABLE void* C(uint u, QWindow* x1 = 0) { return new LQuickWindow(u, x1); }

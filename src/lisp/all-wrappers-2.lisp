@@ -1,12 +1,5 @@
 (defpackage :eql
   (:export
-   #:|directoryChanged|
-   #:|directoryEntered|
-   #:|directoryLoaded|
-   #:|directoryUrlEntered|
-   #:|directoryUrl|
-   #:|directory|
-   #:|dirtyRegionOffset|
    #:|dir|
    #:|disableAttributeArray(const char*)|
    #:|disableAttributeArray(int)|
@@ -543,8 +536,6 @@
    #:|format|
    #:|forwardAvailable|
    #:|forwardHistoryCount|
-   #:|forwardItems|
-   #:|forwardItem|
    #:|forwardUnsupportedContent|
    #:|forward|
    #:|fragment|
@@ -684,7 +675,6 @@
    #:|globalX|
    #:|globalY|
    #:|glyphRuns|
-   #:|goToItem|
    #:|gotFocus|
    #:|grabFramebuffer|
    #:|grabGesture|
@@ -1198,4 +1188,15 @@
    #:|isForwardOnly|
    #:|isFrameFormat|
    #:|isFullScreen|
-   #:|isGenerated(QString)|))
+   #:|isGenerated(QString)|
+   #:|isGenerated(int)|
+   #:|isGenerated|
+   #:|isGrayscale|
+   #:|isGridVisible|
+   #:|isGroupSeparatorShown|
+   #:|isHeaderHidden|
+   #:|isHidden|
+   #:|isHttpOnly|
+   #:|isIconVisibleInMenu|
+   #:|isIdentifierEscaped|
+   #:|isIdentity|))

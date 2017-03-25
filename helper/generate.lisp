@@ -141,6 +141,8 @@
         (push :const arg*))
       (when default
         (push :default arg*)
+        (when (string= default "Q_NULLPTR")
+          (setf default "0"))
         (push default arg*))
       (nreverse arg*))))
 
@@ -335,7 +337,8 @@
                           (subseq name 0 templ)
                           class
                           (subseq name templ))
-                  (if-it (position #\( name)
+                  (if-it (and (not (search "()" name))
+                              (position #\( name))
                       (let* ((names (split (subseq name (1+ it) (1- (length name)))
                                            #\|)))
                         (join (mapcar (lambda (name) (format nil "~A::~A" class name))
@@ -393,10 +396,8 @@
   (find :virtual x))
 
 (defun default-value (x)
-  (let (ret)
-    (dolist (v x)
-      (cond (ret (return v))
-            ((eql :default v) (setf ret t))))))
+  (when-it (position :default x)
+    (nth (1+ it) x)))
 
 (defun sort-names (names)
   (sort (remove-duplicates names :test 'string=)
@@ -433,6 +434,7 @@
   (format nil "#include <Qt~A>"
           (case module
             (:multimedia "MultimediaWidgets")
+            (:webengine "WebEngineWidgets")
             (:webkit "WebKitWidgets")
             (t (string-capitalize (string module))))))
 
@@ -835,6 +837,8 @@
                ~%int LObjects::T_QSslKey = -1;~
                ~%int LObjects::T_QVideoEncoderSettings = -1;~
                ~%int LObjects::T_QVideoSurfaceFormat = -1;~
+               ~%int LObjects::T_QWebEngineScript = -1;~
+               ~%int LObjects::T_QList_QWebEngineScript = -1;~
                ~%int LObjects::T_QWebElement = -1;~
                ~%int LObjects::T_QList_QWebElement = -1;~
                ~%int LObjects::T_QWebElementCollection = -1;~
@@ -868,7 +872,7 @@
       (format s "~%DeleteNObject LObjects::deleteNObject_~(~A~) = 0;" module))
     (dolist (module *modules*)
       (format s "~%Override LObjects::override_~(~A~) = 0;" module))
-    (dolist (module (list :help :multimedia :network :quick :sql :webkit))
+    (dolist (module (list :help :multimedia :network :quick :sql :webengine :webkit))
       (format s "~%ToMetaArg LObjects::toMetaArg_~(~A~) = 0;~
                  ~%To_lisp_arg LObjects::to_lisp_arg_~(~A~) = 0;"
               module module))
@@ -1187,6 +1191,7 @@
                     "QList<QTreeWidgetItem*>"
                     "QList<QUndoStack*>"
                     "QList<QUrl>"
+                    "QList<QWebEngineScript>"
                     "QList<QWebElement>"
                     "QList<QWidget*>"
                     "QList<int>"

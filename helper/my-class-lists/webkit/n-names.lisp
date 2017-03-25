@@ -5,8 +5,6 @@
   (list "QWebDatabase"
         "QWebElement"
         "QWebElementCollection"
-        "//QWebHistory"
-        "QWebHistoryItem"
         "QWebHitTestResult"
         "QWebSecurityOrigin"
         "//QWebSettings"

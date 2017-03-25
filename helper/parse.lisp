@@ -4,7 +4,7 @@
 (load "share")
 (load "load-modules")
 
-(defparameter *skip*
+(defvar *skip*
   (list "(preliminary)"
         "(deprecated)"
         "(obsolete)"
@@ -54,6 +54,7 @@
         "DefaultAction"
         "EditFocus"
         "ExecutionEngine"
+        "Functor"
         "QIconEngine"
         "QPaintEngine"
         "QPrintEngine"
@@ -126,6 +127,9 @@
         "QVector2D *"
         "QVector3D *"
         "QVector4D *"
+        "QWebEngineHistory"
+        "QWebHistory"
+        (format nil "QWebEngineScriptCollection &~C" #\Tab)
         "QWebNetworkRequest"
         "QWSEvent"
         "QXmlStreamReader"
@@ -160,8 +164,9 @@
         (format nil "~CmoveMedia(" #\Tab) ; 5.7
         ))
 
-(defparameter *check*      nil)
-(defparameter *2-newlines* (format nil "~%~%"))
+(defvar *check*         nil)
+(defvar *2-newlines*    (format nil "~%~%"))
+(defvar *var-name-trim* "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY1234567890_")
 
 (defun simplify (str &optional (join t))
   (let ((list (remove-if 'x:empty-string (x:split (string-trim '(#\Space #\Tab) str)))))
@@ -192,7 +197,9 @@
                 (second xy)))
       (if (find (char x (1- (length x))) "&*>")
           x
-          (subseq x 0 (position #\Space x :from-end t)))))
+          (if (find-if (lambda (ch) (find ch "&*>")) x)
+              (string-right-trim *var-name-trim* x)
+              (subseq x 0 (position #\Space x :from-end t))))))
 
 (defun tokenize (str)
   (let* ((a (position #\( str))
@@ -267,6 +274,8 @@
                     (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QRect_DEFAULT)")))
                   (x:when-it* (search " = QMarginsF( 0, 0, 0, 0 )" x:it)
                     (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QMarginsF_DEFAULT)")))
+                  (x:when-it* (search " = QPageLayout( QPageSize( QPageSize::A4 ), QPageLayout::Portrait, QMarginsF() )" x:it)
+                    (setf x:it (concatenate 'string (subseq x:it 0 x:it*) " = QPageLayout_DEFAULT)")))
                   (let* ((fun (tokenize x:it))
                          (new (and (not static)
                                    (x:starts-with (format nil "~A (" class) fun)))

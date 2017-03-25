@@ -26,8 +26,9 @@ QT_BEGIN_NAMESPACE
 typedef QList<int>        NumList;
 typedef QList<QByteArray> StrList;
 
-#define QMarginsF_DEFAULT QMarginsF(0, 0, 0, 0)
-#define QRect_DEFAULT     QRect(0, 0, -1, -1)
+#define QMarginsF_DEFAULT   QMarginsF(0, 0, 0, 0)
+#define QRect_DEFAULT       QRect(0, 0, -1, -1)
+#define QPageLayout_DEFAULT QPageLayout(QPageSize(QPageSize::A4), QPageLayout::Portrait, QMarginsF())
 
 class EQL;
 class DynObject;
@@ -87,6 +88,8 @@ public:
     static int T_QSslKey;
     static int T_QVideoEncoderSettings;
     static int T_QVideoSurfaceFormat;
+    static int T_QWebEngineScript;
+    static int T_QList_QWebEngineScript;
     static int T_QWebElement;
     static int T_QList_QWebElement;
     static int T_QWebElementCollection;
@@ -151,6 +154,7 @@ public:
     static StaticMetaObject staticMetaObject_quick;
     static StaticMetaObject staticMetaObject_sql;
     static StaticMetaObject staticMetaObject_svg;
+    static StaticMetaObject staticMetaObject_webengine;
     static StaticMetaObject staticMetaObject_webkit;
     static DeleteNObject deleteNObject_help;
     static DeleteNObject deleteNObject_multimedia;
@@ -158,6 +162,7 @@ public:
     static DeleteNObject deleteNObject_quick;
     static DeleteNObject deleteNObject_sql;
     static DeleteNObject deleteNObject_svg;
+    static DeleteNObject deleteNObject_webengine;
     static DeleteNObject deleteNObject_webkit;
     static Override override_help;
     static Override override_multimedia;
@@ -165,6 +170,7 @@ public:
     static Override override_quick;
     static Override override_sql;
     static Override override_svg;
+    static Override override_webengine;
     static Override override_webkit;
     static ToMetaArg toMetaArg_help;
     static To_lisp_arg to_lisp_arg_help;
@@ -176,6 +182,8 @@ public:
     static To_lisp_arg to_lisp_arg_quick;
     static ToMetaArg toMetaArg_sql;
     static To_lisp_arg to_lisp_arg_sql;
+    static ToMetaArg toMetaArg_webengine;
+    static To_lisp_arg to_lisp_arg_webengine;
     static ToMetaArg toMetaArg_webkit;
     static To_lisp_arg to_lisp_arg_webkit;
 };

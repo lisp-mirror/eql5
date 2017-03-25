@@ -987,9 +987,6 @@
 (defun |audioRoleChanged| (object &rest arguments)
   (%qinvoke-method object nil "audioRoleChanged" arguments))
 
-(defun |audioRole| (object &rest arguments)
-  (%qinvoke-method object nil "audioRole" arguments))
-
 (defun |audioSettings| (object &rest arguments)
   (%qinvoke-method object nil "audioSettings" arguments))
 
@@ -1136,12 +1133,6 @@
 
 (defun |axis| (object &rest arguments)
   (%qinvoke-method object nil "axis" arguments))
-
-(defun |backItems| (object &rest arguments)
-  (%qinvoke-method object nil "backItems" arguments))
-
-(defun |backItem| (object &rest arguments)
-  (%qinvoke-method object nil "backItem" arguments))
 
 (defun |backgroundBrush| (object &rest arguments)
   (%qinvoke-method object nil "backgroundBrush" arguments))
@@ -1757,12 +1748,6 @@
 
 (defun |canFetchMore| (object &rest arguments)
   (%qinvoke-method object nil "canFetchMore" arguments))
-
-(defun |canGoBack| (object &rest arguments)
-  (%qinvoke-method object nil "canGoBack" arguments))
-
-(defun |canGoForward| (object &rest arguments)
-  (%qinvoke-method object nil "canGoForward" arguments))
 
 (defun |canPaste| (object &rest arguments)
   (%qinvoke-method object nil "canPaste" arguments))
@@ -3066,9 +3051,6 @@
 (defun |currentItemChanged| (object &rest arguments)
   (%qinvoke-method object nil "currentItemChanged" arguments))
 
-(defun |currentItemIndex| (object &rest arguments)
-  (%qinvoke-method object nil "currentItemIndex" arguments))
-
 (defun |currentItem| (object &rest arguments)
   (%qinvoke-method object nil "currentItem" arguments))
 
@@ -3417,9 +3399,6 @@
 (defun |defaultInputDevice.QAudioDeviceInfo| (&rest arguments)
   (%qinvoke-method "QAudioDeviceInfo" nil "defaultInputDevice" arguments))
 
-(defun |defaultInterface.QWebHistoryInterface| (&rest arguments)
-  (%qinvoke-method "QWebHistoryInterface" nil "defaultInterface" arguments))
-
 (defun |defaultOuterTessellationLevels| (object &rest arguments)
   (%qinvoke-method object nil "defaultOuterTessellationLevels" arguments))
 
@@ -3599,3 +3578,24 @@
 
 (defun |directories| (object &rest arguments)
   (%qinvoke-method object nil "directories" arguments))
+
+(defun |directoryChanged| (object &rest arguments)
+  (%qinvoke-method object nil "directoryChanged" arguments))
+
+(defun |directoryEntered| (object &rest arguments)
+  (%qinvoke-method object nil "directoryEntered" arguments))
+
+(defun |directoryLoaded| (object &rest arguments)
+  (%qinvoke-method object nil "directoryLoaded" arguments))
+
+(defun |directoryUrlEntered| (object &rest arguments)
+  (%qinvoke-method object nil "directoryUrlEntered" arguments))
+
+(defun |directoryUrl| (object &rest arguments)
+  (%qinvoke-method object nil "directoryUrl" arguments))
+
+(defun |directory| (object &rest arguments)
+  (%qinvoke-method object nil "directory" arguments))
+
+(defun |dirtyRegionOffset| (object &rest arguments)
+  (%qinvoke-method object nil "dirtyRegionOffset" arguments))

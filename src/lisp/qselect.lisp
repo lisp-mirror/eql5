@@ -133,7 +133,7 @@
 
 (defun indicate* ()
   (let ((root (if (= (qt-object-id *q*) #.(qid "QQuickWindow"))
-                  (! "contentItem"*q*)
+                  (! "contentItem" *q*)
                   (! "rootObject" *q*))))
     (indicate-start* *q* (child root))))
 

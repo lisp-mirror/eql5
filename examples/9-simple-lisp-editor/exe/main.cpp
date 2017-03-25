@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
 
     EQL::ini(argv);
 
+    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts); // for Qt WebEngine
     QApplication qapp(argc, argv);
 
     QTextCodec* utf8 = QTextCodec::codecForName("UTF-8");
