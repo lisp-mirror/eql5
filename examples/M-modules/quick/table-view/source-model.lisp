@@ -38,7 +38,8 @@
 (defun make-book-model ()
   (setf *book-model* (qnew "QAbstractListModel"))
   (qoverride *book-model* "rowCount(QModelIndex)"
-             (lambda (index) (length *books*)))
+             (lambda (index)
+               (length *books*)))
   (qoverride *book-model* "data(QModelIndex,int)" ; QOVERRIDE return value is GC'd
              (lambda (index role)
                (let* ((row (|row| index))
