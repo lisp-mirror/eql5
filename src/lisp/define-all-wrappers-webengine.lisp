@@ -112,21 +112,30 @@
     (map nil (lambda (object signatures)
                (when (find object *webengine-objects* :test 'string=)
                  (dolist (signature signatures)
-                   (let* ((cast (cast signature))
-                          (static (when (x:starts-with "_s_" signature)
-                                    (setf signature (subseq signature 3))))
-                          (lisp-name (if static
-                                         (format nil "|~A.~A|" signature object)
-                                         (format nil "|~A|" signature))))
-                     (push lisp-name lisp-names)
-                     (push (if static
-                               (format nil "~%(defun ~A (&rest arguments)~
-                                            ~%  (%qinvoke-method ~S nil ~S arguments))~%"
-                                       lisp-name object signature)
-                               (format nil "~%(defun ~A (object &rest arguments)~
-                                            ~%  (%qinvoke-method object ~A ~S arguments))~%"
-                                       lisp-name cast signature))
-                           definitions)))))
+                   (let ((function-name (format nil "|~A|" signature))
+                         found)
+                     ;; add only new function names (checking with 'grep')
+                     (dotimes (i 12) ; TODO: keep in sync!
+                       (when (zerop (|execute.QProcess| "grep" (list function-name
+                                                                     (in-home (format nil "src/lisp/all-wrappers-~D.lisp" (1+ i))))))
+                         (setf found t)
+                         (return)))
+                     (unless found
+                       (let* ((cast (cast signature))
+                              (static (when (x:starts-with "_s_" signature)
+                                        (setf signature (subseq signature 3))))
+                              (lisp-name (if static
+                                             (format nil "|~A.~A|" signature object)
+                                             function-name)))
+                         (push lisp-name lisp-names)
+                         (push (if static
+                                   (format nil "~%(defun ~A (&rest arguments)~
+                                                ~%  (%qinvoke-method ~S nil ~S arguments))~%"
+                                           lisp-name object signature)
+                                   (format nil "~%(defun ~A (object &rest arguments)~
+                                                ~%  (%qinvoke-method object ~A ~S arguments))~%"
+                                           lisp-name cast signature))
+                               definitions)))))))
          *objects* *unambiguous*)
     ;; splitting into more files needed for Windows (string size limit)
     (let ((symbols (sort (delete-duplicates lisp-names :test 'string=) 'string<)))
