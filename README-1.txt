@@ -205,3 +205,13 @@ MIT
 
 for MAKE-QIMAGE (contributed by Mark Cox), please see LICENSE-MAKE-QIMAGE.txt
 
+
+
+DISCLAIMER
+==========
+
+Clicking around on "gitlab.com" will eventually bring to your attention a chart
+with the "used languages".
+
+I just wanted to clearify that 0.0000000% of "NewLisp" (whatever that means) is
+used in this project (a simple and obvious mis-identification).
