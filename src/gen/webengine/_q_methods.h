@@ -46,20 +46,24 @@ public:
     Q_INVOKABLE QAction* Maction(QWebEnginePage* o, QWebEnginePage::WebAction x1) const { return o->action(x1); }
     Q_INVOKABLE QColor MbackgroundColor(QWebEnginePage* o) const { return o->backgroundColor(); }
     Q_INVOKABLE QSizeF McontentsSize(QWebEnginePage* o) const { return o->contentsSize(); }
-    Q_INVOKABLE QWebEngineContextMenuData McontextMenuData(QWebEnginePage* o) const { return o->contextMenuData(); }
     Q_INVOKABLE QMenu* McreateStandardContextMenu(QWebEnginePage* o) { return o->createStandardContextMenu(); }
     Q_INVOKABLE void MfindText(QWebEnginePage* o, const QString& x1, QWebEnginePage::FindFlags x2 = QWebEnginePage::FindFlags()) { o->findText(x1, x2); }
+    Q_INVOKABLE void MfindText(QWebEnginePage* o, const QString& x1, QWebEnginePage::FindFlags x2, FunctorOrLambda x3) { o->findText(x1, x2, x3); }
     Q_INVOKABLE bool MhasSelection(QWebEnginePage* o) const { return o->hasSelection(); }
     Q_INVOKABLE QIcon Micon(QWebEnginePage* o) const { return o->icon(); }
     Q_INVOKABLE QUrl MiconUrl(QWebEnginePage* o) const { return o->iconUrl(); }
     Q_INVOKABLE bool MisAudioMuted(QWebEnginePage* o) const { return o->isAudioMuted(); }
     Q_INVOKABLE void Mload(QWebEnginePage* o, const QUrl& x1) { o->load(x1); }
+    Q_INVOKABLE void Mprint(QWebEnginePage* o, QPrinter* x1, FunctorOrLambda x2) { o->print(x1, x2); }
     Q_INVOKABLE void MprintToPdf(QWebEnginePage* o, const QString& x1, const QPageLayout& x2 = QPageLayout_DEFAULT) { o->printToPdf(x1, x2); }
+    Q_INVOKABLE void MprintToPdf(QWebEnginePage* o, FunctorOrLambda x1, const QPageLayout& x2 = QPageLayout_DEFAULT) { o->printToPdf(x1, x2); }
     Q_INVOKABLE QWebEngineProfile* Mprofile(QWebEnginePage* o) const { return o->profile(); }
     Q_INVOKABLE bool MrecentlyAudible(QWebEnginePage* o) const { return o->recentlyAudible(); }
     Q_INVOKABLE void MreplaceMisspelledWord(QWebEnginePage* o, const QString& x1) { o->replaceMisspelledWord(x1); }
     Q_INVOKABLE QUrl MrequestedUrl(QWebEnginePage* o) const { return o->requestedUrl(); }
+    Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, quint32 x2, FunctorOrLambda x3) { o->runJavaScript(x1, x2, x3); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, quint32 x2) { o->runJavaScript(x1, x2); }
+    Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, FunctorOrLambda x2) { o->runJavaScript(x1, x2); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1) { o->runJavaScript(x1); }
     Q_INVOKABLE void Msave(QWebEnginePage* o, const QString& x1, QWebEngineDownloadItem::SavePageFormat x2 = QWebEngineDownloadItem::MimeHtmlSaveFormat) const { o->save(x1, x2); }
     Q_INVOKABLE QPointF MscrollPosition(QWebEnginePage* o) const { return o->scrollPosition(); }
@@ -71,15 +75,14 @@ public:
     Q_INVOKABLE void MsetHtml(QWebEnginePage* o, const QString& x1, const QUrl& x2 = QUrl()) { o->setHtml(x1, x2); }
     Q_INVOKABLE void MsetUrl(QWebEnginePage* o, const QUrl& x1) { o->setUrl(x1); }
     Q_INVOKABLE void MsetView(QWebEnginePage* o, QWidget* x1) { o->setView(x1); }
-    Q_INVOKABLE void MsetWebChannel(QWebEnginePage* o, QWebChannel* x1, uint x2) { o->setWebChannel(x1, x2); }
-    Q_INVOKABLE void MsetWebChannel(QWebEnginePage* o, QWebChannel* x1) { o->setWebChannel(x1); }
     Q_INVOKABLE void MsetZoomFactor(QWebEnginePage* o, qreal x1) { o->setZoomFactor(x1); }
     Q_INVOKABLE QWebEngineSettings* Msettings(QWebEnginePage* o) const { return o->settings(); }
     Q_INVOKABLE QString Mtitle(QWebEnginePage* o) const { return o->title(); }
+    Q_INVOKABLE void MtoHtml(QWebEnginePage* o, FunctorOrLambda x1) const { o->toHtml(x1); }
+    Q_INVOKABLE void MtoPlainText(QWebEnginePage* o, FunctorOrLambda x1) const { o->toPlainText(x1); }
     Q_INVOKABLE void MtriggerAction(QWebEnginePage* o, QWebEnginePage::WebAction x1, bool x2 = false) { o->triggerAction(x1, x2); }
     Q_INVOKABLE QUrl Murl(QWebEnginePage* o) const { return o->url(); }
     Q_INVOKABLE QWidget* Mview(QWebEnginePage* o) const { return o->view(); }
-    Q_INVOKABLE QWebChannel* MwebChannel(QWebEnginePage* o) const { return o->webChannel(); }
     Q_INVOKABLE qreal MzoomFactor(QWebEnginePage* o) const { return o->zoomFactor(); }
     Q_INVOKABLE bool Mevent(QWebEnginePage* o, QEvent* x1) { return o->event(x1); }
 };
@@ -148,6 +151,7 @@ class Q272 : public Q279 { // QWebEngineView
 public:
     Q_INVOKABLE void* C(uint u, QWidget* x1 = 0) { return new LWebEngineView(u, x1); }
     Q_INVOKABLE void MfindText(QWebEngineView* o, const QString& x1, QWebEnginePage::FindFlags x2 = QWebEnginePage::FindFlags()) { o->findText(x1, x2); }
+    Q_INVOKABLE void MfindText(QWebEngineView* o, const QString& x1, QWebEnginePage::FindFlags x2, FunctorOrLambda x3) { o->findText(x1, x2, x3); }
     Q_INVOKABLE bool MhasSelection(QWebEngineView* o) const { return o->hasSelection(); }
     Q_INVOKABLE QIcon Micon(QWebEngineView* o) const { return o->icon(); }
     Q_INVOKABLE QUrl MiconUrl(QWebEngineView* o) const { return o->iconUrl(); }

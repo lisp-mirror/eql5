@@ -21,7 +21,10 @@ Defines Lisp methods for all Qt methods/signals/slots of given library.<br>(See 
 This macro simplifies the definition of UI variables:
 <br>
 <pre>
-  (defvar-ui *main* *label* *line-edit*...)
+  (defvar-ui *main*
+  &nbsp;&nbsp;*label*
+  &nbsp;&nbsp;*line-edit*
+  &nbsp;&nbsp;...)
   
   ;; the above will expand to:
   

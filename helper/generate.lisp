@@ -319,34 +319,36 @@
       ""))
 
 (defun add-namespace (name class)
-  (unless (empty-string name)
-    (if (and class
-             (string/= "Handle" name)
-             (not (starts-with "GL" name)))
-        (let ((1st (char name 0))
-              (templ (position #\< name)))
-          (when templ
-            (setf 1st (char name (incf templ))))
-          (if (and (not (qt-class-p (if templ
-                                        (subseq name templ (1- (length name)))
-                                        name)))
-                   (not (find #\: name))
-                   (upper-case-p 1st))
-              (if templ
-                  (format nil "~A~A::~A"
-                          (subseq name 0 templ)
-                          class
-                          (subseq name templ))
-                  (if-it (and (not (search "()" name))
-                              (position #\( name))
-                      (let* ((names (split (subseq name (1+ it) (1- (length name)))
-                                           #\|)))
-                        (join (mapcar (lambda (name) (format nil "~A::~A" class name))
-                                      names)
-                              #\|))
-                      (format nil "~A::~A" class name)))
-              name))
-        name)))
+  (if (string= "FunctorOrLambda" name)
+      "FunctorOrLambda"
+      (unless (empty-string name)
+        (if (and class
+                 (string/= "Handle" name)
+                 (not (starts-with "GL" name)))
+            (let ((1st (char name 0))
+                  (templ (position #\< name)))
+              (when templ
+                (setf 1st (char name (incf templ))))
+              (if (and (not (qt-class-p (if templ
+                                            (subseq name templ (1- (length name)))
+                                            name)))
+                       (not (find #\: name))
+                       (upper-case-p 1st))
+                  (if templ
+                      (format nil "~A~A::~A"
+                              (subseq name 0 templ)
+                              class
+                              (subseq name templ))
+                      (if-it (and (not (search "()" name))
+                                  (position #\( name))
+                          (let* ((names (split (subseq name (1+ it) (1- (length name)))
+                                               #\|)))
+                            (join (mapcar (lambda (name) (format nil "~A::~A" class name))
+                                          names)
+                                  #\|))
+                          (format nil "~A::~A" class name)))
+                  name))
+            name))))
 
 (defun constructor-p (x)
   (find :constructor x))
@@ -1161,6 +1163,7 @@
                     "QHashIntQByteArray"
                     "QLine"
                     "QLineF"
+                    "QList<ExtraSelection>"
                     "QList<QAction*>"
                     "QList<QByteArray>"
                     "QList<QDockWidget*>"

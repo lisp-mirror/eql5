@@ -312,6 +312,16 @@ struct eql_pointer {
     eql_pointer(void* v, int i) : pointer(v), id(i) {}
 };
 
+// for WebEngine
+struct FunctorOrLambda {
+    void* function;
+
+    FunctorOrLambda()          : function(0)   {}
+    FunctorOrLambda(void* fun) : function(fun) {}
+
+    void operator()(const QVariant&);
+};
+
 struct QtMetaObject : private QObject {
     // commonly used trick to access staticQtMetaObject
     static const QMetaObject* get() { return &static_cast<QtMetaObject*>(0)->staticQtMetaObject; }

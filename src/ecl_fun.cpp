@@ -33,6 +33,7 @@ META_TYPE (T_quint8,                           quint8)
 META_TYPE (T_quint16,                          quint16)
 META_TYPE (T_quint32,                          quint32)
 META_TYPE (T_quint64,                          quint64)
+META_TYPE (T_FunctorOrLambda,                  FunctorOrLambda)
 META_TYPE (T_QFileInfo,                        QFileInfo)
 META_TYPE (T_QFileInfoList,                    QFileInfoList)
 META_TYPE (T_QGradient,                        QGradient)
@@ -1162,6 +1163,14 @@ static cl_object from_qvariantlist(const QVariantList& l) {
     l_list = cl_nreverse(l_list);
     return l_list; }
 
+static void* ensurePersistentFunction(cl_object l_fun) {
+    STATIC_SYMBOL_PKG (s_ensure_persistent_function, "%ENSURE-PERSISTENT-FUNCTION", "EQL") // see "lisp/ini.lisp"
+    cl_object l_ret = cl_funcall(2, s_ensure_persistent_function, l_fun);
+    return (Cnil == l_ret) ? 0 : (void*)l_ret; }
+
+void FunctorOrLambda::operator()(const QVariant& var) {
+    cl_funcall(2, (cl_object)function, from_qvariant_value(var)); }
+
 static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
     void* p = 0;
     const int n = QMetaType::type(sType);
@@ -1318,6 +1327,7 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         else if(T_quint16 == n)                          p = new quint16(toUInt<quint16>(l_arg));
         else if(T_quint32 == n)                          p = new quint32(toUInt<quint32>(l_arg));
         else if(T_quint64 == n)                          p = new quint64(toUInt<quint64>(l_arg));
+        else if(T_FunctorOrLambda == n)                  p = new FunctorOrLambda(ensurePersistentFunction(l_arg));
         // module types
         else {
             bool found = false;
@@ -1534,7 +1544,6 @@ static void clearMetaArg(const MetaArg& arg, bool is_ret = false) {
     // enums
     else if(!sType.endsWith('>') && sType.contains(':')) {
         delete (int*)p; }
-    // default
     else {
         QMetaType::destroy(n, p); }}
 
@@ -2202,11 +2211,6 @@ ok3:
     ecl_process_env()->nvalues = 1;
     error_msg("QINVOKE-METHOD", LIST4(l_obj, l_cast, l_name, l_args));
     return Cnil; }
-
-static void* ensurePersistentFunction(cl_object l_fun) {
-    STATIC_SYMBOL_PKG (s_ensure_persistent_function, "%ENSURE-PERSISTENT-FUNCTION", "EQL") // see "lisp/ini.lisp"
-    cl_object l_ret = cl_funcall(2, s_ensure_persistent_function, l_fun);
-    return (Cnil == l_ret) ? 0 : (void*)l_ret; }
 
 cl_object qconnect2(cl_object l_caller, cl_object l_signal, cl_object l_receiver, cl_object l_slot) {
     /// args: (caller signal receiver/function &optional slot)

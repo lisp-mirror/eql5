@@ -54,7 +54,6 @@
         "DefaultAction"
         "EditFocus"
         "ExecutionEngine"
-        "Functor"
         "QIconEngine"
         "QPaintEngine"
         "QPrintEngine"
@@ -75,7 +74,7 @@
         "KeyValue"
         "NavigationMode"
         " Margins "
-        (format nil "Margins~Cmargins" #\Tab)
+        "Margins	margins"
         "MSG"
         "OffsetData"
         "PaperSources"
@@ -86,7 +85,7 @@
         "RSgImage"
         "SearchHit"
         "T "
-        (format nil "T~C" #\Tab)
+        "T	"
         "Q_PID"
         "Q_IPV6ADDR"        
         "QAbstractOpenGLFunctions"
@@ -127,9 +126,11 @@
         "QVector2D *"
         "QVector3D *"
         "QVector4D *"
+        "QWebChannel"
+        "QWebEngineContextMenuData"
         "QWebEngineHistory"
         "QWebHistory"
-        (format nil "QWebEngineScriptCollection &~C" #\Tab)
+        "QWebEngineScriptCollection &	"
         "QWebNetworkRequest"
         "QWSEvent"
         "QXmlStreamReader"
@@ -159,9 +160,9 @@
         "Renderer *"
         "TexturePoint2D *"
         ;; exclude what won't compile with Qt 5.5.1:
-        "QAudio::Role"                    ; 5.6
-        "textureFactoryForImage("         ; 5.6
-        (format nil "~CmoveMedia(" #\Tab) ; 5.7
+        "QAudio::Role"            ; 5.6
+        "textureFactoryForImage(" ; 5.6
+        "	moveMedia("       ; 5.7
         ))
 
 (defvar *check*         nil)
@@ -263,7 +264,9 @@
                             (when (search skip x:it)
                               (return t)))
                           (and (search "QHash<" x:it)
-                               (not (search "QHash<int, QByteArray>" x:it)))) ; needed in QAbstractItemModel
+                               (not (search "QHash<int, QByteArray>" x:it))) ; needed in QAbstractItemModel
+                          (and (search "Functor" x:it)
+                               (not (search "FunctorOrLambda" x:it))))       ; needed for QWebEngine
                 (when (search "QByteArray const" x:it)
                   (setf x:it (x:string-substitute "const QByteArray" "QByteArray const" x:it)))
                 (when (search "QHash<int, QByteArray>" x:it)

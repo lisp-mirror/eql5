@@ -5,7 +5,6 @@
    #:|clearAllVisitedLinks|
    #:|clearHttpCache|
    #:|clearVisitedLinks|
-   #:|contextMenuData|
    #:|cookieAdded|
    #:|cookieRemoved|
    #:|cookieStore|
@@ -31,6 +30,10 @@
    #:|loadAllCookies|
    #:|persistentCookiesPolicy|
    #:|persistentStoragePath|
+   #:|printToPdf(FunctorOrLambda)|
+   #:|printToPdf(FunctorOrLambda...)|
+   #:|printToPdf(QString)|
+   #:|printToPdf(QString...)|
    #:|printToPdf|
    #:|receivedBytes|
    #:|recentlyAudibleChanged|
@@ -42,6 +45,8 @@
    #:|requestMethod|
    #:|requestStarted|
    #:|requestUrl|
+   #:|runJavaScript(QString,FunctorOrLambda)|
+   #:|runJavaScript(QString,uint)|
    #:|runJavaScript|
    #:|runsOnSubFrames|
    #:|savePageFormat|
@@ -63,11 +68,9 @@
    #:|setSourceCode|
    #:|setSpellCheckEnabled|
    #:|setSpellCheckLanguages|
-   #:|setWebChannel|
    #:|setWorldId|
    #:|spellCheckLanguages|
    #:|storageName|
    #:|toggleOn|
    #:|visitedLinksContainsUrl|
-   #:|webChannel|
    #:|worldId|))

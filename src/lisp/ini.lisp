@@ -107,7 +107,10 @@
 (defmacro defvar-ui (main &rest names)
   "args: (main-widget &rest variables)
    This macro simplifies the definition of UI variables:
-       (defvar-ui *main* *label* *line-edit*...)
+       (defvar-ui *main*
+       &nbsp;&nbsp;*label*
+       &nbsp;&nbsp;*line-edit*
+       &nbsp;&nbsp;...)
        
        ;; the above will expand to:
        

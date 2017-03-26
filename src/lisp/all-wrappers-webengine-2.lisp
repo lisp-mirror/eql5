@@ -15,9 +15,6 @@
 (defun |clearVisitedLinks| (object &rest arguments)
   (%qinvoke-method object nil "clearVisitedLinks" arguments))
 
-(defun |contextMenuData| (object &rest arguments)
-  (%qinvoke-method object nil "contextMenuData" arguments))
-
 (defun |cookieAdded| (object &rest arguments)
   (%qinvoke-method object nil "cookieAdded" arguments))
 
@@ -93,6 +90,18 @@
 (defun |persistentStoragePath| (object &rest arguments)
   (%qinvoke-method object nil "persistentStoragePath" arguments))
 
+(defun |printToPdf(FunctorOrLambda)| (object &rest arguments)
+  (%qinvoke-method object nil "printToPdf(FunctorOrLambda)" arguments))
+
+(defun |printToPdf(FunctorOrLambda...)| (object &rest arguments)
+  (%qinvoke-method object nil "printToPdf(FunctorOrLambda...)" arguments))
+
+(defun |printToPdf(QString)| (object &rest arguments)
+  (%qinvoke-method object nil "printToPdf(QString)" arguments))
+
+(defun |printToPdf(QString...)| (object &rest arguments)
+  (%qinvoke-method object nil "printToPdf(QString...)" arguments))
+
 (defun |printToPdf| (object &rest arguments)
   (%qinvoke-method object nil "printToPdf" arguments))
 
@@ -125,6 +134,12 @@
 
 (defun |requestUrl| (object &rest arguments)
   (%qinvoke-method object nil "requestUrl" arguments))
+
+(defun |runJavaScript(QString,FunctorOrLambda)| (object &rest arguments)
+  (%qinvoke-method object nil "runJavaScript(QString,FunctorOrLambda)" arguments))
+
+(defun |runJavaScript(QString,uint)| (object &rest arguments)
+  (%qinvoke-method object nil "runJavaScript(QString,uint)" arguments))
 
 (defun |runJavaScript| (object &rest arguments)
   (%qinvoke-method object nil "runJavaScript" arguments))
@@ -189,9 +204,6 @@
 (defun |setSpellCheckLanguages| (object &rest arguments)
   (%qinvoke-method object nil "setSpellCheckLanguages" arguments))
 
-(defun |setWebChannel| (object &rest arguments)
-  (%qinvoke-method object nil "setWebChannel" arguments))
-
 (defun |setWorldId| (object &rest arguments)
   (%qinvoke-method object nil "setWorldId" arguments))
 
@@ -206,9 +218,6 @@
 
 (defun |visitedLinksContainsUrl| (object &rest arguments)
   (%qinvoke-method object nil "visitedLinksContainsUrl" arguments))
-
-(defun |webChannel| (object &rest arguments)
-  (%qinvoke-method object nil "webChannel" arguments))
 
 (defun |worldId| (object &rest arguments)
   (%qinvoke-method object nil "worldId" arguments))
