@@ -640,12 +640,16 @@ static QByteArray qtObjectName(cl_object l_obj, const QByteArray& type = QByteAr
             default: name = "QPolygonF QList"; }}
     else if(cl_vectorp(l_obj) == Ct) {
         name = "QVector"; }
-    // qt-object
-    // (this is carefully optimized, in a probably non-obvious way, because THE-QT-OBJECT is really slow)
-    if(type.isNull() || LObjects::q_names.contains(type) || LObjects::n_names.contains(type)) {
-        l_obj = cl_funcall(3, s_ensure_qt_object, l_obj, Ct); }
-    if(cl_funcall(2, s_qt_object_p, l_obj) == Ct) {
-        name = QtObject::idToClassName(toInt(cl_funcall(2, s_qt_object_id, l_obj))); }
+    else {
+        // qt-object
+        // (this is carefully optimized, in a probably non-obvious way, because THE-QT-OBJECT is really slow)
+        if(type.isNull() || LObjects::q_names.contains(type) || LObjects::n_names.contains(type)) {
+            l_obj = cl_funcall(3, s_ensure_qt_object, l_obj, Ct); }
+        if(cl_funcall(2, s_qt_object_p, l_obj) == Ct) {
+            name = QtObject::idToClassName(toInt(cl_funcall(2, s_qt_object_id, l_obj))); }
+        // special case
+        else if(cl_functionp(l_obj) || cl_symbolp(l_obj)) {
+            name = "FunctorOrLambda"; }}
     return name; }
 
 QtObject toQtObject(cl_object l_obj, cl_object l_cast, bool* qobject_align, bool quiet) {
