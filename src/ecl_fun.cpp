@@ -648,7 +648,7 @@ static QByteArray qtObjectName(cl_object l_obj, const QByteArray& type = QByteAr
         if(cl_funcall(2, s_qt_object_p, l_obj) == Ct) {
             name = QtObject::idToClassName(toInt(cl_funcall(2, s_qt_object_id, l_obj))); }
         // special case
-        else if(cl_functionp(l_obj) || cl_symbolp(l_obj)) {
+        else if((cl_functionp(l_obj) == Ct) || (cl_symbolp(l_obj) == Ct)) {
             name = "FunctorOrLambda"; }}
     return name; }
 
