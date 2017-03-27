@@ -290,11 +290,11 @@ cl_object qvariant_value        (cl_object);
 cl_object qversion              ();
 
 struct EQL_EXPORT QtObject {
-    QtObject() : pointer(0), unique(0), id(0) {}
-
     void* pointer;
     uint unique;
     int id;
+
+    QtObject() : pointer(0), unique(0), id(0) {}
 
     bool isQObject() const { return (id > 0); }
     bool isStatic() const { return !pointer; }
