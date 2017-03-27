@@ -7,11 +7,19 @@
 
 (defvar *view* (qnew "QWebEngineView"))
 
+;; N.B: The following functions are asynchronous (because WebEngine
+;; is all asynchronous).
+;; So, we won't have a return value, but need to pass a function.
+;; (See 'FunctorOrLambda' in both Qt Assistant and EQL sources.)
+
 (defun to-text ()
-  ;; N.B: This call is asynchronous (because WebEngine is all asynchronous).
-  ;; So, we won't have a return value, but need to pass a function.
-  ;; (See 'FunctorOrLambda' in both Qt Assistant and EQL sources.)
-  (|toPlainText| (|page| *view*) (lambda (text) (print text))))
+  (|toPlainText| (|page| *view*)
+                 (lambda (text) (print text))))
+
+(defun js (expression)
+  ;; example: (js "document.title")
+  (|runJavaScript| (|page| *view*) expression
+                   (lambda (result) (qmsg result))))
 
 (x:do-with *view*
   (|setUrl| (qnew "QUrl(QString)" "http://planet.lisp.org/"))
