@@ -16,7 +16,7 @@
 (defun countdown (seconds)
   (cond ((minusp seconds)
          ;; screenshot
-         (|save| (|grab| (|screen| (|desktop.QApplication|)))
+         (|save| (|grabWindow| (|primaryScreen.QGuiApplication|) 0)
                  "screenshot.png")
          (qquit))
         ((zerop seconds)
