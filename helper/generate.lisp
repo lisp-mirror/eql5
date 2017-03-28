@@ -770,6 +770,8 @@
                (and (not q)
                     (upper-case-p 1st)))
            (format nil "(~A)~A.toInt()" type x))
+          ((string= "QVariant" type)
+           x)
           (q
            (format nil "~A.value<~A~A>()" x type (if (ends-with ">" type) " " "")))
           (t
