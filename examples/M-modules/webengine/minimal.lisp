@@ -1,4 +1,4 @@
-;;; minimal WebEngine (requires Qt >= 5.6)
+;;; simple WebEngine example
 
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))
