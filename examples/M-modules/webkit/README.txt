@@ -1,3 +1,18 @@
+WebKit / WebEngine note
+=======================
+
+You should be able to use both modules, even in the same EQL instance,
+and even if you compile both modules with different Qt versions.
+
+Example:
+ - compile the :webkit module with Qt 5.5
+ - compile EQL with Qt 5.8, including the :webengine module
+
+Now you should be able to load both modules, and run the respective
+examples, all from within the same EQL executable (this worked for me).
+
+
+
 EQL WebKit examples
 ===================
 
