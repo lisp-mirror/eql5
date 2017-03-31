@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      h3 { color: white; background-color: steelblue; }
+      .lab1 { position: absolute; top: 4%;  width: 98%; }
+      .lab2 { position: absolute; top: 50%; width: 98%; }
+      .web1 { position: absolute; top: 11%; width: 98%; height: 40%; }
+      .web2 { position: absolute; top: 58%; width: 98%; height: 40%; }
+    </style>
+  </head>
+  <body style="font-family: sans-serif; font-size: 14px;">
+    <input id="url" type="text" size="75" onkeypress="keyPressed(event, this.value)">
+    <label>
+      <input type="checkbox" checked onclick="Lisp.setParams('parallel-browsing', this.checked)">
+      parallel browsing
+    </label>
+    <label>
+      <input type="checkbox" checked onclick="Lisp.setParams('parallel-scrolling', this.checked)">
+      parallel scrolling
+    </label>
+    <!-- WebKit -->
+    <h3 class="lab1">&nbsp;WebKit</h3><br>
+    <object type="application/x-web-kit" id="web-kit" class="web1">
+    </object>
+    <!-- WebEngine -->
+    <h3 class="lab2">&nbsp;WebEngine</h3><br>
+    <object type="application/x-web-engine" id="web-engine" class="web2">
+    </object>
+    <script> function keyPressed(event, text) { if(event.keyCode == 13) Lisp.setUrl(text); }  </script>
+  </body>
+</html>
