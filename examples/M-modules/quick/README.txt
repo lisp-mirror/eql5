@@ -20,4 +20,4 @@ a QML widget in any Qt application, combining both traditional Qt and QML.
 * "sokoban" shows how to dynamically create QML items from Lisp;
 
 * "table-view" shows how to use an ApplicationWindow as the root item, which
-    is like a QML version of a QMainWindow;
+  is like a QML version of a QMainWindow;

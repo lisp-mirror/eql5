@@ -1173,7 +1173,8 @@ static void* ensurePersistentFunction(cl_object l_fun) {
     return (Cnil == l_ret) ? 0 : (void*)l_ret; }
 
 void FunctorOrLambda::operator()(const QVariant& var) {
-    cl_funcall(2, (cl_object)function, from_qvariant_value(var)); }
+    if(function) {
+        cl_funcall(2, (cl_object)function, from_qvariant_value(var)); }}
 
 static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
     void* p = 0;

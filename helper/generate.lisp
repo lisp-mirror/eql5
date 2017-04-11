@@ -284,8 +284,8 @@
     (when (and return
                (search "QList" argc)
                (search "::" argc))
-      )
       ;; TODO
+      )
     argc))
 
 (defun arg-to-c-null-value (arg)
