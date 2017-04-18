@@ -9,7 +9,7 @@ GENERATION OF C++ GLUE CODE
      "Qt: void myFunction(QWebElement, QVariantList = 0)"
      ...)
 
-2) Run: eql qt.lisp (the first time just type :c for :continue on "break"/debugger)
+2) Run: eql5 qt.lisp (the first time just type :c for :continue on "break"/debugger)
 
 3) Build library in "lib/".
 
