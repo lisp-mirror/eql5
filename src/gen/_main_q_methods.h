@@ -4868,7 +4868,7 @@ public:
     Q_INVOKABLE QAbstractItemModel* Mmodel(QAbstractItemView* o) const { return o->model(); }
     Q_INVOKABLE void MopenPersistentEditor(QAbstractItemView* o, const QModelIndex& x1) { o->openPersistentEditor(x1); }
     Q_INVOKABLE QModelIndex MrootIndex(QAbstractItemView* o) const { return o->rootIndex(); }
-    Q_INVOKABLE void MscrollTo(QAbstractItemView* o, const QModelIndex& x1, QAbstractItemView::ScrollHint x2 = QAbstractItemView::EnsureVisible) { o->scrollTo(x1, x2); }
+    Q_INVOKABLE void MscrollTo(QAbstractItemView* o, const QModelIndex& x1, LAbstractItemView::ScrollHint x2 = LAbstractItemView::EnsureVisible) { o->scrollTo(x1, x2); }
     Q_INVOKABLE int MselectionBehavior(QAbstractItemView* o) const { return o->selectionBehavior(); }
     Q_INVOKABLE int MselectionMode(QAbstractItemView* o) const { return o->selectionMode(); }
     Q_INVOKABLE QItemSelectionModel* MselectionModel(QAbstractItemView* o) const { return o->selectionModel(); }
@@ -4876,12 +4876,12 @@ public:
     Q_INVOKABLE void MsetAutoScroll(QAbstractItemView* o, bool x1) { o->setAutoScroll(x1); }
     Q_INVOKABLE void MsetAutoScrollMargin(QAbstractItemView* o, int x1) { o->setAutoScrollMargin(x1); }
     Q_INVOKABLE void MsetDefaultDropAction(QAbstractItemView* o, Qt::DropAction x1) { o->setDefaultDropAction(x1); }
-    Q_INVOKABLE void MsetDragDropMode(QAbstractItemView* o, QAbstractItemView::DragDropMode x1) { o->setDragDropMode(x1); }
+    Q_INVOKABLE void MsetDragDropMode(QAbstractItemView* o, LAbstractItemView::DragDropMode x1) { o->setDragDropMode(x1); }
     Q_INVOKABLE void MsetDragDropOverwriteMode(QAbstractItemView* o, bool x1) { o->setDragDropOverwriteMode(x1); }
     Q_INVOKABLE void MsetDragEnabled(QAbstractItemView* o, bool x1) { o->setDragEnabled(x1); }
     Q_INVOKABLE void MsetDropIndicatorShown(QAbstractItemView* o, bool x1) { o->setDropIndicatorShown(x1); }
-    Q_INVOKABLE void MsetEditTriggers(QAbstractItemView* o, QAbstractItemView::EditTriggers x1) { o->setEditTriggers(x1); }
-    Q_INVOKABLE void MsetHorizontalScrollMode(QAbstractItemView* o, QAbstractItemView::ScrollMode x1) { o->setHorizontalScrollMode(x1); }
+    Q_INVOKABLE void MsetEditTriggers(QAbstractItemView* o, LAbstractItemView::EditTriggers x1) { o->setEditTriggers(x1); }
+    Q_INVOKABLE void MsetHorizontalScrollMode(QAbstractItemView* o, LAbstractItemView::ScrollMode x1) { o->setHorizontalScrollMode(x1); }
     Q_INVOKABLE void MsetIconSize(QAbstractItemView* o, const QSize& x1) { o->setIconSize(x1); }
     Q_INVOKABLE void MsetIndexWidget(QAbstractItemView* o, const QModelIndex& x1, QWidget* x2) { o->setIndexWidget(x1, x2); }
     Q_INVOKABLE void MsetItemDelegate(QAbstractItemView* o, QAbstractItemDelegate* x1) { o->setItemDelegate(x1); }
@@ -4893,7 +4893,7 @@ public:
     Q_INVOKABLE void MsetSelectionModel(QAbstractItemView* o, QItemSelectionModel* x1) { o->setSelectionModel(x1); }
     Q_INVOKABLE void MsetTabKeyNavigation(QAbstractItemView* o, bool x1) { o->setTabKeyNavigation(x1); }
     Q_INVOKABLE void MsetTextElideMode(QAbstractItemView* o, Qt::TextElideMode x1) { o->setTextElideMode(x1); }
-    Q_INVOKABLE void MsetVerticalScrollMode(QAbstractItemView* o, QAbstractItemView::ScrollMode x1) { o->setVerticalScrollMode(x1); }
+    Q_INVOKABLE void MsetVerticalScrollMode(QAbstractItemView* o, LAbstractItemView::ScrollMode x1) { o->setVerticalScrollMode(x1); }
     Q_INVOKABLE bool MshowDropIndicator(QAbstractItemView* o) const { return o->showDropIndicator(); }
     Q_INVOKABLE int MsizeHintForColumn(QAbstractItemView* o, int x1) const { return o->sizeHintForColumn(x1); }
     Q_INVOKABLE QSize MsizeHintForIndex(QAbstractItemView* o, const QModelIndex& x1) const { return o->sizeHintForIndex(x1); }
@@ -4908,7 +4908,7 @@ public:
     Q_INVOKABLE void MscheduleDelayedItemsLayout(QAbstractItemView* o) { ((LAbstractItemView*)o)->scheduleDelayedItemsLayout(); }
     Q_INVOKABLE void MscrollDirtyRegion(QAbstractItemView* o, int x1, int x2) { ((LAbstractItemView*)o)->scrollDirtyRegion(x1, x2); }
     Q_INVOKABLE void MsetDirtyRegion(QAbstractItemView* o, const QRegion& x1) { ((LAbstractItemView*)o)->setDirtyRegion(x1); }
-    Q_INVOKABLE void MsetState(QAbstractItemView* o, QAbstractItemView::State x1) { ((LAbstractItemView*)o)->setState(x1); }
+    Q_INVOKABLE void MsetState(QAbstractItemView* o, LAbstractItemView::State x1) { ((LAbstractItemView*)o)->setState(x1); }
     Q_INVOKABLE int Mstate(QAbstractItemView* o) const { return ((LAbstractItemView*)o)->state(); }
     Q_INVOKABLE QVariant MinputMethodQuery(QAbstractItemView* o, Qt::InputMethodQuery x1) const { return o->inputMethodQuery(x1); }
 };

@@ -37,3 +37,7 @@ SOURCES += gen/_lobjects.cpp \
 gcc {
     QMAKE_CXXFLAGS_WARN_ON += -Wno-clobbered
 }
+
+clang {
+    QMAKE_CXXFLAGS += -std=c++11
+}
