@@ -319,9 +319,12 @@
       ""))
 
 (defun add-namespace (name class)
-  (let ((class* (if (equal "QAbstractItemView" class) ; "protected enum" problem (clang only)
-                    (x:cc "L" (subseq class 1))
-                    class)))
+  (let ((class* (when class
+                  ;; "protected enum" problem (clang only)
+                  (if (and (string= "QAbstractItemView" class)
+                           (string= "State" name))
+                      (x:cc "L" (subseq class 1))
+                      class))))
     (if (string= "FunctorOrLambda" name)
         "FunctorOrLambda"
         (unless (empty-string name)
@@ -340,7 +343,7 @@
                     (if templ
                         (format nil "~A~A::~A"
                                 (subseq name 0 templ)
-                                class*
+                                class
                                 (subseq name templ))
                         (if-it (and (not (search "()" name))
                                     (position #\( name))
