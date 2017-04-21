@@ -222,7 +222,7 @@
   (caaar x))
 
 (defun l2q-name (name)
-  (concatenate 'string "Q" (subseq name 1)))
+  (x:cc "Q" (subseq name 1)))
 
 (defun sub-class-name (x)
   (let ((sub (copy-seq (class-name* x))))
@@ -268,19 +268,18 @@
                                            (not (find #\< type)))))
                     (unless (and enum-as-int
                                  (find* type +special-typedefs-and-classes+))
-                      (concatenate 'string
-                                   (if (and (const-p arg)
-                                            (or (not return)
-                                                (not (string= "int" (first arg)))))
-                                       "const "
-                                       "")
-                                   (if enum-as-int "int" type)
-                                   (cond ((and (not return)
-                                               (reference-p arg))
-                                          "&")
-                                         ((pointer-p arg)
-                                          "*")
-                                         (t ""))))))))
+                      (x:cc (if (and (const-p arg)
+                                     (or (not return)
+                                     (not (string= "int" (first arg)))))
+                                "const "
+                                "")
+                            (if enum-as-int "int" type)
+                            (cond ((and (not return)
+                                        (reference-p arg))
+                                   "&")
+                                  ((pointer-p arg)
+                                   "*")
+                                  (t ""))))))))
     (when (and return
                (search "QList" argc)
                (search "::" argc))
@@ -304,14 +303,13 @@
            (error (format nil "No C null value defined for ~S" arg))))))
 
 (defun arg-to-simple-c (arg)
-  (concatenate 'string
-               (if (and (const-p arg)
-                        (pointer-p arg)
-                        (string= "char" (first arg)))
-                   "const "
-                   "")
-               (first arg)
-               (if (pointer-p arg) "*" "")))
+  (x:cc (if (and (const-p arg)
+                 (pointer-p arg)
+                 (string= "char" (first arg)))
+            "const "
+            "")
+        (first arg)
+        (if (pointer-p arg) "*" "")))
 
 (defun default-to-c (arg &optional enum-class)
   (if-it (default-value arg)

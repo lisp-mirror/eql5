@@ -22,7 +22,7 @@
       (write-sequence (x:string-to-bytes (qlocal8bit (|toPlainText| *web-frame*)))
                       s))
     (let ((file-name (file-namestring (probe-file *file*))))
-      (rename-file file-name (concatenate 'string "html/" file-name)))))
+      (rename-file file-name (x:cc "html/" file-name)))))
 
 (defun html-loaded (ok)
   (if ok
