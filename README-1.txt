@@ -56,10 +56,18 @@ REQUIREMENTS
 PREPARE
 =======
 
-You can have both old EQL and EQL5 installed in parallel (exe and lib names differ).
+Install the ECL sources, and build it from the sources (ECL needs to be built with the
+same compiler you'll use to compile EQL5).
 
-If you have both Qt4 and Qt5 installed, you can use the following environment variable
-to switch between the both (Unix):
+Just use the standard configuration of ECL (both threads & unicode enabled).
+
+Qt4/Qt5 note:
+
+  You can have both old EQL (Qt4) and EQL5 (Qt5) installed in parallel (exe and lib
+  names differ).
+
+  If you have both Qt4 and Qt5 installed, you can use the following environment variable
+  to switch between the both (Unix):
 
     export QT_SELECT=5
 
