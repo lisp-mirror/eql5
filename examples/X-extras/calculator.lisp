@@ -131,7 +131,7 @@
     (or policy (setf policy (qnew "QSizePolicy(...)" |QSizePolicy.Expanding| |QSizePolicy.Expanding|)))))
 
 (defun run ()
-  (flet ((b ()
+  (flet ((btn ()
            (qnew "QToolButton"
                  "minimumSize" '(35 25)
                  "sizePolicy" (size-policy-expanding))))
@@ -140,10 +140,10 @@
                        (qnew "QGridLayout(QWidget*)" *main*)
                        (qt-object-? layout*)))
            (digits (make-array 10))
-           (plus (b)) (minus (b)) (multiply (b)) (divide (b)) (reci (b)) (sign (b))
-           (point (b)) (clear (b)) (back (b)) (words (b)) (equal (b)))
+           (plus (btn)) (minus (btn)) (multiply (btn)) (divide (btn)) (reci (btn)) (sign (btn))
+           (point (btn)) (clear (btn)) (back (btn)) (words (btn)) (equal (btn)))
       (dotimes (n 10)
-        (setf (svref digits n) (b)))
+        (setf (svref digits n) (btn)))
       (x:do-with (|addWidget| layout)
         (reci     2 0)
         (divide   2 1)
