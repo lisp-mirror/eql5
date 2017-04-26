@@ -122,9 +122,9 @@ BUILD
 
   [OSX]
     You need to create links to EQL, something like (note the "5"):
-        cd /usr/lib
+        cd /usr/local/lib
         sudo ln -s ~/eql5/libeql5.1.dylib libeql5.1.dylib
-        cd /usr/bin
+        cd /usr/local/bin
         sudo ln -s ~/eql5/eql5.app/Contents/MacOS/eql5 eql5
         
   [Windows]
