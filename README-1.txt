@@ -26,7 +26,8 @@ TESTED WITH
     ECL git 2016-11 / 64 bit (see flag in Makefile)
     Qt 5.7 / 64 bit (precompiled from qt.io archives; WebKit is not included)
 
-  (currently not tested on OSX, but should work, since clang is supported)
+  OSX:
+    not tested personally, but has been reported to work (with clang)
 
   ---
 
