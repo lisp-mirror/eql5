@@ -1,11 +1,12 @@
-QT          += sql printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_sql
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/sql/
-MOC_DIR     = ./tmp/sql/
+QT           += sql printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_sql
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/sql/
+MOC_DIR      = ./tmp/sql/
 
 win32 {
     include(windows.pri)

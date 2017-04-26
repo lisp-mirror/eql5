@@ -1,11 +1,12 @@
-QT          += webenginewidgets printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_webengine
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/webengine/
-MOC_DIR     = ./tmp/webengine/
+QT           += webenginewidgets printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_webengine
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/webengine/
+MOC_DIR      = ./tmp/webengine/
 
 macx:QT     += network
 

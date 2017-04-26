@@ -1,11 +1,12 @@
-QT          += help printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_help
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/help/
-MOC_DIR     = ./tmp/help/
+QT           += help printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_help
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/help/
+MOC_DIR      = ./tmp/help/
 
 win32 {
     include(windows.pri)

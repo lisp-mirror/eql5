@@ -1,11 +1,12 @@
-QT          += quick quickwidgets qml printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_quick
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/quick/
-MOC_DIR     = ./tmp/quick/
+QT           += quick quickwidgets qml printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_quick
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/quick/
+MOC_DIR      = ./tmp/quick/
 
 win32 {
     include(windows.pri)

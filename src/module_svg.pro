@@ -1,11 +1,12 @@
-QT          += svg printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_svg
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/svg/
-MOC_DIR     = ./tmp/svg/
+QT           += svg printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_svg
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/svg/
+MOC_DIR      = ./tmp/svg/
 
 win32 {
     include(windows.pri)

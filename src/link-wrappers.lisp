@@ -18,3 +18,6 @@
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
+
+#+darwin
+(rename-file "libini.a" "libini.dylib")

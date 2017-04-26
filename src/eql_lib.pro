@@ -2,7 +2,8 @@ QT          += widgets printsupport uitools
 TEMPLATE    = lib
 CONFIG      += dll no_keywords release
 DEFINES     += EQL_LIBRARY
-LIBS        += -lecl -L. -lini
+INCLUDEPATH += /usr/local/include
+LIBS        += -lecl -lini -L. -L/usr/local/lib
 TARGET      = eql5
 DESTDIR     = ../
 OBJECTS_DIR = ./tmp/
@@ -35,7 +36,7 @@ SOURCES += gen/_lobjects.cpp \
            eql.cpp
 
 gcc {
-    QMAKE_CXXFLAGS_WARN_ON += -Wno-clobbered
+    QMAKE_CXXFLAGS_WARN_ON += -Wno-clobbered -Wno-unknown-warning-option
 }
 
 clang {

@@ -1,8 +1,8 @@
 QT          += widgets printsupport uitools
 TEMPLATE     = app
 CONFIG       += no_keywords release
-INCLUDEPATH  += ../src
-LIBS         = -lecl -L.. -leql5
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
 TARGET       = eql5
 DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/

@@ -1,11 +1,12 @@
-QT          += webkitwidgets printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-LIBS        += -L.. -lecl -leql5
-TARGET      = eql5_webkit
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/webkit/
-MOC_DIR     = ./tmp/webkit/
+QT           += webkitwidgets printsupport uitools
+TEMPLATE     = lib
+CONFIG       += dll no_keywords release
+INCLUDEPATH  += ../src /usr/local/include
+LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
+TARGET       = eql5_webkit
+DESTDIR      = ../
+OBJECTS_DIR  = ./tmp/webkit/
+MOC_DIR      = ./tmp/webkit/
 
 macx:QT     += network
 

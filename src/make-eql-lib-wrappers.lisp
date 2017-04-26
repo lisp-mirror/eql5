@@ -25,5 +25,8 @@
                                             *lisp-files*)
                         :init-name "ini_EQL")
 
+#+darwin
+(rename-file "libini.a" "libini.dylib")
+
 (eql:qq)
 
