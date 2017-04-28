@@ -189,17 +189,21 @@ In order to run (sort of) a top-level processing Qt events, do:
 QT MODULES (help, multimedia, network, quick, sql, svg, webengine, webkit)
 ==========
 
-To build an EQL module (corresponding to a Qt module), do the following in src/:
+N.B. skip this if you already built from 'eql5.pro' (see above)
+
+  To build an EQL module (corresponding to a Qt module), do the following in
+  src/:
 
     qmake module_<name>.pro (e.g. qmake module_network.pro)
     make
     sudo make install       (unix only)
 
-  [Linux,OSX]
-    (N.B. skip this if you did "sudo make install")
-    You need to create links to the modules, see EQL library above.
+    [Linux,OSX]
+      (N.B. skip this if you did "sudo make install")
+      You need to create links to the modules, see EQL library above.
 
 In Lisp, use function QREQUIRE to load a module:
+
     (qrequire :network)
 
 
