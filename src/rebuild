@@ -2,40 +2,13 @@ rm -fr tmp
 rm *.a
 rm lisp/*.o
 
-ecl -shell make-eql-lib.lisp &&
-qmake eql_lib.pro &&
+ecl -shell make.lisp &&
+qmake eql5.pro &&
 make &&
 sudo make install &&
-qmake eql_exe.pro &&
-make &&
-sudo make install &&
-eql5 make-eql-lib-wrappers.lisp &&
+eql5 make-wrappers.lisp &&
 touch tmp/eql.o &&
 qmake eql_lib.pro &&
-make &&
-sudo make install &&
-qmake module_help.pro &&
-make &&
-sudo make install &&
-qmake module_multimedia.pro &&
-make &&
-sudo make install &&
-qmake module_network.pro &&
-make &&
-sudo make install &&
-qmake module_quick.pro &&
-make &&
-sudo make install &&
-qmake module_sql.pro &&
-make &&
-sudo make install &&
-qmake module_svg.pro &&
-make &&
-sudo make install &&
-# qmake module_webkit.pro &&
-# make
-# sudo make install &&
-qmake module_webengine.pro &&
 make &&
 sudo make install
 

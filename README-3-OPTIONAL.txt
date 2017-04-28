@@ -17,13 +17,14 @@ Notes
 
 If you want to add the wrappers permanently, build EQL as usual, then run
 
-  eql5 make-eql-lib-wrappers.lisp ; (will take a little looong)
+  eql5 make-wrappers.lisp
 
 Re-link EQL doing something like:
 
   touch tmp/eql.o*   (or delete "tmp/eql.o*")
   qmake eql_lib.pro
   make
+  sudo make install  (Unix only)
 
 (The resulting shared library will be considerably bigger than before).
 

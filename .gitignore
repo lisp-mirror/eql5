@@ -25,6 +25,7 @@ t.lisp
 tr.h
 moc_*.cpp
 Makefile
+Makefile.*
 eql
 eql5
 eql.app

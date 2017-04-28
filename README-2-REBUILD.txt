@@ -5,25 +5,21 @@ REBUILD STEPS (on every upgrade of: ECL, Qt, EQL)
 
 1) remove directory tmp/
 
-2) ecl -shell make-eql-lib.lisp
+2) ecl -shell make.lisp
 
-3) qmake, make, sudo make install (Unix only) in this order: (MSVC: nmake)
-
-    eql_lib.pro
-    eql_exe.pro
-
-    module_network.pro
-    module_...
+3) qmake eql5.pro
+   make              (MSVC: nmake)
+   sudo make install (Unix only)
 
 Optionally (integrate wrapper functions):
 
-4) eql5 make-eql-lib-wrappers.lisp
+4) eql5 make-wrappers.lisp
 
 5) re-link EQL library:
 
     touch tmp/eql.o    (or delete "tmp/eql.o*")
     qmake eql_lib.pro
-    make
+    make               (MSVC: nmake)
     sudo make install  (Unix only)
 
 

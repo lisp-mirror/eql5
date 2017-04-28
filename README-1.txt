@@ -81,7 +81,7 @@ hard-coded in the executable).
 BUILD
 =====
 
-(N.B. for rebuilding, please see README-REBUILD.txt)
+(N.B. for rebuilding, please see README-2-REBUILD.txt)
 
   [Windows]
     You first need to adapt the file 'src/windows.pri' (include & library
@@ -103,21 +103,18 @@ BUILD
     flag:
         qmake -spec macx-g++
 
-1) In src/ run:
+1) Change to src/ and run:
 
-    ecl -shell make-eql-lib.lisp
+    ecl -shell make.lisp
 
-2) Do:
+2) Edit 'eql5.pro' and comment out all modules you don't need (see comment).
+   Then run:
 
-    qmake eql_lib.pro
+    qmake eql5.pro
     make
-    sudo make install  (unix only)
+    sudo make install  (Unix only)
 
-    qmake eql_exe.pro
-    make
-    sudo make install  (unix only)
-
-   This will build both the EQL executable and shared library.
+   This will build the executable, the shared library and the modules.
 
    If you ran "make install", you'll find the installed files here:
 
@@ -128,7 +125,7 @@ BUILD
 3) cd ..
 
   [Linux]
-    N.B: skip this if you did "sudo make install"
+    N.B. skip this if you did "sudo make install"
 
     You need to create links to EQL, something like (note the "5"):
         cd /usr/lib
@@ -137,7 +134,7 @@ BUILD
         sudo ln -s ~/eql5/eql5 eql5
 
   [OSX]
-    N.B: skip this if you did "sudo make install"
+    N.B. skip this if you did "sudo make install"
 
     You need to create links to EQL, something like (note the "5"):
         cd /usr/local/lib
@@ -199,7 +196,7 @@ To build an EQL module (corresponding to a Qt module), do the following in src/:
     sudo make install       (unix only)
 
   [Linux,OSX]
-    (N.B: skip this if you did "sudo make install")
+    (N.B. skip this if you did "sudo make install")
     You need to create links to the modules, see EQL library above.
 
 In Lisp, use function QREQUIRE to load a module:

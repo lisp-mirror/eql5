@@ -23,3 +23,17 @@
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
+
+;; for eql5.pro (doesn't create directories)
+
+(dolist (dirs '("."
+                "tmp/help"
+                "tmp/multimedia"
+                "tmp/network"
+                "tmp/quick"
+                "tmp/sql"
+                "tmp/svg"
+                "tmp/webengine"
+                "tmp/webkit"))
+  (ensure-directories-exist (format nil "~A/tmp/" dirs)))
+
