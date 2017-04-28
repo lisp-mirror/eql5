@@ -1,5 +1,5 @@
 #include "lib.h"
-#include "../../src/eql_fun.h" // for eql_fun()
+#include <eql5/eql_fun.h> // for eql_fun()
 
 QT_BEGIN_NAMESPACE
 

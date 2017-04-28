@@ -9,11 +9,8 @@
                                  "enums1" "enums2" "enums3" "enums4" "enums5"
                                  "special-extensions"))
 
-(c:build-static-library "ini"
+(c:build-static-library "ini_eql5"
                         :lisp-files (mapcar (lambda (file)
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
-
-#+darwin
-(rename-file "libini.a" "libini.dylib")

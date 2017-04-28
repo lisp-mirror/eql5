@@ -1,13 +1,18 @@
-QT          += widgets printsupport uitools
-TEMPLATE    = lib
-CONFIG      += dll no_keywords release
-DEFINES     += EQL_LIBRARY
-INCLUDEPATH += /usr/local/include
-LIBS        += -lecl -lini -L. -L/usr/local/lib
-TARGET      = eql5
-DESTDIR     = ../
-OBJECTS_DIR = ./tmp/
-MOC_DIR     = ./tmp/
+QT            += widgets printsupport uitools
+TEMPLATE      = lib
+CONFIG        += dll no_keywords release
+DEFINES       += EQL_LIBRARY
+INCLUDEPATH   += /usr/local/include
+LIBS          += -lecl -L. -lini_eql5
+TARGET        = eql5
+DESTDIR       = ../
+OBJECTS_DIR   = ./tmp/
+MOC_DIR       = ./tmp/
+
+include.files = eql5/*
+include.path  = /usr/local/include/eql5
+target.path   = /usr/local/lib
+INSTALLS      = include target
 
 win32 {
     include(windows.pri)
@@ -18,15 +23,15 @@ HEADERS += gen/_lobjects.h \
            gen/_main_n_classes.h \
            gen/_main_q_methods.h \
            gen/_main_n_methods.h \
-           eql_fun.h \
+           eql5/eql.h \
+           eql5/eql_fun.h \
+           eql5/eql_global.h \
+           eql5/dyn_object.h \
            qt_eql.h \
-           dyn_object.h \
            ui_loader.h \
            single_shot.h \
-           eql_global.h \
            ecl_fun.h \
-           extras.h \
-           eql.h
+           extras.h
 
 SOURCES += gen/_lobjects.cpp \
            qt_eql.cpp \

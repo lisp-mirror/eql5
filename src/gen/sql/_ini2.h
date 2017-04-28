@@ -3,7 +3,7 @@
 
 #include "_ini.h"
 #include "../_lobjects.h"
-#include "../../eql.h"
+#include <eql5/eql.h>
 #include <QtGui>
 
 QT_BEGIN_NAMESPACE

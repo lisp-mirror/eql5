@@ -14,7 +14,7 @@ Item {
         //   use JS arrays for lists (can be nested);
         //
         // * the only limit to Lisp.call() is the number of arguments (max. 16);
-        //   this is just an implementation detail; feel free to extend it (see "../lib/");
+        //   this is just an implementation detail; feel free to extend it (see sources);
         //
         // * return values can be nested Lisp lists or vectors, which will be converted to
         //   nested JS arrays: they will be prepared in Lisp and passed to JS eval;

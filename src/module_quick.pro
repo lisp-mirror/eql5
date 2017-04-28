@@ -8,6 +8,9 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/quick/
 MOC_DIR      = ./tmp/quick/
 
+target.path  = /usr/local/lib
+INSTALLS     = target
+
 win32 {
     include(windows.pri)
 }
@@ -17,6 +20,8 @@ HEADERS += gen/quick/_ini.h \
            gen/quick/_q_classes.h \
            gen/quick/_n_classes.h \
            gen/quick/_q_methods.h \
-           gen/quick/_n_methods.h
+           gen/quick/_n_methods.h \
+           gen/quick/qml_lisp.h
 
-SOURCES += gen/quick/_ini.cpp
+SOURCES += gen/quick/_ini.cpp \
+           gen/quick/qml_lisp.cpp

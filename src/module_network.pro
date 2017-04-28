@@ -8,6 +8,9 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/network/
 MOC_DIR      = ./tmp/network/
 
+target.path  = /usr/local/lib
+INSTALLS     = target
+
 win32 {
     include(windows.pri)
 }

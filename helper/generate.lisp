@@ -648,7 +648,7 @@
                 (if gui "" (format nil "~%#include \"../_main_~(~A~)_methods.h\"" type))
                 (if gui 
                     (format nil "~%#include \"../extras.h\"~
-                                 ~%#include \"../eql_global.h\"")
+                                 ~%#include \"../eql5/eql_global.h\"")
                     (format nil "~%~A" (module-include module))))))
     (let* ((n 0)
            (methods (if (eql :q type) *q-methods* *n-methods*))
@@ -796,8 +796,8 @@
                ~%#include \"_main_n_classes.h\"~
                ~%#include \"_main_q_methods.h\"~
                ~%#include \"_main_n_methods.h\"~
-               ~%#include \"../dyn_object.h\"~
-               ~%#include \"../eql.h\"~
+               ~%#include \"../eql5/dyn_object.h\"~
+               ~%#include \"../eql5/eql.h\"~
                ~%~
                ~%int LObjects::T_QAudioDeviceInfo = -1;~
                ~%int LObjects::T_QList_QAudioDeviceInfo = -1;~

@@ -1,7 +1,8 @@
 #undef SLOT
 
 #include <ecl/ecl.h>
-#include "eql.h"
+#include <eql5/eql.h>
+#include <eql5/eql_fun.h>
 #include "main.h"
 
 extern "C" void ini_app(cl_object);

@@ -2,8 +2,9 @@
 #define INI2_H
 
 #include "_ini.h"
+#include "qml_lisp.h"
 #include "../_lobjects.h"
-#include "../../eql.h"
+#include <eql5/eql.h>
 #include <QtGui>
 
 QT_BEGIN_NAMESPACE
@@ -25,7 +26,8 @@ void ini2() {
     META_TYPE_(LObjects::T_QQmlProperty, QQmlProperty)
     META_TYPE_(LObjects::T_QQmlScriptString, QQmlScriptString)
     META_TYPE_(LObjects::T_QList_QQmlError, QList<QQmlError>)
-    META_TYPE_(LObjects::T_QList_QQuickItem, QList<QQuickItem*>) }
+    META_TYPE_(LObjects::T_QList_QQuickItem, QList<QQuickItem*>)
+    iniQml(); }
 
 void* toMetaArg(int n, cl_object l_arg, bool* found) {
     void* p = 0;

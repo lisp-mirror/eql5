@@ -1,19 +1,18 @@
-#ifndef LIB_H
-#define LIB_H
+#ifndef QML_LISP_H
+#define QML_LISP_H
 
+#include "../../ecl_fun.h"
+#include "../../qt_eql.h"
 #include <QtQml>
 #include <QQuickPaintedItem>
-#include <eql_fun.h>
-
-#ifdef Q_CC_MSVC
-#define LIB_EXPORT __declspec(dllexport)
-#else
-#define LIB_EXPORT
-#endif
 
 QT_BEGIN_NAMESPACE
 
-extern "C" { LIB_EXPORT QObject* ini(); }
+#define Q_PTR(type, var) (eql_check_type(var.value<eql_pointer>().id, #type) \
+                         ? (type)var.value<eql_pointer>().pointer \
+                         : 0)
+
+QObject* iniQml();
 
 class Lisp : public QObject {
     Q_OBJECT

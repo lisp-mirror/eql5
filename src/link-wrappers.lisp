@@ -13,11 +13,8 @@
                                        "special-extensions")
                                      *all-wrappers*))
 
-(c:build-static-library "ini"
+(c:build-static-library "ini_eql5"
                         :lisp-files (mapcar (lambda (file)
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
-
-#+darwin
-(rename-file "libini.a" "libini.dylib")

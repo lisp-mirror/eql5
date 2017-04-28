@@ -8,6 +8,9 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/multimedia/
 MOC_DIR      = ./tmp/multimedia/
 
+target.path  = /usr/local/lib
+INSTALLS     = target
+
 win32 {
     include(windows.pri)
 }

@@ -47,8 +47,8 @@ REQUIREMENTS
   QtWebKit note:
     If you want QtWebKit included in the official downloads from qt.io archives,
     you need to choose Qt 5.5, and not later versions!
-    QtWebKit will continue to work with versions > 5.5, but it has to be compiled
-    manually (which is not fun).
+    QtWebKit will continue to work with versions > 5.5, but it has to be
+    compiled manually (which is not fun).
     QtWebKit has a better, more native integration with Qt than QtWebEngine, see
     for example QWebElement, which doesn't exist in QtWebEngine.
 
@@ -57,20 +57,24 @@ REQUIREMENTS
 PREPARE
 =======
 
-Install the ECL sources, and build it from the sources (ECL needs to be built with the
-same compiler you'll use to compile EQL5).
+Install the ECL sources, and build it from the sources (ECL needs to be built
+with the same compiler you'll use to compile EQL5).
 
 Just use the standard configuration of ECL (both threads & unicode enabled).
 
 Qt4/Qt5 note:
 
-  You can have both old EQL (Qt4) and EQL5 (Qt5) installed in parallel (exe and lib
-  names differ).
+  You can have both old EQL (Qt4) and EQL5 (Qt5) installed in parallel (exe and
+  lib names differ).
 
-  If you have both Qt4 and Qt5 installed, you can use the following environment variable
-  to switch between the both (Unix):
+  If you have both Qt4 and Qt5 installed, you can use the following environment
+  variable to switch between the both (Unix):
 
     export QT_SELECT=5
+
+Please note that you need to build EQL5 in a path where you will keep it (you
+can't move around the whole file tree later, since the build path needs to be
+hard-coded in the executable).
 
 
 
@@ -80,7 +84,8 @@ BUILD
 (N.B. for rebuilding, please see README-REBUILD.txt)
 
   [Windows]
-    You first need to adapt the file 'src/windows.pri' (include & library paths).
+    You first need to adapt the file 'src/windows.pri' (include & library
+    paths).
     Since EQL requires the C compiler anyway (not the bytecode compiler), you
     should put this line in your '~/.eclrc':
         (require :cmp)
@@ -89,12 +94,13 @@ BUILD
     Substitute make with nmake.
 
   [MinGW]
-    If 'make' is stuck in an infinite loop of creating the 'Makefile', just remove
-    the line 'include(windows.pri)' from your '*.pro' file, setting eventually
-    needed paths in your '~/.profile' instead.
+    If 'make' is stuck in an infinite loop of creating the 'Makefile', just
+    remove the line 'include(windows.pri)' from your '*.pro' file, setting
+    eventually needed paths in your '~/.profile' instead.
 
   [OSX]
-    To force creation of a Makefile (instead of an Xcode project), use this flag:
+    To force creation of a Makefile (instead of an Xcode project), use this
+    flag:
         qmake -spec macx-g++
 
 1) In src/ run:
@@ -105,15 +111,25 @@ BUILD
 
     qmake eql_lib.pro
     make
+    sudo make install  (unix only)
 
     qmake eql_exe.pro
     make
+    sudo make install  (unix only)
 
    This will build both the EQL executable and shared library.
+
+   If you ran "make install", you'll find the installed files here:
+
+       /usr/local/bin/
+       /usr/local/lib/
+       /usr/local/include/eql5/
 
 3) cd ..
 
   [Linux]
+    N.B: skip this if you did "sudo make install"
+
     You need to create links to EQL, something like (note the "5"):
         cd /usr/lib
         sudo ln -s ~/eql5/libeql5.so.1 libeql5.so.1
@@ -121,12 +137,14 @@ BUILD
         sudo ln -s ~/eql5/eql5 eql5
 
   [OSX]
+    N.B: skip this if you did "sudo make install"
+
     You need to create links to EQL, something like (note the "5"):
         cd /usr/local/lib
         sudo ln -s ~/eql5/libeql5.1.dylib libeql5.1.dylib
         cd /usr/local/bin
         sudo ln -s ~/eql5/eql5.app/Contents/MacOS/eql5 eql5
-        
+
   [Windows]
     Add your EQL directory to the Path environment variable, see:
     <Control Panel:System:Advanced:Environment Variables>
@@ -135,11 +153,6 @@ BUILD
 
 RUN
 ===
-
-PLEASE NOTE:
-You will often need to "reset" (command) your console/shell after EQL finished
-working, especially during development time or other exits than "(eql:qquit)".
-
 
 You can run a simple interactive REPL UI doing:
     eql5 -qgui
@@ -150,8 +163,8 @@ To run a Lisp file without top-level, do:
 (If you don't see the application window, it might be in the background.
 Use your taskbar to show it.)
 
-If you start the EQL executable without arguments, it will start the usual ECL top-level
-(without processing Qt events).
+If you start the EQL executable without arguments, it will start the usual ECL
+top-level (without processing Qt events).
 
 To _not_ load ~/.eclrc on startup, do:
     eql5 -norc
@@ -160,12 +173,19 @@ To quit the tool, do:
     (eql:qquit) or
     (eql:qq)
 
-In order to run (sort of) a top-level processing Qt events, do (requires ECL threads):
+In order to run (sort of) a top-level processing Qt events, do:
     eql5 -qtpl
 
     Note: If you want to use "ecl-readline" together with "-qtpl", just compile
-          "eql5/src/lisp/ecl-readline.lisp" (which depends on the "readline" C library).
-          It will then be loaded automatically on startup.
+          "lib/ecl-readline.lisp" (which depends on the "readline" C library).
+          It will then be loaded automatically on startup:
+
+              cd ~/eql5/lib
+              ecl -compile ecl-readline.lisp
+
+          N.B: Using readline, you will often need to "reset" (command) your
+               console/shell after EQL finished working, especially during
+               development time or other exits than "(eql:qquit)".
 
 
 
@@ -176,8 +196,10 @@ To build an EQL module (corresponding to a Qt module), do the following in src/:
 
     qmake module_<name>.pro (e.g. qmake module_network.pro)
     make
+    sudo make install       (unix only)
 
   [Linux,OSX]
+    (N.B: skip this if you did "sudo make install")
     You need to create links to the modules, see EQL library above.
 
 In Lisp, use function QREQUIRE to load a module:
@@ -194,9 +216,10 @@ You might want to put this in your ~/.eclrc file:
     (setf eql:*qtpl*            t  ; same as -qtpl
           eql:*break-on-errors* t)
 
-It is HIGHLY RECOMMENDED to integrate the wrapper functions, see README-3-OPTIONAL.
-This will make all Qt functions real Lisp functions, which also means symbol tab-
-completion, both in Emacs/Slime and with ecl-readline.
+It is HIGHLY RECOMMENDED to integrate the wrapper functions, see
+README-3-OPTIONAL.
+This will make all Qt functions real Lisp functions, which also means symbol
+tab-completion, both in Emacs/Slime and with ecl-readline.
 
 
 

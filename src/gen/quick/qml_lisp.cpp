@@ -6,7 +6,7 @@ static Lisp* lisp = 0;
 
 static QObject* lisp_provider(QQmlEngine*, QJSEngine*) { return lisp; }
 
-QObject* ini() {
+QObject* iniQml() {
     if(!lisp) {
         lisp = new Lisp;
         qmlRegisterSingletonType<Lisp>("EQL5", 1, 0, "Lisp", lisp_provider);

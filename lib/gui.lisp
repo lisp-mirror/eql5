@@ -16,7 +16,7 @@
 
 (in-package :gui)
 
-(defconstant +history-file+ (in-home "gui/.command-history"))
+(defconstant +history-file+ (in-home "lib/.command-history"))
 (defconstant +max-history+  50)
 
 (defparameter *   nil)
@@ -24,7 +24,7 @@
 (defparameter *** nil)
 (defparameter *q* nil)
 
-(defvar *gui* (qload-ui (in-home "gui/gui.ui")))
+(defvar *gui* (qload-ui (in-home "lib/gui.ui")))
 
 (defvar-ui *gui*
   *display*
@@ -408,7 +408,7 @@
 
 (defun show-properties-dialog ()
   (unless (find-package :properties)
-    (load (in-home "gui/properties")))
+    (load (in-home "lib/properties")))
   (funcall (find-symbol "SHOW" :properties) *q*))
 
 (gui)

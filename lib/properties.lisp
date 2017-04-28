@@ -10,7 +10,7 @@
 
 (in-package :properties)
 
-(defvar *main* (qload-ui (in-home "gui/properties")))
+(defvar *main* (qload-ui (in-home "lib/properties")))
 
 (defvar-ui *main*
   *meta-class-name*

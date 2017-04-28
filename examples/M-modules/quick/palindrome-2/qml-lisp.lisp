@@ -3,7 +3,6 @@
 ;;; * allows to get/set any QML property from Lisp (needs 'objectName' to be set)
 ;;; * allows to evaluate JS code from Lisp (needs 'objectName' to be set)
 ;;;
-;;; (requires a C++ plugin, see "lib/")
 
 (defpackage :qml-lisp
   (:use :common-lisp :eql)
@@ -26,9 +25,8 @@
 
 (in-package :qml-lisp)
 
-;;(defvar *qml-lisp*   (qload-c++ "lib/qml_lisp")) ; not needed for this example
-(defvar *caller*     nil)
 (defvar *quick-view* nil)
+(defvar *caller*     nil)
 
 (defun string-to-symbol (name)
   (let ((upper (string-upcase name))

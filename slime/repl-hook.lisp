@@ -2,7 +2,7 @@
 ;;; This is a less convenient Slime mode using a REPL eval hook,
 ;;; with the advantage of running all EQL functions natively.
 ;;;
-;;; (See "thread-safe.lisp" for the default Slime mode.)
+;;; (See "../lib/thread-safe.lisp" for the default Slime mode.)
 
 (in-package :eql)
 

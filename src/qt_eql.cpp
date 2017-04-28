@@ -7,7 +7,7 @@
 #include <QtGui>
 #include "qt_eql.h"
 #include "ecl_fun.h"
-#include "eql.h"
+#include "eql5/eql.h"
 #include "gen/_lobjects.h"
 
 QT_BEGIN_NAMESPACE

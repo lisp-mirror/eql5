@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QtCore>
 #include <iostream>
-#include "eql.h"
+#include <eql5/eql.h>
 
 int catch_all_qexec() {
     int ret = 0;

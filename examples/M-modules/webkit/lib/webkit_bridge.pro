@@ -1,8 +1,8 @@
 QT          += webkitwidgets
 TEMPLATE    = lib
 CONFIG      += plugin release
-INCLUDEPATH += ../../../../src
-LIBS        += -L../../../.. -leql5
+INCLUDEPATH += /usr/local/include
+LIBS        += -L/usr/local/lib -leql5
 DESTDIR     = ./
 TARGET      = webkit_bridge
 OBJECTS_DIR = ./tmp/
@@ -16,5 +16,6 @@ win32 {
 
 HEADERS += _invokables.h \
            webkit_bridge.h
+
 SOURCES += webkit_bridge.cpp
 

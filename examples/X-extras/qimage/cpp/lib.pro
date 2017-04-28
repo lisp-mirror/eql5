@@ -1,7 +1,7 @@
 TEMPLATE    = lib
 CONFIG      += plugin release
-INCLUDEPATH += ../../../../src
-LIBS        += -L../../../.. -leql5
+INCLUDEPATH += /usr/local/include
+LIBS        += -L/usr/local/lib -leql5
 DESTDIR     = ./
 TARGET      = qimage
 OBJECTS_DIR = ./tmp/
@@ -12,4 +12,5 @@ win32 {
 }
 
 HEADERS += lib.h
+
 SOURCES += lib.cpp

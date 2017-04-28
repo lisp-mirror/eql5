@@ -8,6 +8,9 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/svg/
 MOC_DIR      = ./tmp/svg/
 
+target.path  = /usr/local/lib
+INSTALLS     = target
+
 win32 {
     include(windows.pri)
 }

@@ -1,7 +1,8 @@
 QT          += widgets
 TEMPLATE    = lib
 CONFIG      += plugin release
-LIBS        += -L../.. -leql5
+INCLUDEPATH += /usr/local/include
+LIBS        += -L/usr/local/lib -leql5
 DESTDIR     = ../
 TARGET      = eql_fun_cpp
 OBJECTS_DIR = ./tmp/
@@ -12,4 +13,5 @@ win32 {
 }
 
 HEADERS += lib.h
+
 SOURCES += lib.cpp

@@ -6,12 +6,12 @@
 #undef SLOT
 
 #include <ecl/ecl.h>
+#include <eql5/dyn_object.h>
+#include <eql5/eql_global.h>
 #include <QObject>
 #include <QByteArray>
 #include <QStringList>
 #include <QCoreApplication>
-#include "dyn_object.h"
-#include "eql_global.h"
 
 QT_BEGIN_NAMESPACE
 

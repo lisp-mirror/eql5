@@ -5,8 +5,8 @@
 #include "_main_n_classes.h"
 #include "_main_q_methods.h"
 #include "_main_n_methods.h"
-#include "../dyn_object.h"
-#include "../eql.h"
+#include "../eql5/dyn_object.h"
+#include "../eql5/eql.h"
 
 int LObjects::T_QAudioDeviceInfo = -1;
 int LObjects::T_QList_QAudioDeviceInfo = -1;

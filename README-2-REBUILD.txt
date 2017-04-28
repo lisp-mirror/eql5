@@ -1,22 +1,19 @@
 REBUILD STEPS (on every upgrade of: ECL, Qt, EQL)
 =============
 
-1) remove directory src/tmp/
-   remove file src/lisp/ecl-readline.fas*
+0) cd src
+
+1) remove directory tmp/
 
 2) ecl -shell make-eql-lib.lisp
 
-3) qmake, make in this order: (MSVC: nmake)
+3) qmake, make, sudo make install (Unix only) in this order: (MSVC: nmake)
 
     eql_lib.pro
     eql_exe.pro
 
     module_network.pro
     module_...
-
-  for readline (Unix):
-
-    ecl -compile src/lisp/ecl-readline.lisp
 
 Optionally (integrate wrapper functions):
 
@@ -27,6 +24,7 @@ Optionally (integrate wrapper functions):
     touch tmp/eql.o    (or delete "tmp/eql.o*")
     qmake eql_lib.pro
     make
+    sudo make install  (Unix only)
 
 
 IMPORTANT NOTES
@@ -50,4 +48,4 @@ ECL/C++ integration).
 TIP
 ===
 
-If you're on Linux, see "src/rebuild".
+If you're on Linux, see "src/rebuild" (needs password for make install).

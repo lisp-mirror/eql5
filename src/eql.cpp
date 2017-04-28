@@ -1,13 +1,13 @@
 // copyright (c) Polos Ruetz
 
-#include "eql.h"
+#include "eql5/eql.h"
 #include "ecl_fun.h"
 #include "gen/_lobjects.h"
 #include <QApplication>
 #include <QTimer>
 #include <QStringList>
 
-const char EQL::version[] = "17.4.2"; // Apr 2017
+const char EQL::version[] = "17.4.3"; // Apr 2017
 
 extern "C" void ini_EQL(cl_object);
 
@@ -48,7 +48,6 @@ void EQL::exec(const QStringList& args) {
     bool exec_with_simple_restart = false;
     QStringList arguments(args);
     eval("(in-package :eql-user)");
-    eval(QString("(eql::set-home \"%1\")").arg(home()).toLatin1().constData());
     QStringList forms;
     // .eclrc
     if(arguments.contains("-norc")) {
@@ -79,8 +78,8 @@ void EQL::exec(const QStringList& args) {
         arguments.removeAll("-qtpl");
         ecl_setq(ecl_process_env(), s_qtpl, Ct);
         QApplication::setQuitOnLastWindowClosed(false);
-        forms << "(when (directory (in-home \"src/lisp/ecl-readline.fas*\"))"
-                 "  (load (in-home \"src/lisp/ecl-readline\")))"
+        forms << "(when (directory (in-home \"lib/ecl-readline.fas*\"))"
+                 "  (load (x:check-recompile (in-home \"lib/ecl-readline\"))))"
               << "(qsingle-shot 500 'eql::start-read-thread)";
         exec_with_simple_restart = true; }
     // -qgui
@@ -132,7 +131,6 @@ void EQL::exec(const QStringList& args) {
 
 void EQL::exec(lisp_ini ini, const QByteArray& expression, const QByteArray& package) {
     // see my_app example
-    eval(QString("(eql::set-home \"%1\")").arg(home()).toLatin1().constData());
     read_VV(OBJNULL, ini);
     eval(QString("(in-package :%1)").arg(QString(package)).toLatin1().constData());
     eval(expression.constData()); }
@@ -144,8 +142,7 @@ void EQL::exec(QWidget* widget, const QString& lispFile, const QString& slimeHoo
     bool exec_with_simple_restart = false;
     QStringList forms;
     eval("(in-package :eql)");
-    forms << QString("(set-home \"%1\")").arg(home())
-          << QString("(defvar *qt-main* (qt-object %1 0 (qid \"%2\")))")
+    forms << QString("(defvar *qt-main* (qt-object %1 0 (qid \"%2\")))")
                      .arg((quintptr)widget)
                      .arg(QString(LObjects::vanillaQtSuperClassName(widget->metaObject())))
           << QString("(export '*qt-main*)")

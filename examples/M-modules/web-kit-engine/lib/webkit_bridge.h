@@ -3,7 +3,7 @@
 
 #include <QtWidgets>
 #include <QtWebKitWidgets>
-#include <eql_fun.h>
+#include <eql5/eql_fun.h>
 
 #ifdef Q_CC_MSVC
 #define LIB_EXPORT __declspec(dllexport)

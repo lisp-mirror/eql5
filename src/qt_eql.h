@@ -6,7 +6,7 @@
 
 #include <QGenericArgument>
 #include <QVariant>
-#include "eql_global.h"
+#include "eql5/eql_global.h"
 
 QT_BEGIN_NAMESPACE
 

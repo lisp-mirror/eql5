@@ -6,7 +6,7 @@
 #undef SLOT
 
 #include <ecl/ecl.h>
-#include "eql_global.h"
+#include "eql5/eql_global.h"
 #include <QList>
 #include <QUiLoader>
 #include <QByteArray>
@@ -304,7 +304,7 @@ struct EQL_EXPORT QtObject {
 };
 
 // for Qt_EQL
-struct eql_pointer {
+struct EQL_EXPORT eql_pointer {
     void* pointer;
     int id;
 

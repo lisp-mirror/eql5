@@ -1,5 +1,5 @@
 #include "qt_plugin.h"
-#include "eql.h"
+#include <eql5/eql.h>
 
 QT_BEGIN_NAMESPACE
 

@@ -7,7 +7,7 @@
 #include <QtWidgets>
 #include <QtPrintSupport>
 #include "../extras.h"
-#include "../eql_global.h"
+#include "../eql5/eql_global.h"
 
 QT_BEGIN_NAMESPACE
 

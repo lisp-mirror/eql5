@@ -1,7 +1,7 @@
 TEMPLATE     = lib
 CONFIG      += dll no_keywords release
-INCLUDEPATH += ../src
-LIBS        += -L.. -leql5
+INCLUDEPATH += /usr/local/include
+LIBS        += -L/usr/local/lib -leql5
 TARGET       = qt_plugin
 DESTDIR      = ./
 OBJECTS_DIR  = ./tmp/

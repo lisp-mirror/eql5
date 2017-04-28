@@ -60,7 +60,7 @@
 (defun show-properties-dialog (&optional item)
   "Lists all instance properties of a QML item (either a QQuickItem or an 'objectName')."
   (unless (find-package :properties)
-    (load (in-home "gui/properties")))
+    (load (in-home "lib/properties")))
   (funcall (%sym :show :properties)
            (if (stringp item)
                (find-quick-item item)

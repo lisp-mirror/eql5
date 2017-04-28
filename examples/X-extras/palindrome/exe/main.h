@@ -2,7 +2,6 @@
 #define MAIN_H
 
 #include <QtWidgets>
-#include "eql_fun.h"
 
 QT_BEGIN_NAMESPACE
 

@@ -19,14 +19,10 @@
 (dolist (file *all-wrappers*) 
   (compile-file (format nil "lisp/~A.lisp" file) :system-p t))
 
-(c:build-static-library "ini"
+(c:build-static-library "ini_eql5"
                         :lisp-files (mapcar (lambda (file)
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
 
-#+darwin
-(rename-file "libini.a" "libini.dylib")
-
 (eql:qq)
-

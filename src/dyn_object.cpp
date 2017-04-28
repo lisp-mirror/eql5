@@ -1,6 +1,6 @@
 // copyright (c) Polos Ruetz
 
-#include "dyn_object.h"
+#include "eql5/dyn_object.h"
 #include "ecl_fun.h"
 #include "gen/_lobjects.h"
 #include <QMetaMethod>

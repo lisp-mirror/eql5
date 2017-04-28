@@ -1,8 +1,8 @@
 // copyright (c) Polos Ruetz
 
 #include "ecl_fun.h"
-#include "eql.h"
-#include "dyn_object.h"
+#include "eql5/eql.h"
+#include "eql5/dyn_object.h"
 #include "gen/_lobjects.h"
 #include "ui_loader.h"
 #include "single_shot.h"
@@ -2433,14 +2433,11 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
-    QString prefix, postfix;
-#ifdef Q_OS_DARWIN
-    prefix = "lib"; postfix = ".1.dylib";
-#endif
-#ifdef Q_OS_LINUX
-    prefix = "lib"; postfix = ".so.1";
-#endif
-    QLibrary lib(prefix + "eql5_" + name + postfix); // global library
+    QString fileName = "eql5_" + name;
+    QLibrary lib(fileName);                  // global library
+    if(!lib.load()) {
+        fileName.prepend("/usr/local/lib/"); // "local" might not be in library search path
+        lib.setFileName(fileName); }
     typedef void (*Ini)();
     Ini ini = (Ini)lib.resolve("ini");
     if(ini) {

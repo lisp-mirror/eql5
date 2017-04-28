@@ -4,7 +4,7 @@
 #undef SLOT
 
 #include <ecl/ecl.h>
-#include "../eql_global.h"
+#include "../eql5/eql_global.h"
 #include "../ecl_fun.h"
 #include <QtWidgets>
 #include <QtPrintSupport>

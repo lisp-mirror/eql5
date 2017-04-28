@@ -4,8 +4,6 @@
 ;;; This is a port of a QtQuick1/Qt4 example.
 ;;; The JS game logic has been ported to Lisp.
 ;;;
-;;; (requires a C++ plugin, see "lib/")
-;;;
 
 #-qt-wrapper-functions ; see README-OPTIONAL.txt
 (load (in-home "src/lisp/all-wrappers"))

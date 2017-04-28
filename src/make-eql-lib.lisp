@@ -18,11 +18,8 @@
       (delete-file (format nil "~A.~A" file #+msvc "obj" #-msvc "o")))
     (compile-file file :system-p t)))
 
-(c:build-static-library "ini"
+(c:build-static-library "ini_eql5"
                         :lisp-files (mapcar (lambda (file)
                                               (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
                                             *lisp-files*)
                         :init-name "ini_EQL")
-
-#+darwin
-(rename-file "libini.a" "libini.dylib")

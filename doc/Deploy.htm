@@ -11,10 +11,11 @@
       <p>Please follow the <code>my_app/README.txt</code> (which assumes that your lisp files are in <code>my_app/lisp/</code>)</p>
       <p>The dependencies are:</p>
       <ul>
-        <li><code>eql5</code>, <code>ecl</code>, <code>QtCore</code>, <code>QtGui</code>, <code>QtWidgets</code>, <code>QtPrintSupport</code> shared libraries
+        <li><code>eql5</code>, <code>ecl</code>, <code>Qt5Core</code>, <code>Qt5Gui</code>, <code>Qt5Widgets</code>, <code>Qt5PrintSupport</code> shared libraries (plus used modules, both Qt5 and EQL5)
         <li>your <code>*.ui</code> files (if any)
         <li>your <code>*.qm</code> translation files (if any)
       </ul>
+      <p><b>[Unix]</b><br>Deploy the installed libraries from <code>/usr/local/lib/</code>, because they have already been stripped, and are therefore smaller.</p>
       <p>A detailed description of deploying Qt applications can be found in Qt Assistant.</p>
     </div>
   </body>

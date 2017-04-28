@@ -2,32 +2,41 @@ rm -fr tmp
 rm *.a
 rm lisp/*.o
 
-cd lisp
-ecl -compile ecl-readline.lisp
-cd ..
-
 ecl -shell make-eql-lib.lisp &&
 qmake eql_lib.pro &&
 make &&
+sudo make install &&
 qmake eql_exe.pro &&
 make &&
+sudo make install &&
 eql5 make-eql-lib-wrappers.lisp &&
 touch tmp/eql.o &&
 qmake eql_lib.pro &&
 make &&
+sudo make install &&
 qmake module_help.pro &&
 make &&
+sudo make install &&
 qmake module_multimedia.pro &&
 make &&
+sudo make install &&
 qmake module_network.pro &&
 make &&
+sudo make install &&
 qmake module_quick.pro &&
 make &&
+sudo make install &&
 qmake module_sql.pro &&
 make &&
+sudo make install &&
 qmake module_svg.pro &&
 make &&
-qmake module_webkit.pro &&
-make
+sudo make install &&
+# qmake module_webkit.pro &&
+# make
+# sudo make install &&
+qmake module_webengine.pro &&
+make &&
+sudo make install
 
 echo OK

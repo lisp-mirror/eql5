@@ -121,7 +121,7 @@ is resolved automatically (<code>RESTART-QT-EVENTS</code> would block the REPL i
     <p>In order to automatically switch the REPL to a given package after loading a file, add this line:</p>
     <pre>  (qlater (lambda () (in-package :my-package)))</pre>
     <br>
-    <p>If you use ECL readline (see <code>ecl-readline.lisp</code> in sources):<br>After entering <code>:qq</code> (quitting the top-level), the console/shell should always be reset (but you won't probably see the command while typing it; an <code>alias</code> might help):</p>
+    <p>If you use ECL readline (see <code>lib/ecl-readline.lisp</code>, to be compiled manually the first time):<br>After entering <code>:qq</code> (quitting the top-level), the console/shell should always be reset (but you won't probably see the command while typing it; an <code>alias</code> might help):</p>
     <pre>  $ <span class="input">reset</span></pre>
     <br>&nbsp;
     <br>&nbsp;
