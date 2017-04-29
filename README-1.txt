@@ -9,6 +9,22 @@
 
 
 
+BUILD (for the impatient)
+=====
+
+In src/ do:
+
+  ecl -shell make
+  qmake eql5.pro     (comment out all modules you don't need)
+  make
+  sudo make install  (Unix only)
+
+Now you should be able to exec 'eql5'.
+
+If there are problems, or you want more info, see detailed instructions below.
+
+
+
 TESTED WITH
 ===========
 
