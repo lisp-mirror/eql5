@@ -29,16 +29,6 @@ void EQL::eval(const char* lisp_code) {
         si_safe_eval(2, ecl_read_from_cstring((char*)lisp_code), Cnil); }
     CL_CATCH_ALL_END; }
 
-QString EQL::home() {
-    static QString path;
-    if(path.isEmpty()) {
-        path = QApplication::applicationDirPath();
-#ifdef Q_OS_DARWIN
-        path.truncate(path.lastIndexOf('/', path.indexOf(".app")));
-#endif
-        path.append('/'); }
-    return path; }
-
 void EQL::ignoreIOStreams() {
     // [Windows] print output would cause a gui exe to crash (without console)
     eval("(eql::ignore-io-streams)"); }

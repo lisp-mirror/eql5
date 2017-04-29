@@ -32,7 +32,6 @@ public:
     static QEventLoop* eventLoop;
     static void ini(char**);
     static void eval(const char*);
-    static QString home();
 
     void exec(const QStringList&);
     void exec(lisp_ini, const QByteArray& = "nil", const QByteArray& = "eql-user"); // see my_app example
