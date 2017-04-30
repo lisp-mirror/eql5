@@ -102,6 +102,11 @@ BUILD
   [Windows]
     You first need to adapt the file 'src/windows.pri' (include & library
     paths).
+
+    You also should add your eql5 directory (for eventual C++ modules), e.g:
+      INCLUDEPATH += ... c:/eql5/src
+      LIBS        += ... -Lc:/eql5
+
     Since EQL requires the C compiler anyway (not the bytecode compiler), you
     should put this line in your '~/.eclrc':
         (require :cmp)
