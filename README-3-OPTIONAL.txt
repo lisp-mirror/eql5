@@ -26,7 +26,8 @@ Re-link EQL doing something like:
   make
   sudo make install  (Unix only)
 
-(The resulting shared library will be considerably bigger than before).
+Note: The resulting shared library should be stripped (automatically done by
+"make install"); this will reduce its size considerably.
 
 ---
 
