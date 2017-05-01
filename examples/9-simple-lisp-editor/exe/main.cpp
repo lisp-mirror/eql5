@@ -3,7 +3,7 @@
 #include <ecl/ecl.h>
 #include <QApplication>
 #include <QTextCodec>
-#include "eql.h"
+#include <eql5/eql.h>
 
 extern "C" void ini_app(cl_object);
 
