@@ -7,7 +7,7 @@
 ;;;
 ;;; Note:
 ;;;
-;;; Alternatively you could just load the file "eql/slime/thread-safe.fas", and
+;;; Alternatively you could just load the file "~/eql5/lib/thread-safe.fas", and
 ;;; forget about QRUN* (that is, every EQL function call would be automatically
 ;;; thread-safe).
 ;;;
