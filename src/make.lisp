@@ -26,14 +26,6 @@
 
 ;; for eql5.pro (doesn't create directories)
 
-(dolist (dirs '("."
-                "tmp/help"
-                "tmp/multimedia"
-                "tmp/network"
-                "tmp/quick"
-                "tmp/sql"
-                "tmp/svg"
-                "tmp/webengine"
-                "tmp/webkit"))
-  (ensure-directories-exist (format nil "~A/tmp/" dirs)))
-
+(dolist (module (mapcar 'file-namestring (directory "module_*.pro")))
+  (ensure-directories-exist (format nil "tmp/~A/tmp/"
+                                    (subseq module (1+ (position #\_ module)) (position #\. module)))))
