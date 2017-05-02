@@ -17,4 +17,8 @@ win32 {
     CONFIG += console
 }
 
+osx {
+    CONFIG -= app_bundle
+}
+
 SOURCES += main.cpp
