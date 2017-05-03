@@ -1,5 +1,6 @@
 NOTE
 ====
 
-The :webengine module requires Qt >= 5.7 to build (if you use Qt 5.6, just
-comment out the few lines in the sources which functions are not defined).
+The :webengine module requires Qt 5.8 to build (if you use earlier versions,
+just comment out the few lines in the sources which functions are not defined,
+see compile errors).

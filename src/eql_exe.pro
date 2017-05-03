@@ -10,7 +10,7 @@ MOC_DIR        = ./tmp/
 
 QMAKE_RPATHDIR = /usr/local/lib
 target.path    = /usr/local/bin
-INSTALLS       += target
+INSTALLS       = target
 
 win32 {
     include(windows.pri)

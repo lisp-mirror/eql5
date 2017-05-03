@@ -1,6 +1,6 @@
-*********************************
-* EQL5 is a Qt5 port of EQL/Qt4 *
-*********************************
+********************************************
+* EQL5 is a (extended) Qt5 port of EQL/Qt4 *
+********************************************
 
 # contact: gmail, polos.ruetz
 # mailing list: http://groups.google.com/group/eql-user/topics
@@ -53,12 +53,12 @@ TESTED WITH
        linker errors; the source files are in "eql5/src/gen/quick/";
 
 
+
 REQUIREMENTS
 ============
 
   * ECL threads + unicode
   * Qt >= 5.5
-  * /should/ run cross-platform
 
   QtWebKit note:
     If you want QtWebKit included in the official downloads from qt.io archives,
