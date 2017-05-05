@@ -78,6 +78,11 @@ with the same compiler you'll use to compile EQL5).
 
 Just use the standard configuration of ECL (both threads & unicode enabled).
 
+Download Qt5 from here (pay attention to choose the version compiled with the
+same compiler you'll use to compile EQL5):
+
+  https://download.qt.io/archive/qt/
+
 Qt4/Qt5 note:
 
   You can have both old EQL (Qt4) and EQL5 (Qt5) installed in parallel (exe and
