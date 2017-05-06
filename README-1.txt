@@ -5,7 +5,8 @@
 # contact: gmail, polos.ruetz
 # mailing list: http://groups.google.com/group/eql-user/topics
 #
-# MANY THANKS to the users of the eql-user mailing list for their contributions!
+# MANY THANKS to the users of the eql-user mailing list and to private mail
+# contacts for your contributions and testing!
 
 
 

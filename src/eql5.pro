@@ -1,15 +1,16 @@
-TEMPLATE = subdirs
+# comment out all modules you don't need:
 
-SUBDIRS  = lib exe \
-           # comment out all modules you don't need:
-           help \
-           multimedia \
-           network \
-           quick \
-           sql \
-           svg \
-           webengine \
-           webkit
+SUBDIRS = help \
+          multimedia \
+          network \
+          quick \
+          sql \
+          svg \
+          # webengine \
+          webkit
+
+TEMPLATE = subdirs
+SUBDIRS += lib exe
 
 lib.file        = eql_lib.pro
 exe.depends     = lib
