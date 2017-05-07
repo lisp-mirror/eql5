@@ -58,7 +58,7 @@ TESTED WITH
 REQUIREMENTS
 ============
 
-  * ECL threads + unicode
+  * ECL (both threads & unicode enabled, as by default)
   * Qt >= 5.5
 
   QtWebKit note:
