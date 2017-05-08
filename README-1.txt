@@ -2,8 +2,9 @@
 * EQL5 is a (extended) Qt5 port of EQL/Qt4 *
 ********************************************
 
+# wiki:    http://gitlab.com/eql/EQL5/wikis/home
+# mails:   http://groups.google.com/group/eql-user/topics
 # contact: gmail, polos.ruetz
-# mailing list: http://groups.google.com/group/eql-user/topics
 #
 # MANY THANKS to the users of the eql-user mailing list and to private mail
 # contacts for your contributions and testing!
