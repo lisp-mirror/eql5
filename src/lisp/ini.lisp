@@ -13,8 +13,8 @@
   `(setf (symbol-function ',s1) (function ,s2)))
 
 (defmacro qlet ((&rest pairs) &body body)
-  "args: (((variable-1 expression-1) (variable-2 expression-2)) &body body)
-   Similar to <code>let*</code> (and to local C++ variables).<br><br>Creates temporary Qt objects, deleting them at the end of the <code>qlet</code> body.<br>If <code>expression</code> is a string, it will be substituted with <code>(qnew expression)</code>, optionally including constructor arguments.
+  "args: (((variable-1 expression-1) (variable-2 expression-2) ...) &body body)
+   Similar to <code>let*</code> (and to local C++ variables).<br><br>Creates temporary Qt objects, deleting them at the end of the <code>qlet</code> body.<br>If <code>expression</code> is a string, it will be substituted with <code>(qnew expression)</code>, optionally including constructor arguments.<br><br>This macro is convenient for e.g. local <code>QPainter</code> objects, in order to guarantee C++ destructors being called after leaving a local scope.
        (qlet ((painter \"QPainter\"))
        &nbsp;&nbsp;...)
        

@@ -305,9 +305,9 @@ Convenience macro: a <code>qsingle-shot</code> with a <code>0</code> timeout.<br
   (qlater 'delayed-ini)
 </pre>
 <br><br>
-<b>QLET (((variable-1 expression-1) (variable-2 expression-2)) &body body)</b>
+<b>QLET (((variable-1 expression-1) (variable-2 expression-2) ...) &body body)</b>
 <br><br>
-Similar to <code>let*</code> (and to local C++ variables).<br><br>Creates temporary Qt objects, deleting them at the end of the <code>qlet</code> body.<br>If <code>expression</code> is a string, it will be substituted with <code>(qnew expression)</code>, optionally including constructor arguments.
+Similar to <code>let*</code> (and to local C++ variables).<br><br>Creates temporary Qt objects, deleting them at the end of the <code>qlet</code> body.<br>If <code>expression</code> is a string, it will be substituted with <code>(qnew expression)</code>, optionally including constructor arguments.<br><br>This macro is convenient for e.g. local <code>QPainter</code> objects, in order to guarantee C++ destructors being called after leaving a local scope.
 <br>
 <pre>
   (qlet ((painter "QPainter"))

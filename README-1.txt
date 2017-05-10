@@ -224,7 +224,7 @@ N.B. skip this if you already built from 'eql5.pro' (see above)
 
     qmake module_<name>.pro (e.g. qmake module_network.pro)
     make
-    sudo make install       (unix only)
+    sudo make install       (Unix only)
 
     [Linux,OSX]
       (N.B. skip this if you did "sudo make install")
