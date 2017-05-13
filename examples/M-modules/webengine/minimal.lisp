@@ -34,7 +34,7 @@
          (,@expression (lambda (x)
                          (setf ,result x)
                          (|exit| ,ev-loop)))
-         (|exec| ,ev-loop))
+         (|exec| ,ev-loop |QEventLoop.ExcludeUserInputEvents|))
        ,result)))
 
 (defun to-text* ()
