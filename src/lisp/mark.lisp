@@ -1,6 +1,8 @@
 ;;; Mark error position (when loading a file in ECL)
 ;;;
 ;;; example: eql5 mark file.lisp 5775 (will insert "#|TODO|#")
+;;;
+;;; Use with caution! May loose your file contents if used wrongly!
 
 (let* ((args (|arguments.QCoreApplication|))
        (file (third args))

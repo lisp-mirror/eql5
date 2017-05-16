@@ -250,6 +250,10 @@ README-3-OPTIONAL.
 This will make all Qt functions real Lisp functions, which also means symbol
 tab-completion, both in Emacs/Slime and with ecl-readline.
 
+Please see also example "examples/X-extras/CLOS-encapsulation.lisp" for
+encapsulation of Qt classes in Lisp classes or structs (that is, Lisp classes
+that behave like a Qt class if passed to Qt functions).
+
 
 
 NOTES
