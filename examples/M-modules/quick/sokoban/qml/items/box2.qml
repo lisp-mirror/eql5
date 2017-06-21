@@ -1,18 +1,18 @@
 import QtQuick 2.0
-import "../ext/"
+import "../ext/" as Ext
 
 Image {
     id: box2
 
     Behavior on x {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 150
             easing.type: Easing.InQuart
         }
     }
 
     Behavior on y {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 150
             easing.type: Easing.InQuart
         }
@@ -20,7 +20,7 @@ Image {
 
     // final animation
 
-    SequentialAnimationExt {
+    Ext.SequentialAnimation {
         objectName: "wiggle_box"
         loops: 3
 

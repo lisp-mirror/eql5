@@ -1,16 +1,16 @@
 import QtQuick 2.0
-import "../ext/"
+import "../ext/" as Ext
 
 Image {
     Behavior on x {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 150
             easing.type: Easing.InQuart
         }
     }
 
     Behavior on y {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 150
             easing.type: Easing.InQuart
         }

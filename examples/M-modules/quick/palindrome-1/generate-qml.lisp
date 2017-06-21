@@ -36,7 +36,7 @@
 
 (with-qml-file ("qml/palindrome.qml")
   "import QtQuick 2.0"
-  "import 'ext/'"
+  "import 'ext/' as Ext"
   (qml "Rectangle"
        "width: 527; height: 527"
        "color: 'black'"
@@ -59,11 +59,11 @@
                        (let ((target 0))
                          (mapc (lambda (from-xy to-xy)
                                  (incf target)
-                                 (qml "PalindromeAnimation { target: img~D; property: 'x'; from: ~D; to: ~D }"
+                                 (qml "Ext.PalindromeAnimation { target: img~D; property: 'x'; from: ~D; to: ~D }"
                                       target
                                       (* 31 (first from-xy))
                                       (* 31 (first to-xy)))
-                                 (qml "PalindromeAnimation { target: img~D; property: 'y'; from: ~D; to: ~D }"
+                                 (qml "Ext.PalindromeAnimation { target: img~D; property: 'y'; from: ~D; to: ~D }"
                                       target
                                       (* 31 (second from-xy))
                                       (* 31 (second to-xy))))

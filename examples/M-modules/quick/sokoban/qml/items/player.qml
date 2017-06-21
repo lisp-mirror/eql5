@@ -1,18 +1,18 @@
 import QtQuick 2.0
-import "../ext/"
+import "../ext/" as Ext
 
 Image {
     id: player
 
     Behavior on x {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 120
             easing.type: Easing.InOutSine
         }
     }
 
     Behavior on y {
-        NumberAnimationExt {
+        Ext.NumberAnimation {
             duration: 120
             easing.type: Easing.InOutSine
         }
@@ -20,7 +20,7 @@ Image {
 
     // final animation
 
-    RotationAnimationExt {
+    Ext.RotationAnimation {
         objectName: "rotate_player"
         target: player
         property: "rotation"

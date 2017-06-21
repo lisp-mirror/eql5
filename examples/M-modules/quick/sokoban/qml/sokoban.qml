@@ -1,7 +1,7 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
-import "ext/"
+import "ext/" as Ext
 import EQL5 1.0
 
 Rectangle {
@@ -51,7 +51,7 @@ Rectangle {
 
     // level change animations
 
-    ScaleAnimatorExt {
+    Ext.ScaleAnimator {
 	objectName: "zoom_board_out"
         target: board
         from: 0.8
@@ -59,7 +59,7 @@ Rectangle {
         duration: 250
     }
 
-    ScaleAnimatorExt {
+    Ext.ScaleAnimator {
 	objectName: "zoom_board_in"
         target: board
         from: 0.0

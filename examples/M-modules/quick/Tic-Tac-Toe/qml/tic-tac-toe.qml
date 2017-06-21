@@ -1,7 +1,7 @@
 // for (c) please see COPYING.txt
 
 import QtQuick 2.0
-import "ext"
+import "ext/" as Ext
 import EQL5 1.0
 
 Rectangle {
@@ -31,7 +31,7 @@ Rectangle {
             Repeater {
                 model: 9
 
-                TicTac {
+                Ext.TicTac {
                     width: board.width / 3
                     height: board.height / 3
 
@@ -44,17 +44,17 @@ Rectangle {
             spacing: 4
             anchors.horizontalCenter: parent.horizontalCenter
 
-            Button {
+            Ext.Button {
                 text: "Hard"
                 pressed: game.difficulty == 10
                 onClicked: { game.difficulty = 10 }
             }
-            Button {
+            Ext.Button {
                 text: "Moderate"
                 pressed: game.difficulty == 8
                 onClicked: { game.difficulty = 8 }
             }
-            Button {
+            Ext.Button {
                 text: "Easy"
                 pressed: game.difficulty == 2
                 onClicked: { game.difficulty = 2 }

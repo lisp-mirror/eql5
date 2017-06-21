@@ -7,14 +7,14 @@
 
 (with-qml-file ("qml/palindrome.qml")
   "import QtQuick 2.0"
-  "import 'ext/'"
+  "import 'ext/' as Ext"
   (qml "Rectangle"
        "width: 527; height: 527"
        "color: 'black'"
        (let ((num 0))
          (mapc (lambda (char xy)
                  (incf num)
-                 (qml "PalindromeImage { objectName: 'img~D'; source: 'img/~A.png'; x: ~D; y: ~D }"
+                 (qml "Ext.PalindromeImage { objectName: 'img~D'; source: 'img/~A.png'; x: ~D; y: ~D }"
                       num
                       (image-of-char char)
                       (* 31 (first xy))
