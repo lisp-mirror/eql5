@@ -13,9 +13,10 @@
                                  "special-extensions"))
 
 (dolist (f *lisp-files*)
-  (let ((file (format nil "lisp/~A" f)))
-    (when (probe-file file)
-      (delete-file (format nil "~A.~A" file #+msvc "obj" #-msvc "o")))
+  (let* ((file (format nil "lisp/~A" f))
+         (file.o (format nil "~A.~A" file #+msvc "obj" #-msvc "o")))
+    (when (probe-file file.o)
+      (delete-file file.o))
     (compile-file file :system-p t)))
 
 (c:build-static-library "ini_eql5"
