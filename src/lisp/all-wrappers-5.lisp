@@ -1,5 +1,21 @@
 (defpackage :eql
   (:export
+   #:|setMatrix|
+   #:|setMaxCount|
+   #:|setMaxLength|
+   #:|setMaxPendingConnections|
+   #:|setMaxVisibleItems|
+   #:|setMaximumAnisotropy|
+   #:|setMaximumBlockCount|
+   #:|setMaximumCacheSize|
+   #:|setMaximumDateTime|
+   #:|setMaximumDate|
+   #:|setMaximumFrameRate|
+   #:|setMaximumHeight|
+   #:|setMaximumLevelOfDetail|
+   #:|setMaximumPagesInCache.QWebSettings|
+   #:|setMaximumSectionSize|
+   #:|setMaximumSize|
    #:|setMaximumTime|
    #:|setMaximumTouchPoints|
    #:|setMaximumWidth|
@@ -755,6 +771,10 @@
    #:|showLink|
    #:|showMaximized|
    #:|showMenu|
+   #:|showMessage(QString,QString,QIcon)|
+   #:|showMessage(QString,QString,QIcon...)|
+   #:|showMessage(QString,QString,QSystemTrayIcon::MessageIcon)|
+   #:|showMessage(QString,QString,QSystemTrayIcon::MessageIcon...)|
    #:|showMessage|
    #:|showMinimized|
    #:|showNextMonth|
@@ -1059,6 +1079,7 @@
    #:|tabChangesFocus|
    #:|tabCloseRequested|
    #:|tabData|
+   #:|tabFocusBehaviorChanged|
    #:|tabFocusBehavior|
    #:|tabIcon|
    #:|tabKeyNavigation|
@@ -1073,6 +1094,7 @@
    #:|tabText|
    #:|tabToolTip|
    #:|tabWhatsThis|
+   #:|tabifiedDockWidgetActivated|
    #:|tabifiedDockWidgets|
    #:|tabifyDockWidget|
    #:|tableCellFormatIndex|
@@ -1156,6 +1178,7 @@
    #:|textureId|
    #:|textureImage|
    #:|textureProvider|
+   #:|textureSizeChanged|
    #:|textureSize|
    #:|textureTarget|
    #:|texture|
@@ -1176,27 +1199,4 @@
    #:|timeout.QTapAndHoldGesture|
    #:|timeout|
    #:|timerId|
-   #:|timerType|
-   #:|timestamp|
-   #:|time|
-   #:|tip|
-   #:|titleBarWidget|
-   #:|titleChanged|
-   #:|titleFormat|
-   #:|title|
-   #:|toAce.QUrl|
-   #:|toAffine|
-   #:|toBitArray|
-   #:|toBlockFormat|
-   #:|toBool|
-   #:|toByteArray|
-   #:|toCharFormat|
-   #:|toChar|
-   #:|toCmyk|
-   #:|toCubicSpline|
-   #:|toCurrencyString(double)|
-   #:|toCurrencyString(double...)|
-   #:|toCurrencyString(float)|
-   #:|toCurrencyString(float...)|
-   #:|toCurrencyString(int)|
-   #:|toCurrencyString(int...)|))
+   #:|timerType|))

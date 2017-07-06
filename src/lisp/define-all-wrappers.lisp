@@ -146,12 +146,14 @@
                        ~%(pushnew :qt-wrapper-functions *features*)~
                        ~%~
                        ~%(defun %auto-cast (object)~
-                       ~%  (when (find (qt-object-id (ensure-qt-object object))~
-                       ~%              '#.(list (qid \"QGraphicsSvgItem\")~
-                       ~%                       (qid \"QGraphicsTextItem\")~
-                       ~%                       (qid \"QGraphicsVideoItem\")~
-                       ~%                       (qid \"QGraphicsWidget\")))~
-                       ~%    \"QGraphicsItem\"))~%")))))
+                       ~%  ;; we want speed here, not elegance, and we can't use reader macros~
+                       ~%  ;; (because of cross-compiling for Android)~
+                       ~%  (let ((id (qt-object-id (ensure-qt-object object))))~
+                       ~%    (when (or (= id (qid \"QGraphicsSvgItem\"))~
+                       ~%              (= id (qid \"QGraphicsTextItem\"))~
+                       ~%              (= id (qid \"QGraphicsVideoItem\"))~
+                       ~%              (= id (qid \"QGraphicsWidget\")))~
+                       ~%      \"QGraphicsItem\")))~%")))))
     (setf definitions (sort (delete-duplicates definitions :test 'string=) 'string<))
     (print (length definitions))
     (x:while definitions

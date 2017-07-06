@@ -1,5 +1,20 @@
 (in-package :eql)
 
+(defun |directoryLoaded| (object &rest arguments)
+  (%qinvoke-method object nil "directoryLoaded" arguments))
+
+(defun |directoryUrlEntered| (object &rest arguments)
+  (%qinvoke-method object nil "directoryUrlEntered" arguments))
+
+(defun |directoryUrl| (object &rest arguments)
+  (%qinvoke-method object nil "directoryUrl" arguments))
+
+(defun |directory| (object &rest arguments)
+  (%qinvoke-method object nil "directory" arguments))
+
+(defun |dirtyRegionOffset| (object &rest arguments)
+  (%qinvoke-method object nil "dirtyRegionOffset" arguments))
+
 (defun |dir| (object &rest arguments)
   (%qinvoke-method object nil "dir" arguments))
 
@@ -843,6 +858,9 @@
 (defun |eraseRect| (object &rest arguments)
   (%qinvoke-method object nil "eraseRect" arguments))
 
+(defun |errorOccurred| (object &rest arguments)
+  (%qinvoke-method object nil "errorOccurred" arguments))
+
 (defun |errorStateChanged| (object &rest arguments)
   (%qinvoke-method object nil "errorStateChanged" arguments))
 
@@ -1569,9 +1587,6 @@
 (defun |forceCompletion| (object &rest arguments)
   (%qinvoke-method object nil "forceCompletion" arguments))
 
-(defun |forcePolish| (object &rest arguments)
-  (%qinvoke-method object nil "forcePolish" arguments))
-
 (defun |forceShow| (object &rest arguments)
   (%qinvoke-method object nil "forceShow" arguments))
 
@@ -2087,6 +2102,9 @@
 
 (defun |group| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "group" arguments))
+
+(defun |handleScreenChanged| (object &rest arguments)
+  (%qinvoke-method object nil "handleScreenChanged" arguments))
 
 (defun |handleWidth| (object &rest arguments)
   (%qinvoke-method object nil "handleWidth" arguments))
@@ -2850,6 +2868,9 @@
 (defun |inputDirection| (object &rest arguments)
   (%qinvoke-method object nil "inputDirection" arguments))
 
+(defun |inputItemClipRectangleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "inputItemClipRectangleChanged" arguments))
+
 (defun |inputItemRectangle| (object &rest arguments)
   (%qinvoke-method object nil "inputItemRectangle" arguments))
 
@@ -3578,24 +3599,3 @@
 
 (defun |isGridVisible| (object &rest arguments)
   (%qinvoke-method object nil "isGridVisible" arguments))
-
-(defun |isGroupSeparatorShown| (object &rest arguments)
-  (%qinvoke-method object nil "isGroupSeparatorShown" arguments))
-
-(defun |isHeaderHidden| (object &rest arguments)
-  (%qinvoke-method object nil "isHeaderHidden" arguments))
-
-(defun |isHidden| (object &rest arguments)
-  (%qinvoke-method object nil "isHidden" arguments))
-
-(defun |isHttpOnly| (object &rest arguments)
-  (%qinvoke-method object nil "isHttpOnly" arguments))
-
-(defun |isIconVisibleInMenu| (object &rest arguments)
-  (%qinvoke-method object nil "isIconVisibleInMenu" arguments))
-
-(defun |isIdentifierEscaped| (object &rest arguments)
-  (%qinvoke-method object nil "isIdentifierEscaped" arguments))
-
-(defun |isIdentity| (object &rest arguments)
-  (%qinvoke-method object nil "isIdentity" arguments))

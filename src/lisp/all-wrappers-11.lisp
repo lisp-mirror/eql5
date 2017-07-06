@@ -1,5 +1,53 @@
 (in-package :eql)
 
+(defun |setMatrix| (object &rest arguments)
+  (%qinvoke-method object nil "setMatrix" arguments))
+
+(defun |setMaxCount| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxCount" arguments))
+
+(defun |setMaxLength| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxLength" arguments))
+
+(defun |setMaxPendingConnections| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxPendingConnections" arguments))
+
+(defun |setMaxVisibleItems| (object &rest arguments)
+  (%qinvoke-method object nil "setMaxVisibleItems" arguments))
+
+(defun |setMaximumAnisotropy| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumAnisotropy" arguments))
+
+(defun |setMaximumBlockCount| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumBlockCount" arguments))
+
+(defun |setMaximumCacheSize| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumCacheSize" arguments))
+
+(defun |setMaximumDateTime| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumDateTime" arguments))
+
+(defun |setMaximumDate| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumDate" arguments))
+
+(defun |setMaximumFrameRate| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumFrameRate" arguments))
+
+(defun |setMaximumHeight| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumHeight" arguments))
+
+(defun |setMaximumLevelOfDetail| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumLevelOfDetail" arguments))
+
+(defun |setMaximumPagesInCache.QWebSettings| (&rest arguments)
+  (%qinvoke-method "QWebSettings" nil "setMaximumPagesInCache" arguments))
+
+(defun |setMaximumSectionSize| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumSectionSize" arguments))
+
+(defun |setMaximumSize| (object &rest arguments)
+  (%qinvoke-method object nil "setMaximumSize" arguments))
+
 (defun |setMaximumTime| (object &rest arguments)
   (%qinvoke-method object nil "setMaximumTime" arguments))
 
@@ -2265,6 +2313,18 @@
 (defun |showMenu| (object &rest arguments)
   (%qinvoke-method object nil "showMenu" arguments))
 
+(defun |showMessage(QString,QString,QIcon)| (object &rest arguments)
+  (%qinvoke-method object nil "showMessage(QString,QString,QIcon)" arguments))
+
+(defun |showMessage(QString,QString,QIcon...)| (object &rest arguments)
+  (%qinvoke-method object nil "showMessage(QString,QString,QIcon...)" arguments))
+
+(defun |showMessage(QString,QString,QSystemTrayIcon::MessageIcon)| (object &rest arguments)
+  (%qinvoke-method object nil "showMessage(QString,QString,QSystemTrayIcon::MessageIcon)" arguments))
+
+(defun |showMessage(QString,QString,QSystemTrayIcon::MessageIcon...)| (object &rest arguments)
+  (%qinvoke-method object nil "showMessage(QString,QString,QSystemTrayIcon::MessageIcon...)" arguments))
+
 (defun |showMessage| (object &rest arguments)
   (%qinvoke-method object nil "showMessage" arguments))
 
@@ -3177,6 +3237,9 @@
 (defun |tabData| (object &rest arguments)
   (%qinvoke-method object nil "tabData" arguments))
 
+(defun |tabFocusBehaviorChanged| (object &rest arguments)
+  (%qinvoke-method object nil "tabFocusBehaviorChanged" arguments))
+
 (defun |tabFocusBehavior| (object &rest arguments)
   (%qinvoke-method object nil "tabFocusBehavior" arguments))
 
@@ -3218,6 +3281,9 @@
 
 (defun |tabWhatsThis| (object &rest arguments)
   (%qinvoke-method object nil "tabWhatsThis" arguments))
+
+(defun |tabifiedDockWidgetActivated| (object &rest arguments)
+  (%qinvoke-method object nil "tabifiedDockWidgetActivated" arguments))
 
 (defun |tabifiedDockWidgets| (object &rest arguments)
   (%qinvoke-method object nil "tabifiedDockWidgets" arguments))
@@ -3468,6 +3534,9 @@
 (defun |textureProvider| (object &rest arguments)
   (%qinvoke-method object nil "textureProvider" arguments))
 
+(defun |textureSizeChanged| (object &rest arguments)
+  (%qinvoke-method object nil "textureSizeChanged" arguments))
+
 (defun |textureSize| (object &rest arguments)
   (%qinvoke-method object nil "textureSize" arguments))
 
@@ -3530,72 +3599,3 @@
 
 (defun |timerType| (object &rest arguments)
   (%qinvoke-method object nil "timerType" arguments))
-
-(defun |timestamp| (object &rest arguments)
-  (%qinvoke-method object nil "timestamp" arguments))
-
-(defun |time| (object &rest arguments)
-  (%qinvoke-method object nil "time" arguments))
-
-(defun |tip| (object &rest arguments)
-  (%qinvoke-method object nil "tip" arguments))
-
-(defun |titleBarWidget| (object &rest arguments)
-  (%qinvoke-method object nil "titleBarWidget" arguments))
-
-(defun |titleChanged| (object &rest arguments)
-  (%qinvoke-method object nil "titleChanged" arguments))
-
-(defun |titleFormat| (object &rest arguments)
-  (%qinvoke-method object nil "titleFormat" arguments))
-
-(defun |title| (object &rest arguments)
-  (%qinvoke-method object nil "title" arguments))
-
-(defun |toAce.QUrl| (&rest arguments)
-  (%qinvoke-method "QUrl" nil "toAce" arguments))
-
-(defun |toAffine| (object &rest arguments)
-  (%qinvoke-method object nil "toAffine" arguments))
-
-(defun |toBitArray| (object &rest arguments)
-  (%qinvoke-method object nil "toBitArray" arguments))
-
-(defun |toBlockFormat| (object &rest arguments)
-  (%qinvoke-method object nil "toBlockFormat" arguments))
-
-(defun |toBool| (object &rest arguments)
-  (%qinvoke-method object nil "toBool" arguments))
-
-(defun |toByteArray| (object &rest arguments)
-  (%qinvoke-method object nil "toByteArray" arguments))
-
-(defun |toCharFormat| (object &rest arguments)
-  (%qinvoke-method object nil "toCharFormat" arguments))
-
-(defun |toChar| (object &rest arguments)
-  (%qinvoke-method object nil "toChar" arguments))
-
-(defun |toCmyk| (object &rest arguments)
-  (%qinvoke-method object nil "toCmyk" arguments))
-
-(defun |toCubicSpline| (object &rest arguments)
-  (%qinvoke-method object nil "toCubicSpline" arguments))
-
-(defun |toCurrencyString(double)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(double)" arguments))
-
-(defun |toCurrencyString(double...)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(double...)" arguments))
-
-(defun |toCurrencyString(float)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(float)" arguments))
-
-(defun |toCurrencyString(float...)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(float...)" arguments))
-
-(defun |toCurrencyString(int)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(int)" arguments))
-
-(defun |toCurrencyString(int...)| (object &rest arguments)
-  (%qinvoke-method object nil "toCurrencyString(int...)" arguments))

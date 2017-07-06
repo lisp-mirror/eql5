@@ -1,5 +1,17 @@
 (defpackage :eql
   (:export
+   #:|releaseKeyboard|
+   #:|releaseMouse|
+   #:|releaseResources|
+   #:|releaseShortcut|
+   #:|releaseWidget|
+   #:|released|
+   #:|release|
+   #:|reload|
+   #:|remainingTime|
+   #:|remove.QFile|
+   #:|remove.QPixmapCache|
+   #:|removeAccessWhitelistEntry|
    #:|removeAction|
    #:|removeAllApplicationFonts.QFontDatabase|
    #:|removeAllChildNodes|
@@ -114,6 +126,7 @@
    #:|resetAttribute|
    #:|resetBindCount|
    #:|resetCachedContent|
+   #:|resetClean|
    #:|resetContentsSize|
    #:|resetDefaultSectionSize|
    #:|resetFontFamily|
@@ -280,6 +293,7 @@
    #:|sceneTransform|
    #:|scene|
    #:|scheduleDelayedItemsLayout|
+   #:|scheduleIndexDocumentation|
    #:|scheduleRenderJob|
    #:|scheme|
    #:|scopeId|
@@ -320,6 +334,8 @@
    #:|scrollToTop|
    #:|scrollTo|
    #:|scroll|
+   #:|search(QList<QHelpSearchQuery>)|
+   #:|search(QString)|
    #:|searchAllStations|
    #:|searchAndLock|
    #:|searchBackward|
@@ -1183,20 +1199,4 @@
    #:|setMask(QBitmap)|
    #:|setMask(QRegion)|
    #:|setMask|
-   #:|setMaterial|
-   #:|setMatrix|
-   #:|setMaxCount|
-   #:|setMaxLength|
-   #:|setMaxPendingConnections|
-   #:|setMaxVisibleItems|
-   #:|setMaximumAnisotropy|
-   #:|setMaximumBlockCount|
-   #:|setMaximumCacheSize|
-   #:|setMaximumDateTime|
-   #:|setMaximumDate|
-   #:|setMaximumFrameRate|
-   #:|setMaximumHeight|
-   #:|setMaximumLevelOfDetail|
-   #:|setMaximumPagesInCache.QWebSettings|
-   #:|setMaximumSectionSize|
-   #:|setMaximumSize|))
+   #:|setMaterial|))

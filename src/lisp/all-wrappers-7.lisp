@@ -735,6 +735,9 @@
 (defun |anchorNames| (object &rest arguments)
   (%qinvoke-method object nil "anchorNames" arguments))
 
+(defun |anchorRectangleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "anchorRectangleChanged" arguments))
+
 (defun |anchor| (object &rest arguments)
   (%qinvoke-method object nil "anchor" arguments))
 
@@ -851,6 +854,9 @@
 
 (defun |applicationDisplayName.QGuiApplication| (&rest arguments)
   (%qinvoke-method "QGuiApplication" nil "applicationDisplayName" arguments))
+
+(defun |applicationDisplayNameChanged| (object &rest arguments)
+  (%qinvoke-method object nil "applicationDisplayNameChanged" arguments))
 
 (defun |applicationFilePath.QCoreApplication| (&rest arguments)
   (%qinvoke-method "QCoreApplication" nil "applicationFilePath" arguments))
@@ -1968,8 +1974,14 @@
 (defun |changed| (object &rest arguments)
   (%qinvoke-method object nil "changed" arguments))
 
+(defun |channelBytesWritten| (object &rest arguments)
+  (%qinvoke-method object nil "channelBytesWritten" arguments))
+
 (defun |channelCount| (object &rest arguments)
   (%qinvoke-method object nil "channelCount" arguments))
+
+(defun |channelReadyRead| (object &rest arguments)
+  (%qinvoke-method object nil "channelReadyRead" arguments))
 
 (defun |charFormatIndex| (object &rest arguments)
   (%qinvoke-method object nil "charFormatIndex" arguments))
@@ -3438,6 +3450,9 @@
 (defun |defaultTextOption| (object &rest arguments)
   (%qinvoke-method object nil "defaultTextOption" arguments))
 
+(defun |defaultTransitionChanged| (object &rest arguments)
+  (%qinvoke-method object nil "defaultTransitionChanged" arguments))
+
 (defun |defaultValue| (object &rest arguments)
   (%qinvoke-method object nil "defaultValue" arguments))
 
@@ -3584,18 +3599,3 @@
 
 (defun |directoryEntered| (object &rest arguments)
   (%qinvoke-method object nil "directoryEntered" arguments))
-
-(defun |directoryLoaded| (object &rest arguments)
-  (%qinvoke-method object nil "directoryLoaded" arguments))
-
-(defun |directoryUrlEntered| (object &rest arguments)
-  (%qinvoke-method object nil "directoryUrlEntered" arguments))
-
-(defun |directoryUrl| (object &rest arguments)
-  (%qinvoke-method object nil "directoryUrl" arguments))
-
-(defun |directory| (object &rest arguments)
-  (%qinvoke-method object nil "directory" arguments))
-
-(defun |dirtyRegionOffset| (object &rest arguments)
-  (%qinvoke-method object nil "dirtyRegionOffset" arguments))

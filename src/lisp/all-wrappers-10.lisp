@@ -1,5 +1,41 @@
 (in-package :eql)
 
+(defun |releaseKeyboard| (object &rest arguments)
+  (%qinvoke-method object nil "releaseKeyboard" arguments))
+
+(defun |releaseMouse| (object &rest arguments)
+  (%qinvoke-method object nil "releaseMouse" arguments))
+
+(defun |releaseResources| (object &rest arguments)
+  (%qinvoke-method object nil "releaseResources" arguments))
+
+(defun |releaseShortcut| (object &rest arguments)
+  (%qinvoke-method object nil "releaseShortcut" arguments))
+
+(defun |releaseWidget| (object &rest arguments)
+  (%qinvoke-method object nil "releaseWidget" arguments))
+
+(defun |released| (object &rest arguments)
+  (%qinvoke-method object nil "released" arguments))
+
+(defun |release| (object &rest arguments)
+  (%qinvoke-method object nil "release" arguments))
+
+(defun |reload| (object &rest arguments)
+  (%qinvoke-method object nil "reload" arguments))
+
+(defun |remainingTime| (object &rest arguments)
+  (%qinvoke-method object nil "remainingTime" arguments))
+
+(defun |remove.QFile| (&rest arguments)
+  (%qinvoke-method "QFile" nil "remove" arguments))
+
+(defun |remove.QPixmapCache| (&rest arguments)
+  (%qinvoke-method "QPixmapCache" nil "remove" arguments))
+
+(defun |removeAccessWhitelistEntry| (object &rest arguments)
+  (%qinvoke-method object nil "removeAccessWhitelistEntry" arguments))
+
 (defun |removeAction| (object &rest arguments)
   (%qinvoke-method object nil "removeAction" arguments))
 
@@ -341,6 +377,9 @@
 
 (defun |resetCachedContent| (object &rest arguments)
   (%qinvoke-method object nil "resetCachedContent" arguments))
+
+(defun |resetClean| (object &rest arguments)
+  (%qinvoke-method object nil "resetClean" arguments))
 
 (defun |resetContentsSize| (object &rest arguments)
   (%qinvoke-method object nil "resetContentsSize" arguments))
@@ -840,6 +879,9 @@
 (defun |scheduleDelayedItemsLayout| (object &rest arguments)
   (%qinvoke-method object nil "scheduleDelayedItemsLayout" arguments))
 
+(defun |scheduleIndexDocumentation| (object &rest arguments)
+  (%qinvoke-method object nil "scheduleIndexDocumentation" arguments))
+
 (defun |scheduleRenderJob| (object &rest arguments)
   (%qinvoke-method object nil "scheduleRenderJob" arguments))
 
@@ -959,6 +1001,12 @@
 
 (defun |scroll| (object &rest arguments)
   (%qinvoke-method object (%auto-cast object) "scroll" arguments))
+
+(defun |search(QList<QHelpSearchQuery>)| (object &rest arguments)
+  (%qinvoke-method object nil "search(QList<QHelpSearchQuery>)" arguments))
+
+(defun |search(QString)| (object &rest arguments)
+  (%qinvoke-method object nil "search(QString)" arguments))
 
 (defun |searchAllStations| (object &rest arguments)
   (%qinvoke-method object nil "searchAllStations" arguments))
@@ -3551,51 +3599,3 @@
 
 (defun |setMaterial| (object &rest arguments)
   (%qinvoke-method object nil "setMaterial" arguments))
-
-(defun |setMatrix| (object &rest arguments)
-  (%qinvoke-method object nil "setMatrix" arguments))
-
-(defun |setMaxCount| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxCount" arguments))
-
-(defun |setMaxLength| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxLength" arguments))
-
-(defun |setMaxPendingConnections| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxPendingConnections" arguments))
-
-(defun |setMaxVisibleItems| (object &rest arguments)
-  (%qinvoke-method object nil "setMaxVisibleItems" arguments))
-
-(defun |setMaximumAnisotropy| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumAnisotropy" arguments))
-
-(defun |setMaximumBlockCount| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumBlockCount" arguments))
-
-(defun |setMaximumCacheSize| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumCacheSize" arguments))
-
-(defun |setMaximumDateTime| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumDateTime" arguments))
-
-(defun |setMaximumDate| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumDate" arguments))
-
-(defun |setMaximumFrameRate| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumFrameRate" arguments))
-
-(defun |setMaximumHeight| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumHeight" arguments))
-
-(defun |setMaximumLevelOfDetail| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumLevelOfDetail" arguments))
-
-(defun |setMaximumPagesInCache.QWebSettings| (&rest arguments)
-  (%qinvoke-method "QWebSettings" nil "setMaximumPagesInCache" arguments))
-
-(defun |setMaximumSectionSize| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumSectionSize" arguments))
-
-(defun |setMaximumSize| (object &rest arguments)
-  (%qinvoke-method object nil "setMaximumSize" arguments))

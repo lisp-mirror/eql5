@@ -245,6 +245,7 @@
    #:|anchorClicked|
    #:|anchorHref|
    #:|anchorNames|
+   #:|anchorRectangleChanged|
    #:|anchor|
    #:|angleAtPercent|
    #:|angleBetween|
@@ -284,6 +285,7 @@
    #:|applicationCacheQuotaExceeded|
    #:|applicationDirPath.QCoreApplication|
    #:|applicationDisplayName.QGuiApplication|
+   #:|applicationDisplayNameChanged|
    #:|applicationFilePath.QCoreApplication|
    #:|applicationFontFamilies.QFontDatabase|
    #:|applicationName.QCoreApplication|
@@ -656,7 +658,9 @@
    #:|changePosition|
    #:|changeSize|
    #:|changed|
+   #:|channelBytesWritten|
    #:|channelCount|
+   #:|channelReadyRead|
    #:|charFormatIndex|
    #:|charFormat|
    #:|characterAt|
@@ -1146,6 +1150,7 @@
    #:|defaultTextColor|
    #:|defaultTextEncoding|
    #:|defaultTextOption|
+   #:|defaultTransitionChanged|
    #:|defaultValue|
    #:|defaultWidget|
    #:|definitionSize.QPageSize|
@@ -1194,21 +1199,17 @@
    #:|direction|
    #:|directories|
    #:|directoryChanged|
-   #:|directoryEntered|
-   #:|directoryLoaded|
-   #:|directoryUrlEntered|
-   #:|directoryUrl|
-   #:|directory|
-   #:|dirtyRegionOffset|))
+   #:|directoryEntered|))
 
 (in-package :eql)
 
 (pushnew :qt-wrapper-functions *features*)
 
 (defun %auto-cast (object)
-  (when (find (qt-object-id (ensure-qt-object object))
-              '#.(list (qid "QGraphicsSvgItem")
-                       (qid "QGraphicsTextItem")
-                       (qid "QGraphicsVideoItem")
-                       (qid "QGraphicsWidget")))
-    "QGraphicsItem"))
+  ;; we want speed here, not elegance
+  (let ((id (qt-object-id (ensure-qt-object object))))
+    (when (or (= id (qid "QGraphicsSvgItem"))
+              (= id (qid "QGraphicsTextItem"))
+              (= id (qid "QGraphicsVideoItem"))
+              (= id (qid "QGraphicsWidget")))
+      "QGraphicsItem")))

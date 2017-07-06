@@ -91,7 +91,8 @@ Qt4/Qt5 note:
   lib names differ).
 
   If you have both Qt4 and Qt5 installed, you can use the following environment
-  variable to switch between the both (Unix):
+  variable to switch between the both on Unix (which requires the different Qt
+  'bin/' directories to be in PATH):
 
     export QT_SELECT=5
 

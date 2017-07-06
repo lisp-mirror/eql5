@@ -1,5 +1,74 @@
 (in-package :eql)
 
+(defun |timestamp| (object &rest arguments)
+  (%qinvoke-method object nil "timestamp" arguments))
+
+(defun |time| (object &rest arguments)
+  (%qinvoke-method object nil "time" arguments))
+
+(defun |tip| (object &rest arguments)
+  (%qinvoke-method object nil "tip" arguments))
+
+(defun |titleBarWidget| (object &rest arguments)
+  (%qinvoke-method object nil "titleBarWidget" arguments))
+
+(defun |titleChanged| (object &rest arguments)
+  (%qinvoke-method object nil "titleChanged" arguments))
+
+(defun |titleFormat| (object &rest arguments)
+  (%qinvoke-method object nil "titleFormat" arguments))
+
+(defun |title| (object &rest arguments)
+  (%qinvoke-method object nil "title" arguments))
+
+(defun |toAce.QUrl| (&rest arguments)
+  (%qinvoke-method "QUrl" nil "toAce" arguments))
+
+(defun |toAffine| (object &rest arguments)
+  (%qinvoke-method object nil "toAffine" arguments))
+
+(defun |toBitArray| (object &rest arguments)
+  (%qinvoke-method object nil "toBitArray" arguments))
+
+(defun |toBlockFormat| (object &rest arguments)
+  (%qinvoke-method object nil "toBlockFormat" arguments))
+
+(defun |toBool| (object &rest arguments)
+  (%qinvoke-method object nil "toBool" arguments))
+
+(defun |toByteArray| (object &rest arguments)
+  (%qinvoke-method object nil "toByteArray" arguments))
+
+(defun |toCharFormat| (object &rest arguments)
+  (%qinvoke-method object nil "toCharFormat" arguments))
+
+(defun |toChar| (object &rest arguments)
+  (%qinvoke-method object nil "toChar" arguments))
+
+(defun |toCmyk| (object &rest arguments)
+  (%qinvoke-method object nil "toCmyk" arguments))
+
+(defun |toCubicSpline| (object &rest arguments)
+  (%qinvoke-method object nil "toCubicSpline" arguments))
+
+(defun |toCurrencyString(double)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(double)" arguments))
+
+(defun |toCurrencyString(double...)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(double...)" arguments))
+
+(defun |toCurrencyString(float)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(float)" arguments))
+
+(defun |toCurrencyString(float...)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(float...)" arguments))
+
+(defun |toCurrencyString(int)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(int)" arguments))
+
+(defun |toCurrencyString(int...)| (object &rest arguments)
+  (%qinvoke-method object nil "toCurrencyString(int...)" arguments))
+
 (defun |toCurrencyString(qlonglong)| (object &rest arguments)
   (%qinvoke-method object nil "toCurrencyString(qlonglong)" arguments))
 
@@ -1050,6 +1119,9 @@
 (defun |useDesignMetrics| (object &rest arguments)
   (%qinvoke-method object nil "useDesignMetrics" arguments))
 
+(defun |useHoverEffectsChanged| (object &rest arguments)
+  (%qinvoke-method object nil "useHoverEffectsChanged" arguments))
+
 (defun |useRtlExtensions| (object &rest arguments)
   (%qinvoke-method object nil "useRtlExtensions" arguments))
 
@@ -1397,6 +1469,9 @@
 
 (defun |wheelScrollLines.QApplication| (&rest arguments)
   (%qinvoke-method "QApplication" nil "wheelScrollLines" arguments))
+
+(defun |wheelScrollLinesChanged| (object &rest arguments)
+  (%qinvoke-method object nil "wheelScrollLinesChanged" arguments))
 
 (defun |whiteBalanceMode| (object &rest arguments)
   (%qinvoke-method object nil "whiteBalanceMode" arguments))

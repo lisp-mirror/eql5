@@ -1,5 +1,26 @@
 (in-package :eql)
 
+(defun |isGroupSeparatorShown| (object &rest arguments)
+  (%qinvoke-method object nil "isGroupSeparatorShown" arguments))
+
+(defun |isHeaderHidden| (object &rest arguments)
+  (%qinvoke-method object nil "isHeaderHidden" arguments))
+
+(defun |isHidden| (object &rest arguments)
+  (%qinvoke-method object nil "isHidden" arguments))
+
+(defun |isHttpOnly| (object &rest arguments)
+  (%qinvoke-method object nil "isHttpOnly" arguments))
+
+(defun |isIconVisibleInMenu| (object &rest arguments)
+  (%qinvoke-method object nil "isIconVisibleInMenu" arguments))
+
+(defun |isIdentifierEscaped| (object &rest arguments)
+  (%qinvoke-method object nil "isIdentifierEscaped" arguments))
+
+(defun |isIdentity| (object &rest arguments)
+  (%qinvoke-method object nil "isIdentity" arguments))
+
 (defun |isImageFormat| (object &rest arguments)
   (%qinvoke-method object nil "isImageFormat" arguments))
 
@@ -1896,6 +1917,9 @@
 (defun |mipmap| (object &rest arguments)
   (%qinvoke-method object nil "mipmap" arguments))
 
+(defun |mirrorVerticallyChanged| (object &rest arguments)
+  (%qinvoke-method object nil "mirrorVerticallyChanged" arguments))
+
 (defun |mirrored| (object &rest arguments)
   (%qinvoke-method object nil "mirrored" arguments))
 
@@ -1985,6 +2009,9 @@
 
 (defun |mouseMoveEvent| (object &rest arguments)
   (%qinvoke-method object nil "mouseMoveEvent" arguments))
+
+(defun |mousePressAndHoldIntervalChanged| (object &rest arguments)
+  (%qinvoke-method object nil "mousePressAndHoldIntervalChanged" arguments))
 
 (defun |mousePressAndHoldInterval| (object &rest arguments)
   (%qinvoke-method object nil "mousePressAndHoldInterval" arguments))
@@ -2817,6 +2844,9 @@
 (defun |physicalDotsPerInch| (object &rest arguments)
   (%qinvoke-method object nil "physicalDotsPerInch" arguments))
 
+(defun |physicalDpiChanged| (object &rest arguments)
+  (%qinvoke-method object nil "physicalDpiChanged" arguments))
+
 (defun |physicalDpiX| (object &rest arguments)
   (%qinvoke-method object nil "physicalDpiX" arguments))
 
@@ -3465,6 +3495,12 @@
 (defun |redF| (object &rest arguments)
   (%qinvoke-method object nil "redF" arguments))
 
+(defun |redirectAllowed| (object &rest arguments)
+  (%qinvoke-method object nil "redirectAllowed" arguments))
+
+(defun |redirected| (object &rest arguments)
+  (%qinvoke-method object nil "redirected" arguments))
+
 (defun |redoAvailable| (object &rest arguments)
   (%qinvoke-method object nil "redoAvailable" arguments))
 
@@ -3563,39 +3599,3 @@
 
 (defun |releaseControl| (object &rest arguments)
   (%qinvoke-method object nil "releaseControl" arguments))
-
-(defun |releaseKeyboard| (object &rest arguments)
-  (%qinvoke-method object nil "releaseKeyboard" arguments))
-
-(defun |releaseMouse| (object &rest arguments)
-  (%qinvoke-method object nil "releaseMouse" arguments))
-
-(defun |releaseResources| (object &rest arguments)
-  (%qinvoke-method object nil "releaseResources" arguments))
-
-(defun |releaseShortcut| (object &rest arguments)
-  (%qinvoke-method object nil "releaseShortcut" arguments))
-
-(defun |releaseWidget| (object &rest arguments)
-  (%qinvoke-method object nil "releaseWidget" arguments))
-
-(defun |released| (object &rest arguments)
-  (%qinvoke-method object nil "released" arguments))
-
-(defun |release| (object &rest arguments)
-  (%qinvoke-method object nil "release" arguments))
-
-(defun |reload| (object &rest arguments)
-  (%qinvoke-method object nil "reload" arguments))
-
-(defun |remainingTime| (object &rest arguments)
-  (%qinvoke-method object nil "remainingTime" arguments))
-
-(defun |remove.QFile| (&rest arguments)
-  (%qinvoke-method "QFile" nil "remove" arguments))
-
-(defun |remove.QPixmapCache| (&rest arguments)
-  (%qinvoke-method "QPixmapCache" nil "remove" arguments))
-
-(defun |removeAccessWhitelistEntry| (object &rest arguments)
-  (%qinvoke-method object nil "removeAccessWhitelistEntry" arguments))

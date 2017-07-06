@@ -1,5 +1,10 @@
 (defpackage :eql
   (:export
+   #:|directoryLoaded|
+   #:|directoryUrlEntered|
+   #:|directoryUrl|
+   #:|directory|
+   #:|dirtyRegionOffset|
    #:|dir|
    #:|disableAttributeArray(const char*)|
    #:|disableAttributeArray(int)|
@@ -281,6 +286,7 @@
    #:|eraseRect(QRect)|
    #:|eraseRect(QRectF)|
    #:|eraseRect|
+   #:|errorOccurred|
    #:|errorStateChanged|
    #:|errorState|
    #:|errorString|
@@ -523,7 +529,6 @@
    #:|font|
    #:|forceActiveFocus|
    #:|forceCompletion|
-   #:|forcePolish|
    #:|forceShow|
    #:|foregroundBrush|
    #:|foregroundColor|
@@ -696,6 +701,7 @@
    #:|groupId|
    #:|groupSeparator|
    #:|group|
+   #:|handleScreenChanged|
    #:|handleWidth|
    #:|handle|
    #:|hardwareAddress|
@@ -950,6 +956,7 @@
    #:|inputChannelMode|
    #:|inputDirectionChanged|
    #:|inputDirection|
+   #:|inputItemClipRectangleChanged|
    #:|inputItemRectangle|
    #:|inputItemTransform|
    #:|inputMask|
@@ -1192,11 +1199,4 @@
    #:|isGenerated(int)|
    #:|isGenerated|
    #:|isGrayscale|
-   #:|isGridVisible|
-   #:|isGroupSeparatorShown|
-   #:|isHeaderHidden|
-   #:|isHidden|
-   #:|isHttpOnly|
-   #:|isIconVisibleInMenu|
-   #:|isIdentifierEscaped|
-   #:|isIdentity|))
+   #:|isGridVisible|))

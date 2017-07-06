@@ -1,5 +1,12 @@
 (defpackage :eql
   (:export
+   #:|isGroupSeparatorShown|
+   #:|isHeaderHidden|
+   #:|isHidden|
+   #:|isHttpOnly|
+   #:|isIconVisibleInMenu|
+   #:|isIdentifierEscaped|
+   #:|isIdentity|
    #:|isImageFormat|
    #:|isInSubnet|
    #:|isInteractive|
@@ -632,6 +639,7 @@
    #:|mipMaxLevel|
    #:|mipmapFiltering|
    #:|mipmap|
+   #:|mirrorVerticallyChanged|
    #:|mirrored|
    #:|miterLimit|
    #:|mkdir|
@@ -662,6 +670,7 @@
    #:|mouseGrabber.QWidget|
    #:|mouseGrabberItem|
    #:|mouseMoveEvent|
+   #:|mousePressAndHoldIntervalChanged|
    #:|mousePressAndHoldInterval|
    #:|mousePressEvent|
    #:|mouseReleaseEvent|
@@ -939,6 +948,7 @@
    #:|physicalDotsPerInchX|
    #:|physicalDotsPerInchY|
    #:|physicalDotsPerInch|
+   #:|physicalDpiChanged|
    #:|physicalDpiX|
    #:|physicalDpiY|
    #:|physicalSizeChanged|
@@ -1155,6 +1165,8 @@
    #:|rect|
    #:|redBufferSize|
    #:|redF|
+   #:|redirectAllowed|
+   #:|redirected|
    #:|redoAvailable|
    #:|redoTextChanged|
    #:|redoText|
@@ -1187,16 +1199,4 @@
    #:|relationModel|
    #:|relation|
    #:|relativeFilePath|
-   #:|releaseControl|
-   #:|releaseKeyboard|
-   #:|releaseMouse|
-   #:|releaseResources|
-   #:|releaseShortcut|
-   #:|releaseWidget|
-   #:|released|
-   #:|release|
-   #:|reload|
-   #:|remainingTime|
-   #:|remove.QFile|
-   #:|remove.QPixmapCache|
-   #:|removeAccessWhitelistEntry|))
+   #:|releaseControl|))
