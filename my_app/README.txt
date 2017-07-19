@@ -5,9 +5,9 @@ HOWTO
 Prepare:
 --------
 
-  - in "make.lisp", add all of your lisp files to *lisp-files* (see "lisp/")
+  - in "make.lisp", add all of your lisp files to *lisp-files*
 
-  - adapt main.cpp (translations, initial Lisp form to evaluate, package name).
+  - alternatively (using ASDF) see "my-app.asd" and "dependencies.lisp"
 
 
 Build (simple, no ASDF):
@@ -18,7 +18,6 @@ Build (simple, no ASDF):
   $ eql5 make
   $ qmake
   $ make      (MSVC: nmake)
-
 
   Now you should find a "my_app" executable.
 
@@ -38,6 +37,8 @@ Build (using ASDF with dependencies):
     package.lisp      ; example package
     dependencies.lisp ; for Quicklisp (used in "run" and "make-ASDF")
     run.lisp          ; load system
+
+  Now you should find a "my_app" executable, containing everything in one exe.
 
 
 Notes:
