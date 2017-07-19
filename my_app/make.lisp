@@ -9,18 +9,20 @@
 (setf c::*compile-in-constants* t)
 
 (defparameter *lisp-files*
-  (list "my")
+  (list "package"
+        "lisp/my")
   "All Lisp files of the application.")
 
-(dolist (f *lisp-files*)
-  (let ((file (format nil "lisp/~A" f)))
-    (load file)
-    (compile-file file :system-p t)))
+(dolist (file *lisp-files*)
+  (load file)
+  (compile-file file :system-p t))
 
-(c:build-static-library "my_lib"
+(c:build-static-library "my_app_lib"
                         :lisp-files (mapcar (lambda (file)
-                                              (format nil "lisp/~A.~A" file #+msvc "obj" #-msvc "o"))
+                                              (x:cc file #+msvc ".obj"
+                                                         #-msvc ".o"))
                                             *lisp-files*)
-                        :init-name "ini_app")
+                        ;; name as computed in ASDF version
+                        :init-name "init_lib_MY_APP__ALL_SYSTEMS")
 
 (eql:qq)

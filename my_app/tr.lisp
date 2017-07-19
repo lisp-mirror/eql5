@@ -1,5 +1,5 @@
 (defpackage :eql-tr
-  (:use :common-lisp :eql))
+  (:use :cl :eql))
 
 (in-package :eql-tr)
 

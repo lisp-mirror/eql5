@@ -1,17 +1,11 @@
-(defpackage :example
-  (:use :common-lisp :eql)
-  (:export
-   #:start))
-
 (in-package :example)
-
-(defparameter *alarm* 11)
 
 (defun start ()
   (! "show" (qnew "QLabel"
-                  "text" (tr (format nil "<h3>~A ~{~R~^ ~},<br>I want to sleep until ~R."
-                                     (string-capitalize (format nil "~R" 1))
-                                     (loop for i from 2 to 7 collect i)
-                                     *alarm*))
+                  "text" (tr (format nil "<h3>~{~R~^ ~},<br>I want to sleep until ~R"
+                                     (loop for i from 1 to 7 collect i)
+                                     11))
                   "alignment" |Qt.AlignCenter|
                   "margin" 10)))
+
+(start)

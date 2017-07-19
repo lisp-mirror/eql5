@@ -7,7 +7,8 @@
 #include <QSettings>
 #include <QTranslator>
 
-extern "C" void ini_app(cl_object);
+// adapt "MY_APP" (here: from "my-app.asd")
+extern "C" void init_lib_MY_APP__ALL_SYSTEMS(cl_object);
 
 int catch_all_qexec() {
     int ret = 0;
@@ -43,8 +44,7 @@ int main(int argc, char** argv) {
     eql.ignoreIOStreams();
 #endif
 
-    eql.exec(ini_app,    // see make.lisp
-             "(start)",  // initial form to be evaluated (optional)
-             "example"); // package name                 (optional)
+    // adapt "MY_APP" (here: from "my-app.asd")
+    eql.exec(init_lib_MY_APP__ALL_SYSTEMS);
 
     return catch_all_qexec(); } // closing the main/last window will quit the program
