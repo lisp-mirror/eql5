@@ -31,14 +31,15 @@ Build (using ASDF with dependencies):
   $ qmake
   $ make           (MSVC: nmake)
 
+  Now you should find a "my_app" executable, containing everything in one exe.
+
   Please note files:
 
     my-app.asd        ; define system
     package.lisp      ; example package
     dependencies.lisp ; for Quicklisp (used in "run" and "make-ASDF")
-    run.lisp          ; load system
-
-  Now you should find a "my_app" executable, containing everything in one exe.
+    run.lisp          ; load system (compiled)
+    r.lisp            ; load system (interpreted, for development)
 
 
 Notes:
