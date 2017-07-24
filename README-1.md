@@ -147,7 +147,7 @@ Substitute `make` with `nmake`.
 *MinGW*
 
 If `make` is stuck in an infinite loop of creating the `Makefile`, just
-remove the line 'include(windows.pri)' from your `*.pro` file, setting
+remove the line `include(windows.pri)` from your `*.pro` file, setting
 eventually needed paths in your `~/.profile` instead.
 
 ### 1) Build Lisp lib

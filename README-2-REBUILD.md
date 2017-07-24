@@ -50,4 +50,4 @@ ECL/C++ integration).
 
 ### Tip
 
-If you're on Linux, see `src/rebuild` (needs password for 'make install`).
+If you're on Linux, see also `src/rebuild` (needs password for `make install`).

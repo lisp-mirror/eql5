@@ -14,7 +14,7 @@ Examples:
 
 ### Integrate them permanently
 
-Build EQL5 as usual, then run
+Build EQL5 as usual, then run (in `src/`)
 
 ```
   $ eql5 make-wrappers.lisp
