@@ -39,8 +39,8 @@ Tested with:
 *Linux* (development platform), with both gcc and clang:
 
 * ECL 16.1.2
-* Qt 5.5.1 (with module 'webkit')
-* Qt 5.8   (with module 'webengine')
+* Qt 5.5.1 (with module `:webkit`)
+* Qt 5.8   (with module `:webengine`)
 
 *Windows/32*:
 
@@ -63,7 +63,7 @@ Tested with:
 MinGW note: in order to build successfully, I needed to:
 
 * change a typedef in `ecl.h` (after building ECL); see compile error;
-* comment out all offending lines of module :quick; see SGTexture related
+* comment out all offending lines of module `:quick`; see SGTexture related
   linker errors; the source files are in `eql5/src/gen/quick/`;
 
 
@@ -81,7 +81,7 @@ you need to choose Qt 5.5, and not later versions!
 QtWebKit will continue to work with versions > 5.5, but it has to be
 compiled manually (which is not fun).  
 QtWebKit has a better, more native integration with Qt than QtWebEngine, see
-for example QWebElement, which doesn't exist in QtWebEngine.
+for example `QWebElement`, which doesn't exist in QtWebEngine.
 
 
 
@@ -133,7 +133,7 @@ You also should add your eql5 directory (for eventual C++ modules), e.g:
   LIBS        += ... -Lc:/eql5
 ```
 
-Since EQL requires the C compiler anyway (not the bytecode compiler), you
+Since EQL5 requires the C compiler anyway (not the bytecode compiler), you
 should put this line in your `~/.eclrc`:
 
 ```
