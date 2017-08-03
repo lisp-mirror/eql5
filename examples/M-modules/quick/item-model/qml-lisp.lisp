@@ -1,6 +1,7 @@
 ;;;
 ;;; * enables QML to call Lisp functions
 ;;; * allows to get/set any QML property from Lisp (needs 'objectName' to be set)
+;;; * allows to call QML methods from Lisp (needs 'objectName' to be set)
 ;;; * allows to evaluate JS code from Lisp (needs 'objectName' to be set)
 ;;;
 
@@ -13,6 +14,7 @@
    #:children
    #:find-quick-item
    #:js
+   #:qml-call
    #:qml-get
    #:qml-set
    #:qml-set-all
@@ -112,6 +114,12 @@
   "Force reloading of QML file after changes made to it."
   (|clearComponentCache| (|engine| *quick-view*))
   (|setSource| *quick-view* (|source| *quick-view*)))
+
+;;; call QML methods
+
+(defun qml-call (item/name method-name &rest arguments)
+  ;; QFUN+ comes in handy here
+  (apply 'qfun+ (quick-item item/name) method-name arguments))
 
 ;;; get/set QQmlProperty
 
