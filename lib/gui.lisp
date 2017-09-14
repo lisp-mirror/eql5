@@ -392,8 +392,8 @@
                 (display (mapcar 'prin1-to-string vals) "blue")
                 (history-add txt)
                 (! "clear" *edit*)))))
-      (error (err)
-        (show-error err color)))))
+      (condition (c)
+        (show-error c color)))))
 
 (defun focus-me ()
   (x:do-with *gui* "activateWindow" "raise")
