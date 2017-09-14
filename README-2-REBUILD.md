@@ -6,29 +6,13 @@
 ```
   $ cd src
   $ rm -fr tmp           # Windows: rmdir tmp /s /q
-  $ ecl -shell make.lisp
+  $ ecl -shell make.lisp # will take a while
 ```
 
 ```
   $ qmake eql5.pro
   $ make              # MSVC: nmake
   $ sudo make install # Unix only
-```
-
-Optional, but recommended (integrate **wrapper functions**):
-
-```
-  $ eql5 make-wrappers.lisp
-```
-
-```
-  $ touch tmp/eql.o    # Windows: del tmp/eql.obj
-```
-
-```
-  $ qmake eql_lib.pro
-  $ make               # MSVC: nmake
-  $ sudo make install  # Unix only
 ```
 
 
