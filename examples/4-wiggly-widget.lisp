@@ -1,8 +1,5 @@
 ;;; This is a port of the Qt Example "Wiggly Widget"
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defpackage :wiggly-widget
   (:nicknames :wiggly)
   (:use :common-lisp :eql)

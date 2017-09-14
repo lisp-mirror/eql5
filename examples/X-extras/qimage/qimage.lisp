@@ -8,9 +8,6 @@
 ;;;
 ;;; optionally pass image file as command line argument
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defpackage :image-manipulation
   (:nicknames :img)
   (:use :common-lisp :eql)

@@ -1,8 +1,5 @@
 ;;; Screenshot with countdown
 
-#-qt-wrapper-functions
-(load (in-home "src/lisp/all-wrappers"))
-
 (in-package :eql-user)
 
 (defvar *pixmap* (qnew "QPixmap(QString)" (in-home "examples/X-extras/screenshot/camera.png")))

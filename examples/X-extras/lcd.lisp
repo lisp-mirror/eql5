@@ -1,8 +1,5 @@
 ;;; LCD pixel color test (inspired by a "comp.lang.lisp" thread)
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (in-package :eql-user)
 
 (defun lcd-test ()

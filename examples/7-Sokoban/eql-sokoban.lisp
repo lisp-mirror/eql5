@@ -11,15 +11,12 @@
 ;;;
 ;;; (because of multiple inheritance from both QObject and QGraphicsItem)
 ;;;
-;;; If you use the wrapper functions instead (see "src/lisp/all-wrappers"),
-;;; this cast is done automatically:
+;;; If you use the wrapper functions instead, this cast is done
+;;; automatically:
 ;;;
 ;;;   (|setPos| graphics-text-item '(0 0)))
 ;;;
 ;;; ------------------------------------------------------------------------
-
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
 
 (load (eql:in-home "examples/7-Sokoban/3rd-party/sokoban"))
 (load (eql:in-home "examples/7-Sokoban/3rd-party/levels"))

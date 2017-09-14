@@ -4,9 +4,6 @@
 ;;; Use CHANGE-LEVEL to directly change the level index.
 ;;;
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :quick)
 
 (require :sokoban  "3rd-party/sokoban")

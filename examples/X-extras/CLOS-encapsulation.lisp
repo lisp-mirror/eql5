@@ -1,6 +1,3 @@
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (in-package :eql-user)
 
 ;; define class or struct

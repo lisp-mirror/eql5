@@ -3,9 +3,6 @@
 ;;; - displays exact value + float value
 ;;; - runs visual automations
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defpackage :calculator
   (:nicknames :clc)
   (:use :common-lisp :eql)

@@ -1,4 +1,5 @@
-# comment out all modules you don't need:
+# -----------------------------------------------------
+# below you can comment out all modules you don't need:
 
 SUBDIRS = help \
           multimedia \
@@ -8,6 +9,7 @@ SUBDIRS = help \
           svg \
           # webengine \
           webkit
+# -----------------------------------------------------
 
 TEMPLATE = subdirs
 SUBDIRS += lib exe

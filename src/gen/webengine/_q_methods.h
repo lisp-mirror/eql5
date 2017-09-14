@@ -34,7 +34,7 @@ public:
     Q_INVOKABLE void MsetSavePageFormat(QWebEngineDownloadItem* o, QWebEngineDownloadItem::SavePageFormat x1) { o->setSavePageFormat(x1); }
     Q_INVOKABLE int Mstate(QWebEngineDownloadItem* o) const { return o->state(); }
     Q_INVOKABLE qlonglong MtotalBytes(QWebEngineDownloadItem* o) const { return o->totalBytes(); }
-    Q_INVOKABLE int Mtype(QWebEngineDownloadItem* o) const { return o->type(); }
+    //Q_INVOKABLE int Mtype(QWebEngineDownloadItem* o) const { return o->type(); }
     Q_INVOKABLE QUrl Murl(QWebEngineDownloadItem* o) const { return o->url(); }
 };
 
@@ -54,18 +54,18 @@ public:
     Q_INVOKABLE QUrl MiconUrl(QWebEnginePage* o) const { return o->iconUrl(); }
     Q_INVOKABLE bool MisAudioMuted(QWebEnginePage* o) const { return o->isAudioMuted(); }
     Q_INVOKABLE void Mload(QWebEnginePage* o, const QUrl& x1) { o->load(x1); }
-    Q_INVOKABLE void Mprint(QWebEnginePage* o, QPrinter* x1, FunctorOrLambda x2) { o->print(x1, x2); }
+    //Q_INVOKABLE void Mprint(QWebEnginePage* o, QPrinter* x1, FunctorOrLambda x2) { o->print(x1, x2); }
     Q_INVOKABLE void MprintToPdf(QWebEnginePage* o, const QString& x1, const QPageLayout& x2 = QPageLayout_DEFAULT) { o->printToPdf(x1, x2); }
     Q_INVOKABLE void MprintToPdf(QWebEnginePage* o, FunctorOrLambda x1, const QPageLayout& x2 = QPageLayout_DEFAULT) { o->printToPdf(x1, x2); }
     Q_INVOKABLE QWebEngineProfile* Mprofile(QWebEnginePage* o) const { return o->profile(); }
     Q_INVOKABLE bool MrecentlyAudible(QWebEnginePage* o) const { return o->recentlyAudible(); }
-    Q_INVOKABLE void MreplaceMisspelledWord(QWebEnginePage* o, const QString& x1) { o->replaceMisspelledWord(x1); }
+    //Q_INVOKABLE void MreplaceMisspelledWord(QWebEnginePage* o, const QString& x1) { o->replaceMisspelledWord(x1); }
     Q_INVOKABLE QUrl MrequestedUrl(QWebEnginePage* o) const { return o->requestedUrl(); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, quint32 x2, FunctorOrLambda x3) { o->runJavaScript(x1, x2, x3); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, quint32 x2) { o->runJavaScript(x1, x2); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1, FunctorOrLambda x2) { o->runJavaScript(x1, x2); }
     Q_INVOKABLE void MrunJavaScript(QWebEnginePage* o, const QString& x1) { o->runJavaScript(x1); }
-    Q_INVOKABLE void Msave(QWebEnginePage* o, const QString& x1, QWebEngineDownloadItem::SavePageFormat x2 = QWebEngineDownloadItem::MimeHtmlSaveFormat) const { o->save(x1, x2); }
+    //Q_INVOKABLE void Msave(QWebEnginePage* o, const QString& x1, QWebEngineDownloadItem::SavePageFormat x2 = QWebEngineDownloadItem::MimeHtmlSaveFormat) const { o->save(x1, x2); }
     Q_INVOKABLE QPointF MscrollPosition(QWebEnginePage* o) const { return o->scrollPosition(); }
     Q_INVOKABLE QString MselectedText(QWebEnginePage* o) const { return o->selectedText(); }
     Q_INVOKABLE void MsetAudioMuted(QWebEnginePage* o, bool x1) { o->setAudioMuted(x1); }
@@ -102,7 +102,7 @@ public:
     Q_INVOKABLE int MhttpCacheType(QWebEngineProfile* o) const { return o->httpCacheType(); }
     Q_INVOKABLE QString MhttpUserAgent(QWebEngineProfile* o) const { return o->httpUserAgent(); }
     Q_INVOKABLE bool MisOffTheRecord(QWebEngineProfile* o) const { return o->isOffTheRecord(); }
-    Q_INVOKABLE bool MisSpellCheckEnabled(QWebEngineProfile* o) const { return o->isSpellCheckEnabled(); }
+    //Q_INVOKABLE bool MisSpellCheckEnabled(QWebEngineProfile* o) const { return o->isSpellCheckEnabled(); }
     Q_INVOKABLE int MpersistentCookiesPolicy(QWebEngineProfile* o) const { return o->persistentCookiesPolicy(); }
     Q_INVOKABLE QString MpersistentStoragePath(QWebEngineProfile* o) const { return o->persistentStoragePath(); }
     Q_INVOKABLE void MremoveUrlScheme(QWebEngineProfile* o, const QByteArray& x1) { o->removeUrlScheme(x1); }
@@ -115,10 +115,10 @@ public:
     Q_INVOKABLE void MsetPersistentCookiesPolicy(QWebEngineProfile* o, QWebEngineProfile::PersistentCookiesPolicy x1) { o->setPersistentCookiesPolicy(x1); }
     Q_INVOKABLE void MsetPersistentStoragePath(QWebEngineProfile* o, const QString& x1) { o->setPersistentStoragePath(x1); }
     Q_INVOKABLE void MsetRequestInterceptor(QWebEngineProfile* o, QWebEngineUrlRequestInterceptor* x1) { o->setRequestInterceptor(x1); }
-    Q_INVOKABLE void MsetSpellCheckEnabled(QWebEngineProfile* o, bool x1) { o->setSpellCheckEnabled(x1); }
-    Q_INVOKABLE void MsetSpellCheckLanguages(QWebEngineProfile* o, const QStringList& x1) { o->setSpellCheckLanguages(x1); }
+    //Q_INVOKABLE void MsetSpellCheckEnabled(QWebEngineProfile* o, bool x1) { o->setSpellCheckEnabled(x1); }
+    //Q_INVOKABLE void MsetSpellCheckLanguages(QWebEngineProfile* o, const QStringList& x1) { o->setSpellCheckLanguages(x1); }
     Q_INVOKABLE QWebEngineSettings* Msettings(QWebEngineProfile* o) const { return o->settings(); }
-    Q_INVOKABLE QStringList MspellCheckLanguages(QWebEngineProfile* o) const { return o->spellCheckLanguages(); }
+    //Q_INVOKABLE QStringList MspellCheckLanguages(QWebEngineProfile* o) const { return o->spellCheckLanguages(); }
     Q_INVOKABLE QString MstorageName(QWebEngineProfile* o) const { return o->storageName(); }
     Q_INVOKABLE bool MvisitedLinksContainsUrl(QWebEngineProfile* o, const QUrl& x1) const { return o->visitedLinksContainsUrl(x1); }
     Q_INVOKABLE QWebEngineProfile* SdefaultProfile() { return QWebEngineProfile::defaultProfile(); }

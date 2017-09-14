@@ -7,9 +7,6 @@
 ;;; Note: Adding QNetworkRequest to the plugin widget would allow to get
 ;;;       any data from the web, but this is not shown here.
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :webkit)
 
 (in-package :eql-user)

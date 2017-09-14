@@ -16,9 +16,6 @@
 ;;; (resulting in better performance).
 ;;;
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defvar *tree-widget* (qnew "QTreeWidget"
                             "alternatingRowColors" t
                             "size" '(500 300)))

@@ -1,6 +1,3 @@
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 ;;; Ported Qt Widgets Tutorial - Using Layouts
 
 (in-package :eql-user)

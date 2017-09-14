@@ -9,9 +9,6 @@
 ;;;
 ;;; Once downloaded, the application files are cached locally (to be run offline).
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :webkit)
 (qrequire :network)
 

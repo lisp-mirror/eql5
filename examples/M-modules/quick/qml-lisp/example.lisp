@@ -1,8 +1,5 @@
 ;;; QQuickView loading Lisp enabled QML
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :quick)
 
 (require :qml-lisp   "qml-lisp")

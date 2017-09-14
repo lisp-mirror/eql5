@@ -1,8 +1,5 @@
 ;;; simple WebEngine example
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :webengine)
 
 (defvar *view* (qnew "QWebEngineView"))

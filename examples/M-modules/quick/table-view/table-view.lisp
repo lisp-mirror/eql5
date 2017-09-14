@@ -1,9 +1,6 @@
 ;;; this is (kind of) a simplified port of the "tableview" C++/QML example
 ;;; (see also README.txt)
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :quick)
 
 (require :qml-lisp   "qml-lisp")

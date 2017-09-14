@@ -7,9 +7,6 @@
 ;;; The good news: if a seg.fault happens (in C++), just choose the restart option "Abort" (below "Continue"),
 ;;; and the application will continue to run.
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defpackage :colliding-mice
   (:nicknames :mice)
   (:use :common-lisp :eql)

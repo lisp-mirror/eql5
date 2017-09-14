@@ -1,8 +1,5 @@
 ;;; This is a port of Qt example "webkit/domtraversal/"
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :webkit)
 
 (in-package :eql-user)

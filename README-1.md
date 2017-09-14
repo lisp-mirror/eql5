@@ -18,7 +18,7 @@ Build (for the impatient)
 In `src/` do:
 
 ```
-  $ ecl -shell make
+  $ ecl -shell make   # will take a while
   $ qmake eql5.pro    # comment out all modules you don't need
   $ make
   $ sudo make install # Unix only
@@ -27,9 +27,6 @@ In `src/` do:
 Now you should be able to run `eql5`.
 
 If there are problems, or you want more info, see detailed instructions below.
-
-N.B. If the above runs, please don't forget to integrate the
-**wrapper functions**, see `README-3-OPTIONAL`, needed for serious development.
 
 
 
@@ -312,11 +309,6 @@ You might want to put this in your `~/.eclrc` file:
   (setf eql:*qtpl*            t  ; same as -qtpl
         eql:*break-on-errors* t)
 ```
-
-It is **highly recommended** to integrate the wrapper functions, see
-`README-3-OPTIONAL`.  
-This will make all Qt functions real Lisp functions, which also means symbol
-tab-completion, both in Emacs/Slime and with `ecl-readline`.
 
 Please see also example `examples/X-extras/CLOS-encapsulation.lisp` for
 encapsulation of Qt classes in Lisp classes or structs (that is, Lisp classes

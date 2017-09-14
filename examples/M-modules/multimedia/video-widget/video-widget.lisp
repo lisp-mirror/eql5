@@ -1,8 +1,5 @@
 ;; port of Qt example "videowidget" (QtMultimediaWidgets)
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (qrequire :multimedia)
 
 (require :ui (in-home "examples/M-modules/multimedia/video-widget/ui/ui-video-widget"))

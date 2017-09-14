@@ -5,11 +5,6 @@ rm lisp/*.o
 ecl -shell make.lisp &&
 qmake eql5.pro &&
 make &&
-sudo make install &&
-eql5 make-wrappers.lisp &&
-touch tmp/eql.o &&
-qmake eql_lib.pro &&
-make &&
 sudo make install
 
 echo OK

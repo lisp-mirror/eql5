@@ -1,6 +1,3 @@
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (unless (eql:qrequire :network)
   (error "EQL module :network could not be found/loaded")
   (eql:qq))

@@ -1,8 +1,5 @@
 ;;; This is a port of the Qt OpenGL Example "Grabber"
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (require :gl-widget (eql:in-home "examples/8-OpenGL/gl-widget"))
 
 (defpackage :main-window

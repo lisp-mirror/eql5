@@ -2,9 +2,6 @@
 ;;; Contributed by Mark Cox, please see LICENSE-MAKE-QIMAGE.txt
 ;;;
 
-#-qt-wrapper-functions ; see README-OPTIONAL.txt
-(load (in-home "src/lisp/all-wrappers"))
-
 (defpackage "MAKE-QIMAGE-EXAMPLE"
   (:use "COMMON-LISP"
         "EQL")
