@@ -571,6 +571,11 @@
   "args: (x)
    alias: qmsg
    Convenience function: a simple message box, converting <code>x</code> to a string if necessary.<br>Returns its argument (just like <code>print</code>)."
+  #+android
+  (! "information" "QMessageBox" nil
+     "EQL5"
+     (if (stringp x) x (prin1-to-string x)))
+  #-android
   (qlet ((msg "QMessageBox"
               "icon" |QMessageBox.Information|
               "text" (if (stringp x) x (prin1-to-string x))))
