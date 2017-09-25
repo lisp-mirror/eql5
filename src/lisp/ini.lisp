@@ -573,7 +573,9 @@
    Convenience function: a simple message box, converting <code>x</code> to a string if necessary.<br>Returns its argument (just like <code>print</code>)."
   (qlet ((msg "QMessageBox"
               "icon" |QMessageBox.Information|
-              "text" (if (stringp x) x (prin1-to-string x))))
+              "text" (if (stringp x) x (prin1-to-string x))
+              "standardButtons" |QMessageBox.Ok|))
+    (! "setWindowTitle" msg "EQL5")
     (dolist (fun '("show" "raise" "exec")) ; "raise" needed in some situations (e.g. OSX)
       (qfun msg fun)))
   x)
