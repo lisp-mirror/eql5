@@ -1,6 +1,6 @@
 QT           += network printsupport uitools
 TEMPLATE     = lib
-CONFIG       += dll no_keywords release
+CONFIG       += plugin no_keywords release
 INCLUDEPATH  += ../src /usr/local/include
 LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
 TARGET       = eql5_network

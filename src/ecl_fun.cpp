@@ -2434,10 +2434,19 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
     QString fileName = "eql5_" + name;
-    QLibrary lib(fileName);                  // global library
-    if(!lib.load()) {
-        fileName.prepend("/usr/local/lib/"); // "local" might not be in library search path
-        lib.setFileName(fileName); }
+    QLibrary lib(fileName);
+    QStringList libPaths = QCoreApplication::libraryPaths();
+#ifdef Q_OS_MACOS
+    // try bundle first
+    QString appPath(QCoreApplication::applicationDirPath());
+    if(appPath.contains(".app/") {
+        libPaths.prepend(appPath + "/../libs")); }
+    else {
+        libPaths.prepend("/usr/local/lib"); }
+#else
+    libPaths.prepend("/usr/local/lib");
+#endif
+    QCoreApplication::setLibraryPaths(libPaths);
     typedef void (*Ini)();
     Ini ini = (Ini)lib.resolve("ini");
     if(ini) {
