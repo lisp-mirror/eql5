@@ -2433,20 +2433,17 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
-    QString fileName = "eql5_" + name;
-    QLibrary lib(fileName);
-    QStringList libPaths = QCoreApplication::libraryPaths();
+    QString file("eql5_" + name);
+    QString path("/usr/local/lib/"); // 'local' might not be in library search paths
 #ifdef Q_OS_MACOS
     // try bundle first
     QString appPath(QCoreApplication::applicationDirPath());
-    if(appPath.contains(".app/") {
-        libPaths.prepend(appPath + "/../libs")); }
-    else {
-        libPaths.prepend("/usr/local/lib"); }
-#else
-    libPaths.prepend("/usr/local/lib");
+    if(appPath.contains(".app/")) {
+        path = appPath + "/../libs/"; }
 #endif
-    QCoreApplication::setLibraryPaths(libPaths);
+    QLibrary lib(path + file);
+    if(!lib.load()) {
+        lib.setFileName(file); } // use default library paths
     typedef void (*Ini)();
     Ini ini = (Ini)lib.resolve("ini");
     if(ini) {
