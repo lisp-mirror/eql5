@@ -139,11 +139,12 @@
   (let ((item (quick-item item/name)))
     (qlet ((property "QQmlProperty(QObject*,QString)" item property-name))
       (if (|isValid| property)
-          (qlet ((variant (qvariant-from-value value (|propertyTypeName| property))))
-            (prog1
-                (|write| property variant)
-              (when (and update (= (qt-object-id item) #.(qid "QQuickPaintedItem")))
-                (|update| item))))
+          (let ((type-name (|propertyTypeName| property)))
+            (qlet ((variant (qvariant-from-value value (if (find #\: type-name) "int" type-name))))
+              (prog1
+                  (|write| property variant)
+                (when (and update (= (qt-object-id item) (qid "QQuickPaintedItem")))
+                  (|update| item)))))
           (eql::%error-msg "QML-SET" (list item/name property-name value))))))
 
 (defun qml-set-all (name property-name value &optional update)
@@ -152,7 +153,7 @@
   (dolist (item (qfind-children (root-item) name))
     (qml-set item property-name value update)))
 
-;;; JS 
+;;; JS
 
 (defun js (item/name js-format-string &rest arguments)
   "Evaluates a JS string, with 'this' bound to either ITEM, or first object matching NAME. Arguments are passed through FORMAT."
