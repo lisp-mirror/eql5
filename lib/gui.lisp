@@ -16,9 +16,6 @@
 
 (in-package :gui)
 
-(defconstant +history-file+ (in-home "lib/.command-history"))
-(defconstant +max-history+  50)
-
 (defparameter *   nil)
 (defparameter **  nil)
 (defparameter *** nil)
@@ -100,7 +97,7 @@
   (qconnect *search-class* "returnPressed()" 'select-class)
   (qconnect *search-help* "textChanged(QString)" 'search-help)
   (qconnect *search-help* "returnPressed()" 'search-help)
-  (qoverride *edit* "keyPressEvent(QKeyEvent*)" 'history-move)
+  (qoverride *edit* "keyPressEvent(QKeyEvent*)" 'key-pressed)
   (change-class-q-object "QWidget" :super)
   (change-class-n-object "QMetaObject" :super)
   (qsingle-shot 500 'show-package-name)
@@ -118,44 +115,13 @@
     (unless (! "find" *help* (! "text" *search-help*))
       (move-start))))
 
-(defun saved-history ()
-  (let ((ex "")
-        history)
-    (when (probe-file +history-file+)
-      (with-open-file (s +history-file+ :direction :input)
-        (x:while-it (read-line s nil nil)
-          (unless (string= ex x:it)
-            (push (setf ex x:it) history))))
-      (setf history (nthcdr (max 0 (- (length history) +max-history+)) (reverse history)))
-      (delete-file +history-file+)
-      (with-open-file (s +history-file+ :direction :output :if-does-not-exist :create)
-        (dolist (cmd history)
-          (write-line cmd s)))
-      (reverse history))))
-
-(let ((up (saved-history))
-      (out (open +history-file+ :direction :output :if-exists :append :if-does-not-exist :create))
-      down)
-  (defun history-move (ev)
-    (x:when-it (case (! "key" ev)
-                 (#.|Qt.Key_Up|
-                    (x:when-it (pop up)
-                      (push x:it down)))
-                 (#.|Qt.Key_Down|
-                    (x:when-it (pop down)
-                      (push x:it up))))
-      (qset *edit* "text" (first x:it)))
-    (qcall-default))
-  (defun history-add (cmd)
-    (when (or (not up)
-              (and up (string/= cmd (first up))))
-      (push cmd up)
-      (princ cmd out)
-      (terpri out)
-      (when (and down (string= cmd (first down)))
-        (pop down))))
-  (defun history ()
-    (append (reverse up) down)))
+(defun key-pressed (event)
+  (case (! "key" event)
+    (#.|Qt.Key_Up|
+     (history-move :back))
+    (#.|Qt.Key_Down|
+     (history-move :forward)))
+  (qcall-default))
 
 (defun set-tree (tree &optional (cols 2) lb1 lb2 lb3)
   (x:do-with (qset tree)
@@ -410,6 +376,60 @@
   (unless (find-package :properties)
     (load (in-home "lib/properties")))
   (funcall (find-symbol "SHOW" :properties) *q*))
+
+;;; command history
+
+(defvar *history*       (make-array 0 :adjustable t :fill-pointer t))
+(defvar *history-index* nil)
+(defvar *history-file*  ".command-history")
+(defvar *max-history*   100)
+
+(defun read-saved-history ()
+  (when (probe-file *history-file*)
+    (let ((i -1))
+      (labels ((index ()
+                 (mod i *max-history*))
+               (next-index ()
+                 (incf i)
+                 (index)))
+        (let ((tmp (make-array *max-history*))) ; ring buffer
+          (with-open-file (s *history-file* :direction :input)
+            (x:while-it (read-line s nil nil)
+              (setf (svref tmp (next-index)) x:it)))
+          (next-index)
+          (dotimes (n (min i *max-history*))
+            (x:while (not (svref tmp (index)))
+              (next-index))
+            (vector-push-extend (svref tmp (index))
+                                *history*)
+            (next-index))
+          (setf *history-index* (length *history*))))))) ; 1 after last
+
+(let (out)
+  (defun history-ini ()
+    (read-saved-history)
+    (setf out (open *history-file* :direction :output
+                    :if-exists :append :if-does-not-exist :create)))
+  (defun history-add (line)
+    (unless out
+      (history-ini))
+    (let ((len (length *history*)))
+      (when (or (zerop len)
+                (string/= line (aref *history* (1- len))))
+        (vector-push-extend line *history*)
+        (setf *history-index* (length *history*)) ; 1 after last
+        (write-line line out)
+        (force-output out))))
+  (defun history-move (dir)
+    (unless out
+      (history-ini))
+    (when *history-index*
+      (setf *history-index* (if (eql :back dir)
+                                (max (1- *history-index*) 0)
+                                (min (1+ *history-index*) (1- (length *history*)))))
+      (qset *edit* "text" (aref *history* *history-index*)))))
+
+;;; start
 
 (gui)
 
