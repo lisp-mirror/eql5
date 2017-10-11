@@ -396,14 +396,13 @@
           (with-open-file (s *history-file* :direction :input)
             (x:while-it (read-line s nil nil)
               (setf (svref tmp (next-index)) x:it)))
-          (next-index)
-          (dotimes (n (min i *max-history*))
-            (x:while (not (svref tmp (index)))
-              (next-index))
-            (vector-push-extend (svref tmp (index))
-                                *history*)
-            (next-index))
-          (setf *history-index* (length *history*))))))) ; 1 after last
+          (let ((max (min (1+ i) *max-history*)))
+            (when (< max *max-history*)
+              (setf i -1))
+            (dotimes (n max)
+              (vector-push-extend (svref tmp (next-index))
+                                  *history*))
+            (setf *history-index* (length *history*)))))))) ; 1 after last
 
 (let (out)
   (defun history-ini ()
