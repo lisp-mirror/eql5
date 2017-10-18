@@ -67,7 +67,7 @@
 
 (in-package :restart-dialog)
 
-(let ((text ":r1"))
+(let ((text ":q"))
   (defun command ()
     (qlet ((dialog  "QDialog(QWidget*,Qt::WindowFlags)" nil |Qt.WindowStaysOnTopHint|
                     "windowTitle" (tr "EQL Debug Dialog"))
@@ -93,7 +93,7 @@
       (qlater (lambda () (x:do-with dialog "activateWindow" "raise")))
       (setf text (if (= |QDialog.Accepted| (! "exec" dialog))
                      (qget command "text")
-                     ":r1")))))
+                     ":q")))))
 
 ;;; main
 
