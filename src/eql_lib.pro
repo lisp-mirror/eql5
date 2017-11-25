@@ -14,6 +14,14 @@ include.path  = /usr/local/include/eql5
 target.path   = /usr/local/lib
 INSTALLS      = include target
 
+msvc {
+    PRE_TARGETDEPS += ini_eql5.lib
+}
+
+!msvc {
+    PRE_TARGETDEPS += libini_eql5.a
+}
+
 win32 {
     include(windows.pri)
 }
