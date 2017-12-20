@@ -2,8 +2,6 @@
 ;;; Use of PaintedItem (a QQuickPaintedItem) and QPainter
 ;;; (meant as an alternative to Canvas in QML).
 ;;;
-;;; See also "lib/qml_lisp.*" for PaintedItem.
-;;;
 
 (qrequire :quick)
 
