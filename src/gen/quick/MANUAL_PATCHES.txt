@@ -1,0 +1,8 @@
+file '_q_classes.h', class 'LSGDynamicTexture':
+comment out the following functions (not supported on all platforms):
+
+  // void bind() {...}
+  // bool hasAlphaChannel() const {...}
+  // bool hasMipmaps() const {...}
+  // int textureId() const {...}
+  // QSize textureSize() const {...}
