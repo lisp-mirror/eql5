@@ -262,6 +262,7 @@ cl_object qinvoke_method2       (cl_object, cl_object, cl_object, cl_object);
 cl_object qload_cpp             (cl_object, cl_object);
 cl_object qload_ui              (cl_object);
 cl_object qlocal8bit            (cl_object);
+cl_object qlog                  (cl_object);
 cl_object qmeta_enums           ();
 cl_object qnew_instance2        (cl_object, cl_object);
 cl_object qobject_names2        (cl_object);

@@ -13,7 +13,32 @@ extern "C" void ini_EQL(cl_object);
 
 static const char* _argv_[] = {"EQL5"};
 
+#ifdef COMPILE_ANDROID
+
+#include <android/log.h>
+
+static void logMessageHandler(QtMsgType, const QMessageLogContext& context, const QString& msg) {
+    // for logging on android (see 'adb logcat')
+    // examples:
+    //   Lisp: (qlog "message")
+    //   QML:  console.log("message")
+    QString report(msg);
+    if(context.file && !QString(context.file).isEmpty()) {
+        report += " in file ";
+        report += QString(context.file);
+        report += " line ";
+        report += QString::number(context.line); }
+    if(context.function && !QString(context.function).isEmpty()) {
+        report += " function ";
+        report += QString(context.function); }
+    __android_log_write(ANDROID_LOG_DEBUG, "[EQL5]", report.toLocal8Bit().constData()); }
+
+#endif
+
 EQL::EQL() : QObject() {
+#ifdef COMPILE_ANDROID
+    qInstallMessageHandler(logMessageHandler); // see above
+#endif
     if(!cl_booted) {
         cl_boot(1, (char**)_argv_); }
     iniCLFunctions();

@@ -136,6 +136,7 @@ void iniCLFunctions() {
     DEFUN ("%qload-c++",             qload_cpp,             2)
     DEFUN ("qload-ui",               qload_ui,              1)
     DEFUN ("qlocal8bit",             qlocal8bit,            1)
+    DEFUN ("qlog",                   qlog,                  1)
     DEFUN ("%qnew-instance",         qnew_instance2,        2)
     DEFUN ("%qobject-names",         qobject_names2,        1)
     DEFUN ("qok",                    qok,                   0)
@@ -2976,6 +2977,12 @@ cl_object qrun_in_gui_thread2(cl_object l_function_or_closure, cl_object l_block
                                       Q_ARG(void*, l_function_or_closure)); 
             return Ct; }}
     error_msg("QRUN-IN-GUI-THREAD", LIST1(l_function_or_closure));
+    return Cnil; }
+
+cl_object qlog(cl_object l_msg) {
+    // for android logging only; see 'eql.cpp::logMessageHandler()'
+    ecl_process_env()->nvalues = 1;
+    qDebug() << toQString(l_msg);
     return Cnil; }
 
 

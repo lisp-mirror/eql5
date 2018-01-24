@@ -44,6 +44,7 @@
   "qload-c++"
   "qload-ui"
   "qlocal8bit"
+  "qlog"
   "qmessage-box"
   "qmsg"
   "qnew"
