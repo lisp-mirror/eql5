@@ -3,6 +3,7 @@
 #include "eql5/eql.h"
 #include "ecl_fun.h"
 #include "gen/_lobjects.h"
+#include <iostream>
 #include <QApplication>
 #include <QTimer>
 #include <QStringList>
@@ -20,7 +21,7 @@ static const char* _argv_[] = {"EQL5"};
 static void logMessageHandler(QtMsgType, const QMessageLogContext& context, const QString& msg) {
     // for logging on android (see 'adb logcat')
     // examples:
-    //   Lisp: (qlog "message")
+    //   Lisp: (qlog "x: ~A y: ~A" x y)
     //   QML:  console.log("message")
     QString report(msg);
     if(context.file && !QString(context.file).isEmpty()) {
@@ -120,7 +121,7 @@ void EQL::exec(const QStringList& args) {
                   << QString("(delete-file \"ui.h\")")
                   << QString("(eql:qq)"); }
         else {
-            qDebug() << "\nPlease pass a file.ui (Qt Designer).\n";
+            std::cout << "\nPlease pass a file.ui (Qt Designer).\n" << std::endl;
             exit(-1); }}
     else {
         if(arguments.length() == 1) {
@@ -166,7 +167,7 @@ void EQL::exec(QWidget* widget, const QString& lispFile, const QString& slimeHoo
     if(!slimeHookFile.isEmpty()) {
         QString startSwankFile(QCoreApplication::arguments().last());
         if(NotFound == startSwankFile.indexOf(QRegExp("*start-swank*.lisp", Qt::CaseInsensitive, QRegExp::Wildcard))) {
-            qDebug() << "\nPlease pass the pathname for \"eql-start-swank.lisp\".\n";
+            std::cout << "\nPlease pass the pathname for \"eql-start-swank.lisp\".\n" << std::endl;
             exit(-1); }
         QApplication::setQuitOnLastWindowClosed(false);
         forms << QString("(load \"%1\")").arg(startSwankFile)

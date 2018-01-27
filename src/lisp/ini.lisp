@@ -876,6 +876,17 @@
     (when (eql 'qt-object (first exp))
       (apply (first exp) (rest exp)))))
 
+;;; for android logging (EQL5-Android only, see "../eql.cpp")
+
+(defun qlog (arg1 &rest args)
+  ;; (qlog 12)
+  ;; (qlog 1 "plus" 2 "gives" 6/2)
+  ;; (qlog "x ~A y ~A" x y)
+  (%qlog (if (and (stringp arg1)
+                  (find #\~ arg1))
+             (apply 'format nil arg1 args)
+             (x:join (mapcar 'princ-to-string (cons arg1 args))))))
+
 ;;; The following are modified/simplified functions taken from "src/lsp/top.lsp" (see ECL sources)
 
 (in-package :si)
