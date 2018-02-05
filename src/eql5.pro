@@ -7,8 +7,8 @@ SUBDIRS = help \
           quick \
           sql \
           svg \
-          # webengine \
-          webkit
+          webengine \
+          # webkit
 # -----------------------------------------------------
 
 TEMPLATE = subdirs
