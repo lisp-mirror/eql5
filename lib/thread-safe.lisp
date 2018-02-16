@@ -111,7 +111,7 @@
   (qselect qsel) &optional on-selected)
 
 (wrap-in-qrun*
-  qset-null object)
+  qset-null object &optional (test t))
 
 (wrap-in-qrun*
   %qsingle-shot milliseconds function)

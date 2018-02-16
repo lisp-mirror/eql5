@@ -72,9 +72,10 @@
      ,@body))
 
 (defmacro do-string ((var str) &body body)
-  `(map nil (lambda (,var)
-              ,@body)
-        ,str))
+  `(block nil
+     (map nil (lambda (,var)
+                ,@body)
+          ,str)))
 
 (defmacro do-with (with &body body)
   `(progn

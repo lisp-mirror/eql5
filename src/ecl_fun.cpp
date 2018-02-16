@@ -1875,7 +1875,7 @@ cl_object qdelete2(cl_object l_obj, cl_object l_later) {
             ok = true; }
         if(ok) {
             STATIC_SYMBOL_PKG (s_qset_null, "QSET-NULL", "EQL")
-            cl_funcall(2, s_qset_null, l_obj);
+            cl_funcall(3, s_qset_null, l_obj, Cnil);
             return Ct; }}
     // no error message (unintentional multiple deletion)
     return Cnil; }

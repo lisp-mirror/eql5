@@ -420,12 +420,14 @@
                      ,source*
                      ,plural-number)))
 
-(defun qset-null (obj)
+(defun qset-null (obj &optional (test t))
   "args: (object)
    Sets the Qt object pointer to <code>0</code>. This function is called automatically after <code>qdel</code>."
-  (let ((obj* (ensure-qt-object obj)))
-    (when (qt-object-p obj*)
-      (setf (qt-object-pointer obj*) 0))))
+   (if test ; after e.g. QDELETE, we don't need to test (faster)
+       (let ((obj* (ensure-qt-object obj)))
+         (when (qt-object-p obj*)
+           (setf (qt-object-pointer obj*) 0)))
+       (setf (qt-object-pointer obj) 0)))
 
 (defun qgui (&optional ev)
   "args: (&optional process-events)
