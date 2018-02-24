@@ -1,5 +1,5 @@
 ;;;
-;;; A simple demo for macro QRUN-IN-GUI-THREAD* / QRUN*
+;;; A simple demo for macro QRUN-ON-UI-THREAD* / QRUN*
 ;;;
 ;;; Calculate primes in threads and update QTreeWidget directly from threads.
 ;;;

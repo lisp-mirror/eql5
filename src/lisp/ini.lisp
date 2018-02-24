@@ -328,7 +328,7 @@
   (unless (find-package :ecl-readline)
     (princ "> "))
   (let ((form (si::%tpl-read)))
-    (qrun-in-gui-thread (lambda () (eval-top-level form)) nil))
+    (qrun-on-ui-thread (lambda () (eval-top-level form)) nil))
   (values))
 
 (defun start-read-thread ()
@@ -690,13 +690,13 @@
                                                (funcall ,reloaded ',variable ,library-name)))))
        (defvar ,reloaded nil))))
 
-(defun qrun-in-gui-thread (function &optional (blocking t))
-  (%qrun-in-gui-thread function blocking))
+(defun qrun-on-ui-thread (function &optional (blocking t))
+  (%qrun-on-ui-thread function blocking))
 
 #+threads
 (defvar *gui-thread* mp:*current-process*)
 
-(defmacro qrun-in-gui-thread* (&body body)
+(defmacro qrun-on-ui-thread* (&body body)
   "args: (&body body)
    alias: qrun*
    Convenience macro for <code>qrun</code>, wrapping <code>body</code> in a closure (passing arguments, return values).
@@ -722,7 +722,7 @@
       (first body)))
 
 (defmacro qrun* (&body body) ; alias
-  `(qrun-in-gui-thread* ,@body))
+  `(qrun-on-ui-thread* ,@body))
 
 (defun qload (file-name)
   "args: (file-name)
@@ -772,7 +772,7 @@
 (alias qfun+ qinvoke-method+)
 (alias qmsg  qmessage-box)
 (alias qnull qnull-object)
-(alias qrun  qrun-in-gui-thread)
+(alias qrun  qrun-on-ui-thread)
 (alias qsel  qselect)
 (alias qq    qquit)
 
@@ -834,9 +834,9 @@
                   (cons 'qrequire             '(module &optional quiet))
                   (cons 'qrgb                 '(red green blue &optional (alpha 255)))
                   (cons 'qrun                 '(function))
-                  (cons 'qrun-in-gui-thread   '(function))
+                  (cons 'qrun-on-ui-thread    '(function))
                   (cons 'qrun*                '(&body body))
-                  (cons 'qrun-in-gui-thread*  '(&body body))
+                  (cons 'qrun-on-ui-thread*   '(&body body))
                   (cons 'qset-null            '(object))
                   (cons 'qset                 '(object name value))
                   (cons 'qset-color           '(widget color-role color))

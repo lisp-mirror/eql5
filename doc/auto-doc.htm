@@ -463,17 +463,17 @@ Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if
 Constructs a <code>(unsigned-byte 32)</code> value that represents a 32 bit pixel color specified by the red, green, blue and alpha values.
 <br>
 <br><br>
-<b>QRUN-IN-GUI-THREAD (function &optional (blocking t))</b>
+<b>QRUN-ON-UI-THREAD (function &optional (blocking t))</b>
 <br>
 <b>QRUN</b>
 <br><br>
-Runs <code>function</code> in GUI thread while (by default) blocking the calling thread (if called from main thread, <code>function</code> will simply be called directly).<br>This is needed to run GUI code from ECL threads other than the main thread.<br>Returns <code>T</code> on success.<br><br>There are 2 reasons to always wrap any EQL function like this, if called from another ECL thread:<ul><li>Qt GUI methods always need to run in the GUI thread<li>EQL functions are not designed to be reentrant (not needed for GUI code)</ul>See also macro <code>qrun*</code>.
+Runs <code>function</code> on the UI thread while (by default) blocking the calling thread (if called from main thread, <code>function</code> will simply be called directly).<br>This is needed to run GUI code from ECL threads other than the main thread.<br>Returns <code>T</code> on success.<br><br>There are 2 reasons to always wrap any EQL function like this, if called from another ECL thread:<ul><li>Qt UI methods always need to run on the UI thread<li>EQL functions are not designed to be reentrant (not needed for UI code)</ul>See also macro <code>qrun*</code>.
 <br>
 <pre>
   (qrun 'update-view-data)
 </pre>
 <br><br>
-<b>QRUN-IN-GUI-THREAD* (&body body)</b>
+<b>QRUN-ON-UI-THREAD* (&body body)</b>
 <br>
 <b>QRUN*</b>
 <br><br>

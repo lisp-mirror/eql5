@@ -145,7 +145,7 @@ void iniCLFunctions() {
     DEFUN ("qproperty",              qproperty,             2)
     DEFUN ("%qrequire",              qrequire2,             2)
     DEFUN ("qremove-event-filter",   qremove_event_filter,  1)
-    DEFUN ("%qrun-in-gui-thread",    qrun_in_gui_thread2,   2)
+    DEFUN ("%qrun-on-ui-thread",     qrun_on_ui_thread2,    2)
     DEFUN ("qsender",                qsender,               0)
     DEFUN ("%qset-gc",               qset_gc,               1)
     DEFUN ("qset-property",          qset_property,         3)
@@ -2958,26 +2958,26 @@ cl_object qversion() {
     l_env->values[1] = from_cstring(qVersion());
     return l_env->values[0]; }
 
-cl_object qrun_in_gui_thread2(cl_object l_function_or_closure, cl_object l_blocking) {
+cl_object qrun_on_ui_thread2(cl_object l_function_or_closure, cl_object l_blocking) {
     /// args: (function &optional (blocking t))
     /// alias: qrun
-    /// Runs <code>function</code> in GUI thread while (by default) blocking the calling thread (if called from main thread, <code>function</code> will simply be called directly).<br>This is needed to run GUI code from ECL threads other than the main thread.<br>Returns <code>T</code> on success.<br><br>There are 2 reasons to always wrap any EQL function like this, if called from another ECL thread:<ul><li>Qt GUI methods always need to run in the GUI thread<li>EQL functions are not designed to be reentrant (not needed for GUI code)</ul>See also macro <code>qrun*</code>.
+    /// Runs <code>function</code> on the UI thread while (by default) blocking the calling thread (if called from main thread, <code>function</code> will simply be called directly).<br>This is needed to run GUI code from ECL threads other than the main thread.<br>Returns <code>T</code> on success.<br><br>There are 2 reasons to always wrap any EQL function like this, if called from another ECL thread:<ul><li>Qt UI methods always need to run on the UI thread<li>EQL functions are not designed to be reentrant (not needed for UI code)</ul>See also macro <code>qrun*</code>.
     ///     (qrun 'update-view-data)
     ecl_process_env()->nvalues = 1;
     if(l_function_or_closure != Cnil) {
         QObject o;
         if(o.thread() == QApplication::instance()->thread()) {
             // direct call
-            LObjects::eql->runInGuiThread(l_function_or_closure);
+            LObjects::eql->runOnUiThread(l_function_or_closure);
             return Ct; }
         else {
             // queued call in main event loop (GUI thread)
             QMetaObject::invokeMethod(LObjects::eql,
-                                      "runInGuiThread",
+                                      "runOnUiThread",
                                       (l_blocking != Cnil) ? Qt::BlockingQueuedConnection : Qt::QueuedConnection,
                                       Q_ARG(void*, l_function_or_closure)); 
             return Ct; }}
-    error_msg("QRUN-IN-GUI-THREAD", LIST1(l_function_or_closure));
+    error_msg("QRUN-ON-UI-THREAD", LIST1(l_function_or_closure));
     return Cnil; }
 
 cl_object qlog2(cl_object l_msg) {

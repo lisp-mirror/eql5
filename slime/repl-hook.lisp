@@ -10,7 +10,7 @@
 
 (defun %qeval (form)
   (multiple-value-bind (values package)
-      (qrun-in-gui-thread*
+      (qrun-on-ui-thread*
         (values (multiple-value-list
                   (with-simple-restart (abort "Return to SLIME's top level.")
                     (eval (subst 'identity 'qeval form))))

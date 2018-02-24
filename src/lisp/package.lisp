@@ -77,9 +77,9 @@
    #:qrequire
    #:qrgb
    #:qrun
-   #:qrun-in-gui-thread
+   #:qrun-on-ui-thread
    #:qrun*
-   #:qrun-in-gui-thread*
+   #:qrun-on-ui-thread*
    #:qsel
    #:qselect
    #:qsender

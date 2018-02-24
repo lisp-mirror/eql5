@@ -27,7 +27,7 @@
 
   ;; in some ECL thread
   (let (values)
-    (run-in-gui-thread
+    (run-on-ui-thread
 
       ;; in ECL main/GUI thread
       (lambda ()
@@ -36,14 +36,14 @@
     ;; back in some ECL thread
     (values-list values))
       </pre>
-      <p>Here the implementation of the ECL function <code>run-in-gui-thread</code> (embedded in Qt):</p>
+      <p>Here the implementation of the ECL function <code>run-on-ui-thread</code> (embedded in Qt):</p>
       <pre>
 
-  cl_object run_in_gui_thread(cl_object closure) // define ECL function
+  cl_object run_on_ui_thread(cl_object closure) // define ECL function
   {
       QMetaObject::invokeMethod(
           object,                       // any QObject from GUI thread
-          "runInGuiThread",             // see Q_INVOKABLE
+          "runOnUiThread",              // see Q_INVOKABLE
           Qt::BlockingQueuedConnection, // blocking for return values
           Q_ARG(void*, closure));       // 'closure' is just a pointer
 
@@ -53,7 +53,7 @@
       <p>Now the Lisp closure will run in the GUI/main thread, and the implementation of the Qt function <code>runInGuiThread</code> is as simple as:</p>
       <pre>
 
-  Q_INVOKABLE void runInGuiThread(void* closure) // note Q_INVOKABLE
+  Q_INVOKABLE void runOnUiThread(void* closure) // note Q_INVOKABLE
   {
       cl_funcall(1, (cl_object)closure); // ECL function call
   }

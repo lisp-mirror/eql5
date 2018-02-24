@@ -43,7 +43,7 @@ public:
              "    (eql:qversion)"
              "  (format t \"EQL5 ~A (ECL ~A, Qt ~A)~%\" eql (lisp-implementation-version) qt))"); }
 
-    Q_INVOKABLE void runInGuiThread(void*);
+    Q_INVOKABLE void runOnUiThread(void*);
 
 public Q_SLOTS:
     void exitEventLoop() { eventLoop->exit(); }
