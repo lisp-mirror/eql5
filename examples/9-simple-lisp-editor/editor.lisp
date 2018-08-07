@@ -56,7 +56,6 @@
 (defparameter *file-name*              nil)
 (defparameter *keep-extra-selections*  nil)
 (defparameter *latest-eval-position*   nil)
-(defparameter *try-read-error*         nil)
 
 (defconstant +max-shown-completions+ 10)
 (defconstant +max-history+           50)
@@ -261,15 +260,10 @@
           (! "showMessage" bar msg)))))
 
 (defun read* (str &optional (start 0))
-  (setf *try-read-error* nil)
   (let ((*package* #.(find-package :eql)))
     (multiple-value-bind (exp x)
         (ignore-errors (read-from-string (substitute +package-char-dummy+ #\: str)
                                          nil nil :start start :preserve-whitespace t))
-      (unless exp
-        (setf *try-read-error* (typecase x
-                                 (end-of-file :end-of-file)
-                                 (t t))))
       (values exp x))))
 
 (defun end-position (expr)
@@ -915,7 +909,7 @@
                         (! (if right "previous" "next") text-block ))
             (text (! "text" text-block) (! "text" text-block)))
            ((or (if right (zerop n) (= n max))
-                (x:empty-string (string-trim '(" ") text))))
+                (x:empty-string (string-trim " " text))))
         (write-line (if right (nreverse text) text) s)))))
 
 (defun left-right-paren (right text-cursor curr-line &optional pos)
