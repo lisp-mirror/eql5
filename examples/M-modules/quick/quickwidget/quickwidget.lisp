@@ -5,7 +5,7 @@
 (qrequire :quick)
 
 (defun example-url (name)
-  (|fromLocalFile.QUrl| (in-home (x:cc "examples/M-modules/quick/quickwidget/qml/" name))))
+  (|fromLocalFile.QUrl| (in-src (x:cc "examples/M-modules/quick/quickwidget/qml/" name))))
 
 (defvar *mdi-area*       (qnew "QMdiArea"))
 (defvar *quick-widget-1* (qnew "QQuickWidget(QUrl)" (example-url "example-1.qml")))

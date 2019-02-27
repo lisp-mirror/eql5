@@ -13,7 +13,7 @@
 ;;; cpp plugin
 ;;;
 
-(defvar *c++*                 (qload-c++ (in-home "examples/X-extras/move-blocks/cpp/easing_curve")))
+(defvar *c++*                 (qload-c++ (in-src "examples/X-extras/move-blocks/cpp/easing_curve")))
 (defvar *custom-easing-curve* (! "easingCurve" (:qt *c++*)))
 
 (let ((sub 0)
@@ -47,7 +47,7 @@
 ;;; user interface
 ;;;
 
-(defvar *main* (qload-ui (in-home "examples/X-extras/move-blocks/move-blocks.ui")))
+(defvar *main* (qload-ui (in-src "examples/X-extras/move-blocks/move-blocks.ui")))
 
 (defvar-ui *main*
   *custom*

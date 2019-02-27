@@ -2,7 +2,7 @@
 
 (qrequire :multimedia)
 
-(require :ui (in-home "examples/M-modules/multimedia/video-graphics-item/ui/ui-video-graphics-item"))
+(require :ui (in-src "examples/M-modules/multimedia/video-graphics-item/ui/ui-video-graphics-item"))
 
 (defpackage :video-item
   (:nicknames :vi)

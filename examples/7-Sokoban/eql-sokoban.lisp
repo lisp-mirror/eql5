@@ -18,8 +18,8 @@
 ;;;
 ;;; ------------------------------------------------------------------------
 
-(load (eql:in-home "examples/7-Sokoban/3rd-party/sokoban"))
-(load (eql:in-home "examples/7-Sokoban/3rd-party/levels"))
+(load (eql:in-src "examples/7-Sokoban/3rd-party/sokoban"))
+(load (eql:in-src "examples/7-Sokoban/3rd-party/levels"))
 
 (defpackage :eql-sokoban
   (:use :common-lisp :eql)

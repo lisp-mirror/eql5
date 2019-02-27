@@ -2,12 +2,12 @@
 
 (qrequire :multimedia)
 
-(require :ui             (in-home "examples/M-modules/multimedia/camera/ui/ui-camera"))
-(require :ui-image       (in-home "examples/M-modules/multimedia/camera/ui/ui-image-settings"))
-(require :ui-video       (in-home "examples/M-modules/multimedia/camera/ui/ui-video-settings"))
+(require :ui             (in-src "examples/M-modules/multimedia/camera/ui/ui-camera"))
+(require :ui-image       (in-src "examples/M-modules/multimedia/camera/ui/ui-image-settings"))
+(require :ui-video       (in-src "examples/M-modules/multimedia/camera/ui/ui-video-settings"))
 
-(require :image-settings (in-home "examples/M-modules/multimedia/camera/image-settings"))
-(require :video-settings (in-home "examples/M-modules/multimedia/camera/video-settings"))
+(require :image-settings (in-src "examples/M-modules/multimedia/camera/image-settings"))
+(require :video-settings (in-src "examples/M-modules/multimedia/camera/video-settings"))
 
 (defpackage :camera
   (:use :common-lisp :eql)

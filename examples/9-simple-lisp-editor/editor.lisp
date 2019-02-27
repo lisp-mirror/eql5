@@ -37,11 +37,11 @@
     (x:let-it (make-string (file-length s))
       (read-sequence x:it s))))
 
-(defun in-home* (name)
-  (in-home "examples/9-simple-lisp-editor/" name))
+(defun in-src* (name)
+  (in-src "examples/9-simple-lisp-editor/" name))
 
 (defun from-file (name)
-  (eval (read-from-string (read-file (in-home* name) :do-not-set))))
+  (eval (read-from-string (read-file (in-src* name) :do-not-set))))
 
 (defparameter *auto-indent*   (from-file "data/auto-indent.lisp"))
 (defparameter *eql-keywords*  (from-file "data/eql-keywords.lisp"))
@@ -64,7 +64,7 @@
 
 ;;; Qt
 
-(defvar *main* (qload-ui (in-home* "data/editor.ui")))
+(defvar *main* (qload-ui (in-src* "data/editor.ui")))
 
 (defvar-ui *main*
   *editor*
@@ -1029,7 +1029,7 @@
 
 (defun run-on-server (str &optional restart)
   (flet ((path-to-server (name)
-           (x:when-it (probe-file (in-home "examples/9-simple-lisp-editor/" name))
+           (x:when-it (probe-file (in-src "examples/9-simple-lisp-editor/" name))
              (namestring x:it))))
     (qprocess-events)
     (or (local-client:request str)

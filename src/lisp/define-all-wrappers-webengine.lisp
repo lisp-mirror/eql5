@@ -2,8 +2,8 @@
 
 (eql:qrequire :webengine)
 
-(load (in-home "helper/my-class-lists/webengine/n-names"))
-(load (in-home "helper/my-class-lists/webengine/q-names"))
+(load (in-src "helper/my-class-lists/webengine/n-names"))
+(load (in-src "helper/my-class-lists/webengine/q-names"))
 
 (defvar *objects*              (qobject-names))
 (defvar *webengine-objects*    (append *webengine-n-names* *webengine-q-names*))
@@ -122,7 +122,7 @@
                      ;; add only new function names (checking with 'grep')
                      (dotimes (i 12) ; TODO: keep in sync!
                        (when (zerop (|execute.QProcess| "grep" (list lisp-name
-                                                                     (in-home (format nil "src/lisp/all-wrappers-~D.lisp" (1+ i))))))
+                                                                     (in-src (format nil "src/lisp/all-wrappers-~D.lisp" (1+ i))))))
                          (setf found t)
                          (return)))
                      (unless found

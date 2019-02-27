@@ -16,7 +16,7 @@
 
 (in-package :image-manipulation)
 
-(defvar *main* (qload-ui (in-home "examples/X-extras/qimage/qimage.ui")))
+(defvar *main* (qload-ui (in-src "examples/X-extras/qimage/qimage.ui")))
 
 (defvar-ui *main*
   *display*
@@ -35,13 +35,13 @@
   *scale*)
 
 ;; C++ plugin
-(defvar *c++* (qload-c++ (in-home "examples/X-extras/qimage/cpp/qimage")))
+(defvar *c++* (qload-c++ (in-src "examples/X-extras/qimage/cpp/qimage")))
 (define-qt-wrappers *c++*)
 
 (defvar *file* (x:if-it (third (remove-if (lambda (arg) (x:starts-with "-" arg))
                                           (|arguments.QCoreApplication|)))
                         x:it
-                        (in-home "examples/X-extras/qimage/vernazza.jpg")))
+                        (in-src "examples/X-extras/qimage/vernazza.jpg")))
 
 (defvar *image*          (qnew "QImage(QString)" *file*))
 (defvar *color-image*    *image*)

@@ -1,6 +1,6 @@
 (in-package :eql-user)
 
-(defvar *lib* (qload-c++ (in-home "Qt_EQL/eql_cpp")))
+(defvar *lib* (qload-c++ (in-src "Qt_EQL/eql_cpp")))
 
 (assert (qt-object-p *lib*))
 

@@ -103,7 +103,7 @@
                 *ini-file*   ini-file)
           ;; QNetworkAccessManager does it all for us (asynchroneous, parallel download)
           (dolist (name file-names)
-            (download (|fromUserInput.QUrl| (in-home "examples/" name)) ; change this to a network location
+            (download (|fromUserInput.QUrl| (in-src "examples/" name)) ; change this to a network location
                       id
                       name))))))
 

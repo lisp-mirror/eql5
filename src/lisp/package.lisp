@@ -12,6 +12,7 @@
    #:defvar-ui
    #:ensure-qt-object
    #:in-home
+   #:in-src
    #:make-qimage
    #:new-qt-object
    #:qadd-event-filter

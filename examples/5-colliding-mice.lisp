@@ -181,7 +181,7 @@
       (|setRenderHint| |QPainter.Antialiasing|)
       (|setBackgroundBrush| (qnew "QBrush(QPixmap)"
                                   (qnew "QPixmap(QString)"
-                                        (in-home "examples/data/icons/cheese.jpg"))))
+                                        (in-src "examples/data/icons/cheese.jpg"))))
       (|setCacheMode| |QGraphicsView.CacheBackground|)
       (|setViewportUpdateMode| |QGraphicsView.BoundingRectViewportUpdate|)
       (|setDragMode| |QGraphicsView.ScrollHandDrag|))

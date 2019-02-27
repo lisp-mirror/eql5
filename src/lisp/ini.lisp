@@ -158,12 +158,18 @@
 (defun %windows-version ()
   (qfun "QSysInfo" "windowsVersion"))
 
-(let ((eql5-home #.(let ((path (namestring *default-pathname-defaults*))) ; hard-code EQL5 directory
-                     (subseq path 0 (- (length path) 4)))))               ; cut "src/"
+(let ((eql5-home (namestring (merge-pathnames ".eql5/" (user-homedir-pathname)))))
   (defun set-home (path)
     (setf eql5-home path))
   (defun in-home (&rest files)
     (apply 'concatenate 'string eql5-home files)))
+
+(let ((eql5-src #.(let ((path (namestring *default-pathname-defaults*))) ; hard-code EQL5 directory
+                    (subseq path 0 (- (length path) (length "src/"))))))
+  (defun set-src (path)
+    (setf eql5-src path))
+  (defun in-src (&rest files)
+    (apply 'concatenate 'string eql5-src files)))
 
 (defun qsignal (name)
   "args: (name)
