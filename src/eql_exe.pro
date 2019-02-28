@@ -8,8 +8,8 @@ DESTDIR        = ../
 OBJECTS_DIR    = ./tmp/
 MOC_DIR        = ./tmp/
 
-QMAKE_RPATHDIR = /usr/local/lib
-target.path    = /usr/local/bin
+QMAKE_RPATHDIR = /usr/lib
+target.path    = /usr/bin
 INSTALLS       = target
 
 win32 {

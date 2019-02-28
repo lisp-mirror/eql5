@@ -8,7 +8,7 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/webkit/
 MOC_DIR      = ./tmp/webkit/
 
-target.path  = /usr/local/lib
+target.path  = /usr/lib
 INSTALLS     = target
 
 macx:QT     += network

@@ -10,8 +10,8 @@ OBJECTS_DIR   = ./tmp/
 MOC_DIR       = ./tmp/
 
 include.files = eql5/*
-include.path  = /usr/local/include/eql5
-target.path   = /usr/local/lib
+include.path  = /usr/include/eql5
+target.path   = /usr/lib
 INSTALLS      = include target
 
 msvc {

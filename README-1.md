@@ -170,9 +170,9 @@ This will build the shared library, the executable and the modules.
 If you ran `make install`, you'll find the installed files here:
 
 ```
-  /usr/local/bin/
-  /usr/local/lib/
-  /usr/local/include/eql5/
+  /usr/bin/
+  /usr/lib/
+  /usr/include/eql5/
 ```
 
 ### 3) Environment
@@ -195,9 +195,9 @@ N.B. skip this if you did `sudo make install`
 You need to create links to EQL5, something like:
 
 ```
-  $ cd /usr/local/lib
+  $ cd /usr/lib
   $ sudo ln -s ~/eql5/libeql5.1.dylib libeql5.1.dylib
-  $ cd /usr/local/bin
+  $ cd /usr/bin
   $ sudo ln -s ~/eql5/eql5.app/Contents/MacOS/eql5 eql5
 ```
 
