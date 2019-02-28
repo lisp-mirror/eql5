@@ -1,5 +1,5 @@
 TEMPLATE     = lib
-CONFIG      += dll no_keywords release
+CONFIG      += plugin no_keywords release
 INCLUDEPATH += /usr/local/include
 LIBS        += -L/usr/local/lib -leql5
 TARGET       = qt_plugin
