@@ -1,6 +1,6 @@
 (in-package :eql-user)
 
-(defvar *trafficlight* (qload-c++ (in-home "Qt_EQL/trafficlight/trafficlight")))
+(defvar *trafficlight* (qload-c++ (in-src "Qt_EQL/trafficlight/trafficlight")))
 (defvar *lights*       (qfind-children *trafficlight* nil "LightWidget"))
 (defvar *red*          (first *lights*))
 (defvar *yellow*       (second *lights*))

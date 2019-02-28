@@ -111,7 +111,7 @@
                            (x:let-it (qnew "QPixmap")
                              (! "loadFromData" x:it
                                 ;; embed data
-                                #.(file-data (in-home "examples/9-simple-lisp-editor/data/local_server.png"))
+                                #.(file-data (in-src "examples/9-simple-lisp-editor/data/local_server.png"))
                                 "PNG")))))
          (menu (qnew "QMenu"))
          (quit (qnew "QAction(QObject*)" menu

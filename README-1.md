@@ -251,12 +251,12 @@ In order to run (sort of) a top-level processing Qt events, do:
 Note:
 
 If you want to use `ecl-readline` together with `-qtpl`, just compile
-`lib/ecl-readline.lisp` (which depends on the **readline** C library).  
+`~/.eql5/lib/ecl-readline.lisp` (which depends on the **readline** C library).
 It will then be loaded automatically on startup:
 
 ```
-  $ cd ~/eql5/lib
-  $ ecl -compile ecl-readline.lisp
+  $ cd ~/.eql5/lib
+  $ ecl --compile ecl-readline.lisp
 ```
 
 N.B: Using readline, you will often need to `reset` (command) your

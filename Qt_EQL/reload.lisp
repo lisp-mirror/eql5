@@ -17,14 +17,14 @@
 
 (in-package :eql-user)
 
-(defvar *lib* (qload-c++ (in-home "Qt_EQL/eql_cpp")))
+(defvar *lib* (qload-c++ (in-src "Qt_EQL/eql_cpp")))
 
 (defun recompile-c++ ()
-  (qload-c++ (in-home "Qt_EQL/eql_cpp")
+  (qload-c++ (in-src "Qt_EQL/eql_cpp")
              :unload)
   (ext:run-program #+msvc "make.bat" #-msvc "make"
                    #+msvc nil        #-msvc '("-C" "cpp/")
                    :output t)
-  (setf *lib* (qload-c++ (in-home "Qt_EQL/eql_cpp")))
+  (setf *lib* (qload-c++ (in-src "Qt_EQL/eql_cpp")))
   (assert (qt-object-p *lib*))
   (qapropos nil *lib*))

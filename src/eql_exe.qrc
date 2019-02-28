@@ -1,0 +1,35 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+
+    <file>../doc/auto-doc.htm</file>
+    <file>../doc/debug-dialog.png</file>
+    <file>../doc/Debugging.htm</file>
+    <file>../doc/Deploy.htm</file>
+    <file>../doc/EQL.png</file>
+    <file>../doc/EQL-Slime-Integration.htm</file>
+    <file>../doc/index.html</file>
+    <file>../doc/Notes.htm</file>
+    <file>../doc/QtDesigner.htm</file>
+    <file>../doc/QtLinguist.htm</file>
+    <file>../doc/Slime.htm</file>
+    <file>../doc/Slime-REPL-hook.htm</file>
+    <file>../doc/style.css</file>
+
+    <file>../lib/ecl-readline.lisp</file>
+    <file>../lib/gui.lisp</file>
+    <file>../lib/gui.ui</file>
+    <file>../lib/invokables.lisp</file>
+    <file>../lib/properties.lisp</file>
+    <file>../lib/properties.ui</file>
+    <file>../lib/qselect.lisp</file>
+    <file>../lib/quic.lisp</file>
+    <file>../lib/restart-dialog.lisp</file>
+    <file>../lib/thread-safe.lisp</file>
+
+    <file>../slime/.swank.lisp</file>
+    <file>../slime/eql-start-swank.lisp</file>
+    <file>../slime/README.txt</file>
+    <file>../slime/repl-hook.lisp</file>
+
+</qresource>
+</RCC>

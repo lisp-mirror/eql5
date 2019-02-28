@@ -22,3 +22,5 @@ osx {
 }
 
 SOURCES += main.cpp
+
+RESOURCES = eql_exe.qrc

@@ -2,7 +2,7 @@
 
 (in-package :eql-user)
 
-(defvar *lib* (qload-c++ (in-home "Qt_EQL/eql_fun_cpp")))
+(defvar *lib* (qload-c++ (in-src "Qt_EQL/eql_fun_cpp")))
 
 (defun say-number (n)
   (format nil "~R" n))
