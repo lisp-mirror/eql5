@@ -8,7 +8,7 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/sql/
 MOC_DIR      = ./tmp/sql/
 
-target.path  = /usr/local/lib
+target.path  = /usr/lib
 INSTALLS     = target
 
 win32 {

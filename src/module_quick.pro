@@ -8,7 +8,7 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/quick/
 MOC_DIR      = ./tmp/quick/
 
-target.path  = /usr/local/lib
+target.path  = /usr/lib
 INSTALLS     = target
 
 win32 {

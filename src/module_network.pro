@@ -8,7 +8,7 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/network/
 MOC_DIR      = ./tmp/network/
 
-target.path  = /usr/local/lib
+target.path  = /usr/lib
 INSTALLS     = target
 
 win32 {
