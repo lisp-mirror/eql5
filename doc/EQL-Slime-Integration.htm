@@ -50,7 +50,7 @@
       return Cnil;
   }
       </pre>
-      <p>Now the Lisp closure will run on the UI/main thread, and the implementation of the Qt function <code>runInGuiThread</code> is as simple as:</p>
+      <p>Now the Lisp closure will run on the UI/main thread, and the implementation of the Qt function <code>runOnUiThread</code> is as simple as:</p>
       <pre>
 
   Q_INVOKABLE void runOnUiThread(void* closure) // note Q_INVOKABLE
