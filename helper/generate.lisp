@@ -300,7 +300,7 @@
           ((upper-case-p (char type 0))
            (format nil "(~A)0" type))
           (t
-           (error (format nil "No C null value defined for ~S" arg))))))
+           (error "No C null value defined for ~S" arg)))))
 
 (defun arg-to-simple-c (arg)
   (x:cc (if (and (const-p arg)
@@ -667,7 +667,7 @@
                                                       type
                                                       (1+ (if-it (position super methods :test 'string= :key 'class-name*)
                                                               it
-                                                              (error (format t "~%Class missing: ~S~%~%" super)))))
+                                                              (error "~%Class missing: ~S~%~%" super))))
                                               "QObject")
                                           class)
                                   (dolist (fun (rest obj))
