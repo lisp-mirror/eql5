@@ -28,6 +28,8 @@ Now you should be able to run `eql5`.
 
 If there are problems, or you want more info, see detailed instructions below.
 
+P.S: If you are on **Arch Linux**, see also [AUR recipe](https://aur.archlinux.org/packages/eql5-git/)
+(thanks to 'VanLaser').
 
 
 Tested with:
