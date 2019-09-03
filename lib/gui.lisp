@@ -417,7 +417,7 @@
                 (string/= line (aref *history* (1- len))))
         (vector-push-extend line *history*)
         (write-line line out)
-        (force-output out)))
+        (finish-output out)))
     (setf *history-index* (length *history*))) ; 1 after last
   (defun history-move (dir)
     (unless out
