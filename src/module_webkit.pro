@@ -7,11 +7,17 @@ TARGET       = eql5_webkit
 DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/webkit/
 MOC_DIR      = ./tmp/webkit/
+macx:QT      += network
 
-target.path  = /usr/lib
-INSTALLS     = target
+linux {
+    target.path = /usr/lib
+}
 
-macx:QT     += network
+osx {
+    target.path = /usr/local/lib
+}
+
+INSTALLS = target
 
 win32 {
     include(windows.pri)
