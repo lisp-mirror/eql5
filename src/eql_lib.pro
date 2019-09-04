@@ -10,9 +10,18 @@ OBJECTS_DIR   = ./tmp/
 MOC_DIR       = ./tmp/
 
 include.files = eql5/*
-include.path  = /usr/include/eql5
-target.path   = /usr/lib
-INSTALLS      = include target
+
+linux {
+    include.path = /usr/include/eql5
+    target.path  = /usr/lib
+}
+
+osx {
+    include.path = /usr/local/include/eql5
+    target.path  = /usr/local/lib
+}
+
+INSTALLS = include target
 
 msvc {
     PRE_TARGETDEPS += ini_eql5.lib

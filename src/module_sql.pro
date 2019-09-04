@@ -8,8 +8,15 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/sql/
 MOC_DIR      = ./tmp/sql/
 
-target.path  = /usr/lib
-INSTALLS     = target
+linux {
+    target.path = /usr/lib
+}
+
+osx {
+    target.path = /usr/local/lib
+}
+
+INSTALLS = target
 
 win32 {
     include(windows.pri)

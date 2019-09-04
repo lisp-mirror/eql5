@@ -8,8 +8,15 @@ DESTDIR      = ../
 OBJECTS_DIR  = ./tmp/webengine/
 MOC_DIR      = ./tmp/webengine/
 
-target.path  = /usr/lib
-INSTALLS     = target
+linux {
+    target.path = /usr/lib
+}
+
+osx {
+    target.path = /usr/local/lib
+}
+
+INSTALLS = target
 
 macx:QT     += network
 

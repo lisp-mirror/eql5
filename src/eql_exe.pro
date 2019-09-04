@@ -9,7 +9,15 @@ OBJECTS_DIR    = ./tmp/
 MOC_DIR        = ./tmp/
 
 QMAKE_RPATHDIR = /usr/lib
-target.path    = /usr/bin
+
+linux {
+    target.path = /usr/bin
+}
+
+osx {
+    target.path = /usr/local/bin
+}
+
 INSTALLS       = target
 
 win32 {
