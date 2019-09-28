@@ -6,6 +6,16 @@
 
 QT_BEGIN_NAMESPACE
 
+QT_BEGIN_NAMESPACE
+
+TO_QT_TYPE_PTR2 (QWebEngineScript, qwebenginescript)
+
+TO_QT_LIST_VAL (QWebEngineScript)
+
+TO_CL_LIST_VAL (QWebEngineScript, qwebenginescript)
+
+#define META_TYPE_(var, type) var = qRegisterMetaType< type >(#type);
+
 NumList LWebEngineCookieStore::overrideIds = NumList();
 NumList LWebEngineDownloadItem::overrideIds = NumList();
 NumList LWebEnginePage::overrideIds = NumList() << 432 << 433 << 434 << 435 << 436 << 437 << 438 << 439 << 440;
@@ -18,9 +28,10 @@ NumList LWebEngineCertificateError::overrideIds = NumList();
 NumList LWebEngineFullScreenRequest::overrideIds = NumList();
 NumList LWebEngineScript::overrideIds = NumList();
 
-void ini() {
-    static bool _ = false; if(_) return; _ = true;
-    ini2();
+void* webengine_ini() {
+    static bool _ = false; if(_) return 0; _ = true;
+    ModuleWebengine* module = new ModuleWebengine;
+    module->ini2();
     LObjects::Q[264] = new Q265;
     LObjects::Q[265] = new Q266;
     LObjects::Q[266] = new Q267;
@@ -34,9 +45,38 @@ void ini() {
     LObjects::N[268] = new N269;
     LObjects::N[269] = new N270;
     LObjects::N[270] = new N271;
-    LObjects::N[271] = new N272; }
+    LObjects::N[271] = new N272;
+    return module; }
 
-const QMetaObject* staticMetaObject(int n) {
+ModuleWebengine::ModuleWebengine() {
+    webengine_ini(); }
+
+void ModuleWebengine::ini2() {
+    // note: QWebEngineHistoryItem can't be registered as QMetaType, lacking a public default constructor
+    META_TYPE_(LObjects::T_QWebEngineScript,       QWebEngineScript)
+    META_TYPE_(LObjects::T_QList_QWebEngineScript, QList<QWebEngineScript>) }
+
+void* ModuleWebengine::toMetaArg(int n, cl_object l_arg, bool* found) {
+    void* p = 0;
+    bool _found = true;
+    if(LObjects::T_QWebEngineScript == n)            { p = new QWebEngineScript(*toQWebEngineScriptPointer(l_arg)); }
+    else if(LObjects::T_QList_QWebEngineScript == n) { p = new QList<QWebEngineScript>(toQWebEngineScriptList(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return p; }
+
+cl_object ModuleWebengine::to_lisp_arg(int n, void* p, bool* found) {
+    cl_object l_ret = Cnil;
+    bool _found = true;
+    if(LObjects::T_QWebEngineScript == n)                 { l_ret = from_qwebenginescript(*(QWebEngineScript*)p); }
+    else if(LObjects::T_QList_QWebEngineScript == n)      { l_ret = from_qwebenginescriptlist(*(QList<QWebEngineScript>*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return l_ret; }
+
+const QMetaObject* ModuleWebengine::staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case -268: m = &QWebEngineFullScreenRequest::staticMetaObject; break;
@@ -50,13 +90,13 @@ const QMetaObject* staticMetaObject(int n) {
         case 272: m = &QWebEngineView::staticMetaObject; break; }
     return m; }
 
-void deleteNObject(int n, void* p, int gc) {
+void ModuleWebengine::deleteNObject(int n, void* p, int gc) {
     switch(n) {
         case 267: if(gc) delete (QWebEngineCertificateError*)p; else delete (LWebEngineCertificateError*)p; break;
         case 268: if(gc) delete (QWebEngineFullScreenRequest*)p; else delete (LWebEngineFullScreenRequest*)p; break;
         case 269: if(gc) delete (QWebEngineScript*)p; else delete (LWebEngineScript*)p; break; }}
 
-NumList* overrideFunctions(const QByteArray& name) {
+NumList* ModuleWebengine::overrideIds(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {

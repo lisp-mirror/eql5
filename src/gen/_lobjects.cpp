@@ -7,6 +7,7 @@
 #include "_main_n_methods.h"
 #include "../eql5/dyn_object.h"
 #include "../eql5/eql.h"
+#include "../module_interface.h"
 
 int LObjects::T_QAudioDeviceInfo = -1;
 int LObjects::T_QList_QAudioDeviceInfo = -1;
@@ -76,45 +77,6 @@ QMap<QByteArray, int> LObjects::q_names;
 QMap<QByteArray, int> LObjects::n_names;
 QHash<QByteArray, uint> LObjects::override_function_ids;
 QHash<quint64, void*> LObjects::override_lisp_functions;
-
-StaticMetaObject LObjects::staticMetaObject_help = 0;
-StaticMetaObject LObjects::staticMetaObject_multimedia = 0;
-StaticMetaObject LObjects::staticMetaObject_network = 0;
-StaticMetaObject LObjects::staticMetaObject_quick = 0;
-StaticMetaObject LObjects::staticMetaObject_sql = 0;
-StaticMetaObject LObjects::staticMetaObject_svg = 0;
-StaticMetaObject LObjects::staticMetaObject_webengine = 0;
-StaticMetaObject LObjects::staticMetaObject_webkit = 0;
-DeleteNObject LObjects::deleteNObject_help = 0;
-DeleteNObject LObjects::deleteNObject_multimedia = 0;
-DeleteNObject LObjects::deleteNObject_network = 0;
-DeleteNObject LObjects::deleteNObject_quick = 0;
-DeleteNObject LObjects::deleteNObject_sql = 0;
-DeleteNObject LObjects::deleteNObject_svg = 0;
-DeleteNObject LObjects::deleteNObject_webengine = 0;
-DeleteNObject LObjects::deleteNObject_webkit = 0;
-Override LObjects::override_help = 0;
-Override LObjects::override_multimedia = 0;
-Override LObjects::override_network = 0;
-Override LObjects::override_quick = 0;
-Override LObjects::override_sql = 0;
-Override LObjects::override_svg = 0;
-Override LObjects::override_webengine = 0;
-Override LObjects::override_webkit = 0;
-ToMetaArg LObjects::toMetaArg_help = 0;
-To_lisp_arg LObjects::to_lisp_arg_help = 0;
-ToMetaArg LObjects::toMetaArg_multimedia = 0;
-To_lisp_arg LObjects::to_lisp_arg_multimedia = 0;
-ToMetaArg LObjects::toMetaArg_network = 0;
-To_lisp_arg LObjects::to_lisp_arg_network = 0;
-ToMetaArg LObjects::toMetaArg_quick = 0;
-To_lisp_arg LObjects::to_lisp_arg_quick = 0;
-ToMetaArg LObjects::toMetaArg_sql = 0;
-To_lisp_arg LObjects::to_lisp_arg_sql = 0;
-ToMetaArg LObjects::toMetaArg_webengine = 0;
-To_lisp_arg LObjects::to_lisp_arg_webengine = 0;
-ToMetaArg LObjects::toMetaArg_webkit = 0;
-To_lisp_arg LObjects::to_lisp_arg_webkit = 0;
 
 NumList LAbstractAnimation::overrideIds = NumList() << 1 << 2 << 3 << 4;
 NumList LAbstractButton::overrideIds = NumList() << 9 << 10 << 11 << 12 << 13 << 14 << 15 << 16 << 17 << 18 << 19 << 20 << 8;
@@ -2915,8 +2877,8 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 100:
         case 101:
         case 102:
-            if(staticMetaObject_help) {
-                m = staticMetaObject_help(n); }
+            if(ModuleInterface::help) {
+                m = ModuleInterface::help->staticMetaObject(n); }
             break;
         case 18:
         case 23:
@@ -2937,8 +2899,8 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 187:
         case 263:
         case 264:
-            if(staticMetaObject_multimedia) {
-                m = staticMetaObject_multimedia(n); }
+            if(ModuleInterface::multimedia) {
+                m = ModuleInterface::multimedia->staticMetaObject(n); }
             break;
         case 7:
         case 12:
@@ -2952,8 +2914,8 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 237:
         case 238:
         case 256:
-            if(staticMetaObject_network) {
-                m = staticMetaObject_network(n); }
+            if(ModuleInterface::network) {
+                m = ModuleInterface::network->staticMetaObject(n); }
             break;
         case 112:
         case 168:
@@ -2979,22 +2941,22 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 192:
         case 193:
         case 194:
-            if(staticMetaObject_quick) {
-                m = staticMetaObject_quick(n); }
+            if(ModuleInterface::quick) {
+                m = ModuleInterface::quick->staticMetaObject(n); }
             break;
         case 211:
         case 212:
         case 213:
         case 214:
         case 215:
-            if(staticMetaObject_sql) {
-                m = staticMetaObject_sql(n); }
+            if(ModuleInterface::sql) {
+                m = ModuleInterface::sql->staticMetaObject(n); }
             break;
         case 83:
         case 226:
         case 227:
-            if(staticMetaObject_svg) {
-                m = staticMetaObject_svg(n); }
+            if(ModuleInterface::svg) {
+                m = ModuleInterface::svg->staticMetaObject(n); }
             break;
         case 265:
         case 266:
@@ -3004,8 +2966,8 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 270:
         case 271:
         case 272:
-            if(staticMetaObject_webengine) {
-                m = staticMetaObject_webengine(n); }
+            if(ModuleInterface::webengine) {
+                m = ModuleInterface::webengine->staticMetaObject(n); }
             break;
         case 88:
         case 273:
@@ -3014,8 +2976,8 @@ const QMetaObject* LObjects::staticMetaObject(const QByteArray& name, int n) {
         case 276:
         case 277:
         case 278:
-            if(staticMetaObject_webkit) {
-                m = staticMetaObject_webkit(n); }
+            if(ModuleInterface::webkit) {
+                m = ModuleInterface::webkit->staticMetaObject(n); }
             break; }
     return m; }
 
@@ -3215,8 +3177,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 280: if(gc) delete (QWindowStateChangeEvent*)p; else delete (LWindowStateChangeEvent*)p; break;
         case 86:
         case 88:
-            if(deleteNObject_help) {
-                deleteNObject_help(n, p, gc); }
+            if(ModuleInterface::help) {
+                ModuleInterface::help->deleteNObject(n, p, gc); }
             break;
         case 18:
         case 19:
@@ -3229,8 +3191,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 261:
         case 262:
         case 263:
-            if(deleteNObject_multimedia) {
-                deleteNObject_multimedia(n, p, gc); }
+            if(ModuleInterface::multimedia) {
+                ModuleInterface::multimedia->deleteNObject(n, p, gc); }
             break;
         case 21:
         case 90:
@@ -3250,8 +3212,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 206:
         case 207:
         case 208:
-            if(deleteNObject_network) {
-                deleteNObject_network(n, p, gc); }
+            if(ModuleInterface::network) {
+                ModuleInterface::network->deleteNObject(n, p, gc); }
             break;
         case 104:
         case 105:
@@ -3282,8 +3244,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 186:
         case 187:
         case 188:
-            if(deleteNObject_quick) {
-                deleteNObject_quick(n, p, gc); }
+            if(ModuleInterface::quick) {
+                ModuleInterface::quick->deleteNObject(n, p, gc); }
             break;
         case 196:
         case 197:
@@ -3293,12 +3255,12 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 201:
         case 202:
         case 203:
-            if(deleteNObject_sql) {
-                deleteNObject_sql(n, p, gc); }
+            if(ModuleInterface::sql) {
+                ModuleInterface::sql->deleteNObject(n, p, gc); }
             break;
         case 217:
-            if(deleteNObject_svg) {
-                deleteNObject_svg(n, p, gc); }
+            if(ModuleInterface::svg) {
+                ModuleInterface::svg->deleteNObject(n, p, gc); }
             break;
         case 267:
         case 268:
@@ -3306,8 +3268,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 270:
         case 271:
         case 272:
-            if(deleteNObject_webengine) {
-                deleteNObject_webengine(n, p, gc); }
+            if(ModuleInterface::webengine) {
+                ModuleInterface::webengine->deleteNObject(n, p, gc); }
             break;
         case 264:
         case 265:
@@ -3315,8 +3277,8 @@ void LObjects::deleteNObject(int n, void* p, int gc) {
         case 273:
         case 274:
         case 275:
-            if(deleteNObject_webkit) {
-                deleteNObject_webkit(n, p, gc); }
+            if(ModuleInterface::webkit) {
+                ModuleInterface::webkit->deleteNObject(n, p, gc); }
             break; }}
 
 const char* LObjects::nObjectSuperClass(const QByteArray& name) {
@@ -3626,8 +3588,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 100:
             case 101:
             case 102:
-                if(override_help) {
-                    NumList* _ids = override_help(name);
+                if(ModuleInterface::help) {
+                    NumList* _ids = ModuleInterface::help->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3650,8 +3612,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 187:
             case 263:
             case 264:
-                if(override_multimedia) {
-                    NumList* _ids = override_multimedia(name);
+                if(ModuleInterface::multimedia) {
+                    NumList* _ids = ModuleInterface::multimedia->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3667,8 +3629,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 237:
             case 238:
             case 256:
-                if(override_network) {
-                    NumList* _ids = override_network(name);
+                if(ModuleInterface::network) {
+                    NumList* _ids = ModuleInterface::network->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3696,8 +3658,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 192:
             case 193:
             case 194:
-                if(override_quick) {
-                    NumList* _ids = override_quick(name);
+                if(ModuleInterface::quick) {
+                    NumList* _ids = ModuleInterface::quick->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3706,16 +3668,16 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 213:
             case 214:
             case 215:
-                if(override_sql) {
-                    NumList* _ids = override_sql(name);
+                if(ModuleInterface::sql) {
+                    NumList* _ids = ModuleInterface::sql->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
             case 83:
             case 226:
             case 227:
-                if(override_svg) {
-                    NumList* _ids = override_svg(name);
+                if(ModuleInterface::svg) {
+                    NumList* _ids = ModuleInterface::svg->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3727,8 +3689,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 270:
             case 271:
             case 272:
-                if(override_webengine) {
-                    NumList* _ids = override_webengine(name);
+                if(ModuleInterface::webengine) {
+                    NumList* _ids = ModuleInterface::webengine->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3739,8 +3701,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 276:
             case 277:
             case 278:
-                if(override_webkit) {
-                    NumList* _ids = override_webkit(name);
+                if(ModuleInterface::webkit) {
+                    NumList* _ids = ModuleInterface::webkit->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break; }}
@@ -3941,8 +3903,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 280: ids = LWindowStateChangeEvent::overrideIds; break;
             case 86:
             case 88:
-                if(override_help) {
-                    NumList* _ids = override_help(name);
+                if(ModuleInterface::help) {
+                    NumList* _ids = ModuleInterface::help->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3957,8 +3919,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 261:
             case 262:
             case 263:
-                if(override_multimedia) {
-                    NumList* _ids = override_multimedia(name);
+                if(ModuleInterface::multimedia) {
+                    NumList* _ids = ModuleInterface::multimedia->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -3980,8 +3942,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 206:
             case 207:
             case 208:
-                if(override_network) {
-                    NumList* _ids = override_network(name);
+                if(ModuleInterface::network) {
+                    NumList* _ids = ModuleInterface::network->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -4014,8 +3976,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 186:
             case 187:
             case 188:
-                if(override_quick) {
-                    NumList* _ids = override_quick(name);
+                if(ModuleInterface::quick) {
+                    NumList* _ids = ModuleInterface::quick->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -4027,14 +3989,14 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 201:
             case 202:
             case 203:
-                if(override_sql) {
-                    NumList* _ids = override_sql(name);
+                if(ModuleInterface::sql) {
+                    NumList* _ids = ModuleInterface::sql->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
             case 217:
-                if(override_svg) {
-                    NumList* _ids = override_svg(name);
+                if(ModuleInterface::svg) {
+                    NumList* _ids = ModuleInterface::svg->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -4044,8 +4006,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 270:
             case 271:
             case 272:
-                if(override_webengine) {
-                    NumList* _ids = override_webengine(name);
+                if(ModuleInterface::webengine) {
+                    NumList* _ids = ModuleInterface::webengine->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break;
@@ -4055,8 +4017,8 @@ StrList LObjects::overrideFunctions(const QByteArray& name) {
             case 273:
             case 274:
             case 275:
-                if(override_webkit) {
-                    NumList* _ids = override_webkit(name);
+                if(ModuleInterface::webkit) {
+                    NumList* _ids = ModuleInterface::webkit->overrideIds(name);
                     if(_ids) {
                         ids = *_ids; }}
                 break; }}

@@ -3,6 +3,7 @@
 #ifndef N_METHODS_H
 #define N_METHODS_H
 
+#include "_ini2.h"
 #include "_n_classes.h"
 #include "../_main_n_methods.h"
 #include <QtWidgets>

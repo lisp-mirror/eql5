@@ -9,6 +9,13 @@ DESTDIR       = ../
 OBJECTS_DIR   = ./tmp/
 MOC_DIR       = ./tmp/
 
+# static modules (optional) *** warning: only use them if you know what you are doing! ***
+#DEFINES       += STATIC_MODULES
+#QT            += network quick quickwidgets qml   # (base for iOS)
+#LIBS          += -L.. -leql5_network -leql5_quick # (base for iOS)
+#QT            += help multimedia multimediawidgets sql svg webengine webenginewidgets # webkit webkitwidgets
+#LIBS          += -L.. -leql5_help -leql5_multimedia -leql5_sql -leql5_svg -leql5_webengine # -leql5_webkit
+
 include.files = eql5/*
 
 linux {
@@ -44,6 +51,7 @@ HEADERS += gen/_lobjects.h \
            eql5/eql_fun.h \
            eql5/eql_global.h \
            eql5/dyn_object.h \
+           module_interface.h \
            qt_eql.h \
            ui_loader.h \
            single_shot.h \
@@ -51,6 +59,7 @@ HEADERS += gen/_lobjects.h \
            extras.h
 
 SOURCES += gen/_lobjects.cpp \
+           module_interface.cpp \
            qt_eql.cpp \
            dyn_object.cpp \
            ecl_fun.cpp \

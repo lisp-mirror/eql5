@@ -3,9 +3,11 @@
 #ifndef Q_CLASSES_H
 #define Q_CLASSES_H
 
-#include "_ini.h"
+#include "_ini2.h"
 #include "../../ecl_fun.h"
 #include "../_lobjects.h"
+#include <QtWebEngine>
+#include <QtWebEngineWidgets>
 #include <QtWidgets>
 #include <QtPrintSupport>
 

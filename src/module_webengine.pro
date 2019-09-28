@@ -1,6 +1,8 @@
-QT           += webenginewidgets printsupport uitools
+QT           += webengine webenginewidgets printsupport uitools
 TEMPLATE     = lib
-CONFIG       += plugin no_keywords release
+CONFIG       += no_keywords release
+CONFIG       += plugin
+#CONFIG       += static
 INCLUDEPATH  += ../src /usr/local/include
 LIBS         += -lecl -leql5 -L.. -L/usr/local/lib
 TARGET       = eql5_webengine

@@ -6,6 +6,14 @@
 
 QT_BEGIN_NAMESPACE
 
+TO_QT_TYPE_PTR2 (QHelpSearchQuery, qhelpsearchquery)
+
+TO_QT_LIST_VAL (QHelpSearchQuery)
+
+TO_CL_LIST_VAL (QHelpSearchQuery, qhelpsearchquery)
+
+#define META_TYPE_(var, type) var = qRegisterMetaType< type >(#type);
+
 NumList LHelpContentModel::overrideIds = NumList() << 58 << 59 << 65 << 73 << 77;
 NumList LHelpContentWidget::overrideIds = NumList();
 NumList LHelpEngineCore::overrideIds = NumList();
@@ -16,9 +24,10 @@ NumList LHelpSearchResultWidget::overrideIds = NumList();
 NumList LHelpContentItem::overrideIds = NumList();
 NumList LHelpSearchQuery::overrideIds = NumList();
 
-void ini() {
-    static bool _ = false; if(_) return; _ = true;
-    ini2();
+void* help_ini() {
+    static bool _ = false; if(_) return 0; _ = true;
+    ModuleHelp* module = new ModuleHelp;
+    module->ini2();
     LObjects::Q[94] = new Q95;
     LObjects::Q[95] = new Q96;
     LObjects::Q[96] = new Q97;
@@ -28,9 +37,37 @@ void ini() {
     LObjects::Q[100] = new Q101;
     LObjects::Q[101] = new Q102;
     LObjects::N[85] = new N86;
-    LObjects::N[87] = new N88; }
+    LObjects::N[87] = new N88;
+    return module; }
 
-const QMetaObject* staticMetaObject(int n) {
+ModuleHelp::ModuleHelp() {
+    help_ini(); }
+
+void ModuleHelp::ini2() {
+    META_TYPE_(LObjects::T_QHelpSearchQuery, QHelpSearchQuery)
+    META_TYPE_(LObjects::T_QList_QHelpSearchQuery, QList<QHelpSearchQuery>) }
+
+void* ModuleHelp::toMetaArg(int n, cl_object l_arg, bool* found) {
+    void* p = 0;
+    bool _found = true;
+    if(LObjects::T_QHelpSearchQuery == n)            { p = new QHelpSearchQuery(*toQHelpSearchQueryPointer(l_arg)); }
+    else if(LObjects::T_QList_QHelpSearchQuery == n) { p = new QList<QHelpSearchQuery>(toQHelpSearchQueryList(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return p; }
+    
+cl_object ModuleHelp::to_lisp_arg(int n, void* p, bool* found) {
+    cl_object l_ret = Cnil;
+    bool _found = true;
+    if(LObjects::T_QHelpSearchQuery == n)            { l_ret = from_qhelpsearchquery(*(QHelpSearchQuery*)p); }
+    else if(LObjects::T_QList_QHelpSearchQuery == n) { l_ret = from_qhelpsearchquerylist(*(QList<QHelpSearchQuery>*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return l_ret; }
+
+const QMetaObject* ModuleHelp::staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 95: m = &QHelpContentModel::staticMetaObject; break;
@@ -43,12 +80,12 @@ const QMetaObject* staticMetaObject(int n) {
         case 102: m = &QHelpSearchResultWidget::staticMetaObject; break; }
     return m; }
 
-void deleteNObject(int n, void* p, int gc) {
+void ModuleHelp::deleteNObject(int n, void* p, int gc) {
     switch(n) {
         case 86: if(gc) delete (QHelpContentItem*)p; else delete (LHelpContentItem*)p; break;
         case 88: if(gc) delete (QHelpSearchQuery*)p; else delete (LHelpSearchQuery*)p; break; }}
 
-NumList* overrideFunctions(const QByteArray& name) {
+NumList* ModuleHelp::overrideIds(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {

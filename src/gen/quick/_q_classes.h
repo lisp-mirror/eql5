@@ -6,6 +6,8 @@
 #include "_ini.h"
 #include "../../ecl_fun.h"
 #include "../_lobjects.h"
+#include <QtQuick>
+#include <QtQuickWidgets>
 #include <QtWidgets>
 #include <QtPrintSupport>
 

@@ -6,6 +6,25 @@
 
 QT_BEGIN_NAMESPACE
 
+TO_QT_TYPE_PTR  (QAudioDeviceInfo, qaudiodeviceinfo)
+TO_QT_TYPE_PTR  (QAudioEncoderSettings, qaudioencodersettings)
+TO_QT_TYPE_PTR  (QAudioFormat, qaudioformat)
+TO_QT_TYPE_PTR  (QCameraInfo, qcamerainfo)
+TO_QT_TYPE_PTR  (QCameraViewfinderSettings, qcameraviewfindersettings)
+TO_QT_TYPE_PTR  (QImageEncoderSettings, qimageencodersettings)
+TO_QT_TYPE_PTR2 (QMediaContent, qmediacontent)
+TO_QT_TYPE_PTR  (QVideoEncoderSettings, qvideoencodersettings)
+TO_QT_TYPE_PTR  (QVideoSurfaceFormat, qvideosurfaceformat)
+
+TO_QT_LIST_VAL (QMediaContent)
+
+TO_CL_LIST_VAL (QAudioDeviceInfo, qaudiodeviceinfo)
+TO_CL_LIST_VAL (QCameraInfo, qcamerainfo)
+TO_CL_LIST_VAL (QCameraViewfinderSettings, qcameraviewfindersettings)
+TO_CL_LIST_VAL (QMediaContent, qmediacontent)
+
+#define META_TYPE_(var, type) var = qRegisterMetaType< type >(#type);
+
 NumList LAudioOutput::overrideIds = NumList();
 NumList LAudioRecorder::overrideIds = NumList();
 NumList LCamera::overrideIds = NumList() << 179;
@@ -32,9 +51,10 @@ NumList LVideoEncoderSettings::overrideIds = NumList();
 NumList LVideoFrame::overrideIds = NumList();
 NumList LVideoSurfaceFormat::overrideIds = NumList();
 
-void ini() {
-    static bool _ = false; if(_) return; _ = true;
-    ini2();
+void* multimedia_ini() {
+    static bool _ = false; if(_) return 0; _ = true;
+    ModuleMultimedia* module = new ModuleMultimedia;
+    module->ini2();
     LObjects::Q[17] = new Q18;
     LObjects::Q[22] = new Q23;
     LObjects::Q[23] = new Q24;
@@ -64,9 +84,67 @@ void ini() {
     LObjects::N[117] = new N118;
     LObjects::N[260] = new N261;
     LObjects::N[261] = new N262;
-    LObjects::N[262] = new N263; }
+    LObjects::N[262] = new N263;
+    return module; }
 
-const QMetaObject* staticMetaObject(int n) {
+ModuleMultimedia::ModuleMultimedia() {
+    multimedia_ini(); }
+
+void ModuleMultimedia::ini2() {
+    META_TYPE_(LObjects::T_QAudioDeviceInfo,                QAudioDeviceInfo)
+    META_TYPE_(LObjects::T_QList_QAudioDeviceInfo,          QList<QAudioDeviceInfo>)
+    META_TYPE_(LObjects::T_QAudioEncoderSettings,           QAudioEncoderSettings)
+    META_TYPE_(LObjects::T_QAudioFormat,                    QAudioFormat)
+    META_TYPE_(LObjects::T_QCameraInfo,                     QCameraInfo)
+    META_TYPE_(LObjects::T_QList_QCameraInfo,               QList<QCameraInfo>)
+    META_TYPE_(LObjects::T_QCameraViewfinderSettings,       QCameraViewfinderSettings)
+    META_TYPE_(LObjects::T_QList_QCameraViewfinderSettings, QList<QCameraViewfinderSettings>)
+    META_TYPE_(LObjects::T_QImageEncoderSettings,           QImageEncoderSettings)
+    META_TYPE_(LObjects::T_QMediaContent,                   QMediaContent)
+    META_TYPE_(LObjects::T_QList_QMediaContent,             QList<QMediaContent>)
+    META_TYPE_(LObjects::T_QVideoEncoderSettings,           QVideoEncoderSettings)
+    META_TYPE_(LObjects::T_QVideoSurfaceFormat,             QVideoSurfaceFormat) }
+
+void* ModuleMultimedia::toMetaArg(int n, cl_object l_arg, bool* found) {
+    void* p = 0;
+    bool _found = true;
+    if(LObjects::T_QAudioDeviceInfo == n)               { p = new QAudioDeviceInfo(*toQAudioDeviceInfoPointer(l_arg)); }
+    else if(LObjects::T_QAudioEncoderSettings == n)     { p = new QAudioEncoderSettings(*toQAudioEncoderSettingsPointer(l_arg)); }
+    else if(LObjects::T_QAudioFormat == n)              { p = new QAudioFormat(*toQAudioFormatPointer(l_arg)); }
+    else if(LObjects::T_QCameraInfo == n)               { p = new QCameraInfo(*toQCameraInfoPointer(l_arg)); }
+    else if(LObjects::T_QCameraViewfinderSettings == n) { p = new QCameraViewfinderSettings(*toQCameraViewfinderSettingsPointer(l_arg)); }
+    else if(LObjects::T_QImageEncoderSettings == n)     { p = new QImageEncoderSettings(*toQImageEncoderSettingsPointer(l_arg)); }
+    else if(LObjects::T_QMediaContent == n)             { p = new QMediaContent(*toQMediaContentPointer(l_arg)); }
+    else if(LObjects::T_QList_QMediaContent == n)       { p = new QList<QMediaContent>(toQMediaContentList(l_arg)); }
+    else if(LObjects::T_QVideoEncoderSettings == n)     { p = new QVideoEncoderSettings(*toQVideoEncoderSettingsPointer(l_arg)); }
+    else if(LObjects::T_QVideoSurfaceFormat == n)       { p = new QVideoSurfaceFormat(*toQVideoSurfaceFormatPointer(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return p; }
+
+cl_object ModuleMultimedia::to_lisp_arg(int n, void* p, bool* found) {
+    cl_object l_ret = Cnil;
+    bool _found = true;
+    if(LObjects::T_QAudioDeviceInfo == n)                     { l_ret = from_qaudiodeviceinfo(*(QAudioDeviceInfo*)p); }
+    else if(LObjects::T_QList_QAudioDeviceInfo == n)          { l_ret = from_qaudiodeviceinfolist(*(QList<QAudioDeviceInfo>*)p); }
+    else if(LObjects::T_QAudioEncoderSettings == n)           { l_ret = from_qaudioencodersettings(*(QAudioEncoderSettings*)p); }
+    else if(LObjects::T_QAudioFormat == n)                    { l_ret = from_qaudioformat(*(QAudioFormat*)p); }
+    else if(LObjects::T_QCameraInfo == n)                     { l_ret = from_qcamerainfo(*(QCameraInfo*)p); }
+    else if(LObjects::T_QList_QCameraInfo == n)               { l_ret = from_qcamerainfolist(*(QList<QCameraInfo>*)p); }
+    else if(LObjects::T_QCameraViewfinderSettings == n)       { l_ret = from_qcameraviewfindersettings(*(QCameraViewfinderSettings*)p); }
+    else if(LObjects::T_QList_QCameraViewfinderSettings == n) { l_ret = from_qcameraviewfindersettingslist(*(QList<QCameraViewfinderSettings>*)p); }
+    else if(LObjects::T_QImageEncoderSettings == n)           { l_ret = from_qimageencodersettings(*(QImageEncoderSettings*)p); }
+    else if(LObjects::T_QMediaContent == n)                   { l_ret = from_qmediacontent(*(QMediaContent*)p); }
+    else if(LObjects::T_QList_QMediaContent == n)             { l_ret = from_qmediacontentlist(*(QList<QMediaContent>*)p); }
+    else if(LObjects::T_QVideoEncoderSettings == n)           { l_ret = from_qvideoencodersettings(*(QVideoEncoderSettings*)p); }
+    else if(LObjects::T_QVideoSurfaceFormat == n)             { l_ret = from_qvideosurfaceformat(*(QVideoSurfaceFormat*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return l_ret; }
+
+const QMetaObject* ModuleMultimedia::staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 18: m = &QAbstractVideoSurface::staticMetaObject; break;
@@ -90,7 +168,7 @@ const QMetaObject* staticMetaObject(int n) {
         case 264: m = &QVideoWidgetControl::staticMetaObject; break; }
     return m; }
 
-void deleteNObject(int n, void* p, int gc) {
+void ModuleMultimedia::deleteNObject(int n, void* p, int gc) {
     switch(n) {
         case 18: if(gc) delete (QAudioDeviceInfo*)p; else delete (LAudioDeviceInfo*)p; break;
         case 19: if(gc) delete (QAudioEncoderSettings*)p; else delete (LAudioEncoderSettings*)p; break;
@@ -104,7 +182,7 @@ void deleteNObject(int n, void* p, int gc) {
         case 262: if(gc) delete (QVideoFrame*)p; else delete (LVideoFrame*)p; break;
         case 263: if(gc) delete (QVideoSurfaceFormat*)p; else delete (LVideoSurfaceFormat*)p; break; }}
 
-NumList* overrideFunctions(const QByteArray& name) {
+NumList* ModuleMultimedia::overrideIds(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
