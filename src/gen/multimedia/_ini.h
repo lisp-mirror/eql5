@@ -1,9 +1,8 @@
-#ifndef INI_H
-#define INI_H
+#ifndef MODULE_MULTIMEDIA_INI_H
+#define MODULE_MULTIMEDIA_INI_H
 
 #include "../../ecl_fun.h"
-#include <QtMultimedia>
-#include <QtMultimediaWidgets>
+#include "../../module_interface.h"
 
 #ifdef Q_CC_MSVC
 #define LIB_EXPORT __declspec(dllexport)
@@ -15,13 +14,19 @@ QT_BEGIN_NAMESPACE
 
 typedef QList<int> NumList;
 
-extern "C" {
-    LIB_EXPORT void ini();
-    LIB_EXPORT const QMetaObject* staticMetaObject(int);
-    LIB_EXPORT void deleteNObject(int, void*, int);
-    LIB_EXPORT NumList* overrideFunctions(const QByteArray&);
-    LIB_EXPORT void* toMetaArg(int, cl_object, bool*);
-    LIB_EXPORT cl_object to_lisp_arg(int, void*, bool*); }
+extern "C" LIB_EXPORT void* multimedia_ini();
+
+class ModuleMultimedia : public ModuleInterface {
+public:
+    ModuleMultimedia();
+
+    void ini2();
+    const QMetaObject* staticMetaObject(int);
+    void deleteNObject(int, void*, int);
+    NumList* overrideIds(const QByteArray&);
+    void* toMetaArg(int, cl_object, bool*);
+    cl_object to_lisp_arg(int, void*, bool*);
+};
 
 QT_END_NAMESPACE
 

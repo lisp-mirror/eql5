@@ -6,6 +6,7 @@
 #include "_ini.h"
 #include "../../ecl_fun.h"
 #include "../_lobjects.h"
+#include <QtWebKit>
 #include <QtWidgets>
 #include <QtPrintSupport>
 

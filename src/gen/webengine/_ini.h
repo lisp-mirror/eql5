@@ -1,8 +1,8 @@
-#ifndef INI_H
-#define INI_H
+#ifndef MODULE_WEBENGINE_INI_H
+#define MODULE_WEBENGINE_INI_H
 
 #include "../../ecl_fun.h"
-#include <QtWebEngineWidgets>
+#include "../../module_interface.h"
 
 #ifdef Q_CC_MSVC
 #define LIB_EXPORT __declspec(dllexport)
@@ -14,13 +14,19 @@ QT_BEGIN_NAMESPACE
 
 typedef QList<int> NumList;
 
-extern "C" {
-    LIB_EXPORT void ini();
-    LIB_EXPORT const QMetaObject* staticMetaObject(int);
-    LIB_EXPORT void deleteNObject(int, void*, int);
-    LIB_EXPORT NumList* overrideFunctions(const QByteArray&);
-    LIB_EXPORT void* toMetaArg(int, cl_object, bool*);
-    LIB_EXPORT cl_object to_lisp_arg(int, void*, bool*); }
+extern "C" LIB_EXPORT void* webengine_ini();
+
+class ModuleWebengine : public ModuleInterface {
+public:
+    ModuleWebengine();
+
+    void ini2();
+    const QMetaObject* staticMetaObject(int);
+    void deleteNObject(int, void*, int);
+    NumList* overrideIds(const QByteArray&);
+    void* toMetaArg(int, cl_object, bool*);
+    cl_object to_lisp_arg(int, void*, bool*);
+};
 
 QT_END_NAMESPACE
 

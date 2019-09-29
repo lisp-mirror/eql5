@@ -33,13 +33,6 @@ typedef QList<QByteArray> StrList;
 class EQL;
 class DynObject;
 
-// functions from EQL modules
-typedef const QMetaObject* (*StaticMetaObject)(int);
-typedef void (*DeleteNObject)(int, void*, int);
-typedef NumList* (*Override)(const QByteArray&);
-typedef void* (*ToMetaArg)(int, cl_object, bool*);
-typedef cl_object (*To_lisp_arg)(int, void*, bool*);
-
 class EQL_EXPORT LObjects {
 public:
     static int T_QAudioDeviceInfo;
@@ -147,45 +140,6 @@ public:
                           .toLatin1().constData(),
                   Cnil);
         return false; }
-
-    static StaticMetaObject staticMetaObject_help;
-    static StaticMetaObject staticMetaObject_multimedia;
-    static StaticMetaObject staticMetaObject_network;
-    static StaticMetaObject staticMetaObject_quick;
-    static StaticMetaObject staticMetaObject_sql;
-    static StaticMetaObject staticMetaObject_svg;
-    static StaticMetaObject staticMetaObject_webengine;
-    static StaticMetaObject staticMetaObject_webkit;
-    static DeleteNObject deleteNObject_help;
-    static DeleteNObject deleteNObject_multimedia;
-    static DeleteNObject deleteNObject_network;
-    static DeleteNObject deleteNObject_quick;
-    static DeleteNObject deleteNObject_sql;
-    static DeleteNObject deleteNObject_svg;
-    static DeleteNObject deleteNObject_webengine;
-    static DeleteNObject deleteNObject_webkit;
-    static Override override_help;
-    static Override override_multimedia;
-    static Override override_network;
-    static Override override_quick;
-    static Override override_sql;
-    static Override override_svg;
-    static Override override_webengine;
-    static Override override_webkit;
-    static ToMetaArg toMetaArg_help;
-    static To_lisp_arg to_lisp_arg_help;
-    static ToMetaArg toMetaArg_multimedia;
-    static To_lisp_arg to_lisp_arg_multimedia;
-    static ToMetaArg toMetaArg_network;
-    static To_lisp_arg to_lisp_arg_network;
-    static ToMetaArg toMetaArg_quick;
-    static To_lisp_arg to_lisp_arg_quick;
-    static ToMetaArg toMetaArg_sql;
-    static To_lisp_arg to_lisp_arg_sql;
-    static ToMetaArg toMetaArg_webengine;
-    static To_lisp_arg to_lisp_arg_webengine;
-    static ToMetaArg toMetaArg_webkit;
-    static To_lisp_arg to_lisp_arg_webkit;
 };
 
 QT_END_NAMESPACE

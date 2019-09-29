@@ -6,7 +6,19 @@
 #include "gen/_lobjects.h"
 #include "ui_loader.h"
 #include "single_shot.h"
+#include "module_interface.h"
 #include <QLibrary>
+
+#ifdef STATIC_MODULES
+  #include "gen/help/_ini.h"
+  #include "gen/network/_ini.h"
+  #include "gen/multimedia/_ini.h"
+  #include "gen/quick/_ini.h"
+  #include "gen/sql/_ini.h"
+  #include "gen/svg/_ini.h"
+  #include "gen/webengine/_ini.h"
+  #include "gen/webkit/_ini.h"
+#endif
 
 QT_BEGIN_NAMESPACE
 
@@ -1337,20 +1349,20 @@ static MetaArg toMetaArg(const QByteArray& sType, cl_object l_arg) {
         // module types
         else {
             bool found = false;
-            if(LObjects::toMetaArg_help) {
-                p = LObjects::toMetaArg_help(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_multimedia) {
-                p = LObjects::toMetaArg_multimedia(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_network) {
-                p = LObjects::toMetaArg_network(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_quick) {
-                p = LObjects::toMetaArg_quick(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_sql) {
-                p = LObjects::toMetaArg_sql(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_webengine) {
-                p = LObjects::toMetaArg_webengine(n, l_arg, &found); }
-            if(!found && LObjects::toMetaArg_webkit) {
-                p = LObjects::toMetaArg_webkit(n, l_arg, &found); }
+            if(ModuleInterface::help) {
+                p = ModuleInterface::help->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::multimedia) {
+                p = ModuleInterface::multimedia->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::network) {
+                p = ModuleInterface::network->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::quick) {
+                p = ModuleInterface::quick->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::sql) {
+                p = ModuleInterface::sql->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::webengine) {
+                p = ModuleInterface::webengine->toMetaArg(n, l_arg, &found); }
+            if(!found && ModuleInterface::webkit) {
+                p = ModuleInterface::webkit->toMetaArg(n, l_arg, &found); }
             if(!found) {
                 // enum
                 if(!sType.endsWith('>') && sType.contains(':')) {
@@ -1512,20 +1524,20 @@ cl_object to_lisp_arg(const MetaArg& arg) {
             // module types
             else {
                 bool found = false;
-                if(LObjects::to_lisp_arg_help) {
-                    l_ret = LObjects::to_lisp_arg_help(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_multimedia) {
-                    l_ret = LObjects::to_lisp_arg_multimedia(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_network) {
-                    l_ret = LObjects::to_lisp_arg_network(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_quick) {
-                    l_ret = LObjects::to_lisp_arg_quick(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_sql) {
-                    l_ret = LObjects::to_lisp_arg_sql(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_webengine) {
-                    l_ret = LObjects::to_lisp_arg_webengine(n, p, &found); }
-                if(!found && LObjects::to_lisp_arg_webkit) {
-                    l_ret = LObjects::to_lisp_arg_webkit(n, p, &found); }
+                if(ModuleInterface::help) {
+                    l_ret = ModuleInterface::help->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::multimedia) {
+                    l_ret = ModuleInterface::multimedia->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::network) {
+                    l_ret = ModuleInterface::network->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::quick) {
+                    l_ret = ModuleInterface::quick->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::sql) {
+                    l_ret = ModuleInterface::sql->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::webengine) {
+                    l_ret = ModuleInterface::webengine->to_lisp_arg(n, p, &found); }
+                if(!found && ModuleInterface::webkit) {
+                    l_ret = ModuleInterface::webkit->to_lisp_arg(n, p, &found); }
                 // enum
                 if(!found) {
                     if(!sType.endsWith('>') && sType.contains(':')) {
@@ -2429,9 +2441,9 @@ cl_object qclear_event_filters() {
     return Ct; }
 
 cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
-   /// args: (module &optional quiet)
-   /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :quick :sql :svg :webengine :webkit</code>
-   ///     (qrequire :network)
+    /// args: (module &optional quiet)
+    /// Loads an EQL module, corresponding to a Qt module.<br>Returns the module name if both loading and initializing have been successful.<br>If the <code>quiet</code> argument is not <code>NIL</code>, no error message will be shown on failure.<br><br>Currently available modules: <code>:help :multimedia :network :quick :sql :svg :webengine :webkit</code>
+    ///     (qrequire :network)
     ecl_process_env()->nvalues = 1;
     QString name = symbolName(l_name);
     QString file("eql5_" + name);
@@ -2442,75 +2454,98 @@ cl_object qrequire2(cl_object l_name, cl_object l_quiet) { /// qrequire
     if(appPath.contains(".app/")) {
         path = appPath + "/../libs/"; }
 #endif
+#ifdef STATIC_MODULES
+    if("help" == name) {
+        if(!ModuleInterface::help) {
+            ModuleInterface::help = new ModuleHelp; }}
+    else if("multimedia" == name) {
+        if(!ModuleInterface::multimedia) {
+            ModuleInterface::multimedia = new ModuleMultimedia; }}
+    else if("network" == name) {
+        if(!ModuleInterface::network) {
+            ModuleInterface::network = new ModuleNetwork; }}
+    else if("quick" == name) {
+        if(!ModuleInterface::quick) {
+            ModuleInterface::quick = new ModuleQuick; }}
+    else if("sql" == name) {
+        if(!ModuleInterface::sql) {
+            ModuleInterface::sql = new ModuleSql; }}
+    else if("svg" == name) {
+        if(!ModuleInterface::svg) {
+            ModuleInterface::svg = new ModuleSvg; }}
+    else if("webengine" == name) {
+        if(!ModuleInterface::webengine) {
+            ModuleInterface::webengine = new ModuleWebengine; }}
+    /* (uncomment if needed)
+    else if("webkit" == name) {
+        if(!ModuleInterface::webkit) {
+            ModuleInterface::webkit = new ModuleWebkit; }} */
+    else if(l_quiet == Cnil) {
+        error_msg("QREQUIRE", LIST1(l_name)); }
+    return l_name;
+#else
     QLibrary lib(path + file);
     if(!lib.load()) {
         lib.setFileName(file); } // use default library paths
-    typedef void (*Ini)();
-    Ini ini = (Ini)lib.resolve("ini");
-    if(ini) {
-        ini();
-        StaticMetaObject meta = (StaticMetaObject)lib.resolve("staticMetaObject");
-        DeleteNObject del = (DeleteNObject)lib.resolve("deleteNObject");
-        Override over = (Override)lib.resolve("overrideFunctions");
-        if(meta && del && over) {
-            if("svg" == name) {
-                LObjects::staticMetaObject_svg = meta;
-                LObjects::deleteNObject_svg = del;
-                LObjects::override_svg = over;
-                return l_name; }
-            else {
-                ToMetaArg metaArg = (ToMetaArg)lib.resolve("toMetaArg");
-                To_lisp_arg lispArg = (To_lisp_arg)lib.resolve("to_lisp_arg");
-                if(metaArg && lispArg) {
-                    if("help" == name) {
-                        LObjects::staticMetaObject_help = meta;
-                        LObjects::deleteNObject_help = del;
-                        LObjects::override_help = over;
-                        LObjects::toMetaArg_help = metaArg;
-                        LObjects::to_lisp_arg_help = lispArg;
-                        return l_name; }
-                    else if("multimedia" == name) {
-                        LObjects::staticMetaObject_multimedia = meta;
-                        LObjects::deleteNObject_multimedia = del;
-                        LObjects::override_multimedia = over;
-                        LObjects::toMetaArg_multimedia = metaArg;
-                        LObjects::to_lisp_arg_multimedia = lispArg;
-                        return l_name; }
-                    else if("network" == name) {
-                        LObjects::staticMetaObject_network = meta;
-                        LObjects::deleteNObject_network = del;
-                        LObjects::override_network = over;
-                        LObjects::toMetaArg_network = metaArg;
-                        LObjects::to_lisp_arg_network = lispArg;
-                        return l_name; }
-                    else if("quick" == name) {
-                        LObjects::staticMetaObject_quick = meta;
-                        LObjects::deleteNObject_quick = del;
-                        LObjects::override_quick = over;
-                        LObjects::toMetaArg_quick = metaArg;
-                        LObjects::to_lisp_arg_quick = lispArg;
-                        return l_name; }
-                    else if("sql" == name) {
-                        LObjects::staticMetaObject_sql = meta;
-                        LObjects::deleteNObject_sql = del;
-                        LObjects::override_sql = over;
-                        LObjects::toMetaArg_sql = metaArg;
-                        LObjects::to_lisp_arg_sql = lispArg;
-                        return l_name; }
-                    else if("webengine" == name) {
-                        LObjects::staticMetaObject_webengine = meta;
-                        LObjects::deleteNObject_webengine = del;
-                        LObjects::override_webengine = over;
-                        LObjects::toMetaArg_webengine = metaArg;
-                        LObjects::to_lisp_arg_webengine = lispArg;
-                        return l_name; }
-                    else if("webkit" == name) {
-                        LObjects::staticMetaObject_webkit = meta;
-                        LObjects::deleteNObject_webkit = del;
-                        LObjects::override_webkit = over;
-                        LObjects::toMetaArg_webkit = metaArg;
-                        LObjects::to_lisp_arg_webkit = lispArg;
-                        return l_name; }}}}}
+    typedef ModuleInterface* (*Ini)();
+    Ini ini = 0;
+    if("help" == name) {
+        if(ModuleInterface::help) {
+            return l_name; }
+        ini = (Ini)lib.resolve("help_ini");
+        if(ini) {
+            ModuleInterface::help = ini();
+            return l_name; }}
+    else if("multimedia" == name) {
+        if(ModuleInterface::multimedia) {
+            return l_name; }
+        ini = (Ini)lib.resolve("multimedia_ini");
+        if(ini) {
+            ModuleInterface::multimedia = ini();
+            return l_name; }}
+    else if("network" == name) {
+        if(ModuleInterface::network) {
+            return l_name; }
+        ini = (Ini)lib.resolve("network_ini");
+        if(ini) {
+            ModuleInterface::network = ini();
+            return l_name; }}
+    else if("quick" == name) {
+        if(ModuleInterface::quick) {
+            return l_name; }
+        ini = (Ini)lib.resolve("quick_ini");
+        if(ini) {
+            ModuleInterface::quick = ini();
+            return l_name; }}
+    else if("sql" == name) {
+        if(ModuleInterface::sql) {
+            return l_name; }
+        ini = (Ini)lib.resolve("sql_ini");
+        if(ini) {
+            ModuleInterface::sql = ini();
+            return l_name; }}
+    else if("svg" == name) {
+        if(ModuleInterface::svg) {
+            return l_name; }
+        ini = (Ini)lib.resolve("svg_ini");
+        if(ini) {
+            ModuleInterface::svg = ini();
+            return l_name; }}
+    else if("webengine" == name) {
+        if(ModuleInterface::webengine) {
+            return l_name; }
+        ini = (Ini)lib.resolve("webengine_ini");
+        if(ini) {
+            ModuleInterface::webengine = ini();
+            return l_name; }}
+    else if("webkit" == name) {
+        if(ModuleInterface::webkit) {
+            return l_name; }
+        ini = (Ini)lib.resolve("webkit_ini");
+        if(ini) {
+            ModuleInterface::webkit = ini();
+            return l_name; }}
+#endif
     if(l_quiet == Cnil) {
         error_msg("QREQUIRE", LIST1(l_name)); }
     return Cnil; }

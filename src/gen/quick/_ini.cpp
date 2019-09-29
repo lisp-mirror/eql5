@@ -3,8 +3,21 @@
 #include "_q_methods.h"
 #include "_n_methods.h"
 #include "_ini2.h"
+#include "qml_lisp.h"
 
 QT_BEGIN_NAMESPACE
+
+TO_QT_TYPE_PTR (QJSValue, qjsvalue)
+TO_QT_TYPE_PTR (QQmlProperty, qqmlproperty)
+TO_QT_TYPE_PTR (QQmlScriptString, qqmlscriptstring)
+
+FROM_QT_TYPE_ONLY (QQmlError, qqmlerror)
+
+TO_CL_LIST_VAL (QQmlError, qqmlerror)
+
+TO_CL_LIST_PTR (QQuickItem, qquickitem)
+
+#define META_TYPE_(var, type) var = qRegisterMetaType< type >(#type);
 
 NumList LJSEngine::overrideIds = NumList();
 NumList LQmlApplicationEngine::overrideIds = NumList();
@@ -58,9 +71,10 @@ NumList LSGTextureMaterial::overrideIds = NumList();
 NumList LSGTransformNode::overrideIds = NumList();
 NumList LSGVertexColorMaterial::overrideIds = NumList();
 
-void ini() {
-    static bool _ = false; if(_) return; _ = true;
-    ini2();
+void* quick_ini() {
+    static bool _ = false; if(_) return 0; _ = true;
+    ModuleQuick* module = new ModuleQuick;
+    module->ini2();
     LObjects::Q[111] = new Q112;
     LObjects::Q[167] = new Q168;
     LObjects::Q[168] = new Q169;
@@ -113,9 +127,45 @@ void ini() {
     LObjects::N[184] = new N185;
     LObjects::N[185] = new N186;
     LObjects::N[186] = new N187;
-    LObjects::N[187] = new N188; }
+    LObjects::N[187] = new N188;
+    return module; }
 
-const QMetaObject* staticMetaObject(int n) {
+ModuleQuick::ModuleQuick() {
+    quick_ini(); }
+
+void ModuleQuick::ini2() {
+    META_TYPE_(LObjects::T_QJSValue, QJSValue)
+    META_TYPE_(LObjects::T_QQmlProperty, QQmlProperty)
+    META_TYPE_(LObjects::T_QQmlScriptString, QQmlScriptString)
+    META_TYPE_(LObjects::T_QList_QQmlError, QList<QQmlError>)
+    META_TYPE_(LObjects::T_QList_QQuickItem, QList<QQuickItem*>)
+    iniQml(); }
+
+void* ModuleQuick::toMetaArg(int n, cl_object l_arg, bool* found) {
+    void* p = 0;
+    bool _found = true;
+    if(LObjects::T_QJSValue == n)              { p = new QJSValue(*toQJSValuePointer(l_arg)); }
+    else if(LObjects::T_QQmlProperty == n)     { p = new QQmlProperty(*toQQmlPropertyPointer(l_arg)); }
+    else if(LObjects::T_QQmlScriptString == n) { p = new QQmlScriptString(*toQQmlScriptStringPointer(l_arg)); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return p; }
+
+cl_object ModuleQuick::to_lisp_arg(int n, void* p, bool* found) {
+    cl_object l_ret = Cnil;
+    bool _found = true;
+    if(LObjects::T_QJSValue == n)              { l_ret = from_qjsvalue(*(QJSValue*)p); }
+    else if(LObjects::T_QQmlProperty == n)     { l_ret = from_qqmlproperty(*(QQmlProperty*)p); }
+    else if(LObjects::T_QQmlScriptString == n) { l_ret = from_qqmlscriptstring(*(QQmlScriptString*)p); }
+    else if(LObjects::T_QList_QQmlError == n)  { l_ret = from_qqmlerrorlist(*(QList<QQmlError>*)p); }
+    else if(LObjects::T_QList_QQuickItem == n) { l_ret = from_qquickitemlist(*(QList<QQuickItem*>*)p); }
+    else { _found = false; }
+    if(_found) {
+        *found = true; }
+    return l_ret; }
+
+const QMetaObject* ModuleQuick::staticMetaObject(int n) {
     const QMetaObject* m = 0;
     switch(n) {
         case 112: m = &QJSEngine::staticMetaObject; break;
@@ -144,7 +194,7 @@ const QMetaObject* staticMetaObject(int n) {
         case 194: m = &QSGTextureProvider::staticMetaObject; break; }
     return m; }
 
-void deleteNObject(int n, void* p, int gc) {
+void ModuleQuick::deleteNObject(int n, void* p, int gc) {
     switch(n) {
         case 104: if(gc) delete (QJSValue*)p; else delete (LJSValue*)p; break;
         case 105: if(gc) delete (QJSValueIterator*)p; else delete (LJSValueIterator*)p; break;
@@ -175,7 +225,7 @@ void deleteNObject(int n, void* p, int gc) {
         case 187: if(gc) delete (QSGTransformNode*)p; else delete (LSGTransformNode*)p; break;
         case 188: if(gc) delete (QSGVertexColorMaterial*)p; else delete (LSGVertexColorMaterial*)p; break; }}
 
-NumList* overrideFunctions(const QByteArray& name) {
+NumList* ModuleQuick::overrideIds(const QByteArray& name) {
     NumList* ids = 0;
     int n = LObjects::q_names.value(name, -1);
     if(n != -1) {
