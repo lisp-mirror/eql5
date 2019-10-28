@@ -7,7 +7,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class QMetaObject;
+struct QMetaObject;
 
 class ModuleInterface {
 public:

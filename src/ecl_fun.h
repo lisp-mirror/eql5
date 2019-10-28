@@ -22,7 +22,7 @@ QT_BEGIN_NAMESPACE
     static const int constant = qRegisterMetaType< type >(#type);
 
 #define DEFUN(name, c_name, num_args) \
-    cl_def_c_function(c_string_to_object((char*)name), (cl_objectfn_fixed)c_name, num_args);
+    ecl_def_c_function(c_string_to_object((char*)name), (cl_objectfn_fixed)c_name, num_args);
 
 #define STRING(s) make_constant_base_string((char*)s)
 
