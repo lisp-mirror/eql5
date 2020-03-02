@@ -1,3 +1,5 @@
+(si::trap-fpe t nil)
+
 ;;; QQuickView loading Lisp enabled QML
 
 (qrequire :quick)
